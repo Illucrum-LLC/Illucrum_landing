@@ -93,7 +93,6 @@
      </body>
    ============================================================ */
 
-
 /* ─── 1. CUSTOM PROPERTIES ──────────────────────────────────
    Centralised theming. Tweak these to retheme without touching
    the rules below. */
@@ -101,43 +100,48 @@
   /* Type — JetBrains Mono is the only font.
      Load via Google Fonts <link> in <head>. System mono is the
      fallback if the web font fails. */
-  --font: 'JetBrains Mono', ui-monospace, 'SF Mono',
-          'Cascadia Mono', Menlo, Consolas, monospace;
+  --font:
+    "JetBrains Mono", ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas,
+    monospace;
 
   /* Palette — warm paper light theme.
      The only accent is gold; everything else is ink + paper. */
-  --bg:        #fafaf7;                    /* page background */
-  --paper:     #f4f3ee;                    /* hover-state surface */
-  --ink:       #131311;                    /* primary text */
-  --ink-soft:  #4a4a44;                    /* body copy */
-  --ink-mute:  #8a8a82;                    /* eyebrows, captions */
-  --ink-faint: #b6b5ad;                    /* extra-faint detail */
-  --line:      rgba(19, 19, 17, 0.10);     /* hairline border */
-  --line-soft: rgba(19, 19, 17, 0.05);     /* even fainter divider */
-  --gold:      #9a6a18;                    /* the only accent */
-  --gold-tint: rgba(154, 106, 24, 0.10);   /* subtle gold wash */
+  --bg: #fafaf7; /* page background */
+  --paper: #f4f3ee; /* hover-state surface */
+  --ink: #131311; /* primary text */
+  --ink-soft: #4a4a44; /* body copy */
+  --ink-mute: #8a8a82; /* eyebrows, captions */
+  --ink-faint: #b6b5ad; /* extra-faint detail */
+  --line: rgba(19, 19, 17, 0.1); /* hairline border */
+  --line-soft: rgba(19, 19, 17, 0.05); /* even fainter divider */
+  --gold: #9a6a18; /* the only accent */
+  --gold-tint: rgba(154, 106, 24, 0.1); /* subtle gold wash */
 
   /* Rhythm — compact density. */
-  --gutter:   clamp(1rem, 4vw, 2rem);
-  --maxw:     1180px;
-  --section:  clamp(2.75rem, 6vw, 4.5rem);
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --maxw: 1180px;
+  --section: clamp(2.75rem, 6vw, 4.5rem);
 
   /* Type tracking. Mono benefits from slight loosening on caps. */
   --track-tight: -0.02em;
-  --track-mono:   0.04em;
-  --track-loose:  0.10em;
+  --track-mono: 0.04em;
+  --track-loose: 0.1em;
 }
-
 
 /* ─── 2. RESET ─────────────────────────────────────────────
    Border-box on everything, strip default margins/paddings,
    smooth scroll, prevent iOS text resizing. */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
-
 
 /* ─── 3. BODY (global canvas) ──────────────────────────────
    Mono font system-wide. Tight base size for compact density.
@@ -153,15 +157,15 @@ body {
   overflow-x: hidden;
 }
 
-
 /* ─── 4. MEDIA ─────────────────────────────────────────────
    Block-level so they sit on their own line; never overflow. */
-img, svg, video {
+img,
+svg,
+video {
   display: block;
   max-width: 100%;
   height: auto;
 }
-
 
 /* ─── 5. LINKS ──────────────────────────────────────────────
    Default: inherit colour, no underline, gold on hover. Inline
@@ -170,9 +174,13 @@ img, svg, video {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 0.18s ease, border-color 0.18s ease;
+  transition:
+    color 0.18s ease,
+    border-color 0.18s ease;
 }
-a:hover { color: var(--gold); }
+a:hover {
+  color: var(--gold);
+}
 
 /* Hairline underline ONLY for inline anchors in body text and
    table/list cells. Stand-alone anchors (in nav, footer cols,
@@ -187,13 +195,19 @@ td a {
 p a:hover,
 li p a:hover,
 dd a:hover,
-td a:hover { border-bottom-color: var(--gold); }
-
+td a:hover {
+  border-bottom-color: var(--gold);
+}
 
 /* ─── 6. TYPOGRAPHY ─────────────────────────────────────────
    All headings use the mono font. Weight, size and tracking
    are tuned for a technical/editorial feel. */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font);
   font-weight: 500;
   letter-spacing: var(--track-tight);
@@ -204,7 +218,7 @@ h1, h2, h3, h4, h5, h6 {
 /* H1 — page hero headline. Big, but mobile keeps it readable. */
 h1 {
   font-size: clamp(1.9rem, 7.5vw, 3.6rem);
-  line-height: 1.0;
+  line-height: 1;
   max-width: 22ch;
   margin-bottom: 1rem;
 }
@@ -249,7 +263,9 @@ h6 {
 
 /* <em> inside H1/H2/H3 is the GOLD ACCENT — the one place
    colour shows up in headings. Italic + gold + same weight. */
-h1 em, h2 em, h3 em {
+h1 em,
+h2 em,
+h3 em {
   font-style: italic;
   color: var(--gold);
   font-weight: 500;
@@ -286,10 +302,15 @@ small {
 }
 
 /* Inline emphasis (outside headings) — italic only, no colour. */
-em { font-style: italic; }
+em {
+  font-style: italic;
+}
 
 /* Strong/bold stays subtle — same weight as headings. */
-strong { font-weight: 500; color: var(--ink); }
+strong {
+  font-weight: 500;
+  color: var(--ink);
+}
 
 /* <mark> reclaimed as a small gold tag/pill (e.g. "Recommended").
    No classes needed: just wrap text in <mark>. */
@@ -304,7 +325,8 @@ mark {
 }
 
 /* Inline code-like / keyboard caps for technical bits. */
-code, kbd {
+code,
+kbd {
   font-family: var(--font);
   font-size: 0.85em;
   background: var(--paper);
@@ -319,7 +341,6 @@ hr {
   background: var(--line);
   margin: var(--section) 0;
 }
-
 
 /* ─── 7. BUTTONS ────────────────────────────────────────────
    <button>  = PRIMARY action (filled dark ink, gold on hover).
@@ -340,15 +361,20 @@ button {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: var(--track-mono);
-  transition: background 0.2s, color 0.2s, border-color 0.2s,
-              transform 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
 }
 button:hover {
   background: var(--gold);
   border-color: var(--gold);
   color: var(--bg);
 }
-button:active { transform: translateY(1px); }
+button:active {
+  transform: translateY(1px);
+}
 button:focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 2px;
@@ -367,7 +393,9 @@ button + a {
   text-transform: uppercase;
   letter-spacing: var(--track-mono);
   color: var(--ink);
-  transition: border-color 0.2s, color 0.2s;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
 }
 button + a:hover {
   border-color: var(--gold);
@@ -380,16 +408,19 @@ nav button {
   font-size: 0.7rem;
 }
 
-
 /* ─── 8. LISTS ──────────────────────────────────────────────
    Strip default bullets. Specific list contexts get different
    layouts via parent tag (nav ul vs section > ul vs footer ul). */
-ul, ol { list-style: none; }
+ul,
+ol {
+  list-style: none;
+}
 
 /* Default li margin in body prose lists (rare with no classes). */
 p + ul li,
-p + ol li { margin-bottom: 0.35rem; }
-
+p + ol li {
+  margin-bottom: 0.35rem;
+}
 
 /* ─── 9. DEFINITION LISTS (key/value pairs in the hero aside) ─
    Used inside <aside> for "Checkpoints: 46", "Delivery: 3–8 days"
@@ -400,17 +431,24 @@ dl {
   column-gap: 1.5rem;
   row-gap: 0;
 }
-dt, dd {
+dt,
+dd {
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--line-soft);
   font-size: 0.78rem;
 }
-dt { color: var(--ink-mute); }
-dd { color: var(--ink); text-align: right; }
+dt {
+  color: var(--ink-mute);
+}
+dd {
+  color: var(--ink);
+  text-align: right;
+}
 /* Last pair — drop the divider for a clean bottom edge. */
 dl > dt:nth-last-of-type(1),
-dl > dd:nth-last-of-type(1) { border-bottom: 0; }
-
+dl > dd:nth-last-of-type(1) {
+  border-bottom: 0;
+}
 
 /* ─── 10. TABLES (pricing comparison) ───────────────────────
    Editorial table: hairlines, no zebra, ink+gold only. */
@@ -431,22 +469,29 @@ thead th {
 }
 /* Column headers from the second onward get a gold rule on the
    "recommended" column. Convention: middle column = recommended. */
-thead th:nth-child(n+2) {
+thead th:nth-child(n + 2) {
   text-align: center;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: var(--track-mono);
 }
-tbody td, tfoot td {
+tbody td,
+tfoot td {
   padding: 0.85rem;
   border-bottom: 1px solid var(--line);
   vertical-align: middle;
   color: var(--ink-soft);
 }
-tbody td:first-child { color: var(--ink); }            /* row label */
-tbody td:nth-child(n+2),
-tfoot td:nth-child(n+2) { text-align: center; }
-tbody tr:hover td { background: var(--paper); }
+tbody td:first-child {
+  color: var(--ink);
+} /* row label */
+tbody td:nth-child(n + 2),
+tfoot td:nth-child(n + 2) {
+  text-align: center;
+}
+tbody tr:hover td {
+  background: var(--paper);
+}
 tfoot td {
   border-bottom: 0;
   border-top: 1px solid var(--ink);
@@ -460,8 +505,9 @@ thead th:nth-child(3) {
   border-bottom-color: var(--gold);
 }
 tbody td:nth-child(3),
-tfoot td:nth-child(3) { background: var(--gold-tint); }
-
+tfoot td:nth-child(3) {
+  background: var(--gold-tint);
+}
 
 /* ─── 11. DETAILS / SUMMARY (FAQ accordion, no JS) ──────────
    Native disclosure widget. The "+" turns into "×" when open
@@ -469,9 +515,11 @@ tfoot td:nth-child(3) { background: var(--gold-tint); }
 details {
   border-bottom: 1px solid var(--line);
 }
-details:first-of-type { border-top: 1px solid var(--line); }
+details:first-of-type {
+  border-top: 1px solid var(--line);
+}
 summary {
-  list-style: none;            /* remove default disclosure triangle */
+  list-style: none; /* remove default disclosure triangle */
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -485,20 +533,30 @@ summary {
   color: var(--ink);
   transition: color 0.2s;
 }
-summary::-webkit-details-marker { display: none; }   /* Safari */
+summary::-webkit-details-marker {
+  display: none;
+} /* Safari */
 summary::after {
   content: "+";
   font-size: 1.2rem;
   font-weight: 400;
   color: var(--ink-mute);
-  transition: transform 0.3s ease, color 0.2s;
+  transition:
+    transform 0.3s ease,
+    color 0.2s;
   flex-shrink: 0;
 }
-summary:hover { color: var(--gold); }
-summary:hover::after { color: var(--gold); }
-details[open] summary { color: var(--gold); }
+summary:hover {
+  color: var(--gold);
+}
+summary:hover::after {
+  color: var(--gold);
+}
+details[open] summary {
+  color: var(--gold);
+}
 details[open] summary::after {
-  transform: rotate(45deg);    /* "+" → "×" */
+  transform: rotate(45deg); /* "+" → "×" */
   color: var(--gold);
 }
 /* The answer paragraph(s) sit directly after the summary. */
@@ -506,12 +564,11 @@ details > p,
 details > div,
 details > ul {
   padding: 0 0 1.25rem 0;
-  max-width: 70ch;
+  max-width: none;
   color: var(--ink-soft);
   font-size: 0.9rem;
   line-height: 1.6;
 }
-
 
 /* ─── 12. TOP NAVIGATION ────────────────────────────────────
    Sticky on top with a frosted background. On mobile the link
@@ -520,7 +577,7 @@ body > nav {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(250, 250, 247, 0.90);
+  background: rgba(250, 250, 247, 0.9);
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border-bottom: 1px solid var(--line);
@@ -542,8 +599,13 @@ body > nav > a:first-child {
   letter-spacing: var(--track-tight);
   color: var(--ink);
 }
-body > nav > a:first-child:hover { color: var(--ink); } /* logo doesn't go gold */
-body > nav > a:first-child img { width: 20px; height: 20px; }
+body > nav > a:first-child:hover {
+  color: var(--ink);
+} /* logo doesn't go gold */
+body > nav > a:first-child img {
+  width: 20px;
+  height: 20px;
+}
 
 /* The links list. Mobile: takes full width below the brand;
    desktop: inline between brand and CTA. */
@@ -557,13 +619,17 @@ body > nav > ul {
   padding-top: 0.25rem;
   border-top: 1px solid var(--line-soft);
 }
-body > nav > ul > li { display: inline-flex; }
+body > nav > ul > li {
+  display: inline-flex;
+}
 body > nav > ul a {
   font-size: 0.75rem;
   color: var(--ink-soft);
   letter-spacing: var(--track-mono);
 }
-body > nav > ul a:hover { color: var(--ink); }
+body > nav > ul a:hover {
+  color: var(--ink);
+}
 
 @media (min-width: 900px) {
   body > nav > ul {
@@ -575,7 +641,6 @@ body > nav > ul a:hover { color: var(--ink); }
     gap: 1.4rem;
   }
 }
-
 
 /* ─── 13. HERO (body > header) ──────────────────────────────
    The first <header> child of <body> is the page hero. Mobile:
@@ -605,16 +670,19 @@ body > header {
   body > header > h1,
   body > header > p,
   body > header > button,
-  body > header > a { grid-column: 1; }
+  body > header > a {
+    grid-column: 1;
+  }
   body > header > aside {
     grid-column: 2;
-    grid-row: 1 / span 5;          /* span full height of left column */
+    grid-row: 3 / span 2;
   }
 }
 
 /* CTA row spacing inside the hero. */
-body > header > button { margin-top: 1.25rem; }
-
+body > header > button {
+  margin-top: 1.25rem;
+}
 
 /* ─── 14. ASIDE (hero meta panel) ───────────────────────────
    The right-rail box with the small caption and the dl. */
@@ -623,11 +691,12 @@ aside {
   padding-top: 1rem;
 }
 
-
 /* ─── 15. MAIN + SECTIONS ───────────────────────────────────
    <main> is the canvas for the body. Each <section> is one
    topic with its own header + content (ul, ol, table or details). */
-main { display: block; }
+main {
+  display: block;
+}
 
 main > section {
   max-width: var(--maxw);
@@ -637,8 +706,9 @@ main > section {
 /* Adjacent sections share a divider implicitly — the section
    above ends in white space, the section below begins with a
    header that has its own bottom rule. */
-main > section + section { padding-top: 0; }
-
+main > section + section {
+  padding-top: 0;
+}
 
 /* ─── 16. SECTION HEADERS (section > header) ────────────────
    Two-column composition on desktop: H2 on the left, lede on
@@ -649,26 +719,30 @@ section > header {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.5rem 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 1.75rem;
 }
-section > header > small { grid-column: 1 / -1; }
-section > header > p { margin-top: 0.25rem; }
+section > header > small {
+  grid-column: 1 / -1;
+}
+section > header > p {
+  margin-top: 0.25rem;
+}
 
 @media (min-width: 820px) {
   section > header {
     grid-template-columns: 1.3fr 1fr;
     gap: 0.75rem 3rem;
-    align-items: end;
-    padding-bottom: 2.25rem;
-    margin-bottom: 2.5rem;
   }
-  section > header > small { grid-column: 1 / -1; }
-  section > header > h2 { grid-column: 1; }
-  section > header > p { grid-column: 2; margin-top: 0; }
+  section > header > small {
+    grid-column: 1 / -1;
+  }
+  section > header > h2 {
+    grid-column: 1;
+  }
+  section > header > p {
+    grid-column: 2;
+    margin-top: 0;
+  }
 }
-
 
 /* ─── 17. CARD GRID (section > ul) ──────────────────────────
    The default content grid for a section. Each <li> is a card
@@ -685,10 +759,20 @@ section > ul > li {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  transition: background 0.25s ease, padding 0.25s ease;
+  transition:
+    background 0.25s ease,
+    padding 0.25s ease;
 }
-section > ul > li:hover { background: var(--paper); padding-left: 0.75rem; padding-right: 0.75rem; margin-left: -0.75rem; margin-right: -0.75rem; }
-section > ul > li:hover > span:first-child { color: var(--gold); }
+section > ul > li:hover {
+  background: var(--paper);
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+section > ul > li:hover > span:first-child {
+  color: var(--gold);
+}
 
 /* The first <span> inside a card = its number/marker label. */
 section > ul > li > span:first-child {
@@ -710,7 +794,10 @@ section > ul > li > a {
   padding-bottom: 2px;
   align-self: flex-start;
 }
-section > ul > li > a:hover { border-bottom-color: var(--gold); color: var(--gold); }
+section > ul > li > a:hover {
+  border-bottom-color: var(--gold);
+  color: var(--gold);
+}
 
 /* Two columns from ~640px, three from ~960px. The hairlines
    become inter-cell rules on the multi-column layouts. */
@@ -722,16 +809,29 @@ section > ul > li > a:hover { border-bottom-color: var(--gold); color: var(--gol
     padding: 1.5rem;
     border-right: 1px solid var(--line);
   }
-  section > ul > li:nth-child(2n) { border-right: 0; }
-  section > ul > li:hover { padding-left: 1.5rem; padding-right: 1.5rem; margin: 0; }
+  section > ul > li:nth-child(2n) {
+    border-right: 0;
+  }
+  section > ul > li:hover {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin: 0;
+  }
 }
 @media (min-width: 960px) {
-  section > ul { grid-template-columns: repeat(3, 1fr); }
-  section > ul > li { border-right: 1px solid var(--line); }
-  section > ul > li:nth-child(2n) { border-right: 1px solid var(--line); }
-  section > ul > li:nth-child(3n) { border-right: 0; }
+  section > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  section > ul > li {
+    border-right: 1px solid var(--line);
+  }
+  section > ul > li:nth-child(2n) {
+    border-right: 1px solid var(--line);
+  }
+  section > ul > li:nth-child(3n) {
+    border-right: 0;
+  }
 }
-
 
 /* ─── 18. PROCESS STEPS (section > ol) ──────────────────────
    Numbered process. CSS counters render "01", "02", "03" in
@@ -758,8 +858,12 @@ section > ol > li::before {
   line-height: 1;
   transition: color 0.25s ease;
 }
-section > ol > li:hover { background: var(--paper); }
-section > ol > li:hover::before { color: var(--gold); }
+section > ol > li:hover {
+  background: var(--paper);
+}
+section > ol > li:hover::before {
+  color: var(--gold);
+}
 
 @media (min-width: 820px) {
   section > ol > li {
@@ -768,11 +872,16 @@ section > ol > li:hover::before { color: var(--gold); }
     padding: 1.5rem 1rem;
     align-items: start;
   }
-  section > ol > li::before { grid-column: 1; }
-  section > ol > li h3 { grid-column: 2; }
-  section > ol > li p { grid-column: 3; }
+  section > ol > li::before {
+    grid-column: 1;
+  }
+  section > ol > li h3 {
+    grid-column: 2;
+  }
+  section > ol > li p {
+    grid-column: 3;
+  }
 }
-
 
 /* ─── 19. STATS / FIGURES (article elements, optional) ──────
    If you use <article> children in a section, they render as a
@@ -795,7 +904,9 @@ article {
   gap: 0.5rem;
   transition: background 0.25s ease;
 }
-article:hover { background: var(--paper); }
+article:hover {
+  background: var(--paper);
+}
 article > strong {
   font-family: var(--font);
   font-size: clamp(2.2rem, 5vw, 3.4rem);
@@ -803,21 +914,27 @@ article > strong {
   letter-spacing: var(--track-tight);
   color: var(--ink);
   font-weight: 500;
+  display: inline-block;
 }
 article > strong em {
   font-style: italic;
   color: var(--gold);
   font-weight: 500;
 }
-article > p { max-width: 30ch; }
-article > small { margin-bottom: 0; }
+article > p {
+  max-width: 30ch;
+  display: inline;
+}
+article > small {
+  margin-bottom: 0;
+  display: block;
+}
 
 /* Multiple <article>s in a row → flex grid (works inside any
    parent that uses display:grid on its articles). */
 section:has(article) {
   /* nothing — handled by an internal wrapper if needed */
 }
-
 
 /* ─── 20. FOOTER ────────────────────────────────────────────
    Multi-column footer. Each link group is a <section> with an
@@ -828,7 +945,9 @@ body > footer {
   border-top: 1px solid var(--line);
   padding: clamp(2rem, 5vw, 3.5rem) var(--gutter) 1.5rem;
 }
-body > footer > * + * { margin-top: 0; }
+body > footer > * + * {
+  margin-top: 0;
+}
 
 body > footer {
   display: grid;
@@ -839,15 +958,22 @@ body > footer {
 }
 
 /* The first <section> is the brand block: logo + tagline. */
-body > footer > section:first-of-type { grid-column: 1 / -1; }
-body > footer > section:first-of-type img { width: 22px; height: 22px; }
+body > footer > section:first-of-type {
+  grid-column: 1 / -1;
+}
+body > footer > section:first-of-type img {
+  width: 22px;
+  height: 22px;
+}
 body > footer > section:first-of-type p {
   margin-top: 0.75rem;
   font-size: 0.82rem;
   max-width: 34ch;
 }
 
-body > footer h5 { margin-bottom: 0.85rem; }
+body > footer h5 {
+  margin-bottom: 0.85rem;
+}
 body > footer ul {
   display: flex;
   flex-direction: column;
@@ -858,7 +984,9 @@ body > footer ul a {
   color: var(--ink-soft);
   padding: 0.15rem 0;
 }
-body > footer ul a:hover { color: var(--ink); }
+body > footer ul a:hover {
+  color: var(--ink);
+}
 
 /* Bottom strip — small text, copyright. */
 body > footer > small {
@@ -875,16 +1003,19 @@ body > footer > small {
 }
 
 @media (min-width: 640px) {
-  body > footer { grid-template-columns: 1fr 1fr; }
+  body > footer {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (min-width: 900px) {
   body > footer {
     grid-template-columns: 1.5fr repeat(4, 1fr);
     gap: 2.5rem;
   }
-  body > footer > section:first-of-type { grid-column: 1; }
+  body > footer > section:first-of-type {
+    grid-column: 1;
+  }
 }
-
 
 /* ─── 21. FOCUS STATES (a11y) ───────────────────────────────
    Keyboard users get a clear gold outline on interactive items.
@@ -896,7 +1027,6 @@ summary:focus-visible {
   outline-offset: 3px;
 }
 
-
 /* ─── 22. SELECTION ─────────────────────────────────────────
    Gold highlight when text is selected — small detail, big polish. */
 ::selection {
@@ -904,17 +1034,17 @@ summary:focus-visible {
   color: var(--bg);
 }
 
-
 /* ─── 23. REDUCED MOTION ────────────────────────────────────
    Honour the system preference. Strip all transitions/animations. */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     transition: none !important;
     animation: none !important;
     scroll-behavior: auto !important;
   }
 }
-
 
 /* ─── 24. CTA PAIR (a <nav> with two <a> children) ─────────
    Two anchors wrapped in a <nav>. The first is the desktop-primary
@@ -947,11 +1077,17 @@ article > nav > a {
   border: 1px solid var(--line);
   color: var(--ink);
   background: transparent;
-  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
 }
 section > nav > a:active,
 header > nav > a:active,
-article > nav > a:active { transform: translateY(1px); }
+article > nav > a:active {
+  transform: translateY(1px);
+}
 
 /* Desktop primary = first anchor */
 section > nav > a:first-child,
@@ -978,7 +1114,9 @@ article > nav > a:last-child:hover {
 }
 
 /* Hero CTA pair sits in column 1 of the hero grid (>= 860px). */
-body > header > nav { grid-column: 1; }
+body > header > nav {
+  grid-column: 1;
+}
 
 /* Mobile (<768px): flip the pair. The SECOND anchor visually becomes
    primary (filled); the FIRST anchor becomes the ghost. */
