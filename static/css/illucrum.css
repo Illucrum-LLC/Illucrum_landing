@@ -1002,6 +1002,11 @@ body > footer > small {
   letter-spacing: var(--track-mono);
 }
 
+body > footer > section > ul > li {
+  padding: 0;
+  border-bottom: 0;
+}
+
 @media (min-width: 640px) {
   body > footer {
     grid-template-columns: 1fr 1fr;
