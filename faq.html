@@ -11,6 +11,15 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
 
 <link rel="stylesheet" href="/static/css/illucrum.css">
+<link rel="stylesheet" href="/static/css/consent.css">
+
+<!-- Multi-locale hreflang. Render on every page; per-page 00-head.html may
+     add page-specific canonical and OG tags. -->
+<link rel="alternate" hreflang="en-us" href="https://illucrum.com">
+<link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu">
+<link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl">
+<link rel="alternate" hreflang="es-es" href="https://illucrum.com/es">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com">
 
 <script type="application/ld+json">
 {
@@ -18,6 +27,7 @@
   "@type": "Organization",
   "@id": "https://illucrum.com/#organization",
   "name": "Illucrum",
+  "legalName": "Illucrum LLC",
   "url": "https://illucrum.com/",
   "logo": "https://illucrum.com/static/img/logo.png",
   "email": "szymon.kokot@illucrum.com",
@@ -44,17 +54,49 @@
   ]
 }
 </script>
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MRLGLHC5');</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
 <title>SEO audit FAQs: what to expect, what it costs, what's included</title>
 <meta name="description" content="Common questions about SEO audits, costs, timelines, what's covered, and what to expect. SaaS, e-commerce, and general website audits.">
 
-<link rel="canonical" href="https://illucrum.com/faq/">
-<link rel="alternate" hreflang="en-us" href="https://illucrum.com/faq/">
-<link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/faq/">
-<link rel="alternate" hreflang="x-default" href="https://illucrum.com/faq/">
+<link rel="canonical" href="https://illucrum.com/faq">
+<link rel="alternate" hreflang="en-us" href="https://illucrum.com/faq">
+<link rel="alternate" hreflang="{{HREFLANG_ALT}}" href="{{HREFLANG_ALT_URL}}/faq">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com/faq">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
-<meta property="og:url" content="https://illucrum.com/faq/">
+<meta property="og:url" content="https://illucrum.com/faq">
 <meta property="og:site_name" content="Illucrum">
 <meta property="og:title" content="SEO audit FAQs">
 <meta property="og:description" content="Common questions about SEO audits answered in plain language. SaaS, e-commerce, general website audits.">
@@ -126,16 +168,16 @@
 </head>
 <body>
 <nav>
-  <a href="/">
+  <a href="">
     <img src="/static/img/logo.png" alt="">
     <span>Illucrum</span>
   </a>
   <ul>
-    <li><a href="/audits/">Audits</a></li>
-    <li><a href="/pricing/">Pricing</a></li>
-    <li><a href="/process/">Process</a></li>
-    <li><a href="/faq/">FAQ</a></li>
-    <li><a href="/about/">About</a></li>
+    <li><a href="/audits">Audits</a></li>
+    <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/process">Process</a></li>
+    <li><a href="/faq">FAQ</a></li>
+    <li><a href="/about">About</a></li>
     <li><a href="https://wa.me/15122035993" rel="noopener">WhatsApp</a></li>
   </ul>
 </nav>
@@ -145,8 +187,8 @@
   <p>The questions below cover what an SEO audit is, what it costs, what's included, and how the three Illucrum audits differ. If yours isn't answered here, send a WhatsApp or email and we'll add it.</p>
 
   <nav>
-    <a href="mailto:szymon.kokot@illucrum.com?subject=Question%20after%20reading%20the%20FAQ&amp;body=Hi%20Szymon%2C%0A%0AI%20read%20the%20FAQ%20and%20have%20a%20follow-up%20question.%0A%0AMy%20question%3A%0A%0ASome%20context%20about%20my%20site%3A%0A-%20URL%3A%0A-%20Type%20of%20business%3A%0A%0AThanks%2C">Email Szymon</a>
-    <a href="https://wa.me/15122035993?text=Hi%20Szymon%2C%20I%20read%20your%20FAQ%20and%20have%20a%20follow-up%20question." rel="noopener">WhatsApp Szymon</a>
+    <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20audit%20inquiry&amp;body=Hi%20Szymon%2C%0A%0AI%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits.%0A%0AThanks%2C">Email Szymon</a>
+    <a href="https://wa.me/15122035993?text=Hi%20Szymon%2C%20I%20saw%20the%20Illucrum%20site%20and%20I%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits." rel="noopener">WhatsApp Szymon</a>
   </nav>
 
   <aside>
@@ -206,7 +248,7 @@
 
   <details open>
     <summary>How much does an SEO audit cost?</summary>
-    <p>An Illucrum SEO audit costs between $297 and $597 depending on the audit type and tier. The Website SEO audit starts at $297 (Basic) and runs to $597 (Full). The SaaS and E-commerce audits start at $297 (Basic) and run to $597 (Full). See the full <a href="/pricing/">pricing page</a> for what each tier includes.</p>
+    <p>An Illucrum SEO audit costs between $297 and $597 depending on the audit type and tier. The Website SEO audit starts at $297 (Basic) and runs to $597 (Full). The SaaS and E-commerce audits start at $297 (Basic) and run to $597 (Full). See the full <a href="/pricing">pricing page</a> for what each tier includes.</p>
   </details>
 
   <details open>
@@ -216,7 +258,7 @@
 
   <details open>
     <summary>What's included in an SEO audit?</summary>
-    <p>Each Illucrum audit includes a written PDF report, a scoring spreadsheet with all 46 checks, an action plan formatted for your project management tool, implementation notes for the top findings, and an optional 30-minute walkthrough call. See <a href="/process/">what's delivered</a> for the full list.</p>
+    <p>Each Illucrum audit includes a written PDF report, a scoring spreadsheet with all 46 checks, an action plan formatted for your project management tool, implementation notes for the top findings, and an optional 30-minute walkthrough call. See <a href="/process">what's delivered</a> for the full list.</p>
   </details>
 
   <details open>
@@ -236,17 +278,17 @@
 
   <details open>
     <summary>What's the difference between an SEO audit and an SEO tool subscription?</summary>
-    <p>A tool gives you data. An audit interprets the data, prioritises what matters, and tells you what to ignore. Most teams have access to tools and still don't know what to do next. That's the gap an audit fills. See the full <a href="/compare/seo-audit-vs-seo-tool/">audit vs tool comparison</a> for when each makes sense.</p>
+    <p>A tool gives you data. An audit interprets the data, prioritises what matters, and tells you what to ignore. Most teams have access to tools and still don't know what to do next. That's the gap an audit fills. See the full <a href="/compare/seo-audit-vs-seo-tool">audit vs tool comparison</a> for when each makes sense.</p>
   </details>
 
   <details open>
     <summary>What's the difference between an SEO audit and an SEO retainer?</summary>
-    <p>The audit is a one-off diagnosis: you see what's wrong, you decide what to fix, you implement (or hire help) accordingly. A retainer is ongoing monthly work on an open scope. We recommend audit-first because retainers without diagnosis tend to produce work that looks productive but addresses symptoms instead of causes. See <a href="/compare/seo-audit-vs-seo-retainer/">audit vs retainer</a> for the full explanation.</p>
+    <p>The audit is a one-off diagnosis: you see what's wrong, you decide what to fix, you implement (or hire help) accordingly. A retainer is ongoing monthly work on an open scope. We recommend audit-first because retainers without diagnosis tend to produce work that looks productive but addresses symptoms instead of causes. See <a href="/compare/seo-audit-vs-seo-retainer">audit vs retainer</a> for the full explanation.</p>
   </details>
 
   <details open>
     <summary>Should I just DIY my SEO audit?</summary>
-    <p>For a small site in a low-competition niche, you can. For a site you'd describe as commercial or competitive, hiring an experienced auditor will catch issues you won't, faster than you can. The decision is mostly about your time vs the audit cost. See <a href="/compare/seo-audit-vs-diy/">audit vs DIY</a> for the breakdown.</p>
+    <p>For a small site in a low-competition niche, you can. For a site you'd describe as commercial or competitive, hiring an experienced auditor will catch issues you won't, faster than you can. The decision is mostly about your time vs the audit cost. See <a href="/compare/seo-audit-vs-diy">audit vs DIY</a> for the breakdown.</p>
   </details>
 
   <details open>
@@ -316,7 +358,7 @@
     <p>Realistically, 6 to 12 months for meaningful pipeline impact. Technical fixes and on-page optimisation can show movement within 3 months, but ranking for competitive SaaS terms and building the topical authority that converts requires 12 to 18 months of consistent investment. Anyone promising faster is selling speed at the expense of durability.</p>
   </details>
 
-  <p>See the <a href="/audits/saas-seo-audit/">SaaS SEO audit</a>.</p>
+  <p>See the <a href="/audits/saas-seo-audit">SaaS SEO audit</a>.</p>
 </section>
 <section id="ecommerce">
   <header>
@@ -385,7 +427,7 @@
     <p>Your own site, if growth and margins matter. Marketplace SEO is closed-loop: you're optimising for the platform's rankings, paying their take rate, and never building a brand you own. Your own site lets you compound brand authority, retarget visitors, and capture customer data. The right strategy for most stores is to be on marketplaces for reach while building your own organic channel for durability.</p>
   </details>
 
-  <p>See the <a href="/audits/ecommerce-seo-audit/">e-commerce SEO audit</a>.</p>
+  <p>See the <a href="/audits/ecommerce-seo-audit">e-commerce SEO audit</a>.</p>
 </section>
 <section id="generic">
   <header>
@@ -419,7 +461,7 @@
     <p>The Website audit Basic tier is a good fit for new sites. It catches the technical foundation issues that will compound if left unfixed, without the deeper analysis that newer sites don't yet need data for. You can always upgrade to Full once the site is producing data.</p>
   </details>
 
-  <p>See the <a href="/audits/seo-audit/">Website SEO audit</a>.</p>
+  <p>See the <a href="/audits/seo-audit">Website SEO audit</a>.</p>
 </section>
 <section id="cta">
   <header>
@@ -429,8 +471,8 @@
   </header>
 
   <nav>
-    <a href="mailto:szymon.kokot@illucrum.com?subject=Question%20after%20reading%20the%20FAQ&amp;body=Hi%20Szymon%2C%0A%0AI%20read%20the%20FAQ%20and%20have%20a%20follow-up%20question.%0A%0AMy%20question%3A%0A%0ASome%20context%20about%20my%20site%3A%0A-%20URL%3A%0A-%20Type%20of%20business%3A%0A%0AThanks%2C">Email Szymon</a>
-    <a href="https://wa.me/15122035993?text=Hi%20Szymon%2C%20I%20read%20your%20FAQ%20and%20have%20a%20follow-up%20question." rel="noopener">WhatsApp Szymon</a>
+    <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20audit%20inquiry&amp;body=Hi%20Szymon%2C%0A%0AI%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits.%0A%0AThanks%2C">Email Szymon</a>
+    <a href="https://wa.me/15122035993?text=Hi%20Szymon%2C%20I%20saw%20the%20Illucrum%20site%20and%20I%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits." rel="noopener">WhatsApp Szymon</a>
   </nav>
 </section>
 
@@ -445,34 +487,34 @@
   <section>
     <h5>Audits</h5>
     <ul>
-      <li><a href="/audits/saas-seo-audit/">SaaS SEO audit</a></li>
-      <li><a href="/audits/ecommerce-seo-audit/">E-commerce SEO audit</a></li>
-      <li><a href="/audits/seo-audit/">Website SEO audit</a></li>
-      <li><a href="/which-audit/">Which audit?</a></li>
+      <li><a href="/audits/saas-seo-audit">SaaS SEO audit</a></li>
+      <li><a href="/audits/ecommerce-seo-audit">E-commerce SEO audit</a></li>
+      <li><a href="/audits/seo-audit">Website SEO audit</a></li>
+      <li><a href="/which-audit">Which audit?</a></li>
     </ul>
   </section>
 
   <section>
     <h5>Compare</h5>
     <ul>
-      <li><a href="/compare/saas-vs-ecommerce-seo-audit/">SaaS vs E-commerce</a></li>
-      <li><a href="/compare/saas-vs-generic-seo-audit/">SaaS vs Website</a></li>
-      <li><a href="/compare/ecommerce-vs-generic-seo-audit/">E-commerce vs Website</a></li>
-      <li><a href="/compare/basic-vs-full-seo-audit/">Basic vs Full</a></li>
-      <li><a href="/compare/seo-audit-vs-seo-tool/">Audit vs SEO tool</a></li>
-      <li><a href="/compare/seo-audit-vs-seo-retainer/">Audit vs retainer</a></li>
-      <li><a href="/compare/seo-audit-vs-diy/">Audit vs DIY</a></li>
+      <li><a href="/compare/saas-vs-ecommerce-seo-audit">SaaS vs E-commerce</a></li>
+      <li><a href="/compare/saas-vs-generic-seo-audit">SaaS vs Website</a></li>
+      <li><a href="/compare/ecommerce-vs-generic-seo-audit">E-commerce vs Website</a></li>
+      <li><a href="/compare/basic-vs-full-seo-audit">Basic vs Full</a></li>
+      <li><a href="/compare/seo-audit-vs-seo-tool">Audit vs SEO tool</a></li>
+      <li><a href="/compare/seo-audit-vs-seo-retainer">Audit vs retainer</a></li>
+      <li><a href="/compare/seo-audit-vs-diy">Audit vs DIY</a></li>
     </ul>
   </section>
 
   <section>
     <h5>Company</h5>
     <ul>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/process/">Process</a></li>
-      <li><a href="/pricing/">Pricing</a></li>
-      <li><a href="/faq/">FAQ</a></li>
-      <li><a href="/seo-facts/">SEO facts</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/process">Process</a></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/seo-facts">SEO facts</a></li>
     </ul>
   </section>
 
@@ -482,18 +524,62 @@
       <li><a href="mailto:szymon.kokot@illucrum.com">Email</a></li>
       <li><a href="https://wa.me/15122035993" rel="noopener">WhatsApp</a></li>
       <li><a href="https://t.me/m/w209xo-FZGJk" rel="noopener">Telegram</a></li>
-      <li><a href="/legal/terms/">Terms</a></li>
-      <li><a href="/legal/privacy/">Privacy</a></li>
-      <li><a href="/legal/disclaimer/">Disclaimer</a></li>
-      <li><a href="/legal/accessibility/">Accessibility</a></li>
-      <li><a href="https://illucrum.com/eu/">View EU site</a></li>
+      <li><a href="/legal/terms">Terms</a></li>
+      <li><a href="/legal/privacy">Privacy</a></li>
+      <li><a href="/legal/cookies">Cookies</a></li>
+      <li><a href="/legal/disclaimer">Disclaimer</a></li>
+      <li><a href="/legal/accessibility">Accessibility</a></li>
+      <li><a href="#" data-consent-open>Manage cookies</a></li>
     </ul>
   </section>
 
   <small>
-    <span>&copy; Illucrum 2026 &middot; Austin, Texas</span>
-    <span>+1 (512) 203-5993</span>
+    <span>&copy; Illucrum 2026 &middot; +1 (512) 203-5993</span>
+    <span>
+      <a href="https://illucrum.com" hreflang="en-us">EN&nbsp;US</a> &middot;
+      <a href="https://illucrum.com/eu" hreflang="en-gb">EN&nbsp;UK</a> &middot;
+      <a href="https://illucrum.com/pl" hreflang="pl-pl">PL</a> &middot;
+      <a href="https://illucrum.com/es" hreflang="es-es">ES</a>
+    </span>
   </small>
 </footer>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRLGLHC5" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="We use cookies" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">We use cookies</p>
+    <p class="ic-consent__body">We use cookies to make the site work, to understand how it is used, and (only if you agree) to show relevant ads on Google and Reddit. You can change your choice at any time from the footer. <a href="/legal/cookies/">Cookie policy</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferences</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Strictly necessary</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
+        <p class="ic-consent__pref-desc">Required for the site to function. Cannot be turned off.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analytics</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
+        <p class="ic-consent__pref-desc">Helps us understand how visitors use the site (Google Analytics 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Advertising</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
+        <p class="ic-consent__pref-desc">Lets us measure and personalise Google Ads and Reddit Ads campaigns.</p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

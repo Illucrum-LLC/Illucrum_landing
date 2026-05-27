@@ -14,7 +14,7 @@
 
      <body>
        <nav>                              top sticky nav
-         <a href="/"><img>…</a>           logo (first <a> in nav)
+         <a href=""><img>…</a>           logo (first <a> in nav)
          <ul><li><a>…</a></li>…</ul>      nav links
          <button>Get in touch</button>    primary nav CTA
        </nav>
@@ -661,7 +661,7 @@ body > header {
   body > header {
     grid-template-columns: 1.5fr 1fr;
     gap: clamp(2rem, 5vw, 4rem);
-    align-items: end;
+    align-items: start;
   }
   /* Eyebrow + h1 + lede + CTAs span the left column;
      <aside> takes the right. Source order handles this naturally

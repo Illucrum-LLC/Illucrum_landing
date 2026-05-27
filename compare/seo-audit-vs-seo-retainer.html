@@ -11,6 +11,15 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
 
 <link rel="stylesheet" href="/static/css/illucrum.css">
+<link rel="stylesheet" href="/static/css/consent.css">
+
+<!-- Multi-locale hreflang. Render on every page; per-page 00-head.html may
+     add page-specific canonical and OG tags. -->
+<link rel="alternate" hreflang="en-us" href="https://illucrum.com">
+<link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu">
+<link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl">
+<link rel="alternate" hreflang="es-es" href="https://illucrum.com/es">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com">
 
 <script type="application/ld+json">
 {
@@ -18,6 +27,7 @@
   "@type": "Organization",
   "@id": "https://illucrum.com/#organization",
   "name": "Illucrum",
+  "legalName": "Illucrum LLC",
   "url": "https://illucrum.com/",
   "logo": "https://illucrum.com/static/img/logo.png",
   "email": "szymon.kokot@illucrum.com",
@@ -44,17 +54,49 @@
   ]
 }
 </script>
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MRLGLHC5');</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
 <title>SEO Audit vs SEO Retainer | Where to Start</title>
 <meta name="description" content="Compare a one-off SEO audit against a monthly SEO retainer. See which starts cheaper, which compounds, and which to pick for your stage.">
 
-<link rel="canonical" href="https://illucrum.com/compare/seo-audit-vs-seo-retainer/">
-<link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/seo-audit-vs-seo-retainer/">
-<link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/compare/seo-audit-vs-seo-retainer/">
-<link rel="alternate" hreflang="x-default" href="https://illucrum.com/compare/seo-audit-vs-seo-retainer/">
+<link rel="canonical" href="https://illucrum.com/compare/seo-audit-vs-seo-retainer">
+<link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/seo-audit-vs-seo-retainer">
+<link rel="alternate" hreflang="{{HREFLANG_ALT}}" href="{{HREFLANG_ALT_URL}}/compare/seo-audit-vs-seo-retainer">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com/compare/seo-audit-vs-seo-retainer">
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
-<meta property="og:url" content="https://illucrum.com/compare/seo-audit-vs-seo-retainer/">
+<meta property="og:url" content="https://illucrum.com/compare/seo-audit-vs-seo-retainer">
 <meta property="og:site_name" content="Illucrum">
 <meta property="og:title" content="SEO audit vs SEO retainer: where to start">
 <meta property="og:description" content="Compare a one-off SEO audit against a monthly SEO retainer. See which starts cheaper, which compounds, and which to pick for your stage.">
@@ -104,16 +146,16 @@
 </head>
 <body>
 <nav>
-  <a href="/">
+  <a href="">
     <img src="/static/img/logo.png" alt="">
     <span>Illucrum</span>
   </a>
   <ul>
-    <li><a href="/audits/">Audits</a></li>
-    <li><a href="/pricing/">Pricing</a></li>
-    <li><a href="/process/">Process</a></li>
-    <li><a href="/faq/">FAQ</a></li>
-    <li><a href="/about/">About</a></li>
+    <li><a href="/audits">Audits</a></li>
+    <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/process">Process</a></li>
+    <li><a href="/faq">FAQ</a></li>
+    <li><a href="/about">About</a></li>
     <li><a href="https://wa.me/15122035993" rel="noopener">WhatsApp</a></li>
   </ul>
 </nav>
@@ -123,8 +165,8 @@
   <p>A one-off audit is a diagnosis; a retainer is ongoing treatment. Most companies need the diagnosis first. Here is when each one is the right call, and why we recommend audit-first for almost everyone.</p>
 
   <nav>
-    <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20enquiry%20%E2%80%93%20audit%20or%20retainer&amp;body=Hi%20Szymon%2C%0A%0AI%27m%20deciding%20between%20a%20one-off%20SEO%20audit%20and%20a%20monthly%20retainer.%0A%0AOur%20site%3A%0AStage%3A%0AWhat%20I%20want%20fixed%20or%20achieved%3A%0A%0AThanks%2C">Email Szymon</a>
-    <a href="https://wa.me/15122035993?text=Hi%20Szymon%2C%20deciding%20between%20an%20SEO%20audit%20and%20a%20retainer.%20Our%20site%20is%20%5Burl%5D." rel="noopener">WhatsApp Szymon</a>
+    <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20audit%20inquiry&amp;body=Hi%20Szymon%2C%0A%0AI%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits.%0A%0AThanks%2C">Email Szymon</a>
+    <a href="https://wa.me/15122035993?text=Hi%20Szymon%2C%20I%20saw%20the%20Illucrum%20site%20and%20I%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits." rel="noopener">WhatsApp Szymon</a>
   </nav>
 </header>
 
@@ -286,7 +328,7 @@
     <p>That is a fixed-scope project, not a retainer. Scope it separately; the audit can be the brief.</p>
   </details>
 
-  <p>See the <a href="/pricing/">pricing page</a> for audit pricing; retainer pricing is scoped per engagement.</p>
+  <p>See the <a href="/pricing">pricing page</a> for audit pricing; retainer pricing is scoped per engagement.</p>
 </section>
 <section id="cta">
   <header>
@@ -296,11 +338,11 @@
   </header>
 
   <nav>
-    <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20enquiry%20%E2%80%93%20audit%20or%20retainer&amp;body=Hi%20Szymon%2C%0A%0AI%27m%20deciding%20between%20a%20one-off%20SEO%20audit%20and%20a%20monthly%20retainer.%0A%0AOur%20site%3A%0AStage%3A%0AWhat%20I%20want%20fixed%20or%20achieved%3A%0A%0AThanks%2C">Email Szymon</a>
-    <a href="https://wa.me/15122035993?text=Hi%20Szymon%2C%20deciding%20between%20an%20SEO%20audit%20and%20a%20retainer.%20Our%20site%20is%20%5Burl%5D." rel="noopener">WhatsApp Szymon</a>
+    <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20audit%20inquiry&amp;body=Hi%20Szymon%2C%0A%0AI%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits.%0A%0AThanks%2C">Email Szymon</a>
+    <a href="https://wa.me/15122035993?text=Hi%20Szymon%2C%20I%20saw%20the%20Illucrum%20site%20and%20I%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits." rel="noopener">WhatsApp Szymon</a>
   </nav>
 
-  <p><small>Still deciding? See <a href="/which-audit/">which SEO audit is right for you</a>.</small></p>
+  <p><small>Still deciding? See <a href="/which-audit">which SEO audit is right for you</a>.</small></p>
 </section>
 
 </main>
@@ -314,34 +356,34 @@
   <section>
     <h5>Audits</h5>
     <ul>
-      <li><a href="/audits/saas-seo-audit/">SaaS SEO audit</a></li>
-      <li><a href="/audits/ecommerce-seo-audit/">E-commerce SEO audit</a></li>
-      <li><a href="/audits/seo-audit/">Website SEO audit</a></li>
-      <li><a href="/which-audit/">Which audit?</a></li>
+      <li><a href="/audits/saas-seo-audit">SaaS SEO audit</a></li>
+      <li><a href="/audits/ecommerce-seo-audit">E-commerce SEO audit</a></li>
+      <li><a href="/audits/seo-audit">Website SEO audit</a></li>
+      <li><a href="/which-audit">Which audit?</a></li>
     </ul>
   </section>
 
   <section>
     <h5>Compare</h5>
     <ul>
-      <li><a href="/compare/saas-vs-ecommerce-seo-audit/">SaaS vs E-commerce</a></li>
-      <li><a href="/compare/saas-vs-generic-seo-audit/">SaaS vs Website</a></li>
-      <li><a href="/compare/ecommerce-vs-generic-seo-audit/">E-commerce vs Website</a></li>
-      <li><a href="/compare/basic-vs-full-seo-audit/">Basic vs Full</a></li>
-      <li><a href="/compare/seo-audit-vs-seo-tool/">Audit vs SEO tool</a></li>
-      <li><a href="/compare/seo-audit-vs-seo-retainer/">Audit vs retainer</a></li>
-      <li><a href="/compare/seo-audit-vs-diy/">Audit vs DIY</a></li>
+      <li><a href="/compare/saas-vs-ecommerce-seo-audit">SaaS vs E-commerce</a></li>
+      <li><a href="/compare/saas-vs-generic-seo-audit">SaaS vs Website</a></li>
+      <li><a href="/compare/ecommerce-vs-generic-seo-audit">E-commerce vs Website</a></li>
+      <li><a href="/compare/basic-vs-full-seo-audit">Basic vs Full</a></li>
+      <li><a href="/compare/seo-audit-vs-seo-tool">Audit vs SEO tool</a></li>
+      <li><a href="/compare/seo-audit-vs-seo-retainer">Audit vs retainer</a></li>
+      <li><a href="/compare/seo-audit-vs-diy">Audit vs DIY</a></li>
     </ul>
   </section>
 
   <section>
     <h5>Company</h5>
     <ul>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/process/">Process</a></li>
-      <li><a href="/pricing/">Pricing</a></li>
-      <li><a href="/faq/">FAQ</a></li>
-      <li><a href="/seo-facts/">SEO facts</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/process">Process</a></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/seo-facts">SEO facts</a></li>
     </ul>
   </section>
 
@@ -351,18 +393,62 @@
       <li><a href="mailto:szymon.kokot@illucrum.com">Email</a></li>
       <li><a href="https://wa.me/15122035993" rel="noopener">WhatsApp</a></li>
       <li><a href="https://t.me/m/w209xo-FZGJk" rel="noopener">Telegram</a></li>
-      <li><a href="/legal/terms/">Terms</a></li>
-      <li><a href="/legal/privacy/">Privacy</a></li>
-      <li><a href="/legal/disclaimer/">Disclaimer</a></li>
-      <li><a href="/legal/accessibility/">Accessibility</a></li>
-      <li><a href="https://illucrum.com/eu/">View EU site</a></li>
+      <li><a href="/legal/terms">Terms</a></li>
+      <li><a href="/legal/privacy">Privacy</a></li>
+      <li><a href="/legal/cookies">Cookies</a></li>
+      <li><a href="/legal/disclaimer">Disclaimer</a></li>
+      <li><a href="/legal/accessibility">Accessibility</a></li>
+      <li><a href="#" data-consent-open>Manage cookies</a></li>
     </ul>
   </section>
 
   <small>
-    <span>&copy; Illucrum 2026 &middot; Austin, Texas</span>
-    <span>+1 (512) 203-5993</span>
+    <span>&copy; Illucrum 2026 &middot; +1 (512) 203-5993</span>
+    <span>
+      <a href="https://illucrum.com" hreflang="en-us">EN&nbsp;US</a> &middot;
+      <a href="https://illucrum.com/eu" hreflang="en-gb">EN&nbsp;UK</a> &middot;
+      <a href="https://illucrum.com/pl" hreflang="pl-pl">PL</a> &middot;
+      <a href="https://illucrum.com/es" hreflang="es-es">ES</a>
+    </span>
   </small>
 </footer>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRLGLHC5" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="We use cookies" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">We use cookies</p>
+    <p class="ic-consent__body">We use cookies to make the site work, to understand how it is used, and (only if you agree) to show relevant ads on Google and Reddit. You can change your choice at any time from the footer. <a href="/legal/cookies/">Cookie policy</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferences</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Strictly necessary</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
+        <p class="ic-consent__pref-desc">Required for the site to function. Cannot be turned off.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analytics</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
+        <p class="ic-consent__pref-desc">Helps us understand how visitors use the site (Google Analytics 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Advertising</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
+        <p class="ic-consent__pref-desc">Lets us measure and personalise Google Ads and Reddit Ads campaigns.</p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
