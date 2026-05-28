@@ -868,7 +868,7 @@ section > ol > li:hover::before {
 @media (min-width: 820px) {
   section > ol > li {
     grid-template-columns: 110px 1fr 1.4fr;
-    gap: 2.5rem;
+    gap: 2rem;
     padding: 1.5rem 1rem;
     align-items: start;
   }
@@ -1015,7 +1015,7 @@ body > footer > section > ul > li {
 @media (min-width: 900px) {
   body > footer {
     grid-template-columns: 1.5fr repeat(4, 1fr);
-    gap: 2.5rem;
+    gap: 2rem;
   }
   body > footer > section:first-of-type {
     grid-column: 1;
