@@ -1,136 +1,146 @@
 /* ============================================================
-   ILLUCRUM — Tag-only stylesheet
+   ILLUCRUM — Tag-only stylesheet (Minimalist / Figma reskin)
    ────────────────────────────────────────────────────────────
-   Aesthetic   : Mono / technical · editorial layout · hairline rules
-   Accent      : Gold / ochre (the only colour besides ink) — the
-                 logo is an image, so its green is unaffected.
-   Density     : Compact
+   Aesthetic   : Clean sans-serif · soft rounded cards · gentle
+                 shadows · centered section intros · alternating
+                 section backgrounds.
+   Accent      : Metallic gold #D4AF37 (the logo is an image, so
+                 its brand green is unaffected).
+   Density     : Comfortable.
    Approach    : Mobile-first, no JS. FAQs use <details>/<summary>.
-   ────────────────────────────────────────────────────────────
-   HTML CONVENTIONS THIS STYLESHEET ASSUMES
-   ──────────────────────────────────────────
-   Because no classes or ids are used, semantic structure carries
-   all the meaning. Build pages like this:
 
+   IMPORTANT: This is a drop-in replacement for the previous
+   tag-only stylesheet. It targets the SAME class-free semantic
+   structure, so no HTML changes are required. The visual
+   language is reskinned to match the supplied Figma design.
+   ────────────────────────────────────────────────────────────
+   HTML CONVENTIONS THIS STYLESHEET ASSUMES (unchanged)
+   ──────────────────────────────────────────
      <body>
        <nav>                              top sticky nav
-         <a href=""><img>…</a>           logo (first <a> in nav)
-         <ul><li><a>…</a></li>…</ul>      nav links
+         <a href=""><img>...</a>          logo (first <a> in nav)
+         <ul><li><a>...</a></li>...</ul>  nav links
          <button>Get in touch</button>    primary nav CTA
        </nav>
 
-       <header>                           HERO
-         <small>Index — 00 / Homepage</small>
-         <h1>Headline with <em>gold accent</em></h1>
-         <p>Lede paragraph…</p>
+       <header>                           HERO (centered)
+         <small>Index / Homepage</small>  eyebrow (renders gold)
+         <h1>Headline with <em>accent</em></h1>
+         <p>Lede paragraph...</p>
          <button>Primary CTA</button>     primary button
-         <a href="…">Secondary action</a> ghost button (a after button)
-         <aside>                          hero meta panel
-           <small>In the audit ↓</small>
+         <a href="...">Secondary action</a> ghost button (a after button)
+         <aside>                          optional hero meta card
+           <small>In the audit</small>
            <dl>
              <dt>Checkpoints</dt><dd>46</dd>
-             <dt>Delivery</dt><dd>3–8 days</dd>
+             <dt>Delivery</dt><dd>3-8 days</dd>
            </dl>
          </aside>
        </header>
 
        <main>
-         <section>
-           <header>                       SECTION HEAD
-             <small>01 / Services</small>
+         <section>                        SECTION (centered head)
+           <header>
+             <small>Services</small>      eyebrow (gold)
              <h2>Heading <em>with accent</em></h2>
-             <p>Section lede…</p>
+             <p>Section lede...</p>
            </header>
-           <ul>                           CARD GRID (services, why, etc.)
+           <ul>                           CARD GRID (rounded cards)
              <li>
-               <span>— 01</span>          card number
+               <span>01</span>            number badge
                <h3>Card title</h3>
                <p>Body copy</p>
-               <a href="…">Link out</a>
+               <a href="...">Learn more</a>
              </li>
-             …
+             ...
            </ul>
          </section>
 
-         <section>                        PROCESS STEPS (auto-numbered)
-           <header>…</header>
-           <ol>
-             <li>
-               <h3>Step heading</h3>
-               <p>Step description</p>
-             </li>
-             …
-           </ol>
+         <section>                        PROCESS STEPS (auto number)
+           <header>...</header>
+           <ol><li><h3>...</h3><p>...</p></li>...</ol>
          </section>
 
-         <section>                        FAQ
-           <header>…</header>
-           <details>
-             <summary>Question text</summary>
-             <p>Answer text…</p>
-           </details>
-           …
+         <section>                        FAQ (rounded cards)
+           <header>...</header>
+           <details><summary>Q</summary><p>A...</p></details>
+           ...
          </section>
 
          <section>                        PRICING TABLE
-           <header>…</header>
+           <header>...</header>
            <table>
-             <thead><tr><th>…</th><th>…</th></tr></thead>
-             <tbody><tr><td>…</td><td>…</td></tr>…</tbody>
-             <tfoot><tr><td><button>CTA</button></td>…</tr></tfoot>
+             <thead><tr><th>...</th>...</tr></thead>
+             <tbody><tr><td>...</td>...</tr>...</tbody>
+             <tfoot><tr><td><button>CTA</button></td>...</tr></tfoot>
            </table>
          </section>
        </main>
 
        <footer>
-         <section>                        each column = a <section>
-           <h5>Services</h5>
-           <ul><li><a>…</a></li>…</ul>
-         </section>
-         …
-         <small>© 2026 Illucrum</small>
+         <section><h5>Services</h5><ul><li><a>...</a></li>...</section>
+         ...
+         <small>(c) 2026 Illucrum</small>
        </footer>
      </body>
    ============================================================ */
 
 /* ─── 1. CUSTOM PROPERTIES ──────────────────────────────────
-   Centralised theming. Tweak these to retheme without touching
-   the rules below. */
+   Centralised theming. Retheme by editing only these tokens. */
 :root {
-  /* Type — JetBrains Mono is the only font.
-     Load via Google Fonts <link> in <head>. System mono is the
-     fallback if the web font fails. */
+  /* Type. Clean sans-serif to match the Figma minimalist look.
+     Inter is used first if present (add a Google Fonts <link> in
+     <head> if you want it), otherwise a crisp system sans stack.
+     To use the Dubai brand font instead, replace the first family
+     here and add its <link>. The old JetBrains Mono <link> can be
+     removed; it is no longer referenced. */
   --font:
-    "JetBrains Mono", ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas,
-    monospace;
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
 
-  /* Palette — warm paper light theme.
-     The only accent is gold; everything else is ink + paper. */
-  --bg: #fafaf7; /* page background */
-  --paper: #f4f3ee; /* hover-state surface */
-  --ink: #131311; /* primary text */
-  --ink-soft: #4a4a44; /* body copy */
-  --ink-mute: #8a8a82; /* eyebrows, captions */
-  --ink-faint: #b6b5ad; /* extra-faint detail */
-  --line: rgba(19, 19, 17, 0.1); /* hairline border */
-  --line-soft: rgba(19, 19, 17, 0.05); /* even fainter divider */
-  --gold: #9a6a18; /* the only accent */
-  --gold-tint: rgba(154, 106, 24, 0.1); /* subtle gold wash */
+  /* Palette — light, minimalist (matches the Figma frames). */
+  --bg: #ffffff;          /* primary section background */
+  --bg-alt: #f9fafb;      /* alternating section + footer background */
+  --surface: #ffffff;     /* card surface */
+  --ink: #252525;         /* primary text (foreground) */
+  --ink-soft: #717182;    /* muted body copy / captions */
+  --ink-mute: #9a9aa6;    /* fainter detail */
+  --ink-faint: #c7c7cf;   /* very faint (large step numerals) */
+  --line: rgba(0, 0, 0, 0.1);    /* borders */
+  --line-soft: rgba(0, 0, 0, 0.05);
 
-  /* Rhythm — compact density. */
-  --gutter: clamp(1rem, 4vw, 2rem);
-  --maxw: 1180px;
-  --section: clamp(2.75rem, 6vw, 4.5rem);
+  --gold: #d4af37;        /* the accent */
+  --gold-deep: #c19b2b;   /* accent hover / pressed */
+  --gold-tint: rgba(212, 175, 55, 0.1);  /* icon squares, badges */
+  --gold-wash: rgba(212, 175, 55, 0.05); /* recommended table column */
 
-  /* Type tracking. Mono benefits from slight loosening on caps. */
-  --track-tight: -0.02em;
-  --track-mono: 0.04em;
-  --track-loose: 0.1em;
+  /* Brand green is reserved for the logo image only; kept here
+     for reference if ever needed in CSS. */
+  --brand-green: #00c96b;
+
+  /* Radius — soft rounded surfaces (Figma rounded-lg / rounded-xl). */
+  --radius: 0.75rem;      /* cards */
+  --radius-sm: 0.5rem;    /* buttons, badges, FAQ cards, inputs */
+  --radius-pill: 999px;
+
+  /* Elevation. */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.09);
+
+  /* Rhythm — comfortable density. */
+  --gutter: clamp(1.25rem, 4vw, 1.5rem);
+  --maxw: 80rem;          /* max-w-7xl */
+  --maxw-mid: 72rem;      /* max-w-6xl (tables) */
+  --maxw-narrow: 48rem;   /* max-w-3xl (FAQ, lede measure) */
+  --section: clamp(3rem, 8vw, 5rem); /* py-20 */
+
+  /* Tracking. */
+  --track-tight: -0.01em;
+  --track-wide: 0.08em;
 }
 
-/* ─── 2. RESET ─────────────────────────────────────────────
-   Border-box on everything, strip default margins/paddings,
-   smooth scroll, prevent iOS text resizing. */
+/* ─── 2. RESET ─────────────────────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -143,22 +153,19 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* ─── 3. BODY (global canvas) ──────────────────────────────
-   Mono font system-wide. Tight base size for compact density.
-   Prevent horizontal scroll on overflowing decorative elements. */
+/* ─── 3. BODY (global canvas) ───────────────────────────────── */
 body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--ink);
-  font-size: 14.5px;
-  line-height: 1.55;
+  font-size: 16px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
-/* ─── 4. MEDIA ─────────────────────────────────────────────
-   Block-level so they sit on their own line; never overflow. */
+/* ─── 4. MEDIA ──────────────────────────────────────────────── */
 img,
 svg,
 video {
@@ -167,10 +174,7 @@ video {
   height: auto;
 }
 
-/* ─── 5. LINKS ──────────────────────────────────────────────
-   Default: inherit colour, no underline, gold on hover. Inline
-   links inside body copy get a hairline underline so they read
-   as links without being loud. */
+/* ─── 5. LINKS ──────────────────────────────────────────────── */
 a {
   color: inherit;
   text-decoration: none;
@@ -182,9 +186,8 @@ a:hover {
   color: var(--gold);
 }
 
-/* Hairline underline ONLY for inline anchors in body text and
-   table/list cells. Stand-alone anchors (in nav, footer cols,
-   button rows) stay clean. */
+/* Inline anchors in body copy / cells get a soft underline that
+   warms to gold on hover. Stand-alone anchors stay clean. */
 p a,
 li p a,
 dd a,
@@ -196,12 +199,11 @@ p a:hover,
 li p a:hover,
 dd a:hover,
 td a:hover {
+  color: var(--gold);
   border-bottom-color: var(--gold);
 }
 
-/* ─── 6. TYPOGRAPHY ─────────────────────────────────────────
-   All headings use the mono font. Weight, size and tracking
-   are tuned for a technical/editorial feel. */
+/* ─── 6. TYPOGRAPHY ─────────────────────────────────────────── */
 h1,
 h2,
 h3,
@@ -209,132 +211,126 @@ h4,
 h5,
 h6 {
   font-family: var(--font);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: var(--track-tight);
-  line-height: 1.08;
+  line-height: 1.2;
   color: var(--ink);
 }
 
-/* H1 — page hero headline. Big, but mobile keeps it readable. */
+/* H1 — hero headline (large, centered in the hero context). */
 h1 {
-  font-size: clamp(1.9rem, 7.5vw, 3.6rem);
-  line-height: 1;
-  max-width: 22ch;
+  font-size: clamp(2.1rem, 5.5vw, 3rem);
+  line-height: 1.1;
   margin-bottom: 1rem;
 }
 
 /* H2 — section heading. */
 h2 {
-  font-size: clamp(1.45rem, 4vw, 2.25rem);
-  line-height: 1.05;
-  max-width: 18ch;
+  font-size: clamp(1.7rem, 4vw, 2.25rem);
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
 }
 
 /* H3 — card title / step title. */
 h3 {
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-  line-height: 1.15;
+  font-size: 1.15rem;
+  line-height: 1.3;
 }
 
-/* H4 — smaller card title (principles, FAQ etc. if used). */
+/* H4 — smaller card title. */
 h4 {
   font-size: 1rem;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
-/* H5 — footer column label / micro-section label.
-   Uppercase mono caps, very small, muted ink. */
+/* H5 — footer column label. Normal case, dark ink, medium
+   (matches the Figma footer headings, not uppercase). */
 h5 {
-  font-size: 0.7rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: var(--track-loose);
-  color: var(--ink-mute);
-  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 1rem;
 }
 
 /* H6 — reserved for deep nesting (rare). */
 h6 {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: var(--track-mono);
-  color: var(--ink-mute);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
 }
 
-/* <em> inside H1/H2/H3 is the GOLD ACCENT — the one place
-   colour shows up in headings. Italic + gold + same weight. */
+/* <em> inside headings is the GOLD ACCENT. */
 h1 em,
 h2 em,
 h3 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--gold);
-  font-weight: 500;
 }
 
-/* Body paragraphs — readable measure, soft ink. */
+/* Body paragraphs. */
 p {
   color: var(--ink-soft);
-  font-size: 0.92rem;
-  line-height: 1.6;
-  max-width: 62ch;
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 65ch;
 }
 
-/* The lede paragraph (first <p> after H1 or H2) is slightly
-   larger and tighter to act as a deck/standfirst. */
+/* Lede paragraph (first <p> after H1 / H2) reads as a deck. */
 h1 + p,
 h2 + p {
-  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  font-size: clamp(1.05rem, 1.6vw, 1.15rem);
   color: var(--ink-soft);
-  max-width: 56ch;
+  max-width: 42rem;
   margin-top: 1rem;
 }
 
-/* <small> — used as the "eyebrow" label above headings, and
-   inside <aside> as a meta caption. Uppercase mono caps. */
+/* <small> — the eyebrow label above headings; renders GOLD,
+   uppercase and tracked, as in the Figma frames. (Footer
+   copyright and other contexts override this below.) */
 small {
   display: inline-block;
-  font-size: 0.68rem;
-  font-weight: 500;
+  font-size: 0.78rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: var(--track-loose);
-  color: var(--ink-mute);
-  margin-bottom: 1rem;
+  letter-spacing: var(--track-wide);
+  color: var(--gold);
+  margin-bottom: 0.75rem;
 }
 
-/* Inline emphasis (outside headings) — italic only, no colour. */
 em {
   font-style: italic;
 }
 
-/* Strong/bold stays subtle — same weight as headings. */
 strong {
-  font-weight: 500;
+  font-weight: 600;
   color: var(--ink);
 }
 
-/* <mark> reclaimed as a small gold tag/pill (e.g. "Recommended").
-   No classes needed: just wrap text in <mark>. */
+/* <mark> reclaimed as a small gold pill (e.g. "Recommended"). */
 mark {
   background: var(--gold);
-  color: var(--bg);
-  padding: 0.12rem 0.4rem;
-  font-size: 0.65rem;
-  font-weight: 500;
+  color: #fff;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.68rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: var(--track-mono);
+  letter-spacing: var(--track-wide);
 }
 
-/* Inline code-like / keyboard caps for technical bits. */
+/* Inline code / keyboard caps. */
 code,
 kbd {
-  font-family: var(--font);
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas,
+    monospace;
   font-size: 0.85em;
-  background: var(--paper);
-  padding: 0.05em 0.35em;
+  background: var(--bg-alt);
+  padding: 0.1em 0.4em;
   border: 1px solid var(--line);
+  border-radius: 0.35rem;
 }
 
-/* Horizontal rule — hairline divider, full width of its parent. */
+/* Horizontal rule. */
 hr {
   border: 0;
   height: 1px;
@@ -343,34 +339,33 @@ hr {
 }
 
 /* ─── 7. BUTTONS ────────────────────────────────────────────
-   <button>  = PRIMARY action (filled dark ink, gold on hover).
-   <a> placed directly after a <button> = SECONDARY action
-   (ghost/outline). This is how a two-CTA row is built without
-   classes. */
+   <button>  = PRIMARY (gold fill, rounded, normal case).
+   <a> right after a <button> = SECONDARY (ghost / outline). */
 button {
   font: inherit;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 0.7rem 1.1rem;
-  background: var(--ink);
-  color: var(--bg);
-  border: 1px solid var(--ink);
+  padding: 0.8rem 1.75rem;
+  background: var(--gold);
+  color: #fff;
+  border: 1px solid var(--gold);
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  font-size: 0.78rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: var(--track-mono);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;
   transition:
     background 0.2s,
-    color 0.2s,
     border-color 0.2s,
+    box-shadow 0.2s,
     transform 0.2s;
 }
 button:hover {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--bg);
+  background: var(--gold-deep);
+  border-color: var(--gold-deep);
+  box-shadow: var(--shadow-md);
 }
 button:active {
   transform: translateY(1px);
@@ -380,51 +375,46 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* A <a> sitting directly after a <button> becomes the ghost
-   secondary CTA — outlined, ink text, gold-edge on hover. */
+/* Ghost secondary — an <a> directly after a <button>. */
 button + a {
   display: inline-flex;
   align-items: center;
-  padding: 0.7rem 1.1rem;
-  margin-left: 0.4rem;
+  justify-content: center;
+  padding: 0.8rem 1.5rem;
+  margin-left: 0.5rem;
   border: 1px solid var(--line);
-  font-size: 0.78rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: var(--track-mono);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
   color: var(--ink);
   transition:
     border-color 0.2s,
-    color 0.2s;
+    color 0.2s,
+    background 0.2s;
 }
 button + a:hover {
   border-color: var(--gold);
   color: var(--gold);
+  background: var(--gold-tint);
 }
 
-/* Buttons inside the nav are slimmer to fit the rail. */
+/* Nav button is slightly slimmer. */
 nav button {
-  padding: 0.5rem 0.9rem;
-  font-size: 0.7rem;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.85rem;
 }
 
-/* ─── 8. LISTS ──────────────────────────────────────────────
-   Strip default bullets. Specific list contexts get different
-   layouts via parent tag (nav ul vs section > ul vs footer ul). */
+/* ─── 8. LISTS ──────────────────────────────────────────────── */
 ul,
 ol {
   list-style: none;
 }
-
-/* Default li margin in body prose lists (rare with no classes). */
 p + ul li,
 p + ol li {
   margin-bottom: 0.35rem;
 }
 
-/* ─── 9. DEFINITION LISTS (key/value pairs in the hero aside) ─
-   Used inside <aside> for "Checkpoints: 46", "Delivery: 3–8 days"
-   etc. Two-column grid with hairline rows. */
+/* ─── 9. DEFINITION LISTS (hero aside key/values) ──────────── */
 dl {
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -433,202 +423,197 @@ dl {
 }
 dt,
 dd {
-  padding: 0.5rem 0;
+  padding: 0.6rem 0;
   border-bottom: 1px solid var(--line-soft);
-  font-size: 0.78rem;
+  font-size: 0.9rem;
 }
 dt {
-  color: var(--ink-mute);
+  color: var(--ink-soft);
 }
 dd {
   color: var(--ink);
   text-align: right;
+  font-weight: 500;
 }
-/* Last pair — drop the divider for a clean bottom edge. */
 dl > dt:nth-last-of-type(1),
 dl > dd:nth-last-of-type(1) {
   border-bottom: 0;
 }
 
 /* ─── 10. TABLES (pricing comparison) ───────────────────────
-   Editorial table: hairlines, no zebra, ink+gold only. */
+   Header row underlined in gold; the middle (3rd column =
+   "recommended") gets a faint gold wash; rows hover soft grey. */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 2rem;
-  font-size: 0.85rem;
+  margin-top: 2.5rem;
+  font-size: 0.95rem;
 }
 thead th {
-  font-weight: 500;
+  font-weight: 600;
   text-align: left;
-  padding: 1rem 0.85rem;
-  border-bottom: 1px solid var(--ink);
+  padding: 1rem 1.25rem;
+  border-bottom: 2px solid var(--gold);
   vertical-align: bottom;
   color: var(--ink);
-  font-size: 0.85rem;
 }
-/* Column headers from the second onward get a gold rule on the
-   "recommended" column. Convention: middle column = recommended. */
 thead th:nth-child(n + 2) {
   text-align: center;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: var(--track-mono);
 }
 tbody td,
 tfoot td {
-  padding: 0.85rem;
+  padding: 1rem 1.25rem;
   border-bottom: 1px solid var(--line);
   vertical-align: middle;
   color: var(--ink-soft);
 }
 tbody td:first-child {
   color: var(--ink);
-} /* row label */
+  font-weight: 500;
+}
 tbody td:nth-child(n + 2),
 tfoot td:nth-child(n + 2) {
   text-align: center;
 }
 tbody tr:hover td {
-  background: var(--paper);
+  background: var(--bg-alt);
 }
 tfoot td {
   border-bottom: 0;
-  border-top: 1px solid var(--ink);
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  border-top: 2px solid var(--line);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
-/* The "Recommended" column (middle, third <th>/<td>) gets a faint
-   gold wash so the eye lands on it without it being shouty. */
-thead th:nth-child(3) {
-  background: var(--gold-tint);
-  border-bottom-color: var(--gold);
-}
+/* Recommended column (3rd cell) faint gold wash. */
+thead th:nth-child(3),
 tbody td:nth-child(3),
 tfoot td:nth-child(3) {
-  background: var(--gold-tint);
+  background: var(--gold-wash);
 }
 
 /* ─── 11. DETAILS / SUMMARY (FAQ accordion, no JS) ──────────
-   Native disclosure widget. The "+" turns into "×" when open
-   via a pseudo-element rotation. Hairline rules separate items. */
+   Each item is a rounded bordered card. A gold chevron rotates
+   on open. Constrained to a comfortable reading width. */
 details {
-  border-bottom: 1px solid var(--line);
+  max-width: var(--maxw-narrow);
+  margin: 0 auto 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s;
 }
-details:first-of-type {
-  border-top: 1px solid var(--line);
+details:hover {
+  border-color: var(--gold);
 }
 summary {
-  list-style: none; /* remove default disclosure triangle */
+  list-style: none;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 1.1rem 0;
+  padding: 1.1rem 1.35rem;
   font-family: var(--font);
-  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-  font-weight: 500;
-  letter-spacing: var(--track-tight);
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--ink);
-  transition: color 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 summary::-webkit-details-marker {
   display: none;
-} /* Safari */
+}
+/* Gold chevron drawn from borders: points down, flips up on open. */
 summary::after {
-  content: "+";
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: var(--ink-mute);
-  transition:
-    transform 0.3s ease,
-    color 0.2s;
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
   flex-shrink: 0;
+  border-right: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.3s ease;
 }
 summary:hover {
-  color: var(--gold);
-}
-summary:hover::after {
+  background: var(--bg-alt);
   color: var(--gold);
 }
 details[open] summary {
-  color: var(--gold);
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
 }
 details[open] summary::after {
-  transform: rotate(45deg); /* "+" → "×" */
-  color: var(--gold);
+  transform: translateY(2px) rotate(225deg);
 }
-/* The answer paragraph(s) sit directly after the summary. */
+/* Answer body sits after the summary. */
 details > p,
 details > div,
 details > ul {
-  padding: 0 0 1.25rem 0;
+  padding: 1.1rem 1.35rem;
   max-width: none;
   color: var(--ink-soft);
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.65;
 }
 
 /* ─── 12. TOP NAVIGATION ────────────────────────────────────
-   Sticky on top with a frosted background. On mobile the link
-   list wraps to a second row (no hamburger / no JS). */
+   Sticky, solid white, hairline base. Links warm to gold.
+   On mobile the link list wraps to a second row (no JS). */
 body > nav {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(250, 250, 247, 0.9);
-  backdrop-filter: blur(12px) saturate(140%);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px) saturate(150%);
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
   border-bottom: 1px solid var(--line);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  padding: 0.75rem var(--gutter);
+  padding: 1rem var(--gutter);
 }
 
-/* First <a> in the nav is the brand/logo lockup. */
+/* First <a> in the nav is the brand / logo lockup. */
 body > nav > a:first-child {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.95rem;
-  font-weight: 500;
+  gap: 0.55rem;
+  font-size: 1.15rem;
+  font-weight: 600;
   letter-spacing: var(--track-tight);
   color: var(--ink);
 }
 body > nav > a:first-child:hover {
   color: var(--ink);
-} /* logo doesn't go gold */
+}
 body > nav > a:first-child img {
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
 }
 
-/* The links list. Mobile: takes full width below the brand;
-   desktop: inline between brand and CTA. */
+/* Link list. Mobile: full-width second row; desktop: inline. */
 body > nav > ul {
   order: 3;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1.1rem;
+  gap: 0.5rem 1.5rem;
   align-items: center;
-  padding-top: 0.25rem;
+  padding-top: 0.5rem;
   border-top: 1px solid var(--line-soft);
 }
 body > nav > ul > li {
   display: inline-flex;
 }
 body > nav > ul a {
-  font-size: 0.75rem;
-  color: var(--ink-soft);
-  letter-spacing: var(--track-mono);
+  font-size: 0.95rem;
+  color: var(--ink);
 }
 body > nav > ul a:hover {
-  color: var(--ink);
+  color: var(--gold);
 }
 
 @media (min-width: 900px) {
@@ -638,149 +623,132 @@ body > nav > ul a:hover {
     flex-wrap: nowrap;
     padding-top: 0;
     border-top: 0;
-    gap: 1.4rem;
+    gap: 2rem;
   }
 }
 
 /* ─── 13. HERO (body > header) ──────────────────────────────
-   The first <header> child of <body> is the page hero. Mobile:
-   single column. Desktop: headline on the left, aside on the
-   right with key/value table. */
+   Centered, single column, generous vertical rhythm. */
 body > header {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: clamp(2rem, 6vw, 4rem) var(--gutter) clamp(1.5rem, 4vw, 3rem);
+  padding: var(--section) var(--gutter);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body > header > h1 {
+  max-width: 18ch;
+}
+body > header > p {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* CTA row spacing inside the hero. */
+body > header > button {
+  margin-top: 2rem;
+}
+
+/* ─── 14. ASIDE (optional hero meta card) ──────────────────
+   Rendered as a centered rounded card below the CTAs, rather
+   than a right rail, to keep the centered hero composition. */
+aside {
+  width: 100%;
+  max-width: 32rem;
+  margin: 2.5rem auto 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+  padding: 1.5rem 1.75rem;
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+}
+aside > small {
+  margin-bottom: 1rem;
+}
+
+/* ─── 15. MAIN + SECTIONS ───────────────────────────────────
+   Full-bleed alternating backgrounds; content is centered to
+   the max width with no wrapper div needed. */
+main {
+  display: block;
+}
+main > section {
+  background: var(--bg);
+  padding: var(--section) var(--gutter);
+}
+/* Odd sections take the soft grey tone (matches Figma order:
+   first content section is grey, then alternates). */
+main > section:nth-of-type(odd) {
+  background: var(--bg-alt);
+}
+/* Constrain every direct child to the content width + center it. */
+main > section > * {
+  max-width: var(--maxw);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── 16. SECTION HEADERS (section > header) ────────────────
+   Centered intro block: gold eyebrow, heading, lede. */
+section > header {
+  text-align: center;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section > header > p {
+  margin-top: 0.5rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── 17. CARD GRID (section > ul) ──────────────────────────
+   Rounded white cards with a gold number badge, title, copy and
+   an out-link. 1 / 2 / 3 columns. Lifts on hover. */
+section > ul {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
 }
-
-/* On wider screens the aside floats to the right. The headline,
-   lede and CTAs occupy the larger left column. */
-@media (min-width: 860px) {
-  body > header {
-    grid-template-columns: 1.5fr 1fr;
-    gap: clamp(2rem, 5vw, 2rem);
-    align-items: start;
-  }
-  /* Eyebrow + h1 + lede + CTAs span the left column;
-     <aside> takes the right. Source order handles this naturally
-     as long as <aside> is the LAST child of <header>. */
-  body > header > small,
-  body > header > h1,
-  body > header > p,
-  body > header > button,
-  body > header > a {
-    grid-column: 1;
-  }
-  body > header > aside {
-    grid-column: 2;
-    grid-row: 3 / span 2;
-  }
-}
-
-/* CTA row spacing inside the hero. */
-body > header > button {
-  margin-top: 1.25rem;
-}
-
-/* ─── 14. ASIDE (hero meta panel) ───────────────────────────
-   The right-rail box with the small caption and the dl. */
-aside {
-  border-top: 1px solid var(--line);
-  padding-top: 1rem;
-}
-
-/* ─── 15. MAIN + SECTIONS ───────────────────────────────────
-   <main> is the canvas for the body. Each <section> is one
-   topic with its own header + content (ul, ol, table or details). */
-main {
-  display: block;
-}
-
-main > section {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: var(--section) var(--gutter);
-}
-/* Adjacent sections share a divider implicitly — the section
-   above ends in white space, the section below begins with a
-   header that has its own bottom rule. */
-main > section + section {
-  padding-top: 0;
-}
-
-/* ─── 16. SECTION HEADERS (section > header) ────────────────
-   Two-column composition on desktop: H2 on the left, lede on
-   the right, eyebrow spanning the full width on top. Mobile is
-   a simple stack. Hairline bottom rule separates header from
-   the section's content. */
-section > header {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.5rem 2rem;
-}
-section > header > small {
-  grid-column: 1 / -1;
-}
-section > header > p {
-  margin-top: 0.25rem;
-}
-
-@media (min-width: 820px) {
-  section > header {
-    grid-template-columns: 1.3fr 1fr;
-    gap: 0.75rem 2rem;
-  }
-  section > header > small {
-    grid-column: 1 / -1;
-  }
-  section > header > h2 {
-    grid-column: 1;
-  }
-  section > header > p {
-    grid-column: 2;
-    margin-top: 0;
-  }
-}
-
-/* ─── 17. CARD GRID (section > ul) ──────────────────────────
-   The default content grid for a section. Each <li> is a card
-   with a small label (first <span>), a title (h3 or h4), copy
-   and an optional out-link. The grid auto-fits 1–3 columns. */
-section > ul {
-  display: grid;
-  grid-template-columns: 1fr;
-  border-top: 1px solid var(--line);
-}
 section > ul > li {
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.85rem;
+  box-shadow: var(--shadow-sm);
   transition:
-    background 0.25s ease,
-    padding 0.25s ease;
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 section > ul > li:hover {
-  background: var(--paper);
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
-}
-section > ul > li:hover > span:first-child {
-  color: var(--gold);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
 }
 
-/* The first <span> inside a card = its number/marker label. */
+/* First <span> in a card = the gold number badge. */
 section > ul > li > span:first-child {
-  font-size: 0.7rem;
-  color: var(--ink-mute);
-  letter-spacing: var(--track-mono);
-  text-transform: uppercase;
-  transition: color 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  height: 3rem;
+  padding: 0 0.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--gold-tint);
+  color: var(--gold);
+  font-size: 1.25rem;
+  font-weight: 600;
+  align-self: flex-start;
 }
 
 /* Out-link at the bottom of each card. */
@@ -789,258 +757,213 @@ section > ul > li > a {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.82rem;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 2px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold);
   align-self: flex-start;
 }
 section > ul > li > a:hover {
-  border-bottom-color: var(--gold);
-  color: var(--gold);
+  color: var(--gold-deep);
+  gap: 0.6rem;
 }
 
-/* Two columns from ~640px, three from ~960px. The hairlines
-   become inter-cell rules on the multi-column layouts. */
 @media (min-width: 640px) {
   section > ul {
     grid-template-columns: 1fr 1fr;
-  }
-  section > ul > li {
-    padding: 1.5rem;
-    border-right: 1px solid var(--line);
-  }
-  section > ul > li:nth-child(2n) {
-    border-right: 0;
-  }
-  section > ul > li:hover {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    margin: 0;
   }
 }
 @media (min-width: 960px) {
   section > ul {
     grid-template-columns: repeat(3, 1fr);
   }
-  section > ul > li {
-    border-right: 1px solid var(--line);
-  }
-  section > ul > li:nth-child(2n) {
-    border-right: 1px solid var(--line);
-  }
-  section > ul > li:nth-child(3n) {
-    border-right: 0;
-  }
 }
 
 /* ─── 18. PROCESS STEPS (section > ol) ──────────────────────
-   Numbered process. CSS counters render "01", "02", "03" in
-   the display font. No JS, no manual numbering. */
+   Auto-numbered with a gold circular badge. CSS counters, no JS. */
 section > ol {
   counter-reset: step;
-  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: var(--maxw-narrow);
 }
 section > ol > li {
   counter-increment: step;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.5rem;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--line);
-  transition: background 0.25s ease;
-  position: relative;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem 1.25rem;
+  align-items: start;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+section > ol > li:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-md);
 }
 section > ol > li::before {
   content: counter(step, decimal-leading-zero);
-  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
-  color: var(--ink-faint);
-  font-weight: 400;
-  line-height: 1;
-  transition: color 0.25s ease;
-}
-section > ol > li:hover {
-  background: var(--paper);
-}
-section > ol > li:hover::before {
+  grid-row: 1 / span 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--gold-tint);
   color: var(--gold);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1;
+}
+section > ol > li h3 {
+  grid-column: 2;
+  align-self: center;
+}
+section > ol > li p {
+  grid-column: 2;
 }
 
-@media (min-width: 820px) {
-  section > ol > li {
-    grid-template-columns: 110px 1fr 1.4fr;
-    gap: 2rem;
-    padding: 1.5rem 1rem;
-    align-items: start;
-  }
-  section > ol > li::before {
-    grid-column: 1;
-  }
-  section > ol > li h3 {
-    grid-column: 2;
-  }
-  section > ol > li p {
-    grid-column: 3;
-  }
-}
-
-/* ─── 19. STATS / FIGURES (article elements, optional) ──────
-   If you use <article> children in a section, they render as a
-   row of figure tiles. Each article should contain:
-     <article>
-       <strong>53<em>%</em></strong>
-       <p>…label…</p>
-       <small>Source — …</small>
-     </article>
-*/
-section > article,
-section > div > article {
-  display: block;
-}
+/* ─── 19. STATS / FIGURES (optional <article> tiles) ────────
+   <article><strong>53<em>%</em></strong><p>label</p><small>src</small> */
 article {
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.75rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  transition: background 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 article:hover {
-  background: var(--paper);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-md);
 }
 article > strong {
   font-family: var(--font);
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
-  line-height: 0.95;
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  line-height: 1;
   letter-spacing: var(--track-tight);
   color: var(--ink);
-  font-weight: 500;
-  display: inline-block;
+  font-weight: 700;
 }
 article > strong em {
-  font-style: italic;
+  font-style: normal;
   color: var(--gold);
-  font-weight: 500;
 }
 article > p {
-  max-width: 30ch;
-  display: inline;
+  max-width: 32ch;
 }
 article > small {
   margin-bottom: 0;
-  display: block;
-}
-
-/* Multiple <article>s in a row → flex grid (works inside any
-   parent that uses display:grid on its articles). */
-section:has(article) {
-  /* nothing — handled by an internal wrapper if needed */
+  color: var(--ink-mute);
 }
 
 /* ─── 20. FOOTER ────────────────────────────────────────────
-   Multi-column footer. Each link group is a <section> with an
-   <h5> label and a <ul> of <li><a>. The very last child of
-   <footer> should be a <small> for the © line. */
+   Soft grey, multi-column. Each link group is a <section> with
+   an <h5> label and a <ul>. The last <footer> child is a <small>
+   copyright line on its own bottom strip. */
 body > footer {
-  background: var(--bg);
+  background: var(--bg-alt);
   border-top: 1px solid var(--line);
-  padding: clamp(2rem, 5vw, 3.5rem) var(--gutter) 1.5rem;
+  padding: clamp(2.5rem, 5vw, 3.5rem) var(--gutter) 0;
 }
-body > footer > * + * {
-  margin-top: 0;
-}
-
 body > footer {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   max-width: var(--maxw);
   margin: 0 auto;
 }
 
-/* The first <section> is the brand block: logo + tagline. */
+/* First <section> is the brand block: logo + tagline. */
 body > footer > section:first-of-type {
   grid-column: 1 / -1;
 }
 body > footer > section:first-of-type img {
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
 }
 body > footer > section:first-of-type p {
-  margin-top: 0.75rem;
-  font-size: 0.82rem;
-  max-width: 34ch;
+  margin-top: 0.85rem;
+  font-size: 0.9rem;
+  max-width: 36ch;
 }
 
 body > footer h5 {
-  margin-bottom: 0.85rem;
+  margin-bottom: 1rem;
 }
 body > footer ul {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.6rem;
 }
 body > footer ul a {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--ink-soft);
-  padding: 0.15rem 0;
 }
 body > footer ul a:hover {
-  color: var(--ink);
+  color: var(--gold);
 }
-
-/* Bottom strip — small text, copyright. */
-body > footer > small {
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 1.5rem;
-  margin-top: 1rem;
-  border-top: 1px solid var(--line);
-  font-size: 0.68rem;
-  color: var(--ink-mute);
-  letter-spacing: var(--track-mono);
-}
-
 body > footer > section > ul > li {
   padding: 0;
   border-bottom: 0;
 }
 
+/* Bottom strip — centered copyright, full-bleed top rule. */
+body > footer > small {
+  grid-column: 1 / -1;
+  display: block;
+  text-align: center;
+  padding: 1.75rem 0;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
 @media (min-width: 640px) {
   body > footer {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  body > footer > section:first-of-type {
+    grid-column: 1 / -1;
   }
 }
 @media (min-width: 900px) {
   body > footer {
     grid-template-columns: 1.5fr repeat(4, 1fr);
-    gap: 2rem;
+    gap: 2.5rem;
   }
   body > footer > section:first-of-type {
     grid-column: 1;
   }
 }
 
-/* ─── 21. FOCUS STATES (a11y) ───────────────────────────────
-   Keyboard users get a clear gold outline on interactive items.
-   Mouse users (no :focus-visible) don't see it. */
+/* ─── 21. FOCUS STATES (a11y) ───────────────────────────────── */
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 3px;
+  border-radius: 2px;
 }
 
-/* ─── 22. SELECTION ─────────────────────────────────────────
-   Gold highlight when text is selected — small detail, big polish. */
+/* ─── 22. SELECTION ─────────────────────────────────────────── */
 ::selection {
   background: var(--gold);
-  color: var(--bg);
+  color: #fff;
 }
 
-/* ─── 23. REDUCED MOTION ────────────────────────────────────
-   Honour the system preference. Strip all transitions/animations. */
+/* ─── 23. REDUCED MOTION ────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1052,40 +975,39 @@ summary:focus-visible {
 }
 
 /* ─── 24. CTA PAIR (a <nav> with two <a> children) ─────────
-   Two anchors wrapped in a <nav>. The first is the desktop-primary
-   (filled ink); the second is the desktop-ghost (outline). At viewports
-   below 768px the visual prominence flips so the second anchor (used
-   for WhatsApp) becomes the primary and the first (email) becomes the
-   ghost. No classes, no JS. The wrapper <nav> must NOT be a direct
-   child of <body> (that selector is reserved for the sticky site nav).
-*/
+   Email + WhatsApp pair. First anchor = desktop-primary (gold
+   fill); second = desktop-ghost (outline). Below 768px the
+   prominence flips so the second anchor (WhatsApp) becomes the
+   filled primary. No classes, no JS. The wrapper <nav> must NOT
+   be a direct child of <body> (reserved for the site nav). */
 section > nav,
 header > nav,
 article > nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1.25rem;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
 }
-
 section > nav > a,
 header > nav > a,
 article > nav > a {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 0.7rem 1.1rem;
-  font-size: 0.78rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: var(--track-mono);
+  padding: 0.8rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
   border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
   color: var(--ink);
   background: transparent;
   transition:
     background 0.2s,
     color 0.2s,
     border-color 0.2s,
+    box-shadow 0.2s,
     transform 0.2s;
 }
 section > nav > a:active,
@@ -1094,52 +1016,48 @@ article > nav > a:active {
   transform: translateY(1px);
 }
 
-/* Desktop primary = first anchor */
+/* Desktop primary = first anchor (gold fill). */
 section > nav > a:first-child,
 header > nav > a:first-child,
 article > nav > a:first-child {
-  background: var(--ink);
-  color: var(--bg);
-  border-color: var(--ink);
+  background: var(--gold);
+  color: #fff;
+  border-color: var(--gold);
 }
 section > nav > a:first-child:hover,
 header > nav > a:first-child:hover,
 article > nav > a:first-child:hover {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--bg);
+  background: var(--gold-deep);
+  border-color: var(--gold-deep);
+  color: #fff;
+  box-shadow: var(--shadow-md);
 }
 
-/* Desktop ghost = second anchor */
+/* Desktop ghost = second anchor (outline). */
 section > nav > a:last-child:hover,
 header > nav > a:last-child:hover,
 article > nav > a:last-child:hover {
   border-color: var(--gold);
   color: var(--gold);
+  background: var(--gold-tint);
 }
 
-/* Hero CTA pair sits in column 1 of the hero grid (>= 860px). */
-body > header > nav {
-  grid-column: 1;
-}
-
-/* Mobile (<768px): flip the pair. The SECOND anchor visually becomes
-   primary (filled); the FIRST anchor becomes the ghost. */
+/* Mobile (<768px): flip prominence. */
 @media (max-width: 767px) {
   section > nav > a:last-child,
   header > nav > a:last-child,
   article > nav > a:last-child {
     order: 1;
-    background: var(--ink);
-    color: var(--bg);
-    border-color: var(--ink);
+    background: var(--gold);
+    color: #fff;
+    border-color: var(--gold);
   }
   section > nav > a:last-child:hover,
   header > nav > a:last-child:hover,
   article > nav > a:last-child:hover {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: var(--bg);
+    background: var(--gold-deep);
+    border-color: var(--gold-deep);
+    color: #fff;
   }
   section > nav > a:first-child,
   header > nav > a:first-child,
@@ -1152,7 +1070,7 @@ body > header > nav {
   section > nav > a:first-child:hover,
   header > nav > a:first-child:hover,
   article > nav > a:first-child:hover {
-    background: transparent;
+    background: var(--gold-tint);
     border-color: var(--gold);
     color: var(--gold);
   }
