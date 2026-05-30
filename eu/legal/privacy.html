@@ -1,275 +1,442 @@
 <!DOCTYPE html>
-<html lang="en-GB">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#f5f5f0">
-  <title>Privacy Policy | Illucrum</title>
-  <meta name="description" content="Privacy Policy for Illucrum. How we handle your data, cookies, and analytics. GDPR-aware.">
-  <link rel="canonical" href="https://illucrum.com/legal/privacy/">
-  <link rel="alternate" hreflang="en-US" href="https://illucrum.com/legal/privacy/">
-  <link rel="alternate" hreflang="en-GB" href="https://illucrum.com/eu/legal/privacy/">
-  <link rel="alternate" hreflang="x-default" href="https://illucrum.com/legal/privacy/">
-  <meta property="og:title" content="Privacy Policy | Illucrum">
-  <meta property="og:description" content="Privacy Policy for Illucrum. How we handle your data, cookies, and analytics. GDPR-aware.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://illucrum.com/eu/legal/privacy/">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Privacy Policy | Illucrum">
-  <meta name="twitter:description" content="Privacy Policy for Illucrum. How we handle your data, cookies, and analytics. GDPR-aware.">
-  <link rel="icon" href="../../images/logo-ico.png">
-  <link rel="stylesheet" href="../../styles.css">
-  <script type="application/ld+json">
-  {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://illucrum.com/#organization",
   "name": "Illucrum",
-  "url": "https://illucrum.com",
-  "logo": "https://illucrum.com/images/logo.png",
+  "legalName": "Illucrum LLC",
+  "url": "https://illucrum.com/",
+  "logo": "https://illucrum.com/static/img/logo.png",
   "email": "szymon.kokot@illucrum.com",
-  "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "5900 Balcones Drive 21473",
-      "addressLocality": "Austin",
-      "addressRegion": "TX",
-      "postalCode": "78731-4257",
-      "addressCountry": "US"
-  },
-  "areaServed": {
-      "@type": "Place",
-      "name": "Europe"
-  },
-  "contactPoint": [
-      {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "url": "https://wa.me/48515983261",
-      "description": "WhatsApp Business"
-      },
-      {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "szymon.kokot@illucrum.com",
-      "description": "Email"
-      }
-  ],
+  "telephone": "+48 515 983 261",
+  "founder": { "@id": "https://illucrum.com/about/#person" },
   "sameAs": [
-      "https://linkedin.com/company/illucrum",
-      "https://clutch.co/profile/illucrum",
-      "https://www.linkedin.com/in/szymon-kokot/",
-      "https://www.crunchbase.com/organization/illucrum"
+    "https://www.linkedin.com/company/illucrum/"
   ]
-  }
-  </script>
-  <!-- Consent Mode v2 defaults (must load before GTM) -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    (function () {
-      var c = null;
-      try { c = localStorage.getItem('illu_consent'); } catch (e) { }
-      var g = c === 'granted' ? 'granted' : 'denied';
-      gtag('consent', 'default', {
-        ad_storage: g,
-        analytics_storage: g,
-        ad_user_data: g,
-        ad_personalization: g,
-        functionality_storage: 'granted',
-        security_storage: 'granted',
-        wait_for_update: 500
-      });
-    })();
-  </script>
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-MRLGLHC5');</script>
-  <!-- End Google Tag Manager -->
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://illucrum.com/about/#person",
+  "name": "Szymon Kokot",
+  "jobTitle": "SEO audit consultant",
+  "worksFor": { "@id": "https://illucrum.com/#organization" },
+  "url": "https://illucrum.com/about/",
+  "email": "szymon.kokot@illucrum.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/szymonkokot/"
+  ]
+}
+</script>
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MRLGLHC5');</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<title>Privacy Policy &middot; Illucrum</title>
+<meta name="description" content="How Illucrum collects, uses, and protects personal data when you visit the website or contact us about an SEO audit.">
+<meta name="robots" content="noindex,follow">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://illucrum.com/eu/legal/privacy/">
+<meta property="og:site_name" content="Illucrum">
+<meta property="og:title" content="Privacy Policy &middot; Illucrum">
+<meta property="og:description" content="How Illucrum collects, uses, and protects personal data.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Privacy Policy",
+  "url": "https://illucrum.com/eu/legal/privacy/",
+  "inLanguage": "en-gb",
+  "isPartOf": { "@id": "https://illucrum.com/#website" },
+  "publisher": { "@id": "https://illucrum.com/#organization" },
+  "dateModified": "2026-05-27"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://illucrum.com/eu/" },
+    { "@type": "ListItem", "position": 2, "name": "Legal", "item": "https://illucrum.com/eu/legal/" },
+    { "@type": "ListItem", "position": 3, "name": "Privacy Policy", "item": "https://illucrum.com/eu/legal/privacy/" }
+  ]
+}
+</script>
 </head>
-
 <body>
-  <nav class="main-nav">
-    <a href="/eu/" class="nav-logo">
-      <img src="../../images/logo.png" alt="Illucrum" class="logo-light">
-      <img src="../../images/logo.png" alt="Illucrum" class="logo-dark">
-    </a>
-    <div class="nav-links" id="navLinks">
-      <a href="/eu/audits/ecommerce-seo-audit">E-Commerce Audit</a>
-      <a href="/eu/audits/saas-seo-audit">SaaS Audit</a>
-      <a href="/eu/pricing">Pricing</a>
-      <a href="/eu/about">About</a>
-      <a href="/eu/seo-facts">SEO Facts</a>
-      <a href="/eu/faq">FAQ</a>
-      <a href="https://blog.illucrum.com/">Blog</a>
-      <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20audit%20enquiry&amp;body=Hi%20Illucrum%2C%0A%0AI%27d%20like%20to%20discuss%20an%20SEO%20audit%20for%20my%20website%3A%20%5Byour%20URL%5D%0A%0AThanks%2C" class="nav-cta">Get in Touch &rarr;</a>
+<nav>
+  <a href="https://illucrum.com/eu">
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+  </a>
+  <ul>
+    <li><a href="/eu/audits">Audits</a></li>
+    <li><a href="/eu/pricing">Pricing</a></li>
+    <li><a href="/eu/process">Process</a></li>
+    <li><a href="/eu/faq">FAQ</a></li>
+    <li><a href="/eu/about">About</a></li>
+    <li><a href="https://wa.me/48515983261" rel="noopener">WhatsApp</a></li>
+  </ul>
+</nav>
+<header id="hero">
+  <small>Legal &middot; Privacy</small>
+  <h1>Privacy <em>Policy</em></h1>
+  <p>How Illucrum collects, uses, and protects personal data when you visit this website or contact us about an
+    SEO audit.</p>
+  <aside>
+    <small>Document</small>
+    <dl>
+      <dt>Effective</dt>
+      <dd>2026-05-27</dd>
+      <dt>Last updated</dt>
+      <dd>2026-05-27</dd>
+      <dt>Controller</dt>
+      <dd>Illucrum LLC</dd>
+      <dt>Contact</dt>
+      <dd><a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a></dd>
+    </dl>
+  </aside>
+</header>
+
+<main>
+<section id="who-we-are">
+  <header>
+    <small>01 / Controller</small>
+    <h2>Who we <em>are</em></h2>
+    <p>The entity that decides why and how personal data is processed on this site.</p>
+  </header>
+
+  <p>This site is operated by Illucrum LLC (Limited Liability Company), registered at 5900 Balcones Drive 21473, Austin TX, 78731-4257. For anything related to your personal data, including access, correction, deletion, or complaints, contact <a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a>.</p>
+</section>
+<section id="what-we-collect">
+  <header>
+    <small>02 / Data</small>
+    <h2>What we <em>collect</em></h2>
+    <p>We try to collect as little as possible. The categories below are exhaustive.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Contact data</h3>
+      <p>When you email, message, or call us, we receive your name, email address or phone number, and the content of your message. We keep this for as long as we are working with you and for up to 36 months afterwards for tax and records purposes.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>Audit data</h3>
+      <p>To produce an audit, you grant us access to your website analytics, Search Console, and crawl data. We do not need or want customer-level personally identifiable information from your platform.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>Technical data</h3>
+      <p>Our hosting provider records your IP address, browser, device, and request times in standard server logs for security and abuse prevention. Logs are retained for up to 30 days.</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>Analytics and advertising data</h3>
+      <p>If you accept analytics cookies, we collect anonymised usage data through Google Analytics 4. If you accept advertising cookies, we share conversion events with Google Ads and Reddit Ads. Details, including cookie names and providers, are in the <a href="/eu/legal/cookies/">cookie policy</a>.</p>
+    </li>
+  </ul>
+</section>
+<section id="why-and-basis">
+  <header>
+    <small>03 / Purposes</small>
+    <h2>Why we use it, and our <em>legal basis</em></h2>
+    <p>Every category above maps to one specific purpose and one legal basis under data protection law.</p>
+  </header>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Purpose</th>
+        <th>Legal basis</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Contact data</td>
+        <td>Reply to your enquiry, agree on scope, send proposals and invoices</td>
+        <td>Performance of a contract; legitimate interest in answering enquiries</td>
+      </tr>
+      <tr>
+        <td>Audit data</td>
+        <td>Deliver the SEO audit you commissioned</td>
+        <td>Performance of a contract</td>
+      </tr>
+      <tr>
+        <td>Technical / server logs</td>
+        <td>Security, abuse prevention, debugging</td>
+        <td>Legitimate interest</td>
+      </tr>
+      <tr>
+        <td>Analytics cookies</td>
+        <td>Understand how visitors use the site</td>
+        <td>Consent (you can withdraw it any time)</td>
+      </tr>
+      <tr>
+        <td>Advertising cookies</td>
+        <td>Measure and personalise Google Ads and Reddit Ads</td>
+        <td>Consent (you can withdraw it any time)</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section id="sharing">
+  <header>
+    <small>04 / Processors</small>
+    <h2>Who we <em>share data with</em></h2>
+    <p>We share data only with the service providers we need to operate the site and run the business.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Google (Analytics, Tag Manager, Ads)</h3>
+      <p>Operates analytics and ad measurement under our instructions. Anonymised IPs and Consent Mode v2 signals are used. Data is processed in the European Union and the United States under Standard Contractual Clauses.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>Reddit (Pixel / Ads)</h3>
+      <p>Receives conversion events when you accept advertising cookies. Processing is in the United States under Standard Contractual Clauses.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>Email and messaging providers</h3>
+      <p>Used to receive and reply to your messages on email, WhatsApp, and Telegram. Each provider's own terms and privacy policy apply to messages held on their systems.</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>Accountants and tax authorities</h3>
+      <p>Invoices and contracts are shared with our accountants and submitted to tax authorities to the extent required by law.</p>
+    </li>
+  </ul>
+
+  <p>We never sell personal data. We never share it for cross-context behavioural advertising beyond what you explicitly consent to in the cookie banner.</p>
+</section>
+<section id="your-rights">
+  <header>
+    <small>05 / Your rights</small>
+    <h2>Your <em>rights</em></h2>
+    <p>You can exercise any of these by emailing <a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a>. We will reply within one calendar month.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Access and portability</h3>
+      <p>Ask for a copy of the personal data we hold about you, in a portable format.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>Correction</h3>
+      <p>Ask us to fix incorrect or incomplete data.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>Deletion</h3>
+      <p>Ask us to delete data we no longer need. We may keep records we are required to keep by law (invoices, tax records).</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>Object and restrict</h3>
+      <p>Object to processing based on legitimate interest, and ask us to restrict processing while we look into it.</p>
+    </li>
+    <li>
+      <span>05</span>
+      <h3>Withdraw consent</h3>
+      <p>Withdraw analytics or advertising consent at any time from the cookie banner; click <a href="#" data-consent-open>Manage cookies</a> in the footer to reopen it.</p>
+    </li>
+    <li>
+      <span>06</span>
+      <h3>Complain to a regulator</h3>
+      <p>If you live in the EEA or the UK, you can lodge a complaint with your local data protection authority. If you live in California or another US state with a privacy law, you may have additional rights, including the right to opt out of "sale" or "sharing" of personal information; we honour Global Privacy Control signals.</p>
+    </li>
+  </ul>
+</section>
+<section id="retention-transfers">
+  <header>
+    <small>06 / Retention and transfers</small>
+    <h2>How long we keep it, and <em>where it lives</em></h2>
+    <p>Retention is purpose-bound; international transfers happen only under appropriate safeguards.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Retention</h3>
+      <p>Contact and audit data: for the duration of our engagement and for up to 36 months afterwards. Invoices and tax records: 7 years (or longer where required by local law). Server logs: 30 days. Cookie consent records: 12 months.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>International transfers</h3>
+      <p>Some of our processors (Google, Reddit, messaging providers) operate outside the EEA and the UK. Transfers rely on Standard Contractual Clauses and, where relevant, the EU&ndash;US Data Privacy Framework.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>Security</h3>
+      <p>We use TLS for all site traffic, strong passwords, two-factor authentication on critical accounts, and least-privilege access on the tools we use. No system is perfect; we will notify affected users without undue delay if a breach is likely to result in a risk to your rights.</p>
+    </li>
+  </ul>
+</section>
+<section id="changes">
+  <header>
+    <small>07 / Changes</small>
+    <h2>Changes to this <em>policy</em></h2>
+    <p>If something material changes, the "Last updated" date at the top of this page will change, and we will tell active clients by email.</p>
+  </header>
+
+  <p>This is version 1.0 of the policy. For questions, write to <a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a>.</p>
+</section>
+
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+    <p>SEO audits that show you exactly what to fix next.</p>
+  </section>
+
+  <section>
+    <h5>Audits</h5>
+    <ul>
+      <li><a href="/eu/audits/saas-seo-audit">SaaS SEO audit</a></li>
+      <li><a href="/eu/audits/ecommerce-seo-audit">E-commerce SEO audit</a></li>
+      <li><a href="/eu/audits/seo-audit">Website SEO audit</a></li>
+      <li><a href="/eu/which-audit">Which audit?</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Compare</h5>
+    <ul>
+      <li><a href="/eu/compare/saas-vs-ecommerce-seo-audit">SaaS vs E-commerce</a></li>
+      <li><a href="/eu/compare/saas-vs-generic-seo-audit">SaaS vs Website</a></li>
+      <li><a href="/eu/compare/ecommerce-vs-generic-seo-audit">E-commerce vs Website</a></li>
+      <li><a href="/eu/compare/basic-vs-full-seo-audit">Basic vs Full</a></li>
+      <li><a href="/eu/compare/seo-audit-vs-seo-tool">Audit vs SEO tool</a></li>
+      <li><a href="/eu/compare/seo-audit-vs-seo-retainer">Audit vs retainer</a></li>
+      <li><a href="/eu/compare/seo-audit-vs-diy">Audit vs DIY</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Company</h5>
+    <ul>
+      <li><a href="/eu/about">About</a></li>
+      <li><a href="/eu/process">Process</a></li>
+      <li><a href="/eu/pricing">Pricing</a></li>
+      <li><a href="/eu/faq">FAQ</a></li>
+      <li><a href="/eu/seo-facts">SEO facts</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Contact &amp; Legal</h5>
+    <ul>
+      <li><a href="mailto:szymon.kokot@illucrum.com">Email</a></li>
+      <li><a href="https://wa.me/48515983261" rel="noopener">WhatsApp</a></li>
+      <li><a href="https://t.me/m/w209xo-FZGJk" rel="noopener">Telegram</a></li>
+      <li><a href="/eu/legal/terms">Terms</a></li>
+      <li><a href="/eu/legal/privacy">Privacy</a></li>
+      <li><a href="/eu/legal/cookies">Cookies</a></li>
+      <li><a href="/eu/legal/disclaimer">Disclaimer</a></li>
+      <li><a href="/eu/legal/accessibility">Accessibility</a></li>
+      <li><a href="#" data-consent-open>Manage cookies</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +48 515 983 261</span>
+    <span>
+      <a href="https://illucrum.com" hreflang="en-us">US</a> &middot;
+      <a href="https://illucrum.com/eu" hreflang="en-gb">EU</a>
+    </span>
+  </small>
+</footer>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRLGLHC5" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="We use cookies" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">We use cookies</p>
+    <p class="ic-consent__body">We use cookies to make the site work, to understand how it is used, and (only if you agree) to show relevant ads on Google and Reddit. You can change your choice at any time from the footer. <a href="/eu/legal/cookies/">Cookie policy</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferences</button>
     </div>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2">
-          <circle cx="12" cy="12" r="5" />
-          <path
-            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-        </svg>
-        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2">
-          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-        </svg>
-      </button>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M3 12h18M3 6h18M3 18h18" />
-        </svg>
-      </button>
-    </div>
-  </nav>
-  <main class="legal-page">
-    <div class="container legal-container">
-      <h1>Privacy Policy</h1>
-      <p class="legal-meta">Last updated: April 2026 &middot; Illucrum LLC</p>
-      <div class="privacy-highlight">
-        <p>We use Google Tag Manager to load analytics and advertising tools (Google Analytics 4 and Google Ads) so we
-          can measure site performance and the effectiveness of our marketing. We do not sell your data, and we keep
-          data collection to what is necessary to run the business.</p>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Strictly necessary</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
+        <p class="ic-consent__pref-desc">Required for the site to function. Cannot be turned off.</p>
       </div>
-
-      <h2>1. What We Collect</h2>
-      <p>We collect two categories of information:</p>
-      <p><strong>Information you provide directly</strong> when you contact us or engage our services:</p>
-      <ul>
-        <li>Your name and email address (if provided)</li>
-        <li>Your website URL (for audit purposes)</li>
-        <li>Any business information you share during our engagement</li>
-        <li>WhatsApp or Telegram messages sent to our business accounts</li>
-      </ul>
-      <p><strong>Information collected automatically</strong> when you visit illucrum.com, via Google Tag Manager and
-        the tags it loads:</p>
-      <ul>
-        <li>Device and browser information (type, operating system, screen size, language)</li>
-        <li>Truncated IP address and approximate location (country/region level)</li>
-        <li>Pages visited, referring URL, time on page, and on-site interactions (clicks, scroll depth)</li>
-        <li>Cookie-based identifiers used by Google Analytics 4 and Google Ads to recognise returning visitors,
-          measure conversions, and support remarketing</li>
-      </ul>
-
-      <h2>2. How We Use Your Information</h2>
-      <p>We use information you provide to deliver the services you&rsquo;ve requested: SEO audits, website
-        optimisation, or web builds. We use information collected automatically to understand how visitors use the site,
-        measure the performance of our marketing campaigns, and improve our content and offers. We do not sell or rent
-        your personal information.</p>
-
-      <h2>3. Cookies and Tracking Technologies</h2>
-      <p>This site uses cookies and similar technologies loaded through Google Tag Manager (container ID
-        <code>GTM-MRLGLHC5</code>). The specific tools in use are:</p>
-      <ul>
-        <li><strong>Google Tag Manager</strong> &mdash; a tag loader that does not itself collect analytics data, but
-          deploys the tags below.</li>
-        <li><strong>Google Analytics 4 (GA4)</strong> &mdash; measures site usage, traffic sources, and content
-          performance. GA4 sets cookies (e.g., <code>_ga</code>, <code>_ga_*</code>) and processes a truncated IP
-          address.</li>
-        <li><strong>Google Ads</strong> &mdash; measures conversions from paid advertising and supports remarketing
-          audiences. Google Ads sets cookies such as <code>_gcl_*</code> and may set <code>NID</code>/<code>IDE</code>
-          on the google.com and doubleclick.net domains.</li>
-      </ul>
-      <p>You can opt out of Google Analytics by installing the
-        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out
-        Browser Add-on</a>, and you can manage Google Ads personalisation at
-        <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ads Settings</a>. Most browsers
-        also allow you to block or delete cookies through their settings.</p>
-
-      <h2>4. Legal Basis for Processing (GDPR)</h2>
-      <p>If you are in the European Economic Area or the United Kingdom, we process your personal data on the following
-        legal bases:</p>
-      <ul>
-        <li><strong>Performance of a contract</strong> &mdash; to deliver audits and services you&rsquo;ve ordered.</li>
-        <li><strong>Legitimate interests</strong> &mdash; to respond to enquiries and keep our website secure.</li>
-        <li><strong>Consent</strong> &mdash; for analytics and advertising cookies, where required by law. You can
-          withdraw consent at any time by clearing cookies or using the opt-out tools listed above.</li>
-      </ul>
-
-      <h2>5. Data Retention</h2>
-      <p>We retain audit data and client communications for the duration of our engagement plus 12 months, after which
-        data is deleted. Analytics data in Google Analytics 4 is retained for the default period set in our GA4
-        property. You may request deletion of your data at any time by contacting us.</p>
-
-      <h2>6. Third-Party Services and International Transfers</h2>
-      <p>We rely on third-party services to run this website and our business. Each has its own privacy policy:</p>
-      <ul>
-        <li>Google LLC (Google Tag Manager, Google Analytics 4, Google Ads) &mdash; see
-          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
-        <li>WhatsApp and Telegram (messaging) &mdash; governed by their respective privacy policies.</li>
-        <li>Clutch.co (embedded review widget, where present) &mdash; subject to Clutch&rsquo;s privacy policy.</li>
-      </ul>
-      <p>Google may process data in the United States and other countries outside the EEA/UK. Transfers are covered by
-        the EU-US Data Privacy Framework and Standard Contractual Clauses where applicable.</p>
-
-      <h2>7. Your Rights (GDPR)</h2>
-      <p>If you are in the European Economic Area or the United Kingdom, you have the right to access, correct, delete,
-        or restrict processing of your personal data, to object to processing, and to data portability. You also have
-        the right to lodge a complaint with a supervisory authority. To exercise these rights, contact us at
-        szymon.kokot@illucrum.com.</p>
-
-      <h2>8. Contact</h2>
-      <p>For privacy-related questions, contact us at <a
-          href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a> or via <a
-          href="https://wa.me/48515983261" target="_blank" rel="noopener">WhatsApp</a>.</p>
-    </div>
-  </main>
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <strong>Illucrum</strong>
-          <p>SEO audits, optimisation, and web builds for businesses serious about growth.</p>
-          <p>Austin, TX</p>
-          <a href="mailto:szymon.kokot@illucrum.com" class="footer-email">szymon.kokot@illucrum.com</a>
-        </div>
-        <div class="footer-col">
-          <h5>Services</h5>
-          <a href="/eu/audits/ecommerce-seo-audit">E-Commerce SEO Audit</a>
-          <a href="/eu/audits/seo-audit">Generic SEO Audit</a>
-          <a href="/eu/audits/saas-seo-audit">SaaS SEO Audit</a>
-          <a href="/eu/pricing">Pricing</a>
-        </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <a href="/eu/about">About</a>
-          <a href="/eu/faq">FAQ</a>
-          <a href="/eu/seo-facts">SEO Facts</a>
-          <a href="https://blog.illucrum.com/">Blog</a>
-        </div>
-        <div class="footer-col">
-          <h5>Contact</h5>
-          <a href="https://wa.me/48515983261" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20audit%20enquiry&amp;body=Hi%20Illucrum%2C%0A%0AI%27d%20like%20to%20discuss%20an%20SEO%20audit%20for%20my%20website%3A%20%5Byour%20URL%5D%0A%0AThanks%2C">Email</a>
-          <a href="https://linkedin.com/company/illucrum" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://clutch.co/profile/illucrum" target="_blank" rel="noopener">Clutch</a>
-          <a href="https://www.crunchbase.com/organization/illucrum" target="_blank" rel="noopener">Crunchbase</a>
-        </div>
-        <div class="footer-col">
-          <h5>Legal</h5>
-          <a href="/eu/legal/terms">Terms of Service</a>
-          <a href="/eu/legal/privacy">Privacy Policy</a>
-          <a href="/eu/legal/disclaimer">Disclaimer</a>
-        </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analytics</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
+        <p class="ic-consent__pref-desc">Helps us understand how visitors use the site (Google Analytics 4).</p>
       </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Illucrum. All rights reserved.</span>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Advertising</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
+        <p class="ic-consent__pref-desc">Lets us measure and personalise Google Ads and Reddit Ads campaigns.</p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>
       </div>
     </div>
-  </footer>
-  <script src="/main.js"></script>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRLGLHC5" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  </div>
+</div>
 </body>
-
 </html>

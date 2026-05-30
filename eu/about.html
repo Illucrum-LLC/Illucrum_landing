@@ -1,301 +1,367 @@
 <!DOCTYPE html>
-<html lang="en-GB">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#f5f5f0">
-  <title>About Illucrum | SEO Audit Consultancy for SMEs</title>
-  <meta name="description"
-    content="Illucrum is an SEO consultancy founded by Szymon Kokot, a web developer and SEO specialist with hands-on experience optimising B2B e-commerce platforms. Serving SMEs across Europe.">
-  <link rel="canonical" href="https://illucrum.com/about/">
-  <link rel="alternate" hreflang="en-US" href="https://illucrum.com/about/">
-  <link rel="alternate" hreflang="en-GB" href="https://illucrum.com/eu/about/">
-  <link rel="alternate" hreflang="x-default" href="https://illucrum.com/about/">
-  <meta property="og:title" content="About Illucrum | SEO Audit Consultancy for SMEs">
-  <meta property="og:description"
-    content="Founded by a web developer who'd rather build things than study them. Meet the team behind Illucrum.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://illucrum.com/eu/about/">
-  <meta property="og:image" content="https://illucrum.com/images/og/about.png">
-  <meta name="twitter:image" content="https://illucrum.com/images/og/about.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="About Illucrum | SEO Audit Consultancy for SMEs">
-  <meta name="twitter:description"
-    content="Founded by a web developer who'd rather build things than study them. Meet the team behind Illucrum.">
-  <link rel="icon" href="../images/logo-ico.png">
-  <link rel="stylesheet" href="../styles.css">
-  <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Illucrum",
-    "url": "https://illucrum.com",
-    "logo": "https://illucrum.com/images/logo.png",
-    "email": "szymon.kokot@illucrum.com",
-    "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "5900 Balcones Drive 21473",
-        "addressLocality": "Austin",
-        "addressRegion": "TX",
-        "postalCode": "78731-4257",
-        "addressCountry": "US"
-    },
-    "areaServed": {
-        "@type": "Place",
-        "name": "Europe"
-    },
-    "contactPoint": [
-        {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "url": "https://wa.me/48515983261",
-        "description": "WhatsApp Business"
-        },
-        {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "email": "szymon.kokot@illucrum.com",
-        "description": "Email"
-        }
-    ],
-    "sameAs": [
-        "https://linkedin.com/company/illucrum",
-        "https://clutch.co/profile/illucrum",
-        "https://www.linkedin.com/in/szymon-kokot/",
-        "https://www.crunchbase.com/organization/illucrum",
-        "https://blog.illucrum.com/"
-    ]
-    }
-    </script>
-  <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Szymon Kokot",
-    "jobTitle": "Founder & SEO Consultant",
-    "worksFor": {
-        "@type": "Organization",
-        "name": "Illucrum",
-        "url": "https://illucrum.com"
-    },
-    "url": "https://illucrum.com/about",
-    "sameAs": [
-        "https://www.linkedin.com/in/szymon-kokot/"
-    ],
-    "knowsAbout": ["SEO", "Web Development", "Technical SEO", "E-commerce SEO", "B2B SEO"],
-    "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Universidad Politécnica de Madrid"
-    }
-    }
-    </script>
-  <!-- Consent Mode v2 defaults (must load before GTM) -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    (function () {
-      var c = null;
-      try { c = localStorage.getItem('illu_consent'); } catch (e) { }
-      var g = c === 'granted' ? 'granted' : 'denied';
-      gtag('consent', 'default', {
-        ad_storage: g,
-        analytics_storage: g,
-        ad_user_data: g,
-        ad_personalization: g,
-        functionality_storage: 'granted',
-        security_storage: 'granted',
-        wait_for_update: 500
-      });
-    })();
-  </script>
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-MRLGLHC5');</script>
-  <!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://illucrum.com/#organization",
+  "name": "Illucrum",
+  "legalName": "Illucrum LLC",
+  "url": "https://illucrum.com/",
+  "logo": "https://illucrum.com/static/img/logo.png",
+  "email": "szymon.kokot@illucrum.com",
+  "telephone": "+48 515 983 261",
+  "founder": { "@id": "https://illucrum.com/about/#person" },
+  "sameAs": [
+    "https://www.linkedin.com/company/illucrum/"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://illucrum.com/about/#person",
+  "name": "Szymon Kokot",
+  "jobTitle": "SEO audit consultant",
+  "worksFor": { "@id": "https://illucrum.com/#organization" },
+  "url": "https://illucrum.com/about/",
+  "email": "szymon.kokot@illucrum.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/szymonkokot/"
+  ]
+}
+</script>
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MRLGLHC5');</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<title>About Illucrum: SEO audits without the agency theatre</title>
+<meta name="description" content="Illucrum is a focused SEO audit consultancy run by Szymon Kokot. Written audits, honest scoring, no retainers you didn't ask for.">
+
+<link rel="canonical" href="https://illucrum.com/about">
+<link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/about">
+<link rel="alternate" hreflang="en-us" href="https://illucrum.com/about">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com/about">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://illucrum.com/about">
+<meta property="og:site_name" content="Illucrum">
+<meta property="og:title" content="About Illucrum">
+<meta property="og:description" content="A focused SEO audit consultancy. Built for SaaS and e-commerce companies that want diagnosis before implementation.">
+<meta property="og:image" content="https://illucrum.com/static/img/og-about.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Illucrum">
+<meta name="twitter:description" content="A focused SEO audit consultancy. Built for SaaS and e-commerce companies that want diagnosis before implementation.">
+<meta name="twitter:image" content="https://illucrum.com/static/img/og-about.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": "https://illucrum.com/about/#webpage",
+  "url": "https://illucrum.com/about/",
+  "name": "About Illucrum",
+  "isPartOf": { "@id": "https://illucrum.com/#organization" },
+  "about": { "@id": "https://illucrum.com/#organization" },
+  "mainEntity": { "@id": "https://illucrum.com/about/#person" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://illucrum.com/" },
+    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://illucrum.com/about/" }
+  ]
+}
+</script>
 </head>
-
 <body>
-  <nav class="main-nav">
-    <a href="/eu/" class="nav-logo">
-      <img src="../images/logo.png" alt="Illucrum" class="logo-light">
-      <img src="../images/logo.png" alt="Illucrum" class="logo-dark">
-    </a>
-    <div class="nav-links" id="navLinks">
-      <a href="/eu/audits/ecommerce-seo-audit">E-Commerce Audit</a>
-      <a href="/eu/audits/saas-seo-audit">SaaS Audit</a>
-      <a href="/eu/pricing">Pricing</a>
-      <a href="/eu/about">About</a>
-      <a href="/eu/seo-facts">SEO Facts</a>
-      <a href="/eu/faq">FAQ</a>
-      <a href="https://blog.illucrum.com/">Blog</a>
-      <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20audit%20enquiry&amp;body=Hi%20Illucrum%2C%0A%0AI%27d%20like%20to%20discuss%20an%20SEO%20audit%20for%20my%20website%3A%20%5Byour%20URL%5D%0A%0AThanks%2C" class="nav-cta">Get in Touch &rarr;</a>
-    </div>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2">
-          <circle cx="12" cy="12" r="5" />
-          <path
-            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-        </svg>
-        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2">
-          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-        </svg>
-      </button>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M3 12h18M3 6h18M3 18h18" />
-        </svg>
-      </button>
-    </div>
+<nav>
+  <a href="https://illucrum.com/eu">
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+  </a>
+  <ul>
+    <li><a href="/eu/audits">Audits</a></li>
+    <li><a href="/eu/pricing">Pricing</a></li>
+    <li><a href="/eu/process">Process</a></li>
+    <li><a href="/eu/faq">FAQ</a></li>
+    <li><a href="/eu/about">About</a></li>
+    <li><a href="https://wa.me/48515983261" rel="noopener">WhatsApp</a></li>
+  </ul>
+</nav>
+<header id="hero">
+  <small>About</small>
+  <h1>A small consultancy, focused on doing <em>one thing properly</em></h1>
+  <p>Illucrum is an SEO audit consultancy. Not a full-service agency, not a content marketing shop, not a freelancer with a website. The product is a structured 46-point SEO audit, delivered as a written report with prioritised fixes. Everything else on the site is in service of that.</p>
+
+  <nav>
+    <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20audit%20enquiry&amp;body=Hi%20Szymon%2C%0A%0AI%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits.%0A%0AThanks%2C">Email us</a>
+    <a href="https://wa.me/48515983261?text=Hi%20Szymon%2C%20I%20saw%20the%20Illucrum%20site%20and%20I%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits." rel="noopener">Whatsapp us</a>
   </nav>
-  <section class="page-hero">
-    <div class="hero-grid"></div>
-    <div class="hero-glow"></div>
-    <div class="container">
-      <div class="hero-content">
-        <h1>SEO without the fluff.</h1>
-        <p class="hero-sub">Illucrum exists because most SEO services sell mystery. We sell clarity: a
-          structured audit, a scored report, a prioritised action plan, and the ability to implement every
-          recommendation ourselves.</p>
-      </div>
-    </div>
+</header>
+
+<main>
+<section id="founder">
+  <header>
+    <small>01 / Who runs this</small>
+    <h2>Who <em>runs this</em></h2>
+    <p>Illucrum is run by Szymon Kokot. The audits, the reports, the replies on WhatsApp, all of it.</p>
+  </header>
+
+  <p>The reason this is a one-person consultancy and not a larger team is deliberate. SEO audits are a specific kind of work: they require deep familiarity with the site being audited, judgment about what matters, and the willingness to say "this is what you should ignore" alongside "this is what you should fix". That's hard to scale across a team without losing what makes an audit useful in the first place.</p>
+
+  <p>Szymon's background is across SaaS, e-commerce, and service businesses, with a focus on companies that have outgrown their own SEO knowledge but aren't ready for a full agency engagement. The current focus is <a href="/eu/audits/saas-seo-audit">SaaS audits</a>, with <a href="/eu/audits/ecommerce-seo-audit">e-commerce</a> as the secondary specialism.</p>
+</section>
+<section id="how-it-takes-shape">
+  <header>
+    <small>02 / Method</small>
+    <h2>How an audit actually <em>takes shape</em></h2>
+    <p>Most agency About pages tell you when the studio was founded, list a few client logos, and gesture at culture. None of that helps you decide whether to hire them.</p>
+  </header>
+
+  <p>Here's what happens instead when you book an audit:</p>
+
+  <ol>
+    <li>
+      <h3>Day 1</h3>
+      <p>A short written brief or a WhatsApp exchange to understand your business, what counts as success, and any context that won't show up in the data. No discovery call required unless you want one.</p>
+    </li>
+    <li>
+      <h3>Days 1 to 3</h3>
+      <p>Automated tooling runs across the site: Google Search Console, PageSpeed Insights, Lighthouse, Ahrefs, Screaming Frog. This is the data-gathering layer. It surfaces what's wrong but not why it matters.</p>
+    </li>
+    <li>
+      <h3>Days 3 to 5</h3>
+      <p>The 46-point manual review. This is where the value comes from. Tools see broken canonicals; an experienced auditor sees that those canonicals are masking duplicate content on faceted product URLs that compound at 10x scale. Roughly half of what's in the final report comes from this stage.</p>
+    </li>
+    <li>
+      <h3>Days 5 to 8</h3>
+      <p>The report is written. Every finding scored by impact and effort. The output is a prioritised action plan, not a 200-page PDF.</p>
+    </li>
+  </ol>
+
+  <p>You can read the full process at <a href="/eu/process">/process/</a>.</p>
+</section>
+<section id="commitments">
+  <header>
+    <small>03 / Commitments</small>
+    <h2>What we <em>commit to</em></h2>
+    <p>The four things below are the operating principles for every audit. They're worth stating explicitly because the SEO industry has a reputation for not honouring most of them.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Honest scoring</h3>
+      <p>Every finding in your audit is scored on a clear rubric. If something scores low because it's working, we say so. If something scores high because it's broken, we tell you what it's costing you. No padding the report to look thorough.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>Transparent pricing</h3>
+      <p>The audit price is on the <a href="/eu/pricing">pricing page</a>. No discovery calls before you can see a number. No "starting from" with hidden upsells. Two tiers, fixed prices, you pick.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>Implementation is your call</h3>
+      <p>The audit is a standalone deliverable. We don't push you into a retainer. If you want help implementing, we can scope that separately. If you want to take the report and execute it yourself, the report is written for that.</p>
+    </li>
+  </ul>
+</section>
+<section id="why-diagnosis">
+  <header>
+    <small>04 / Approach</small>
+    <h2>Why diagnosis <em>before implementation</em></h2>
+    <p>The default SEO engagement is monthly retainer first, audit somewhere along the way, action items discovered as you go. That model exists because it's profitable for the agency, not because it's good for the client.</p>
+  </header>
+
+  <p>The problem with implementation-without-diagnosis is straightforward: you can't fix what you haven't named, and you can't prioritise across what you haven't measured. Most retainers ship work that looks productive (new content, technical tweaks, link building) but addresses symptoms instead of causes.</p>
+
+  <p>An audit reverses the order. You see what's wrong before any work starts. You see what's scored as high impact and what's scored as low. You decide what to fix yourself, what to hire out, and what to leave alone. The audit-to-implementation handoff is then explicit, not vague.</p>
+
+  <p>Most clients implement the highest-impact fixes themselves and hire help only for the deeper technical work. That's the intended pattern.</p>
+</section>
+<section id="cta">
+  <header>
+    <small>06 / Start</small>
+    <h2>Ready to <em>start?</em></h2>
+    <p>The fastest way to get an audit underway is a short message describing your site and what you'd like to understand. We'll come back with the right audit for the situation.</p>
+  </header>
+
+  <nav>
+    <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20audit%20enquiry&amp;body=Hi%20Szymon%2C%0A%0AI%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits.%0A%0AThanks%2C">Email us</a>
+    <a href="https://wa.me/48515983261?text=Hi%20Szymon%2C%20I%20saw%20the%20Illucrum%20site%20and%20I%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits." rel="noopener">Whatsapp us</a>
+  </nav>
+
+  <p><small>Replies typically within 24 hours, Monday to Friday.</small></p>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Not sure which audit fits?</h3>
+      <p>Answer three questions and we'll point you to the right one.</p>
+      <a href="/eu/which-audit">Help me decide</a>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>See the prices</h3>
+      <p>Two tiers per audit, transparent pricing, no discovery calls.</p>
+      <a href="/eu/pricing">View pricing</a>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>Read the process</h3>
+      <p>Step by step, day by day, what we actually do.</p>
+      <a href="/eu/process">See the process</a>
+    </li>
+  </ul>
+</section>
+
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+    <p>SEO audits that show you exactly what to fix next.</p>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="reveal">Meet Szymon Kokot</h2>
-      <div class="bio-section mt-3 reveal">
-        <img src="../images/szymon.png" class="bio-photo" alt="Szymon Kokot, founder of Illucrum." />
-        <div class="bio-text">
-          <p>I&rsquo;m a web developer and SEO consultant, originally from Poland. I studied computer science
-            at the Universidad Polit&eacute;cnica de Madrid before realising I&rsquo;d learn more building
-            things than sitting in lectures. So I did.</p>
-          <p>I spent three years working with large B2B e-commerce companies in Spain; developing,
-            maintaining, and SEO-optimising their platforms. That experience taught me how enterprise sites
-            work under the hood: what breaks rankings, what accelerates them, and why most SEO advice falls
-            apart when it hits a real codebase.</p>
-          <p>I started Illucrum because I saw the same problems repeated everywhere: small and mid-sized
-            businesses getting either overcharged by agencies or underserved by automated tools.
-            There&rsquo;s a gap between a €50 robot report and a €5,000 agency engagement. And
-            that&rsquo;s exactly where we operate. Every audit we deliver is hands-on, specific to your
-            business, and designed to lead somewhere useful.</p>
-        </div>
-      </div>
-    </div>
+  <section>
+    <h5>Audits</h5>
+    <ul>
+      <li><a href="/eu/audits/saas-seo-audit">SaaS SEO audit</a></li>
+      <li><a href="/eu/audits/ecommerce-seo-audit">E-commerce SEO audit</a></li>
+      <li><a href="/eu/audits/seo-audit">Website SEO audit</a></li>
+      <li><a href="/eu/which-audit">Which audit?</a></li>
+    </ul>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="reveal">How we work</h2>
-      <div class="principles-grid mt-3">
-        <div class="principle-item reveal">
-          <h4>ROI first, always.</h4>
-          <p>Every recommendation ties back to a business outcome. We don&rsquo;t optimise for scores. We
-            optimise for growth.</p>
-        </div>
-        <div class="principle-item reveal">
-          <h4>E-commerce native.</h4>
-          <p>Our primary audit is built for online stores. Platform-specific knowledge means we catch the issues that
-            generic audits miss.</p>
-        </div>
-        <div class="principle-item reveal">
-          <h4>No jargon.</h4>
-          <p>Our reports are written for business owners. You won&rsquo;t need a translator to understand your
-            own audit.</p>
-        </div>
-        <div class="principle-item reveal">
-          <h4>Audit is the entry point, not the end point.</h4>
-          <p>We find the problems and we fix them. From technical SEO to a full website rebuild, it&rsquo;s
-            all under one roof.</p>
-        </div>
-      </div>
-    </div>
+  <section>
+    <h5>Compare</h5>
+    <ul>
+      <li><a href="/eu/compare/saas-vs-ecommerce-seo-audit">SaaS vs E-commerce</a></li>
+      <li><a href="/eu/compare/saas-vs-generic-seo-audit">SaaS vs Website</a></li>
+      <li><a href="/eu/compare/ecommerce-vs-generic-seo-audit">E-commerce vs Website</a></li>
+      <li><a href="/eu/compare/basic-vs-full-seo-audit">Basic vs Full</a></li>
+      <li><a href="/eu/compare/seo-audit-vs-seo-tool">Audit vs SEO tool</a></li>
+      <li><a href="/eu/compare/seo-audit-vs-seo-retainer">Audit vs retainer</a></li>
+      <li><a href="/eu/compare/seo-audit-vs-diy">Audit vs DIY</a></li>
+    </ul>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="reveal">What we don&rsquo;t do</h2>
-      <p class="max-w-prose mt-2 reveal">We don&rsquo;t do vanity reports. We don&rsquo;t chase impressions. We
-        don&rsquo;t send you a 200-page PDF full of charts nobody reads. We don&rsquo;t lock you into contracts,
-        and we don&rsquo;t gatekeep your own data. If you can do it yourself with our report, great,
-        that&rsquo;s a success, not a lost client.</p>
-    </div>
+  <section>
+    <h5>Company</h5>
+    <ul>
+      <li><a href="/eu/about">About</a></li>
+      <li><a href="/eu/process">Process</a></li>
+      <li><a href="/eu/pricing">Pricing</a></li>
+      <li><a href="/eu/faq">FAQ</a></li>
+      <li><a href="/eu/seo-facts">SEO facts</a></li>
+    </ul>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="cta-band reveal">
-        <h2>Ready to start with an audit?</h2>
-        <p>Pick the audit type that fits your business, or message us and we&rsquo;ll recommend the right one.
-        </p>
-        <div class="cta-actions">
-          <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20audit%20enquiry&amp;body=Hi%20Illucrum%2C%0A%0AI%27d%20like%20to%20discuss%20an%20SEO%20audit%20for%20my%20website%3A%20%5Byour%20URL%5D%0A%0AThanks%2C"
-            class="btn-primary btn-mail">Email us &rarr;</a>
-          <a href="https://wa.me/48515983261?text=Hi%20Illucrum%2C%20I%27d%20like%20to%20discuss%20an%20SEO%20audit."
-            class="btn-primary btn-whatsapp" target="_blank" rel="noopener">Chat on WhatsApp &rarr;</a>
-          <a href="/eu/pricing" class="btn-ghost">See pricing &rarr;</a>
-        </div>
-      </div>
-    </div>
+  <section>
+    <h5>Contact &amp; Legal</h5>
+    <ul>
+      <li><a href="mailto:szymon.kokot@illucrum.com">Email</a></li>
+      <li><a href="https://wa.me/48515983261" rel="noopener">WhatsApp</a></li>
+      <li><a href="https://t.me/m/w209xo-FZGJk" rel="noopener">Telegram</a></li>
+      <li><a href="/eu/legal/terms">Terms</a></li>
+      <li><a href="/eu/legal/privacy">Privacy</a></li>
+      <li><a href="/eu/legal/cookies">Cookies</a></li>
+      <li><a href="/eu/legal/disclaimer">Disclaimer</a></li>
+      <li><a href="/eu/legal/accessibility">Accessibility</a></li>
+      <li><a href="#" data-consent-open>Manage cookies</a></li>
+    </ul>
   </section>
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <strong>Illucrum</strong>
-          <p>SEO audits, optimisation, and web builds for businesses serious about growth.</p>
-          <p>Austin, TX</p>
-          <a href="mailto:szymon.kokot@illucrum.com" class="footer-email">szymon.kokot@illucrum.com</a>
-        </div>
-        <div class="footer-col">
-          <h5>Services</h5>
-          <a href="/eu/audits/ecommerce-seo-audit">E-Commerce SEO Audit</a>
-          <a href="/eu/audits/seo-audit">Generic SEO Audit</a>
-          <a href="/eu/audits/saas-seo-audit">SaaS SEO Audit</a>
-          <a href="/eu/pricing">Pricing</a>
-        </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <a href="/eu/about">About</a>
-          <a href="/eu/faq">FAQ</a>
-          <a href="/eu/seo-facts">SEO Facts</a>
-          <a href="https://blog.illucrum.com/">Blog</a>
-        </div>
-        <div class="footer-col">
-          <h5>Contact</h5>
-          <a href="https://wa.me/48515983261" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20audit%20enquiry&amp;body=Hi%20Illucrum%2C%0A%0AI%27d%20like%20to%20discuss%20an%20SEO%20audit%20for%20my%20website%3A%20%5Byour%20URL%5D%0A%0AThanks%2C">Email</a>
-          <a href="https://linkedin.com/company/illucrum" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://clutch.co/profile/illucrum" target="_blank" rel="noopener">Clutch</a>
-          <a href="https://www.crunchbase.com/organization/illucrum" target="_blank" rel="noopener">Crunchbase</a>
-        </div>
-        <div class="footer-col">
-          <h5>Legal</h5>
-          <a href="/eu/legal/terms">Terms of Service</a>
-          <a href="/eu/legal/privacy">Privacy Policy</a>
-          <a href="/eu/legal/disclaimer">Disclaimer</a>
-        </div>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +48 515 983 261</span>
+    <span>
+      <a href="https://illucrum.com" hreflang="en-us">US</a> &middot;
+      <a href="https://illucrum.com/eu" hreflang="en-gb">EU</a>
+    </span>
+  </small>
+</footer>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRLGLHC5" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="We use cookies" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">We use cookies</p>
+    <p class="ic-consent__body">We use cookies to make the site work, to understand how it is used, and (only if you agree) to show relevant ads on Google and Reddit. You can change your choice at any time from the footer. <a href="/eu/legal/cookies/">Cookie policy</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferences</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Strictly necessary</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
+        <p class="ic-consent__pref-desc">Required for the site to function. Cannot be turned off.</p>
       </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Illucrum. All rights reserved.</span>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analytics</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
+        <p class="ic-consent__pref-desc">Helps us understand how visitors use the site (Google Analytics 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Advertising</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
+        <p class="ic-consent__pref-desc">Lets us measure and personalise Google Ads and Reddit Ads campaigns.</p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>
       </div>
     </div>
-  </footer>
-  <script src="/main.js"></script>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRLGLHC5" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  </div>
+</div>
 </body>
-
 </html>

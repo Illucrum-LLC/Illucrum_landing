@@ -1,3 +1,12 @@
+# robots.txt for https://illucrum.com
+# Allow all well-behaved crawlers full access.
 User-agent: *
 Allow: /
+
+# Internal design / style reference page — not for indexing.
+Disallow: /resources/design
+
+# Note: /legal/ pages are intentionally crawlable so search engines can
+# read their on-page "noindex" directive; they are not blocked here.
+
 Sitemap: https://illucrum.com/sitemap.xml
