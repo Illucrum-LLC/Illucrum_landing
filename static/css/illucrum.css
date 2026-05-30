@@ -546,6 +546,7 @@ body > nav > ul {
   padding-top: 0.5rem;
   border-top: 1px solid var(--border);
   transition: border-color var(--trans);
+  margin: 0;
 }
 body > nav > ul > li { display: inline-flex; }
 body > nav > ul a {

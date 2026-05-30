@@ -110,9 +110,9 @@
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "Illucrum SEO Audits",
-  "description": "Three SEO audits built on the same 46-point framework. SaaS, e-commerce, and website.",
+  "description": "Three SEO audits by site type built on the same 46-point framework (SaaS, e-commerce, and website), plus a focused technical SEO audit.",
   "url": "https://illucrum.com/audits/",
-  "numberOfItems": 3,
+  "numberOfItems": 4,
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -162,6 +162,22 @@
         "offers": [
           { "@type": "Offer", "name": "Website SEO Audit, Basic", "price": "247", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://illucrum.com/audits/seo-audit/#pricing" },
           { "@type": "Offer", "name": "Website SEO Audit, Full",  "price": "497",  "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://illucrum.com/audits/seo-audit/#pricing" }
+        ]
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Service",
+        "@id": "https://illucrum.com/audits/technical-seo-audit/#service",
+        "name": "Technical SEO Audit",
+        "url": "https://illucrum.com/audits/technical-seo-audit/",
+        "description": "A focused technical SEO audit covering crawlability and indexation, site architecture, JavaScript rendering, Core Web Vitals, structured data, canonicalisation, and crawl budget. The engineering layer only, at a single fixed price.",
+        "provider": { "@id": "https://illucrum.com/#organization" },
+        "serviceType": "SEO Audit",
+        "offers": [
+          { "@type": "Offer", "name": "Technical SEO Audit", "price": "{{PRICE_TECHNICAL}}", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://illucrum.com/audits/technical-seo-audit/#pricing" }
         ]
       }
     }
@@ -235,21 +251,26 @@
     </li>
     <li>
       <span>02</span>
+      <h3><a href="#by-focus">By focus</a></h3>
+      <p>Only need the engineering layer? The technical SEO audit on its own, one fixed price.</p>
+    </li>
+    <li>
+      <span>03</span>
       <h3><a href="#compare">Compare</a></h3>
       <p>Side-by-side table covering all three audits across tiers, depth, and delivery.</p>
     </li>
     <li>
-      <span>03</span>
+      <span>04</span>
       <h3><a href="#whats-included">What's included</a></h3>
       <p>What every audit ships with: checks in scope and the documents you receive.</p>
     </li>
     <li>
-      <span>04</span>
+      <span>05</span>
       <h3><a href="#how-it-works">How it works</a></h3>
       <p>Brief, audit, report, debrief. The same four steps for every audit.</p>
     </li>
     <li>
-      <span>05</span>
+      <span>06</span>
       <h3><a href="#faq">FAQ</a></h3>
       <p>The three questions that come up most. The full FAQ is one click away.</p>
     </li>
@@ -287,6 +308,24 @@
       <p>The 46-point framework in its base form. Technical SEO, on-page elements, keyword strategy, backlinks, competitor analysis, local SEO foundations, and UX. The right audit for service businesses, B2B content sites, consultancies, agencies, and anyone whose primary site doesn't fit cleanly into the SaaS or e-commerce verticals. The Basic tier covers the core diagnostics. The Full tier is the comprehensive review with backlink and competitor depth.</p>
       <p><strong>Basic from &euro;247 &middot; Full from &euro;497</strong></p>
       <a href="/eu/audits/seo-audit">See the website audit</a>
+    </li>
+  </ul>
+</section>
+<section id="by-focus">
+  <header>
+    <small>02 / By focus</small>
+    <h2>Only need the <em>technical layer?</em></h2>
+    <p>The three audits above are split by site type and cover the full picture, from technical health to keywords, content, and conversion. If your brief is narrower, the technical SEO audit isolates the engineering layer on its own.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Technical SEO Audit</h3>
+      <p><strong>For large, complex, or JavaScript-heavy sites where crawling, rendering, and indexation are the question.</strong></p>
+      <p>A focused, single-discipline diagnostic: crawlability and indexation, site architecture, JavaScript rendering, Core Web Vitals, structured data, canonicalisation, HTTPS and redirects, and crawl budget. No keyword, content, or competitor analysis; just the engineering layer, scored and prioritised. The right call after a migration, or when rankings dropped and you need a technical backlog rather than a strategy review.</p>
+      <p><strong>One fixed price, &euro;{{PRICE_TECHNICAL}}</strong></p>
+      <a href="/eu/audits/technical-seo-audit">See the technical audit</a>
     </li>
   </ul>
 </section>
@@ -398,9 +437,145 @@
 
   <p><small>All three audits include the same delivery format: a written report, a prioritised action plan, and a debrief session. Tier and delivery details are the same across audits; only the depth of analysis differs.</small></p>
 </section>
+<section id="not-sure">
+  <header>
+    <small>03 / Decision aid</small>
+    <h2>Not sure <em>which audit</em> fits?</h2>
+    <p>Walk through a three-question decision flow that recommends the right audit based on your site type, stage, and how much help you want after the audit lands.</p>
+  </header>
+
+  <nav>
+    <a href="/eu/which-audit">Find my audit</a>
+    <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20audit%20enquiry&amp;body=Hi%20Szymon%2C%0A%0AI%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits.%0A%0AThanks%2C">Ask Szymon directly</a>
+  </nav>
+</section>
 <section id="compare-two">
   <header>
     <small>04 / Two at a time</small>
+    <h2>Compare two audits, <em>head to head</em></h2>
+    <p>For visitors stuck between two specific audits, the comparison pages below dig into how each one differs in practice and which fits which kind of business.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>SaaS vs E-commerce</h3>
+      <p>For founders running both an app and a store, or weighing which side of the business needs the audit first.</p>
+      <a href="/eu/compare/saas-vs-ecommerce-seo-audit">See the comparison</a>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>SaaS vs Website</h3>
+      <p>For SaaS founders deciding whether the SaaS-specific audit is worth the premium over the general framework.</p>
+      <a href="/eu/compare/saas-vs-generic-seo-audit">See the comparison</a>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>E-commerce vs Website</h3>
+      <p>For store owners weighing whether catalogue-specific depth is needed or whether the general audit covers enough.</p>
+      <a href="/eu/compare/ecommerce-vs-generic-seo-audit">See the comparison</a>
+    </li>
+  </ul>
+</section>
+<section id="compare">
+  <header>
+    <small>04 / Compare</small>
+    <h2>Compare the three <em>SEO audits</em></h2>
+    <p>All three SEO audits use the same 46-point framework. They differ in which checks get the deepest attention. The SaaS audit focuses on funnels and integration pages. The E-commerce audit focuses on catalogues and product schema. The Website audit covers the broad foundations every site needs.</p>
+  </header>
+
+  <table>
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>SaaS</th>
+        <th>E-commerce</th>
+        <th>Website</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Best for</td>
+        <td>B2B SaaS companies</td>
+        <td>Online stores</td>
+        <td>Services, content, everyone else</td>
+      </tr>
+      <tr>
+        <td>Vertical depth</td>
+        <td>Funnel content, integrations, comparison pages, JS rendering, trial paths, AI citation</td>
+        <td>Catalogue architecture, product schema, faceted navigation, variants, platform issues</td>
+        <td>General foundations across technical, on-page, keywords, backlinks, competitors</td>
+      </tr>
+      <tr>
+        <td>Section replacements vs base 46</td>
+        <td>Local SEO replaced by Funnel + Integration sections</td>
+        <td>Local SEO replaced by Product &amp; Catalogue + E-commerce Keywords</td>
+        <td>None; this is the base framework</td>
+      </tr>
+      <tr>
+        <td>Basic tier price</td>
+        <td><strong>&euro;247</strong></td>
+        <td><strong>&euro;247</strong></td>
+        <td><strong>&euro;247</strong></td>
+      </tr>
+      <tr>
+        <td>Full tier price</td>
+        <td><strong>&euro;497</strong></td>
+        <td><strong>&euro;497</strong></td>
+        <td><strong>&euro;497</strong></td>
+      </tr>
+      <tr>
+        <td>Basic checks included</td>
+        <td>~32 of 46</td>
+        <td>~32 of 46</td>
+        <td>~26 of 46</td>
+      </tr>
+      <tr>
+        <td>Full checks included</td>
+        <td>46 of 46</td>
+        <td>46 of 46</td>
+        <td>46 of 46</td>
+      </tr>
+      <tr>
+        <td>Delivery (Basic)</td>
+        <td>3 to 5 working days</td>
+        <td>3 to 5 working days</td>
+        <td>3 to 5 working days</td>
+      </tr>
+      <tr>
+        <td>Delivery (Full)</td>
+        <td>5 to 8 working days</td>
+        <td>5 to 8 working days</td>
+        <td>5 to 8 working days</td>
+      </tr>
+      <tr>
+        <td>Debrief session</td>
+        <td>30 min (Basic) / 45 min (Full)</td>
+        <td>30 min / 45 min</td>
+        <td>30 min / 45 min</td>
+      </tr>
+      <tr>
+        <td>Best fit signals</td>
+        <td>Programmatic content, app on subdomain, trial-led growth, integrations directory</td>
+        <td>High SKU count, complex collections, variant-heavy catalogue, schema gaps</td>
+        <td>No product catalogue, no SaaS funnel, simple service-page architecture</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Audit page</td>
+        <td><a href="/eu/audits/saas-seo-audit">See SaaS audit</a></td>
+        <td><a href="/eu/audits/ecommerce-seo-audit">See e-commerce audit</a></td>
+        <td><a href="/eu/audits/seo-audit">See website audit</a></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <p><small>All three audits include the same delivery format: a written report, a prioritised action plan, and a debrief session. Tier and delivery details are the same across audits; only the depth of analysis differs.</small></p>
+</section>
+<section id="compare-two">
+  <header>
+    <small>05 / Two at a time</small>
     <h2>Compare two audits, <em>head to head</em></h2>
     <p>For visitors stuck between two specific audits, the comparison pages below dig into how each one differs in practice and which fits which kind of business.</p>
   </header>
@@ -483,6 +658,35 @@
 
   <p><a href="/eu/process">See the full process</a></p>
 </section>
+<section id="whats-included">
+  <header>
+    <small>06 / In scope</small>
+    <h2>What every Illucrum <em>SEO audit</em> includes</h2>
+    <p>Every SEO audit Illucrum delivers includes a 46-point check across technical SEO, on-page elements, keyword strategy, and UX, with vertical-specific sections layered on top. You get a written report, a prioritised action plan, every check scored and explained, and a debrief session to walk through findings.</p>
+  </header>
+
+  <ul>
+    <li>
+      <small>Always in scope</small>
+      <h3>Checks every audit runs</h3>
+      <p>Technical SEO foundations (page speed, Core Web Vitals, HTTPS, mobile, sitemap, robots, canonicals, structured data).</p>
+      <p>On-page SEO (titles, meta descriptions, headings, content quality, internal linking, image optimisation).</p>
+      <p>Keyword strategy (current rankings, opportunity mapping, content gap).</p>
+      <p>UX and conversion (CTA architecture, navigation, trust signals, engagement signals).</p>
+      <p>Vertical-specific section (SaaS funnel, e-commerce catalogue, or the general framework depending on audit).</p>
+    </li>
+    <li>
+      <small>What you receive</small>
+      <h3>Documents and follow-up</h3>
+      <p>A written report (DOCX and PDF) with every check scored, explained, and prioritised.</p>
+      <p>An action plan ranked by impact and effort, not a flat list of "fixes".</p>
+      <p>Inline screenshots and references so every finding is traceable.</p>
+      <p>A 30 to 45 minute debrief on WhatsApp voice or video, your call.</p>
+      <p>A copy of the audit data file (JSON) for your own records, if requested.</p>
+      <p>A follow-up message at 30 days asking what you've actioned and what's stuck.</p>
+    </li>
+  </ul>
+</section>
 <section id="faq">
   <header>
     <small>07 / FAQ</small>
@@ -507,9 +711,77 @@
 
   <p><a href="/eu/faq">Read every SEO audit question</a></p>
 </section>
+<section id="how-it-works">
+  <header>
+    <small>07 / Process</small>
+    <h2>How it <em>works</em></h2>
+    <p>The audit process is the same for all three verticals. You order via WhatsApp or email, send a short brief, and the audit lands in three to eight working days depending on the tier. After the report, a debrief walks through priorities and the first five things to action.</p>
+  </header>
+
+  <ol>
+    <li>
+      <h3>Brief us</h3>
+      <p>Tell us your URL, your business type, and what you want the audit to answer. A WhatsApp message or short email is enough.</p>
+    </li>
+    <li>
+      <h3>We audit</h3>
+      <p>Our 46-point framework runs across your site. Every check is scored, evidenced, and tied back to a business outcome. Vertical-specific sections layer on top.</p>
+    </li>
+    <li>
+      <h3>You get the report</h3>
+      <p>A written report (DOCX and PDF) lands in 3 to 8 working days. Findings, scores, screenshots, and a prioritised action plan. No vanity metrics.</p>
+    </li>
+    <li>
+      <h3>We debrief</h3>
+      <p>A 30 to 45 minute debrief on WhatsApp voice or video. Walk through priorities, decide what to action first, and ask anything the report didn't answer.</p>
+    </li>
+  </ol>
+
+  <p><a href="/eu/process">See the full process</a></p>
+</section>
 <section id="cta">
   <header>
     <small>08 / Start</small>
+    <h2>Ready to find what's <em>blocking</em> your traffic?</h2>
+    <p>Pick an audit, or let us help you pick. Either way, you'll know in under a week what's holding your site back and what to do about it. No retainer, no lock-in, no jargon.</p>
+  </header>
+
+  <nav>
+    <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20audit%20enquiry&amp;body=Hi%20Szymon%2C%0A%0AI%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits.%0A%0AThanks%2C">Email us</a>
+    <a href="https://wa.me/48515983261?text=Hi%20Szymon%2C%20I%20saw%20the%20Illucrum%20site%20and%20I%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits." rel="noopener">Whatsapp us</a>
+  </nav>
+
+  <p><small>Reports delivered in 3 to 8 working days &middot; 46-point framework &middot; Honest pricing, no surprise upsells</small></p>
+</section>
+
+</main>
+<section id="faq">
+  <header>
+    <small>08 / FAQ</small>
+    <h2>SEO audit questions, <em>briefly answered</em></h2>
+    <p>Three questions that come up before nearly every audit. The full FAQ has the rest.</p>
+  </header>
+
+  <details open>
+    <summary>How do I know which SEO audit is right for me?</summary>
+    <p>Pick by site type. If your business runs on a SaaS product with a trial, funnel content, and an integrations directory, the SaaS audit is the right fit. If you run an online store, the e-commerce audit covers catalogue and product schema depth a general audit can't. Everything else fits the Website audit.</p>
+  </details>
+
+  <details open>
+    <summary>What's the difference between the Basic and Full tier?</summary>
+    <p>The Basic tier covers the conversion-critical checks, roughly 26 to 32 of the 46 framework points depending on audit type. The Full tier is the complete 46-point review with deeper backlink analysis, competitor work, and a more comprehensive action plan. Basic is a strong standalone diagnostic; Full is the full picture and roadmap.</p>
+  </details>
+
+  <details open>
+    <summary>How long does the audit take to deliver?</summary>
+    <p>A Basic audit lands in three to five working days from when you send the brief. A Full audit takes five to eight working days because of the deeper backlink, competitor, and vertical-specific work. The debrief is scheduled within a week of report delivery, at a time that fits you.</p>
+  </details>
+
+  <p><a href="/eu/faq">Read every SEO audit question</a></p>
+</section>
+<section id="cta">
+  <header>
+    <small>09 / Start</small>
     <h2>Ready to find what's <em>blocking</em> your traffic?</h2>
     <p>Pick an audit, or let us help you pick. Either way, you'll know in under a week what's holding your site back and what to do about it. No retainer, no lock-in, no jargon.</p>
   </header>

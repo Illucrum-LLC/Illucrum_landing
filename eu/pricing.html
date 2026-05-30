@@ -74,7 +74,7 @@
 
 <script defer src="/static/js/consent.js"></script>
 <title>SEO Audit Pricing | Illucrum</title>
-<meta name="description" content="Transparent SEO audit pricing from &euro;247 to &euro;497. Two tiers per audit, three audit types. No discovery calls, no hidden fees.">
+<meta name="description" content="Transparent SEO audit pricing from &euro;{{PRICE_TECHNICAL}} to &euro;497. Tiered site-type audits plus a fixed-price technical audit. No discovery calls, no hidden fees.">
 
 <link rel="canonical" href="https://illucrum.com/pricing">
 <link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/pricing">
@@ -86,12 +86,12 @@
 <meta property="og:url" content="https://illucrum.com/pricing">
 <meta property="og:site_name" content="Illucrum">
 <meta property="og:title" content="SEO audit pricing">
-<meta property="og:description" content="Two audit tiers. Three audit types. Fixed pricing. From &euro;247 to &euro;497.">
+<meta property="og:description" content="Tiered site-type audits plus a fixed-price technical audit. From &euro;{{PRICE_TECHNICAL}} to &euro;497.">
 <meta property="og:image" content="https://illucrum.com/static/img/og-pricing.png">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SEO audit pricing">
-<meta name="twitter:description" content="Two audit tiers. Three audit types. Fixed pricing. From &euro;247 to &euro;497.">
+<meta name="twitter:description" content="Tiered site-type audits plus a fixed-price technical audit. From &euro;{{PRICE_TECHNICAL}} to &euro;497.">
 <meta name="twitter:image" content="https://illucrum.com/static/img/og-pricing.png">
 
 <script type="application/ld+json">
@@ -148,6 +148,22 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://illucrum.com/audits/technical-seo-audit/#service",
+  "serviceType": "Technical SEO Audit",
+  "name": "Technical SEO Audit",
+  "url": "https://illucrum.com/audits/technical-seo-audit/",
+  "provider": { "@id": "https://illucrum.com/#organization" },
+  "areaServed": "Worldwide",
+  "offers": [
+    { "@type": "Offer", "name": "Technical SEO Audit", "price": "{{PRICE_TECHNICAL}}", "priceCurrency": "EUR", "url": "https://illucrum.com/pricing/#technical" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://illucrum.com/" },
@@ -188,7 +204,7 @@
 <header id="hero">
   <small>Pricing</small>
   <h1>SEO audit <em>pricing</em></h1>
-  <p>Two tiers per audit, three audit types. Fixed pricing, no discovery calls before you see a number. Below is the full breakdown.</p>
+  <p>Two tiers per site-type audit, plus a focused technical audit at one fixed price. No discovery calls before you see a number. Below is the full breakdown.</p>
 
   <nav>
     <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20audit%20enquiry&amp;body=Hi%20Szymon%2C%0A%0AI%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits.%0A%0AThanks%2C">Email us</a>
@@ -204,7 +220,7 @@
     <p>The featured-snippet answer, in plain language.</p>
   </header>
 
-  <p>An Illucrum SEO audit costs between &euro;247 and &euro;497 depending on the audit type and tier. The Website SEO audit starts at &euro;247 (Basic) and runs up to &euro;497 (Full). The SaaS and E-commerce SEO audits start at &euro;247 (Basic) and run up to &euro;497 (Full). All pricing is fixed, paid upfront, with no hidden fees.</p>
+  <p>An Illucrum SEO audit costs between &euro;{{PRICE_TECHNICAL}} and &euro;497 depending on the audit type and tier. The focused Technical SEO audit is a single fixed price of &euro;{{PRICE_TECHNICAL}}. The Website SEO audit starts at &euro;247 (Basic) and runs up to &euro;497 (Full). The SaaS and E-commerce SEO audits start at &euro;247 (Basic) and run up to &euro;497 (Full). All pricing is fixed, paid upfront, with no hidden fees.</p>
 </section>
 <section id="jump-nav">
   <header>
@@ -231,11 +247,16 @@
     </li>
     <li>
       <span>04</span>
+      <h3><a href="#technical">Technical audit</a></h3>
+      <p>Pricing for the focused technical SEO audit, one fixed price.</p>
+    </li>
+    <li>
+      <span>05</span>
       <h3><a href="#addons">Add-ons</a></h3>
       <p>Optional extras scoped after the main audit is delivered.</p>
     </li>
     <li>
-      <span>05</span>
+      <span>06</span>
       <h3><a href="#faq">Pricing FAQ</a></h3>
       <p>Upgrades, discounts, payments, and refunds.</p>
     </li>
@@ -485,6 +506,82 @@
     </li>
   </ul>
 </section>
+<section id="technical">
+  <header>
+    <small>05 / Technical</small>
+    <h2>Technical SEO audit <em>pricing</em></h2>
+    <p>A focused, single-discipline audit of the engineering layer: crawlability, indexation, rendering, Core Web Vitals, structured data, canonicalisation, and crawl budget. One fixed price, no Basic or Full split.</p>
+  </header>
+
+  <table>
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>Technical SEO Audit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Price</td>
+        <td><strong>&euro;{{PRICE_TECHNICAL}}</strong></td>
+      </tr>
+      <tr>
+        <td>Best for</td>
+        <td>For large, complex, or JavaScript-heavy sites; post-migration checks; unexplained indexation or traffic drops</td>
+      </tr>
+      <tr>
+        <td>What's included</td>
+        <td>
+          <ul>
+            <li>Crawlability and indexation review</li>
+            <li>Site architecture and internal linking</li>
+            <li>JavaScript rendering check</li>
+            <li>Core Web Vitals and performance</li>
+            <li>Structured data validation</li>
+            <li>Canonicalisation and duplicate-content review</li>
+            <li>HTTPS, redirects, and status codes</li>
+            <li>Crawl budget and international signals</li>
+            <li>Prioritised technical action plan, every finding scored</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Delivery</td>
+        <td>3 to 5 business days</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <nav>
+    <a href="mailto:szymon.kokot@illucrum.com?subject={{CTA_TECHNICAL_EMAIL_SUBJECT}}&amp;body={{CTA_TECHNICAL_EMAIL_BODY}}">Email us</a>
+    <a href="https://wa.me/48515983261?text={{CTA_TECHNICAL_WA_TEXT}}" rel="noopener">Whatsapp us</a>
+  </nav>
+
+  <p>See the <a href="/eu/audits/technical-seo-audit">Technical SEO audit in detail</a>. Need strategy as well as engineering? A full audit includes the technical layer plus keywords, content, and competitors.</p>
+</section>
+<section id="addons">
+  <header>
+    <small>06 / Add-ons</small>
+    <h2><em>Add-ons</em></h2>
+    <p>Optional services that can be bolted onto any audit, scoped after the main audit is delivered. None of these are required; they exist for clients who want specific extras.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Post-audit walkthrough call</h3>
+      <p><strong>Included</strong></p>
+      <p>A 30-minute call to walk through the report's findings, scoring, and action plan. Included free with every audit; scheduled within two weeks of report delivery.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>Implementation support</h3>
+      <p><strong>Scoped after audit</strong></p>
+      <p>Help executing the findings: technical fixes, on-page rewrites, schema deployment, content production. Scoped against the specific action plan after the audit delivers. No retainer required.</p>
+      <a href="/eu/compare/seo-audit-vs-seo-retainer">See the audit vs retainer comparison</a>
+    </li>
+  </ul>
+</section>
 <section id="faq">
   <header>
     <small>06 / FAQ</small>
@@ -522,6 +619,56 @@
 <section id="cta">
   <header>
     <small>07 / Start</small>
+    <h2>Ready to <em>book?</em></h2>
+    <p>Send a short message with your site URL and the audit type you want. We'll confirm the right tier and timeline within 24 hours.</p>
+  </header>
+
+  <nav>
+    <a href="mailto:szymon.kokot@illucrum.com?subject=SEO%20audit%20enquiry&amp;body=Hi%20Szymon%2C%0A%0AI%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits.%0A%0AThanks%2C">Email us</a>
+    <a href="https://wa.me/48515983261?text=Hi%20Szymon%2C%20I%20saw%20the%20Illucrum%20site%20and%20I%27d%20like%20to%20know%20more%20about%20your%20SEO%20audits." rel="noopener">Whatsapp us</a>
+  </nav>
+
+  <p><small>Still deciding? See <a href="/eu/which-audit">which SEO audit is right for you</a>.</small></p>
+</section>
+
+</main>
+<section id="faq">
+  <header>
+    <small>07 / FAQ</small>
+    <h2>Pricing <em>FAQs</em></h2>
+    <p>The questions that come up most often about cost, tiers, and payment.</p>
+  </header>
+
+  <details open>
+    <summary>Why is the SaaS and e-commerce audit more expensive than the Website audit?</summary>
+    <p>SaaS and e-commerce audits require more specialised analysis: funnel-stage content checks, faceted navigation review, schema deep-dives, conversion path analysis. The Website audit covers the general SEO fundamentals without those extras. The price reflects the difference in scope, not in quality.</p>
+  </details>
+
+  <details open>
+    <summary>Is there a discount if I book multiple audits at once?</summary>
+    <p>Not as a standard policy. If you operate multiple distinct sites and want all three audited, we can scope a multi-site engagement; the price will be fair but isn't published. Send a short message describing the sites and we'll come back with a number.</p>
+  </details>
+
+  <details open>
+    <summary>Can I upgrade from Basic to Full after I see the report?</summary>
+    <p>Yes. Within 14 days of Basic delivery, you can upgrade to Full by paying the difference. We'll deliver the additional 14 checks and an updated report. Most clients who upgrade do so because the Basic audit surfaced something they want investigated more deeply.</p>
+  </details>
+
+  <details open>
+    <summary>Do you offer monthly retainers?</summary>
+    <p>Not as a standalone product. Implementation support is scoped after an audit, against the specific findings. The reason: monthly retainers without a starting audit produce work that looks productive but doesn't fix the underlying issues. See <a href="/eu/compare/seo-audit-vs-seo-retainer">audit vs retainer</a> for the full explanation.</p>
+  </details>
+
+  <details open>
+    <summary>How do payments work?</summary>
+    <p>Audits are paid in full upfront via bank transfer or Stripe (card or invoice). The work is delivered on the scheduled day or your money back, no questions asked.</p>
+  </details>
+
+  <p><a href="/eu/faq/#general">Read all FAQs</a>.</p>
+</section>
+<section id="cta">
+  <header>
+    <small>08 / Start</small>
     <h2>Ready to <em>book?</em></h2>
     <p>Send a short message with your site URL and the audit type you want. We'll confirm the right tier and timeline within 24 hours.</p>
   </header>

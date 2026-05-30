@@ -106,6 +106,15 @@
     <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/audits/ecommerce-seo-audit"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/ecommerce-seo-audit"/>
   </url>
+  <url>
+    <loc>https://illucrum.com/audits/technical-seo-audit</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/technical-seo-audit"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/audits/technical-seo-audit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/technical-seo-audit"/>
+  </url>
 
   <!-- Comparison pages -->
   <url>
