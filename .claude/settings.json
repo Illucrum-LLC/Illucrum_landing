@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Select-String -Pattern '\\\\.html$')",
+      "PowerShell($x=[xml]\\(Get-Content sitemap.xml -Raw\\); \"Well-formed OK\"; \"URLs: \" + $x.urlset.url.Count; \"hreflang links on home: \" + $x.urlset.url[0].link.Count)"
+    ]
+  }
+}

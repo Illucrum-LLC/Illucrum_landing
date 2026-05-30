@@ -923,6 +923,12 @@ section > ol > li::before {
 section > ol > li h3 { color: var(--text); margin-bottom: 0.35rem; }
 section > ol > li p  { font-size: 0.88rem; }
 
+section > p > small {
+  margin-top: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
 /* ─── 20. STATS / FIGURES (<article>) ────────────────────────── */
 /*  Usage: wrap stat tiles in a section > ul, each li holds an article.
     Or place articles directly in a grid container. */
@@ -982,7 +988,7 @@ main > section:has(> nav):not(:has(> ul)):not(:has(table))::after {
 body > footer {
   border-top: 1px solid var(--border);
   padding: clamp(2.5rem, 5vw, 3.5rem) var(--gutter) 0;
-  background: var(--surface);
+  background: var(--bg);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
@@ -1016,6 +1022,10 @@ body > footer ul a {
   color: var(--text-muted);
   display: block;
   opacity: 1;
+}
+body > footer ul li {
+  border: none;
+  box-shadow: none;
 }
 body > footer ul a:hover { color: var(--text); opacity: 1; }
 body > footer > section > ul > li { padding: 0; border-bottom: 0; }
