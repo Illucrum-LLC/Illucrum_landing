@@ -311,6 +311,10 @@ hr {
   margin: 2rem 0;
 }
 
+ul {
+  margin-bottom: 1rem;
+}
+
 /* ─── 7. LISTS ──────────────────────────────────────────────── */
 ul, ol {
   list-style: none;
@@ -339,6 +343,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   font-size: 0.92rem;
 }
 thead th {
@@ -896,8 +901,6 @@ section > ol {
   max-width: var(--maxw-narrow);
 }
 section > ol > li {
-  display: grid;
-  grid-template-columns: 56px 1fr;
   gap: 1.25rem;
   padding: 1.75rem 0;
   border-bottom: 1px solid var(--border);
@@ -920,8 +923,15 @@ section > ol > li::before {
   padding-top: 0.15rem;
   font-family: var(--font);
 }
-section > ol > li h3 { color: var(--text); margin-bottom: 0.35rem; }
-section > ol > li p  { font-size: 0.88rem; }
+section > ol > li h3 {
+  color: var(--text);
+  vertical-align: middle;
+  line-height: 40px;
+}
+section > ol > li p  {
+  font-size: 0.88rem;
+  grid-column: span 2;
+}
 
 section > p > small {
   margin-top: 2rem;
@@ -946,7 +956,8 @@ article {
 }
 
 /* Large stat number. */
-article > strong {
+article > strong,
+ul > li > strong {
   font-family: var(--font);
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 700;
@@ -955,7 +966,8 @@ article > strong {
   color: var(--green);
 }
 /* Unit suffix in muted. */
-article > strong em {
+article > strong em,
+ul > li > strong em {
   font-style: normal;
   font-size: 0.55em;
   color: var(--text-dim);
@@ -1022,6 +1034,7 @@ body > footer ul a {
   color: var(--text-muted);
   display: block;
   opacity: 1;
+  width: 100%;
 }
 body > footer ul li {
   border: none;
