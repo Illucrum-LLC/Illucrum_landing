@@ -1026,6 +1026,7 @@ body > footer ul a {
 body > footer ul li {
   border: none;
   box-shadow: none;
+  background: none;
 }
 body > footer ul a:hover { color: var(--text); opacity: 1; }
 body > footer > section > ul > li { padding: 0; border-bottom: 0; }
