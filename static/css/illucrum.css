@@ -481,7 +481,7 @@ button + a:hover {
 /* Nav CTA button is slimmer. */
 nav > button {
   padding: 0.85rem 1.75rem; 
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   border-radius: 8px;
 }
 
@@ -720,6 +720,11 @@ article > nav {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+}
+
+section > nav:first-child,
+header > nav:first-child,
+article > nav:first-child {
   margin-top: 1.5rem;
 }
 
