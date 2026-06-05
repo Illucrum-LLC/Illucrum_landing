@@ -311,10 +311,6 @@ hr {
   margin: 2rem 0;
 }
 
-ul {
-  margin-bottom: 1rem;
-}
-
 /* ─── 7. LISTS ──────────────────────────────────────────────── */
 ul, ol {
   list-style: none;
@@ -343,7 +339,6 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 2rem;
-  margin-bottom: 2rem;
   font-size: 0.92rem;
 }
 thead th {
@@ -546,7 +541,6 @@ body > nav > ul {
   padding-top: 0.5rem;
   border-top: 1px solid var(--border);
   transition: border-color var(--trans);
-  margin: 0;
 }
 body > nav > ul > li { display: inline-flex; }
 body > nav > ul a {
@@ -902,6 +896,8 @@ section > ol {
   max-width: var(--maxw-narrow);
 }
 section > ol > li {
+  display: grid;
+  grid-template-columns: 56px 1fr;
   gap: 1.25rem;
   padding: 1.75rem 0;
   border-bottom: 1px solid var(--border);
@@ -924,21 +920,8 @@ section > ol > li::before {
   padding-top: 0.15rem;
   font-family: var(--font);
 }
-section > ol > li h3 {
-  color: var(--text);
-  vertical-align: middle;
-  line-height: 40px;
-}
-section > ol > li p  {
-  font-size: 0.88rem;
-  grid-column: span 2;
-}
-
-section > p > small {
-  margin-top: 2rem;
-  width: 100%;
-  text-align: center;
-}
+section > ol > li h3 { color: var(--text); margin-bottom: 0.35rem; }
+section > ol > li p  { font-size: 0.88rem; }
 
 /* ─── 20. STATS / FIGURES (<article>) ────────────────────────── */
 /*  Usage: wrap stat tiles in a section > ul, each li holds an article.
@@ -957,8 +940,7 @@ article {
 }
 
 /* Large stat number. */
-article > strong,
-ul > li > strong {
+article > strong {
   font-family: var(--font);
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 700;
@@ -967,8 +949,7 @@ ul > li > strong {
   color: var(--green);
 }
 /* Unit suffix in muted. */
-article > strong em,
-ul > li > strong em {
+article > strong em {
   font-style: normal;
   font-size: 0.55em;
   color: var(--text-dim);
@@ -1001,7 +982,7 @@ main > section:has(> nav):not(:has(> ul)):not(:has(table))::after {
 body > footer {
   border-top: 1px solid var(--border);
   padding: clamp(2.5rem, 5vw, 3.5rem) var(--gutter) 0;
-  background: var(--bg);
+  background: var(--surface);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
@@ -1035,12 +1016,6 @@ body > footer ul a {
   color: var(--text-muted);
   display: block;
   opacity: 1;
-  width: 100%;
-}
-body > footer ul li {
-  border: none;
-  box-shadow: none;
-  background: none;
 }
 body > footer ul a:hover { color: var(--text); opacity: 1; }
 body > footer > section > ul > li { padding: 0; border-bottom: 0; }
