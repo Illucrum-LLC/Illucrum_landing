@@ -480,7 +480,7 @@ button + a:hover {
 
 /* Nav CTA button is slimmer. */
 nav > button {
-  padding: 0.5rem 1.1rem;
+  padding: 0.85rem 1.75rem; 
   font-size: 0.85rem;
   border-radius: 8px;
 }
