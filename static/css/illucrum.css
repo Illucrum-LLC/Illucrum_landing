@@ -1098,6 +1098,9 @@ section > ol > li::before {
   padding-top: 0.15rem;
   font-family: var(--font);
 }
+section > ol > li > div {
+  width: 90%;
+}
 section > ol > li h3 {
   color: var(--text);
   vertical-align: middle;
