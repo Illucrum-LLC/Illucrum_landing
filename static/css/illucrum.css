@@ -105,54 +105,54 @@
      </body>
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Dubai:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dubai:wght@300;400;500;700&display=swap");
 
 /* ─── 1. CUSTOM PROPERTIES ────────────────────────────────── */
 :root {
-  --green:      #00c96b;
-  --green-dim:  #00a356;
+  --green: #00c96b;
+  --green-dim: #00a356;
   --green-glow: rgba(0, 201, 107, 0.15);
 
   /* Light (default) */
-  --bg:         #f5f5f0;
-  --bg-alt:     #efefea;
-  --bg-nav:     rgba(245, 245, 240, 0.92);
-  --surface:    #ffffff;
-  --surface2:   #f0f0eb;
-  --border:     rgba(0, 0, 0, 0.08);
-  --text:       #111111;
+  --bg: #f5f5f0;
+  --bg-alt: #efefea;
+  --bg-nav: rgba(245, 245, 240, 0.92);
+  --surface: #ffffff;
+  --surface2: #f0f0eb;
+  --border: rgba(0, 0, 0, 0.08);
+  --text: #111111;
   --text-muted: #555555;
-  --text-dim:   #999999;
-  --shadow-sm:  0 2px 6px rgba(0, 0, 0, 0.05);
-  --shadow-md:  0 8px 32px rgba(0, 0, 0, 0.08);
-  --shadow-lg:  0 16px 48px rgba(0, 0, 0, 0.1);
+  --text-dim: #999999;
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.1);
 
-  --font:       'Dubai', 'Inter', system-ui, sans-serif;
-  --radius:     12px;
-  --radius-sm:  8px;
-  --radius-pill:999px;
-  --trans:      0.25s ease;
+  --font: "Dubai", "Inter", system-ui, sans-serif;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-pill: 999px;
+  --trans: 0.25s ease;
 
-  --gutter:     clamp(1.25rem, 4vw, 1.5rem);
-  --maxw:       1100px;
-  --maxw-mid:   900px;
-  --maxw-narrow:680px;
-  --section:    clamp(3rem, 8vw, 5rem);
+  --gutter: clamp(1.25rem, 4vw, 1.5rem);
+  --maxw: 1100px;
+  --maxw-mid: 900px;
+  --maxw-narrow: 680px;
+  --section: clamp(3rem, 8vw, 5rem);
 }
 
 [data-theme="dark"] {
-  --bg:         #0a0a0a;
-  --bg-alt:     #111111;
-  --bg-nav:     rgba(10, 10, 10, 0.88);
-  --surface:    #111111;
-  --surface2:   #161616;
-  --border:     rgba(255, 255, 255, 0.07);
-  --text:       #e8e8e8;
+  --bg: #0a0a0a;
+  --bg-alt: #111111;
+  --bg-nav: rgba(10, 10, 10, 0.88);
+  --surface: #111111;
+  --surface2: #161616;
+  --border: rgba(255, 255, 255, 0.07);
+  --text: #e8e8e8;
   --text-muted: #888888;
-  --text-dim:   #555555;
-  --shadow-sm:  0 2px 6px rgba(0, 0, 0, 0.3);
-  --shadow-md:  0 8px 32px rgba(0, 0, 0, 0.4);
-  --shadow-lg:  0 16px 48px rgba(0, 0, 0, 0.5);
+  --text-dim: #555555;
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
 }
 
 /* ─── 2. RESET ─────────────────────────────────────────────── */
@@ -178,7 +178,9 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
-  transition: background var(--trans), color var(--trans);
+  transition:
+    background var(--trans),
+    color var(--trans);
 }
 
 /* ─── 4. MEDIA ──────────────────────────────────────────────── */
@@ -194,7 +196,9 @@ video {
 a {
   color: var(--green);
   text-decoration: none;
-  transition: opacity var(--trans), color var(--trans);
+  transition:
+    opacity var(--trans),
+    color var(--trans);
 }
 a:hover {
   opacity: 0.8;
@@ -218,7 +222,12 @@ td a:hover {
 }
 
 /* ─── 6. TYPOGRAPHY ─────────────────────────────────────────── */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -226,10 +235,19 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text);
   transition: color var(--trans);
 }
-h1 { font-size: clamp(2.2rem, 6vw, 4rem); }
-h2 { font-size: clamp(1.6rem, 4vw, 2.6rem); }
-h3 { font-size: clamp(1.05rem, 2.5vw, 1.35rem); font-weight: 600; }
-h4 { font-size: 0.95rem; }
+h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+}
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+}
+h3 {
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  font-weight: 600;
+}
+h4 {
+  font-size: 0.95rem;
+}
 h5 {
   font-size: 0.74rem;
   font-weight: 700;
@@ -238,10 +256,16 @@ h5 {
   color: var(--text-dim);
   margin-bottom: 0.85rem;
 }
-h6 { font-size: 0.85rem; font-weight: 600; color: var(--text-muted); }
+h6 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
 
 /* <em> inside headings = green accent. */
-h1 em, h2 em, h3 em {
+h1 em,
+h2 em,
+h3 em {
   font-style: normal;
   color: var(--green);
 }
@@ -251,7 +275,6 @@ p {
   color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.65;
-  max-width: 65ch;
   transition: color var(--trans);
 }
 
@@ -295,8 +318,9 @@ mark {
   letter-spacing: 0.07em;
 }
 
-code, kbd {
-  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+code,
+kbd {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   font-size: 0.85em;
   background: var(--surface2);
   padding: 0.1em 0.4em;
@@ -316,7 +340,8 @@ ul {
 }
 
 /* ─── 7. LISTS ──────────────────────────────────────────────── */
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -327,16 +352,25 @@ dl {
   column-gap: 1.5rem;
   row-gap: 0;
 }
-dt, dd {
+dt,
+dd {
   padding: 0.6rem 0;
   border-bottom: 1px solid var(--border);
   font-size: 0.9rem;
   transition: border-color var(--trans);
 }
-dt { color: var(--text-muted); }
-dd { color: var(--text); text-align: right; font-weight: 500; }
+dt {
+  color: var(--text-muted);
+}
+dd {
+  color: var(--text);
+  text-align: right;
+  font-weight: 500;
+}
 dl > dt:last-of-type,
-dl > dd:last-of-type { border-bottom: 0; }
+dl > dd:last-of-type {
+  border-bottom: 0;
+}
 
 /* ─── 9. TABLES ─────────────────────────────────────────────── */
 table {
@@ -355,21 +389,30 @@ thead th {
   background: var(--surface);
   vertical-align: bottom;
 }
-thead th:nth-child(n + 2) { text-align: center; }
-tbody td, tfoot td {
+thead th:nth-child(n + 2) {
+  text-align: center;
+}
+tbody td,
+tfoot td {
   padding: 0.85rem 1rem;
   border-bottom: 1px solid var(--border);
   vertical-align: middle;
   color: var(--text-muted);
-  transition: background var(--trans), border-color var(--trans);
+  transition:
+    background var(--trans),
+    border-color var(--trans);
 }
 tbody td:first-child {
   color: var(--text);
   font-weight: 600;
 }
 tbody td:nth-child(n + 2),
-tfoot td:nth-child(n + 2) { text-align: center; }
-tbody tr:hover td { background: var(--surface2); }
+tfoot td:nth-child(n + 2) {
+  text-align: center;
+}
+tbody tr:hover td {
+  background: var(--surface2);
+}
 tfoot td {
   border-bottom: 0;
   border-top: 2px solid var(--border);
@@ -403,10 +446,12 @@ summary {
   color: var(--text);
   transition: color var(--trans);
 }
-summary::-webkit-details-marker { display: none; }
+summary::-webkit-details-marker {
+  display: none;
+}
 /* Green chevron. */
 summary::after {
-  content: '';
+  content: "";
   width: 0.5rem;
   height: 0.5rem;
   flex-shrink: 0;
@@ -415,7 +460,9 @@ summary::after {
   transform: translateY(-2px) rotate(45deg);
   transition: transform 0.3s ease;
 }
-summary:hover { color: var(--green); }
+summary:hover {
+  color: var(--green);
+}
 details[open] summary {
   color: var(--text);
 }
@@ -451,7 +498,11 @@ button {
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 1;
-  transition: background var(--trans), border-color var(--trans), box-shadow var(--trans), transform var(--trans);
+  transition:
+    background var(--trans),
+    border-color var(--trans),
+    box-shadow var(--trans),
+    transform var(--trans);
 }
 button:hover {
   background: var(--green-dim);
@@ -459,8 +510,13 @@ button:hover {
   box-shadow: 0 8px 24px rgba(0, 201, 107, 0.25);
   transform: translateY(-2px);
 }
-button:active { transform: translateY(0); }
-button:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+button:active {
+  transform: translateY(0);
+}
+button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
 
 /* Ghost secondary (an <a> directly after a <button>). */
 button + a {
@@ -474,7 +530,10 @@ button + a {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-muted);
-  transition: border-color var(--trans), color var(--trans), transform var(--trans);
+  transition:
+    border-color var(--trans),
+    color var(--trans),
+    transform var(--trans);
 }
 button + a:hover {
   border-color: rgba(0, 201, 107, 0.4);
@@ -485,7 +544,7 @@ button + a:hover {
 
 /* Nav CTA button is slimmer. */
 nav > button {
-  padding: 0.85rem 1.75rem; 
+  padding: 0.85rem 1.75rem;
   font-size: 0.95rem;
   border-radius: 8px;
 }
@@ -508,7 +567,9 @@ body > nav {
   justify-content: space-between;
   gap: 0.5rem;
   padding: 0.9rem var(--gutter);
-  transition: background var(--trans), border-color var(--trans);
+  transition:
+    background var(--trans),
+    border-color var(--trans);
 }
 
 /* Logo lockup: first <a> in nav. */
@@ -522,18 +583,32 @@ body > nav > a:first-child {
   color: var(--text);
   opacity: 1;
 }
-body > nav > a:first-child:hover { color: var(--text); opacity: 1; }
-body > nav > a:first-child img { height: 26px; width: auto; }
+body > nav > a:first-child:hover {
+  color: var(--text);
+  opacity: 1;
+}
+body > nav > a:first-child img {
+  height: 26px;
+  width: auto;
+}
 
 /* Dark / light logo swap.
    Place two <img> tags inside the logo <a>:
      <img class="logo-light" src="logo-dark.svg" alt="">
      <img class="logo-dark"  src="logo-light.svg" alt="">
    The correct one shows based on [data-theme]. */
-.logo-dark  { display: none; }
-.logo-light { display: block; }
-[data-theme="dark"] .logo-dark  { display: block; }
-[data-theme="dark"] .logo-light { display: none; }
+.logo-dark {
+  display: none;
+}
+.logo-light {
+  display: block;
+}
+[data-theme="dark"] .logo-dark {
+  display: block;
+}
+[data-theme="dark"] .logo-light {
+  display: none;
+}
 
 /* Nav link list. Mobile: full-width second row. */
 body > nav > ul {
@@ -548,14 +623,22 @@ body > nav > ul {
   transition: border-color var(--trans);
   margin: 0;
 }
-body > nav > ul > li { display: inline-flex; }
-body > nav > ul a {
+body > nav > ul > li {
+  display: inline-flex;
+}
+body > nav > ul a,
+body > nav > ul button {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-muted);
   opacity: 1;
 }
-body > nav > ul a:hover { color: var(--text); opacity: 1; }
+
+body > nav > ul a:hover,
+body > nav > ul button:hover {
+  color: var(--text);
+  opacity: 1;
+}
 
 /* Desktop: link list becomes an inline middle column. */
 @media (min-width: 900px) {
@@ -585,7 +668,10 @@ body > nav button[data-theme-toggle] {
   height: 36px;
   padding: 0;
   color: var(--text-muted);
-  transition: border-color var(--trans), color var(--trans), background var(--trans);
+  transition:
+    border-color var(--trans),
+    color var(--trans),
+    background var(--trans);
   flex-shrink: 0;
 }
 body > nav button[data-theme-toggle]:hover {
@@ -596,10 +682,18 @@ body > nav button[data-theme-toggle]:hover {
   transform: none;
 }
 /* Light default: show moon icon, hide sun. */
-body > nav button[data-theme-toggle] .icon-sun  { display: block; }
-body > nav button[data-theme-toggle] .icon-moon { display: none; }
-[data-theme="dark"] body > nav button[data-theme-toggle] .icon-sun  { display: none; }
-[data-theme="dark"] body > nav button[data-theme-toggle] .icon-moon { display: block; }
+body > nav button[data-theme-toggle] .icon-sun {
+  display: block;
+}
+body > nav button[data-theme-toggle] .icon-moon {
+  display: none;
+}
+[data-theme="dark"] body > nav button[data-theme-toggle] .icon-sun {
+  display: none;
+}
+[data-theme="dark"] body > nav button[data-theme-toggle] .icon-moon {
+  display: block;
+}
 
 /* ─── 13. HERO (body > header) ───────────────────────────────── */
 body > header {
@@ -617,25 +711,36 @@ body > header {
 /* Decorative background grid (pure CSS, no element needed — drawn
    on body > header::before). */
 body > header::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image:
     linear-gradient(rgba(0, 201, 107, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 201, 107, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  mask-image: radial-gradient(
+    ellipse 80% 80% at 50% 50%,
+    black 30%,
+    transparent 100%
+  );
   opacity: 0.5;
   pointer-events: none;
   z-index: 0;
   transition: opacity var(--trans);
 }
-[data-theme="dark"] body > header::before { opacity: 1; }
+[data-theme="dark"] body > header::before {
+  opacity: 1;
+}
 
 /* All direct children sit above the grid. */
-body > header > * { position: relative; z-index: 1; }
+body > header > * {
+  position: relative;
+  z-index: 1;
+}
 
-body > header > small { animation: fadeUp 0.5s ease both; }
+body > header > small {
+  animation: fadeUp 0.5s ease both;
+}
 body > header > h1 {
   max-width: 18ch;
   animation: fadeUp 0.5s 0.1s ease both;
@@ -654,8 +759,14 @@ body > header > nav {
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ─── 14. ASIDE (hero meta card) ─────────────────────────────── */
@@ -669,13 +780,19 @@ aside {
   padding: 1.5rem 1.75rem;
   text-align: left;
   box-shadow: var(--shadow-sm);
-  transition: background var(--trans), border-color var(--trans);
+  transition:
+    background var(--trans),
+    border-color var(--trans);
   animation: fadeUp 0.5s 0.4s ease both;
 }
-aside > small { margin-bottom: 1rem; }
+aside > small {
+  margin-bottom: 1rem;
+}
 
 /* ─── 15. MAIN + SECTIONS ─────────────────────────────────────── */
-main { display: block; }
+main {
+  display: block;
+}
 
 main > section {
   background: var(--bg);
@@ -749,13 +866,19 @@ article > nav > a {
   border: 1px solid var(--border);
   color: var(--text-muted);
   background: var(--surface);
-  transition: background var(--trans), color var(--trans), border-color var(--trans),
-              box-shadow var(--trans), transform var(--trans);
+  transition:
+    background var(--trans),
+    color var(--trans),
+    border-color var(--trans),
+    box-shadow var(--trans),
+    transform var(--trans);
   opacity: 1;
 }
 section > nav > a:active,
 header > nav > a:active,
-article > nav > a:active { transform: translateY(1px); }
+article > nav > a:active {
+  transform: translateY(1px);
+}
 
 /* Desktop primary = first anchor (Email → green fill). */
 section > nav > a:first-child,
@@ -825,15 +948,28 @@ article > nav > a:last-child:hover {
 }
 
 /* ─── 18. CARD GRID (section > ul) ───────────────────────────── */
-section > ul {
+section > ul,
+section > ol ul {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
 }
-@media (min-width: 620px) { section > ul { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 900px) { section > ul { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 620px) {
+  section > ul,
+  section > ol ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-section > ul > li {
+@media (min-width: 900px) {
+  section > ul,
+  section > ol ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+section > ul > li,
+section > ol ul > li {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -842,28 +978,42 @@ section > ul > li {
   flex-direction: column;
   gap: 0.85rem;
   box-shadow: var(--shadow-sm);
-  transition: border-color var(--trans), transform var(--trans), background var(--trans), box-shadow var(--trans);
+  transition:
+    border-color var(--trans),
+    transform var(--trans),
+    background var(--trans),
+    box-shadow var(--trans);
   position: relative;
   overflow: hidden;
 }
-section > ul > li::before {
-  content: '';
+section > ul > li::before,
+section > ol ul > li::before {
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0, 201, 107, 0.05) 0%, transparent 60%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 201, 107, 0.05) 0%,
+    transparent 60%
+  );
   opacity: 0;
   transition: opacity var(--trans);
   pointer-events: none;
 }
-section > ul > li:hover {
+section > ul > li:hover,
+section > ol ul > li:hover {
   border-color: rgba(0, 201, 107, 0.35);
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
 }
-section > ul > li:hover::before { opacity: 1; }
+section > ul > li:hover::before,
+section > ol ul > li:hover::before {
+  opacity: 1;
+}
 
 /* First <span> in a card = number badge. */
-section > ul > li > span:first-child {
+section > ul > li > span:first-child,
+section > ol ul > li > span:first-child {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -881,10 +1031,16 @@ section > ul > li > span:first-child {
 }
 
 section > ul > li > h3,
-section > ul > li > p { position: relative; z-index: 1; }
+section > ul > li > p,
+section > ol ul > li > h3,
+section > ol ul > li > p {
+  position: relative;
+  z-index: 1;
+}
 
 /* Card out-link. */
-section > ul > li > a {
+section > ul > li > a,
+section > ol ul > li > a {
   margin-top: auto;
   display: inline-flex;
   align-items: center;
@@ -897,7 +1053,11 @@ section > ul > li > a {
   z-index: 1;
   opacity: 1;
 }
-section > ul > li > a:hover { gap: 0.6rem; opacity: 0.8; }
+section > ul > li > a:hover,
+section > ol ul > li > a:hover {
+  gap: 0.6rem;
+  opacity: 0.8;
+}
 
 /* ─── 19. PROCESS STEPS (section > ol) ───────────────────────── */
 section > ol {
@@ -907,17 +1067,26 @@ section > ol {
   max-width: var(--maxw-narrow);
 }
 section > ol > li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 1.25rem;
   padding: 1.75rem 0;
   border-bottom: 1px solid var(--border);
   align-items: start;
   transition: border-color var(--trans);
 }
-section > ol > li:last-child { border-bottom: none; }
+section > ol > li:last-child {
+  border-bottom: none;
+}
 
 /* Large faint step number (CSS counters). */
-section > ol { counter-reset: step; }
-section > ol > li { counter-increment: step; }
+section > ol {
+  counter-reset: step;
+}
+section > ol > li {
+  counter-increment: step;
+}
 section > ol > li::before {
   content: counter(step, decimal-leading-zero);
   font-size: 2.4rem;
@@ -934,7 +1103,7 @@ section > ol > li h3 {
   vertical-align: middle;
   line-height: 40px;
 }
-section > ol > li p  {
+section > ol > li p {
   font-size: 0.88rem;
   grid-column: span 2;
 }
@@ -959,7 +1128,9 @@ article {
   flex-direction: column;
   gap: 0.5rem;
   box-shadow: var(--shadow-sm);
-  transition: background var(--trans), border-color var(--trans);
+  transition:
+    background var(--trans),
+    border-color var(--trans);
 }
 
 /* Large stat number. */
@@ -979,8 +1150,18 @@ ul > li > strong em {
   font-size: 0.55em;
   color: var(--text-dim);
 }
-article > p { max-width: 28ch; margin-left: auto; margin-right: auto; font-size: 0.82rem; color: var(--text-dim); }
-article > small { margin-bottom: 0; color: var(--text-dim); font-size: 0.7rem; }
+article > p {
+  max-width: 28ch;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+article > small {
+  margin-bottom: 0;
+  color: var(--text-dim);
+  font-size: 0.7rem;
+}
 
 /* ─── 21. CTA BAND (a section used as a standalone call-to-action)
    If a <section> contains only a header + nav pair (no card grid,
@@ -991,7 +1172,7 @@ main > section:has(> nav):not(:has(> ul)):not(:has(table)) {
   overflow: hidden;
 }
 main > section:has(> nav):not(:has(> ul)):not(:has(table))::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -80px;
   left: 50%;
@@ -999,7 +1180,11 @@ main > section:has(> nav):not(:has(> ul)):not(:has(table))::after {
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 201, 107, 0.08) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(0, 201, 107, 0.08) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -1012,7 +1197,9 @@ body > footer {
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
   max-width: 100%;
-  transition: background var(--trans), border-color var(--trans);
+  transition:
+    background var(--trans),
+    border-color var(--trans);
 }
 
 /* Brand block (first section). */
@@ -1030,7 +1217,9 @@ body > footer > section:first-of-type p {
 }
 
 /* Link columns. */
-body > footer h5 { margin-bottom: 0.85rem; }
+body > footer h5 {
+  margin-bottom: 0.85rem;
+}
 body > footer ul {
   display: flex;
   flex-direction: column;
@@ -1048,8 +1237,14 @@ body > footer ul li {
   box-shadow: none;
   background: none;
 }
-body > footer ul a:hover { color: var(--text); opacity: 1; }
-body > footer > section > ul > li { padding: 0; border-bottom: 0; }
+body > footer ul a:hover {
+  color: var(--text);
+  opacity: 1;
+}
+body > footer > section > ul > li {
+  padding: 0;
+  border-bottom: 0;
+}
 
 /* Copyright strip (last child <small>). */
 body > footer > small {
@@ -1081,7 +1276,9 @@ body > footer > small {
 [data-reveal] {
   opacity: 0;
   transform: translateY(22px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
 }
 [data-reveal="visible"] {
   opacity: 1;
@@ -1143,11 +1340,27 @@ main.legal h2 {
   margin: 2.5rem 0 0.75rem;
   letter-spacing: -0.01em;
 }
-main.legal p  { font-size: 0.95rem; margin-bottom: 1rem; }
-main.legal ul { padding-left: 1.5rem; margin-bottom: 1rem; list-style: disc; }
-main.legal li { margin-bottom: 0.35rem; font-size: 0.95rem; color: var(--text-muted); }
-main.legal a  { color: var(--green); border-bottom: 1px solid rgba(0, 201, 107, 0.3); }
-main.legal a:hover { opacity: 0.8; }
+main.legal p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+main.legal ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  list-style: disc;
+}
+main.legal li {
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+main.legal a {
+  color: var(--green);
+  border-bottom: 1px solid rgba(0, 201, 107, 0.3);
+}
+main.legal a:hover {
+  opacity: 0.8;
+}
 
 /* ─── 28. ABOUT PAGE ──────────────────────────────────────────── */
 /*  Bio layout: photo on the left, text on the right (on wide screens). */
@@ -1180,7 +1393,9 @@ main.about > section:first-of-type > div {
    Only this component uses classes. All tokens match :root above.
    ============================================================ */
 
-.ic-consent[hidden] { display: none !important; }
+.ic-consent[hidden] {
+  display: none !important;
+}
 
 .ic-consent {
   position: fixed;
@@ -1232,7 +1447,9 @@ main.about > section:first-of-type > div {
   padding-bottom: 1px;
   text-decoration: none;
 }
-.ic-consent__body a:hover { opacity: 0.8; }
+.ic-consent__body a:hover {
+  opacity: 0.8;
+}
 
 .ic-consent__actions {
   display: flex;
@@ -1257,7 +1474,10 @@ main.about > section:first-of-type > div {
   border: 1px solid var(--green);
   background: var(--green);
   color: #000;
-  transition: background var(--trans), color var(--trans), border-color var(--trans);
+  transition:
+    background var(--trans),
+    color var(--trans),
+    border-color var(--trans);
 }
 .ic-consent__btn:hover {
   background: var(--green-dim);
@@ -1285,7 +1505,9 @@ main.about > section:first-of-type > div {
   display: grid;
   gap: 0.65rem;
 }
-.ic-consent__prefs[hidden] { display: none; }
+.ic-consent__prefs[hidden] {
+  display: none;
+}
 
 .ic-consent__pref {
   display: grid;
@@ -1295,8 +1517,14 @@ main.about > section:first-of-type > div {
   padding: 0.55rem 0;
   border-bottom: 1px solid var(--border);
 }
-.ic-consent__pref:last-of-type { border-bottom: 0; }
-.ic-consent__pref-label { font-size: 0.82rem; font-weight: 600; color: var(--text); }
+.ic-consent__pref:last-of-type {
+  border-bottom: 0;
+}
+.ic-consent__pref-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
 .ic-consent__pref-desc {
   grid-column: 1 / -1;
   font-size: 0.75rem;
@@ -1319,7 +1547,7 @@ main.about > section:first-of-type > div {
   flex-shrink: 0;
 }
 .ic-consent__toggle::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 1px;
   left: 1px;
@@ -1333,14 +1561,31 @@ main.about > section:first-of-type > div {
   background: var(--green);
   border-color: var(--green);
 }
-.ic-consent__toggle:checked::after { transform: translateX(16px); }
-.ic-consent__toggle:disabled { opacity: 0.6; cursor: not-allowed; }
-.ic-consent__toggle:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+.ic-consent__toggle:checked::after {
+  transform: translateX(16px);
+}
+.ic-consent__toggle:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.ic-consent__toggle:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
 
 @media (max-width: 540px) {
-  .ic-consent { padding: 0.75rem; }
-  .ic-consent__panel { padding: 1rem; }
-  .ic-consent__actions { display: grid; grid-template-columns: 1fr; }
+  .ic-consent {
+    padding: 0.75rem;
+  }
+  .ic-consent__panel {
+    padding: 1rem;
+  }
+  .ic-consent__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
   .ic-consent__btn,
-  .ic-consent__btn-ghost { width: 100%; }
+  .ic-consent__btn-ghost {
+    width: 100%;
+  }
 }
