@@ -12,14 +12,14 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://illucrum.com/#organization",
-  "name": "Illucrum",
-  "legalName": "Illucrum LLC",
-  "url": "https://illucrum.com/",
-  "logo": "https://illucrum.com/static/img/logo.png",
-  "email": "szymon.kokot@illucrum.com",
-  "telephone": "+48 515 983 261",
-  "founder": { "@id": "https://illucrum.com/about/#person" },
+  "@id": "{{SITE_BASE_URL}}/#organization",
+  "name": "{{BRAND_NAME}}",
+  "legalName": "{{LEGAL_ENTITY_NAME}}",
+  "url": "{{SITE_BASE_URL}}/",
+  "logo": "{{SITE_BASE_URL}}/static/img/logo.png",
+  "email": "{{EMAIL}}",
+  "telephone": "{{PHONE_DISPLAY}}",
+  "founder": { "@id": "{{SITE_BASE_URL}}/about/#person" },
   "sameAs": [
     "https://www.linkedin.com/company/illucrum/"
   ]
@@ -30,12 +30,12 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://illucrum.com/about/#person",
+  "@id": "{{SITE_BASE_URL}}/about/#person",
   "name": "Szymon Kokot",
   "jobTitle": "SEO audit consultant",
-  "worksFor": { "@id": "https://illucrum.com/#organization" },
-  "url": "https://illucrum.com/about/",
-  "email": "szymon.kokot@illucrum.com",
+  "worksFor": { "@id": "{{SITE_BASE_URL}}/#organization" },
+  "url": "{{SITE_BASE_URL}}/about/",
+  "email": "{{EMAIL}}",
   "sameAs": [
     "https://www.linkedin.com/in/szymonkokot/"
   ]
@@ -77,37 +77,37 @@
 <title>Technical SEO Audit: Crawl, Index, and Render Diagnosis</title>
 <meta name="description" content="A focused technical SEO audit covering crawlability, indexation, rendering, Core Web Vitals, and structured data. Delivered as a written report with prioritised fixes in 3 to 5 business days.">
 
-<link rel="canonical" href="https://illucrum.com/audits/technical-seo-audit">
-<link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/audits/technical-seo-audit">
-<link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/technical-seo-audit">
+<link rel="canonical" href="{{SITE_BASE_URL}}/audits/technical-seo-audit">
+<link rel="alternate" hreflang="{{HREFLANG_SELF}}" href="{{HREFLANG_SELF_URL}}/audits/technical-seo-audit">
+<link rel="alternate" hreflang="{{HREFLANG_ALT}}" href="{{HREFLANG_ALT_URL}}/audits/technical-seo-audit">
 <link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/technical-seo-audit">
 
 <meta property="og:type" content="website">
-<meta property="og:locale" content="en_GB">
-<meta property="og:url" content="https://illucrum.com/audits/technical-seo-audit">
-<meta property="og:site_name" content="Illucrum">
+<meta property="og:locale" content="{{LOCALE}}">
+<meta property="og:url" content="{{SITE_BASE_URL}}/audits/technical-seo-audit">
+<meta property="og:site_name" content="{{BRAND_NAME}}">
 <meta property="og:title" content="Technical SEO Audit: Crawl, Index, and Render Diagnosis">
 <meta property="og:description" content="A focused technical SEO audit covering crawlability, indexation, rendering, Core Web Vitals, and structured data. Delivered in 3 to 5 business days.">
-<meta property="og:image" content="https://illucrum.com/static/img/og-technical-seo-audit.png">
+<meta property="og:image" content="{{SITE_BASE_URL}}/static/img/og-technical-seo-audit.png">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Technical SEO Audit: Crawl, Index, and Render Diagnosis">
 <meta name="twitter:description" content="A focused technical SEO audit covering crawlability, indexation, rendering, Core Web Vitals, and structured data. Delivered in 3 to 5 business days.">
-<meta name="twitter:image" content="https://illucrum.com/static/img/og-technical-seo-audit.png">
+<meta name="twitter:image" content="{{SITE_BASE_URL}}/static/img/og-technical-seo-audit.png">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "@id": "https://illucrum.com/audits/technical-seo-audit/#service",
+  "@id": "{{SITE_BASE_URL}}/audits/technical-seo-audit/#service",
   "serviceType": "Technical SEO Audit",
   "name": "Technical SEO Audit",
-  "url": "https://illucrum.com/audits/technical-seo-audit/",
+  "url": "{{SITE_BASE_URL}}/audits/technical-seo-audit/",
   "description": "A focused technical SEO audit covering crawlability and indexation, site architecture, JavaScript rendering, Core Web Vitals and performance, structured data, canonicalisation, and crawl budget. Delivered as a written report with prioritised fixes in 3 to 5 business days.",
-  "provider": { "@id": "https://illucrum.com/#organization" },
+  "provider": { "@id": "{{SITE_BASE_URL}}/#organization" },
   "areaServed": "Worldwide",
   "offers": [
-    { "@type": "Offer", "name": "Technical SEO Audit", "description": "A focused, single-discipline technical SEO audit. One fixed price, delivered in 3 to 5 business days.", "price": "{{PRICE_TECHNICAL}}", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://illucrum.com/audits/technical-seo-audit/#pricing" }
+    { "@type": "Offer", "name": "Technical SEO Audit", "description": "A focused, single-discipline technical SEO audit. One fixed price, delivered in 3 to 5 business days.", "price": "{{PRICE_TECHNICAL}}", "priceCurrency": "{{CURRENCY_CODE}}", "availability": "https://schema.org/InStock", "url": "{{SITE_BASE_URL}}/audits/technical-seo-audit/#pricing" }
   ]
 }
 </script>
@@ -117,9 +117,9 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://illucrum.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Audits", "item": "https://illucrum.com/audits/" },
-    { "@type": "ListItem", "position": 3, "name": "Technical SEO Audit", "item": "https://illucrum.com/audits/technical-seo-audit/" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{SITE_BASE_URL}}/" },
+    { "@type": "ListItem", "position": 2, "name": "Audits", "item": "{{SITE_BASE_URL}}/audits/" },
+    { "@type": "ListItem", "position": 3, "name": "Technical SEO Audit", "item": "{{SITE_BASE_URL}}/audits/technical-seo-audit/" }
   ]
 }
 </script>
@@ -141,17 +141,17 @@
 </head>
 <body>
 <nav>
-  <a href="https://illucrum.com/eu">
+  <a href="{{HREFLANG_SELF_URL}}">
     <img src="/static/img/logo.png" alt="">
-    <span>Illucrum</span>
+    <span>{{BRAND_NAME}}</span>
   </a>
   <ul>
-    <li><a href="/eu/audits">Audits</a></li>
-    <li><a href="/eu/pricing">Pricing</a></li>
-    <li><a href="/eu/process">Process</a></li>
-    <li><a href="/eu/faq">FAQ</a></li>
-    <li><a href="/eu/about">About</a></li>
-    <li><button type="button" data-lead-open data-lead-source="homepage" data-lead-title="Contact form"
+    <li><a href="{{PATH_PREFIX}}/audits">Audits</a></li>
+    <li><a href="{{PATH_PREFIX}}/pricing">Pricing</a></li>
+    <li><a href="{{PATH_PREFIX}}/process">Process</a></li>
+    <li><a href="{{PATH_PREFIX}}/faq">FAQ</a></li>
+    <li><a href="{{PATH_PREFIX}}/about">About</a></li>
+    <li><button type="button" data-lead-open data-lead-source="header" data-lead-title="Contact form"
       data-lead-subtitle="Drop your details and we'll contact you.">
       Contact us
     </button></li>
@@ -166,7 +166,7 @@
   <nav>
     <button type="button" data-lead-open data-lead-source="technical" data-lead-title="Contact form"
       data-lead-subtitle="Drop your details and we'll contact you.">
-      Contact form
+      Contact us
     </button>
   </nav>
 </header>
@@ -179,7 +179,7 @@
     <p>The featured-snippet answer, in plain language.</p>
   </header>
 
-  <p>A technical SEO audit is a focused diagnosis of the engineering and infrastructure factors that decide whether search engines can crawl, render, index, and rank a website. The Illucrum technical audit reviews crawlability and indexation, site architecture, JavaScript rendering, Core Web Vitals and performance, structured data, canonicalisation, and crawl budget. The output is a written report with scored severity and prioritised fixes, delivered in 3 to 5 business days. It is the engineering layer only; it does not include keyword strategy, content, or competitor analysis.</p>
+  <p>A technical SEO audit is a focused diagnosis of the engineering and infrastructure factors that decide whether search engines can crawl, render, index, and rank a website. The {{BRAND_NAME}} technical audit reviews crawlability and indexation, site architecture, JavaScript rendering, Core Web Vitals and performance, structured data, canonicalisation, and crawl budget. The output is a written report with scored severity and prioritised fixes, delivered in 3 to 5 business days. It is the engineering layer only; it does not include keyword strategy, content, or competitor analysis.</p>
 </section>
 <section id="who-its-for">
   <header>
@@ -204,14 +204,67 @@
       <h3>After a migration or replatform</h3>
       <p>When redirects, canonicals, and indexation need verifying before traffic erodes.</p>
     </li>
-    <li>
-      <span>04</span>
-      <h3>Sites with an unexplained drop</h3>
-      <p>Where rankings or indexed pages fell and you need a prioritised technical backlog, not a full strategy review.</p>
-    </li>
   </ul>
 
-  <p>If you need keyword strategy, content depth, and competitor positioning as well, a full audit is the closer fit: the <a href="/eu/audits/saas-seo-audit">SaaS SEO audit</a>, <a href="/eu/audits/ecommerce-seo-audit">e-commerce SEO audit</a>, or <a href="/eu/audits/seo-audit">website SEO audit</a> each include the technical layer plus the strategic sections this focused audit leaves out.</p>
+  <p>If you need keyword strategy, content depth, and competitor positioning as well, a full audit is the closer fit: the <a href="{{PATH_PREFIX}}/audits/saas-seo-audit">SaaS SEO audit</a>, <a href="{{PATH_PREFIX}}/audits/ecommerce-seo-audit">e-commerce SEO audit</a>, or <a href="{{PATH_PREFIX}}/audits/seo-audit">website SEO audit</a> each include the technical layer plus the strategic sections this focused audit leaves out.</p>
+</section>
+<section id="pricing">
+  <header>
+    <small>05 / Pricing</small>
+    <h2>One focused tier, <em>one fixed price</em></h2>
+    <p>The technical audit is a single, fixed-price diagnostic. No Basic or Full split; the engineering layer, in full.</p>
+  </header>
+
+  <table>
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>Technical SEO Audit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Price</td>
+        <td><strong>{{CURRENCY_SYMBOL}}{{PRICE_TECHNICAL}}</strong></td>
+      </tr>
+      <tr>
+        <td>Scope</td>
+        <td>The eight technical areas, in full</td>
+      </tr>
+      <tr>
+        <td>Best for</td>
+        <td>Large, complex, or JavaScript-heavy sites; post-migration checks; unexplained indexation or traffic drops</td>
+      </tr>
+      <tr>
+        <td>What's included</td>
+        <td>
+          <ul>
+            <li>Crawlability and indexation review</li>
+            <li>Site architecture and internal linking</li>
+            <li>JavaScript rendering check</li>
+            <li>Core Web Vitals and performance</li>
+            <li>Structured data validation</li>
+            <li>Canonicalisation and duplicate-content review</li>
+            <li>HTTPS, redirects, and status codes</li>
+            <li>Crawl budget and international signals</li>
+            <li>Prioritised action plan, every finding scored</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Delivery</td>
+        <td>3 to 5 business days</td>
+      </tr>
+      <tr>
+        <td>Output</td>
+        <td>Written report, prioritised technical action plan</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Need keyword, content, and competitor depth as well? A full audit includes the technical layer plus the strategic sections: see the <a href="{{PATH_PREFIX}}/audits/seo-audit">website SEO audit</a>, <a href="{{PATH_PREFIX}}/audits/saas-seo-audit">SaaS SEO audit</a>, or <a href="{{PATH_PREFIX}}/audits/ecommerce-seo-audit">e-commerce SEO audit</a>.</p>
+
+  <p>For pricing across every audit type, see the <a href="{{PATH_PREFIX}}/pricing/#technical">pricing page</a>.</p>
 </section>
 <section id="whats-covered">
   <header>
@@ -290,7 +343,7 @@
     <small>Scope note</small>
     <p>The technical audit is a <strong>single, focused tier</strong>; there is no Basic or Full split. It is the
       engineering layer only. Keyword strategy, content depth, competitor positioning, and conversion UX are covered by
-      the <a href="/eu/audits/seo-audit">website audit</a> and the vertical audits, not here.</p>
+      the <a href="{{PATH_PREFIX}}/audits/seo-audit">website audit</a> and the vertical audits, not here.</p>
   </aside>
 </section>
 <section id="sample-findings">
@@ -337,73 +390,15 @@
   <nav>
     <button type="button" data-lead-open data-lead-source="technical" data-lead-title="Contact form"
       data-lead-subtitle="Drop your details and we'll contact you.">
-      Contact form
+      Contact us
     </button>
   </nav>
-</section>
-<section id="pricing">
-  <header>
-    <small>05 / Pricing</small>
-    <h2>One focused tier, <em>one fixed price</em></h2>
-    <p>The technical audit is a single, fixed-price diagnostic. No Basic or Full split; the engineering layer, in full.</p>
-  </header>
-
-  <table>
-    <thead>
-      <tr>
-        <th>&nbsp;</th>
-        <th>Technical SEO Audit</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Price</td>
-        <td><strong>&euro;{{PRICE_TECHNICAL}}</strong></td>
-      </tr>
-      <tr>
-        <td>Scope</td>
-        <td>The eight technical areas, in full</td>
-      </tr>
-      <tr>
-        <td>Best for</td>
-        <td>Large, complex, or JavaScript-heavy sites; post-migration checks; unexplained indexation or traffic drops</td>
-      </tr>
-      <tr>
-        <td>What's included</td>
-        <td>
-          <ul>
-            <li>Crawlability and indexation review</li>
-            <li>Site architecture and internal linking</li>
-            <li>JavaScript rendering check</li>
-            <li>Core Web Vitals and performance</li>
-            <li>Structured data validation</li>
-            <li>Canonicalisation and duplicate-content review</li>
-            <li>HTTPS, redirects, and status codes</li>
-            <li>Crawl budget and international signals</li>
-            <li>Prioritised action plan, every finding scored</li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td>Delivery</td>
-        <td>3 to 5 business days</td>
-      </tr>
-      <tr>
-        <td>Output</td>
-        <td>Written report, prioritised technical action plan</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p>Need keyword, content, and competitor depth as well? A full audit includes the technical layer plus the strategic sections: see the <a href="/eu/audits/seo-audit">website SEO audit</a>, <a href="/eu/audits/saas-seo-audit">SaaS SEO audit</a>, or <a href="/eu/audits/ecommerce-seo-audit">e-commerce SEO audit</a>.</p>
-
-  <p>For pricing across every audit type, see the <a href="/eu/pricing/#technical">pricing page</a>.</p>
 </section>
 <section id="process">
   <header>
     <small>06 / Process</small>
     <h2>How the audit takes shape, in <em>four steps</em></h2>
-    <p>Same shape as every Illucrum audit; the deliverable is consistent.</p>
+    <p>Same shape as every {{BRAND_NAME}} audit; the deliverable is consistent.</p>
   </header>
 
   <ol>
@@ -435,7 +430,7 @@
     </li>
   </ol>
 
-  <p>Full process detail at <a href="/eu/process">How an Illucrum SEO audit takes shape</a>.</p>
+  <p>Full process detail at <a href="{{PATH_PREFIX}}/process">How an Illucrum SEO audit takes shape</a>.</p>
 </section>
 <section id="trust">
   <header>
@@ -458,7 +453,7 @@
     <li>
       <span>03</span>
       <h3>Source-backed methodology</h3>
-      <p>Every benchmark referenced in the report has a citable source. See <a href="/eu/seo-facts/#generic">SEO facts and statistics</a>.</p>
+      <p>Every benchmark referenced in the report has a citable source. See <a href="{{PATH_PREFIX}}/seo-facts/#generic">SEO facts and statistics</a>.</p>
     </li>
     <li>
       <span>04</span>
@@ -476,12 +471,12 @@
 
   <details open>
     <summary>What is a technical SEO audit?</summary>
-    <p>A technical SEO audit is a focused diagnosis of the engineering and infrastructure factors that decide whether search engines can crawl, render, index, and rank your site. The Illucrum technical audit covers crawlability, indexation, site architecture, JavaScript rendering, Core Web Vitals, structured data, canonicalisation, and crawl budget. The output is a prioritised, scored action plan, not a generic checklist.</p>
+    <p>A technical SEO audit is a focused diagnosis of the engineering and infrastructure factors that decide whether search engines can crawl, render, index, and rank your site. The {{BRAND_NAME}} technical audit covers crawlability, indexation, site architecture, JavaScript rendering, Core Web Vitals, structured data, canonicalisation, and crawl budget. The output is a prioritised, scored action plan, not a generic checklist.</p>
   </details>
 
   <details open>
     <summary>How is it different from a full SEO audit?</summary>
-    <p>A full SEO audit also covers keyword strategy, content depth, competitor positioning, and conversion UX. The technical audit narrows to the engineering layer only. If you need the strategic sections too, see the <a href="/eu/audits/seo-audit">website SEO audit</a> or a vertical audit, each of which includes the technical layer.</p>
+    <p>A full SEO audit also covers keyword strategy, content depth, competitor positioning, and conversion UX. The technical audit narrows to the engineering layer only. If you need the strategic sections too, see the <a href="{{PATH_PREFIX}}/audits/seo-audit">website SEO audit</a> or a vertical audit, each of which includes the technical layer.</p>
   </details>
 
   <details open>
@@ -496,7 +491,7 @@
 
   <details open>
     <summary>Will an SEO tool do the same job?</summary>
-    <p>Tools surface symptoms; an audit interprets them and prioritises the fixes. The full comparison lives at <a href="/eu/compare/seo-audit-vs-seo-tool">SEO audit vs SEO tool</a>.</p>
+    <p>Tools surface symptoms; an audit interprets them and prioritises the fixes. The full comparison lives at <a href="{{PATH_PREFIX}}/compare/seo-audit-vs-seo-tool">SEO audit vs SEO tool</a>.</p>
   </details>
 
   <details open>
@@ -504,7 +499,7 @@
     <p>Yes. No client work is published without explicit permission, and no findings are shared externally.</p>
   </details>
 
-  <p>See the <a href="/eu/faq/#general">general SEO audit questions</a> for more.</p>
+  <p>See the <a href="{{PATH_PREFIX}}/faq/#general">general SEO audit questions</a> for more.</p>
 </section>
 <section id="cta">
   <header>
@@ -517,7 +512,7 @@
   <nav>
     <button type="button" data-lead-open data-lead-source="technical" data-lead-title="Contact form"
       data-lead-subtitle="Drop your details and we'll contact you.">
-      Contact form
+      Contact us
     </button>
   </nav>
 </section>
@@ -526,64 +521,64 @@
 <footer>
   <section>
     <img src="/static/img/logo.png" alt="">
-    <span>Illucrum</span>
-    <p>SEO audits that show you exactly what to fix next.</p>
+    <span>{{BRAND_NAME}}</span>
+    <p>{{BRAND_TAGLINE}}</p>
   </section>
 
   <section>
     <h5>Audits</h5>
     <ul>
-      <li><a href="/eu/audits/saas-seo-audit">SaaS SEO audit</a></li>
-      <li><a href="/eu/audits/ecommerce-seo-audit">E-commerce SEO audit</a></li>
-      <li><a href="/eu/audits/seo-audit">Website SEO audit</a></li>
-      <li><a href="/eu/which-audit">Which audit?</a></li>
+      <li><a href="{{PATH_PREFIX}}/audits/saas-seo-audit">SaaS SEO audit</a></li>
+      <li><a href="{{PATH_PREFIX}}/audits/ecommerce-seo-audit">E-commerce SEO audit</a></li>
+      <li><a href="{{PATH_PREFIX}}/audits/seo-audit">Website SEO audit</a></li>
+      <li><a href="{{PATH_PREFIX}}/which-audit">Which audit?</a></li>
     </ul>
   </section>
 
   <section>
     <h5>Compare</h5>
     <ul>
-      <li><a href="/eu/compare/saas-vs-ecommerce-seo-audit">SaaS vs E-commerce</a></li>
-      <li><a href="/eu/compare/saas-vs-generic-seo-audit">SaaS vs Website</a></li>
-      <li><a href="/eu/compare/ecommerce-vs-generic-seo-audit">E-commerce vs Website</a></li>
-      <li><a href="/eu/compare/basic-vs-full-seo-audit">Basic vs Full</a></li>
-      <li><a href="/eu/compare/seo-audit-vs-seo-tool">Audit vs SEO tool</a></li>
-      <li><a href="/eu/compare/seo-audit-vs-seo-retainer">Audit vs retainer</a></li>
-      <li><a href="/eu/compare/seo-audit-vs-diy">Audit vs DIY</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/saas-vs-ecommerce-seo-audit">SaaS vs E-commerce</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/saas-vs-generic-seo-audit">SaaS vs Website</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/ecommerce-vs-generic-seo-audit">E-commerce vs Website</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/basic-vs-full-seo-audit">Basic vs Full</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/seo-audit-vs-seo-tool">Audit vs SEO tool</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/seo-audit-vs-seo-retainer">Audit vs retainer</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/seo-audit-vs-diy">Audit vs DIY</a></li>
     </ul>
   </section>
 
   <section>
     <h5>Company</h5>
     <ul>
-      <li><a href="/eu/about">About</a></li>
-      <li><a href="/eu/process">Process</a></li>
-      <li><a href="/eu/pricing">Pricing</a></li>
-      <li><a href="/eu/faq">FAQ</a></li>
-      <li><a href="/eu/seo-facts">SEO facts</a></li>
+      <li><a href="{{PATH_PREFIX}}/about">About</a></li>
+      <li><a href="{{PATH_PREFIX}}/process">Process</a></li>
+      <li><a href="{{PATH_PREFIX}}/pricing">Pricing</a></li>
+      <li><a href="{{PATH_PREFIX}}/faq">FAQ</a></li>
+      <li><a href="{{PATH_PREFIX}}/seo-facts">SEO facts</a></li>
     </ul>
   </section>
 
   <section>
     <h5>Contact &amp; Legal</h5>
     <ul>
-      <li><a href="mailto:szymon.kokot@illucrum.com">Email</a></li>
-      <li><a href="https://wa.me/48515983261" rel="noopener">WhatsApp</a></li>
-      <li><a href="https://t.me/m/w209xo-FZGJk" rel="noopener">Telegram</a></li>
-      <li><a href="/eu/legal/terms">Terms</a></li>
-      <li><a href="/eu/legal/privacy">Privacy</a></li>
-      <li><a href="/eu/legal/cookies">Cookies</a></li>
-      <li><a href="/eu/legal/disclaimer">Disclaimer</a></li>
-      <li><a href="/eu/legal/accessibility">Accessibility</a></li>
-      <li><a href="#" data-consent-open>Manage cookies</a></li>
+      <li><a href="mailto:{{EMAIL}}">Email</a></li>
+      <li><a href="{{WA_BASE}}" rel="noopener">WhatsApp</a></li>
+      <li><a href="{{TELEGRAM_URL}}" rel="noopener">Telegram</a></li>
+      <li><a href="{{PATH_PREFIX}}/legal/terms">Terms</a></li>
+      <li><a href="{{PATH_PREFIX}}/legal/privacy">Privacy</a></li>
+      <li><a href="{{PATH_PREFIX}}/legal/cookies">Cookies</a></li>
+      <li><a href="{{PATH_PREFIX}}/legal/disclaimer">Disclaimer</a></li>
+      <li><a href="{{PATH_PREFIX}}/legal/accessibility">Accessibility</a></li>
+      <li><a href="#" data-consent-open>{{COOKIE_MANAGE_FOOTER_LABEL}}</a></li>
     </ul>
   </section>
 
   <small>
-    <span>&copy; Illucrum 2026 &middot; +48 515 983 261</span>
+    <span>&copy; {{BRAND_NAME}} {{COPYRIGHT_YEAR}} &middot; {{PHONE_DISPLAY}}</span>
     <span>
-      <a href="https://illucrum.com" hreflang="en-us">US</a> &middot;
-      <a href="https://illucrum.com/eu" hreflang="en-gb">EU</a>
+      <a href="{{HREFLANG_EN_US_URL}}" hreflang="en-us">US</a> &middot;
+      <a href="{{HREFLANG_EN_GB_URL}}" hreflang="en-gb">EU</a>
     </span>
   </small>
 </footer>
@@ -593,34 +588,34 @@
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
-<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="We use cookies" aria-modal="false" hidden>
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="{{COOKIE_BANNER_TITLE}}" aria-modal="false" hidden>
   <div class="ic-consent__panel">
-    <span class="ic-consent__eyebrow">Illucrum</span>
-    <p class="ic-consent__title">We use cookies</p>
-    <p class="ic-consent__body">We use cookies to make the site work, to understand how it is used, and (only if you agree) to show relevant ads on Google and Reddit. You can change your choice at any time from the footer. <a href="/eu/legal/cookies/">Cookie policy</a>.</p>
+    <span class="ic-consent__eyebrow">{{BRAND_NAME}}</span>
+    <p class="ic-consent__title">{{COOKIE_BANNER_TITLE}}</p>
+    <p class="ic-consent__body">{{COOKIE_BANNER_BODY}} <a href="{{PATH_PREFIX}}/legal/cookies/">{{COOKIE_BANNER_LINK_LABEL}}</a>.</p>
     <div class="ic-consent__actions">
-      <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
-      <button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button>
-      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferences</button>
+      <button type="button" class="ic-consent__btn" data-consent-accept>{{COOKIE_BANNER_ACCEPT_ALL}}</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-reject>{{COOKIE_BANNER_REJECT_ALL}}</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">{{COOKIE_BANNER_PREFERENCES}}</button>
     </div>
     <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
       <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Strictly necessary</span>
-        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
-        <p class="ic-consent__pref-desc">Required for the site to function. Cannot be turned off.</p>
+        <span class="ic-consent__pref-label">{{COOKIE_PREF_NECESSARY_LABEL}}</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="{{COOKIE_PREF_NECESSARY_LABEL}}">
+        <p class="ic-consent__pref-desc">{{COOKIE_PREF_NECESSARY_DESC}}</p>
       </div>
       <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Analytics</span>
-        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
-        <p class="ic-consent__pref-desc">Helps us understand how visitors use the site (Google Analytics 4).</p>
+        <span class="ic-consent__pref-label">{{COOKIE_PREF_ANALYTICS_LABEL}}</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="{{COOKIE_PREF_ANALYTICS_LABEL}}">
+        <p class="ic-consent__pref-desc">{{COOKIE_PREF_ANALYTICS_DESC}}</p>
       </div>
       <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Advertising</span>
-        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
-        <p class="ic-consent__pref-desc">Lets us measure and personalise Google Ads and Reddit Ads campaigns.</p>
+        <span class="ic-consent__pref-label">{{COOKIE_PREF_ADS_LABEL}}</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="{{COOKIE_PREF_ADS_LABEL}}">
+        <p class="ic-consent__pref-desc">{{COOKIE_PREF_ADS_DESC}}</p>
       </div>
       <div class="ic-consent__actions">
-        <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>
+        <button type="button" class="ic-consent__btn" data-consent-save>{{COOKIE_BANNER_SAVE}}</button>
       </div>
     </div>
   </div>

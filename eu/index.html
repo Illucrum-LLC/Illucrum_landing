@@ -12,14 +12,14 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://illucrum.com/#organization",
-  "name": "Illucrum",
-  "legalName": "Illucrum LLC",
-  "url": "https://illucrum.com/",
-  "logo": "https://illucrum.com/static/img/logo.png",
-  "email": "szymon.kokot@illucrum.com",
-  "telephone": "+48 515 983 261",
-  "founder": { "@id": "https://illucrum.com/about/#person" },
+  "@id": "{{SITE_BASE_URL}}/#organization",
+  "name": "{{BRAND_NAME}}",
+  "legalName": "{{LEGAL_ENTITY_NAME}}",
+  "url": "{{SITE_BASE_URL}}/",
+  "logo": "{{SITE_BASE_URL}}/static/img/logo.png",
+  "email": "{{EMAIL}}",
+  "telephone": "{{PHONE_DISPLAY}}",
+  "founder": { "@id": "{{SITE_BASE_URL}}/about/#person" },
   "sameAs": [
     "https://www.linkedin.com/company/illucrum/"
   ]
@@ -30,12 +30,12 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://illucrum.com/about/#person",
+  "@id": "{{SITE_BASE_URL}}/about/#person",
   "name": "Szymon Kokot",
   "jobTitle": "SEO audit consultant",
-  "worksFor": { "@id": "https://illucrum.com/#organization" },
-  "url": "https://illucrum.com/about/",
-  "email": "szymon.kokot@illucrum.com",
+  "worksFor": { "@id": "{{SITE_BASE_URL}}/#organization" },
+  "url": "{{SITE_BASE_URL}}/about/",
+  "email": "{{EMAIL}}",
   "sameAs": [
     "https://www.linkedin.com/in/szymonkokot/"
   ]
@@ -77,36 +77,36 @@
 <title>Illucrum: SEO audits for SaaS, e-commerce, and beyond</title>
 <meta name="description" content="Specialist SEO audits that show you exactly what to fix next. Built for SaaS, e-commerce, and growing SMEs. Reports in 5 to 8 business days.">
 
-<link rel="canonical" href="https://illucrum.com">
-<link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu">
-<link rel="alternate" hreflang="en-us" href="https://illucrum.com">
+<link rel="canonical" href="{{SITE_BASE_URL}}">
+<link rel="alternate" hreflang="{{HREFLANG_SELF}}" href="{{HREFLANG_SELF_URL}}">
+<link rel="alternate" hreflang="{{HREFLANG_ALT}}" href="{{HREFLANG_ALT_URL}}">
 <link rel="alternate" hreflang="x-default" href="https://illucrum.com">
 
 <meta property="og:type" content="website">
-<meta property="og:locale" content="en_GB">
-<meta property="og:url" content="https://illucrum.com">
-<meta property="og:site_name" content="Illucrum">
+<meta property="og:locale" content="{{LOCALE}}">
+<meta property="og:url" content="{{SITE_BASE_URL}}">
+<meta property="og:site_name" content="{{BRAND_NAME}}">
 <meta property="og:title" content="SEO audits that tell you exactly what to fix next">
 <meta property="og:description" content="46-point SEO audits for SaaS, e-commerce, and SMEs. Get a prioritised action plan, not a 200-page PDF you'll never read.">
-<meta property="og:image" content="https://illucrum.com/static/img/og-home.png">
+<meta property="og:image" content="{{SITE_BASE_URL}}/static/img/og-home.png">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SEO audits that tell you exactly what to fix next">
 <meta name="twitter:description" content="46-point SEO audits for SaaS, e-commerce, and SMEs. Get a prioritised action plan, not a 200-page PDF you'll never read.">
-<meta name="twitter:image" content="https://illucrum.com/static/img/og-home.png">
+<meta name="twitter:image" content="{{SITE_BASE_URL}}/static/img/og-home.png">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "@id": "https://illucrum.com/#service",
-  "name": "Illucrum",
-  "url": "https://illucrum.com/",
+  "@id": "{{SITE_BASE_URL}}/#service",
+  "name": "{{BRAND_NAME}}",
+  "url": "{{SITE_BASE_URL}}/",
   "description": "Specialist SEO audit consultancy for SaaS companies, e-commerce stores, startups, and SMEs. 46-point manual audits delivered as a prioritised action plan.",
-  "priceRange": "&euro;247-&euro;497",
-  "email": "szymon.kokot@illucrum.com",
-  "telephone": "+48 515 983 261",
-  "parentOrganization": { "@id": "https://illucrum.com/#organization" },
+  "priceRange": "{{CURRENCY_SYMBOL}}{{PRICE_WEBSITE_BASIC}}-{{CURRENCY_SYMBOL}}{{PRICE_SAAS_FULL}}",
+  "email": "{{EMAIL}}",
+  "telephone": "{{PHONE_DISPLAY}}",
+  "parentOrganization": { "@id": "{{SITE_BASE_URL}}/#organization" },
   "areaServed": "Worldwide"
 }
 </script>
@@ -115,11 +115,11 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://illucrum.com/#website",
-  "url": "https://illucrum.com/",
-  "name": "Illucrum",
-  "publisher": { "@id": "https://illucrum.com/#organization" },
-  "inLanguage": "en-gb"
+  "@id": "{{SITE_BASE_URL}}/#website",
+  "url": "{{SITE_BASE_URL}}/",
+  "name": "{{BRAND_NAME}}",
+  "publisher": { "@id": "{{SITE_BASE_URL}}/#organization" },
+  "inLanguage": "{{HREFLANG_SELF}}"
 }
 </script>
 
@@ -133,19 +133,19 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "url": "https://illucrum.com/audits/saas-seo-audit/",
+      "url": "{{SITE_BASE_URL}}/audits/saas-seo-audit/",
       "name": "SaaS SEO Audit"
     },
     {
       "@type": "ListItem",
       "position": 2,
-      "url": "https://illucrum.com/audits/ecommerce-seo-audit/",
+      "url": "{{SITE_BASE_URL}}/audits/ecommerce-seo-audit/",
       "name": "E-commerce SEO Audit"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "url": "https://illucrum.com/audits/seo-audit/",
+      "url": "{{SITE_BASE_URL}}/audits/seo-audit/",
       "name": "Website SEO Audit"
     }
   ]
@@ -154,17 +154,17 @@
 </head>
 <body>
 <nav>
-  <a href="https://illucrum.com/eu">
+  <a href="{{HREFLANG_SELF_URL}}">
     <img src="/static/img/logo.png" alt="">
-    <span>Illucrum</span>
+    <span>{{BRAND_NAME}}</span>
   </a>
   <ul>
-    <li><a href="/eu/audits">Audits</a></li>
-    <li><a href="/eu/pricing">Pricing</a></li>
-    <li><a href="/eu/process">Process</a></li>
-    <li><a href="/eu/faq">FAQ</a></li>
-    <li><a href="/eu/about">About</a></li>
-    <li><button type="button" data-lead-open data-lead-source="homepage" data-lead-title="Contact form"
+    <li><a href="{{PATH_PREFIX}}/audits">Audits</a></li>
+    <li><a href="{{PATH_PREFIX}}/pricing">Pricing</a></li>
+    <li><a href="{{PATH_PREFIX}}/process">Process</a></li>
+    <li><a href="{{PATH_PREFIX}}/faq">FAQ</a></li>
+    <li><a href="{{PATH_PREFIX}}/about">About</a></li>
+    <li><button type="button" data-lead-open data-lead-source="header" data-lead-title="Contact form"
       data-lead-subtitle="Drop your details and we'll contact you.">
       Contact us
     </button></li>
@@ -179,7 +179,7 @@
   <nav>
     <button type="button" data-lead-open data-lead-source="homepage" data-lead-title="Contact form"
       data-lead-subtitle="Drop your details and we'll contact you.">
-      Contact form
+      Contact us
     </button>
   </nav>
 </header>
@@ -197,19 +197,19 @@
       <span>01</span>
       <h3>Audit</h3>
       <p>A structured 46-point review across technical SEO, on-page SEO, keyword strategy, backlinks, competitor analysis, and conversion UX. Delivered as a written report with prioritised fixes.</p>
-      <a href="/eu/audits">See the audits</a>
+      <a href="{{PATH_PREFIX}}/audits">See the audits</a>
     </li>
     <li>
       <span>02</span>
       <h3>Optimise</h3>
       <p>Implementation of the audit's findings, end to end. Technical fixes, on-page rewrites, schema, internal linking, and content. Scoped against what the audit surfaced, not a generic monthly retainer.</p>
-      <a href="mailto:szymon.kokot@illucrum.com?subject=Optimisation%20inquiry">Talk to Szymon</a>
+      <a data-lead-open data-lead-source="homepage" data-lead-title="Contact form" data-lead-subtitle="Drop your details and we'll contact you.">Contact us</a>
     </li>
     <li>
       <span>03</span>
       <h3>Build</h3>
       <p>Fast, SEO-ready websites built from scratch. Goal-oriented from day one, with the technical foundation right before any content goes live. Designed to compound.</p>
-      <a href="mailto:szymon.kokot@illucrum.com?subject=Website%20build%20inquiry">Talk to Szymon</a>
+      <a data-lead-open data-lead-source="homepage" data-lead-title="Contact form" data-lead-subtitle="Drop your details and we'll contact you.">Contact us</a>
     </li>
   </ul>
 </section>
@@ -225,21 +225,21 @@
       <span>01</span>
       <h3>SaaS SEO Audit</h3>
       <p>Built for B2B SaaS startups and scale-ups competing for high-LTV keywords. Covers funnel-stage targeting, comparison and integration pages, trial conversion paths, and AI citation readiness.</p>
-      <p><strong>From &euro;247</strong></p>
-      <a href="/eu/audits/saas-seo-audit">See the SaaS audit</a>
+      <p><strong>From {{CURRENCY_SYMBOL}}{{PRICE_SAAS_BASIC}}</strong></p>
+      <a href="{{PATH_PREFIX}}/audits/saas-seo-audit">See the SaaS audit</a>
     </li>
     <li>
       <span>02</span>
       <h3>E-commerce SEO Audit</h3>
       <p>For online stores on Shopify, WooCommerce, Magento, or BigCommerce. Deep on technical SEO, product and category page optimisation, faceted navigation, schema, and conversion UX.</p>
-      <p><strong>From &euro;247</strong></p>
-      <a href="/eu/audits/ecommerce-seo-audit">See the e-commerce audit</a>
+      <p><strong>From {{CURRENCY_SYMBOL}}{{PRICE_ECOM_BASIC}}</strong></p>
+      <a href="{{PATH_PREFIX}}/audits/ecommerce-seo-audit">See the e-commerce audit</a>
     </li>
     <li>
       <span>03</span>
       <h3>Not sure which one?</h3>
       <p>Answer three short questions and we'll point you to the audit that fits, with the specific reasons why.</p>
-      <a href="/eu/which-audit">Help me decide</a>
+      <a href="{{PATH_PREFIX}}/which-audit">Help me decide</a>
     </li>
   </ul>
 </section>
@@ -277,7 +277,7 @@
     </li>
   </ol>
 
-  <p><a href="/eu/process">Read the full process</a></p>
+  <p><a href="{{PATH_PREFIX}}/process">Read the full process</a></p>
 </section>
 <section id="why-seo">
   <header>
@@ -307,7 +307,7 @@
     </li>
   </ul>
 
-  <p><a href="/eu/seo-facts">See all SEO statistics</a></p>
+  <p><a href="{{PATH_PREFIX}}/seo-facts">See all SEO statistics</a></p>
 </section>
 <section id="pricing">
   <header>
@@ -320,23 +320,23 @@
     <li>
       <small>SaaS</small>
       <h3>SaaS audits</h3>
-      <p><strong>From &euro;247 to &euro;497</strong></p>
+      <p><strong>From {{CURRENCY_SYMBOL}}{{PRICE_SAAS_BASIC}} to {{CURRENCY_SYMBOL}}{{PRICE_SAAS_FULL}}</strong></p>
       <p>Basic (32 of 46 points) or Full (all 46 points), focused on SaaS-specific intent and funnel.</p>
-      <a href="/eu/pricing/#saas">See SaaS pricing</a>
+      <a href="{{PATH_PREFIX}}/pricing/#saas">See SaaS pricing</a>
     </li>
     <li>
       <small>E-commerce</small>
       <h3>E-commerce audits</h3>
-      <p><strong>From &euro;247 to &euro;497</strong></p>
+      <p><strong>From {{CURRENCY_SYMBOL}}{{PRICE_ECOM_BASIC}} to {{CURRENCY_SYMBOL}}{{PRICE_ECOM_FULL}}</strong></p>
       <p>Basic or Full, focused on store technical health, product and category SEO, and schema.</p>
-      <a href="/eu/pricing/#ecommerce">See e-commerce pricing</a>
+      <a href="{{PATH_PREFIX}}/pricing/#ecommerce">See e-commerce pricing</a>
     </li>
     <li>
       <small>Website</small>
       <h3>Website audits</h3>
-      <p><strong>From &euro;247 to &euro;497</strong></p>
+      <p><strong>From {{CURRENCY_SYMBOL}}{{PRICE_WEBSITE_BASIC}} to {{CURRENCY_SYMBOL}}{{PRICE_WEBSITE_FULL}}</strong></p>
       <p>Basic or Full, general-purpose SEO audit for small businesses, service businesses, blogs, and informational sites.</p>
-      <a href="/eu/pricing/#generic">See website audit pricing</a>
+      <a href="{{PATH_PREFIX}}/pricing/#generic">See website audit pricing</a>
     </li>
   </ul>
 </section>
@@ -367,7 +367,7 @@
     <p>A tool gives you data. An audit interprets the data, prioritises what matters, and tells you what to ignore. Most teams have access to tools and still don't know what to do next. That's the gap an audit fills.</p>
   </details>
 
-  <p><a href="/eu/faq">Read all FAQs</a></p>
+  <p><a href="{{PATH_PREFIX}}/faq">Read all FAQs</a></p>
 </section>
 <section id="cta">
   <header>
@@ -380,7 +380,7 @@
   <nav>
     <button type="button" data-lead-open data-lead-source="homepage" data-lead-title="Contact form"
       data-lead-subtitle="Drop your details and we'll contact you.">
-      Contact form
+      Contact us
     </button>
   </nav>
 </section>
@@ -389,64 +389,64 @@
 <footer>
   <section>
     <img src="/static/img/logo.png" alt="">
-    <span>Illucrum</span>
-    <p>SEO audits that show you exactly what to fix next.</p>
+    <span>{{BRAND_NAME}}</span>
+    <p>{{BRAND_TAGLINE}}</p>
   </section>
 
   <section>
     <h5>Audits</h5>
     <ul>
-      <li><a href="/eu/audits/saas-seo-audit">SaaS SEO audit</a></li>
-      <li><a href="/eu/audits/ecommerce-seo-audit">E-commerce SEO audit</a></li>
-      <li><a href="/eu/audits/seo-audit">Website SEO audit</a></li>
-      <li><a href="/eu/which-audit">Which audit?</a></li>
+      <li><a href="{{PATH_PREFIX}}/audits/saas-seo-audit">SaaS SEO audit</a></li>
+      <li><a href="{{PATH_PREFIX}}/audits/ecommerce-seo-audit">E-commerce SEO audit</a></li>
+      <li><a href="{{PATH_PREFIX}}/audits/seo-audit">Website SEO audit</a></li>
+      <li><a href="{{PATH_PREFIX}}/which-audit">Which audit?</a></li>
     </ul>
   </section>
 
   <section>
     <h5>Compare</h5>
     <ul>
-      <li><a href="/eu/compare/saas-vs-ecommerce-seo-audit">SaaS vs E-commerce</a></li>
-      <li><a href="/eu/compare/saas-vs-generic-seo-audit">SaaS vs Website</a></li>
-      <li><a href="/eu/compare/ecommerce-vs-generic-seo-audit">E-commerce vs Website</a></li>
-      <li><a href="/eu/compare/basic-vs-full-seo-audit">Basic vs Full</a></li>
-      <li><a href="/eu/compare/seo-audit-vs-seo-tool">Audit vs SEO tool</a></li>
-      <li><a href="/eu/compare/seo-audit-vs-seo-retainer">Audit vs retainer</a></li>
-      <li><a href="/eu/compare/seo-audit-vs-diy">Audit vs DIY</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/saas-vs-ecommerce-seo-audit">SaaS vs E-commerce</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/saas-vs-generic-seo-audit">SaaS vs Website</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/ecommerce-vs-generic-seo-audit">E-commerce vs Website</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/basic-vs-full-seo-audit">Basic vs Full</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/seo-audit-vs-seo-tool">Audit vs SEO tool</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/seo-audit-vs-seo-retainer">Audit vs retainer</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/seo-audit-vs-diy">Audit vs DIY</a></li>
     </ul>
   </section>
 
   <section>
     <h5>Company</h5>
     <ul>
-      <li><a href="/eu/about">About</a></li>
-      <li><a href="/eu/process">Process</a></li>
-      <li><a href="/eu/pricing">Pricing</a></li>
-      <li><a href="/eu/faq">FAQ</a></li>
-      <li><a href="/eu/seo-facts">SEO facts</a></li>
+      <li><a href="{{PATH_PREFIX}}/about">About</a></li>
+      <li><a href="{{PATH_PREFIX}}/process">Process</a></li>
+      <li><a href="{{PATH_PREFIX}}/pricing">Pricing</a></li>
+      <li><a href="{{PATH_PREFIX}}/faq">FAQ</a></li>
+      <li><a href="{{PATH_PREFIX}}/seo-facts">SEO facts</a></li>
     </ul>
   </section>
 
   <section>
     <h5>Contact &amp; Legal</h5>
     <ul>
-      <li><a href="mailto:szymon.kokot@illucrum.com">Email</a></li>
-      <li><a href="https://wa.me/48515983261" rel="noopener">WhatsApp</a></li>
-      <li><a href="https://t.me/m/w209xo-FZGJk" rel="noopener">Telegram</a></li>
-      <li><a href="/eu/legal/terms">Terms</a></li>
-      <li><a href="/eu/legal/privacy">Privacy</a></li>
-      <li><a href="/eu/legal/cookies">Cookies</a></li>
-      <li><a href="/eu/legal/disclaimer">Disclaimer</a></li>
-      <li><a href="/eu/legal/accessibility">Accessibility</a></li>
-      <li><a href="#" data-consent-open>Manage cookies</a></li>
+      <li><a href="mailto:{{EMAIL}}">Email</a></li>
+      <li><a href="{{WA_BASE}}" rel="noopener">WhatsApp</a></li>
+      <li><a href="{{TELEGRAM_URL}}" rel="noopener">Telegram</a></li>
+      <li><a href="{{PATH_PREFIX}}/legal/terms">Terms</a></li>
+      <li><a href="{{PATH_PREFIX}}/legal/privacy">Privacy</a></li>
+      <li><a href="{{PATH_PREFIX}}/legal/cookies">Cookies</a></li>
+      <li><a href="{{PATH_PREFIX}}/legal/disclaimer">Disclaimer</a></li>
+      <li><a href="{{PATH_PREFIX}}/legal/accessibility">Accessibility</a></li>
+      <li><a href="#" data-consent-open>{{COOKIE_MANAGE_FOOTER_LABEL}}</a></li>
     </ul>
   </section>
 
   <small>
-    <span>&copy; Illucrum 2026 &middot; +48 515 983 261</span>
+    <span>&copy; {{BRAND_NAME}} {{COPYRIGHT_YEAR}} &middot; {{PHONE_DISPLAY}}</span>
     <span>
-      <a href="https://illucrum.com" hreflang="en-us">US</a> &middot;
-      <a href="https://illucrum.com/eu" hreflang="en-gb">EU</a>
+      <a href="{{HREFLANG_EN_US_URL}}" hreflang="en-us">US</a> &middot;
+      <a href="{{HREFLANG_EN_GB_URL}}" hreflang="en-gb">EU</a>
     </span>
   </small>
 </footer>
@@ -456,34 +456,34 @@
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
-<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="We use cookies" aria-modal="false" hidden>
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="{{COOKIE_BANNER_TITLE}}" aria-modal="false" hidden>
   <div class="ic-consent__panel">
-    <span class="ic-consent__eyebrow">Illucrum</span>
-    <p class="ic-consent__title">We use cookies</p>
-    <p class="ic-consent__body">We use cookies to make the site work, to understand how it is used, and (only if you agree) to show relevant ads on Google and Reddit. You can change your choice at any time from the footer. <a href="/eu/legal/cookies/">Cookie policy</a>.</p>
+    <span class="ic-consent__eyebrow">{{BRAND_NAME}}</span>
+    <p class="ic-consent__title">{{COOKIE_BANNER_TITLE}}</p>
+    <p class="ic-consent__body">{{COOKIE_BANNER_BODY}} <a href="{{PATH_PREFIX}}/legal/cookies/">{{COOKIE_BANNER_LINK_LABEL}}</a>.</p>
     <div class="ic-consent__actions">
-      <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
-      <button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button>
-      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferences</button>
+      <button type="button" class="ic-consent__btn" data-consent-accept>{{COOKIE_BANNER_ACCEPT_ALL}}</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-reject>{{COOKIE_BANNER_REJECT_ALL}}</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">{{COOKIE_BANNER_PREFERENCES}}</button>
     </div>
     <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
       <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Strictly necessary</span>
-        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
-        <p class="ic-consent__pref-desc">Required for the site to function. Cannot be turned off.</p>
+        <span class="ic-consent__pref-label">{{COOKIE_PREF_NECESSARY_LABEL}}</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="{{COOKIE_PREF_NECESSARY_LABEL}}">
+        <p class="ic-consent__pref-desc">{{COOKIE_PREF_NECESSARY_DESC}}</p>
       </div>
       <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Analytics</span>
-        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
-        <p class="ic-consent__pref-desc">Helps us understand how visitors use the site (Google Analytics 4).</p>
+        <span class="ic-consent__pref-label">{{COOKIE_PREF_ANALYTICS_LABEL}}</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="{{COOKIE_PREF_ANALYTICS_LABEL}}">
+        <p class="ic-consent__pref-desc">{{COOKIE_PREF_ANALYTICS_DESC}}</p>
       </div>
       <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Advertising</span>
-        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
-        <p class="ic-consent__pref-desc">Lets us measure and personalise Google Ads and Reddit Ads campaigns.</p>
+        <span class="ic-consent__pref-label">{{COOKIE_PREF_ADS_LABEL}}</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="{{COOKIE_PREF_ADS_LABEL}}">
+        <p class="ic-consent__pref-desc">{{COOKIE_PREF_ADS_DESC}}</p>
       </div>
       <div class="ic-consent__actions">
-        <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>
+        <button type="button" class="ic-consent__btn" data-consent-save>{{COOKIE_BANNER_SAVE}}</button>
       </div>
     </div>
   </div>

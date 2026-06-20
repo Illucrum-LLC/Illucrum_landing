@@ -12,14 +12,14 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://illucrum.com/#organization",
-  "name": "Illucrum",
-  "legalName": "Illucrum LLC",
-  "url": "https://illucrum.com/",
-  "logo": "https://illucrum.com/static/img/logo.png",
-  "email": "szymon.kokot@illucrum.com",
-  "telephone": "+48 515 983 261",
-  "founder": { "@id": "https://illucrum.com/about/#person" },
+  "@id": "{{SITE_BASE_URL}}/#organization",
+  "name": "{{BRAND_NAME}}",
+  "legalName": "{{LEGAL_ENTITY_NAME}}",
+  "url": "{{SITE_BASE_URL}}/",
+  "logo": "{{SITE_BASE_URL}}/static/img/logo.png",
+  "email": "{{EMAIL}}",
+  "telephone": "{{PHONE_DISPLAY}}",
+  "founder": { "@id": "{{SITE_BASE_URL}}/about/#person" },
   "sameAs": [
     "https://www.linkedin.com/company/illucrum/"
   ]
@@ -30,12 +30,12 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://illucrum.com/about/#person",
+  "@id": "{{SITE_BASE_URL}}/about/#person",
   "name": "Szymon Kokot",
   "jobTitle": "SEO audit consultant",
-  "worksFor": { "@id": "https://illucrum.com/#organization" },
-  "url": "https://illucrum.com/about/",
-  "email": "szymon.kokot@illucrum.com",
+  "worksFor": { "@id": "{{SITE_BASE_URL}}/#organization" },
+  "url": "{{SITE_BASE_URL}}/about/",
+  "email": "{{EMAIL}}",
   "sameAs": [
     "https://www.linkedin.com/in/szymonkokot/"
   ]
@@ -74,15 +74,15 @@
 
 <script defer src="/static/js/consent.js"></script>
 <script defer src="/static/js/lead-form.js"></script>
-<title>Terms of Service &middot; Illucrum</title>
-<meta name="description" content="The terms that apply when you use Illucrum.com or commission an SEO audit from Illucrum LLC.">
+<title>Terms of Service &middot; {{BRAND_NAME}}</title>
+<meta name="description" content="The terms that apply when you use {{BRAND_NAME}}.com or commission an SEO audit from {{LEGAL_ENTITY_NAME}}.">
 <meta name="robots" content="noindex,follow">
 
 <meta property="og:type" content="article">
-<meta property="og:locale" content="en_GB">
-<meta property="og:url" content="https://illucrum.com/eu/legal/terms/">
-<meta property="og:site_name" content="Illucrum">
-<meta property="og:title" content="Terms of Service &middot; Illucrum">
+<meta property="og:locale" content="{{LOCALE}}">
+<meta property="og:url" content="{{SITE_BASE_URL}}{{PATH_PREFIX}}/legal/terms/">
+<meta property="og:site_name" content="{{BRAND_NAME}}">
+<meta property="og:title" content="Terms of Service &middot; {{BRAND_NAME}}">
 <meta property="og:description" content="Terms that apply to use of this website and to SEO audit engagements.">
 
 <script type="application/ld+json">
@@ -90,11 +90,11 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Terms of Service",
-  "url": "https://illucrum.com/eu/legal/terms/",
-  "inLanguage": "en-gb",
-  "isPartOf": { "@id": "https://illucrum.com/#website" },
-  "publisher": { "@id": "https://illucrum.com/#organization" },
-  "dateModified": "2026-05-27"
+  "url": "{{SITE_BASE_URL}}{{PATH_PREFIX}}/legal/terms/",
+  "inLanguage": "{{HREFLANG_SELF}}",
+  "isPartOf": { "@id": "{{SITE_BASE_URL}}/#website" },
+  "publisher": { "@id": "{{SITE_BASE_URL}}/#organization" },
+  "dateModified": "{{LEGAL_LAST_UPDATED}}"
 }
 </script>
 
@@ -103,26 +103,26 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://illucrum.com/eu/" },
-    { "@type": "ListItem", "position": 2, "name": "Legal", "item": "https://illucrum.com/eu/legal/" },
-    { "@type": "ListItem", "position": 3, "name": "Terms", "item": "https://illucrum.com/eu/legal/terms/" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{SITE_BASE_URL}}{{PATH_PREFIX}}/" },
+    { "@type": "ListItem", "position": 2, "name": "Legal", "item": "{{SITE_BASE_URL}}{{PATH_PREFIX}}/legal/" },
+    { "@type": "ListItem", "position": 3, "name": "Terms", "item": "{{SITE_BASE_URL}}{{PATH_PREFIX}}/legal/terms/" }
   ]
 }
 </script>
 </head>
 <body>
 <nav>
-  <a href="https://illucrum.com/eu">
+  <a href="{{HREFLANG_SELF_URL}}">
     <img src="/static/img/logo.png" alt="">
-    <span>Illucrum</span>
+    <span>{{BRAND_NAME}}</span>
   </a>
   <ul>
-    <li><a href="/eu/audits">Audits</a></li>
-    <li><a href="/eu/pricing">Pricing</a></li>
-    <li><a href="/eu/process">Process</a></li>
-    <li><a href="/eu/faq">FAQ</a></li>
-    <li><a href="/eu/about">About</a></li>
-    <li><button type="button" data-lead-open data-lead-source="homepage" data-lead-title="Contact form"
+    <li><a href="{{PATH_PREFIX}}/audits">Audits</a></li>
+    <li><a href="{{PATH_PREFIX}}/pricing">Pricing</a></li>
+    <li><a href="{{PATH_PREFIX}}/process">Process</a></li>
+    <li><a href="{{PATH_PREFIX}}/faq">FAQ</a></li>
+    <li><a href="{{PATH_PREFIX}}/about">About</a></li>
+    <li><button type="button" data-lead-open data-lead-source="header" data-lead-title="Contact form"
       data-lead-subtitle="Drop your details and we'll contact you.">
       Contact us
     </button></li>
@@ -132,18 +132,18 @@
   <small>Legal &middot; Terms</small>
   <h1>Terms of <em>Service</em></h1>
   <p>The rules that apply when you use this website and the conditions of any SEO audit engagement with
-    Illucrum LLC.</p>
+    {{LEGAL_ENTITY_NAME}}.</p>
   <aside>
     <small>Document</small>
     <dl>
       <dt>Effective</dt>
-      <dd>2026-05-27</dd>
+      <dd>{{LEGAL_EFFECTIVE_DATE}}</dd>
       <dt>Last updated</dt>
-      <dd>2026-05-27</dd>
+      <dd>{{LEGAL_LAST_UPDATED}}</dd>
       <dt>Controller</dt>
-      <dd>Illucrum LLC</dd>
+      <dd>{{LEGAL_ENTITY_NAME}}</dd>
       <dt>Contact</dt>
-      <dd><a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a></dd>
+      <dd><a href="mailto:{{LEGAL_DPO_EMAIL}}">{{LEGAL_DPO_EMAIL}}</a></dd>
     </dl>
   </aside>
 </header>
@@ -153,12 +153,12 @@
   <header>
     <small>01 / Website</small>
     <h2>Using <em>this website</em></h2>
-    <p>By visiting https://illucrum.com you agree to these terms. If you do not agree, please do not use the site.</p>
+    <p>By visiting {{SITE_BASE_URL}} you agree to these terms. If you do not agree, please do not use the site.</p>
   </header>
 
   <p>The content on this site is provided for general information only. We try to keep it accurate and up to date, but we make no warranty that everything is correct, complete, or current. You should not rely on it as professional advice; for that, contact us.</p>
 
-  <p>You may read, share, and link to the pages on this site. You may not scrape, republish, or use our content to train machine learning models without written permission. Trademarks, the brand name Illucrum, and the site's distinctive design remain ours.</p>
+  <p>You may read, share, and link to the pages on this site. You may not scrape, republish, or use our content to train machine learning models without written permission. Trademarks, the brand name {{BRAND_NAME}}, and the site's distinctive design remain ours.</p>
 </section>
 <section id="engagement">
   <header>
@@ -247,7 +247,7 @@
     <li>
       <span>02</span>
       <h3>Your IP</h3>
-      <p>You own your website, your data, and anything you provide to us. The audit report itself becomes yours upon payment, with a perpetual licence to Illucrum to retain a copy for our records.</p>
+      <p>You own your website, your data, and anything you provide to us. The audit report itself becomes yours upon payment, with a perpetual licence to {{BRAND_NAME}} to retain a copy for our records.</p>
     </li>
     <li>
       <span>03</span>
@@ -268,75 +268,75 @@
     <p>The legal frame around these terms.</p>
   </header>
 
-  <p>These terms are governed by the laws of State of Texas, United States, without regard to conflict-of-laws principles. Any dispute that the parties cannot resolve in good faith will be submitted to the courts of Travis County, Texas, United States. If you are a consumer resident in the European Union, you keep the protection of the mandatory consumer rules of your country of residence.</p>
+  <p>These terms are governed by the laws of {{LEGAL_GOVERNING_LAW}}, without regard to conflict-of-laws principles. Any dispute that the parties cannot resolve in good faith will be submitted to the courts of {{LEGAL_JURISDICTION}}. If you are a consumer resident in the European Union, you keep the protection of the mandatory consumer rules of your country of residence.</p>
 
   <p>We may update these terms. If a change is material we will notify active clients by email and update the "Last updated" date at the top of this page. Continuing to use the site after a change takes effect counts as acceptance of the updated terms.</p>
 
-  <p>For questions, write to <a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a>.</p>
+  <p>For questions, write to <a href="mailto:{{LEGAL_CONTACT_EMAIL}}">{{LEGAL_CONTACT_EMAIL}}</a>.</p>
 </section>
 
 </main>
 <footer>
   <section>
     <img src="/static/img/logo.png" alt="">
-    <span>Illucrum</span>
-    <p>SEO audits that show you exactly what to fix next.</p>
+    <span>{{BRAND_NAME}}</span>
+    <p>{{BRAND_TAGLINE}}</p>
   </section>
 
   <section>
     <h5>Audits</h5>
     <ul>
-      <li><a href="/eu/audits/saas-seo-audit">SaaS SEO audit</a></li>
-      <li><a href="/eu/audits/ecommerce-seo-audit">E-commerce SEO audit</a></li>
-      <li><a href="/eu/audits/seo-audit">Website SEO audit</a></li>
-      <li><a href="/eu/which-audit">Which audit?</a></li>
+      <li><a href="{{PATH_PREFIX}}/audits/saas-seo-audit">SaaS SEO audit</a></li>
+      <li><a href="{{PATH_PREFIX}}/audits/ecommerce-seo-audit">E-commerce SEO audit</a></li>
+      <li><a href="{{PATH_PREFIX}}/audits/seo-audit">Website SEO audit</a></li>
+      <li><a href="{{PATH_PREFIX}}/which-audit">Which audit?</a></li>
     </ul>
   </section>
 
   <section>
     <h5>Compare</h5>
     <ul>
-      <li><a href="/eu/compare/saas-vs-ecommerce-seo-audit">SaaS vs E-commerce</a></li>
-      <li><a href="/eu/compare/saas-vs-generic-seo-audit">SaaS vs Website</a></li>
-      <li><a href="/eu/compare/ecommerce-vs-generic-seo-audit">E-commerce vs Website</a></li>
-      <li><a href="/eu/compare/basic-vs-full-seo-audit">Basic vs Full</a></li>
-      <li><a href="/eu/compare/seo-audit-vs-seo-tool">Audit vs SEO tool</a></li>
-      <li><a href="/eu/compare/seo-audit-vs-seo-retainer">Audit vs retainer</a></li>
-      <li><a href="/eu/compare/seo-audit-vs-diy">Audit vs DIY</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/saas-vs-ecommerce-seo-audit">SaaS vs E-commerce</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/saas-vs-generic-seo-audit">SaaS vs Website</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/ecommerce-vs-generic-seo-audit">E-commerce vs Website</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/basic-vs-full-seo-audit">Basic vs Full</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/seo-audit-vs-seo-tool">Audit vs SEO tool</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/seo-audit-vs-seo-retainer">Audit vs retainer</a></li>
+      <li><a href="{{PATH_PREFIX}}/compare/seo-audit-vs-diy">Audit vs DIY</a></li>
     </ul>
   </section>
 
   <section>
     <h5>Company</h5>
     <ul>
-      <li><a href="/eu/about">About</a></li>
-      <li><a href="/eu/process">Process</a></li>
-      <li><a href="/eu/pricing">Pricing</a></li>
-      <li><a href="/eu/faq">FAQ</a></li>
-      <li><a href="/eu/seo-facts">SEO facts</a></li>
+      <li><a href="{{PATH_PREFIX}}/about">About</a></li>
+      <li><a href="{{PATH_PREFIX}}/process">Process</a></li>
+      <li><a href="{{PATH_PREFIX}}/pricing">Pricing</a></li>
+      <li><a href="{{PATH_PREFIX}}/faq">FAQ</a></li>
+      <li><a href="{{PATH_PREFIX}}/seo-facts">SEO facts</a></li>
     </ul>
   </section>
 
   <section>
     <h5>Contact &amp; Legal</h5>
     <ul>
-      <li><a href="mailto:szymon.kokot@illucrum.com">Email</a></li>
-      <li><a href="https://wa.me/48515983261" rel="noopener">WhatsApp</a></li>
-      <li><a href="https://t.me/m/w209xo-FZGJk" rel="noopener">Telegram</a></li>
-      <li><a href="/eu/legal/terms">Terms</a></li>
-      <li><a href="/eu/legal/privacy">Privacy</a></li>
-      <li><a href="/eu/legal/cookies">Cookies</a></li>
-      <li><a href="/eu/legal/disclaimer">Disclaimer</a></li>
-      <li><a href="/eu/legal/accessibility">Accessibility</a></li>
-      <li><a href="#" data-consent-open>Manage cookies</a></li>
+      <li><a href="mailto:{{EMAIL}}">Email</a></li>
+      <li><a href="{{WA_BASE}}" rel="noopener">WhatsApp</a></li>
+      <li><a href="{{TELEGRAM_URL}}" rel="noopener">Telegram</a></li>
+      <li><a href="{{PATH_PREFIX}}/legal/terms">Terms</a></li>
+      <li><a href="{{PATH_PREFIX}}/legal/privacy">Privacy</a></li>
+      <li><a href="{{PATH_PREFIX}}/legal/cookies">Cookies</a></li>
+      <li><a href="{{PATH_PREFIX}}/legal/disclaimer">Disclaimer</a></li>
+      <li><a href="{{PATH_PREFIX}}/legal/accessibility">Accessibility</a></li>
+      <li><a href="#" data-consent-open>{{COOKIE_MANAGE_FOOTER_LABEL}}</a></li>
     </ul>
   </section>
 
   <small>
-    <span>&copy; Illucrum 2026 &middot; +48 515 983 261</span>
+    <span>&copy; {{BRAND_NAME}} {{COPYRIGHT_YEAR}} &middot; {{PHONE_DISPLAY}}</span>
     <span>
-      <a href="https://illucrum.com" hreflang="en-us">US</a> &middot;
-      <a href="https://illucrum.com/eu" hreflang="en-gb">EU</a>
+      <a href="{{HREFLANG_EN_US_URL}}" hreflang="en-us">US</a> &middot;
+      <a href="{{HREFLANG_EN_GB_URL}}" hreflang="en-gb">EU</a>
     </span>
   </small>
 </footer>
@@ -346,34 +346,34 @@
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
-<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="We use cookies" aria-modal="false" hidden>
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="{{COOKIE_BANNER_TITLE}}" aria-modal="false" hidden>
   <div class="ic-consent__panel">
-    <span class="ic-consent__eyebrow">Illucrum</span>
-    <p class="ic-consent__title">We use cookies</p>
-    <p class="ic-consent__body">We use cookies to make the site work, to understand how it is used, and (only if you agree) to show relevant ads on Google and Reddit. You can change your choice at any time from the footer. <a href="/eu/legal/cookies/">Cookie policy</a>.</p>
+    <span class="ic-consent__eyebrow">{{BRAND_NAME}}</span>
+    <p class="ic-consent__title">{{COOKIE_BANNER_TITLE}}</p>
+    <p class="ic-consent__body">{{COOKIE_BANNER_BODY}} <a href="{{PATH_PREFIX}}/legal/cookies/">{{COOKIE_BANNER_LINK_LABEL}}</a>.</p>
     <div class="ic-consent__actions">
-      <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
-      <button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button>
-      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferences</button>
+      <button type="button" class="ic-consent__btn" data-consent-accept>{{COOKIE_BANNER_ACCEPT_ALL}}</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-reject>{{COOKIE_BANNER_REJECT_ALL}}</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">{{COOKIE_BANNER_PREFERENCES}}</button>
     </div>
     <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
       <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Strictly necessary</span>
-        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
-        <p class="ic-consent__pref-desc">Required for the site to function. Cannot be turned off.</p>
+        <span class="ic-consent__pref-label">{{COOKIE_PREF_NECESSARY_LABEL}}</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="{{COOKIE_PREF_NECESSARY_LABEL}}">
+        <p class="ic-consent__pref-desc">{{COOKIE_PREF_NECESSARY_DESC}}</p>
       </div>
       <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Analytics</span>
-        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
-        <p class="ic-consent__pref-desc">Helps us understand how visitors use the site (Google Analytics 4).</p>
+        <span class="ic-consent__pref-label">{{COOKIE_PREF_ANALYTICS_LABEL}}</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="{{COOKIE_PREF_ANALYTICS_LABEL}}">
+        <p class="ic-consent__pref-desc">{{COOKIE_PREF_ANALYTICS_DESC}}</p>
       </div>
       <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Advertising</span>
-        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
-        <p class="ic-consent__pref-desc">Lets us measure and personalise Google Ads and Reddit Ads campaigns.</p>
+        <span class="ic-consent__pref-label">{{COOKIE_PREF_ADS_LABEL}}</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="{{COOKIE_PREF_ADS_LABEL}}">
+        <p class="ic-consent__pref-desc">{{COOKIE_PREF_ADS_DESC}}</p>
       </div>
       <div class="ic-consent__actions">
-        <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>
+        <button type="button" class="ic-consent__btn" data-consent-save>{{COOKIE_BANNER_SAVE}}</button>
       </div>
     </div>
   </div>
