@@ -335,8 +335,9 @@ hr {
   margin: 2rem 0;
 }
 
-ul {
-  margin-bottom: 1rem;
+ul + p,
+ol + p {
+  margin-top: 2rem;
 }
 
 /* ─── 7. LISTS ──────────────────────────────────────────────── */
