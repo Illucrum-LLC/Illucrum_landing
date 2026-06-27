@@ -35,7 +35,7 @@
   var FIELDS = [
     { name: "name",    label: "Name",        type: "text",  required: true,  autocomplete: "name" },
     { name: "company", label: "Company",     type: "text",  required: true, autocomplete: "organization" },
-    { name: "website", label: "Website",     type: "url",   required: true, autocomplete: "url", placeholder: "https://" },
+    { name: "website", label: "Website",     type: "text",  required: true, autocomplete: "url", placeholder: "https://" },
     { name: "phone",   label: "Phone",       type: "tel",   required: false, autocomplete: "tel" },
     { name: "email",   label: "Email",       type: "email", required: true,  autocomplete: "email" }
   ];
