@@ -1,8 +1,8 @@
 /* ============================================================
    ILLUCRUM — Tag-only stylesheet
    ────────────────────────────────────────────────────────────
-   Visual language : Illucrum brand (green #00c96b · Dubai font ·
-                     light-default / dark-toggle).
+   Visual language : Illucrum brand — light green (#65a30d) · Dubai
+                     font · light-default / dark-toggle.
    Structural approach : Tag-only selectors. No classes on page
                          elements. Only the cookie-consent banner
                          uses classes (scoped under .ic-consent).
@@ -109,23 +109,23 @@
 
 /* ─── 1. CUSTOM PROPERTIES ────────────────────────────────── */
 :root {
-  --green: #00c96b;
-  --green-dim: #00a356;
-  --green-glow: rgba(0, 201, 107, 0.15);
+  --green: #65a30d;
+  --green-dim: #4d7c0f;
+  --green-glow: rgba(101, 163, 13, 0.15);
 
   /* Light (default) */
-  --bg: #f5f5f0;
-  --bg-alt: #efefea;
-  --bg-nav: rgba(245, 245, 240, 0.92);
+  --bg: #f8fbf5;
+  --bg-alt: #f2f7ea;
+  --bg-nav: rgba(248, 251, 245, 0.92);
   --surface: #ffffff;
-  --surface2: #f0f0eb;
-  --border: rgba(0, 0, 0, 0.08);
-  --text: #111111;
-  --text-muted: #555555;
-  --text-dim: #999999;
-  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.1);
+  --surface2: #f1f7e9;
+  --border: #e6efe0;
+  --text: #253321;
+  --text-muted: #56684f;
+  --text-dim: #79886f;
+  --shadow-sm: 0 2px 6px rgba(31, 43, 28, 0.05);
+  --shadow-md: 0 8px 32px rgba(31, 43, 28, 0.08);
+  --shadow-lg: 0 16px 48px rgba(31, 43, 28, 0.1);
 
   --font: "Dubai", "Inter", system-ui, sans-serif;
   --radius: 12px;
@@ -138,18 +138,32 @@
   --maxw-mid: 900px;
   --maxw-narrow: 680px;
   --section: clamp(3rem, 8vw, 5rem);
+
+  /* Fixed deep-green contrast tokens, used by the optional .dark
+     band / .featured card treatment below (section 30). These stay
+     constant regardless of [data-theme="dark"], so a contrast band
+     always reads as "dark" against either page theme. */
+  --deep: #1f2b1c;
+  --deep-2: #33452c;
+  --on-deep: #edf5e6;
+  --on-deep-muted: #c3d6b3;
+  --on-deep-accent: #a3e635;
 }
 
 [data-theme="dark"] {
-  --bg: #0a0a0a;
-  --bg-alt: #111111;
-  --bg-nav: rgba(10, 10, 10, 0.88);
-  --surface: #111111;
-  --surface2: #161616;
+  --green: #a3e635;
+  --green-dim: #86c221;
+  --green-glow: rgba(163, 230, 53, 0.15);
+
+  --bg: #1f2b1c;
+  --bg-alt: #26331f;
+  --bg-nav: rgba(31, 43, 28, 0.88);
+  --surface: #26331f;
+  --surface2: #33452c;
   --border: rgba(255, 255, 255, 0.07);
-  --text: #e8e8e8;
-  --text-muted: #888888;
-  --text-dim: #555555;
+  --text: #edf5e6;
+  --text-muted: #c3d6b3;
+  --text-dim: #7f9670;
   --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
@@ -209,7 +223,7 @@ p a,
 li p a,
 dd a,
 td a {
-  border-bottom: 1px solid rgba(0, 201, 107, 0.3);
+  border-bottom: 1px solid rgba(101, 163, 13, 0.3);
   padding-bottom: 1px;
   color: var(--green);
 }
@@ -508,7 +522,7 @@ button {
 button:hover {
   background: var(--green-dim);
   border-color: var(--green-dim);
-  box-shadow: 0 8px 24px rgba(0, 201, 107, 0.25);
+  box-shadow: 0 8px 24px rgba(101, 163, 13, 0.25);
   transform: translateY(-2px);
 }
 button:active {
@@ -537,7 +551,7 @@ button + a {
     transform var(--trans);
 }
 button + a:hover {
-  border-color: rgba(0, 201, 107, 0.4);
+  border-color: rgba(101, 163, 13, 0.4);
   color: var(--text);
   transform: translateY(-2px);
   opacity: 1;
@@ -716,8 +730,8 @@ body > header::before {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0, 201, 107, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 201, 107, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(101, 163, 13, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(101, 163, 13, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(
     ellipse 80% 80% at 50% 50%,
@@ -895,7 +909,7 @@ article > nav > a:first-child:hover {
   background: var(--green-dim);
   border-color: var(--green-dim);
   color: #000;
-  box-shadow: 0 8px 24px rgba(0, 201, 107, 0.25);
+  box-shadow: 0 8px 24px rgba(101, 163, 13, 0.25);
   transform: translateY(-2px);
   opacity: 1;
 }
@@ -904,7 +918,7 @@ article > nav > a:first-child:hover {
 section > nav > a:last-child:hover,
 header > nav > a:last-child:hover,
 article > nav > a:last-child:hover {
-  border-color: rgba(0, 201, 107, 0.4);
+  border-color: rgba(101, 163, 13, 0.4);
   color: var(--text);
   transform: translateY(-2px);
   opacity: 1;
@@ -926,7 +940,7 @@ article > nav > a:last-child:hover {
     background: var(--green-dim);
     border-color: var(--green-dim);
     color: #000;
-    box-shadow: 0 8px 24px rgba(0, 201, 107, 0.25);
+    box-shadow: 0 8px 24px rgba(101, 163, 13, 0.25);
     opacity: 1;
   }
   section > nav > a:first-child,
@@ -940,7 +954,7 @@ article > nav > a:last-child:hover {
   section > nav > a:first-child:hover,
   header > nav > a:first-child:hover,
   article > nav > a:first-child:hover {
-    border-color: rgba(0, 201, 107, 0.4);
+    border-color: rgba(101, 163, 13, 0.4);
     color: var(--text);
     background: var(--surface);
     box-shadow: none;
@@ -1023,7 +1037,7 @@ section > ol ul > li::before {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(0, 201, 107, 0.05) 0%,
+    rgba(101, 163, 13, 0.05) 0%,
     transparent 60%
   );
   opacity: 0;
@@ -1032,7 +1046,7 @@ section > ol ul > li::before {
 }
 section > ul > li:hover,
 section > ol ul > li:hover {
-  border-color: rgba(0, 201, 107, 0.35);
+  border-color: rgba(101, 163, 13, 0.35);
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
 }
@@ -1050,7 +1064,7 @@ section > ol ul > li > span:first-child {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 6px;
-  background: rgba(0, 201, 107, 0.1);
+  background: rgba(101, 163, 13, 0.1);
   color: var(--green);
   font-size: 0.85rem;
   font-weight: 700;
@@ -1215,7 +1229,7 @@ main > section:has(> nav):not(:has(> ul)):not(:has(table))::after {
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(0, 201, 107, 0.08) 0%,
+    rgba(101, 163, 13, 0.08) 0%,
     transparent 70%
   );
   pointer-events: none;
@@ -1389,7 +1403,7 @@ main.legal li {
 }
 main.legal a {
   color: var(--green);
-  border-bottom: 1px solid rgba(0, 201, 107, 0.3);
+  border-bottom: 1px solid rgba(101, 163, 13, 0.3);
 }
 main.legal a:hover {
   opacity: 0.8;
@@ -1476,7 +1490,7 @@ main.about > section:first-of-type > div {
 }
 .ic-consent__body a {
   color: var(--green);
-  border-bottom: 1px solid rgba(0, 201, 107, 0.3);
+  border-bottom: 1px solid rgba(101, 163, 13, 0.3);
   padding-bottom: 1px;
   text-decoration: none;
 }
@@ -1522,7 +1536,7 @@ main.about > section:first-of-type > div {
   border-color: var(--border);
 }
 .ic-consent__btn-ghost:hover {
-  border-color: rgba(0, 201, 107, 0.4);
+  border-color: rgba(101, 163, 13, 0.4);
   color: var(--text);
 }
 .ic-consent__btn:focus-visible,
@@ -1621,4 +1635,95 @@ main.about > section:first-of-type > div {
   .ic-consent__btn-ghost {
     width: 100%;
   }
+}
+
+/* ============================================================
+   30. OPTIONAL CLASSES — dark contrast band + featured card
+   ────────────────────────────────────────────────────────────
+   The only two classes in this stylesheet meant for page content
+   (besides .ic-consent). Both are opt-in: add the class only where
+   you want the deep-green contrast treatment seen in the theme
+   preview (e.g. a "What's included" band, or a highlighted pricing
+   tier). Everything else stays tag-only.
+   ============================================================ */
+
+/* <section class="dark"> — full-bleed deep-green contrast band. */
+main > section.dark {
+  background: var(--deep);
+  color: var(--on-deep);
+}
+main > section.dark :is(h1, h2, h3, h4, h6) {
+  color: var(--on-deep);
+}
+main > section.dark h1 em,
+main > section.dark h2 em,
+main > section.dark h3 em {
+  color: var(--on-deep-accent);
+}
+main > section.dark p {
+  color: var(--on-deep-muted);
+}
+main > section.dark small {
+  color: var(--on-deep-accent);
+}
+main > section.dark dt,
+main > section.dark dd {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+main > section.dark dt {
+  color: var(--on-deep-muted);
+}
+main > section.dark dd {
+  color: var(--on-deep);
+}
+main > section.dark > ul > li,
+main > section.dark > ol ul > li {
+  background: var(--deep-2);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+main > section.dark > ul > li h3,
+main > section.dark > ul > li p,
+main > section.dark > ol ul > li h3,
+main > section.dark > ol ul > li p {
+  color: inherit;
+}
+main > section.dark > ul > li > span:first-child,
+main > section.dark > ol ul > li > span:first-child {
+  background: rgba(163, 230, 53, 0.15);
+  color: var(--on-deep-accent);
+}
+main > section.dark > ul > li > a,
+main > section.dark > ol ul > li > a {
+  color: var(--on-deep-accent);
+}
+
+/* <li class="featured"> — highlighted card inside a card grid or
+   pricing list (e.g. the middle tier of a 3-column pricing block). */
+section > ul > li.featured {
+  background: var(--deep);
+  border-color: var(--deep);
+  color: var(--on-deep);
+  box-shadow: var(--shadow-md);
+}
+section > ul > li.featured h3,
+section > ul > li.featured dt,
+section > ul > li.featured dd {
+  color: var(--on-deep);
+}
+section > ul > li.featured p {
+  color: var(--on-deep-muted);
+}
+section > ul > li.featured small {
+  color: var(--on-deep-accent);
+}
+section > ul > li.featured > span:first-child {
+  background: rgba(163, 230, 53, 0.15);
+  color: var(--on-deep-accent);
+}
+section > ul > li.featured > a {
+  color: var(--on-deep-accent);
+}
+section > ul > li.featured:hover {
+  border-color: var(--deep-2);
+  transform: translateY(-4px);
 }
