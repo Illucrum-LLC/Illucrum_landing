@@ -353,7 +353,8 @@ hr {
 }
 
 ul + p,
-ol + p {
+ol + p,
+nav + p {
   margin-top: 2rem;
 }
 
