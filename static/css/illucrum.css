@@ -969,6 +969,35 @@ section > ol ul {
   }
 }
 
+/* Orphan prevention: a card grid with exactly 3 items (e.g. the
+   3 pricing tiers) or exactly 4 items (e.g. a 4-tile stats bar or
+   a 4-step "how it works") skips the 2-column midpoint above, so
+   it never strands a single card alone in the last row. Selected
+   purely by child count — no extra classes needed. Groups of any
+   other size keep the default 1 → 2 → 3 progression. */
+section > ul:has(> li:nth-child(3):last-child) {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  section > ul:has(> li:nth-child(3):last-child) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+section > ul:has(> li:nth-child(4):last-child) {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 620px) {
+  section > ul:has(> li:nth-child(4):last-child) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  section > ul:has(> li:nth-child(4):last-child) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 section > ul > li,
 section > ol ul > li {
   background: var(--surface);
