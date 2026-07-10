@@ -1,19 +1,16 @@
 /* ============================================================
-   ILLUCRUM — Tag-only stylesheet
+   ILLUCRUM — Tag-only stylesheet (redesign: "light-green" preview)
    ────────────────────────────────────────────────────────────
    Visual language : Illucrum brand — light green (#65a30d) · Dubai
-                     font · light-default / dark-toggle.
+                     font · single light theme (no dark-mode toggle).
    Structural approach : Tag-only selectors. No classes on page
-                         elements. Only the cookie-consent banner
-                         uses classes (scoped under .ic-consent).
-   Theme switching : A <html data-theme="dark"> attribute (set by
-                     a small JS toggle) flips the CSS custom
-                     properties for the dark palette.
+                         elements, except the small opt-in set in
+                         section 30/31 below (.dark, .featured,
+                         .bento, .checklist) and the cookie-consent
+                         banner (scoped under .ic-consent).
 
    HTML CONVENTIONS THIS STYLESHEET ASSUMES
    ──────────────────────────────────────────
-     <html data-theme="dark">  ← toggle class added by JS
-
      <body>
        <nav>                              top sticky nav
          <a href="/"><img> Illucrum</a>   logo (first <a> in nav)
@@ -140,33 +137,13 @@
   --section: clamp(3rem, 8vw, 5rem);
 
   /* Fixed deep-green contrast tokens, used by the optional .dark
-     band / .featured card treatment below (section 30). These stay
-     constant regardless of [data-theme="dark"], so a contrast band
-     always reads as "dark" against either page theme. */
+     band / .featured card treatment below (section 30), plus the
+     nav CTA fill and .bento/.checklist accents (section 31). */
   --deep: #1f2b1c;
   --deep-2: #33452c;
   --on-deep: #edf5e6;
   --on-deep-muted: #c3d6b3;
   --on-deep-accent: #a3e635;
-}
-
-[data-theme="dark"] {
-  --green: #a3e635;
-  --green-dim: #86c221;
-  --green-glow: rgba(163, 230, 53, 0.15);
-
-  --bg: #1f2b1c;
-  --bg-alt: #26331f;
-  --bg-nav: rgba(31, 43, 28, 0.88);
-  --surface: #26331f;
-  --surface2: #33452c;
-  --border: rgba(255, 255, 255, 0.07);
-  --text: #edf5e6;
-  --text-muted: #c3d6b3;
-  --text-dim: #7f9670;
-  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
 }
 
 /* ─── 2. RESET ─────────────────────────────────────────────── */
@@ -309,6 +286,32 @@ small {
   letter-spacing: 0.12em;
   color: var(--green);
   margin-bottom: 0.6rem;
+}
+
+/* Eyebrow pill (light-green preview): a bordered pill with a small
+   leading dot, applied only where <small> is used as a hero/section
+   eyebrow (not the footer copyright line or other <small> uses,
+   which keep the plain tracked-text look above). No markup change. */
+body > header > small,
+section > header > small,
+aside > small {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.85rem 0.35rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+}
+body > header > small::before,
+section > header > small::before,
+aside > small::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
 }
 
 strong {
@@ -607,24 +610,6 @@ body > nav > a:first-child img {
   width: auto;
 }
 
-/* Dark / light logo swap.
-   Place two <img> tags inside the logo <a>:
-     <img class="logo-light" src="logo-dark.svg" alt="">
-     <img class="logo-dark"  src="logo-light.svg" alt="">
-   The correct one shows based on [data-theme]. */
-.logo-dark {
-  display: none;
-}
-.logo-light {
-  display: block;
-}
-[data-theme="dark"] .logo-dark {
-  display: block;
-}
-[data-theme="dark"] .logo-light {
-  display: none;
-}
-
 /* Nav link list. Mobile: full-width second row. */
 body > nav > ul {
   order: 3;
@@ -667,47 +652,27 @@ body > nav > ul button:hover {
   }
 }
 
-/* Nav right cluster (theme toggle + CTA button). */
+/* Nav right cluster (CTA button). */
 body > nav > div {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-/* Theme-toggle button — icon-only square. */
-body > nav button[data-theme-toggle] {
-  background: none;
-  border: 1px solid var(--border);
+/* Nav CTA — last link in the nav list, filled deep-green pill
+   (matches the preview's "Contact sales" pill). Tag-only: targets
+   the last <li> in the nav <ul>, no markup change needed. */
+body > nav > ul > li:last-child > a {
+  padding: 0.6rem 1.25rem;
   border-radius: 8px;
-  width: 36px;
-  height: 36px;
-  padding: 0;
-  color: var(--text-muted);
-  transition:
-    border-color var(--trans),
-    color var(--trans),
-    background var(--trans);
-  flex-shrink: 0;
+  background: var(--deep);
+  color: var(--on-deep);
+  font-weight: 700;
 }
-body > nav button[data-theme-toggle]:hover {
-  border-color: var(--green);
-  color: var(--green);
-  background: var(--green-glow);
-  box-shadow: none;
-  transform: none;
-}
-/* Light default: show moon icon, hide sun. */
-body > nav button[data-theme-toggle] .icon-sun {
-  display: block;
-}
-body > nav button[data-theme-toggle] .icon-moon {
-  display: none;
-}
-[data-theme="dark"] body > nav button[data-theme-toggle] .icon-sun {
-  display: none;
-}
-[data-theme="dark"] body > nav button[data-theme-toggle] .icon-moon {
-  display: block;
+body > nav > ul > li:last-child > a:hover {
+  background: var(--deep-2);
+  color: var(--on-deep);
+  opacity: 1;
 }
 
 /* ─── 13. HERO (body > header) ───────────────────────────────── */
@@ -743,9 +708,6 @@ body > header::before {
   z-index: 0;
   transition: opacity var(--trans);
 }
-[data-theme="dark"] body > header::before {
-  opacity: 1;
-}
 
 /* All direct children sit above the grid. */
 body > header > * {
@@ -771,6 +733,40 @@ body > header > p {
 /* Hero CTA pair (<nav> inside header) animated in. */
 body > header > nav {
   animation: fadeUp 0.5s 0.3s ease both;
+}
+
+/* Hero product-visual placeholder (home page only). Striped
+   background box with a centered caption describing the real asset
+   it stands in for — matches the preview's "product screenshot"
+   block. Optional: only add <figure> where a real visual exists. */
+body > header > figure {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-top: 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: repeating-linear-gradient(
+    135deg,
+    var(--surface),
+    var(--surface) 12px,
+    var(--bg-alt) 12px,
+    var(--bg-alt) 24px
+  );
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  animation: fadeUp 0.5s 0.4s ease both;
+}
+body > header > figure > figcaption {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--surface);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
 }
 
 @keyframes fadeUp {
@@ -1726,4 +1722,111 @@ section > ul > li.featured > a {
 section > ul > li.featured:hover {
   border-color: var(--deep-2);
   transform: translateY(-4px);
+}
+
+/* ============================================================
+   31. OPTIONAL CLASSES — .bento step grid + .checklist row list
+   ────────────────────────────────────────────────────────────
+   Two more opt-in classes, added for this redesign to match two
+   preview components with a real-content analog:
+     .bento      — a 4-item numbered <ol> ("how it works" steps)
+                   rendered as a seamless divided grid instead of
+                   the default stacked/divider list from section 19.
+                   Matches the preview's "Four steps" feature grid.
+                   Decided (2026-07-10): only applied to the two
+                   exact-4-item, title+body step lists (home
+                   04-process.html, audits/09-how-it-works.html) —
+                   NOT process/03-stages.html, whose 5 stages carry
+                   uneven, multi-line sub-content that doesn't fit
+                   an equal-size card grid.
+     .checklist  — a section > ul rendered as a flat single-column
+                   divided-row list instead of the card grid,
+                   typically paired with .dark. Matches the
+                   preview's "what's included" panel.
+   ============================================================ */
+
+/* <ol class="bento"> — seamless divided grid for a 4-item step list. */
+section > ol.bento {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  max-width: var(--maxw);
+}
+@media (min-width: 620px) {
+  section > ol.bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  section > ol.bento {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+section > ol.bento > li {
+  display: block;
+  background: var(--surface);
+  padding: 2rem 1.75rem;
+  border-bottom: 0;
+}
+section > ol.bento > li::before {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  opacity: 1;
+  margin-bottom: 1.25rem;
+  padding-top: 0;
+}
+section > ol.bento > li > div {
+  width: 100%;
+}
+
+/* <ul class="checklist"> — flat single-column divided-row list
+   (normally inside a section.dark band; see section 30 for the
+   dark-band color overrides these rows inherit automatically). */
+section > ul.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+section > ul.checklist > li {
+  background: var(--surface2);
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 1.5rem 1.75rem;
+}
+section > ul.checklist > li::before {
+  content: none;
+}
+section > ul.checklist > li:last-child {
+  border-bottom: 0;
+}
+section > ul.checklist > li:hover {
+  transform: none;
+  box-shadow: none;
+}
+section > ul.checklist > li > h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+section > ul.checklist > li > h3::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+main > section.dark > ul.checklist > li > h3::before {
+  background: var(--on-deep-accent);
 }
