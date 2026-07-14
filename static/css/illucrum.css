@@ -866,13 +866,6 @@ main > section > .image_card > div {
   justify-content: space-around;
 }
 
-
-@media (min-width: 800px) {
-  main > section > .image_card > img {
-    width: 20%;
-  }
-}
-
 @media (min-width: 620px) {
   main > section > .image_card {
     flex-direction: row;
@@ -885,6 +878,12 @@ main > section > .image_card > div {
 
   main > section > .image_card > div {
     width: 66%;
+  }
+}
+
+@media (min-width: 800px) {
+  main > section > .image_card > img {
+    width: 20%;
   }
 }
 
