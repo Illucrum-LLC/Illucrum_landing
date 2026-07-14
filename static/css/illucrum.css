@@ -102,8 +102,6 @@
      </body>
    ============================================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Dubai:wght@300;400;500;700&display=swap");
-
 /* ─── 1. CUSTOM PROPERTIES ────────────────────────────────── */
 :root {
   --green: #65a30d;
@@ -841,6 +839,36 @@ section > header > p {
   max-width: 42rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+main > section > .image_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main > section > .image_card > img {
+  width: 100%;
+  height: auto;
+}
+
+main > section > .image_card > div {
+  width: 100%;
+}
+
+
+@media (min-width: 620px) {
+  main > section > .image_card {
+    flex-direction: row;
+  }
+
+  main > section > .image_card > img {
+    width: 33%;
+  }
+
+  main > section > .image_card > div {
+    width: 66%;
+  }
 }
 
 /* ─── 17. CTA PAIR (section > nav / header > nav / article > nav) ─
