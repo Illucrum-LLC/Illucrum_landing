@@ -846,14 +846,17 @@ section > header > p {
 main > section > .image_card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-content: stretch;
 }
 
 main > section > .image_card > img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 2 / 3;
   border-radius: 1rem;
+  margin: auto;
+  object-fit: cover;
+  margin-bottom: 1rem;
 }
 
 main > section > .image_card > div {
@@ -870,7 +873,8 @@ main > section > .image_card > div {
   }
 
   main > section > .image_card > img {
-    width: 33%;
+    width: 20%;
+    margin-bottom: 0;
   }
 
   main > section > .image_card > div {
