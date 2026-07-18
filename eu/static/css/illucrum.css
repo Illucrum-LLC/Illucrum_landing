@@ -695,10 +695,7 @@ body > header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(101, 163, 13, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(101, 163, 13, 0.05) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-image: radial-gradient(circle, rgba(101, 163, 13, 0.08) 0%, transparent 70%);
   mask-image: radial-gradient(
     ellipse 80% 80% at 50% 50%,
     black 30%,
