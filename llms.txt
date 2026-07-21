@@ -1,0 +1,26 @@
+# Illucrum
+
+> Illucrum provides specialized SEO audits for SaaS, E-commerce, and general websites, offered in Basic and Full tiers, as well as standalone Technical SEO Audits.
+
+## Core Services & Products
+
+- [SaaS SEO Audit](https://illucrum.com/audits/saas-seo-audit): SEO audit tailored specifically for B2B and B2C SaaS platforms (Basic & Full tiers).
+- [E-commerce SEO Audit](https://illucrum.com/audits/ecommerce-seo-audit/): Comprehensive SEO audit designed for online stores and catalog architecture (Basic & Full tiers).
+- [General SEO Audit](https://illucrum.com/audits/seo-audit): All-around SEO audit for general websites and businesses (Basic & Full tiers).
+- [Technical SEO Audit](https://illucrum.com/audits/technical-seo-audit): Specialized single-tier audit focused strictly on technical performance, crawlability, and indexing.
+
+## Audit Documentation & Breakdown
+
+Markdown source files detailing every specific check and point evaluated in each audit type:
+
+- [E-commerce Audit Breakdown](https://illucrum.com/static/md/ecommerce_audit.md): Complete point-by-point checklist for E-commerce SEO audits.
+- [SaaS Audit Breakdown](https://illucrum.com/static/md/saas_audit.md): Complete point-by-point checklist for SaaS SEO audits.
+- [General Website Audit Breakdown](https://illucrum.com/static/md/website_audit.md): Complete point-by-point checklist for general SEO audits.
+- [Technical Audit Breakdown](https://illucrum.com/static/md/technical_audit.md): Complete point-by-point checklist for Technical-only SEO audits.
+
+## Company & Information
+
+- [Pricing](https://illucrum.com/pricing): Tier options, pricing breakdown, and deliverable comparisons.
+- [Audit Process](https://illucrum.com/process): Step-by-step methodology behind how audits are performed and delivered.
+- [Frequently Asked Questions](https://illucrum.com/faq): Answers to common questions regarding deliverables, timelines, and implementation.
+- [About Us](https://illucrum.com/about): Information about Illucrum and our background in search engine optimization.

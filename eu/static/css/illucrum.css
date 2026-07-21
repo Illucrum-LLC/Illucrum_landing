@@ -962,6 +962,10 @@ article > nav > a:last-child:hover {
   opacity: 1;
 }
 
+nav + ul {
+  padding-top: 2rem;
+}
+
 /* Mobile (<768px): swap prominence. WhatsApp first + green. */
 @media (max-width: 767px) {
   section > nav > a:last-child,

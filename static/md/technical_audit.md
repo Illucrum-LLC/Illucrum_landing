@@ -1,0 +1,1077 @@
+# Illucrum — Technical SEO Audit: Point-by-Point Scoring Guide
+### v1.0 — Standalone technical audit: crawlability, indexation, rendering, speed, security, structured data
+
+**Prepared for:** Szymon Kokot / Illucrum
+**Purpose:** For each technical audit point — mode, tool, how-to-check instructions, scoring, and ready-to-use standard messages.
+**Audit tiers:** One tier only, $197
+**Applies to:** Any site. This is the deep technical layer, isolated from on-page, keyword, content and conversion work.
+
+---
+
+## Legend
+
+**Tier:**
+- ★ — Included in **Basic** and **Full**
+- ◆ — **Full tier only**
+
+**Tool preference order:** PageSpeed Insights → Google Search Console → SEOptimer → Google tools (Rich Results Test, Mobile-Friendly Test) → direct source/header inspection → other free tools
+
+---
+
+## Audit Section Map
+
+| # | Check | Tier | Section |
+|---|---|---|---|
+| 1 | Robots.txt Configuration | ★ | Crawlability & Indexation |
+| 2 | XML Sitemap Health | ★ | Crawlability & Indexation |
+| 3 | Index Coverage & Excluded Pages | ★ | Crawlability & Indexation |
+| 4 | HTTP Status Codes & Server Errors | ★ | Crawlability & Indexation |
+| 5 | Redirect Chains & Loops | ★ | Crawlability & Indexation |
+| 6 | Crawl Budget & Index Bloat | ◆ | Crawlability & Indexation |
+| 7 | Orphan Pages | ◆ | Crawlability & Indexation |
+| 8 | URL Structure & Consistency | ★ | Site Architecture & URLs |
+| 9 | Canonicalisation & Duplicate URLs | ★ | Site Architecture & URLs |
+| 10 | Internal Linking & Link Equity Flow | ★ | Site Architecture & URLs |
+| 11 | Site Depth & Click Distance | ◆ | Site Architecture & URLs |
+| 12 | Pagination Handling | ◆ | Site Architecture & URLs |
+| 13 | JavaScript Rendering & Content Parity | ★ | Rendering & JavaScript |
+| 14 | Render-Blocking Resources | ◆ | Rendering & JavaScript |
+| 15 | Lazy-Loading of Critical Content | ◆ | Rendering & JavaScript |
+| 16 | Page Speed (Mobile & Desktop) | ★ | Speed & Core Web Vitals |
+| 17 | Core Web Vitals (LCP, INP, CLS) | ★ | Speed & Core Web Vitals |
+| 18 | Image Optimisation & Next-Gen Formats | ★ | Speed & Core Web Vitals |
+| 19 | Caching, Compression & CDN | ◆ | Speed & Core Web Vitals |
+| 20 | Third-Party Script Weight | ◆ | Speed & Core Web Vitals |
+| 21 | Mobile Responsiveness | ★ | Mobile & Page Experience |
+| 22 | Viewport & Tap Target Sizing | ◆ | Mobile & Page Experience |
+| 23 | Intrusive Interstitials | ◆ | Mobile & Page Experience |
+| 24 | HTTPS Enforcement & SSL Certificate | ★ | Security & HTTPS |
+| 25 | Mixed Content | ★ | Security & HTTPS |
+| 26 | Security Headers (HSTS, CSP) | ◆ | Security & HTTPS |
+| 27 | Exposed Sensitive Files & Endpoints | ◆ | Security & HTTPS |
+| 28 | Structured Data Validity | ★ | Structured Data & Directives |
+| 29 | Meta Robots Directives | ★ | Structured Data & Directives |
+| 30 | Open Graph / Social Meta Tags | ◆ | Structured Data & Directives |
+| 31 | Hreflang Implementation | ◆ | International & Parameters |
+| 32 | WWW / non-WWW & Protocol Consistency | ★ | International & Parameters |
+| 33 | Parameter & Faceted URL Handling | ◆ | International & Parameters |
+| 34 | AI Crawler Directives | ★ | Machine & AI Access |
+| 35 | llms.txt & Machine-Readable Signals | ◆ | Machine & AI Access |
+| 36 | Entity Structured Data (Organization / sameAs) | ◆ | Machine & AI Access |
+
+---
+
+## Section 1 — Crawlability & Indexation
+
+---
+
+### #1 — Robots.txt Configuration ★
+**Tool:** Direct fetch — `{domain}/robots.txt`
+
+**How to check:**
+1. Open `{domain}/robots.txt` and confirm it returns HTTP 200 (not 404/500)
+2. Check for a catastrophic `Disallow: /` blocking all crawling, and for any key sections (service pages, blog) accidentally disallowed
+3. Confirm the `Sitemap:` directive is present and points to the live sitemap
+4. Note any `Disallow` rules that block CSS/JS needed for rendering
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Present, no critical blocks, sitemap declared | 8–10 | 🟢 |
+| Present, minor issues or missing sitemap declaration | 5–7 | 🟡 |
+| Missing (404), blocks all crawling, or blocks key sections | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** robots.txt is present and correctly configured — no critical paths are blocked and the sitemap is declared. Crawlers receive clear, correct directives.
+
+> 🟡 **Needs attention:** robots.txt is present but has minor issues — {specific_issue}. Not critical, but worth tidying to avoid accidental crawl restrictions and to declare the sitemap explicitly.
+
+> 🔴 **Critical:** {specific_issue} — e.g. robots.txt returns a 404 (crawlers get no directives), or contains `Disallow: /` blocking the entire site from search. This is a foundational error that must be fixed immediately.
+
+---
+
+### #2 — XML Sitemap Health ★
+**Tool:** Direct fetch — `{domain}/sitemap.xml` + Google Search Console (Sitemaps report)
+
+**How to check:**
+1. Open the sitemap; confirm it is well-formed XML and returns 200
+2. Spot-check that listed URLs are canonical, live (200), and indexable — not redirects, 404s, or `noindex` pages
+3. Confirm it excludes non-indexable clutter (admin, cart, thank-you, parameter URLs)
+4. In GSC → Sitemaps, check the submitted sitemap's status and "discovered" count vs actual page count
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Valid, canonical live URLs only, submitted in GSC | 8–10 | 🟢 |
+| Present but includes some redirects/errors or stale URLs | 5–7 | 🟡 |
+| Missing, malformed, or full of non-canonical/broken URLs | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** The XML sitemap is valid, lists only canonical live URLs, and is submitted in Search Console. Search engines can discover the site's pages cleanly.
+
+> 🟡 **Needs attention:** The sitemap is present but {specific_issue} — e.g. it includes redirecting or non-canonical URLs, or hasn't been submitted in GSC. Serving stale or non-canonical URLs in a sitemap wastes crawl budget and sends mixed signals.
+
+> 🔴 **Critical:** The sitemap is {missing / malformed / full of broken or non-canonical URLs}. Without a clean sitemap, discovery relies on link crawling alone, which is unreliable for larger or newer sites. A corrected sitemap should be generated and submitted.
+
+---
+
+### #3 — Index Coverage & Excluded Pages ★
+**Tool:** Google Search Console — Pages (Index) report
+
+**How to check:**
+1. GSC → Index → Pages — note **Indexed** vs **Not indexed** counts
+2. Review the "Why pages aren't indexed" breakdown — flag `Crawled – currently not indexed`, `Discovered – not indexed`, `Soft 404`, `Excluded by noindex`, `Duplicate` reasons
+3. Confirm important pages are indexed; confirm the non-indexed set is mostly intentional (utility pages), not key content
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| All key pages indexed; exclusions are intentional | 8–10 | 🟢 |
+| Some key pages excluded or unexpected exclusion reasons | 5–7 | 🟡 |
+| Important pages not indexed; significant unexpected exclusions | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Index coverage is healthy — all key pages are indexed and the excluded set is intentional (utility and system pages). Google is indexing what matters.
+
+> 🟡 **Needs attention:** {N} pages are excluded from the index, some for reasons worth investigating — {top_reasons}. A portion may be intentional, but several look like content Google should be indexing. Each reason has a specific fix.
+
+> 🔴 **Critical:** Important pages are not indexed — {N} pages excluded via {primary_reason}. Pages Google won't index can't rank, so this directly caps organic visibility. Resolving the underlying exclusion causes is a priority.
+
+---
+
+### #4 — HTTP Status Codes & Server Errors ★
+**Tool:** SEOptimer / manual crawl + spot-check with browser DevTools (Network tab)
+
+**How to check:**
+1. Run the domain through SEOptimer (or a free crawl) and review status codes across discovered URLs
+2. Flag 4xx (broken pages) and 5xx (server errors) on any linked or indexed URL
+3. Spot-check key pages return a clean 200; confirm the 404 page itself returns a true 404 status (not a soft 404 returning 200)
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Key pages 200, no 5xx, few/no 4xx on linked URLs | 8–10 | 🟢 |
+| Isolated 4xx errors or soft-404 handling issues | 5–7 | 🟡 |
+| 5xx errors, or 4xx on key/linked pages | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Status codes are clean — key pages return 200, there are no server errors, and broken links are minimal. The 404 page returns a proper 404 status.
+
+> 🟡 **Needs attention:** A handful of issues were found — {specific_issue}, e.g. a few broken internal links, or soft 404s returning a 200 status. These create dead ends and waste crawl budget; they should be fixed or redirected.
+
+> 🔴 **Critical:** {specific_issue} — e.g. server (5xx) errors on live URLs, or broken (4xx) pages that are still linked and indexed. These damage crawlability and user experience directly. Immediate remediation is recommended.
+
+---
+
+### #5 — Redirect Chains & Loops ★
+**Tool:** SEOptimer / redirect checker + browser DevTools
+
+**How to check:**
+1. Check key redirecting URLs (old URLs, http→https, www variants) for multi-hop chains (A→B→C)
+2. Confirm redirects are 301 (permanent) where intended, not 302 (temporary) for permanent moves
+3. Flag any redirect loops (a page redirecting to itself or in a cycle)
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Direct single-hop 301s, no chains or loops | 8–10 | 🟢 |
+| 1–3 redirect chains or misused 302s | 5–7 | 🟡 |
+| Multiple chains, loops, or systemic 302-for-permanent use | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Redirects are clean — single-hop 301s with no chains or loops. Link equity passes efficiently and page load isn't slowed by redirect hops.
+
+> 🟡 **Needs attention:** {N} redirect chains were found, and/or some permanent moves use temporary (302) redirects. Each extra hop dilutes link equity and adds latency; these should be collapsed to direct 301s.
+
+> 🔴 **Critical:** {specific_issue} — e.g. redirect loops, or multiple long chains across the site. Loops make pages unreachable and long chains waste crawl budget and equity. These need to be mapped and resolved to single-hop 301s.
+
+---
+
+### #6 — Crawl Budget & Index Bloat ◆
+**Tool:** Google Search Console — Pages report + Crawl Stats (Settings)
+
+**How to check:**
+1. Compare total indexed pages against the number of *valuable* pages the site actually has — a large gap signals bloat
+2. Look for indexed low-value URLs: parameters, filters, tag archives, paginated duplicates, internal search results
+3. GSC → Settings → Crawl stats — check whether crawl activity is being spent on low-value URLs
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Index closely matches valuable page count; no bloat | 8–10 | 🟢 |
+| Some low-value URLs indexed; moderate bloat | 5–7 | 🟡 |
+| Significant bloat; crawl budget spent on junk URLs | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** The index closely matches the site's genuinely valuable pages. Crawl budget is being spent on content that matters, with no meaningful index bloat.
+
+> 🟡 **Needs attention:** Some low-value URLs are being indexed — {specific_issue}, e.g. tag archives or parameter URLs. On a smaller site this is low-risk, but pruning these via `noindex`/canonical/robots keeps the index clean as the site grows.
+
+> 🔴 **Critical:** The index is bloated with low-value URLs ({specific_issue}), diluting the site's perceived quality and wasting crawl budget on pages that will never rank. A crawl-control strategy (canonical, `noindex`, parameter handling, robots) is recommended.
+
+---
+
+### #7 — Orphan Pages ◆
+**Tool:** Crawl vs sitemap comparison (SEOptimer / manual) + GSC
+
+**How to check:**
+1. Compare the set of URLs in the sitemap / known page inventory against the URLs discoverable through internal links
+2. Flag pages that receive no internal links (orphans) — reachable only via sitemap or direct URL
+3. Prioritise orphaned pages that are commercially important
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| No orphaned pages; all key pages internally linked | 8–10 | 🟢 |
+| A few orphaned pages, none commercially critical | 5–7 | 🟡 |
+| Multiple orphans, including important pages | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** No orphaned pages found — every key page is reachable through internal links, so link equity and crawl discovery flow to all of them.
+
+> 🟡 **Needs attention:** {N} pages appear to be orphaned (no internal links pointing to them). None are commercially critical, but adding contextual internal links would help them receive equity and be crawled more reliably.
+
+> 🔴 **Critical:** {N} pages are orphaned, including {important_pages}. Orphaned pages receive no internal link equity and are harder to discover and prioritise. Building internal links to these pages is a straightforward, high-value fix.
+
+---
+
+## Section 2 — Site Architecture & URLs
+
+---
+
+### #8 — URL Structure & Consistency ★
+**Tool:** URL inventory review (sitemap + crawl)
+
+**How to check:**
+1. Review a representative set of URLs for: lowercase only, hyphens (not underscores or spaces), no dynamic parameters where avoidable, reasonable length, and readable keyword-relevant slugs
+2. Check for consistency in structure across similar page types
+3. Flag mixed conventions (some hyphenated, some not; mixed case)
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Clean, consistent, lowercase, hyphenated, readable slugs | 8–10 | 🟢 |
+| Mostly clean with minor inconsistencies | 5–7 | 🟡 |
+| Parameter-heavy, mixed case/underscores, or inconsistent | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** URL structure is clean and consistent — lowercase, hyphenated, readable, and free of unnecessary parameters. This supports both crawlers and users.
+
+> 🟡 **Needs attention:** URLs are mostly clean but {specific_issue} — e.g. a few use underscores or mixed case, or conventions differ between page types. Minor, but worth standardising going forward.
+
+> 🔴 **Critical:** URL structure has systemic issues — {specific_issue}, e.g. parameter-based URLs, mixed case, or inconsistent conventions. This can cause duplication and is unfriendly to crawlers and users alike.
+
+---
+
+### #9 — Canonicalisation & Duplicate URLs ★
+**Tool:** view-source / DevTools on key pages + duplicate-URL spot checks
+
+**How to check:**
+1. On key pages, confirm a self-referencing `<link rel="canonical">` with an absolute HTTPS URL
+2. Check that duplicate access paths (trailing slash vs not, params, print versions) canonicalise to one version
+3. Flag canonicals pointing to the wrong page, or missing on templated pages
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Self-referencing absolute canonicals; duplicates consolidated | 8–10 | 🟢 |
+| Canonicals present but some inconsistencies/relative URLs | 5–7 | 🟡 |
+| Missing on key pages, or pointing to wrong URLs | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Canonicalisation is correct — pages self-reference with absolute HTTPS canonicals, and duplicate access paths consolidate to a single version. Ranking signals aren't being split.
+
+> 🟡 **Needs attention:** Canonicals are present but {specific_issue} — e.g. relative URLs, or inconsistency across some templates. Not critical, but tightening these prevents mixed indexing signals.
+
+> 🔴 **Critical:** {specific_issue} — e.g. canonicals missing on key templated pages, or pointing to the wrong URLs. Without correct canonicals, Google may index and rank the wrong versions, splitting equity across duplicates.
+
+---
+
+### #10 — Internal Linking & Link Equity Flow ★
+**Tool:** Manual review + crawl of internal link graph
+
+**How to check:**
+1. Assess whether key commercial pages are well-linked from relevant content and navigation
+2. Check anchor text is descriptive (not "click here"/"read more" everywhere)
+3. Confirm important pages are within a few clicks of the homepage and receive multiple internal links
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Strong internal links, descriptive anchors, key pages well-linked | 8–10 | 🟢 |
+| Links present but generic anchors or some thin-linked pages | 5–7 | 🟡 |
+| Sparse internal linking; key pages under-linked | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Internal linking is solid — key pages receive multiple contextual links with descriptive anchors, distributing equity efficiently and guiding both users and crawlers.
+
+> 🟡 **Needs attention:** Internal linking could be stronger — {specific_issue}, e.g. reliance on generic anchor text, or key pages linked only from the homepage. Adding contextual links with descriptive anchors would improve equity flow.
+
+> 🔴 **Critical:** Internal linking is sparse — {specific_issue}, e.g. important pages receive few internal links. This limits how much equity reaches them and how reliably they're crawled and prioritised. A deliberate internal-linking pass is recommended.
+
+---
+
+### #11 — Site Depth & Click Distance ◆
+**Tool:** Crawl (SEOptimer / manual) — measure clicks from homepage
+
+**How to check:**
+1. Determine how many clicks it takes to reach key pages from the homepage (aim: important pages ≤3 clicks)
+2. Flag commercially important pages buried deep in the hierarchy
+3. Check whether deep pagination or nested categories push content too far down
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Key pages ≤3 clicks from homepage | 8–10 | 🟢 |
+| Some important pages at depth 4–5 | 5–7 | 🟡 |
+| Key pages buried deep (6+ clicks) | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Site depth is healthy — important pages sit within a few clicks of the homepage, so they receive equity and are crawled readily.
+
+> 🟡 **Needs attention:** Some important pages sit deeper than ideal ({depth} clicks from the homepage). Flattening the path — via navigation, hub pages, or internal links — would improve their crawl priority and equity.
+
+> 🔴 **Critical:** Commercially important pages are buried deep in the hierarchy ({depth}+ clicks from the homepage). Deep pages receive less equity and are crawled less often. Restructuring to surface these pages is recommended.
+
+---
+
+### #12 — Pagination Handling ◆
+**Tool:** view-source on paginated series (blog, category, archive)
+
+**How to check:**
+1. Identify paginated series and check how page 2+ are handled: unique canonical per page (not all canonicalising to page 1), crawlable `<a href>` pagination links (not JS-only)
+2. Confirm paginated pages aren't `noindex`ed if they need discovery, and aren't creating thin duplicates
+3. Check any "view all" page is handled sensibly
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Clean pagination; crawlable links, self-canonical pages | 8–10 | 🟢 |
+| Minor issues (e.g. all pages canonical to page 1) | 5–7 | 🟡 |
+| JS-only pagination or broken canonical/index handling | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Pagination is handled cleanly — each page self-canonicalises, links are crawlable, and deeper items remain discoverable without creating duplicates.
+
+> 🟡 **Needs attention:** Pagination has minor issues — {specific_issue}, e.g. all paginated pages canonicalise to page 1, which can hide deeper items from discovery. Adjusting to self-referencing canonicals is the usual fix.
+
+> 🔴 **Critical:** Pagination is undermining discovery — {specific_issue}, e.g. pagination links are JS-only (invisible to crawlers) or handled in a way that orphans deeper content. Items beyond page 1 may not be crawled. This needs correcting for full catalogue/archive discovery.
+
+---
+
+## Section 3 — Rendering & JavaScript
+
+---
+
+### #13 — JavaScript Rendering & Content Parity ★
+**Tool:** Compare raw HTML (view-source / `curl`) vs rendered DOM (DevTools) + Rich Results Test "rendered HTML"
+
+**How to check:**
+1. Compare the raw HTML source against the rendered page — is key SEO content (H1, body copy, internal links, meta) present in the raw HTML, or injected only by JavaScript?
+2. Flag cases where main content or navigation exists only in the rendered DOM
+3. Use the Rich Results Test / URL Inspection "rendered HTML" to confirm what Google sees
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Key content present in raw HTML (SSR/SSG or hydrated) | 8–10 | 🟢 |
+| Most content server-rendered; some JS-dependent elements | 5–7 | 🟡 |
+| Key content/links only in rendered DOM (JS-dependent) | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Key content and links are present in the raw HTML — crawlers see the important content without depending on JavaScript execution. Rendering isn't a risk factor here.
+
+> 🟡 **Needs attention:** Most content is server-rendered, but {specific_issue} — e.g. some internal links or content blocks are injected by JavaScript. Google generally renders JS, but reducing dependence for critical content improves reliability.
+
+> 🔴 **Critical:** Key content and/or internal links are only present after JavaScript execution — absent from the raw HTML. This puts crawling and indexing at risk, since JS rendering is deferred and imperfect. Server-side rendering or pre-rendering of critical content is recommended.
+
+---
+
+### #14 — Render-Blocking Resources ◆
+**Tool:** PageSpeed Insights — Opportunities / Diagnostics
+
+**How to check:**
+1. Run PageSpeed Insights and review "Eliminate render-blocking resources" and related diagnostics
+2. Note render-blocking CSS/JS delaying first paint
+3. Cross-reference with the LCP figure from #17
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Minimal render-blocking; fast first paint | 8–10 | 🟢 |
+| Some render-blocking resources flagged | 5–7 | 🟡 |
+| Significant render-blocking CSS/JS delaying paint | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Little to no render-blocking — CSS and JS are delivered without meaningfully delaying first paint. This supports strong LCP and perceived speed.
+
+> 🟡 **Needs attention:** PageSpeed flags some render-blocking resources. Deferring non-critical JS and inlining critical CSS would improve first paint and LCP on {pages}.
+
+> 🔴 **Critical:** Significant render-blocking CSS/JS is delaying the first paint, directly harming LCP and perceived load speed. Critical-path optimisation (defer, async, inline critical CSS) is a priority fix.
+
+---
+
+### #15 — Lazy-Loading of Critical Content ◆
+**Tool:** DevTools + view-source
+
+**How to check:**
+1. Check whether above-the-fold / LCP content (hero image, main heading) is being lazy-loaded — it shouldn't be
+2. Confirm lazy-loading is applied only to below-the-fold media
+3. Flag `loading="lazy"` on the LCP image or critical content
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Lazy-loading applied only below the fold; LCP eager | 8–10 | 🟢 |
+| Minor misapplication | 5–7 | 🟡 |
+| LCP element / critical content lazy-loaded | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Lazy-loading is applied correctly — below-the-fold media only, with the LCP element loaded eagerly. This balances speed and bandwidth without hurting perceived load.
+
+> 🟡 **Needs attention:** Lazy-loading is mostly correct but {specific_issue} — e.g. an above-the-fold image is deferred. Loading critical/LCP content eagerly would improve perceived speed.
+
+> 🔴 **Critical:** The LCP element or other critical above-the-fold content is being lazy-loaded, which delays the largest paint and worsens Core Web Vitals. Critical content should load eagerly; lazy-loading belongs below the fold.
+
+---
+
+## Section 4 — Speed & Core Web Vitals
+
+---
+
+### #16 — Page Speed (Mobile & Desktop) ★
+**Tool:** PageSpeed Insights — `https://pagespeed.web.dev/?url={url}`
+
+**How to check:**
+1. Run the URL for both mobile and desktop
+2. Record the Performance score for each; score against the lower (mobile is usually limiting)
+3. Note the top opportunities flagged for the action plan
+
+**How to score:**
+
+| Mobile Performance Score | Score | Rating |
+|---|---|---|
+| 90–100 | 8–10 | 🟢 |
+| 70–89 | 5–7 | 🟡 |
+| Below 70 | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Page speed is strong on both mobile ({mobile_score}) and desktop ({desktop_score}). No immediate action required — monitor for regressions after deployments.
+
+> 🟡 **Needs attention:** Performance is acceptable but not optimal (Mobile: {mobile_score}, Desktop: {desktop_score}). Common culprits are unoptimised images, render-blocking scripts, and weak caching. Prioritised fixes are in the action plan.
+
+> 🔴 **Critical:** Page speed is poor, especially on mobile (Mobile: {mobile_score}, Desktop: {desktop_score}). This affects both user experience and rankings via Core Web Vitals. Immediate optimisation is required.
+
+---
+
+### #17 — Core Web Vitals (LCP, INP, CLS) ★
+**Tool:** PageSpeed Insights (field + lab data) + GSC Core Web Vitals report
+
+**How to check:**
+1. Record LCP, INP, and CLS from PageSpeed (prefer field data where available)
+2. Compare each against Google's thresholds; score by how many pass
+3. Cross-check the GSC Core Web Vitals report for site-wide URL groups failing
+
+**Thresholds:** LCP ≤2.5s · INP ≤200ms · CLS ≤0.1 = Good
+
+**How to score:**
+
+| Passing metrics | Score | Rating |
+|---|---|---|
+| All 3 pass | 8–10 | 🟢 |
+| 1–2 pass | 4–7 | 🟡 |
+| 0 pass | 1–3 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** All three Core Web Vitals pass (LCP: {lcp}, INP: {inp}, CLS: {cls}). The site delivers a fast, stable, responsive experience — a direct ranking signal. Maintain it through deployments.
+
+> 🟡 **Needs attention:** {N} of 3 Core Web Vitals are outside "Good" (LCP: {lcp}, INP: {inp}, CLS: {cls}). The usual causes are slow LCP (large images / slow server) and CLS (layout shift from late-loading fonts or media). Specific fixes are in the action plan.
+
+> 🔴 **Critical:** Core Web Vitals are failing — {N} metrics in the "Poor" range (LCP: {lcp}, INP: {inp}, CLS: {cls}). This is a direct ranking signal via Page Experience and a high-priority fix.
+
+---
+
+### #18 — Image Optimisation & Next-Gen Formats ★
+**Tool:** PageSpeed Insights (image diagnostics) + view-source
+
+**How to check:**
+1. Review PageSpeed's image opportunities: properly sized, compressed, next-gen formats (WebP/AVIF), and explicit width/height to prevent CLS
+2. Spot-check large hero/product images for oversizing
+3. Confirm responsive images (`srcset`) are used where appropriate
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Compressed, correctly sized, next-gen formats, dims set | 8–10 | 🟢 |
+| Some oversized or legacy-format images | 5–7 | 🟡 |
+| Large unoptimised images; no next-gen formats | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Images are well optimised — appropriately sized, compressed, served in next-gen formats, with dimensions set to avoid layout shift. This supports both speed and CLS.
+
+> 🟡 **Needs attention:** Image handling is mostly good but {specific_issue} — e.g. some oversized images, or legacy formats where WebP/AVIF would cut weight. Optimising these would improve LCP and overall speed.
+
+> 🔴 **Critical:** Images are a major weight problem — {specific_issue}, e.g. large unoptimised files in legacy formats without dimensions. This drags down LCP and can cause layout shift. An image optimisation pass is a high-impact fix.
+
+---
+
+### #19 — Caching, Compression & CDN ◆
+**Tool:** Response headers (DevTools / `curl -I`) + PageSpeed diagnostics
+
+**How to check:**
+1. Check response headers for compression (`content-encoding: gzip`/`br`) and cache policy (`cache-control`, `expires`) on static assets
+2. Note whether a CDN is in use (headers / asset hostnames)
+3. Review PageSpeed's "serve static assets with efficient cache policy" and "enable text compression"
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Compression on, sensible caching, CDN for assets | 8–10 | 🟢 |
+| Partial (missing caching or no CDN) | 5–7 | 🟡 |
+| No compression / no caching policy | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Delivery is efficient — text compression is enabled, static assets carry sensible cache policies, and a CDN is serving assets. Repeat visits and global load times benefit directly.
+
+> 🟡 **Needs attention:** Delivery is partly optimised but {specific_issue} — e.g. no long-cache policy on static assets, or no CDN. Adding these reduces load time, especially for repeat and distant visitors.
+
+> 🔴 **Critical:** Basic delivery optimisations are missing — {specific_issue}, e.g. no text compression or caching policy. These are low-effort, high-impact wins that should be enabled at the server/CDN layer.
+
+---
+
+### #20 — Third-Party Script Weight ◆
+**Tool:** PageSpeed Insights ("Reduce impact of third-party code") + DevTools
+
+**How to check:**
+1. Review third-party scripts (analytics, chat, ads, tag managers) and their main-thread/blocking impact
+2. Flag heavy or redundant tags, and scripts loaded synchronously in the head
+3. Note whether a tag manager is bloated with unused tags
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Few, well-loaded third-party scripts | 8–10 | 🟢 |
+| Several scripts with moderate impact | 5–7 | 🟡 |
+| Heavy third-party load harming performance | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Third-party script load is lean and well-managed — minimal main-thread impact. Performance isn't being undermined by external tags.
+
+> 🟡 **Needs attention:** Third-party scripts are adding moderate overhead — {specific_issue}. Deferring non-critical tags and auditing the tag manager for unused entries would reduce their impact on INP and load.
+
+> 🔴 **Critical:** Third-party scripts are a significant drag on performance — {specific_issue}, e.g. heavy synchronous tags blocking the main thread. Rationalising and deferring these is a priority for both speed and INP.
+
+---
+
+## Section 5 — Mobile & Page Experience
+
+---
+
+### #21 — Mobile Responsiveness ★
+**Tool:** Google Mobile-Friendly check (DevTools device mode) + live device spot-check
+
+**How to check:**
+1. View key pages at mobile widths (DevTools device emulation + a real device if possible)
+2. Confirm content fits the viewport, text is readable without zoom, and key elements (nav, CTAs, forms) work
+3. Flag horizontal scroll, overflow, or broken layouts
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Fully responsive; key elements work on mobile | 8–10 | 🟢 |
+| Responsive overall but some elements have issues | 5–7 | 🟡 |
+| Not responsive / major mobile layout problems | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** The site is fully responsive — content fits the viewport and key elements work correctly on mobile. Given mobile-first indexing, this is well handled.
+
+> 🟡 **Needs attention:** The site is broadly responsive but {specific_issue} — e.g. an element overflows or a CTA is awkward on small screens. Worth fixing given mobile-first indexing and mobile traffic share.
+
+> 🔴 **Critical:** The site has significant mobile issues — {specific_issue}. Since Google indexes mobile-first, this affects both rankings and the experience of most visitors. Responsive fixes are a priority.
+
+---
+
+### #22 — Viewport & Tap Target Sizing ◆
+**Tool:** view-source (viewport meta) + DevTools
+
+**How to check:**
+1. Confirm a correct `<meta name="viewport" content="width=device-width, initial-scale=1">`
+2. Check interactive elements (buttons, links, form fields) are large enough and spaced for touch
+3. Flag cramped navigation or closely-packed links on mobile
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Correct viewport; comfortable tap targets | 8–10 | 🟢 |
+| Viewport fine; some small/close tap targets | 5–7 | 🟡 |
+| Missing/incorrect viewport, or cramped targets | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** The viewport is correctly declared and interactive elements are comfortably sized and spaced for touch. Mobile usability is well handled at this level.
+
+> 🟡 **Needs attention:** {specific_issue} — e.g. some tap targets are small or closely packed. Increasing size and spacing on the flagged elements would reduce mis-taps and mobile friction.
+
+> 🔴 **Critical:** {specific_issue} — e.g. the viewport meta is missing/incorrect, or tap targets are cramped across key pages. This degrades mobile usability directly and should be corrected.
+
+---
+
+### #23 — Intrusive Interstitials ◆
+**Tool:** Manual review (load key pages on mobile) + source inspection
+
+**How to check:**
+1. Load key landing pages on mobile and note any pop-ups/overlays that block content on load
+2. Distinguish acceptable (small cookie/consent notices) from intrusive (full-screen interstitials on entry)
+3. Flag anything that obscures main content immediately for search visitors
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| No intrusive interstitials; only standard notices | 8–10 | 🟢 |
+| Dismissible pop-up that partially interrupts | 5–7 | 🟡 |
+| Full-screen interstitial blocking content on mobile entry | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** No intrusive interstitials — the entry experience is clean on mobile, with at most a standard consent notice. No Page Experience risk here.
+
+> 🟡 **Needs attention:** {specific_issue} — e.g. a pop-up interrupts shortly after load. Not a hard penalty, but it raises bounce; delaying or softening it is recommended.
+
+> 🔴 **Critical:** A full-screen interstitial blocks the main content on mobile entry. Google's guidelines explicitly discourage these for search visitors, and they harm both experience and rankings. It should be removed or made non-intrusive.
+
+---
+
+## Section 6 — Security & HTTPS
+
+---
+
+### #24 — HTTPS Enforcement & SSL Certificate ★
+**Tool:** Browser padlock + SSL Labs — `https://www.ssllabs.com/ssltest/analyze.html?d={domain}`
+
+**How to check:**
+1. Confirm the site serves over HTTPS and that HTTP redirects to HTTPS (single hop)
+2. Check certificate validity, issuer, and expiry (not expiring within ~30 days)
+3. Run SSL Labs for the configuration grade
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| HTTPS enforced, valid cert, grade A/A+ | 8–10 | 🟢 |
+| HTTPS present, valid cert, grade B or HTTP not redirecting | 5–7 | 🟡 |
+| No HTTPS, expired/invalid cert, or grade C/F | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** The site is fully served over HTTPS with a valid certificate (Grade: {grade}, expires: {expiry}), and HTTP redirects correctly. No action required.
+
+> 🟡 **Needs attention:** HTTPS is in place but {specific_issue} — e.g. HTTP doesn't redirect, or the SSL configuration grades below A. Tightening this removes trust-warning risk and closes the gap.
+
+> 🔴 **Critical:** The site has a serious HTTPS/SSL issue — {specific_issue}, e.g. served over HTTP, or an expired/invalid certificate. Browsers warn users, and HTTPS is a ranking signal. Fix immediately.
+
+---
+
+### #25 — Mixed Content ★
+**Tool:** DevTools Console (mixed-content warnings) on key pages
+
+**How to check:**
+1. Load key pages with DevTools open; note mixed-content warnings (HTTP resources on HTTPS pages)
+2. Check images, scripts, stylesheets, and iframes for `http://` references
+3. Flag active mixed content (scripts) as higher severity than passive (images)
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| No mixed content on key pages | 8–10 | 🟢 |
+| Passive mixed content only (e.g. some images) | 5–7 | 🟡 |
+| Active mixed content (scripts/stylesheets over HTTP) | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** No mixed content detected — all resources load over HTTPS. The padlock stays intact and there's no browser-trust risk.
+
+> 🟡 **Needs attention:** Passive mixed content was found — {specific_issue}, e.g. a few images referenced over HTTP. It can trigger "not fully secure" states; updating these references to HTTPS resolves it.
+
+> 🔴 **Critical:** Active mixed content (scripts/stylesheets over HTTP) is present, which browsers may block and which breaks the security guarantee of HTTPS. All resource references should be updated to HTTPS.
+
+---
+
+### #26 — Security Headers (HSTS, CSP) ◆
+**Tool:** Response headers (`curl -I` / DevTools) — optionally securityheaders.com reference
+
+**How to check:**
+1. Check for `Strict-Transport-Security` (HSTS), and basic hardening headers (`X-Content-Type-Options`, `X-Frame-Options`/frame-ancestors)
+2. Note presence/absence of a Content-Security-Policy (bonus, not expected on most SME sites)
+3. Treat this as a hygiene/trust check, not a direct ranking factor
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| HSTS + basic hardening headers present | 8–10 | 🟢 |
+| Some headers present, gaps remain | 5–7 | 🟡 |
+| No security headers set | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Sensible security headers are in place — HSTS plus basic hardening. This isn't a direct ranking factor but reflects a well-configured, trustworthy setup.
+
+> 🟡 **Needs attention:** Some security headers are present but there are gaps — {specific_issue}. Adding the missing headers (e.g. HSTS, `X-Content-Type-Options`) is low-effort hardening worth doing.
+
+> 🔴 **Critical:** No security headers are set. While not a direct ranking factor, this leaves basic protections off and signals a loosely configured server. Adding HSTS and the standard hardening headers is recommended.
+
+---
+
+### #27 — Exposed Sensitive Files & Endpoints ◆
+**Tool:** Direct fetch of common paths + view-source
+
+**How to check:**
+1. Check that sensitive paths aren't publicly exposed or indexable (e.g. staging URLs, directory listings, backup/config files, exposed admin)
+2. Confirm no API keys, credentials, or internal notes are visible in the page source or exposed JSON/config
+3. Flag anything that should be access-controlled but isn't
+
+> **Illucrum internal note:** this exact check is why our own tools must never ship with live API keys embedded — see the audit-tool remediation. Apply the same standard to clients.
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| No sensitive files/keys exposed | 8–10 | 🟢 |
+| Minor exposure (e.g. directory listing enabled) | 5–7 | 🟡 |
+| Credentials/keys or admin/config exposed | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** No sensitive files, keys, or endpoints were found exposed. Source and common paths are clean, with nothing that should be access-controlled left open.
+
+> 🟡 **Needs attention:** A minor exposure was found — {specific_issue}, e.g. directory listing enabled. Low-risk in isolation, but worth closing off as basic hygiene.
+
+> 🔴 **Critical:** Sensitive material is exposed — {specific_issue}, e.g. an API key/credential visible in source, or an unprotected admin/config endpoint. This is a security issue beyond SEO and should be remediated immediately.
+
+---
+
+## Section 7 — Structured Data & Directives
+
+---
+
+### #28 — Structured Data Validity ★
+**Tool:** Google Rich Results Test — `https://search.google.com/test/rich-results?url={url}` + Schema Markup Validator
+
+**How to check:**
+1. Run the homepage and key page types through the validators
+2. Confirm relevant schema is present (`Organization`, page-type schema, `BreadcrumbList`), valid, and free of errors
+3. Note warnings vs errors; flag invalid or partial markup blocking rich-result eligibility
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Relevant schema present, valid, no errors | 8–10 | 🟢 |
+| Present but incomplete or warnings only | 5–7 | 🟡 |
+| Missing on key pages, or errors present | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Structured data is present and valid on key page types, with no blocking errors. The site is eligible for the relevant rich results and gives engines a clean machine-readable layer.
+
+> 🟡 **Needs attention:** Schema is present but incomplete — {specific_issue}, e.g. missing recommended fields or warnings on some types. Completing these improves rich-result eligibility and machine understanding.
+
+> 🔴 **Critical:** {specific_issue} — e.g. no schema on key pages, or validation errors that block rich results. Implementing valid `Organization` and page-type schema is a foundational, low-effort improvement.
+
+---
+
+### #29 — Meta Robots Directives ★
+**Tool:** view-source / DevTools + GSC URL Inspection
+
+**How to check:**
+1. On key pages, check `<meta name="robots">` and the `X-Robots-Tag` header for `noindex`/`nofollow`
+2. Confirm important pages are indexable and that `noindex` is applied only where intended (utility pages)
+3. Flag the classic failure: a `noindex` accidentally left on a live commercial page (e.g. carried over from staging)
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Directives correct; key pages indexable | 8–10 | 🟢 |
+| Minor misconfiguration on non-critical pages | 5–7 | 🟡 |
+| `noindex` on important pages, or inconsistent directives | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Robots directives are correct — key pages are indexable and `noindex` is applied only where intended. Nothing important is being hidden from search.
+
+> 🟡 **Needs attention:** A minor directive issue was found — {specific_issue} on a non-critical page. Worth correcting for consistency, though it isn't affecting key pages.
+
+> 🔴 **Critical:** {specific_issue} — e.g. a `noindex` directive is live on an important commercial page (a common staging carry-over). This actively removes the page from search. It should be removed immediately.
+
+---
+
+### #30 — Open Graph / Social Meta Tags ◆
+**Tool:** view-source on key pages + a social-preview debugger
+
+**How to check:**
+1. Check for `og:title`, `og:description`, `og:image`, `og:url`, `og:type`, and Twitter Card tags on key pages
+2. Confirm `og:image` resolves and is appropriately sized
+3. Flag missing or duplicated tags across templates
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Complete OG + Twitter tags, valid image | 8–10 | 🟢 |
+| Present but missing image or Twitter tags | 5–7 | 🟡 |
+| Missing on key pages | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Open Graph and Twitter Card tags are complete on key pages, with a valid preview image. Shared links render correctly across platforms.
+
+> 🟡 **Needs attention:** Social meta is partially implemented — {specific_issue}, e.g. `og:image` missing on some pages. Shared links will render with a blank or auto-chosen image, hurting click-through. A quick fix.
+
+> 🔴 **Critical:** Open Graph tags are missing from key pages, so shared links render poorly (no image, no controlled title/description). This is a fast fix with a real impact on social referral quality.
+
+---
+
+## Section 8 — International & Parameter Handling
+
+---
+
+### #31 — Hreflang Implementation ◆
+**Tool:** view-source / hreflang validator on multilingual pages
+
+**How to check:**
+1. If the site is monolingual, mark **N/A**
+2. Otherwise check `<link rel="alternate" hreflang="...">` for correct language/region codes, reciprocal pairs, `x-default`, self-reference, and no broken URLs
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Monolingual site | — | ℹ️ N/A |
+| Correct, reciprocal, x-default set, no broken URLs | 8–10 | 🟢 |
+| Present but missing reciprocals/x-default | 5–7 | 🟡 |
+| Missing on multilingual site, or critically broken | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> ℹ️ **N/A:** The site is monolingual — hreflang is not applicable.
+
+> 🟢 **Good:** Hreflang is correctly implemented — reciprocal tags, `x-default` set, valid URLs. Google can serve the right language/region version to the right audience.
+
+> 🟡 **Needs attention:** Hreflang is present but {specific_issue} — e.g. missing reciprocals or no `x-default`. Not immediately harmful, but it can cause the wrong version to be served in some regions.
+
+> 🔴 **Critical:** The site is multilingual but hreflang is {missing / critically misconfigured}. This risks the wrong language version being served and duplicate-content confusion across locales. Correct implementation is needed.
+
+---
+
+### #32 — WWW / non-WWW & Protocol Consistency ★
+**Tool:** Direct fetch of all four variants (`http`/`https` × `www`/non-`www`)
+
+**How to check:**
+1. Request all four host/protocol variants and confirm they redirect (single hop) to one canonical version
+2. Confirm the canonical host matches the one used in canonical tags, sitemap, and internal links
+3. Flag cases where multiple variants resolve with 200 (duplication risk)
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| One canonical variant; others 301 to it | 8–10 | 🟢 |
+| Redirects present but via chains or minor inconsistency | 5–7 | 🟡 |
+| Multiple variants resolve 200 (duplication) | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Host and protocol handling is consistent — a single canonical variant, with the others 301-redirecting to it, matching canonicals, sitemap, and internal links.
+
+> 🟡 **Needs attention:** Redirects exist but {specific_issue} — e.g. via a chain, or internal links pointing at a non-canonical variant. Tightening to single-hop redirects and consistent internal linking removes ambiguity.
+
+> 🔴 **Critical:** Multiple host/protocol variants resolve with a 200 status, creating duplicate versions of the whole site. This splits signals and confuses indexing. One canonical variant should be enforced via 301s.
+
+---
+
+### #33 — Parameter & Faceted URL Handling ◆
+**Tool:** Crawl + view-source on filtered/parameter URLs
+
+**How to check:**
+1. Identify parameter/faceted URLs (sorting, filtering, tracking, session IDs)
+2. Check how they're handled: canonicalised to the clean URL, `noindex`ed, or blocked as appropriate — not indexed as duplicates
+3. Flag crawl traps (infinite filter combinations generating endless URLs)
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Parameters handled cleanly; no duplicate indexing | 8–10 | 🟢 |
+| Some parameter URLs indexed but limited impact | 5–7 | 🟡 |
+| Parameter duplication or crawl traps present | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** Parameter and faceted URLs are handled cleanly — canonicalised or controlled so they don't create duplicate indexing or crawl traps.
+
+> 🟡 **Needs attention:** Some parameter URLs are being indexed — {specific_issue}. Impact is currently limited, but canonicalising or `noindex`ing these keeps the index clean as the site grows.
+
+> 🔴 **Critical:** Parameter/faceted URLs are creating duplication or a crawl trap — {specific_issue}, e.g. filter combinations generating endless indexable URLs. This wastes crawl budget and dilutes signals. A parameter-handling strategy is needed.
+
+---
+
+## Section 9 — Machine & AI Access *(Technical GEO layer)*
+
+> The technical foundation for AI-search visibility. This is the machine-access layer only — the content/query side of GEO/AEO lives in the full audits' dedicated section. Included here because whether AI engines *can reach and understand* the site is squarely a technical question.
+
+---
+
+### #34 — AI Crawler Directives ★
+**Tool:** Direct fetch — `{domain}/robots.txt`
+
+**How to check:**
+1. Check `robots.txt` for directives targeting AI crawler user-agents: `GPTBot`, `OAI-SearchBot`, `ClaudeBot`, `PerplexityBot`, `Google-Extended`, `CCBot`, `Bytespider`
+2. Determine whether any block is a deliberate content-protection decision or an accidental blanket rule
+3. Flag the common failure: a site that wants AI visibility while silently blocking the crawlers that provide it
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| AI crawler access aligned with the site's goals | 8–10 | 🟢 |
+| No deliberate decision made either way | 5–7 | 🟡 |
+| AI crawlers accidentally blocked while AI visibility is wanted | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** AI crawler access is aligned with the site's goals — the relevant user-agents are permitted, or blocked by deliberate choice. Nothing is silently working against AI visibility.
+
+> 🟡 **Needs attention:** No deliberate decision has been made on AI crawler access. It's worth choosing consciously — open access to support AI visibility, or restrict as a content-protection choice — rather than leaving it to a legacy rule.
+
+> 🔴 **Critical:** AI crawlers ({blocked_agents}) are accidentally blocked in `robots.txt` while AI visibility is a goal. This directly prevents the site appearing in the engines that rely on those crawlers. Correcting the rules is a fast, high-leverage fix.
+
+---
+
+### #35 — llms.txt & Machine-Readable Signals ◆
+**Tool:** Direct fetch — `{domain}/llms.txt` + source review
+
+**How to check:**
+1. Check for an `llms.txt` file (an emerging convention pointing LLMs to key content)
+2. Assess whether key information (contact, pricing, core value) is available as plain, parseable text — not locked in images or JS-only rendering
+3. Note whether the site makes machine consumption easy or hard overall
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| llms.txt present and/or content cleanly machine-readable | 8–10 | 🟢 |
+| No llms.txt; content mostly readable | 5–7 | 🟡 |
+| Key info locked in images/JS; hard to parse | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** The site is easy for machines to consume — key information is available as clean, parseable text{llms_txt_note}. This supports accurate AI understanding and citation.
+
+> 🟡 **Needs attention:** Content is mostly machine-readable but there's no `llms.txt`, and {specific_issue}. Adding an `llms.txt` pointing to key pages, and ensuring core info is plain text, would improve machine consumption.
+
+> 🔴 **Critical:** Key information is locked in images or JS-only rendering, making it hard for machines to parse — {specific_issue}. This undermines AI understanding of the site. Exposing core information as plain text is the priority.
+
+---
+
+### #36 — Entity Structured Data (Organization / sameAs) ◆
+**Tool:** Rich Results Test / Schema Validator on homepage + key pages
+
+**How to check:**
+1. Confirm `Organization` (or `LocalBusiness`) markup with name, URL, logo, and `sameAs` links to the brand's profiles (LinkedIn, Crunchbase, review sites, socials)
+2. Assess whether the entity is defined clearly and consistently enough for engines to resolve *who* the business is
+3. Flag missing `sameAs` links, which weaken entity resolution across the web
+
+**How to score:**
+
+| Condition | Score | Rating |
+|---|---|---|
+| Complete entity markup with sameAs links | 8–10 | 🟢 |
+| Organisation markup present but no/few sameAs links | 5–7 | 🟡 |
+| No entity markup | 1–4 | 🔴 |
+
+**Standard messages:**
+
+> 🟢 **Good:** The entity is well-defined in structured data — `Organization` markup with `sameAs` links tying the site to its off-site profiles. Engines can resolve the business as a clear entity, which supports accurate AI descriptions.
+
+> 🟡 **Needs attention:** Organisation markup is present but the entity layer is thin — {specific_issue}, e.g. no `sameAs` links connecting the site to its external profiles. Adding these strengthens entity resolution and reduces the risk of inaccurate machine descriptions.
+
+> 🔴 **Critical:** There's no entity structured data, so machines have no explicit signal for who the business is beyond parsing raw text. Implementing `Organization` markup with `sameAs` links is a foundational step for entity clarity and AI visibility.
+
+---
+
+## Audit Summary — Technical Points by Section & Tier
+
+| Section | # Points | Basic ★ | Full ◆ |
+|---|---|---|---|
+| 1 — Crawlability & Indexation | 7 | 5 | 7 |
+| 2 — Site Architecture & URLs | 5 | 3 | 5 |
+| 3 — Rendering & JavaScript | 3 | 1 | 3 |
+| 4 — Speed & Core Web Vitals | 5 | 3 | 5 |
+| 5 — Mobile & Page Experience | 3 | 1 | 3 |
+| 6 — Security & HTTPS | 4 | 2 | 4 |
+| 7 — Structured Data & Directives | 3 | 2 | 3 |
+| 8 — International & Parameter Handling | 3 | 1 | 3 |
+| 9 — Machine & AI Access (Technical GEO) | 3 | 1 | 3 |
+| **Total** | **36** | **19** | **36** |
+
+---
+
+## Relationship to the Full Audits
+
+| | Technical Audit (this doc) | Full Audit (Generic / SaaS / E-commerce) |
+|---|---|---|
+| Scope | Technical health only | Technical + on-page + keyword + competitor + conversion + GEO/AEO |
+| Best for | "Is the machinery sound?" diagnostics; pre-engagement | Complete organic growth picture |
+| Depth of technical layer | Deeper (36 dedicated points) | Broader but shallower technical section |
+| GEO/AEO coverage | Machine-access layer only (crawlers, entity, parseability) | Full GEO/AEO layer (queries, content, citations, plus this) |
+| Position on the ladder | Narrowest first rung of *Audit → Optimize → Build* | The core Audit rung |
+
+---
+
+*Document version: v1.0 — July 2026*
+*Prepared by: Szymon Kokot / Illucrum*
+*All checks manual. No auto-scoring. Pricing and standalone-product positioning deliberately left open pending validation.*
