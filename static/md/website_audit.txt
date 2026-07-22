@@ -18,13 +18,12 @@
 ---
 
 ### #1 — Page Speed (Mobile & Desktop) ★
-**Mode:** 🔧 Auto (no AI)  
 **Tool:** PageSpeed Insights API — `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url={clientURL}&strategy=mobile` + `&strategy=desktop`
 
 **How it works (automated):**
 The tool calls the PageSpeed Insights API for both mobile and desktop strategies automatically. It extracts the **Performance score** (0–100) for each and stores both values. Scoring is based on the lower of the two (mobile is almost always the limiting factor).
 
-**Scoring logic (deterministic — no AI):**
+**Scoring logic:**
 
 | Mobile Performance Score | Audit Score | Rating |
 |---|---|---|
@@ -48,12 +47,12 @@ The tool calls the PageSpeed Insights API for both mobile and desktop strategies
 **How it works (automated):**
 The PageSpeed API response includes Core Web Vitals data in the `loadingExperience` (field data from real users) or `lighthouseResult` (lab data) objects. The tool extracts all three metrics — **LCP**, **INP**, and **CLS** — and compares each against Google's defined thresholds. Score is calculated from how many metrics are in the "Good" band.
 
-**Thresholds (hardcoded in tool logic — no AI needed):**
+**Thresholds:**
 - LCP: ≤2.5s = Good · ≤4.0s = Needs Improvement · >4.0s = Poor
 - INP: ≤200ms = Good · ≤500ms = Needs Improvement · >500ms = Poor
 - CLS: ≤0.1 = Good · ≤0.25 = Needs Improvement · >0.25 = Poor
 
-**Scoring logic (deterministic — no AI):**
+**Scoring logic:**
 
 | Passing metrics | Audit Score | Rating |
 |---|---|---|
@@ -102,7 +101,7 @@ The tool checks two things automatically:
 1. Whether the URL redirects to HTTPS (not HTTP)
 2. SSL Labs API call to check certificate validity, expiry date, and grade
 
-**Scoring logic (deterministic — no AI):**
+**Scoring logic:**
 
 | Condition | Score | Rating |
 |---|---|---|
@@ -175,17 +174,16 @@ The tool checks two things automatically:
 ---
 
 ### #7 — Canonical Tags ★
-**Tool:** AI — fetches HTML for all pages listed in the sitemap
 
-**How it works (AI-automated):**
-The tool fetches the homepage and all URLs from the sitemap. For each page, AI checks:
+**How it works:**
+Fetch the homepage and all URLs from the sitemap. For each page, check:
 1. Presence of `<link rel="canonical" href="...">` in the `<head>`
 2. Whether the canonical points to itself (correct) or a different URL (potential issue)
 3. Whether canonical URLs are absolute (not relative)
 4. Consistency across paginated pages (if applicable)
 5. HTTPS and trailing slash consistency
 
-**Scoring logic (AI-assessed per page, then averaged):**
+**Scoring logic:**
 
 | Condition | Score | Rating |
 |---|---|---|
@@ -204,16 +202,15 @@ The tool fetches the homepage and all URLs from the sitemap. For each page, AI c
 ---
 
 ### #8 — Structured Data / Schema ★
-**Tool:** AI — analyses HTML of homepage + sitemap pages
 
-**How it works (AI-automated):**
-AI parses all JSON-LD blocks from fetched pages and evaluates:
+**How it works**
+Parse all JSON-LD blocks from fetched pages and evaluate:
 1. Schema type present (e.g. `Organization`, `LocalBusiness`, `Article`, `Product`, `BreadcrumbList`, `FAQPage`)
 2. Required fields present for each type (per schema.org spec)
 3. Whether schema is appropriate for the page type
 4. No critical errors (missing `@context`, wrong types)
 
-**Scoring logic (AI-assessed):**
+**Scoring logic:**
 
 | Condition | Score | Rating |
 |---|---|---|
@@ -221,7 +218,7 @@ AI parses all JSON-LD blocks from fetched pages and evaluates:
 | Schema present but incomplete fields or suboptimal type | 5–7 | 🟡 |
 | No schema, or schema with critical errors | 1–4 | 🔴 |
 
-**Standard messages (AI-generated):**
+**Standard messages:**
 
 > 🟢 **Good:** Structured data is correctly implemented. {schema_types} schema found with all required fields present. Rich result eligibility confirmed. This improves how Google displays the site in search results.
 
@@ -311,10 +308,9 @@ AI parses all JSON-LD blocks from fetched pages and evaluates:
 ---
 
 ### #12 — Hreflang (Multilingual) ◆
-**Tool:** AI — analyses HTML of homepage + sitemap pages
 
-**How it works (AI-automated):**
-AI checks for `<link rel="alternate" hreflang="...">` tags across all crawled pages and validates:
+**How it works:**
+Check for `<link rel="alternate" hreflang="...">` tags across all crawled pages and validate:
 1. Presence and correct language/region codes (e.g. `en-GB`, `fr-FR`)
 2. Reciprocal hreflang pairs (page A points to B, B points back to A)
 3. `x-default` tag present
@@ -330,7 +326,7 @@ AI checks for `<link rel="alternate" hreflang="...">` tags across all crawled pa
 | Present but missing reciprocals or x-default | 5–7 | 🟡 |
 | Present but critically broken, or missing on multilingual site | 1–4 | 🔴 |
 
-**Standard messages (AI-generated):**
+**Standard messages:**
 
 > 🟢 **Good:** Hreflang is correctly implemented across all language variants. Reciprocal tags are in place and `x-default` is set. Google can correctly serve the right language version to the right audience.
 
@@ -343,15 +339,11 @@ AI checks for `<link rel="alternate" hreflang="...">` tags across all crawled pa
 ---
 
 ## Section 2 — On-Page SEO
-
-*All items in this section are **🤖 AI Auto** — AI analyses fetched HTML for every page listed in the sitemap, with the exception of #21 which is manual.*
-
 ---
 
 ### #13 — Title Tag Optimisation ★
-**Tool:** AI — HTML of all sitemap pages
 
-AI checks each page title for: presence, length (50–60 chars ideal), primary keyword placement (front-loaded), uniqueness across pages, and absence of keyword stuffing.
+Check each page title for: presence, length (50–60 chars ideal), primary keyword placement (front-loaded), uniqueness across pages, and absence of keyword stuffing.
 
 **Scoring logic:**
 
@@ -372,9 +364,8 @@ AI checks each page title for: presence, length (50–60 chars ideal), primary k
 ---
 
 ### #14 — Meta Description ★
-**Tool:** AI — HTML of all sitemap pages
 
-AI checks: presence, length (130–160 chars), inclusion of a CTA or value statement, keyword relevance, and uniqueness across pages.
+Check: presence, length (130–160 chars), inclusion of a CTA or value statement, keyword relevance, and uniqueness across pages.
 
 **Scoring logic:**
 
@@ -395,9 +386,8 @@ AI checks: presence, length (130–160 chars), inclusion of a CTA or value state
 ---
 
 ### #15 — Heading Structure (H1–H3) ★
-**Tool:** AI — HTML of all sitemap pages
 
-AI checks: presence of exactly one H1 per page, keyword inclusion in H1, logical heading hierarchy (no H3 before H2), use of secondary keywords in H2s, and no heading keyword stuffing.
+Check: presence of exactly one H1 per page, keyword inclusion in H1, logical heading hierarchy (no H3 before H2), use of secondary keywords in H2s, and no heading keyword stuffing.
 
 **Scoring logic:**
 
@@ -418,9 +408,8 @@ AI checks: presence of exactly one H1 per page, keyword inclusion in H1, logical
 ---
 
 ### #16 — Image Alt Text ★
-**Tool:** AI — HTML of all sitemap pages
 
-AI finds all `<img>` tags, checks for `alt` attribute presence, evaluates quality (descriptive vs empty vs keyword-stuffed), and flags purely decorative images that should have `alt=""`.
+Find all `<img>` tags, check for `alt` attribute presence, evaluate quality (descriptive vs empty vs keyword-stuffed), and flag purely decorative images that should have `alt=""`.
 
 **Scoring logic:**
 
@@ -441,9 +430,8 @@ AI finds all `<img>` tags, checks for `alt` attribute presence, evaluates qualit
 ---
 
 ### #17 — Content Quality & Length ★
-**Tool:** AI — extracted body text of all sitemap pages
 
-AI evaluates: word count per page, topical depth and coverage, E-E-A-T signals (expertise, authoritativeness, trustworthiness), readability level, presence of thin or boilerplate content.
+Evaluate: word count per page, topical depth and coverage, E-E-A-T signals (expertise, authoritativeness, trustworthiness), readability level, presence of thin or boilerplate content.
 
 **Scoring logic:**
 
@@ -464,9 +452,8 @@ AI evaluates: word count per page, topical depth and coverage, E-E-A-T signals (
 ---
 
 ### #18 — Internal Linking ★
-**Tool:** AI — HTML of all sitemap pages
 
-AI parses all `<a href>` anchors, identifies internal vs external links, checks anchor text quality (descriptive vs "click here"), and flags pages with no inbound internal links (orphaned).
+Parse all `<a href>` anchors, identify internal vs external links, check anchor text quality (descriptive vs "click here"), and flag pages with no inbound internal links (orphaned).
 
 **Scoring logic:**
 
@@ -487,9 +474,8 @@ AI parses all `<a href>` anchors, identifies internal vs external links, checks 
 ---
 
 ### #19 — URL Structure ◆
-**Tool:** AI — URL list from sitemap
 
-AI checks each URL for: use of hyphens (not underscores), lowercase only, no dynamic parameters (e.g. `?id=123`), keyword inclusion in slug, appropriate length, and no stop words overloading the URL.
+Check each URL for: use of hyphens (not underscores), lowercase only, no dynamic parameters (e.g. `?id=123`), keyword inclusion in slug, appropriate length, and no stop words overloading the URL.
 
 **Scoring logic:**
 
@@ -510,9 +496,8 @@ AI checks each URL for: use of hyphens (not underscores), lowercase only, no dyn
 ---
 
 ### #20 — Open Graph / Social Meta Tags ◆
-**Tool:** AI — HTML of all sitemap pages
 
-AI checks for: `og:title`, `og:description`, `og:image`, `og:url`, `og:type`, and Twitter Card tags (`twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`).
+Check for: `og:title`, `og:description`, `og:image`, `og:url`, `og:type`, and Twitter Card tags (`twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`).
 
 **Scoring logic:**
 
@@ -559,9 +544,8 @@ AI checks for: `og:title`, `og:description`, `og:image`, `og:url`, `og:type`, an
 ---
 
 ### #22 — Keyword Placement & Density ◆
-**Tool:** AI — extracted body text and HTML of all sitemap pages
 
-AI infers the primary target keyword from page content/URL and checks its placement in: title tag, H1, first 100 words of body, at least one H2, image alt text, and meta description. Also checks keyword density isn't above ~2% (over-optimisation risk).
+Infer the primary target keyword from page content/URL and checks its placement in: title tag, H1, first 100 words of body, at least one H2, image alt text, and meta description. Also check keyword density isn't above ~2% (over-optimisation risk).
 
 **Scoring logic:**
 
@@ -665,9 +649,8 @@ AI infers the primary target keyword from page content/URL and checks its placem
 ---
 
 ### #26 — Search Intent Alignment ◆
-**Tool:** AI — page content and URL from sitemap
 
-AI evaluates whether each page's format and content type matches the likely search intent behind its target keywords:
+Evaluate whether each page's format and content type matches the likely search intent behind its target keywords:
 - **Transactional intent** → should be a service/product page with CTAs
 - **Informational intent** → should be a blog post, guide, or FAQ page
 - **Navigational intent** → should resolve to the expected brand/page directly
@@ -681,7 +664,7 @@ AI evaluates whether each page's format and content type matches the likely sear
 | Mostly aligned, minor mismatches | 5–7 | 🟡 |
 | Key pages misaligned with obvious intent | 1–4 | 🔴 |
 
-**Standard messages (AI-generated):**
+**Standard messages:**
 
 > 🟢 **Good:** Page formats align well with the likely search intent behind target keywords. Users arriving from organic search will find content that matches what they were looking for — this supports dwell time, conversions, and ranking stability.
 
@@ -957,7 +940,7 @@ This is an assessment of whether the client's existing pages go deep enough on t
 ### #38 — Google Business Profile (GBP) Optimisation ★
 **Tool:** Google Maps — auto-searches business name from site metadata + generates direct review link
 
-**How it works (automated — no AI):**
+**How it works:**
 The tool extracts the business name from the homepage (title tag / schema) and automatically generates a Google Maps search link and a direct GBP link for the auditor to review. It does not score automatically — it opens the path for fast manual review.
 
 > 📎 **Facilitate link:** The tool presents a clickable link — `https://www.google.com/maps/search/{business_name}` — so the auditor can immediately open GBP and assess quality manually.
@@ -981,11 +964,8 @@ The tool extracts the business name from the homepage (title tag / schema) and a
 ---
 
 ### #39 — NAP Consistency ★
-**Tool:** AI — extracts Name, Address, Phone from footer/contact page HTML
 
-AI fetches the homepage and contact page, extracts the NAP (Name, Address, Phone) data, and presents it clearly for the auditor. Notes any formatting inconsistencies found within the site itself.
-
-**Scoring logic (AI-assessed, auditor confirms):**
+**Scoring logic:**
 
 | Condition | Score | Rating |
 |---|---|---|
@@ -993,7 +973,7 @@ AI fetches the homepage and contact page, extracts the NAP (Name, Address, Phone
 | Minor formatting variations (St vs Street, missing area code) | 5–7 | 🟡 |
 | Different NAP on different pages, or NAP not present | 1–4 | 🔴 |
 
-**Standard messages (AI-generated):**
+**Standard messages:**
 
 > 🟢 **Good:** NAP (Name, Address, Phone) is consistently formatted across the site. This on-site consistency is the foundation of local citation accuracy.
 
@@ -1057,9 +1037,6 @@ AI fetches the homepage and contact page, extracts the NAP (Name, Address, Phone
 ---
 
 ### #42 — Local Schema on Site ◆
-**Tool:** AI — HTML analysis of homepage and contact page
-
-AI parses the page for `LocalBusiness` (or appropriate subtype: `Restaurant`, `MedicalBusiness`, etc.) JSON-LD schema and validates: `@type`, `name`, `address` (with `streetAddress`, `addressLocality`, `postalCode`), `telephone`, `openingHours`, `url`, `geo` coordinates.
 
 **Scoring logic:**
 
@@ -1069,7 +1046,7 @@ AI parses the page for `LocalBusiness` (or appropriate subtype: `Restaurant`, `M
 | Present but missing 1–2 required fields | 5–7 | 🟡 |
 | Missing entirely, or schema present but broken | 1–4 | 🔴 |
 
-**Standard messages (AI-generated):**
+**Standard messages:**
 
 > 🟢 **Good:** LocalBusiness schema is correctly implemented with all key fields present. This helps Google understand the business's location, contact details, and hours directly from the markup.
 
@@ -1084,9 +1061,6 @@ AI parses the page for `LocalBusiness` (or appropriate subtype: `Restaurant`, `M
 ---
 
 ### #43 — Clear CTA on Key Pages ★
-**Tool:** AI — HTML of homepage and key service pages
-
-AI identifies all buttons, anchor tags, and form elements. Evaluates: presence of at least one clear CTA above the fold, action-oriented language ("Get a Quote", "Contact Us", "Book a Call"), visual prominence (button vs plain text link), and whether CTAs repeat appropriately through long pages.
 
 **Scoring logic:**
 
@@ -1096,7 +1070,7 @@ AI identifies all buttons, anchor tags, and form elements. Evaluates: presence o
 | CTA present but below fold or not action-oriented | 5–7 | 🟡 |
 | No clear CTA found | 1–4 | 🔴 |
 
-**Standard messages (AI-generated):**
+**Standard messages:**
 
 > 🟢 **Good:** Clear, action-oriented CTAs are present above the fold on key pages and repeated at logical points through the content. Conversion pathways are easy to find.
 
@@ -1107,9 +1081,6 @@ AI identifies all buttons, anchor tags, and form elements. Evaluates: presence o
 ---
 
 ### #44 — Navigation & Site Structure ★
-**Tool:** AI — HTML `<nav>` elements and link structure
-
-AI analyses the navigation structure: number of top-level items (ideally 5–7), logical labelling, presence of a clear hierarchy, mobile menu presence (hamburger/responsive), and whether key pages (services, contact, about) are reachable within 1–2 clicks.
 
 **Scoring logic:**
 
@@ -1119,7 +1090,7 @@ AI analyses the navigation structure: number of top-level items (ideally 5–7),
 | Slightly overcrowded or some key pages buried | 5–7 | 🟡 |
 | Confusing structure, too many items, or key pages missing from nav | 1–4 | 🔴 |
 
-**Standard messages (AI-generated):**
+**Standard messages:**
 
 > 🟢 **Good:** Navigation is clean, logical, and gives users clear pathways to key pages. Site structure supports both user experience and crawl efficiency.
 
@@ -1156,9 +1127,6 @@ AI analyses the navigation structure: number of top-level items (ideally 5–7),
 ---
 
 ### #46 — Intrusive Pop-ups / Interstitials ◆
-**Tool:** AI — HTML and JavaScript patterns in page source
-
-AI scans for: modal/overlay class names and IDs, cookie consent banners (and whether they block content), exit-intent script patterns, newsletter pop-up triggers on page load, and full-screen interstitials — particularly flagging those that would trigger on mobile (a known Google ranking signal violation).
 
 **Scoring logic:**
 
@@ -1168,7 +1136,7 @@ AI scans for: modal/overlay class names and IDs, cookie consent banners (and whe
 | Pop-up present but dismissible and not blocking key content | 5–7 | 🟡 |
 | Full-screen interstitial or pop-up that blocks content on mobile | 1–4 | 🔴 |
 
-**Standard messages (AI-generated):**
+**Standard messages:**
 
 > 🟢 **Good:** No intrusive pop-ups or interstitials detected. The page experience is clean on both desktop and mobile.
 
@@ -1365,7 +1333,7 @@ AI scans for: modal/overlay class names and IDs, cookie consent banners (and whe
 | 6 — Local SEO | 5 | 3 | 5 |
 | 7 — UX & Conversion | 4 | 2 | 4 |
 | 8 — AI Search & Answer Engine Optimisation (GEO/AEO) | 6 | 3 | 6 |
-| **Total** | **52** | **25** | **52** |
+| **Total** | **52** | **27** | **52** |
 
 ---
 

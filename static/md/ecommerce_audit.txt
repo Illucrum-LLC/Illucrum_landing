@@ -181,10 +181,9 @@ The tool checks whether the site loads over HTTPS, whether HTTP redirects to HTT
 ---
 
 ### #4 — Mobile Responsiveness ★
-**Tool:** AI — fetched HTML + PageSpeed Insights mobile usability data
 
 **How to check:**  
-AI reviews the HTML for responsive meta viewport tag, CSS media queries, and touch-friendly element sizing. Cross-references PageSpeed's mobile usability flags.
+Review the HTML for responsive meta viewport tag, CSS media queries, and touch-friendly element sizing. Cross-reference PageSpeed's mobile usability flags.
 
 **E-commerce focus:** Check that product image galleries, size/colour selectors, "Add to Cart" buttons, and checkout flows are fully functional on mobile. Product filtering and sorting must work on touch screens.
 
@@ -237,10 +236,9 @@ AI reviews the HTML for responsive meta viewport tag, CSS media queries, and tou
 ---
 
 ### #6 — Canonical Tags & Duplicate URLs ★
-**Tool:** AI — HTML analysis of product and category pages
 
 **How to check:**  
-AI examines `<link rel="canonical">` tags across product pages, collection pages, and any pages accessible via multiple URL paths. Specifically checks for the e-commerce duplicate content problem: products accessible via `/products/item-name` AND `/collections/collection-name/products/item-name`.
+Examine `<link rel="canonical">` tags across product pages, collection pages, and any pages accessible via multiple URL paths. Specifically check for the e-commerce duplicate content problem: products accessible via `/products/item-name` AND `/collections/collection-name/products/item-name`.
 
 **E-commerce context:** This is the single most common SEO issue on e-commerce platforms. Shopify generates duplicate URLs for every product assigned to multiple collections via the `| within: collection` Liquid filter. WooCommerce creates duplicates through product attribute URLs. Magento's layered navigation generates parameter-based duplicates.
 
@@ -263,10 +261,9 @@ AI examines `<link rel="canonical">` tags across product pages, collection pages
 ---
 
 ### #7 — URL Structure & Hierarchy ★
-**Tool:** AI — analysis of URL patterns across product, category, and content pages
 
 **How to check:**  
-AI analyses URL patterns for consistency, keyword inclusion, and logical hierarchy. Flags platform-forced patterns (Shopify's `/collections/` and `/products/` prefixes, WooCommerce's `/product-category/` paths), unnecessary depth, and parameter-heavy URLs.
+Analyze URL patterns for consistency, keyword inclusion, and logical hierarchy. Flags platform-forced patterns (Shopify's `/collections/` and `/products/` prefixes, WooCommerce's `/product-category/` paths), unnecessary depth, and parameter-heavy URLs.
 
 **Scoring logic:**
 
@@ -287,10 +284,9 @@ AI analyses URL patterns for consistency, keyword inclusion, and logical hierarc
 ---
 
 ### #8 — Structured Data / Product Schema ★
-**Tool:** AI — HTML analysis + Google Rich Results Test reference
 
 **How to check:**  
-AI scans page source for JSON-LD structured data. For product pages, validates `Product` schema including: `name`, `image`, `description`, `sku`, `brand`, `offers` (with `price`, `priceCurrency`, `availability`), and `aggregateRating` (if reviews exist). For category pages, checks for `CollectionPage` or `ItemList` schema. Also checks for `BreadcrumbList` schema site-wide.
+Scan page source for JSON-LD structured data. For product pages, validates `Product` schema including: `name`, `image`, `description`, `sku`, `brand`, `offers` (with `price`, `priceCurrency`, `availability`), and `aggregateRating` (if reviews exist). For category pages, checks for `CollectionPage` or `ItemList` schema. Also check for `BreadcrumbList` schema site-wide.
 
 **E-commerce context:** Product schema is what enables rich results in Google Search: price, availability ("In Stock"), star ratings, and review counts displayed directly in search results. Stores without this schema miss out on significantly higher click-through rates.
 
@@ -313,10 +309,9 @@ AI scans page source for JSON-LD structured data. For product pages, validates `
 ---
 
 ### #9 — Pagination & Infinite Scroll ★
-**Tool:** AI — HTML analysis of category/collection pages
 
 **How to check:**  
-AI examines category and collection pages for pagination implementation. Checks for: numbered pagination links, `rel="next"` / `rel="prev"` link elements (deprecated but still useful), `<a>` tags to subsequent pages (critical for crawlability), and detection of infinite scroll or "Load More" patterns that hide products from crawlers.
+Examine category and collection pages for pagination implementation. Checks for: numbered pagination links, `rel="next"` / `rel="prev"` link elements (deprecated but still useful), `<a>` tags to subsequent pages (critical for crawlability), and detection of infinite scroll or "Load More" patterns that hide products from crawlers.
 
 **E-commerce context:** Many e-commerce themes use infinite scroll or AJAX-based "Load More" buttons. While these feel modern, they prevent search engines from crawling and indexing products beyond the first page load. This is one of the most common reasons products "disappear" from search results.
 
@@ -339,10 +334,9 @@ AI examines category and collection pages for pagination implementation. Checks 
 ---
 
 ### #10 — Tag & Filter Page Management ★
-**Tool:** AI — HTML analysis of tag pages, filter parameters, and robots/meta directives
 
 **How to check:**  
-AI examines how the store handles tag-generated and filter-generated URLs. On Shopify, every tag within a collection creates a new indexable URL (e.g. `/collections/shoes/red`). On WooCommerce, product attribute filters generate parameter URLs. Checks for: `noindex` directives on thin tag pages, canonical tags pointing to parent category, and whether important filtered views have unique content or are thin duplicates.
+Examine how the store handles tag-generated and filter-generated URLs. On Shopify, every tag within a collection creates a new indexable URL (e.g. `/collections/shoes/red`). On WooCommerce, product attribute filters generate parameter URLs. Checks for: `noindex` directives on thin tag pages, canonical tags pointing to parent category, and whether important filtered views have unique content or are thin duplicates.
 
 **E-commerce context:** Tag and filter pages are one of the biggest sources of index bloat on e-commerce sites. A store with 20 collections and 15 tags per collection generates 300+ additional indexable URLs, most with duplicate or near-duplicate content. These waste crawl budget and dilute ranking authority.
 
@@ -365,7 +359,7 @@ AI examines how the store handles tag-generated and filter-generated URLs. On Sh
 ---
 
 ### #11 — Redirect Chains & Broken Links ◆
-**Tool:** SEOptimer or Screaming Frog — crawl the site and check redirect paths and 4xx responses
+**Tool:** SEOptimer — crawl the site and check redirect paths and 4xx responses
 
 **How to check:**
 1. Run a site crawl using SEOptimer or a crawl tool
@@ -428,10 +422,9 @@ AI examines how the store handles tag-generated and filter-generated URLs. On Sh
 ---
 
 ### #13 — Title Tags ★
-**Tool:** AI — fetched HTML of homepage, key category pages, and sample product pages
 
 **How to check:**  
-AI extracts `<title>` tags from multiple page types. Evaluates: uniqueness across pages, length (50-60 characters), primary keyword inclusion, and whether product titles include key buying modifiers (brand, size, colour, material). Flags template-generated titles that repeat the same format without variation.
+Extract `<title>` tags from multiple page types. Evaluate: uniqueness across pages, length (50-60 characters), primary keyword inclusion, and whether product titles include key buying modifiers (brand, size, colour, material). Flags template-generated titles that repeat the same format without variation.
 
 **Scoring logic:**
 
@@ -452,10 +445,9 @@ AI extracts `<title>` tags from multiple page types. Evaluates: uniqueness acros
 ---
 
 ### #14 — Meta Descriptions ★
-**Tool:** AI — fetched HTML
 
 **How to check:**  
-AI extracts meta descriptions from homepage, category pages, and sample product pages. Evaluates: presence, uniqueness, length (120-160 characters), inclusion of a value proposition or call-to-action, and whether they contain product-specific information (price range, free shipping, key features).
+Extract meta descriptions from homepage, category pages, and sample product pages. Evaluate: presence, uniqueness, length (120-160 characters), inclusion of a value proposition or call-to-action, and whether they contain product-specific information (price range, free shipping, key features).
 
 **Scoring logic:**
 
@@ -476,10 +468,9 @@ AI extracts meta descriptions from homepage, category pages, and sample product 
 ---
 
 ### #15 — Heading Structure (H1-H3) ★
-**Tool:** AI — fetched HTML
 
 **How to check:**  
-AI analyses heading hierarchy across product pages, category pages, and the homepage. Checks: exactly one H1 per page, H1 contains primary keyword, logical H2/H3 nesting, and whether product pages use headings to structure descriptions (features, specifications, reviews sections).
+Analyze heading hierarchy across product pages, category pages, and the homepage. Check: exactly one H1 per page, H1 contains primary keyword, logical H2/H3 nesting, and whether product pages use headings to structure descriptions (features, specifications, reviews sections).
 
 **Scoring logic:**
 
@@ -500,10 +491,9 @@ AI analyses heading hierarchy across product pages, category pages, and the home
 ---
 
 ### #16 — Image Optimisation & Alt Text ★
-**Tool:** AI — fetched HTML + PageSpeed image audit data
 
 **How to check:**  
-AI checks product and category pages for: `alt` attributes on all images (especially product photos), descriptive alt text (not just filenames like "IMG_3421.jpg"), next-gen image formats (WebP, AVIF), proper sizing (not serving 4000px images in 400px containers), and lazy loading implementation on below-fold images.
+Check product and category pages for: `alt` attributes on all images (especially product photos), descriptive alt text (not just filenames like "IMG_3421.jpg"), next-gen image formats (WebP, AVIF), proper sizing (not serving 4000px images in 400px containers), and lazy loading implementation on below-fold images.
 
 **E-commerce context:** Product images are the primary content on e-commerce pages. Well-optimised product images with descriptive alt text drive traffic from Google Image Search, which is a significant discovery channel for visual products (fashion, home decor, accessories).
 
@@ -526,10 +516,9 @@ AI checks product and category pages for: `alt` attributes on all images (especi
 ---
 
 ### #17 — Internal Linking Architecture ★
-**Tool:** AI — HTML link analysis across multiple pages
 
 **How to check:**  
-AI maps internal links from the homepage, category pages, and product pages. Evaluates: whether the homepage links to main categories, whether category pages link to subcategories and products, whether product pages cross-link to related products, and whether blog/content pages link to relevant product or category pages.
+Map internal links from the homepage, category pages, and product pages. Evaluate: whether the homepage links to main categories, whether category pages link to subcategories and products, whether product pages cross-link to related products, and whether blog/content pages link to relevant product or category pages.
 
 **Scoring logic:**
 
@@ -550,10 +539,9 @@ AI maps internal links from the homepage, category pages, and product pages. Eva
 ---
 
 ### #18 — Category Page Content Quality ★
-**Tool:** AI — fetched HTML of category/collection pages
 
 **How to check:**  
-AI evaluates category page content beyond just the product grid. Checks for: introductory text above or below the product grid (minimum 100-200 words), keyword-rich category descriptions, buying guides or FAQ sections on category pages, and whether the page provides context that helps both shoppers and search engines understand the category.
+Evaluate category page content beyond just the product grid. Check for: introductory text above or below the product grid (minimum 100-200 words), keyword-rich category descriptions, buying guides or FAQ sections on category pages, and whether the page provides context that helps both shoppers and search engines understand the category.
 
 **E-commerce context:** Category pages are the primary ranking targets for commercial keywords ("[product type]", "buy [product type] online"). Many stores have category pages with nothing but a product grid, making them thin content in Google's evaluation.
 
@@ -603,10 +591,9 @@ AI evaluates category page content beyond just the product grid. Checks for: int
 ---
 
 ### #20 — Open Graph / Social Meta Tags ◆
-**Tool:** AI — fetched HTML
 
 **How to check:**  
-AI scans for Open Graph tags (`og:title`, `og:description`, `og:image`, `og:type`, `og:url`) and Twitter Card meta tags. For product pages, checks whether `og:image` points to the primary product image and `og:type` is set to `product`.
+Scan for Open Graph tags (`og:title`, `og:description`, `og:image`, `og:type`, `og:url`) and Twitter Card meta tags. For product pages, check whether `og:image` points to the primary product image and `og:type` is set to `product`.
 
 **E-commerce context:** When products are shared on social media, Pinterest, or messaging apps, OG tags determine how the link preview appears. A product shared without a proper OG image shows a generic or broken preview, reducing click-through from social shares.
 
@@ -635,10 +622,9 @@ AI scans for Open Graph tags (`og:title`, `og:description`, `og:image`, `og:type
 ---
 
 ### #21 — Product Page SEO Quality ★
-**Tool:** AI — fetched HTML of sample product pages
 
 **How to check:**  
-AI evaluates a sample of product pages for SEO fundamentals as a unit: unique title tag with product name + category keyword, unique meta description with key selling point, H1 matching the product title, product schema present, and canonical tag correctly self-referencing. This is a holistic product page quality check.
+Evaluate a sample of product pages for SEO fundamentals as a unit: unique title tag with product name + category keyword, unique meta description with key selling point, H1 matching the product title, product schema present, and canonical tag correctly self-referencing. This is a holistic product page quality check.
 
 **Scoring logic:**
 
@@ -659,10 +645,9 @@ AI evaluates a sample of product pages for SEO fundamentals as a unit: unique ti
 ---
 
 ### #22 — Product Description Depth ★
-**Tool:** AI — fetched HTML of product pages
 
 **How to check:**  
-AI evaluates the quality and depth of product descriptions on a sample of pages. Checks: word count (minimum 150-300 words for non-commodity products), unique content (not copy-pasted from manufacturer), structured information (features, benefits, specifications in separate sections), and whether descriptions address common buyer questions.
+Evaluates the quality and depth of product descriptions on a sample of pages. Check: word count (minimum 150-300 words for non-commodity products), unique content (not copy-pasted from manufacturer), structured information (features, benefits, specifications in separate sections), and whether descriptions address common buyer questions.
 
 **E-commerce context:** Thin product descriptions (under 50 words or manufacturer copy-paste) are the second most common e-commerce SEO problem after duplicate URLs. Google treats pages with thin, non-unique content as low quality. Unique, detailed descriptions also reduce return rates by setting accurate expectations.
 
@@ -685,10 +670,9 @@ AI evaluates the quality and depth of product descriptions on a sample of pages.
 ---
 
 ### #23 — Collection / Category Architecture ★
-**Tool:** AI — HTML analysis of navigation and category structure
 
 **How to check:**  
-AI maps the category hierarchy by analysing navigation menus, breadcrumb trails, and internal link patterns. Evaluates: depth of hierarchy (ideally 2-3 levels), logical grouping, whether important categories are accessible from the main navigation, and whether the hierarchy reflects how shoppers search for products.
+Map the category hierarchy by analysing navigation menus, breadcrumb trails, and internal link patterns. Evaluate: depth of hierarchy (ideally 2-3 levels), logical grouping, whether important categories are accessible from the main navigation, and whether the hierarchy reflects how shoppers search for products.
 
 **E-commerce context:** Many e-commerce platforms (notably Shopify) lack true parent-child category relationships. This forces flat hierarchies where all collections sit at the same level, limiting the site's ability to target both broad ("shoes") and specific ("men's running shoes") keywords with appropriate page hierarchy.
 
@@ -711,10 +695,9 @@ AI maps the category hierarchy by analysing navigation menus, breadcrumb trails,
 ---
 
 ### #24 — Product Variant & Option Handling ★
-**Tool:** AI — HTML analysis of product pages with variants (size, colour, material)
 
 **How to check:**  
-AI examines how product variants are handled. Checks whether each variant creates a separate URL (and if so, whether canonicals are correct), whether variant selection changes the page URL, whether variant-specific images have alt text, and whether the page handles variants in a way that doesn't create duplicate content.
+Examine how product variants are handled. Check whether each variant creates a separate URL (and if so, whether canonicals are correct), whether variant selection changes the page URL, whether variant-specific images have alt text, and whether the page handles variants in a way that doesn't create duplicate content.
 
 **E-commerce context:** A shirt in 5 colours and 4 sizes could generate 20 separate URLs if variants create individual pages. Without proper canonical handling, this multiplies duplicate content exponentially. The ideal approach depends on the platform, but the SEO impact must be managed.
 
@@ -737,10 +720,9 @@ AI examines how product variants are handled. Checks whether each variant create
 ---
 
 ### #25 — Out-of-Stock & Discontinued Product Strategy ★
-**Tool:** AI — HTML analysis of out-of-stock product pages (if detectable)
 
 **How to check:**  
-AI checks how the store handles products that are out of stock or discontinued. Evaluates: whether out-of-stock products return 200 (good if temporary) or 404/410, whether there is a "notify when back in stock" option, whether discontinued product pages redirect to the parent category, and whether product pages are simply deleted (destroying any accumulated search authority).
+Check how the store handles products that are out of stock or discontinued. Evaluate: whether out-of-stock products return 200 (good if temporary) or 404/410, whether there is a "notify when back in stock" option, whether discontinued product pages redirect to the parent category, and whether product pages are simply deleted (destroying any accumulated search authority).
 
 **E-commerce context:** Product pages accumulate search authority over time through links and impressions. Deleting an out-of-stock product page destroys all that accumulated value. The correct strategy depends on whether the product will return (keep the page, show alternatives) or is permanently discontinued (301 redirect to parent category or replacement).
 
@@ -763,10 +745,9 @@ AI checks how the store handles products that are out of stock or discontinued. 
 ---
 
 ### #26 — Faceted Navigation SEO ◆
-**Tool:** AI — HTML analysis of filtered/faceted navigation on category pages
 
 **How to check:**  
-AI examines category pages with filtering options (price range, brand, size, colour, material, rating). Checks: whether each filter combination creates a crawlable URL, whether those URLs are canonicalised or noindexed, whether important filter combinations (e.g. "brand + category") have dedicated landing pages, and whether `robots.txt` or meta robots directives prevent excessive crawling of filter URLs.
+Examine category pages with filtering options (price range, brand, size, colour, material, rating). Check: whether each filter combination creates a crawlable URL, whether those URLs are canonicalised or noindexed, whether important filter combinations (e.g. "brand + category") have dedicated landing pages, and whether `robots.txt` or meta robots directives prevent excessive crawling of filter URLs.
 
 **E-commerce context:** A category page with 5 filter dimensions and 10 options each can theoretically generate 100,000+ unique URLs. Without proper management, this is the largest source of crawl budget waste and index bloat on e-commerce sites.
 
@@ -789,10 +770,9 @@ AI examines category pages with filtering options (price range, brand, size, col
 ---
 
 ### #27 — Product Image SEO ◆
-**Tool:** AI — fetched HTML of product pages
 
 **How to check:**  
-AI performs a deep check of product image SEO beyond the basic alt text check in #16. Evaluates: descriptive filenames (not "IMG_3421.jpg"), multiple product angles with individual alt text, image sitemap presence or inclusion in main sitemap, structured data `image` field pointing to the primary product image, and whether images are optimised for Google Image Search and Google Shopping.
+Perform a deep check of product image SEO beyond the basic alt text check in #16. Evaluate: descriptive filenames (not "IMG_3421.jpg"), multiple product angles with individual alt text, image sitemap presence or inclusion in main sitemap, structured data `image` field pointing to the primary product image, and whether images are optimised for Google Image Search and Google Shopping.
 
 **Scoring logic:**
 
@@ -813,10 +793,9 @@ AI performs a deep check of product image SEO beyond the basic alt text check in
 ---
 
 ### #28 — User-Generated Content (Reviews on Pages) ◆
-**Tool:** AI — fetched HTML of product pages
 
 **How to check:**  
-AI checks whether product pages include customer reviews directly on the page (not loaded via iframe or third-party widget that hides content from crawlers). Evaluates: whether review text is in the page HTML (not JavaScript-loaded), whether `AggregateRating` schema includes review count and average, and whether reviews add unique keyword-rich content to each product page.
+Check whether product pages include customer reviews directly on the page (not loaded via iframe or third-party widget that hides content from crawlers). Evaluate: whether review text is in the page HTML (not JavaScript-loaded), whether `AggregateRating` schema includes review count and average, and whether reviews add unique keyword-rich content to each product page.
 
 **E-commerce context:** Customer reviews serve triple duty for SEO: they add unique, keyword-rich content to product pages (naturally containing long-tail phrases shoppers use), they enable star ratings in search results via schema, and they signal trustworthiness to both Google and shoppers.
 
@@ -1206,10 +1185,9 @@ Research item; populate competitor comparison table in the report.
 ---
 
 ### #42 — Navigation & Site Architecture ★
-**Tool:** AI — HTML `<nav>` elements and link structure
 
 **How to check:**  
-AI analyses navigation structure for e-commerce best practices: mega menu or category-organised navigation, number of top-level items (5-8 for e-commerce), search bar prominence, breadcrumb navigation, and whether the navigation reflects the product category hierarchy.
+Analyze navigation structure for e-commerce best practices: mega menu or category-organised navigation, number of top-level items (5-8 for e-commerce), search bar prominence, breadcrumb navigation, and whether the navigation reflects the product category hierarchy.
 
 **Scoring logic:**
 
@@ -1230,10 +1208,9 @@ AI analyses navigation structure for e-commerce best practices: mega menu or cat
 ---
 
 ### #43 — Cart & Checkout SEO Impact ★
-**Tool:** AI — HTML analysis of cart and checkout pages (if accessible)
 
 **How to check:**  
-AI evaluates the SEO impact of the cart and checkout process. Checks: whether cart and checkout pages are noindexed (they should be), whether the checkout process forces users off the main domain, whether abandoned cart URLs create indexable thin pages, and whether the thank-you/confirmation page is noindexed.
+Evaluate the SEO impact of the cart and checkout process. Check: whether cart and checkout pages are noindexed (they should be), whether the checkout process forces users off the main domain, whether abandoned cart URLs create indexable thin pages, and whether the thank-you/confirmation page is noindexed.
 
 **E-commerce context:** Cart and checkout pages should not appear in search results. If they are indexed, they create thin content pages. If the checkout is on a separate domain (common with some payment processors), the domain switch can confuse tracking and attribution.
 
@@ -1256,10 +1233,9 @@ AI evaluates the SEO impact of the cart and checkout process. Checks: whether ca
 ---
 
 ### #44 — Trust Signals & Social Proof ★
-**Tool:** AI — fetched HTML
 
 **How to check:**  
-AI scans key pages for trust signals critical to e-commerce conversion: SSL/security badges, payment method icons, return/refund policy visibility, shipping information, customer review widgets, trust badges (e.g. Trustpilot, Google Customer Reviews), and contact information accessibility.
+Scan key pages for trust signals critical to e-commerce conversion: SSL/security badges, payment method icons, return/refund policy visibility, shipping information, customer review widgets, trust badges (e.g. Trustpilot, Google Customer Reviews), and contact information accessibility.
 
 **E-commerce context:** Organic visitors arrive without the trust context that paid ad audiences receive. A shopper finding a store through Google for the first time needs visible trust signals to convert. Missing trust signals primarily affect conversion rate, but indirectly affect SEO through high bounce rates and low engagement.
 
@@ -1282,10 +1258,9 @@ AI scans key pages for trust signals critical to e-commerce conversion: SSL/secu
 ---
 
 ### #45 — Page Layout & Readability ★
-**Tool:** AI — fetched HTML
 
 **How to check:**  
-AI reviews page layout for e-commerce best practices: product image size and placement, "Add to Cart" button prominence, price visibility, product information hierarchy, mobile layout of product pages, and whether key buying information (price, availability, shipping) is visible without scrolling.
+Review page layout for e-commerce best practices: product image size and placement, "Add to Cart" button prominence, price visibility, product information hierarchy, mobile layout of product pages, and whether key buying information (price, availability, shipping) is visible without scrolling.
 
 **Scoring logic:**
 
@@ -1306,7 +1281,6 @@ AI reviews page layout for e-commerce best practices: product image size and pla
 ---
 
 ### #46 — Overall E-Commerce Conversion Funnel ◆
-**Tool:** AI — cross-page analysis; manual spot-check of the buyer journey
 
 **How to check:**  
 Manual trace of a representative organic buyer journey: category page from Google → product page → add to cart → checkout. At each step, check: is there a logical next action? Are related products suggested? Is pricing clear? Are trust signals visible at every stage? Does the funnel retain the shopper or create abandonment points?

@@ -102,10 +102,9 @@ The tool checks whether the site loads over HTTPS, whether HTTP redirects to HTT
 ---
 
 ### #4 — Mobile Responsiveness ★
-**Tool:** AI — fetched HTML + PageSpeed Insights mobile usability data
 
 **How to check:**  
-AI reviews the HTML for responsive meta viewport tag, CSS media queries, and touch-friendly element sizing. Also cross-references PageSpeed's mobile usability flags.
+Review the HTML for responsive meta viewport tag, CSS media queries, and touch-friendly element sizing. Also cross-reference PageSpeed's mobile usability flags.
 
 **SaaS-specific focus:** Check that trial/demo CTAs, pricing tables, and signup forms are fully functional and readable on mobile.
 
@@ -128,10 +127,9 @@ AI reviews the HTML for responsive meta viewport tag, CSS media queries, and tou
 ---
 
 ### #5 — JavaScript Rendering & Indexability ★
-**Tool:** AI — fetched HTML vs rendered DOM comparison; Google Rich Results Test reference
 
 **How to check:**  
-AI compares raw HTML source against the rendered page content. Flags cases where key SEO content (H1, meta description, main body text, internal links) is only present in the rendered DOM — invisible to crawlers that don't execute JavaScript.
+Compare raw HTML source against the rendered page content. Flag cases where key SEO content (H1, meta description, main body text, internal links) is only present in the rendered DOM — invisible to crawlers that don't execute JavaScript.
 
 **SaaS-specific context:** React, Vue, Next.js, and Nuxt are all common in SaaS. The risk varies: server-side rendered (SSR) or static generation (SSG) frameworks are fine; client-side only rendering (CSR) is a crawlability risk.
 
@@ -180,10 +178,9 @@ Tool fetches robots.txt and the XML sitemap. Checks: robots.txt exists and isn't
 ---
 
 ### #7 — App Subdomain Handling ★
-**Tool:** AI — fetched HTML, robots.txt analysis, sitemap review
 
 **How to check:**  
-AI checks whether a separate app subdomain (e.g. `app.{domain}`) exists or is referenced in the HTML/sitemap. Verifies that login-walled app content is excluded from the sitemap and appropriately tagged (noindex or disallowed in robots.txt), while the marketing site remains fully crawlable.
+Check whether a separate app subdomain (e.g. `app.{domain}`) exists or is referenced in the HTML/sitemap. Verify that login-walled app content is excluded from the sitemap and appropriately tagged (noindex or disallowed in robots.txt), while the marketing site remains fully crawlable.
 
 **SaaS-specific context:** This is a near-universal issue for SaaS products. App dashboards should never appear in Google's index — they're inaccessible to users and dilute crawl budget. But aggressive robots.txt rules on the app subdomain can sometimes bleed into the marketing site.
 
@@ -206,10 +203,9 @@ AI checks whether a separate app subdomain (e.g. `app.{domain}`) exists or is re
 ---
 
 ### #8 — Canonical Tags & Duplicate Content ★
-**Tool:** AI — fetched HTML for all sitemap pages
 
 **How to check:**  
-AI checks for canonical tags on all pages. Flags cases where canonical is missing, self-referencing incorrectly, or pointing to the wrong URL. Also checks for common SaaS duplicate content patterns: UTM-parameterised URLs, pagination on blog pages, or identical content across feature variants.
+Check for canonical tags on all pages. Flag cases where canonical is missing, self-referencing incorrectly, or pointing to the wrong URL. Also check for common SaaS duplicate content patterns: UTM-parameterised URLs, pagination on blog pages, or identical content across feature variants.
 
 **Scoring logic:**
 
@@ -230,10 +226,9 @@ AI checks for canonical tags on all pages. Flags cases where canonical is missin
 ---
 
 ### #9 — Structured Data / Schema Markup ★
-**Tool:** AI — fetched HTML; Google Rich Results Test — `https://search.google.com/test/rich-results`
 
 **How to check:**  
-AI checks for JSON-LD schema markup. Evaluates which schema types are present and whether they match the page content. For SaaS, relevant schema types include: `SoftwareApplication`, `FAQPage`, `HowTo`, `WebPage`, `Organization`, and `BreadcrumbList`.
+Check for JSON-LD schema markup. Evaluate which schema types are present and whether they match the page content. For SaaS, relevant schema types include: `SoftwareApplication`, `FAQPage`, `HowTo`, `WebPage`, `Organization`, and `BreadcrumbList`.
 
 **Scoring logic:**
 
@@ -287,10 +282,9 @@ AI checks for JSON-LD schema markup. Evaluates which schema types are present an
 ---
 
 ### #11 — Title Tags ★
-**Tool:** AI — fetched HTML from all sitemap pages
 
 **How to check:**  
-AI reviews title tags across all pages. Checks: present on every page; unique; within 50–60 character length; contains the target keyword; reflects the page's funnel stage and intent.
+Review title tags across all pages. Check: present on every page; unique; within 50–60 character length; contains the target keyword; reflects the page's funnel stage and intent.
 
 **SaaS-specific context:** Title tags on feature pages should name the specific capability, not just the product brand. Pricing pages often rank for "[tool] pricing" queries — the title tag must include "pricing" explicitly.
 
@@ -313,10 +307,9 @@ AI reviews title tags across all pages. Checks: present on every page; unique; w
 ---
 
 ### #12 — Meta Descriptions ★
-**Tool:** AI — fetched HTML from all sitemap pages
 
 **How to check:**  
-AI checks whether meta descriptions are present, unique, within 150–160 characters, and include a clear value proposition and call to action appropriate to the page's funnel stage.
+Check whether meta descriptions are present, unique, within 150–160 characters, and include a clear value proposition and call to action appropriate to the page's funnel stage.
 
 **SaaS-specific context:** Meta descriptions on trial/demo pages should include a conversion signal ("Start free", "No credit card required"). Comparison pages should reference the competitor name.
 
@@ -339,10 +332,9 @@ AI checks whether meta descriptions are present, unique, within 150–160 charac
 ---
 
 ### #13 — Heading Structure (H1–H3) ★
-**Tool:** AI — fetched HTML from all sitemap pages
 
 **How to check:**  
-AI checks for a single H1 per page that contains the target keyword. Reviews H2 and H3 structure for logical hierarchy. Flags pages with multiple H1s, no H1, or H2s that don't support the page's keyword theme.
+Check for a single H1 per page that contains the target keyword. Review H2 and H3 structure for logical hierarchy. Flag pages with multiple H1s, no H1, or H2s that don't support the page's keyword theme.
 
 **SaaS-specific context:** Feature pages should use H2 subheadings to break down individual capability areas — this creates keyword co-occurrence and supports voice/featured snippet eligibility for "what does {tool} do" type queries.
 
@@ -365,10 +357,9 @@ AI checks for a single H1 per page that contains the target keyword. Reviews H2 
 ---
 
 ### #14 — Homepage SEO & Positioning Clarity ★
-**Tool:** AI — fetched HTML of homepage
 
 **How to check:**  
-AI evaluates the homepage for: primary keyword in H1; clear product category statement above the fold; target customer named; primary CTA present and prominent. Also checks whether the homepage communicates a specific niche or is too generic ("software for everyone").
+Evaluate the homepage for: primary keyword in H1; clear product category statement above the fold; target customer named; primary CTA present and prominent. Also check whether the homepage communicates a specific niche or is too generic ("software for everyone").
 
 **SaaS-specific context:** SaaS homepages are often optimised for brand positioning rather than SEO. The H1 frequently reads as a tagline ("Work better, together") rather than a keyword-bearing product description ("Project management software for remote teams").
 
@@ -391,10 +382,9 @@ AI evaluates the homepage for: primary keyword in H1; clear product category sta
 ---
 
 ### #15 — Pricing Page SEO ★
-**Tool:** AI — fetched HTML of pricing page (if identifiable from sitemap)
 
 **How to check:**  
-AI checks: pricing page exists and is indexable; title tag includes "{Product} pricing"; page content mentions plan names, prices (if public), and key features per tier; FAQ schema is present (for "how much does X cost" queries); CTA is clear.
+Check: pricing page exists and is indexable; title tag includes "{Product} pricing"; page content mentions plan names, prices (if public), and key features per tier; FAQ schema is present (for "how much does X cost" queries); CTA is clear.
 
 **SaaS-specific context:** Pricing pages are among the highest-converting organic entry points for SaaS. Searchers arriving on a pricing page via "{tool} pricing" are decision-stage buyers. If the page isn't indexable or isn't ranking, those leads go directly to the competitor.
 
@@ -417,10 +407,9 @@ AI checks: pricing page exists and is indexable; title tag includes "{Product} p
 ---
 
 ### #16 — Feature Pages SEO ★
-**Tool:** AI — fetched HTML of feature pages identified from sitemap or navigation
 
 **How to check:**  
-AI identifies pages that appear to cover individual product features. Checks: each feature has a dedicated URL (not all features on one page); each has a unique keyword-targeted title tag; H1 names the specific feature; body copy describes the feature with supporting keywords; internal links exist between related feature pages.
+Identify pages that appear to cover individual product features. Check: each feature has a dedicated URL (not all features on one page); each has a unique keyword-targeted title tag; H1 names the specific feature; body copy describes the feature with supporting keywords; internal links exist between related feature pages.
 
 **SaaS-specific context:** Feature pages targeting "[specific capability] software" or "[product] [feature]" keywords are the highest-volume organic opportunity for most SaaS products. Many SaaS sites cram all features onto a single /features page — missing dozens of rankable keyword opportunities.
 
@@ -443,10 +432,9 @@ AI identifies pages that appear to cover individual product features. Checks: ea
 ---
 
 ### #17 — Content Quality & Depth ★
-**Tool:** AI — fetched body text from key pages
 
 **How to check:**  
-AI evaluates word count, depth of explanation, presence of supporting detail (use cases, examples, social proof mentions), and whether key pages could answer a user's question without requiring them to navigate elsewhere.
+Evaluate word count, depth of explanation, presence of supporting detail (use cases, examples, social proof mentions), and whether key pages could answer a user's question without requiring them to navigate elsewhere.
 
 **SaaS-specific context:** SaaS buyers research extensively. Thin feature pages with 100-word descriptions don't rank against comprehensive competitors. Content depth is especially important for comparison and "alternative to" pages.
 
@@ -469,10 +457,9 @@ AI evaluates word count, depth of explanation, presence of supporting detail (us
 ---
 
 ### #18 — Internal Linking Architecture ★
-**Tool:** AI — fetched HTML from all sitemap pages
 
 **How to check:**  
-AI maps internal linking patterns across the site. Checks: homepage links to key feature and pricing pages; feature pages link to each other and to trial/demo CTAs; blog content links to relevant feature pages; no orphaned pages (pages with zero internal links pointing to them).
+Map internal linking patterns across the site. Checks: homepage links to key feature and pricing pages; feature pages link to each other and to trial/demo CTAs; blog content links to relevant feature pages; no orphaned pages (pages with zero internal links pointing to them).
 
 **SaaS-specific context:** A well-linked SaaS site funnels authority from high-traffic blog content down to high-value conversion pages (feature, pricing, trial). Orphaned feature pages receive no PageRank and rank poorly even with good on-page content.
 
@@ -614,10 +601,9 @@ AI maps internal linking patterns across the site. Checks: homepage links to key
 ---
 
 ### #23 — Target Keyword Mapping ★
-**Tool:** AI — fetched page content and URLs from sitemap
 
 **How to check:**  
-AI infers the primary target keyword for each key page based on URL structure, H1, title tag, and body content. Checks that: each core page targets a distinct, specific keyword; no two pages are targeting the same keyword (cannibalisation risk); keyword intent matches page format.
+Infer the primary target keyword for each key page based on URL structure, H1, title tag, and body content. Check that: each core page targets a distinct, specific keyword; no two pages are targeting the same keyword (cannibalisation risk); keyword intent matches page format.
 
 **Scoring logic:**
 
@@ -638,10 +624,9 @@ AI infers the primary target keyword for each key page based on URL structure, H
 ---
 
 ### #24 — Keyword Placement & Density ◆
-**Tool:** AI — fetched body text and HTML from key pages
 
 **How to check:**  
-AI infers the primary keyword for each page and checks its placement in: title tag, H1, first 100 words of body, at least one H2, and meta description. Checks keyword density is natural (not >2%).
+Infer the primary keyword for each page and check its placement in: title tag, H1, first 100 words of body, at least one H2, and meta description. Check keyword density is natural (not >2%).
 
 **Scoring logic:**
 
@@ -662,10 +647,9 @@ AI infers the primary keyword for each page and checks its placement in: title t
 ---
 
 ### #25 — Search Intent Alignment ◆
-**Tool:** AI — page content and URL analysis
 
 **How to check:**  
-AI evaluates whether each page's format matches the likely search intent behind its target keyword:
+Evaluate whether each page's format matches the likely search intent behind its target keyword:
 - **Transactional / Decision intent** → service/trial page with clear CTA
 - **Informational / Awareness intent** → blog post, guide, or how-to
 - **Commercial Investigation / Consideration intent** → comparison, "alternatives", or feature deep-dive
@@ -695,10 +679,9 @@ AI evaluates whether each page's format matches the likely search intent behind 
 ---
 
 ### #26 — Trial / Demo / Signup Page SEO ★
-**Tool:** AI — fetched HTML of trial/signup/demo pages identified from sitemap or navigation
 
 **How to check:**  
-AI identifies the primary conversion page(s) — free trial, demo request, or signup. Checks: page is indexable; title tag contains a conversion-oriented keyword; H1 communicates the offer clearly; page copy addresses objections; CTA is prominent; social proof is present.
+Identify the primary conversion page(s) — free trial, demo request, or signup. Check: page is indexable; title tag contains a conversion-oriented keyword; H1 communicates the offer clearly; page copy addresses objections; CTA is prominent; social proof is present.
 
 **SaaS-specific context:** The trial/signup page is the end goal of all organic acquisition. If it's noindexed, keyword-empty, or unconvincing, the entire SEO funnel loses its conversion layer.
 
@@ -721,10 +704,9 @@ AI identifies the primary conversion page(s) — free trial, demo request, or si
 ---
 
 ### #27 — Trust Signals on Conversion Pages ★
-**Tool:** AI — fetched HTML of trial, pricing, and homepage
 
 **How to check:**  
-AI checks for the presence of trust signals across the key conversion pages: customer logos, testimonials, review platform badges (G2, Capterra, Product Hunt), security/compliance mentions (SOC 2, GDPR, etc.), "no credit card required" messaging, money-back guarantee statements.
+Check for the presence of trust signals across the key conversion pages: customer logos, testimonials, review platform badges (G2, Capterra, Product Hunt), security/compliance mentions (SOC 2, GDPR, etc.), "no credit card required" messaging, money-back guarantee statements.
 
 **SaaS-specific context:** SaaS buyers have high purchase anxiety — they're committing time (onboarding) and possibly budget. Trust signals on conversion pages directly reduce abandonment.
 
@@ -747,10 +729,9 @@ AI checks for the presence of trust signals across the key conversion pages: cus
 ---
 
 ### #28 — CTA Clarity & Conversion Architecture ★
-**Tool:** AI — fetched HTML from homepage, feature pages, and pricing page
 
 **How to check:**  
-AI evaluates whether each key page has a clear, singular primary CTA that matches the page's funnel stage. Checks: CTA text is action-specific (not just "Learn more"); CTA is above the fold; CTA is repeated at bottom of long pages; secondary CTAs don't compete with the primary.
+Evaluates whether each key page has a clear, singular primary CTA that matches the page's funnel stage. Check: CTA text is action-specific (not just "Learn more"); CTA is above the fold; CTA is repeated at bottom of long pages; secondary CTAs don't compete with the primary.
 
 **Scoring logic:**
 
@@ -777,10 +758,9 @@ AI evaluates whether each key page has a clear, singular primary CTA that matche
 ---
 
 ### #29 — Integration Pages SEO ◆
-**Tool:** AI — sitemap and navigation analysis; manual inspection of /integrations page
 
 **How to check:**  
-AI identifies whether the site has an integrations section or individual integration pages. Checks: integration pages exist with individual URLs per integration; each page names the integration in the title tag and H1; body content explains the integration's value; pages are internally linked from relevant feature pages.
+Identify whether the site has an integrations section or individual integration pages. Check: integration pages exist with individual URLs per integration; each page names the integration in the title tag and H1; body content explains the integration's value; pages are internally linked from relevant feature pages.
 
 **SaaS-specific context:** Integration pages targeting "[product] + [tool]" keywords (e.g. "Slack integration", "Zapier integration") are a massive underexploited opportunity. These searches come from users of the integrated tool who are evaluating whether this SaaS fits their existing stack.
 
@@ -803,10 +783,9 @@ AI identifies whether the site has an integrations section or individual integra
 ---
 
 ### #30 — Use Case / Persona Pages ◆
-**Tool:** AI — sitemap and page content analysis
 
 **How to check:**  
-AI checks whether the site has dedicated use-case or persona-specific pages — e.g. "/for-marketing-teams", "/for-agencies", "/project-management-for-remote-teams". Checks: pages target specific audience keyword variants; content is differentiated from generic feature pages; internal links connect use-case pages to relevant feature pages.
+Check whether the site has dedicated use-case or persona-specific pages — e.g. "/for-marketing-teams", "/for-agencies", "/project-management-for-remote-teams". Check: pages target specific audience keyword variants; content is differentiated from generic feature pages; internal links connect use-case pages to relevant feature pages.
 
 **SaaS-specific context:** Use-case pages target long-tail awareness searches by specific buyer types. They also improve conversion by speaking directly to the visitor's context rather than presenting a generic product overview.
 
@@ -866,10 +845,9 @@ AI checks whether the site has dedicated use-case or persona-specific pages — 
 ---
 
 ### #32 — Blog / Content Presence ◆
-**Tool:** AI — sitemap analysis; identify /blog, /resources, /articles
 
 **How to check:**  
-AI checks whether a blog or content hub exists, how many articles are published, when the most recent article was published, and whether blog content links to relevant product pages.
+Check whether a blog or content hub exists, how many articles are published, when the most recent article was published, and whether blog content links to relevant product pages.
 
 **Scoring logic:**
 
@@ -1124,10 +1102,9 @@ Search 3–5 of the client's primary non-branded keywords. Note which websites c
 ---
 
 ### #42 — Signup / Trial Flow Friction ★
-**Tool:** AI — fetched HTML of trial/signup page; manual spot-check
 
 **How to check:**  
-AI reviews the trial/signup page for friction indicators: number of required form fields (>5 is high friction for a trial); requirement for credit card before trial; unclear benefit statement on the form page; social login options present.
+Review the trial/signup page for friction indicators: number of required form fields (>5 is high friction for a trial); requirement for credit card before trial; unclear benefit statement on the form page; social login options present.
 
 **SaaS-specific context:** Every additional form field reduces signup conversion. Credit card requirements can reduce trial starts by 20–40%. From an SEO perspective, if organic traffic converts to trials at a low rate, the ROI of the entire SEO investment is diminished.
 
@@ -1150,10 +1127,9 @@ AI reviews the trial/signup page for friction indicators: number of required for
 ---
 
 ### #43 — Page Layout & Readability ★
-**Tool:** AI — fetched HTML
 
 **How to check:**  
-AI reviews paragraph length, use of headings to break up content, bullet points for feature lists, whitespace, and text contrast. Flags pages with long unbroken text blocks, poor visual hierarchy, or dense feature descriptions without scannable structure.
+Review paragraph length, use of headings to break up content, bullet points for feature lists, whitespace, and text contrast. Flag pages with long unbroken text blocks, poor visual hierarchy, or dense feature descriptions without scannable structure.
 
 **Scoring logic:**
 
@@ -1201,10 +1177,9 @@ AI reviews paragraph length, use of headings to break up content, bullet points 
 ---
 
 ### #45 — Accessibility Basics ★
-**Tool:** AI — fetched HTML
 
 **How to check:**  
-AI checks for: `alt` attributes on images; form inputs have associated labels; colour contrast (inferred from style/CSS); skip-to-content link present; `lang` attribute on `<html>` element.
+Check for: `alt` attributes on images; form inputs have associated labels; colour contrast (inferred from style/CSS); skip-to-content link present; `lang` attribute on `<html>` element.
 
 **Scoring logic:**
 
@@ -1225,7 +1200,6 @@ AI checks for: `alt` attributes on images; form inputs have associated labels; c
 ---
 
 ### #46 — Overall Conversion Funnel Coherence ◆
-**Tool:** AI — cross-page analysis; manual spot-check of the full organic journey
 
 **How to check:**  
 Manual trace of a representative organic journey: awareness blog post → feature page → pricing page → trial signup. At each step, check: is there a logical next step? Is the CTA stage-appropriate? Is messaging consistent? Is the internal link architecture guiding users forward?
