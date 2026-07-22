@@ -13,10 +13,10 @@
 
 Markdown source files detailing every specific check and point evaluated in each audit type:
 
-- [E-commerce Audit Breakdown](https://illucrum.com/static/md/ecommerce_audit.md): Complete point-by-point checklist for E-commerce SEO audits.
-- [SaaS Audit Breakdown](https://illucrum.com/static/md/saas_audit.md): Complete point-by-point checklist for SaaS SEO audits.
-- [General Website Audit Breakdown](https://illucrum.com/static/md/website_audit.md): Complete point-by-point checklist for general SEO audits.
-- [Technical Audit Breakdown](https://illucrum.com/static/md/technical_audit.md): Complete point-by-point checklist for Technical-only SEO audits.
+- [E-commerce Audit Breakdown](https://illucrum.com/static/md/ecommerce_audit.txt): Complete point-by-point checklist for E-commerce SEO audits.
+- [SaaS Audit Breakdown](https://illucrum.com/static/md/saas_audit.txt): Complete point-by-point checklist for SaaS SEO audits.
+- [General Website Audit Breakdown](https://illucrum.com/static/md/website_audit.txt): Complete point-by-point checklist for general SEO audits.
+- [Technical Audit Breakdown](https://illucrum.com/static/md/technical_audit.txt): Complete point-by-point checklist for Technical-only SEO audits.
 
 ## Company & Information
 
