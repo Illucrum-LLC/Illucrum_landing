@@ -134,6 +134,9 @@
   --maxw-narrow: 680px;
   --section: clamp(3rem, 8vw, 5rem);
 
+  /* Fixed deep-green contrast tokens, used by the optional .dark
+     band / .featured card treatment below (section 30), plus the
+     nav CTA fill and .bento/.checklist accents (section 31). */
   --deep: #1f2b1c;
   --deep-2: #33452c;
   --on-deep: #edf5e6;
@@ -246,6 +249,10 @@ h6 {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-muted);
+}
+
+ul + h3 {
+  margin-top: 2rem;
 }
 
 /* <em> inside headings = green accent. */
