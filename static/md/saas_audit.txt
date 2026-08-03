@@ -2,7 +2,6 @@
 ### v1.0 — SaaS-specialised audit: funnel architecture, trial page SEO, programmatic SEO, JavaScript rendering
 
 **Prepared for:** Szymon Kokot / Illucrum  
-**Purpose:** For each of the SaaS audit points — automation mode, tool, scoring instructions, and ready-to-use standard messages.
 **Audit tiers:** Basic ($297) · Full ($597)  
 **Applies to:** B2B and B2C SaaS, software products with trial/demo/freemium models
 

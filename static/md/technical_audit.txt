@@ -2,7 +2,6 @@
 ### v1.0 — Standalone technical audit: crawlability, indexation, rendering, speed, security, structured data
 
 **Prepared for:** Szymon Kokot / Illucrum
-**Purpose:** For each technical audit point — mode, tool, how-to-check instructions, scoring, and ready-to-use standard messages.
 **Audit tiers:** One tier only, $197
 **Applies to:** Any site. This is the deep technical layer, isolated from on-page, keyword, content and conversion work.
 
@@ -772,8 +771,6 @@
 1. Check that sensitive paths aren't publicly exposed or indexable (e.g. staging URLs, directory listings, backup/config files, exposed admin)
 2. Confirm no API keys, credentials, or internal notes are visible in the page source or exposed JSON/config
 3. Flag anything that should be access-controlled but isn't
-
-> **Illucrum internal note:** this exact check is why our own tools must never ship with live API keys embedded — see the audit-tool remediation. Apply the same standard to clients.
 
 **How to score:**
 

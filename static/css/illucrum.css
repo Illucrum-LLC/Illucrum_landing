@@ -191,6 +191,7 @@ a {
 }
 a:hover {
   opacity: 0.8;
+  cursor: pointer;
 }
 
 /* Inline anchors in body copy get a soft underline. */

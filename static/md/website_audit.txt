@@ -2,7 +2,6 @@
 ### v3.0 — PageSpeed automated, Content Depth check redefined, tools finalised
 
 **Prepared for:** Szymon Kokot / Illucrum  
-**Purpose:** For each of the 52 audit points — automation mode, tool, scoring instructions, and ready-to-use standard messages.
 **Audit tiers:** Basic ($297) · Full ($597)  
 
 ---

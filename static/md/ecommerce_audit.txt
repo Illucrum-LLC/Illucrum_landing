@@ -1,8 +1,7 @@
 # Illucrum — E-Commerce SEO Audit: Point-by-Point Scoring Guide
 ### v1.0 — Platform-Aware E-Commerce Edition (Shopify, WooCommerce, Magento, BigCommerce)
 
-**Prepared for:** Szymon Kokot / Illucrum  
-**Purpose:** For each of the 46 e-commerce audit points; automation mode, tool, scoring instructions, and ready-to-use standard messages.  
+**Prepared for:** Szymon Kokot / Illucrum   
 **Audit tiers:** Basic ($297) · Full ($597)  
 **Applies to:** Online stores on any platform; Shopify, WooCommerce, Magento, BigCommerce, Squarespace Commerce, custom-built and others
 
