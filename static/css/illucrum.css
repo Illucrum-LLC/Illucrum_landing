@@ -1343,8 +1343,8 @@ body > footer > section > div {
 }
 
 body > footer > section > div > a > img {
-  width: 3rem;
-  height: auto;
+  width: 3rem !important;
+  height: auto !important;
 }
 
 /* Copyright strip (last child <small>). */
@@ -1887,4 +1887,11 @@ section > ul.checklist > li > h3::before {
 }
 main > section.dark > ul.checklist > li > h3::before {
   background: var(--on-deep-accent);
+}
+
+/* iframes */
+iframe {
+  display: block;
+  margin: auto;
+  border: none;
 }
