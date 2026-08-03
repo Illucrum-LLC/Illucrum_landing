@@ -1,12 +1,12 @@
 # Illucrum
 
-> Illucrum provides specialized SEO audits for SaaS, E-commerce, and general websites, offered in Basic and Full tiers, as well as standalone Technical SEO Audits.
+> Illucrum provides specialized SEO audits for SaaS, E-commerce, and general websites, as well as standalone Technical SEO Audits.
 
 ## Core Services & Products
 
-- [SaaS SEO Audit](https://illucrum.com/audits/saas-seo-audit): SEO audit tailored specifically for B2B and B2C SaaS platforms (Basic & Full tiers).
-- [E-commerce SEO Audit](https://illucrum.com/audits/ecommerce-seo-audit/): Comprehensive SEO audit designed for online stores and catalog architecture (Basic & Full tiers).
-- [General SEO Audit](https://illucrum.com/audits/seo-audit): All-around SEO audit for general websites and businesses (Basic & Full tiers).
+- [SaaS SEO Audit](https://illucrum.com/audits/saas-seo-audit): SEO audit tailored specifically for B2B and B2C SaaS platforms.
+- [E-commerce SEO Audit](https://illucrum.com/audits/ecommerce-seo-audit/): Comprehensive SEO audit designed for online stores and catalog architecture.
+- [General SEO Audit](https://illucrum.com/audits/seo-audit): All-around SEO audit for general websites and businesses.
 - [Technical SEO Audit](https://illucrum.com/audits/technical-seo-audit): Specialized single-tier audit focused strictly on technical performance, crawlability, and indexing.
 
 ## Audit Documentation & Breakdown
