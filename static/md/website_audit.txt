@@ -1,12 +1,9 @@
 # Illucrum — SEO Audit: Point-by-Point Automation & Scoring Guide
 ### v3.0 — PageSpeed automated, Content Depth check redefined, tools finalised
 
-**Prepared for:** Szymon Kokot / Illucrum  
-**Audit tiers:** Basic ($297) · Full ($597)  
+**Prepared for:** Szymon Kokot / Illucrum
 
 ---
-
-## Legend
 
 **Tool preference order:** PageSpeed Insights → SEOptimer → Google tools (GSC, Maps, Rich Results Test) → other free tools
 
@@ -16,7 +13,7 @@
 
 ---
 
-### #1 — Page Speed (Mobile & Desktop) ★
+### #1 — Page Speed (Mobile & Desktop)
 **Tool:** PageSpeed Insights API — `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url={clientURL}&strategy=mobile` + `&strategy=desktop`
 
 **How it works (automated):**
@@ -40,7 +37,7 @@ The tool calls the PageSpeed Insights API for both mobile and desktop strategies
 
 ---
 
-### #2 — Core Web Vitals (LCP, FID/INP, CLS) ◆
+### #2 — Core Web Vitals (LCP, FID/INP, CLS)
 **Tool:** PageSpeed Insights API — same call as #1, extracts Core Web Vitals from the response
 
 **How it works (automated):**
@@ -69,7 +66,7 @@ The PageSpeed API response includes Core Web Vitals data in the `loadingExperien
 
 ---
 
-### #3 — Mobile Friendliness ★
+### #3 — Mobile Friendliness
 **Tool:** Google Mobile-Friendly Test — `https://search.google.com/test/mobile-friendly?url={clientURL}`
 
 **How to score:**
@@ -92,7 +89,7 @@ The PageSpeed API response includes Core Web Vitals data in the `loadingExperien
 
 ---
 
-### #4 — HTTPS & SSL Certificate ★
+### #4 — HTTPS & SSL Certificate
 **Tool:** Auto — fetches URL and checks HTTPS status + certificate validity via `https://api.ssllabs.com/api/v3/`
 
 **How it works (automated):**
@@ -118,7 +115,7 @@ The tool checks two things automatically:
 
 ---
 
-### #5 — XML Sitemap ★
+### #5 — XML Sitemap
 **Tool:** Auto — fetches `{domain}/sitemap.xml` directly (and checks `robots.txt` for alternate sitemap location)
 
 **How it works (automated):**
@@ -146,7 +143,7 @@ The tool checks two things automatically:
 
 ---
 
-### #6 — Robots.txt ★
+### #6 — Robots.txt
 **Tool:** Auto — fetches `{domain}/robots.txt` directly
 
 **How it works (automated):**
@@ -172,7 +169,7 @@ The tool checks two things automatically:
 
 ---
 
-### #7 — Canonical Tags ★
+### #7 — Canonical Tags
 
 **How it works:**
 Fetch the homepage and all URLs from the sitemap. For each page, check:
@@ -200,7 +197,7 @@ Fetch the homepage and all URLs from the sitemap. For each page, check:
 
 ---
 
-### #8 — Structured Data / Schema ★
+### #8 — Structured Data / Schema
 
 **How it works**
 Parse all JSON-LD blocks from fetched pages and evaluate:
@@ -227,7 +224,7 @@ Parse all JSON-LD blocks from fetched pages and evaluate:
 
 ---
 
-### #9 — Crawl Errors & Index Coverage ◆
+### #9 — Crawl Errors & Index Coverage
 **Tool:** Google Search Console — `https://search.google.com/search-console`
 
 **How to check:**
@@ -254,7 +251,7 @@ Parse all JSON-LD blocks from fetched pages and evaluate:
 
 ---
 
-### #10 — Redirect Chains & 4xx Errors ◆
+### #10 — Redirect Chains & 4xx Errors
 **Tool:** SEOptimer — `https://www.seoptimer.com/{domain}`
 
 **How to check:**
@@ -280,7 +277,7 @@ Parse all JSON-LD blocks from fetched pages and evaluate:
 
 ---
 
-### #11 — Duplicate Content / Thin Pages ◆
+### #11 — Duplicate Content / Thin Pages
 **Tool:** SEOptimer — `https://www.seoptimer.com/{domain}`
 
 **How to check:**
@@ -306,7 +303,7 @@ Parse all JSON-LD blocks from fetched pages and evaluate:
 
 ---
 
-### #12 — Hreflang (Multilingual) ◆
+### #12 — Hreflang (Multilingual)
 
 **How it works:**
 Check for `<link rel="alternate" hreflang="...">` tags across all crawled pages and validate:
@@ -340,7 +337,7 @@ Check for `<link rel="alternate" hreflang="...">` tags across all crawled pages 
 ## Section 2 — On-Page SEO
 ---
 
-### #13 — Title Tag Optimisation ★
+### #13 — Title Tag Optimisation
 
 Check each page title for: presence, length (50–60 chars ideal), primary keyword placement (front-loaded), uniqueness across pages, and absence of keyword stuffing.
 
@@ -362,7 +359,7 @@ Check each page title for: presence, length (50–60 chars ideal), primary keywo
 
 ---
 
-### #14 — Meta Description ★
+### #14 — Meta Description
 
 Check: presence, length (130–160 chars), inclusion of a CTA or value statement, keyword relevance, and uniqueness across pages.
 
@@ -384,7 +381,7 @@ Check: presence, length (130–160 chars), inclusion of a CTA or value statement
 
 ---
 
-### #15 — Heading Structure (H1–H3) ★
+### #15 — Heading Structure (H1–H3)
 
 Check: presence of exactly one H1 per page, keyword inclusion in H1, logical heading hierarchy (no H3 before H2), use of secondary keywords in H2s, and no heading keyword stuffing.
 
@@ -406,7 +403,7 @@ Check: presence of exactly one H1 per page, keyword inclusion in H1, logical hea
 
 ---
 
-### #16 — Image Alt Text ★
+### #16 — Image Alt Text
 
 Find all `<img>` tags, check for `alt` attribute presence, evaluate quality (descriptive vs empty vs keyword-stuffed), and flag purely decorative images that should have `alt=""`.
 
@@ -428,7 +425,7 @@ Find all `<img>` tags, check for `alt` attribute presence, evaluate quality (des
 
 ---
 
-### #17 — Content Quality & Length ★
+### #17 — Content Quality & Length
 
 Evaluate: word count per page, topical depth and coverage, E-E-A-T signals (expertise, authoritativeness, trustworthiness), readability level, presence of thin or boilerplate content.
 
@@ -450,7 +447,7 @@ Evaluate: word count per page, topical depth and coverage, E-E-A-T signals (expe
 
 ---
 
-### #18 — Internal Linking ★
+### #18 — Internal Linking
 
 Parse all `<a href>` anchors, identify internal vs external links, check anchor text quality (descriptive vs "click here"), and flag pages with no inbound internal links (orphaned).
 
@@ -472,7 +469,7 @@ Parse all `<a href>` anchors, identify internal vs external links, check anchor 
 
 ---
 
-### #19 — URL Structure ◆
+### #19 — URL Structure
 
 Check each URL for: use of hyphens (not underscores), lowercase only, no dynamic parameters (e.g. `?id=123`), keyword inclusion in slug, appropriate length, and no stop words overloading the URL.
 
@@ -494,7 +491,7 @@ Check each URL for: use of hyphens (not underscores), lowercase only, no dynamic
 
 ---
 
-### #20 — Open Graph / Social Meta Tags ◆
+### #20 — Open Graph / Social Meta Tags
 
 Check for: `og:title`, `og:description`, `og:image`, `og:url`, `og:type`, and Twitter Card tags (`twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`).
 
@@ -516,7 +513,7 @@ Check for: `og:title`, `og:description`, `og:image`, `og:url`, `og:type`, and Tw
 
 ---
 
-### #21 — Content Freshness ◆
+### #21 — Content Freshness
 **Tool:** Google Search Console — `https://search.google.com/search-console`
 
 **How to check:**
@@ -542,7 +539,7 @@ Check for: `og:title`, `og:description`, `og:image`, `og:url`, `og:type`, and Tw
 
 ---
 
-### #22 — Keyword Placement & Density ◆
+### #22 — Keyword Placement & Density
 
 Infer the primary target keyword from page content/URL and checks its placement in: title tag, H1, first 100 words of body, at least one H2, image alt text, and meta description. Also check keyword density isn't above ~2% (over-optimisation risk).
 
@@ -568,7 +565,7 @@ Infer the primary target keyword from page content/URL and checks its placement 
 
 ---
 
-### #23 — Ranking Keywords Overview ★
+### #23 — Ranking Keywords Overview
 **Tool:** Google Search Console — `https://search.google.com/search-console`
 
 **How to check:**
@@ -594,7 +591,7 @@ Infer the primary target keyword from page content/URL and checks its placement 
 
 ---
 
-### #24 — Striking Distance Keywords (pos. 4–20) ★
+### #24 — Striking Distance Keywords (pos. 4–20)
 **Tool:** Google Search Console — `https://search.google.com/search-console`
 
 **How to check:**
@@ -620,7 +617,7 @@ Infer the primary target keyword from page content/URL and checks its placement 
 
 ---
 
-### #25 — Local SEO Keywords ★
+### #25 — Local SEO Keywords
 **Tool:** Google Search Console — `https://search.google.com/search-console`
 
 **How to check:**
@@ -647,7 +644,7 @@ Infer the primary target keyword from page content/URL and checks its placement 
 
 ---
 
-### #26 — Search Intent Alignment ◆
+### #26 — Search Intent Alignment
 
 Evaluate whether each page's format and content type matches the likely search intent behind its target keywords:
 - **Transactional intent** → should be a service/product page with CTAs
@@ -673,7 +670,7 @@ Evaluate whether each page's format and content type matches the likely search i
 
 ---
 
-### #27 — Keyword Gap vs Competitors ◆
+### #27 — Keyword Gap vs Competitors
 **Tool:** SEOptimer — `https://www.seoptimer.com/{domain}` + manual Google search
 
 **How to check:**
@@ -700,7 +697,7 @@ Evaluate whether each page's format and content type matches the likely search i
 
 ---
 
-### #28 — Branded vs Non-Branded Traffic Split ◆
+### #28 — Branded vs Non-Branded Traffic Split
 **Tool:** Google Search Console — `https://search.google.com/search-console`
 
 **How to check:**
@@ -732,7 +729,7 @@ Evaluate whether each page's format and content type matches the likely search i
 
 ---
 
-### #29 — Total Backlinks & Referring Domains ◆
+### #29 — Total Backlinks & Referring Domains
 **Tool:** Google Search Console — `https://search.google.com/search-console` (Links section)
 
 **How to check:** GSC → Links → Top linked pages + Total external links count. Note total linking domains.
@@ -753,7 +750,7 @@ Evaluate whether each page's format and content type matches the likely search i
 
 ---
 
-### #30 — Toxic / Spammy Backlinks ◆
+### #30 — Toxic / Spammy Backlinks
 **Tool:** Google Search Console — Links section + manual spot-check of linking domains
 
 **How to check:** GSC → Links → Top linking sites. Spot-check unfamiliar domains for spam signals (foreign language spam, link farms, adult sites).
@@ -774,7 +771,7 @@ Evaluate whether each page's format and content type matches the likely search i
 
 ---
 
-### #31 — Anchor Text Distribution ◆
+### #31 — Anchor Text Distribution
 **Tool:** Google Search Console — Top linking text (Links section)
 
 **How to check:** GSC → Links → Top linking anchor text. Note the breakdown of branded vs keyword vs generic anchors.
@@ -795,7 +792,7 @@ Evaluate whether each page's format and content type matches the likely search i
 
 ---
 
-### #32 — Lost & Gained Links (last 90 days) ◆
+### #32 — Lost & Gained Links (last 90 days)
 **Tool:** Google Search Console — Links section (limited) + manual tracking note
 
 **How to check:** GSC provides a snapshot but not historical trend. Make a note of the current referring domain count and compare to previous audit if available. Flag any sudden drops.
@@ -816,7 +813,7 @@ Evaluate whether each page's format and content type matches the likely search i
 
 ---
 
-### #33 — Competitor Link Gap ◆
+### #33 — Competitor Link Gap
 **Tool:** Manual research — compare GSC link profiles against competitor sites
 
 **How to check:** Note the number of referring domains for the client vs top 2–3 organic competitors (can use SEOptimer's free Domain Authority check for rough comparison). Calculate the gap.
@@ -841,7 +838,7 @@ Evaluate whether each page's format and content type matches the likely search i
 
 ---
 
-### #34 — Identify Top 3 Organic Competitors ★
+### #34 — Identify Top 3 Organic Competitors
 **Tool:** Google Search — `https://google.com`
 
 **How to check:** Search 3–5 of the client's primary service keywords. Note which websites consistently appear in the top 5 results. These are the true organic competitors (not necessarily business competitors).
@@ -852,7 +849,7 @@ Evaluate whether each page's format and content type matches the likely search i
 
 ---
 
-### #35 — Compare Authority Scores ★
+### #35 — Compare Authority Scores
 **Tool:** SEOptimer — `https://www.seoptimer.com/{domain}`
 
 **How to check:**
@@ -878,7 +875,7 @@ Evaluate whether each page's format and content type matches the likely search i
 
 ---
 
-### #36 — Top Pages Comparison ◆
+### #36 — Top Pages Comparison
 **Tool:** SEOptimer — `https://www.seoptimer.com/{domain}`
 
 **How to check:** Note which pages SEOptimer flags as strong for each competitor. Compare against the client's page inventory — what key page types do competitors have that the client doesn't?
@@ -899,7 +896,7 @@ Evaluate whether each page's format and content type matches the likely search i
 
 ---
 
-### #37 — Content Depth ◆
+### #37 — Content Depth
 **Tool:** Manual review — read key pages on the client's site
 
 **What this checks:**
@@ -936,7 +933,7 @@ This is an assessment of whether the client's existing pages go deep enough on t
 
 ---
 
-### #38 — Google Business Profile (GBP) Optimisation ★
+### #38 — Google Business Profile (GBP) Optimisation
 **Tool:** Google Maps — auto-searches business name from site metadata + generates direct review link
 
 **How it works:**
@@ -962,7 +959,7 @@ The tool extracts the business name from the homepage (title tag / schema) and a
 
 ---
 
-### #39 — NAP Consistency ★
+### #39 — NAP Consistency 
 
 **Scoring logic:**
 
@@ -982,7 +979,7 @@ The tool extracts the business name from the homepage (title tag / schema) and a
 
 ---
 
-### #40 — Local Citations ◆
+### #40 — Local Citations
 **Tool:** Whitespark Local Citation Finder (free tier) — `https://whitespark.ca/local-citation-finder/`
 
 **How to check:**
@@ -1009,7 +1006,7 @@ The tool extracts the business name from the homepage (title tag / schema) and a
 
 ---
 
-### #41 — Review Score & Recency ★
+### #41 — Review Score & Recency
 **Tool:** Google Maps — `https://www.google.com/maps/search/{business_name}`
 
 **How to check:**
@@ -1035,7 +1032,7 @@ The tool extracts the business name from the homepage (title tag / schema) and a
 
 ---
 
-### #42 — Local Schema on Site ◆
+### #42 — Local Schema on Site
 
 **Scoring logic:**
 
@@ -1059,7 +1056,7 @@ The tool extracts the business name from the homepage (title tag / schema) and a
 
 ---
 
-### #43 — Clear CTA on Key Pages ★
+### #43 — Clear CTA on Key Pages
 
 **Scoring logic:**
 
@@ -1079,7 +1076,7 @@ The tool extracts the business name from the homepage (title tag / schema) and a
 
 ---
 
-### #44 — Navigation & Site Structure ★
+### #44 — Navigation & Site Structure
 
 **Scoring logic:**
 
@@ -1099,7 +1096,7 @@ The tool extracts the business name from the homepage (title tag / schema) and a
 
 ---
 
-### #45 — Bounce Rate & Session Duration ◆
+### #45 — Bounce Rate & Session Duration
 **Tool:** Google Analytics 4 — `https://analytics.google.com`
 
 **How to check:**
@@ -1125,7 +1122,7 @@ The tool extracts the business name from the homepage (title tag / schema) and a
 
 ---
 
-### #46 — Intrusive Pop-ups / Interstitials ◆
+### #46 — Intrusive Pop-ups / Interstitials
 
 **Scoring logic:**
 
@@ -1153,7 +1150,7 @@ The tool extracts the business name from the homepage (title tag / schema) and a
 
 ---
 
-### #47 — Google AI Overview Presence ★
+### #47 — Google AI Overview Presence
 **Tool:** Google Search (logged-out / incognito) — `https://google.com`
 
 **How to check:**
@@ -1183,7 +1180,7 @@ The tool extracts the business name from the homepage (title tag / schema) and a
 
 ---
 
-### #48 — Answer Engine Visibility (ChatGPT / Perplexity / Gemini) ★
+### #48 — Answer Engine Visibility (ChatGPT / Perplexity / Gemini)
 **Tool:** ChatGPT (search mode), Perplexity, Google Gemini — direct queries
 
 **How to check:**
@@ -1210,7 +1207,7 @@ The tool extracts the business name from the homepage (title tag / schema) and a
 
 ---
 
-### #49 — Answer-Ready Content Structure ◆
+### #49 — Answer-Ready Content Structure
 **Tool:** Manual review of key pages + `view-source`
 
 **How to check:**
@@ -1237,7 +1234,7 @@ The tool extracts the business name from the homepage (title tag / schema) and a
 
 ---
 
-### #50 — Citation-Worthy Signals & E-E-A-T ◆
+### #50 — Citation-Worthy Signals & E-E-A-T
 **Tool:** Manual review of key pages
 
 **How to check:**
@@ -1264,7 +1261,7 @@ The tool extracts the business name from the homepage (title tag / schema) and a
 
 ---
 
-### #51 — AI-Focused Structured Data ◆
+### #51 — AI-Focused Structured Data
 **Tool:** Google Rich Results Test — `https://search.google.com/test/rich-results?url={url}` + Schema Markup Validator
 
 **How to check:**
@@ -1291,7 +1288,7 @@ The tool extracts the business name from the homepage (title tag / schema) and a
 
 ---
 
-### #52 — AI Crawler Access & llms.txt ★
+### #52 — AI Crawler Access & llms.txt
 **Tool:** Direct fetch — `{domain}/robots.txt` and `{domain}/llms.txt`
 
 **How to check:**
@@ -1318,21 +1315,19 @@ The tool extracts the business name from the homepage (title tag / schema) and a
 
 ---
 
----
-
 ## Audit Summary — E-Commerce Points by Section & Tier
 
-| Section | # Points | Basic ★ | Full ◆ |
+| Section | # Points |
 |---|---|---|---|
-| 1 — Technical SEO | 12 | 8 | 12 |
-| 2 — On-Page SEO | 10 | 6 | 10 |
-| 3 — Keyword opportunities | 6 | 3 | 6 |
-| 4 — Backlink profile | 5 | 0 | 5 |
-| 5 — Competitor analysis | 4 | 2 | 4 |
-| 6 — Local SEO | 5 | 3 | 5 |
-| 7 — UX & Conversion | 4 | 2 | 4 |
-| 8 — AI Search & Answer Engine Optimisation (GEO/AEO) | 6 | 3 | 6 |
-| **Total** | **52** | **27** | **52** |
+| 1 — Technical SEO | 12 |
+| 2 — On-Page SEO | 10 |
+| 3 — Keyword opportunities | 6 |
+| 4 — Backlink profile | 5 |
+| 5 — Competitor analysis | 4 |
+| 6 — Local SEO | 5 |
+| 7 — UX & Conversion | 4 |
+| 8 — AI Search & Answer Engine Optimisation (GEO/AEO) | 6 |
+| **Total** | **52** |
 
 ---
 

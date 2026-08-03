@@ -1,8 +1,7 @@
 # Illucrum — E-Commerce SEO Audit: Point-by-Point Scoring Guide
 ### v1.0 — Platform-Aware E-Commerce Edition (Shopify, WooCommerce, Magento, BigCommerce)
 
-**Prepared for:** Szymon Kokot / Illucrum   
-**Audit tiers:** Basic ($297) · Full ($597)  
+**Prepared for:** Szymon Kokot / Illucrum
 **Applies to:** Online stores on any platform; Shopify, WooCommerce, Magento, BigCommerce, Squarespace Commerce, custom-built and others
 
 ---
@@ -33,60 +32,60 @@ This audit treats the product catalogue as the primary SEO asset. Every section 
 
 ## Audit Section Map
 
-| # | Check | Tier | Section |
+| # | Check | Section |
 |---|---|---|---|
-| 1 | Page Speed (Mobile & Desktop) | ★ | Technical SEO |
-| 2 | Core Web Vitals (LCP, INP, CLS) | ★ | Technical SEO |
-| 3 | HTTPS & SSL Certificate | ★ | Technical SEO |
-| 4 | Mobile Responsiveness | ★ | Technical SEO |
-| 5 | XML Sitemap & Robots.txt | ★ | Technical SEO |
-| 6 | Canonical Tags & Duplicate URLs | ★ | Technical SEO |
-| 7 | URL Structure & Hierarchy | ★ | Technical SEO |
-| 8 | Structured Data / Product Schema | ★ | Technical SEO |
-| 9 | Pagination & Infinite Scroll | ★ | Technical SEO |
-| 10 | Tag & Filter Page Management | ★ | Technical SEO |
-| 11 | Redirect Chains & Broken Links | ◆ | Technical SEO |
-| 12 | Crawl Budget & Index Bloat | ◆ | Technical SEO |
-| 13 | Title Tags | ★ | On-Page SEO |
-| 14 | Meta Descriptions | ★ | On-Page SEO |
-| 15 | Heading Structure (H1-H3) | ★ | On-Page SEO |
-| 16 | Image Optimisation & Alt Text | ★ | On-Page SEO |
-| 17 | Internal Linking Architecture | ★ | On-Page SEO |
-| 18 | Category Page Content Quality | ★ | On-Page SEO |
-| 19 | Content Depth vs Competitors | ◆ | On-Page SEO |
-| 20 | Open Graph / Social Meta Tags | ◆ | On-Page SEO |
-| 21 | Product Page SEO Quality | ★ | Product & Catalogue SEO |
-| 22 | Product Description Depth | ★ | Product & Catalogue SEO |
-| 23 | Collection / Category Architecture | ★ | Product & Catalogue SEO |
-| 24 | Product Variant & Option Handling | ★ | Product & Catalogue SEO |
-| 25 | Out-of-Stock & Discontinued Product Strategy | ★ | Product & Catalogue SEO |
-| 26 | Faceted Navigation SEO | ◆ | Product & Catalogue SEO |
-| 27 | Product Image SEO | ◆ | Product & Catalogue SEO |
-| 28 | User-Generated Content (Reviews on Pages) | ◆ | Product & Catalogue SEO |
-| 29 | Current Ranking Keywords (Top 20) | ★ | E-Commerce Keyword Strategy |
-| 30 | Product & Category Keyword Coverage | ★ | E-Commerce Keyword Strategy |
-| 31 | Long-Tail & Modifier Keyword Opportunities | ★ | E-Commerce Keyword Strategy |
-| 32 | Quick-Win Keywords (pos. 4-20) | ★ | E-Commerce Keyword Strategy |
-| 33 | Keyword Gap vs Competitors | ◆ | E-Commerce Keyword Strategy |
-| 34 | Branded vs Non-Branded Traffic Split | ◆ | E-Commerce Keyword Strategy |
-| 35 | Identify Top 3 Organic Competitors | ★ | Competitor & SERP Analysis |
-| 36 | Compare Domain Authority | ★ | Competitor & SERP Analysis |
-| 37 | SERP Feature & Shopping Carousel Presence | ◆ | Competitor & SERP Analysis |
-| 38 | Content Gap Analysis | ◆ | Competitor & SERP Analysis |
-| 39 | Total Backlinks & Referring Domains | ◆ | Backlink Profile |
-| 40 | Toxic / Spammy Backlinks | ◆ | Backlink Profile |
-| 41 | Competitor Link Gap | ◆ | Backlink Profile |
-| 42 | Navigation & Site Architecture | ★ | UX & Conversion |
-| 43 | Cart & Checkout SEO Impact | ★ | UX & Conversion |
-| 44 | Trust Signals & Social Proof | ★ | UX & Conversion |
-| 45 | Page Layout & Readability | ★ | UX & Conversion |
-| 46 | Overall E-Commerce Conversion Funnel | ◆ | UX & Conversion |
-| 47 | Google AI Overview & Shopping AI Presence | ★ | AI Search (GEO/AEO) |
-| 48 | Answer Engine Product Recommendation Presence | ★ | AI Search (GEO/AEO) |
-| 49 | Product Structured Data for AI | ◆ | AI Search (GEO/AEO) |
-| 50 | Review & Rating Signal Strength for AI | ◆ | AI Search (GEO/AEO) |
-| 51 | Buying-Guide & Comparison Content | ◆ | AI Search (GEO/AEO) |
-| 52 | AI Crawler Access & Feed Health | ★ | AI Search (GEO/AEO) |
+| 1 | Page Speed (Mobile & Desktop) | Technical SEO |
+| 2 | Core Web Vitals (LCP, INP, CLS) | Technical SEO |
+| 3 | HTTPS & SSL Certificate | Technical SEO |
+| 4 | Mobile Responsiveness | Technical SEO |
+| 5 | XML Sitemap & Robots.txt | Technical SEO |
+| 6 | Canonical Tags & Duplicate URLs | Technical SEO |
+| 7 | URL Structure & Hierarchy | Technical SEO |
+| 8 | Structured Data / Product Schema | Technical SEO |
+| 9 | Pagination & Infinite Scroll | Technical SEO |
+| 10 | Tag & Filter Page Management | Technical SEO |
+| 11 | Redirect Chains & Broken Links | Technical SEO |
+| 12 | Crawl Budget & Index Bloat | Technical SEO |
+| 13 | Title Tags | On-Page SEO |
+| 14 | Meta Descriptions | On-Page SEO |
+| 15 | Heading Structure (H1-H3) | On-Page SEO |
+| 16 | Image Optimisation & Alt Text | On-Page SEO |
+| 17 | Internal Linking Architecture | On-Page SEO |
+| 18 | Category Page Content Quality | On-Page SEO |
+| 19 | Content Depth vs Competitors | On-Page SEO |
+| 20 | Open Graph / Social Meta Tags | On-Page SEO |
+| 21 | Product Page SEO Quality | Product & Catalogue SEO |
+| 22 | Product Description Depth | Product & Catalogue SEO |
+| 23 | Collection / Category Architecture | Product & Catalogue SEO |
+| 24 | Product Variant & Option Handling | Product & Catalogue SEO |
+| 25 | Out-of-Stock & Discontinued Product Strategy | Product & Catalogue SEO |
+| 26 | Faceted Navigation SEO | Product & Catalogue SEO |
+| 27 | Product Image SEO | Product & Catalogue SEO |
+| 28 | User-Generated Content (Reviews on Pages) | Product & Catalogue SEO |
+| 29 | Current Ranking Keywords (Top 20) | E-Commerce Keyword Strategy |
+| 30 | Product & Category Keyword Coverage | E-Commerce Keyword Strategy |
+| 31 | Long-Tail & Modifier Keyword Opportunities | E-Commerce Keyword Strategy |
+| 32 | Quick-Win Keywords (pos. 4-20) | E-Commerce Keyword Strategy |
+| 33 | Keyword Gap vs Competitors | E-Commerce Keyword Strategy |
+| 34 | Branded vs Non-Branded Traffic Split | E-Commerce Keyword Strategy |
+| 35 | Identify Top 3 Organic Competitors | Competitor & SERP Analysis |
+| 36 | Compare Domain Authority | Competitor & SERP Analysis |
+| 37 | SERP Feature & Shopping Carousel Presence | Competitor & SERP Analysis |
+| 38 | Content Gap Analysis | Competitor & SERP Analysis |
+| 39 | Total Backlinks & Referring Domains | Backlink Profile |
+| 40 | Toxic / Spammy Backlinks | Backlink Profile |
+| 41 | Competitor Link Gap | Backlink Profile |
+| 42 | Navigation & Site Architecture | UX & Conversion |
+| 43 | Cart & Checkout SEO Impact | UX & Conversion |
+| 44 | Trust Signals & Social Proof | UX & Conversion |
+| 45 | Page Layout & Readability | UX & Conversion |
+| 46 | Overall E-Commerce Conversion Funnel | UX & Conversion |
+| 47 | Google AI Overview & Shopping AI Presence | AI Search (GEO/AEO) |
+| 48 | Answer Engine Product Recommendation Presence | AI Search (GEO/AEO) |
+| 49 | Product Structured Data for AI | AI Search (GEO/AEO) |
+| 50 | Review & Rating Signal Strength for AI | AI Search (GEO/AEO) |
+| 51 | Buying-Guide & Comparison Content | AI Search (GEO/AEO) |
+| 52 | AI Crawler Access & Feed Health | AI Search (GEO/AEO) |
 
 ---
 
@@ -96,7 +95,7 @@ This audit treats the product catalogue as the primary SEO asset. Every section 
 
 ---
 
-### #1 — Page Speed (Mobile & Desktop) ★
+### #1 — Page Speed (Mobile & Desktop)
 **Tool:** PageSpeed Insights API — `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url={clientURL}&strategy=mobile` + `&strategy=desktop`
 
 **How it works (automated):**  
@@ -122,7 +121,7 @@ Calls the PageSpeed Insights API for both strategies. Extracts the **Performance
 
 ---
 
-### #2 — Core Web Vitals (LCP, INP, CLS) ★
+### #2 — Core Web Vitals (LCP, INP, CLS)
 **Tool:** PageSpeed Insights API — same call as #1, extracts Core Web Vitals from `loadingExperience` or `lighthouseResult`
 
 **How it works (automated):**  
@@ -153,7 +152,7 @@ Extracts LCP, INP, and CLS values. Compares each against Google's thresholds. Sc
 
 ---
 
-### #3 — HTTPS & SSL Certificate ★
+### #3 — HTTPS & SSL Certificate
 **Tool:** URL check — attempt HTTPS load, inspect redirect behaviour
 
 **How to check (automated):**  
@@ -179,7 +178,7 @@ The tool checks whether the site loads over HTTPS, whether HTTP redirects to HTT
 
 ---
 
-### #4 — Mobile Responsiveness ★
+### #4 — Mobile Responsiveness
 
 **How to check:**  
 Review the HTML for responsive meta viewport tag, CSS media queries, and touch-friendly element sizing. Cross-reference PageSpeed's mobile usability flags.
@@ -204,7 +203,7 @@ Review the HTML for responsive meta viewport tag, CSS media queries, and touch-f
 
 ---
 
-### #5 — XML Sitemap & Robots.txt ★
+### #5 — XML Sitemap & Robots.txt
 **Tool:** Auto — fetches `{domain}/sitemap.xml` and `{domain}/robots.txt`
 
 **How it works (automated):**
@@ -234,7 +233,7 @@ Review the HTML for responsive meta viewport tag, CSS media queries, and touch-f
 
 ---
 
-### #6 — Canonical Tags & Duplicate URLs ★
+### #6 — Canonical Tags & Duplicate URLs
 
 **How to check:**  
 Examine `<link rel="canonical">` tags across product pages, collection pages, and any pages accessible via multiple URL paths. Specifically check for the e-commerce duplicate content problem: products accessible via `/products/item-name` AND `/collections/collection-name/products/item-name`.
@@ -259,7 +258,7 @@ Examine `<link rel="canonical">` tags across product pages, collection pages, an
 
 ---
 
-### #7 — URL Structure & Hierarchy ★
+### #7 — URL Structure & Hierarchy
 
 **How to check:**  
 Analyze URL patterns for consistency, keyword inclusion, and logical hierarchy. Flags platform-forced patterns (Shopify's `/collections/` and `/products/` prefixes, WooCommerce's `/product-category/` paths), unnecessary depth, and parameter-heavy URLs.
@@ -282,7 +281,7 @@ Analyze URL patterns for consistency, keyword inclusion, and logical hierarchy. 
 
 ---
 
-### #8 — Structured Data / Product Schema ★
+### #8 — Structured Data / Product Schema
 
 **How to check:**  
 Scan page source for JSON-LD structured data. For product pages, validates `Product` schema including: `name`, `image`, `description`, `sku`, `brand`, `offers` (with `price`, `priceCurrency`, `availability`), and `aggregateRating` (if reviews exist). For category pages, checks for `CollectionPage` or `ItemList` schema. Also check for `BreadcrumbList` schema site-wide.
@@ -307,7 +306,7 @@ Scan page source for JSON-LD structured data. For product pages, validates `Prod
 
 ---
 
-### #9 — Pagination & Infinite Scroll ★
+### #9 — Pagination & Infinite Scroll
 
 **How to check:**  
 Examine category and collection pages for pagination implementation. Checks for: numbered pagination links, `rel="next"` / `rel="prev"` link elements (deprecated but still useful), `<a>` tags to subsequent pages (critical for crawlability), and detection of infinite scroll or "Load More" patterns that hide products from crawlers.
@@ -332,7 +331,7 @@ Examine category and collection pages for pagination implementation. Checks for:
 
 ---
 
-### #10 — Tag & Filter Page Management ★
+### #10 — Tag & Filter Page Management
 
 **How to check:**  
 Examine how the store handles tag-generated and filter-generated URLs. On Shopify, every tag within a collection creates a new indexable URL (e.g. `/collections/shoes/red`). On WooCommerce, product attribute filters generate parameter URLs. Checks for: `noindex` directives on thin tag pages, canonical tags pointing to parent category, and whether important filtered views have unique content or are thin duplicates.
@@ -357,7 +356,7 @@ Examine how the store handles tag-generated and filter-generated URLs. On Shopif
 
 ---
 
-### #11 — Redirect Chains & Broken Links ◆
+### #11 — Redirect Chains & Broken Links
 **Tool:** SEOptimer — crawl the site and check redirect paths and 4xx responses
 
 **How to check:**
@@ -385,7 +384,7 @@ Examine how the store handles tag-generated and filter-generated URLs. On Shopif
 
 ---
 
-### #12 — Crawl Budget & Index Bloat ◆
+### #12 — Crawl Budget & Index Bloat
 **Tool:** Google Search Console — Pages report + crawl stats
 
 **How to check:**
@@ -420,7 +419,7 @@ Examine how the store handles tag-generated and filter-generated URLs. On Shopif
 
 ---
 
-### #13 — Title Tags ★
+### #13 — Title Tags
 
 **How to check:**  
 Extract `<title>` tags from multiple page types. Evaluate: uniqueness across pages, length (50-60 characters), primary keyword inclusion, and whether product titles include key buying modifiers (brand, size, colour, material). Flags template-generated titles that repeat the same format without variation.
@@ -443,7 +442,7 @@ Extract `<title>` tags from multiple page types. Evaluate: uniqueness across pag
 
 ---
 
-### #14 — Meta Descriptions ★
+### #14 — Meta Descriptions
 
 **How to check:**  
 Extract meta descriptions from homepage, category pages, and sample product pages. Evaluate: presence, uniqueness, length (120-160 characters), inclusion of a value proposition or call-to-action, and whether they contain product-specific information (price range, free shipping, key features).
@@ -466,7 +465,7 @@ Extract meta descriptions from homepage, category pages, and sample product page
 
 ---
 
-### #15 — Heading Structure (H1-H3) ★
+### #15 — Heading Structure (H1-H3)
 
 **How to check:**  
 Analyze heading hierarchy across product pages, category pages, and the homepage. Check: exactly one H1 per page, H1 contains primary keyword, logical H2/H3 nesting, and whether product pages use headings to structure descriptions (features, specifications, reviews sections).
@@ -489,7 +488,7 @@ Analyze heading hierarchy across product pages, category pages, and the homepage
 
 ---
 
-### #16 — Image Optimisation & Alt Text ★
+### #16 — Image Optimisation & Alt Text
 
 **How to check:**  
 Check product and category pages for: `alt` attributes on all images (especially product photos), descriptive alt text (not just filenames like "IMG_3421.jpg"), next-gen image formats (WebP, AVIF), proper sizing (not serving 4000px images in 400px containers), and lazy loading implementation on below-fold images.
@@ -514,7 +513,7 @@ Check product and category pages for: `alt` attributes on all images (especially
 
 ---
 
-### #17 — Internal Linking Architecture ★
+### #17 — Internal Linking Architecture
 
 **How to check:**  
 Map internal links from the homepage, category pages, and product pages. Evaluate: whether the homepage links to main categories, whether category pages link to subcategories and products, whether product pages cross-link to related products, and whether blog/content pages link to relevant product or category pages.
@@ -537,7 +536,7 @@ Map internal links from the homepage, category pages, and product pages. Evaluat
 
 ---
 
-### #18 — Category Page Content Quality ★
+### #18 — Category Page Content Quality
 
 **How to check:**  
 Evaluate category page content beyond just the product grid. Check for: introductory text above or below the product grid (minimum 100-200 words), keyword-rich category descriptions, buying guides or FAQ sections on category pages, and whether the page provides context that helps both shoppers and search engines understand the category.
@@ -562,7 +561,7 @@ Evaluate category page content beyond just the product grid. Check for: introduc
 
 ---
 
-### #19 — Content Depth vs Competitors ◆
+### #19 — Content Depth vs Competitors
 **Tool:** Google Search — compare top-ranking pages for target keywords
 
 **How to check:**
@@ -589,7 +588,7 @@ Evaluate category page content beyond just the product grid. Check for: introduc
 
 ---
 
-### #20 — Open Graph / Social Meta Tags ◆
+### #20 — Open Graph / Social Meta Tags
 
 **How to check:**  
 Scan for Open Graph tags (`og:title`, `og:description`, `og:image`, `og:type`, `og:url`) and Twitter Card meta tags. For product pages, check whether `og:image` points to the primary product image and `og:type` is set to `product`.
@@ -620,7 +619,7 @@ Scan for Open Graph tags (`og:title`, `og:description`, `og:image`, `og:type`, `
 
 ---
 
-### #21 — Product Page SEO Quality ★
+### #21 — Product Page SEO Quality
 
 **How to check:**  
 Evaluate a sample of product pages for SEO fundamentals as a unit: unique title tag with product name + category keyword, unique meta description with key selling point, H1 matching the product title, product schema present, and canonical tag correctly self-referencing. This is a holistic product page quality check.
@@ -643,7 +642,7 @@ Evaluate a sample of product pages for SEO fundamentals as a unit: unique title 
 
 ---
 
-### #22 — Product Description Depth ★
+### #22 — Product Description Depth
 
 **How to check:**  
 Evaluates the quality and depth of product descriptions on a sample of pages. Check: word count (minimum 150-300 words for non-commodity products), unique content (not copy-pasted from manufacturer), structured information (features, benefits, specifications in separate sections), and whether descriptions address common buyer questions.
@@ -668,7 +667,7 @@ Evaluates the quality and depth of product descriptions on a sample of pages. Ch
 
 ---
 
-### #23 — Collection / Category Architecture ★
+### #23 — Collection / Category Architecture
 
 **How to check:**  
 Map the category hierarchy by analysing navigation menus, breadcrumb trails, and internal link patterns. Evaluate: depth of hierarchy (ideally 2-3 levels), logical grouping, whether important categories are accessible from the main navigation, and whether the hierarchy reflects how shoppers search for products.
@@ -693,7 +692,7 @@ Map the category hierarchy by analysing navigation menus, breadcrumb trails, and
 
 ---
 
-### #24 — Product Variant & Option Handling ★
+### #24 — Product Variant & Option Handling
 
 **How to check:**  
 Examine how product variants are handled. Check whether each variant creates a separate URL (and if so, whether canonicals are correct), whether variant selection changes the page URL, whether variant-specific images have alt text, and whether the page handles variants in a way that doesn't create duplicate content.
@@ -718,7 +717,7 @@ Examine how product variants are handled. Check whether each variant creates a s
 
 ---
 
-### #25 — Out-of-Stock & Discontinued Product Strategy ★
+### #25 — Out-of-Stock & Discontinued Product Strategy
 
 **How to check:**  
 Check how the store handles products that are out of stock or discontinued. Evaluate: whether out-of-stock products return 200 (good if temporary) or 404/410, whether there is a "notify when back in stock" option, whether discontinued product pages redirect to the parent category, and whether product pages are simply deleted (destroying any accumulated search authority).
@@ -743,7 +742,7 @@ Check how the store handles products that are out of stock or discontinued. Eval
 
 ---
 
-### #26 — Faceted Navigation SEO ◆
+### #26 — Faceted Navigation SEO
 
 **How to check:**  
 Examine category pages with filtering options (price range, brand, size, colour, material, rating). Check: whether each filter combination creates a crawlable URL, whether those URLs are canonicalised or noindexed, whether important filter combinations (e.g. "brand + category") have dedicated landing pages, and whether `robots.txt` or meta robots directives prevent excessive crawling of filter URLs.
@@ -768,7 +767,7 @@ Examine category pages with filtering options (price range, brand, size, colour,
 
 ---
 
-### #27 — Product Image SEO ◆
+### #27 — Product Image SEO
 
 **How to check:**  
 Perform a deep check of product image SEO beyond the basic alt text check in #16. Evaluate: descriptive filenames (not "IMG_3421.jpg"), multiple product angles with individual alt text, image sitemap presence or inclusion in main sitemap, structured data `image` field pointing to the primary product image, and whether images are optimised for Google Image Search and Google Shopping.
@@ -791,7 +790,7 @@ Perform a deep check of product image SEO beyond the basic alt text check in #16
 
 ---
 
-### #28 — User-Generated Content (Reviews on Pages) ◆
+### #28 — User-Generated Content (Reviews on Pages)
 
 **How to check:**  
 Check whether product pages include customer reviews directly on the page (not loaded via iframe or third-party widget that hides content from crawlers). Evaluate: whether review text is in the page HTML (not JavaScript-loaded), whether `AggregateRating` schema includes review count and average, and whether reviews add unique keyword-rich content to each product page.
@@ -822,7 +821,7 @@ Check whether product pages include customer reviews directly on the page (not l
 
 ---
 
-### #29 — Current Ranking Keywords (Top 20) ★
+### #29 — Current Ranking Keywords (Top 20)
 **Tool:** Google Search Console — `https://search.google.com/search-console`
 
 **How to check:**
@@ -849,7 +848,7 @@ Check whether product pages include customer reviews directly on the page (not l
 
 ---
 
-### #30 — Product & Category Keyword Coverage ★
+### #30 — Product & Category Keyword Coverage
 **Tool:** Google Search — check ranking for core product and category keywords
 
 **How to check:**
@@ -878,7 +877,7 @@ Check whether product pages include customer reviews directly on the page (not l
 
 ---
 
-### #31 — Long-Tail & Modifier Keyword Opportunities ★
+### #31 — Long-Tail & Modifier Keyword Opportunities
 **Tool:** Google Search suggestions, Google Search Console, SEOptimer
 
 **How to check:**
@@ -907,7 +906,7 @@ Check whether product pages include customer reviews directly on the page (not l
 
 ---
 
-### #32 — Quick-Win Keywords (pos. 4-20) ★
+### #32 — Quick-Win Keywords (pos. 4-20)
 **Tool:** Google Search Console
 
 **How to check:**
@@ -934,7 +933,7 @@ Check whether product pages include customer reviews directly on the page (not l
 
 ---
 
-### #33 — Keyword Gap vs Competitors ◆
+### #33 — Keyword Gap vs Competitors
 **Tool:** SEOptimer, Google Search — compare keyword visibility
 
 **How to check:**
@@ -961,7 +960,7 @@ Check whether product pages include customer reviews directly on the page (not l
 
 ---
 
-### #34 — Branded vs Non-Branded Traffic Split ◆
+### #34 — Branded vs Non-Branded Traffic Split
 **Tool:** Google Search Console
 
 **How to check:**
@@ -993,7 +992,7 @@ Check whether product pages include customer reviews directly on the page (not l
 
 ---
 
-### #35 — Identify Top 3 Organic Competitors ★
+### #35 — Identify Top 3 Organic Competitors
 **Tool:** Google Search
 
 **How to check:**
@@ -1012,7 +1011,7 @@ Research item; populate competitor comparison table in the report.
 
 ---
 
-### #36 — Compare Domain Authority ★
+### #36 — Compare Domain Authority
 **Tool:** SEOptimer — Domain Strength / SEO Score comparison
 
 **How to check:**
@@ -1038,7 +1037,7 @@ Research item; populate competitor comparison table in the report.
 
 ---
 
-### #37 — SERP Feature & Shopping Carousel Presence ◆
+### #37 — SERP Feature & Shopping Carousel Presence
 **Tool:** Google Search — inspect SERP layout for target keywords
 
 **How to check:**
@@ -1067,7 +1066,7 @@ Research item; populate competitor comparison table in the report.
 
 ---
 
-### #38 — Content Gap Analysis ◆
+### #38 — Content Gap Analysis
 **Tool:** Google Search — compare content types and coverage
 
 **How to check:**
@@ -1099,7 +1098,7 @@ Research item; populate competitor comparison table in the report.
 
 ---
 
-### #39 — Total Backlinks & Referring Domains ◆
+### #39 — Total Backlinks & Referring Domains
 **Tool:** SEOptimer or Moz Link Explorer
 
 **How to check:**
@@ -1125,7 +1124,7 @@ Research item; populate competitor comparison table in the report.
 
 ---
 
-### #40 — Toxic / Spammy Backlinks ◆
+### #40 — Toxic / Spammy Backlinks
 **Tool:** SEOptimer or Moz — review link quality
 
 **How to check:**
@@ -1151,7 +1150,7 @@ Research item; populate competitor comparison table in the report.
 
 ---
 
-### #41 — Competitor Link Gap ◆
+### #41 — Competitor Link Gap
 **Tool:** SEOptimer or Moz — compare link profiles
 
 **How to check:**
@@ -1183,7 +1182,7 @@ Research item; populate competitor comparison table in the report.
 
 ---
 
-### #42 — Navigation & Site Architecture ★
+### #42 — Navigation & Site Architecture
 
 **How to check:**  
 Analyze navigation structure for e-commerce best practices: mega menu or category-organised navigation, number of top-level items (5-8 for e-commerce), search bar prominence, breadcrumb navigation, and whether the navigation reflects the product category hierarchy.
@@ -1206,7 +1205,7 @@ Analyze navigation structure for e-commerce best practices: mega menu or categor
 
 ---
 
-### #43 — Cart & Checkout SEO Impact ★
+### #43 — Cart & Checkout SEO Impact
 
 **How to check:**  
 Evaluate the SEO impact of the cart and checkout process. Check: whether cart and checkout pages are noindexed (they should be), whether the checkout process forces users off the main domain, whether abandoned cart URLs create indexable thin pages, and whether the thank-you/confirmation page is noindexed.
@@ -1231,7 +1230,7 @@ Evaluate the SEO impact of the cart and checkout process. Check: whether cart an
 
 ---
 
-### #44 — Trust Signals & Social Proof ★
+### #44 — Trust Signals & Social Proof
 
 **How to check:**  
 Scan key pages for trust signals critical to e-commerce conversion: SSL/security badges, payment method icons, return/refund policy visibility, shipping information, customer review widgets, trust badges (e.g. Trustpilot, Google Customer Reviews), and contact information accessibility.
@@ -1256,7 +1255,7 @@ Scan key pages for trust signals critical to e-commerce conversion: SSL/security
 
 ---
 
-### #45 — Page Layout & Readability ★
+### #45 — Page Layout & Readability
 
 **How to check:**  
 Review page layout for e-commerce best practices: product image size and placement, "Add to Cart" button prominence, price visibility, product information hierarchy, mobile layout of product pages, and whether key buying information (price, availability, shipping) is visible without scrolling.
@@ -1279,7 +1278,7 @@ Review page layout for e-commerce best practices: product image size and placeme
 
 ---
 
-### #46 — Overall E-Commerce Conversion Funnel ◆
+### #46 — Overall E-Commerce Conversion Funnel
 
 **How to check:**  
 Manual trace of a representative organic buyer journey: category page from Google → product page → add to cart → checkout. At each step, check: is there a logical next action? Are related products suggested? Is pricing clear? Are trust signals visible at every stage? Does the funnel retain the shopper or create abandonment points?
@@ -1312,7 +1311,7 @@ Manual trace of a representative organic buyer journey: category page from Googl
 
 ---
 
-### #47 — Google AI Overview & Shopping AI Presence ★
+### #47 — Google AI Overview & Shopping AI Presence
 **Tool:** Google Search (logged-out / incognito) — `https://google.com`
 
 **How to check:**
@@ -1342,7 +1341,7 @@ Manual trace of a representative organic buyer journey: category page from Googl
 
 ---
 
-### #48 — Answer Engine Product Recommendation Presence ★
+### #48 — Answer Engine Product Recommendation Presence
 **Tool:** ChatGPT (search mode), Perplexity, Google Gemini — direct queries
 
 **How to check:**
@@ -1369,7 +1368,7 @@ Manual trace of a representative organic buyer journey: category page from Googl
 
 ---
 
-### #49 — Product Structured Data for AI ◆
+### #49 — Product Structured Data for AI
 **Tool:** Google Rich Results Test — `https://search.google.com/test/rich-results?url={url}` + Schema Markup Validator
 
 **How to check:**
@@ -1396,7 +1395,7 @@ Manual trace of a representative organic buyer journey: category page from Googl
 
 ---
 
-### #50 — Review & Rating Signal Strength for AI Synthesis ◆
+### #50 — Review & Rating Signal Strength for AI Synthesis
 **Tool:** On-page reviews + Google Shopping + third-party review platforms
 
 **How to check:**
@@ -1424,7 +1423,7 @@ Manual trace of a representative organic buyer journey: category page from Googl
 
 ---
 
-### #51 — Buying-Guide & Comparison Content ◆
+### #51 — Buying-Guide & Comparison Content
 **Tool:** Manual review of content/blog + site search
 
 **How to check:**
@@ -1451,7 +1450,7 @@ Manual trace of a representative organic buyer journey: category page from Googl
 
 ---
 
-### #52 — AI Crawler Access & Feed Health ★
+### #52 — AI Crawler Access & Feed Health
 **Tool:** Direct fetch — `{domain}/robots.txt`, `{domain}/llms.txt` + Google Merchant Center reference
 
 **How to check:**
@@ -1482,17 +1481,17 @@ Manual trace of a representative organic buyer journey: category page from Googl
 
 ## Audit Summary — E-Commerce Points by Section & Tier
 
-| Section | # Points | Basic ★ | Full ◆ |
+| Section | # Points |
 |---|---|---|---|
-| 1 — Technical SEO (E-Commerce Adapted) | 12 | 10 | 12 |
-| 2 — On-Page SEO (Product & Category) | 8 | 6 | 8 |
-| 3 — Product & Catalogue SEO | 8 | 5 | 8 |
-| 4 — E-Commerce Keyword Strategy | 6 | 4 | 6 |
-| 5 — Competitor & SERP Analysis | 4 | 2 | 4 |
-| 6 — Backlink Profile | 3 | 0 | 3 |
-| 7 — UX & Conversion (E-Commerce) | 5 | 4 | 5 |
-| 8 — AI Search & Answer Engine Optimisation (GEO/AEO) | 6 | 3 | 6 |
-| **Total** | **52** | **34** | **52** |
+| 1 — Technical SEO (E-Commerce Adapted) | 12 |
+| 2 — On-Page SEO (Product & Category) | 8 |
+| 3 — Product & Catalogue SEO | 8 |
+| 4 — E-Commerce Keyword Strategy | 6 |
+| 5 — Competitor & SERP Analysis | 4 |
+| 6 — Backlink Profile | 3 |
+| 7 — UX & Conversion (E-Commerce) | 5 |
+| 8 — AI Search & Answer Engine Optimisation (GEO/AEO) | 6 |
+| **Total** | **52** |
 
 ---
 
