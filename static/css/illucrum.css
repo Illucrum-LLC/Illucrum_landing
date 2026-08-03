@@ -1338,6 +1338,15 @@ body > footer > section > ul > li {
   border-bottom: 0;
 }
 
+body > footer > section > div {
+  display: flex;
+}
+
+body > footer > section > div > a > img {
+  width: 3rem;
+  height: auto;
+}
+
 /* Copyright strip (last child <small>). */
 body > footer > small {
   grid-column: 1 / -1;

@@ -4,4 +4,4 @@
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://www.googletagmanager.com/ https://www.redditstatic.com/ 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.illucrum.com; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://www.googletagmanager.com/ https://www.redditstatic.com/ https://widget.clutch.co/ 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://region1.google-analytics.com/g/collect https://api.illucrum.com https://pagead2.googlesyndication.com/; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';
