@@ -6,30 +6,6 @@
 
 ---
 
-## What Makes This Audit Different
-
-E-commerce sites face structural SEO challenges that generic audits miss entirely. Product pages generate duplicate content across collections. Category hierarchies create crawl traps through faceted navigation and tag pages. Platform-specific limitations (Shopify's rigid URL structure, WooCommerce's plugin bloat, Magento's indexation complexity) require checks that a standard 46-point audit cannot provide.
-
-This audit treats the product catalogue as the primary SEO asset. Every section is adapted to evaluate how well the store's architecture, content, and technical setup convert organic search traffic into product discovery and purchase. The backlink and local SEO sections from the generic audit are replaced with Product & Catalogue SEO and E-Commerce Keyword Strategy sections.
-
-**Removed vs Generic:**
-- Local SEO section (7 checks) replaced by **Product & Catalogue SEO** (8 checks)
-- Generic keyword section replaced by **E-Commerce Keyword Strategy** (6 checks)
-- Competitor analysis adapted for e-commerce SERP features (Shopping carousel, Product Knowledge Panels)
-- UX section adapted for cart, checkout, and trust signal evaluation
-
----
-
-## Legend
-
-**Tier availability:**
-- ★ = included in both **Basic** and **Full**
-- ◆ = **Full only**
-
-**Tool preference order:** PageSpeed Insights → Google tools (GSC, Rich Results Test, Merchant Center) → SEOptimer → other free tools
-
----
-
 ## Audit Section Map
 
 | # | Check | Section |
