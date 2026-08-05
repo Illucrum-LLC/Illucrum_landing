@@ -343,7 +343,7 @@
 
       var payload = {
         name: inputs.name.value.trim(),
-        company: inputs.company.value.trim(),
+        company: inputs.company.value.trim() + "-|- GEO!",
         website: normalizeWebsite(inputs.website.value),
         phone: inputs.phone.value.trim(),
         email: inputs.email.value.trim()
