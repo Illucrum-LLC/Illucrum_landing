@@ -5,152 +5,168 @@
   <!-- Home -->
   <url>
     <loc>https://illucrum.com/</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/"/>
   </url>
 
   <!-- Core pages -->
   <url>
-    <loc>https://illucrum.com/about</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://illucrum.com/about/</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/about"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/about"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/about"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/about/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/o-nas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/about/"/>
   </url>
   <url>
-    <loc>https://illucrum.com/audits</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://illucrum.com/audits/</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/audits"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/audits/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/audyty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/"/>
   </url>
   <url>
-    <loc>https://illucrum.com/pricing</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://illucrum.com/pricing/</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/pricing"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/pricing"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/cennik/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/pricing/"/>
   </url>
   <url>
-    <loc>https://illucrum.com/process</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://illucrum.com/process/</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/process"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/process"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/process"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/process/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/process/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/proces/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/process/"/>
   </url>
   <url>
-    <loc>https://illucrum.com/faq</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://illucrum.com/faq/</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/faq"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/faq"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/faq"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/faq/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/faq/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/faq/"/>
   </url>
   <url>
-    <loc>https://illucrum.com/seo-facts</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://illucrum.com/seo-facts/</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/seo-facts"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/seo-facts"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/seo-facts"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/seo-facts/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/seo-facts/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/fakty-seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/seo-facts/"/>
   </url>
 
   <!-- Audit service pages -->
   <url>
-    <loc>https://illucrum.com/audits/seo-audit</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://illucrum.com/audits/seo-audit/</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/seo-audit"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/audits/seo-audit"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/seo-audit"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/seo-audit/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/audits/seo-audit/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/audyty/audyt-seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/seo-audit/"/>
   </url>
   <url>
-    <loc>https://illucrum.com/audits/saas-seo-audit</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://illucrum.com/audits/saas-seo-audit/</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/saas-seo-audit"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/audits/saas-seo-audit"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/saas-seo-audit"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/saas-seo-audit/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/audits/saas-seo-audit/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/audyty/audyt-seo-dla-saas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/saas-seo-audit/"/>
   </url>
   <url>
-    <loc>https://illucrum.com/audits/ecommerce-seo-audit</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://illucrum.com/audits/ecommerce-seo-audit/</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/ecommerce-seo-audit"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/audits/ecommerce-seo-audit"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/ecommerce-seo-audit"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/ecommerce-seo-audit/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/audits/ecommerce-seo-audit/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/audyty/audyt-seo-dla-sklepow-internetowych/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/ecommerce-seo-audit/"/>
   </url>
   <url>
-    <loc>https://illucrum.com/audits/technical-seo-audit</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://illucrum.com/audits/technical-seo-audit/</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/technical-seo-audit"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/audits/technical-seo-audit"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/technical-seo-audit"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/technical-seo-audit/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/audits/technical-seo-audit/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/audyty/techniczny-audyt-seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/technical-seo-audit/"/>
   </url>
 
   <!-- Comparison pages -->
   <url>
-    <loc>https://illucrum.com/compare/saas-vs-generic-seo-audit</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://illucrum.com/compare/saas-vs-generic-seo-audit/</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/saas-vs-generic-seo-audit"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/compare/saas-vs-generic-seo-audit"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/compare/saas-vs-generic-seo-audit"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/saas-vs-generic-seo-audit/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/compare/saas-vs-generic-seo-audit/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/porownanie/audyt-seo-saas-a-standardowy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/compare/saas-vs-generic-seo-audit/"/>
   </url>
   <url>
-    <loc>https://illucrum.com/compare/ecommerce-vs-generic-seo-audit</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://illucrum.com/compare/ecommerce-vs-generic-seo-audit/</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/ecommerce-vs-generic-seo-audit"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/compare/ecommerce-vs-generic-seo-audit"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/compare/ecommerce-vs-generic-seo-audit"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/ecommerce-vs-generic-seo-audit/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/compare/ecommerce-vs-generic-seo-audit/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/porownanie/audyt-seo-sklepu-internetowego-a-standardowy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/compare/ecommerce-vs-generic-seo-audit/"/>
   </url>
   <url>
-    <loc>https://illucrum.com/compare/seo-audit-vs-diy</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://illucrum.com/compare/seo-audit-vs-diy/</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/seo-audit-vs-diy"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/compare/seo-audit-vs-diy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/compare/seo-audit-vs-diy"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/seo-audit-vs-diy/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/compare/seo-audit-vs-diy/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/porownanie/audyt-seo-a-diy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/compare/seo-audit-vs-diy/"/>
   </url>
   <url>
-    <loc>https://illucrum.com/compare/seo-audit-vs-seo-retainer</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://illucrum.com/compare/seo-audit-vs-seo-retainer/</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/seo-audit-vs-seo-retainer"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/compare/seo-audit-vs-seo-retainer"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/seo-audit-vs-seo-retainer/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/compare/seo-audit-vs-seo-retainer/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/porownanie/audyt-a-abonament/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/compare/seo-audit-vs-seo-retainer"/>
   </url>
   <url>
-    <loc>https://illucrum.com/compare/seo-audit-vs-seo-tool</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://illucrum.com/compare/seo-audit-vs-seo-tool/</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/seo-audit-vs-seo-tool"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/compare/seo-audit-vs-seo-tool"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/seo-audit-vs-seo-tool/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/eu/compare/seo-audit-vs-seo-tool/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/porownanie/audyt-seo-a-narzedzie/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/compare/seo-audit-vs-seo-tool"/>
   </url>
 </urlset>

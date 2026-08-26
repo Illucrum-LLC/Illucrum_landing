@@ -40,26 +40,27 @@
 
 <script defer src="/static/js/consent.js"></script>
 <script defer src="/static/js/lead-form.js"></script>
-<title>SEO Audit Pricing | Illucrum</title>
-<meta name="description" content="Transparent SEO audit pricing for startups and SMEs, from &euro;490 to &euro;1490. Three site-type audits plus a fixed-price technical audit. No discovery calls, no hidden fees.">
+<title>{{l.pricing.head.title_tag}}</title>
+<meta name="description" content="{{l.pricing.head.meta_description_prefix}} &euro;490 to &euro;1490. {{l.pricing.head.meta_description_suffix}}">
 
 <link rel="canonical" href="https://illucrum.com/pricing/">
-<link rel="alternate" hreflang="en-GB" href="https://illucrum.com/eu/pricing/">
 <link rel="alternate" hreflang="en-US" href="https://illucrum.com//pricing/">
+<link rel="alternate" hreflang="en-GB" href="https://illucrum.com/eu//pricing/">
+<link rel="alternate" hreflang="pl-PL" href="https://illucrum.com/pl//pricing/">
 <link rel="alternate" hreflang="x-default" href="https://illucrum.com/pricing/">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_GB">
-<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="LOCALE_ALT">
 <meta property="og:url" content="https://illucrum.com/eu/pricing/">
 <meta property="og:site_name" content="Illucrum">
-<meta property="og:title" content="SEO audit pricing">
-<meta property="og:description" content="Site-type audits plus a fixed-price technical audit. From &euro;490 to &euro;1490.">
+<meta property="og:title" content="{{l.pricing.head.social_title}}">
+<meta property="og:description" content="{{l.pricing.head.social_description_prefix}} &euro;490 to &euro;1490.">
 <meta property="og:image" content="https://illucrum.com/eu/static/img/og/pricing.png">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SEO audit pricing">
-<meta name="twitter:description" content="Site-type audits plus a fixed-price technical audit. From &euro;490 to &euro;1490.">
+<meta name="twitter:title" content="{{l.pricing.head.social_title}}">
+<meta name="twitter:description" content="{{l.pricing.head.social_description_prefix}} &euro;490 to &euro;1490.">
 <meta name="twitter:image" content="https://illucrum.com/eu/static/img/og/pricing.png">
 
 <script type="application/ld+json">
@@ -68,8 +69,8 @@
     "@type": "WebPage",
     "@id": "https://illucrum.com/pricing/#webpage",
     "url": "https://illucrum.com/pricing/"
-    "name": "SEO audit pricing",
-    "description": "Site-type audits plus a fixed-price technical audit. From &euro;490 to &euro;1490.",
+    "name": "{{l.pricing.head.social_title}}",
+    "description": "{{l.pricing.head.social_description_prefix}} &euro;490 to &euro;1490.",
     "isPartOf": { "@id": "https://illucrum.com/eu/#website" }
 }
 </script>
@@ -79,13 +80,13 @@
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://illucrum.com/eu/audits/saas-seo-audit/#service",
-  "serviceType": "SaaS SEO Audit",
-  "name": "SaaS SEO Audit",
+  "serviceType": "{{l.pricing.head.schema_saas_name}}",
+  "name": "{{l.pricing.head.schema_saas_name}}",
   "url": "https://illucrum.com/eu/audits/saas-seo-audit/",
   "provider": { "@id": "https://illucrum.com/eu/#organization" },
   "areaServed": "Worldwide",
   "offers": [
-    { "@type": "Offer", "name": "SaaS SEO Audit", "price": "1490", "priceCurrency": "EUR", "url": "https://illucrum.com/eu/pricing/#saas" }
+    { "@type": "Offer", "name": "{{l.pricing.head.schema_saas_name}}", "price": "1490", "priceCurrency": "EUR", "url": "https://illucrum.com/eu/pricing/#saas" }
   ]
 }
 </script>
@@ -95,13 +96,13 @@
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://illucrum.com/eu/audits/ecommerce-seo-audit/#service",
-  "serviceType": "E-commerce SEO Audit",
-  "name": "E-commerce SEO Audit",
+  "serviceType": "{{l.pricing.head.schema_ecommerce_name}}",
+  "name": "{{l.pricing.head.schema_ecommerce_name}}",
   "url": "https://illucrum.com/eu/audits/ecommerce-seo-audit/",
   "provider": { "@id": "https://illucrum.com/eu/#organization" },
   "areaServed": "Worldwide",
   "offers": [
-    { "@type": "Offer", "name": "E-commerce SEO Audit", "price": "1490", "priceCurrency": "EUR", "url": "https://illucrum.com/eu/pricing/#ecommerce" }
+    { "@type": "Offer", "name": "{{l.pricing.head.schema_ecommerce_name}}", "price": "1490", "priceCurrency": "EUR", "url": "https://illucrum.com/eu/pricing/#ecommerce" }
   ]
 }
 </script>
@@ -111,13 +112,13 @@
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://illucrum.com/eu/audits/seo-audit/#service",
-  "serviceType": "Website SEO Audit",
-  "name": "Website SEO Audit",
+  "serviceType": "{{l.pricing.head.schema_website_name}}",
+  "name": "{{l.pricing.head.schema_website_name}}",
   "url": "https://illucrum.com/eu/audits/seo-audit/",
   "provider": { "@id": "https://illucrum.com/eu/#organization" },
   "areaServed": "Worldwide",
   "offers": [
-    { "@type": "Offer", "name": "Website SEO Audit", "price": "1490", "priceCurrency": "EUR", "url": "https://illucrum.com/eu/pricing/#generic" }
+    { "@type": "Offer", "name": "{{l.pricing.head.schema_website_name}}", "price": "1490", "priceCurrency": "EUR", "url": "https://illucrum.com/eu/pricing/#generic" }
   ]
 }
 </script>
@@ -127,13 +128,13 @@
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://illucrum.com/eu/audits/technical-seo-audit/#service",
-  "serviceType": "Technical SEO Audit",
-  "name": "Technical SEO Audit",
+  "serviceType": "{{l.pricing.head.schema_technical_name}}",
+  "name": "{{l.pricing.head.schema_technical_name}}",
   "url": "https://illucrum.com/eu/audits/technical-seo-audit/",
   "provider": { "@id": "https://illucrum.com/eu/#organization" },
   "areaServed": "Worldwide",
   "offers": [
-    { "@type": "Offer", "name": "Technical SEO Audit", "price": "490", "priceCurrency": "EUR", "url": "https://illucrum.com/eu/pricing/#technical" }
+    { "@type": "Offer", "name": "{{l.pricing.head.schema_technical_name}}", "price": "490", "priceCurrency": "EUR", "url": "https://illucrum.com/eu/pricing/#technical" }
   ]
 }
 </script>
@@ -144,7 +145,7 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://illucrum.com/eu/" },
-    { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://illucrum.com/eu/pricing/" }
+    { "@type": "ListItem", "position": 2, "name": "{{l.pricing.head.breadcrumb_name}}", "item": "https://illucrum.com/eu/pricing/" }
   ]
 }
 </script>
@@ -154,25 +155,25 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Is there a discount if I book multiple audits at once?", "acceptedAnswer": { "@type": "Answer", "text": "Not as a standard policy. If you operate multiple distinct sites and want all of them audited, we can scope a multi-site engagement. The price then could be negotiable." } },
-    { "@type": "Question", "name": "Do you offer monthly retainers?", "acceptedAnswer": { "@type": "Answer", "text": "No. We don't sell monthly retainers; we don't think they make sense for most SMEs. If you want help implementing the audit findings, we scope that as a separate fixed-price project." } },
-    { "@type": "Question", "name": "How do payments work?", "acceptedAnswer": { "@type": "Answer", "text": "We agree the scope with you first. If you decide to go ahead, we send you an invoice payable by bank transfer and start work straight away. Once the report is finished and your payment has been received, we email you the PDF. We keep you posted on progress throughout. You can cancel before the report is delivered and you get your money back; after delivery the fee is non-refundable." } }
+    { "@type": "Question", "name": "{{l.pricing.faq.q1_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.pricing.faq.q1_answer}}" } },
+    { "@type": "Question", "name": "{{l.pricing.faq.q3_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.pricing.faq.q3_answer}}" } },
+    { "@type": "Question", "name": "{{l.pricing.faq.q4_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.pricing.faq.q4_answer}}" } }
   ]
 }
 </script>
 </head>
 <body>
 <nav>
-  <a href="https://illucrum.com/eu">
+  <a href="https://illucrum.com/eu/">
     <img src="/static/img/logo.png" alt="">
     <span>Illucrum</span>
   </a>
   <ul>
-    <li><a href="/audits">Audits</a></li>
-    <li><a href="/pricing">Pricing</a></li>
-    <li><a href="/process">Process</a></li>
-    <li><a href="/faq">FAQ</a></li>
-    <li><a href="/about">About</a></li>
+    <li><a href="/audits/">Audits</a></li>
+    <li><a href="/pricing/">Pricing</a></li>
+    <li><a href="/process/">Process</a></li>
+    <li><a href="/faq/">FAQ</a></li>
+    <li><a href="/about/">About</a></li>
     <li><a href="https://blog.illucrum.com">Blog</a></li>
     <li><a data-lead-open data-lead-source="header" data-lead-title="Contact form"
       data-lead-subtitle="Drop your details and we'll contact you.">
@@ -403,7 +404,7 @@
     </button>
   </nav>
 
-  <p>See the <a href="/audits/seo-audit">Website SEO audit in detail</a>.</p>
+  <p>See the <a href="/audits/seo-audit/">Website SEO audit in detail</a>.</p>
 </section>
 <section id="technical">
   <header>
@@ -465,7 +466,7 @@
     </button>
   </nav>
 
-  <p>See the <a href="/audits/technical-seo-audit">Technical SEO audit in detail</a>. Need strategy as well as engineering? A full audit includes the technical layer plus keywords, content, and competitors.</p>
+  <p>See the <a href="/audits/technical-seo-audit/">Technical SEO audit in detail</a>. Need strategy as well as engineering? A full audit includes the technical layer plus keywords, content, and competitors.</p>
 </section>
 <section id="faq">
   <header>
@@ -481,7 +482,7 @@
 
   <details open>
     <summary>Do you offer monthly retainers?</summary>
-    <p>No. We don't sell monthly retainers; we don't think they make sense for most SMEs. If you want help implementing the audit findings, we scope that as a separate fixed-price project. See <a href="/compare/seo-audit-vs-seo-retainer">audit vs retainer</a> for the full explanation.</p>
+    <p>No. We don't sell monthly retainers; we don't think they make sense for most SMEs. If you want help implementing the audit findings, we scope that as a separate fixed-price project. See <a href="/compare/seo-audit-vs-seo-retainer/">audit vs retainer</a> for the full explanation.</p>
   </details>
 
   <details open>
@@ -498,7 +499,7 @@
     <p>Send a short message with your site URL and the audit type you want. We'll confirm the scope and timeline within 24 hours.</p>
   </header>
 
-  <p><small>Curious about our offer? See <a href="/audits">the different audit types</a>.</small></p>
+  <p><small>Curious about our offer? See <a href="/audits/">the different audit types</a>.</small></p>
   <nav>
     <button type="button" data-lead-open data-lead-source="pricing" data-lead-title="Contact form"
       data-lead-subtitle="Drop your details and we'll contact you.">
@@ -525,43 +526,43 @@
   <section>
     <h5>Audits</h5>
     <ul>
-      <li><a href="/audits/saas-seo-audit">SaaS SEO audit</a></li>
-      <li><a href="/audits/ecommerce-seo-audit">E-commerce SEO audit</a></li>
-      <li><a href="/audits/seo-audit">Website SEO audit</a></li>
-      <li><a href="/audits/technical-seo-audit">Technical SEO audit</a></li>
+      <li><a href="/audits/saas-seo-audit/">SaaS SEO audit</a></li>
+      <li><a href="/audits/ecommerce-seo-audit/">E-commerce SEO audit</a></li>
+      <li><a href="/audits/seo-audit/">Website SEO audit</a></li>
+      <li><a href="/audits/technical-seo-audit/">Technical SEO audit</a></li>
     </ul>
   </section>
 
   <section>
     <h5>Compare</h5>
     <ul>
-      <li><a href="/compare/saas-vs-generic-seo-audit">SaaS vs Website</a></li>
-      <li><a href="/compare/ecommerce-vs-generic-seo-audit">E-commerce vs Website</a></li>
-      <li><a href="/compare/seo-audit-vs-seo-tool">Audit vs SEO tool</a></li>
-      <li><a href="/compare/seo-audit-vs-seo-retainer">Audit vs retainer</a></li>
-      <li><a href="/compare/seo-audit-vs-diy">Audit vs DIY</a></li>
+      <li><a href="/compare/saas-vs-generic-seo-audit/">SaaS vs Website</a></li>
+      <li><a href="/compare/ecommerce-vs-generic-seo-audit/">E-commerce vs Website</a></li>
+      <li><a href="/compare/seo-audit-vs-seo-tool/">Audit vs SEO tool</a></li>
+      <li><a href="/compare/seo-audit-vs-seo-retainer/">Audit vs retainer</a></li>
+      <li><a href="/compare/seo-audit-vs-diy/">Audit vs DIY</a></li>
     </ul>
   </section>
 
   <section>
     <h5>Company</h5>
     <ul>
-      <li><a href="/about">About</a></li>
-      <li><a href="/process">Process</a></li>
-      <li><a href="/pricing">Pricing</a></li>
-      <li><a href="/faq">FAQ</a></li>
-      <li><a href="/seo-facts">SEO facts</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/process/">Process</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/seo-facts/">SEO facts</a></li>
     </ul>
   </section>
 
   <section>
     <h5>Contact &amp; Legal</h5>
     <ul>
-      <li><a href="/legal/terms">Terms</a></li>
-      <li><a href="/legal/privacy">Privacy</a></li>
-      <li><a href="/legal/cookies">Cookies</a></li>
-      <li><a href="/legal/disclaimer">Disclaimer</a></li>
-      <li><a href="/legal/accessibility">Accessibility</a></li>
+      <li><a href="/legal/terms/">Terms</a></li>
+      <li><a href="/legal/privacy/">Privacy</a></li>
+      <li><a href="/legal/cookies/">Cookies</a></li>
+      <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+      <li><a href="/legal/accessibility/">Accessibility</a></li>
       <li><a href="#" data-consent-open>Manage cookies</a></li>
     </ul>
   </section>
@@ -570,6 +571,7 @@
     <span>&copy; Illucrum 2026 &middot; +48 515 983 261</span>
     <span>
       <a href="https://illucrum.com/" hreflang="en-us">US</a> &middot;
+      <a href="HREFLANG_PL_PL_URL" hreflang="en-pl">PL</a> &middot;
       <a href="https://illucrum.com/eu/" hreflang="en-gb">EU</a>
     </span>
   </small>

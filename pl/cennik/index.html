@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MRLGLHC5');</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+<title>{{l.cennik.head.title_tag}}</title>
+<meta name="description" content="{{l.cennik.head.meta_description_prefix}} &euro;490 to &euro;1490. {{l.cennik.head.meta_description_suffix}}">
+
+<link rel="canonical" href="https://illucrum.com/cennik/">
+<link rel="alternate" hreflang="en-US" href="https://illucrum.com//cennik/">
+<link rel="alternate" hreflang="en-GB" href="https://illucrum.com/eu//cennik/">
+<link rel="alternate" hreflang="pl-PL" href="https://illucrum.com/pl//cennik/">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com/cennik/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_PL">
+<meta property="og:locale:alternate" content="LOCALE_ALT">
+<meta property="og:url" content="https://illucrum.com/pl//cennik/">
+<meta property="og:site_name" content="Illucrum">
+<meta property="og:title" content="{{l.cennik.head.social_title}}">
+<meta property="og:description" content="{{l.cennik.head.social_description_prefix}} &euro;490 to &euro;1490.">
+<meta property="og:image" content="https://illucrum.com/pl//static/img/og/cennik.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{l.cennik.head.social_title}}">
+<meta name="twitter:description" content="{{l.cennik.head.social_description_prefix}} &euro;490 to &euro;1490.">
+<meta name="twitter:image" content="https://illucrum.com/pl//static/img/og/cennik.png">
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://illucrum.com/cennik/#webpage",
+    "url": "https://illucrum.com/cennik/"
+    "name": "{{l.cennik.head.social_title}}",
+    "description": "{{l.cennik.head.social_description_prefix}} &euro;490 to &euro;1490.",
+    "isPartOf": { "@id": "https://illucrum.com/pl//#website" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://illucrum.com/pl//audits/saas-seo-audit/#service",
+  "serviceType": "{{l.cennik.head.schema_saas_name}}",
+  "name": "{{l.cennik.head.schema_saas_name}}",
+  "url": "https://illucrum.com/pl//audits/saas-seo-audit/",
+  "provider": { "@id": "https://illucrum.com/pl//#organization" },
+  "areaServed": "Na cały świat",
+  "offers": [
+    { "@type": "Offer", "name": "{{l.cennik.head.schema_saas_name}}", "price": "1490", "priceCurrency": "EUR", "url": "https://illucrum.com/pl//cennik/#saas" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://illucrum.com/pl//audits/ecommerce-seo-audit/#service",
+  "serviceType": "{{l.cennik.head.schema_ecommerce_name}}",
+  "name": "{{l.cennik.head.schema_ecommerce_name}}",
+  "url": "https://illucrum.com/pl//audits/ecommerce-seo-audit/",
+  "provider": { "@id": "https://illucrum.com/pl//#organization" },
+  "areaServed": "Na cały świat",
+  "offers": [
+    { "@type": "Offer", "name": "{{l.cennik.head.schema_ecommerce_name}}", "price": "1490", "priceCurrency": "EUR", "url": "https://illucrum.com/pl//cennik/#ecommerce" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://illucrum.com/pl//audits/seo-audit/#service",
+  "serviceType": "{{l.cennik.head.schema_website_name}}",
+  "name": "{{l.cennik.head.schema_website_name}}",
+  "url": "https://illucrum.com/pl//audits/seo-audit/",
+  "provider": { "@id": "https://illucrum.com/pl//#organization" },
+  "areaServed": "Na cały świat",
+  "offers": [
+    { "@type": "Offer", "name": "{{l.cennik.head.schema_website_name}}", "price": "1490", "priceCurrency": "EUR", "url": "https://illucrum.com/pl//cennik/#generic" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://illucrum.com/pl//audits/technical-seo-audit/#service",
+  "serviceType": "{{l.cennik.head.schema_technical_name}}",
+  "name": "{{l.cennik.head.schema_technical_name}}",
+  "url": "https://illucrum.com/pl//audits/technical-seo-audit/",
+  "provider": { "@id": "https://illucrum.com/pl//#organization" },
+  "areaServed": "Na cały świat",
+  "offers": [
+    { "@type": "Offer", "name": "{{l.cennik.head.schema_technical_name}}", "price": "490", "priceCurrency": "EUR", "url": "https://illucrum.com/pl//cennik/#technical" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://illucrum.com/pl//" },
+    { "@type": "ListItem", "position": 2, "name": "{{l.cennik.head.breadcrumb_name}}", "item": "https://illucrum.com/pl//cennik/" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "{{l.cennik.faq.q1_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.cennik.faq.q1_answer}}" } },
+    { "@type": "Question", "name": "{{l.cennik.faq.q3_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.cennik.faq.q3_answer}}" } },
+    { "@type": "Question", "name": "{{l.cennik.faq.q4_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.cennik.faq.q4_answer}}" } }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="https://illucrum.com/pl//">
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+  </a>
+  <ul>
+    <li><a href="/audyty/">Audyty</a></li>
+    <li><a href="/cennik/">Cennik</a></li>
+    <li><a href="/proces/">Proces</a></li>
+    <li><a href="/faq/">FAQ</a></li>
+    <li><a href="/o-nas/">O nas</a></li>
+    <li><a href="https://blog.illucrum.com">Blog</a></li>
+    <li><a data-lead-open data-lead-source="header" data-lead-title="Kontakt"
+      data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
+      Skontaktuj się z nami
+    </a></li>
+  </ul>
+</nav>
+<header id="hero">
+  <small>Cennik</small>
+  <h1><em>Cennik</em> audytu SEO </h1>
+  <p>Oferujemy trzy audyty dostosowane do typu strony oraz czwarty, wyłącznie techniczny audyt SEO. Wszystkie ceny są ostateczne, nie ma żadnych ukrytych opłat ani prób sprzedaży droższych usług. Cenimy sobie prosty i przejrzysty model wyceny.</p>
+
+  <p><small>Skontaktuj się z nami</small></p>
+  <nav>
+    <button type="button" data-lead-open data-lead-source="pricing" data-lead-title="Kontakt"
+      data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
+      Skontaktuj się z nami
+    </button>
+  </nav>
+</header>
+
+<main>
+<section id="quick-answer">
+  <header>
+    <small>00 / Szybka odpowiedź</small>
+    <h2>Ile <em>kosztuje audyt SEO</em> w <em>2026</em>?</h2>
+    <p>Odpowiedź w formie polecanego fragmentu, napisana prostym językiem.</p>
+  </header>
+
+  <p>Audyt SEO Illucrum kosztuje między &euro;490 a &euro;1490 zależnie od rodzaju audytu.</p>
+</section>
+<section id="jump-nav">
+  <header>
+    <small>01 / Na tej stronie</small>
+    <h2>Przejdź do <em>specyficznego audytu</em></h2>
+    <p>Wybierz audyt po który przyszedłeś, lub przejdź od razu do FAQ cennika.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3><a href="#saas">Audyty SaaS</a></h3>
+      <p>Cennik dla B2B audytu SaaS.</p>
+      <p>Przejdź do <a href="#saas">Audyty SaaS</a></p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3><a href="#ecommerce">Audyty E-commerce</a></h3>
+      <p>Cennik dla audytu sklepów internetowych.</p>
+      <p>Przejdź do <a href="#ecommerce">Audyty E-commerce</a></p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3><a href="#generic">Audyty stron internetowych</a></h3>
+      <p>Cennik audytu stron internetowych ogólnego przeznaczenia.</p>
+      <p>Przejdź do <a href="#generic">Audyty stron internetowych</a></p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3><a href="#technical">Techniczny audyt</a></h3>
+      <p>Cennik ukierunkowanego audytu technicznego SEO, jedna stała cena.</p>
+      <p>Przejdź do <a href="#technical">Techniczny audyt</a></p>
+    </li>
+  </ul>
+</section>
+<section id="saas">
+  <header>
+    <small>02 / SaaS</small>
+    <h2><em>Cennik</em> audytu SEO dla SaaS</h2>
+    <p>Stworzony dla firm z sektora SaaS i firm oprogramowania, zawiera jedenaście sekcji. Obejmuje podstawy techniczne, on-page, słowa kluczowe na etapach lejka konwersji, strony rejestracji na wersje próbne oraz podstawy dotyczące funkcji i integracji, a także potencjał programistycznego SEO, analizę luk w treści oraz profil linków zwrotnych.</p>
+  </header>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>Cena</td>
+        <td><s>&euro;1490</s> <strong>&euro;990</strong> *</td>
+      </tr>
+      <tr>
+        <td>Testy</td>
+        <td>52 testów</td>
+      </tr>
+      <tr>
+        <td>Najlepsze dla</td>
+        <td>Aktywnych stron SaaS, przygotowanie do rundy finansowania lub zmiana platformy</td>
+      </tr>
+      <tr>
+        <td>Co zawiera</td>
+        <td>
+          <ul>
+            <li>52-punktowy audyt w jedenastu sekcjach</li>
+            <li>Rozmieszczenie słów kluczowych i dopasowanie do intencji wyszukiwania</li>
+            <li>Przegląd stron dotyczących funkcji, integracji oraz przypadków użycia / person</li>
+            <li>Ocena potencjału programistycznego SEO</li>
+            <li>Przegląd luk w treści oraz strategii blogowej</li>
+            <li>Analiza porównawcza treści konkurencji oraz możliwości w zakresie elementów rozszerzonych SERP (dla 3 głównych konkurentów)</li>
+            <li>Profil linków zwrotnych: domeny odsyłające, tekst kotwicy, luka w linkach konkurencji</li>
+            <li>Pełna gotowość do cytowania przez AI (obecność na G2, Capterra, ślad na Reddicie, treści gotowe do udzielania odpowiedzi, dane strukturalne o produkcie jako encji)</li>
+            <li>Przegląd spójności całego lejka konwersji</li>
+            <li>Pełny, uporządkowany według priorytetów plan działania wraz z uwagami wdrożeniowymi</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Dostawa</td>
+        <td>w ciągu 5 do 8 dni roboczych</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>* Zniżka oferowana pierwszym 10 klientów w zamian za opinię na <a href="https://clutch.co/profile/illucrum" target="_blank" rel="nofollow">clutch.co</a>. Zostało 9 ofert</p>
+  
+  <nav>
+    <button type="button" data-lead-open data-lead-source="pricing" data-lead-title="Kontakt"
+      data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
+      Skontaktuj się z nami
+    </button>
+  </nav>
+
+  <p>Zobacz <a href="/audyty/audyt-seo-dla-saas">Audyt SEO dla SaaS w szczegółach</a>.</p>
+</section>
+<section id="ecommerce">
+  <header>
+    <small>03 / E-commerce</small>
+    <h2><em>Cennik</em> audytu SEO dla E-commerce  </h2>
+    <p>Dla sklepów internetowych na Shopify, WooCommerce, Magento, BigCommerce i innych, zawierają osiem sekcji. Pokrywa fundamenty techniczne, produktu, katalogu, i słów kluczowych, plus profil linków zwrotnych, głębia nawigacji fasetowej, analiza SERP konkurencji oraz pełna warstwa wyszukiwania oparta na AI.</p>
+  </header>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>Cena</td>
+        <td><s>&euro;1490</s> <strong>&euro;990</strong> *</td>
+      </tr>
+      <tr>
+        <td>Testy</td>
+        <td>52 testów</td>
+      </tr>
+      <tr>
+        <td>Najlepsze dla</td>
+        <td>Aktywnych sklepów, przygotowanie do zmiany platformy lub faza szybkiego wzrostu</td>
+      </tr>
+      <tr>
+        <td>Co zawiera</td>
+        <td>
+          <ul>
+            <li>Pełny, 52-punktowy audyt obejmujący wszystkie osiem sekcji</li>
+            <li>Łańcuchy przekierowań, uszkodzone linki, budżet skanowania oraz przeindeksowanie stron</li>
+            <li>Głęboka analiza nawigacji fasetowej (kanonikalizacja, obsługa parametrów, budżet skanowania)</li>
+            <li>SEO obrazów produktów i treść recenzji na stronie (UGC)</li>
+            <li>Głębokość treści w porównaniu z konkurencją oraz analiza luki w słowach kluczowych</li>
+            <li>Profil linków zwrotnych: domeny odsyłające, toksyczne linki, luka w linkach konkurencji</li>
+            <li>Obecność w elementach rozszerzonych SERP oraz w karuzeli produktowej, plus analiza luki w treści</li>
+            <li>Pełna warstwa wyszukiwania AI (dane strukturalne produktu dla AI, siła sygnału recenzji, treści typu poradnik zakupowy)</li>
+            <li>Przegląd całego lejka konwersji w e-commerce</li>
+            <li>Pełny, uporządkowany według priorytetów plan działania wraz z uwagami wdrożeniowymi</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Dostawa</td>
+        <td>w ciągu 5 do 8 dni roboczych</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>* Zniżka oferowana pierwszym 10 klientów w zamian za opinię na <a href="https://clutch.co/profile/illucrum" target="_blank" rel="nofollow">clutch.co</a>. Zostało 9 ofert</p>
+
+  <nav>
+    <button type="button" data-lead-open data-lead-source="pricing" data-lead-title="Kontakt"
+      data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
+      Skontaktuj się z nami
+    </button>
+  </nav>
+
+  <p>Zobacz <a href="/audyty/audyt-seo-dla-sklepow-internetowych">Audyt SEO dla e-commerce w szczegółach</a>.</p>
+</section>
+<section id="generic">
+  <header>
+    <small>04 / Strona internetowa</small>
+    <h2><em>Cennik</em> audytu SEO dla Strony internetowej </h2>
+    <p>Ogólny audyt SEO dla małych firm, firm usługowych, blogów, stron informacyjnych oraz wszelkich witryn, które nie pasują do profilu SaaS lub e-commerce. 52 punkty rozmieszczone w ośmiu sekcjach i jedyny audyt z dedykowaną sekcją lokalnego SEO.</p>
+  </header>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>Cena</td>
+        <td><s>&euro;1490</s> <strong>&euro;990</strong> *</td>
+      </tr>
+      <tr>
+        <td>Testy</td>
+        <td>52 testów</td>
+      </tr>
+      <tr>
+        <td>Najlepsze dla</td>
+        <td>Dla blogów, lokalnych firm usługowych, przygotowania do zmiany platformy lub stron potrzebujących pełnej diagnozy</td>
+      </tr>
+      <tr>
+        <td>Co zawiera</td>
+        <td>
+          <ul>
+            <li>52-punktowy audyt w ośmiu sekcjach</li>
+            <li>Profil linków zwrotnych: domeny odsyłające, toksyczne linki, tekst kotwicy, linki utracone i pozyskane, luka w linkach konkurencji</li>
+            <li>Porównanie najlepszych podstron konkurencji oraz analiza głębokości treści (dla 3 głównych konkurentów)</li>
+            <li>Dopasowanie do intencji wyszukiwania, luka w słowach kluczowych oraz podział na frazy brandowe i niebrandowe</li>
+            <li>Struktura adresów URL, znaczniki meta sieci społecznościowych, świeżość treści oraz rozmieszczenie słów kluczowych</li>
+            <li>Lokalne cytowania i lokalne dane strukturalne </li>
+            <li>Sygnały zaangażowania oraz przegląd uciążliwych reklam pełnoekranowych</li>
+            <li>Warstwa wyszukiwania AI (treści gotowe do udzielania odpowiedzi, sygnały E-E-A-T, dane strukturalne zorientowane na AI)</li>
+            <li>Pełny, uporządkowany według priorytetów plan działania wraz z uwagami wdrożeniowymi</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Dostawa</td>
+        <td>w ciągu 5 do 8 dni roboczych</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>* Zniżka oferowana pierwszym 10 klientów w zamian za opinię na <a href="https://clutch.co/profile/illucrum" target="_blank" rel="nofollow">clutch.co</a>. Zostało 9 ofert</p>
+
+  <nav>
+    <button type="button" data-lead-open data-lead-source="pricing" data-lead-title="Kontakt"
+      data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
+      Skontaktuj się z nami
+    </button>
+  </nav>
+
+  <p>Zobacz <a href="/audyty/audyt-seo/">Audyt SEO dla strony internetowej w szczegółach</a>.</p>
+</section>
+<section id="technical">
+  <header>
+    <small>05 / Techniczne</small>
+    <h2><em>Cennik</em> technicznego audytu SEO</h2>
+    <p>Ukierunkowany, jednodyscyplinarny audyt warstwy inżynieryjnej: 36 punktów kontrolnych w dziewięciu obszarach, od zdolności do skanowania i renderowania, po wskaźniki Core Web Vitals, bezpieczeństwo oraz dostęp dla robotów indeksujących AI. Jedna stała cena.</p>
+  </header>
+
+  <table>
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>Techniczny Audyt SEO </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cena</td>
+        <td><s>&euro;490</s> <strong>&euro;290</strong> *</td>
+      </tr>
+      <tr>
+        <td>Testy</td>
+        <td>Wszystkie 36 testów</td>
+      </tr>
+      <tr>
+        <td>Najlepsze dla</td>
+        <td>Dla dużych, złożonych lub opartych w znacznym stopniu na JavaScript stron; kontrole po migracji; niewyjaśnione spadki indeksacji lub ruchu.</td>
+      </tr>
+      <tr>
+        <td>Co zawiera</td>
+        <td>
+          <ul>
+            <li>Skanowania i indeksacja (7 testów)</li>
+            <li>Architektura strony i adresy URL (5 testów)</li>
+            <li>Renderowanie i JavaScript (3 testy)</li>
+            <li>Szybkość i Core Web Vitals (5 testów)</li>
+            <li>Doświadczenie na urządzeniach mobilnych i wrażenia z korzystania ze strony (3 testy)</li>
+            <li>Bezpieczeństwo i HTTPS (4 testy)</li>
+            <li>Dane strukturalne i dyrektywy (3 testy)</li>
+            <li>Obsługa wersji międzynarodowych i parametrów (3 testy)</li>
+            <li>Dostęp maszyn i AI (3 testy)</li>
+            <li>Pełny, uporządkowany według priorytetów plan działania, każdy wynik poddany ocenie</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Dostawa</td>
+        <td>w ciągu 3 do 5 dni roboczych</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>* Zniżka oferowana pierwszym 10 klientów w zamian za opinię na <a href="https://clutch.co/profile/illucrum" target="_blank" rel="nofollow">clutch.co</a>. Zostało 9 ofert</p>
+
+  <nav>
+    <button type="button" data-lead-open data-lead-source="pricing" data-lead-title="Kontakt"
+      data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
+      Skontaktuj się z nami
+    </button>
+  </nav>
+
+  <p>Zobacz <a href="/audyty/techniczny-audyt-seo/">Techniczny audyt SEO w szczegółach </a>. Potrzebujesz strategii, a także inżynierii? Pełny audyt obejmuje warstwę techniczną oraz słowa kluczowe, treść i konkurencję.</p>
+</section>
+<section id="faq">
+  <header>
+    <small>06 / FAQ</small>
+    <h2><em>FAQ</em> o cenniku</h2>
+    <p>Pytania które przychodzą najczęściej o kosztach i zapłacie.</p>
+  </header>
+
+  <details open>
+    <summary>Czy jest zniżka jeśli zamówię wiele audytów jednocześnie?</summary>
+    <p>Nie jako standardowa polityka. Jeśli prowadzisz wiele różnych stron i chcesz, aby wszystkie zostały poddane audytowi, możemy ustalić zakres dla zlecenia wielostronowego. W takim przypadku cena może podlegać negocjacji.</p>
+  </details>
+
+  <details open>
+    <summary>Oferujecie miesięczny abonamnet?</summary>
+    <p>Nie. Nie sprzedajemy miesięcznych abonamentów; uważamy, że nie mają one sensu w przypadku większości MŚP. Jeśli chcesz uzyskać pomoc we wdrażaniu wniosków z audytu, określamy jej zakres jako osobny projekt o stałej cenie. Zobacz <a href="/porownanie/audyt-a-abonament/">audyt vs abonament</a> dla pełnego wyjaśnienia.</p>
+  </details>
+
+  <details open>
+    <summary>Jak działają płatności?</summary>
+    <p>Najpierw uzgadniamy z Tobą zakres. Jeśli zdecydujesz się kontynuować, wysyłamy Ci fakturę płatną przelewem bankowym i od razu rozpoczynamy pracę. Gdy raport jest gotowy, a Twoja płatność została otrzymana, wysyłamy Ci raport PDF drogą e-mailową. Przez cały czas informujemy Cię o postępach. Możesz zrezygnować przed dostarczeniem raportu i otrzymać zwrot pieniędzy; po dostarczeniu opłata nie podlega zwrotowi.</p>
+  </details>
+
+  <p><a href="/faq/#general">Przeczytaj całe FAQ</a>.</p>
+</section>
+<section id="cta">
+  <header>
+    <small>07 / Start</small>
+    <h2>Gotowy do <em>zamówienia?</em></h2>
+    <p>Wyślij krótką wiadomość z adresem URL Twojej strony i rodzajem audytu który chcesz. Potwierdzimy zakres i harmonogram w ciągu 24 godzin.</p>
+  </header>
+
+  <p><small>Ciekawy naszej oferty? Zobacz <a href="/audyty/">różne rodzaje audytu </a>.</small></p>
+  <nav>
+    <button type="button" data-lead-open data-lead-source="pricing" data-lead-title="Kontakt"
+      data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
+      Skontaktuj się z nami
+    </button>
+  </nav>
+</section>
+
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+    <p>Audyty SEO które pokażą Ci co dokładnie trzeba naprawić następnie.</p>
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40" data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img src="/static/img/social/linkedin.svg" alt="LinkeIn profile" /></a>
+      <a href="https://wa.me/48515983261" target="_blank" rel="nofollow"><img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg" alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Audyty</h5>
+    <ul>
+      <li><a href="/audyty/audyt-seo-dla-saas/">Audyty SEO dla SaaS</a></li>
+      <li><a href="/audyty/audyt-seo-dla-sklepow-internetowych/">Audyt SEO dla sklepów internetowych</a></li>
+      <li><a href="/audyty/audyt-seo/">Audyt SEO stron internetowych</a></li>
+      <li><a href="/audyty/techniczny-audyt-seo/">Techniczny audyt SEO</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Porównaj</h5>
+    <ul>
+      <li><a href="/porownanie/audyt-seo-saas-a-standardowy/">SaaS vs Website</a></li>
+      <li><a href="/porownanie/audyt-seo-sklepu-internetowego-a-standardowy/">E-commerce vs Strona internetowa</a></li>
+      <li><a href="/porownanie/audyt-seo-a-narzedzie/">Audyt vs narzędzie SEO</a></li>
+      <li><a href="/porownanie/audyt-a-abonament/">Audyt vs abonament</a></li>
+      <li><a href="/porownanie/audyt-seo-a-diy/">Audyt vs DIY</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Firma</h5>
+    <ul>
+      <li><a href="/about/">O nas</a></li>
+      <li><a href="/process/">Proces</a></li>
+      <li><a href="/pricing/">Cennik</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/seo-facts/">Fakty SEO</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Kontakt i informacje prawne</h5>
+    <ul>
+      <li><a href="/prawne/warunki/">Regulamin</a></li>
+      <li><a href="/prawne/prywatnosc/">Prywatność</a></li>
+      <li><a href="/prawne/ciasteczka/">Cookies</a></li>
+      <li><a href="/prawne/zastrzezenie/">Zastrzeżenie prawne</a></li>
+      <li><a href="/prawne/dostepnosc/">Dostępność</a></li>
+      <li><a href="#" data-consent-open>Zarządzaj plikami cookies.</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +48 515 983 261</span>
+    <span>
+      <a href="https://illucrum.com/" hreflang="en-us">US</a> &middot;
+      <a href="HREFLANG_PL_PL_URL" hreflang="en-pl">PL</a> &middot;
+      <a href="https://illucrum.com/eu/" hreflang="en-gb">EU</a>
+    </span>
+  </small>
+</footer>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRLGLHC5" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Używamy plików cookies" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">Używamy plików cookies</p>
+    <p class="ic-consent__body">Używamy plików cookies żeby strona pracowała, zrozmieć jak jest używana,i (tylko jeśli się zgodzisz) żeby pokazywać odpowiednie reklamy na Google i Reddit. Zawsze możesz zmienić twój wybór na stópce strony. <a href="/prawne/ciasteczka/">Polityka cookie</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Zaakceptuj wszystkie</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Akceptuj tylko niezbędne</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferencje</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Niezbędne</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Niezbędne">
+        <p class="ic-consent__pref-desc">Wymagane do funkjonowania strony. Nie można wyłączyć.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analityka</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analityka">
+        <p class="ic-consent__pref-desc">Pomaga nam zrozumieć jak użytkownicy użwają stronę (Analityka Google 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Reklama</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Reklama">
+        <p class="ic-consent__pref-desc">Pozwala nam mierzyć i personalizować Google Ads oraz Reddit Adds. </p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Zachowaj wybór</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

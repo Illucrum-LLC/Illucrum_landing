@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MRLGLHC5');</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+<title>{{l.faq.head.title_tag}}</title>
+<meta name="description" content="{{l.faq.head.meta_description}}">
+
+<link rel="canonical" href="https://illucrum.com/faq/">
+<link rel="alternate" hreflang="en-US" href="https://illucrum.com//{{faq}}/">
+<link rel="alternate" hreflang="en-GB" href="https://illucrum.com/eu//faq/">
+<link rel="alternate" hreflang="pl-PL" href="https://illucrum.com/pl//faq/">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com/faq/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_PL">
+<meta property="og:locale:alternate" content="LOCALE_ALT">
+<meta property="og:url" content="https://illucrum.com/pl//faq/">
+<meta property="og:site_name" content="Illucrum">
+<meta property="og:title" content="{{l.faq.head.social_title}}">
+<meta property="og:description" content="{{l.faq.head.social_description}}">
+<meta property="og:image" content="https://illucrum.com/pl//static/img/og/faq.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{l.faq.head.social_title}}">
+<meta name="twitter:description" content="{{l.faq.head.social_description}}">
+<meta name="twitter:image" content="https://illucrum.com/pl//static/img/og/faq.png">
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://illucrum.com/faq/#webpage",
+    "url": "https://illucrum.com/faq/",
+    "name": "{{l.faq.head.social_title}}",
+    "description": "{{l.faq.head.social_description}}.",
+    "isPartOf": { "@id": "https://illucrum.com/pl//#website" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://illucrum.com/pl//" },
+    { "@type": "ListItem", "position": 2, "name": "{{l.faq.head.breadcrumb_name}}", "item": "https://illucrum.com/pl//faq/" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "faqPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "{{l.faq.general.q1_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.general.q1_answer_prefix}} Illucrum {{l.faq.general.q1_answer_suffix}}" } },
+    { "@type": "Question", "name": "{{l.faq.general.q2_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.general.q2_answer_prefix}} Illucrum {{l.faq.general.q2_answer_mid1}} &euro;490 {{l.faq.general.q2_answer_mid2}} &euro;1490 {{l.faq.general.q2_answer_mid3}}" } },
+    { "@type": "Question", "name": "{{l.faq.general.q3_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.general.q3_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.general.q4_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.general.q4_answer_prefix}} Illucrum {{l.faq.general.q4_answer_suffix}}" } },
+    { "@type": "Question", "name": "{{l.faq.general.q5_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.general.q5_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.general.q6_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.head.general_q6_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.general.q7_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.general.q7_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.general.q8_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.general.q8_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.general.q9_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.general.q9_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.general.q10_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.general.q10_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.general.q11_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.general.q11_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.general.q12_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.general.q12_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.saas.q1_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.head.saas_q1_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.saas.q2_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.saas.q2_answer_prefix}} &euro;290 {{l.faq.saas.q2_answer_mid}} &euro;802." } },
+    { "@type": "Question", "name": "{{l.faq.saas.q3_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.head.saas_q3_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.saas.q4_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.head.saas_q4_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.head.saas_q5_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.head.saas_q5_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.saas.q6_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.saas.q6_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.saas.q7_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.head.saas_q7_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.saas.q8_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.head.saas_q8_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.saas.q9_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.saas.q9_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.saas.q10_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.saas.q10_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.ecommerce.q1_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.ecommerce.q1_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.ecommerce.q2_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.ecommerce.q2_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.ecommerce.q3_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.head.ecommerce_q3_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.ecommerce.q4_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.ecommerce.q4_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.ecommerce.q5_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.ecommerce.q5_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.ecommerce.q6_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.ecommerce.q6_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.ecommerce.q7_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.ecommerce.q7_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.ecommerce.q8_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.head.ecommerce_q8_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.ecommerce.q9_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.ecommerce.q9_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.ecommerce.q10_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.ecommerce.q10_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.ecommerce.q11_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.ecommerce.q11_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.ecommerce.q12_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.ecommerce.q12_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.generic.q1_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.generic.q1_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.generic.q2_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.generic.q2_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.generic.q3_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.generic.q3_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.generic.q4_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.generic.q4_answer}}" } },
+    { "@type": "Question", "name": "{{l.faq.generic.q5_question}}", "acceptedAnswer": { "@type": "Answer", "text": "{{l.faq.generic.q5_answer}}" } }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="https://illucrum.com/pl//">
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+  </a>
+  <ul>
+    <li><a href="/audyty/">Audyty</a></li>
+    <li><a href="/cennik/">Cennik</a></li>
+    <li><a href="/proces/">Proces</a></li>
+    <li><a href="/faq/">FAQ</a></li>
+    <li><a href="/o-nas/">O nas</a></li>
+    <li><a href="https://blog.illucrum.com">Blog</a></li>
+    <li><a data-lead-open data-lead-source="header" data-lead-title="Kontakt"
+      data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
+      Skontaktuj się z nami
+    </a></li>
+  </ul>
+</nav>
+<header id="hero">
+  <small>FAQ</small>
+  <h1>Często zadawane pytania o <em>audytach SEO</em></h1>
+  <p>Poniższe pytania obejmują czym jest audyt SEO, ile kosztuje, co zawiera, i czym trzy Illucrum audyty się różnią. Jeśli nie ma tutaj odpowiedzi na Twoje, wyślij WhatsApp-a lub emaila i dodamy je.</p>
+
+  <p><small>Skontaktuj się z nami</small></p>
+  <nav>
+    <button type="button" data-lead-open data-lead-source="faq" data-lead-title="Kontakt"
+      data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
+      Skontaktuj się z nami
+    </button>
+  </nav>
+</header>
+
+<main>
+<section id="jump-nav">
+  <header>
+    <small>00 / Na tej stronie</small>
+    <h2>Przejdź do <em>sekcji</em></h2>
+    <p>FAQ jest grupowane na rodzaje audytu. Wybierz zestaw, który pasuje do Twojej strony.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3><a href="#general">Ogólne</a></h3>
+      <p>Uniwersalne pytania o SEO, audytach, kosztach, harmonogramach, i kanałach.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3><a href="#saas">SaaS</a></h3>
+      <p>Kierowanie na etapy lejka, strony z porównaniami, cytowania przez AI i ROI w SaaS.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3><a href="#ecommerce">E-commerce</a></h3>
+      <p>Strony produktu i kategorii, błędy techniczne, dane strukturalne, urządzenia mobilne, AI Overviews.</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3><a href="#generic">Strona internetowa (ogólna)</a></h3>
+      <p>Ogólny audyt dla firm usługowych, blogów i stron informacyjnych.</p>
+    </li>
+  </ul>
+</section>
+<section id="general">
+  <header>
+    <small>01 / Ogólne</small>
+    <h2>Ogólne <em>pytania</em> o audyt SEO</h2>
+    <p>Uniwersalne pytania o SEO, audytach, i jak SEO porównuje się do innych kanałów. Dotyczy to niezależnie od tego, który audyt rozważasz.</p>
+  </header>
+
+  <details open>
+    <summary>Czym jest audyt SEO?</summary>
+    <p>Audyt SEO jest strukturalna diagnoza tego, dlaczego Twoja strona internetowa nie pozycjonuje się, nie konwertuje lub nie rośnie tak, jak powinna. Illucrum Audyt obejmuje 52 punkty w obszarach technicznego SEO, optymalizacji on-page, strategii słów kluczowych, linków zwrotnych, pozycjonowania konkurencji oraz doświadczenia konwersji UX. Wynikiem końcowym jest uporządkowany według priorytetów plan działania z oceną stopnia poważności, a nie ogólna lista kontrolna.</p>
+  </details>
+
+  <details open>
+    <summary>Ile kosztuje audyt SEO?</summary>
+    <p>Audyt SEO Illucrum kosztuje między &euro;490 a &euro;1490 zależnie od rodzaju audytu. Zobacz pełną <a href="/cennik/">stronę z cennikiem</a> odnośnie tego, co obejmuje każdy typ audytu.</p>
+  </details>
+
+  <details open>
+    <summary>Jak długo trwa audyt SEO?</summary>
+    <p>Od pięciu do ośmiu dni roboczych od formularza wstępnego do dostarczenia audytów dla SaaS, e-commerce i strony internetowej. Skoncentrowany audyt techniczny trafia do Ciebie w trzy do pięciu dni. Nie obiecujemy audytów w 24 godziny, ponieważ takie nie istnieją; prawdziwy audyt wymaga zarówno automatycznego przeszukania strony, jak i ręcznego przeglądu.</p>
+  </details>
+
+  <details open>
+    <summary>Co zawiera audyt SEO?</summary>
+    <p>Każdy Illucrum audyt jest dostarczony jako pojedyńczy raport PDF zawierający wszystko: przegląd, każda kwestia sprawdzona, oceniona i wyjaśniona, najważniejsze problemy uporządkowane według stopnia poważności, spriorytetyzowany plan działania oraz notatki wdrożeniowe dla wniosków o najwyższym wpływie. Opcjonalna, jednogodzinna rozmowa podsumowująca jest wliczona w cenę. Jeśli chcesz otrzymać pliki robocze stojące za raportem, i wyślemy Ci je. Zobacz <a href="/proces/">co jest dostarczone</a> dla pełnej listy.</p>
+  </details>
+
+  <details open>
+    <summary>Jak długo trzeba czekać na efekty SEO?</summary>
+    <p>Większość stron widzi mierzalny ruch w ciągu 3 do 6 miesięcy, z istotnym wpływem biznesowym po 6 do 12 miesiącach. Zupełnie nowe domeny potrzebują więcej czasu, ponieważ Google dokładnie je ocenia, zanim pozwoli im konkurować. Strony o ugruntowanej pozycji, posiadające już autorytet, mogą zobaczyć rezultaty szybciej.</p>
+  </details>
+
+  <details open>
+    <summary>Czym się różni SEO od płatnych reklam (Reklamy Google, Reklamy Meta)?</summary>
+    <p>Płatne reklamy zatrzymują się w dniu gdy przestajesz płacić. SEO kumuluje: artykuł, który pozycjonuje się dzisiaj, nadal zdobywa ruch w 2028 roku. SEO konwertuje średnio o 84,62% więcej użytkowników niż PPC, a 49% marketerów twierdzi, że wyszukiwanie organiczne ma najlepszy zwrot z inwestycji ze wszystkich kanałów. Mądre zagranie to rzadko wybór „jednego albo drugiego”; to uruchomienie płatnych reklam dla szybkości oraz SEO dla kumulującego się zwrotu z inwestycji.</p>
+  </details>
+
+  <details open>
+    <summary>Czy SEO nadal będzie miało znaczenie teraz, gdy istnieją ChatGPT i AI Overviews?</summary>
+    <p>Tak, chociaż gra się zmieniła. Zestawienia AI Overviews pojawiają się obecnie przy około 25% zapytań w Google i zmniejszają CTR na pierwszej pozycji z 1,41% do 0,64%, kiedy się wyświetlają. Jednak tylko około 20% adresów URL cytowanych przez ChatGPT i Perplexity plasuje się również w top 10 Google. Pozycjonowanie w Google i zdobywanie cytowań przez AI to obecnie dwie powiązane, ale odrębne dyscypliny. Nowoczesny audyt obejmuje obie z nich.</p>
+  </details>
+
+  <details open>
+    <summary>Jaka jest różnica między audytem SEO a suskrybcją narzędzia SEO?</summary>
+    <p>Narzędzie daje Ci dane. Audyt interpretuje dane, priorytezuje co najważniejsze, i mówi Ci co zignorować. Większość zespołów ma dostęp do narzędzi i nadal nie wie co zrobić dalej. To jest luka którą audyt wypełnia. Zobacz pełne <a href="/porownanie/audyt-seo-a-narzedzie/">porównanie audytu vs narzędzie</a> odnośnie tego, kiedy każde z nich ma sens.</p>
+  </details>
+
+  <details open>
+    <summary>Jaka jest różnica między audytem SEO a abonamentem SEO?</summary>
+    <p>Audyt jest jednorazową diagnozą: widzisz co jest nie tak, decydujesz co paprawić, wdrażasz (lub zatrudniasz pomoc) odpowiednio. Abonament jest bieżącą comiesięczną pracą w ramach otwartego zakresu. Rekomendujemy podejście najpierw audyt, ponieważ stałe opłaty abonamentowe bez diagnozy mają tendencję do generowania pracy, która wygląda na produktywną, ale zajmuje się objawami zamiast przyczynami. Zobacz <a href="/porownanie/audyt-a-abonament/">audyt vs abonament</a> dla pełnego wyjaśnienia.</p>
+  </details>
+
+  <details open>
+    <summary>Czy powinienem po prostu samodzielnie przeprowadzić swój audyt SEO?</summary>
+    <p>Dla małej strony w niszy o niskiej konkurencji, możesz. Flub stronę, którą opisałbyś jako komercyjną lub konkurencyjną, zatrudnienie doświadczonego audytora pozwoli wyłapać problemy, których Ty nie zauważysz, szybciej niż Ty to zrobisz. Decyzja sprowadza się głównie do bilansu Twojego czasu w stosunku do kosztu audytu. Zobacz <a href="/porownanie/audyt-seo-a-diy/">audyt vs DIY</a> po szczegółowe zestawienie.</p>
+  </details>
+
+  <details open>
+    <summary>Czy muszę dać Ci dostęp do mojej Google Search Console i Analytics?</summary>
+    <p>Tak, Dostęp tylko do odczytu do GSC i Google Analytics to minimum. W przypadku audytów e-commerce potrzebujemy również dostępu do odczytu do panelu administracyjnego platformy, abyśmy mogli zobaczyć konfigurację, której nie widzą roboty skanujące od strony publicznej. Dostęp jest przyznawany na dedykowany e-mail audytowy i cofany w momencie dostarczenia raportu.</p>
+  </details>
+
+  <details open>
+    <summary>Co się dzieje po audycie?</summary>
+    <p>Ty decydujesz. Możesz wziąc raport iwdrożyć wszystko we własnym zakresie (in-house), lub określić z nami zakres projektu wdrożeniowego dla tych części, które wolałbyś przekazać nam. Audyt jest napisany tak, aby stanowił niezależną całość; żaden jego element nie wymaga dalszego zaangażowania.</p>
+  </details>
+</section>
+<section id="saas">
+  <header>
+    <small>02 / SaaS</small>
+    <h2>Audyt SEO dla SaaS <em>pytania</em></h2>
+    <p>Pytania specyficzne dla SaaS dotyczące targetowania etapów lejka, stron porównawczych, cytowań przez AI oraz zwrotu z inwestycji specyficznego dla SaaS.</p>
+  </header>
+
+  <details open>
+    <summary>Dlaczego SaaS potrzebuje innego podejścia SEO niż inne biznesy?</summary>
+    <p>SKupujący SaaS zachowują się inaczej. Przez tygodnie lub miesiące prowadzą rozeznanie na wielu etapach intencji zakupowej: budowania świadomości („czym jest oprogramowanie X”), rozważania („X vs Y”, „najlepsze narzędzia X”) oraz decyzji („cennik X”, „darmowa wersja próbna X”). Strategia SEO dla SaaS, która ignoruje ten lejek, przyciąga ruch, który nigdy nie konwertuje na wersje próbne. Kontekst konkurencyjny jest również bezwzględny: słowa kluczowe SaaS, takie jak „najlepszy CRM”, należą do najdroższych i najbardziej obleganych haseł w internecie, ponieważ każda konwersja jest warta setki lub tysiące w cyklu życia klienta.</p>
+  </details>
+
+  <details open>
+    <summary>Jakiego zwrotu z inwestycji mogę realistycznie oczekiwać od SEO dla SaaS?</summary>
+    <p>Średni 3-letni zwrot z inwestycji z SEO dla B2B SaaS wynosi 702%, przy czym czas do osiągnięcia progu rentowności wynosi około 7 miesięcy. Wyszukiwanie organiczne kosztuje zazwyczaj o 40% mniej niż płatne pozyskiwanie klientów w branży B2B SaaS, a w miarę jak efekty tworzenia treści się kumulują, koszt przypadający na jednego klienta może spaść do około &euro;290 na pozyskanego klienta w czasie. Dla kontekstu, mediana CAC z płatnych wyników wyszukiwania dla B2B wynosi około &euro;802.</p>
+  </details>
+
+  <details open>
+    <summary>Jakie słowa kluczowe firma SaaS powinna traktować priorytetowo w pierwszej kolejności?</summary>
+    <p>Słowa kluczowe z dołu lejka na pierwszym miejscu, nawet jeśli ich wolumen jest niższy. Strony z „alternatywami”, strony z porównaniami typu „kontra”, „cennik [konkurenta]” oraz frazy typu „najlepsza [kategoria] dla [określonego przypadku użycia]” konwertują średnio na poziomie od 8 do 15%, podczas gdy informacyjne zapytania z góry lejka konwertują na poziomie od 1 do 5%. Właściwe pytanie przy każdym słowie kluczowym brzmi: „Czy ludzie, którzy tego szukają, to rzeczywiście moi kupujący?”. Sam wolumen wyszukiwań jest w SaaS próżnym wskaźnikiem.</p>
+  </details>
+
+  <details open>
+    <summary>Czy strony funkcji, strony integracji i strony porównawcze rzeczywiście generują rejestracje na okres próbny?</summary>
+    <p>Tak, i są one często treściami dającymi najwyższą skuteczność, jakie strona SaaS może stworzyć. Strony z porównaniami i alternatywami wyłapują kupujących, którzy aktywnie oceniają dostępne opcje. Strony poświęcone integracjom („TwojeNarzędzie + Slack”, „TwojeNarzędzie + HubSpot”) pozycjonują się na wyszukiwania o wysokiej intencji zakupowej ze strony użytkowników tych narzędzi, a firmy posiadające ponad 50 stron integracji często pozyskują od 20 do 30% swojego ruchu organicznego właśnie z wyszukiwań dotyczących integracji.</p>
+  </details>
+
+  <details open>
+    <summary>Czym jest „klaster tematyczny” i dlaczego wszyscy w branży SaaS o nich mówią?</summary>
+    <p>Klaster tematyczny to strona filarowa obejmująca szerokie zagadnienie (np. „onboarding klienta dla SaaS”), wspierana przez wiele podartykułów ukierunkowanych na konkretne podtematy, z których wszystkie są wzajemnie podlinkowane. Ta struktura buduje autorytet tematyczny, co sygnalizuje wyszukiwarce Google głębokość wiedzy. Jest to skuteczne, gdy Twoja domena posiada już pewien podstawowy autorytet. W przypadku zupełnie nowych stron SaaS o niskim rankingu domeny, mądrzejszym posunięciem na wczesnym etapie jest najpierw zdobycie określonych słów kluczowych z dołu lejka i budowanie klastrów dopiero wtedy, gdy zyskasz impet.</p>
+  </details>
+
+  <details open>
+    <summary>Jak ważne jest Ranking domeny (DR) dla SEO dla SaaS?</summary>
+    <p>Ma to większe znaczenie w SaaS niż w wielu innych branżach, ponieważ przestrzeń słów kluczowych jest niezwykle konkurencyjna. Średni DR dla 28 250 stron internetowych SaaS wynosi około 62,6. Jeśli Twoja strona ma DR poniżej 30, bezpośrednia rywalizacja o słowa kluczowe związane z główną kategorią będzie miała duże trudności. Właściwa ścieżka to w pierwszej kolejności słowa kluczowe z długiego ogona, oparte na porównaniach oraz oparte na integracjach, przy jednoczesnym budowaniu autorytetu przez 12 do 18 miesięcy.</p>
+  </details>
+
+  <details open>
+    <summary>Czy moja firma SaaS będzie cytowana przez ChatGPT i Google AI Overviews?</summary>
+    <p>Być może, ale prawdopodobnie nie bez celowego wysiłku. Tylko około 20% adresów URL cytowanych przez silniki AI plasuje się również w top 10 Google. Silniki AI nieproporcjonalnie często cytują Reddita, Wikipedię, YouTube, LinkedIn oraz zestawienia w formie list na niezależnych stronach zewnętrznych. Dla SaaS oznacza to budowanie obecności na platformach z opiniami (G2, Capterra), tworzenie treści na LinkedInie prowadzonych przez założycieli oraz zdobywanie wzmianek w zestawieniach typu „najlepsza [kategoria]” na autorytatywnych stronach.</p>
+  </details>
+
+  <details open>
+    <summary>Jaki jest zdrowy współczynnik konwersji ruchu organicznego na wersje próbne dla strony SaaS?</summary>
+    <p>Dobrym punktem odniesienia jest od 2 do 5% odwiedzających z ruchu organicznego rozpoczynających darmowy okres próbny, przy czym konwersja na stronie głównej jest zazwyczaj wyższa (od 5 do 10%), ponieważ osoby odwiedzające stronę główną mają silniejszą intencję związaną z marką. Jeśli Twój współczynnik przejść z ruchu organicznego do wersji próbnej jest znacznie poniżej 2%, wąskim gardłem rzadko jest „brak większego ruchu”. To luka między tym, czego odwiedzający oczekiwali, gdy kliknęli, a tym, co znaleźli na stronie docelowej.</p>
+  </details>
+
+  <details open>
+    <summary>Czy SEO dla SaaS może całkowicie zastąpić płatne pozyskiwanie klientów?</summary>
+    <p>Dla większości firm SaaS, nie, i to jest niewłaściwe podejście. Reklamy płatne dają szybkość i pozwalają przetestować słowa kluczowe przed zaangażowaniem się w ich organiczne pozycjonowanie. SEO zapewnia kumulującą się ekonomię. Firmy takie jak HubSpot, Ahrefs i Atlassian generują ponad 70% swoich szans sprzedażowych z wyszukiwania organicznego, ale dotarły tam prowadząc oba te kanały przez lata. Audyt identyfikuje dające największe przełożenie działania SEO, które należy podjąć teraz, podczas gdy płatne reklamy utrzymują dopływ klientów.</p>
+  </details>
+
+  <details open>
+    <summary>Po jakim czasie inwestycja w SEO dla SaaS pojawi się w lejkach sprzedażowych?</summary>
+    <p>Realistycznie, od 6 do 12 miesięcy na istotny wpływ na lejek sprzedażowy. Poprawki techniczne i optymalizacja on-page mogą przynieść pierwsze zmiany w ciągu 3 miesięcy, ale pozycjonowanie się na konkurencyjne frazy SaaS i budowanie autorytetu tematycznego, który konwertuje, wymaga od 12 do 18 miesięcy stałych inwestycji. Każdy, kto obiecuje szybsze rezultaty, sprzedaje szybkość kosztem trwałości.</p>
+  </details>
+
+  <p>Zobacz <a href="/audyty/audyt-seo-dla-saas/">Audyt SEO dla SaaS</a>.</p>
+</section>
+<section id="ecommerce">
+  <header>
+    <small>03 / E-commerce</small>
+    <h2><em>Pytania</em> o audycie SEO dla e-commerce</h2>
+    <p>Pytania o sklepach internetowych, stron produktów i kategorii, błędy techniczne SEO powszechne w e-commerce, danych strukturalnych, wersjach mobilnych i AI Overviews.</p>
+  </header>
+
+  <details open>
+    <summary>Dlaczego SEO jest specjlanie ważne dla sklepów e-commerce?</summary>
+    <p>Około 43% całego ruchu w e-commerce pochodzi z wyszukiwania organicznego, co czyni je zdecydowanie największym kanałem ruchu dla sklepów internetowych. Płatne reklamy, media społecznościowe i e-mail marketing razem wzięte generują zazwyczaj mniej. I w przeciwieństwie do ruchu płatnego, użytkownicy z wyników organicznych konwertują średnio na wyższym poziomie (około 2,8% z wyszukiwania organicznego w porównaniu do około 1% z PPC), ponieważ aktywnie szukają tego, co sprzedajesz.</p>
+  </details>
+
+  <details open>
+    <summary>Jaki jest zwrot z inwestycji z SEO dla e-commerce?</summary>
+    <p>l.faq.ecommerce.q2_answer_prefix &euro;1 l.faq.ecommerce.q2_answer_mid &euro;2.75 to &euro;5.30 l.faq.ecommerce.q2_answer_suffix</p>
+  </details>
+
+  <details open>
+    <summary>Jaki jest najczęstszy powód, dla którego strony e-commerce osiągają słabsze wyniki w SEO?</summary>
+    <p>Błędy technicznego SEO, i to ze znaczną przewagą. 62,4% stron e-commerce ma przynajmniej jeden uszkodzony link, 70,5% ma ocenę „wymaga poprawy” w testach wydajności Lighthouse, a 53% nie posiada tagów kanonicznych. To ciche wycieki przychodów. Nie pojawiają się w Twoich panelach raportowania, ale po cichu obniżają pozycje w rankingu i konwersje. Audyt wyłapuje je, zanim zaczniesz tracić dalej.</p>
+  </details>
+
+  <details open>
+    <summary>Jak bardzo szybkość strony rzeczywiście wpływa na przychody w e-commerce?</summary>
+    <p>Bardzo. Poprawa czasu ładowania o 0,1 sekundy zwiększa współczynniki konwersji w handlu detalicznym o 8,4% oraz średnią wartość zamówienia o 9,2% (dane Deloitte/Google). I odwrotnie, każda dodatkowa sekunda opóźnienia zmniejsza konwersję o około 7%. Strony ładujące się w 1 sekundę konwertują na poziomie 3,05%, podczas gdy strony ładujące się w 4 sekundy konwertują na poziomie 0,67%, co stanowi 4,5-krotną różnicę.</p>
+  </details>
+
+  <details open>
+    <summary>Czy powinienem najpierw skupić się na stronach produktów czy na stronach kategorii?</summary>
+    <p>Strony kategorii, zazwyczaj. Dobrze zoptymalizowane strony kategorii generują zazwyczaj od 3 do 5 razy większe przychody organiczne niż poszczególne strony produktów, ponieważ pozycjonują się na frazy ogólne o wysokim wolumenie wyszukiwań i pozyskują kupujących na wcześniejszym etapie ścieżki zakupowej. Strony produktów mają wyższą konwersję w przeliczeniu na jednego odwiedzającego, ale to strony kategorii wykonują najcięższą pracę związaną ze sprowadzeniem użytkownika na stronę.</p>
+  </details>
+
+  <details open>
+    <summary>Czy potrzebuję danych strukturalnych dla mojego sklepu e-commerce?</summary>
+    <p>Tak, .i jest to jedna z poprawek technicznych dających największe przełożenie. Dane strukturalne produktu umożliwiają wyświetlanie wyników rozszerzonych (cena, oceny gwiazdkowe, dostępność) bezpośrednio w wynikach wyszukiwania Google, co może zwiększyć organiczny CTR średnio o 30%. Dane strukturalne ścieżki powrotnej oraz organizacji są podobnie ważne. Większość gotowych platform (Shopify, WooCommerce) domyślnie zawiera podstawowe dane strukturalne, ale są one często błędnie skonfigurowane lub niekompletne.</p>
+  </details>
+
+  <details open>
+    <summary>Co z nawigacją fasetową (rozmiar, kolor, filtry cenowe)? Czy szkodzi SEO?</summary>
+    <p>Może, i to bardzo. Kombinacje filtrów potrafią wygenerować miliony niemal zduplikowanych adresów URL, które wyczerpują budżet skanowania i dzielą moc linków pomiędzy różne wersje tej samej strony. Rozwiązaniem nie jest usunięcie filtrów: chodzi o połączenie tagów kanonicznych, dyrektyw dla robotów oraz odpowiedniego zarządzania parametrami URL, aby skonsolidować moc na głównych stronach kategorii, jednocześnie dając Google znać, które przefiltrowane adresy URL należy ignorować.</p>
+  </details>
+
+  <details open>
+    <summary>Jak zestawienia AI Overviews wpływają na wyszukiwania w e-commerce?</summary>
+    <p>Mniejszy niż w przypadku zapytań informacyjnych. Tylko około 0,3% zestawień AI Overviews zawiera obecnie źródło e-commerce, ponieważ zapytania transakcyjne zazwyczaj uruchamiają zamiast tego karuzele produktów, reklamy Shopping lub wyniki lokalne. Większy wpływ AI Overviews na e-commerce widoczny jest po stronie informacyjnej („jak wybrać X”, „najlepsze Y do Z”), gdzie 60% amerykańskich konsumentów deklaruje obecnie korzystanie z narzędzi AI przy podejmowaniu decyzji zakupowych. Twoje treści muszą nadawać się do cytowania przez systemy AI, a nie tylko plasować się w rankingu Google.</p>
+  </details>
+
+  <details open>
+    <summary>Jak ważne jest wersja mobilna dla SEO w e-commerce?</summary>
+    <p>Kluczowe. 57% światowej sprzedaży e-commerce odbywa się obecnie na urządzeniach mobilnych, a prognozy wskazują, że w 2025 roku odsetek ten osiągnie 59%. Google stosuje indeksowanie zorientowane na urządzenia mobilne dla wszystkich stron, co oznacza, że to Twoja wersja mobilna jest oceniana przez Google pod kątem pozycji w rankingu. Strona, która wygląda pięknie na komputerach stacjonarnych, ale jest powolna lub wadliwa na telefonach, staje się niewidoczna dla ponad połowy kupujących i jest odpowiednio oceniana w rankingu.</p>
+  </details>
+
+  <details open>
+    <summary>Czy powinienem używać UGC i opinii klientów na stronach produktów?</summary>
+    <p>Tak. Strony produktów z opiniami klientów otrzymują średnio o 18% większy ruch, a opinie wpływają na decyzje zakupowe 97% konsumentów. W połączeniu z danymi strukturalnymi opinii, umożliwiają one również wyświetlanie ocen gwiazdkowych w wynikach wyszukiwania, co zwiększa organiczny CTR. Mimo to 98% słabo radzących sobie marek e-commerce nie wykorzystuje odpowiednio treści generowanych przez użytkowników, więc pozostaje to przewagą konkurencyjną dostępną dla każdego, kto dobrze to wdroży.</p>
+  </details>
+
+  <details open>
+    <summary>Dlaczego opisy moich produktów szkodzą mojemu SEO?</summary>
+    <p>Jeśli są one dosłowną kopią opisów producenta, są identyczne z opisami każdego innego sprzedawcy detalicznego oferującego ten sam produkt. Google usuwa duplikaty tych treści i wybiera jedną wersję do umieszczenia w rankingu – zazwyczaj Amazona lub producenta. Sprzedawcy detaliczni, którzy na nowo redagują metatytuły i opisy produktów, odnotowują średnio 32-procentowy wzrost sprzedaży organicznej. Tworzenie unikalnych opisów produktów rzadko jest efektowną pracą, ale jest to jedna z optymalizacji o najwyższym zwrocie z inwestycji w SEO dla e-commerce.</p>
+  </details>
+
+  <details open>
+    <summary>Czy powinienem polegać na Amazonie, Etsy czy na własnej stronie w kwestii SEO?</summary>
+    <p>Twojej własnej stronie, jeśli wzrost i marże mają znaczenie. SEO na platformach handlowych to zamknięty obieg: optymalizujesz pod kątem pozycji w rankingu danej platformy, płacisz ich prowizję i nigdy nie budujesz marki, która należy do Ciebie. Własna strona pozwala Ci kumulować autorytet marki, retargetować odwiedzających i pozyskiwać dane klientów. Właściwa strategia dla większości sklepów to obecność na platformach handlowych dla zasięgu, przy jednoczesnym budowaniu własnego kanału organicznego dla zapewnienia trwałości.</p>
+  </details>
+
+  <p>Zobacz <a href="/audyty/audyt-seo-dla-sklepow-internetowych/">audyt SEO dla e-commerce</a>.</p>
+</section>
+<section id="generic">
+  <header>
+    <small>04 / Strona internetowa</small>
+    <h2><em>Pytania</em> audytu SEO dla strony internetowej </h2>
+    <p>Pytania specyficzne dla ogólnego audytu SEO stron internetowych. Dla firm usługowych, firm doradczych, blogów i stron informacyjnych.</p>
+  </header>
+
+  <details open>
+    <summary>Dla kogo przeznaczony jest audyt SEO strony internetowej?</summary>
+    <p>Audyt strony internetowej to wersja ogólnego przeznaczenia. Pasuje do firm usługowych (firm doradczych, agencji, usług profesjonalnych), firm lokalnych, blogów, stron z treściami oraz wszelkich witryn, które nie wpisują się w profil SaaS lub e-commerce. Obejmuje on te same 52 punkty kontrolne, co pozostałe audyty, ale sekcje i wagi punktów są ustalone pod kątem tych typów stron, a nie pod kątem lejka SaaS czy katalogu produktów.</p>
+  </details>
+
+  <details open>
+    <summary>Czym się różni audyt dla strony internetowej od audytu dla SaaS lub e-commerce?</summary>
+    <p>Wszystkie trzy obejmują te same 52 punkty kontrolne, ale sekcje się różnią. Audyt SaaS wykorzystuje jedenaście sekcji i zastępuje lokalne SEO strategią słów kluczowych dla lejka, stronami rejestracji na okres próbny i demonstracyjny, stronami funkcji i integracji oraz programistycznym SEO. Audyt e-commerce zastępuje lokalne SEO pozycjonowaniem produktów i katalogu oraz sekcją słów kluczowych dla e-commerce. Audyt strony internetowej zachowuje lokalne SEO i podchodzi szerzej do kwestii linków zwrotnych, pozycjonowania konkurencji oraz linkowania wewnętrznego.</p>
+  </details>
+
+  <details open>
+    <summary>Czy mogę użyć audytu Strony internetowej na stronie SaaS lub e-commerce?</summary>
+    <p>Technicznie tak, ale straciłbyś wartości specyficznej dla danej branży. Jeśli Twoja strona to rzeczywiście SaaS lub e-commerce, audyt SaaS lub e-commerce będzie lepszym wyborem. Audyt strony internetowej jest przeznaczony dla witryn, które nie wpisują się w te dwa profile.</p>
+  </details>
+
+  <details open>
+    <summary>Czy audyt strony internetowej jest odpowiedni dla firm lokalnych?</summary>
+    <p>Tak. Audyt Strony internetowej obejmuje test lokalnego SEO pokrywający Profil Google Business, spójność danych NAP, lokalne cytowania oraz czynniki rankingowe oparte na bliskości. Jeśli Twoja firma obsługuje określony rynek geograficzny, audyt strony internetowej jest właściwym wyborem.</p>
+  </details>
+
+  <details open>
+    <summary>Co jeśli moja strona jest zupełnie nowa?</summary>
+    <p>Audyt Strony internetowej jest dobrym dopasowaniem dla nowych stron. Wyłapuje problemy z fundamentami technicznymi, które będą się kumulować, jeśli nie zostaną naprawione, bez głębszej analizy, na którą nowsze strony nie potrzebują jeszcze danych.</p>
+  </details>
+
+  <p>Zobacz <a href="/audyty/audyt-seo/">Audyt SEO strony internetowej</a>.</p>
+</section>
+<section id="cta">
+  <header>
+    <small>05 / Zapytaj</small>
+    <h2>Pytania na które <em>nie odpowiedzieliśmy?</em></h2>
+    <p>Najszybszą drogą do uzyskania odpowiedzi na pytanie jest krótka wiadomość. Wrócimy w ciągu 24 godzin, od poniedziałku do piątku. Jeśli pytanie stanie się częste, dodamy je do tej strony.</p>
+  </header>
+
+  <p><small>Skontaktuj się z nami</small></p>
+  <nav>
+    <button type="button" data-lead-open data-lead-source="faq" data-lead-title="Kontakt"
+      data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
+      Skontaktuj się z nami
+    </button>
+  </nav>
+</section>
+
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+    <p>Audyty SEO które pokażą Ci co dokładnie trzeba naprawić następnie.</p>
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40" data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img src="/static/img/social/linkedin.svg" alt="LinkeIn profile" /></a>
+      <a href="https://wa.me/48515983261" target="_blank" rel="nofollow"><img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg" alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Audyty</h5>
+    <ul>
+      <li><a href="/audyty/audyt-seo-dla-saas/">Audyty SEO dla SaaS</a></li>
+      <li><a href="/audyty/audyt-seo-dla-sklepow-internetowych/">Audyt SEO dla sklepów internetowych</a></li>
+      <li><a href="/audyty/audyt-seo/">Audyt SEO stron internetowych</a></li>
+      <li><a href="/audyty/techniczny-audyt-seo/">Techniczny audyt SEO</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Porównaj</h5>
+    <ul>
+      <li><a href="/porownanie/audyt-seo-saas-a-standardowy/">SaaS vs Website</a></li>
+      <li><a href="/porownanie/audyt-seo-sklepu-internetowego-a-standardowy/">E-commerce vs Strona internetowa</a></li>
+      <li><a href="/porownanie/audyt-seo-a-narzedzie/">Audyt vs narzędzie SEO</a></li>
+      <li><a href="/porownanie/audyt-a-abonament/">Audyt vs abonament</a></li>
+      <li><a href="/porownanie/audyt-seo-a-diy/">Audyt vs DIY</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Firma</h5>
+    <ul>
+      <li><a href="/about/">O nas</a></li>
+      <li><a href="/process/">Proces</a></li>
+      <li><a href="/pricing/">Cennik</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/seo-facts/">Fakty SEO</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Kontakt i informacje prawne</h5>
+    <ul>
+      <li><a href="/prawne/warunki/">Regulamin</a></li>
+      <li><a href="/prawne/prywatnosc/">Prywatność</a></li>
+      <li><a href="/prawne/ciasteczka/">Cookies</a></li>
+      <li><a href="/prawne/zastrzezenie/">Zastrzeżenie prawne</a></li>
+      <li><a href="/prawne/dostepnosc/">Dostępność</a></li>
+      <li><a href="#" data-consent-open>Zarządzaj plikami cookies.</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +48 515 983 261</span>
+    <span>
+      <a href="https://illucrum.com/" hreflang="en-us">US</a> &middot;
+      <a href="HREFLANG_PL_PL_URL" hreflang="en-pl">PL</a> &middot;
+      <a href="https://illucrum.com/eu/" hreflang="en-gb">EU</a>
+    </span>
+  </small>
+</footer>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRLGLHC5" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Używamy plików cookies" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">Używamy plików cookies</p>
+    <p class="ic-consent__body">Używamy plików cookies żeby strona pracowała, zrozmieć jak jest używana,i (tylko jeśli się zgodzisz) żeby pokazywać odpowiednie reklamy na Google i Reddit. Zawsze możesz zmienić twój wybór na stópce strony. <a href="/prawne/ciasteczka/">Polityka cookie</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Zaakceptuj wszystkie</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Akceptuj tylko niezbędne</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferencje</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Niezbędne</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Niezbędne">
+        <p class="ic-consent__pref-desc">Wymagane do funkjonowania strony. Nie można wyłączyć.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analityka</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analityka">
+        <p class="ic-consent__pref-desc">Pomaga nam zrozumieć jak użytkownicy użwają stronę (Analityka Google 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Reklama</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Reklama">
+        <p class="ic-consent__pref-desc">Pozwala nam mierzyć i personalizować Google Ads oraz Reddit Adds. </p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Zachowaj wybór</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
