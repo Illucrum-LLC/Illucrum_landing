@@ -302,19 +302,6 @@ aside > small {
   align-items: center;
   gap: 0.45rem;
   padding: 0.35rem 0.85rem 0.35rem 0.7rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
-  background: var(--surface);
-}
-body > header > small::before,
-section > header > small::before,
-aside > small::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--green);
-  flex-shrink: 0;
 }
 
 strong {
