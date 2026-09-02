@@ -5,7 +5,7 @@
   <!-- Home -->
   <url>
     <loc>https://illucrum.com/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/"/>
@@ -18,7 +18,7 @@
   <!-- Core pages -->
   <url>
     <loc>https://illucrum.com/about/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/about/"/>
@@ -29,7 +29,7 @@
   </url>
   <url>
     <loc>https://illucrum.com/audits/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/"/>
@@ -40,7 +40,7 @@
   </url>
   <url>
     <loc>https://illucrum.com/pricing/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/pricing/"/>
@@ -51,7 +51,7 @@
   </url>
   <url>
     <loc>https://illucrum.com/process/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/process/"/>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://illucrum.com/faq/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/faq/"/>
@@ -73,7 +73,7 @@
   </url>
   <url>
     <loc>https://illucrum.com/seo-facts/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/seo-facts/"/>
@@ -86,7 +86,7 @@
   <!-- Audit service pages -->
   <url>
     <loc>https://illucrum.com/audits/seo-audit/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/seo-audit/"/>
@@ -97,7 +97,7 @@
   </url>
   <url>
     <loc>https://illucrum.com/audits/saas-seo-audit/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/saas-seo-audit/"/>
@@ -108,7 +108,7 @@
   </url>
   <url>
     <loc>https://illucrum.com/audits/ecommerce-seo-audit/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/ecommerce-seo-audit/"/>
@@ -119,7 +119,7 @@
   </url>
   <url>
     <loc>https://illucrum.com/audits/technical-seo-audit/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/technical-seo-audit/"/>
@@ -132,7 +132,7 @@
   <!-- Comparison pages -->
   <url>
     <loc>https://illucrum.com/compare/saas-vs-generic-seo-audit/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/saas-vs-generic-seo-audit/"/>
@@ -143,7 +143,7 @@
   </url>
   <url>
     <loc>https://illucrum.com/compare/ecommerce-vs-generic-seo-audit/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/ecommerce-vs-generic-seo-audit/"/>
@@ -154,7 +154,7 @@
   </url>
   <url>
     <loc>https://illucrum.com/compare/seo-audit-vs-diy/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/seo-audit-vs-diy/"/>
@@ -165,7 +165,7 @@
   </url>
   <url>
     <loc>https://illucrum.com/compare/seo-audit-vs-seo-retainer/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/seo-audit-vs-seo-retainer/"/>
@@ -176,7 +176,7 @@
   </url>
   <url>
     <loc>https://illucrum.com/compare/seo-audit-vs-seo-tool/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/seo-audit-vs-seo-tool/"/>
