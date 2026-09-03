@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MRLGLHC5');</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+<title>Bulk Image Alt Text Checker — 25 URLs, Free | Illucrum</title>
+<meta name="description" content="Find images with missing or empty alt attributes across up to 25 pages at once. Every image, its source and its alt text, exported as CSV. Free, no signup." />
+
+<link rel="canonical" href="https://illucrum.com/tools\alt-text-check">
+<link rel="alternate" hreflang="en-US" href="https://illucrum.com/c.us.tools\alt-text-check">
+<link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/c.eu.tools\alt-text-check">
+<link rel="alternate" hreflang="en-GB" href="https://illucrum.com/uk/c.gb.tools\alt-text-check">
+<link rel="alternate" hreflang="pl-PL" href="https://illucrum.com/pl/c.pl.tools\alt-text-check">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com/c.us.tools\alt-text-check">
+
+<meta name="robots" content="index, follow" />
+<link rel="icon" href="/static/img/logo.png">
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Illucrum" />
+<meta property="og:title" content="Bulk image alt text checker — 25 pages at once" />
+<meta property="og:description" content="One row per image, with its source and alt text, and whether the attribute is missing entirely or deliberately empty. Free, no account." />
+<meta property="og:url" content="https://illucrum.com/tools\alt-text-check" />
+<meta property="og:image" content="https://illucrum.com/static/img/og.png">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Bulk image alt text checker — 25 pages at once" />
+<meta name="twitter:description" content="One row per image, with its source and alt text, and whether the attribute is missing entirely or deliberately empty. Free, no account." />
+<meta name="twitter:image" content="https://illucrum.com/static/img/og.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://illucrum.com/tools\alt-text-check#webpage",
+      "url": "https://illucrum.com/tools\alt-text-check",
+      "name": "Bulk image alt text checker",
+      "description": "Find images with missing or empty alt attributes across up to 25 pages at once. Every image, its source and its alt text, exported as CSV. Free, no signup.",
+      "isPartOf": { "@id": "https://illucrum.com/#website" },
+      "publisher": { "@id": "https://illucrum.com/#organization" },
+      "mainEntity": { "@id": "https://illucrum.com/tools/bulk-checker/#software" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://illucrum.com/tools\alt-text-check#faq",
+      "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between a missing alt and an empty one?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A missing attribute means nobody decided. An empty one means somebody decided the image is decorative and assistive technology should skip it. The first is a bug; the second is correct markup, and a tool that reports them as the same thing is unhelpful in both directions." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does alt text affect SEO or only accessibility?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Both, unevenly. It is a genuine accessibility requirement under WCAG, and it is the main text signal a search engine has for an image. Treat accessibility as the reason and image search as the side effect." }
+      },
+      {
+        "@type": "Question",
+        "name": "Should every image have alt text?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Every image needs an alt attribute. Not every image needs words inside it. A purely decorative graphic takes an empty one so assistive technology passes over it without comment." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is an image missing from the table?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Almost always lazy loading or a script that inserts the image after the page has loaded. This reads the HTML the server sent, and at that moment the image was not in it." }
+      }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="https://illucrum.com/">
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+  </a>
+  <ul>
+    <li><a href="/audits/">Audits</a></li>
+    <li><a href="/pricing/">Pricing</a></li>
+    <li><a href="/process/">Process</a></li>
+    <li><a href="/faq/">FAQ</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="https://blog.illucrum.com">Blog</a></li>
+    <li><a data-lead-open data-lead-source="header" data-lead-title="Contact form"
+      data-lead-subtitle="Drop your details and we'll contact you.">
+      Contact us
+    </a></li>
+  </ul>
+</nav>
+<header>
+  <small>Free alt text checker</small>
+  <h1>Find every image <em>missing its alt text</em></h1>
+  <p>Paste up to 25 URLs. Get one row per image with its source, its alt text, and whether the alt attribute is missing entirely or deliberately empty. Those are different problems, so they get different columns.</p>
+  <p><small>Missing and empty are not the same thing. A decorative image should have an empty alt attribute; a meaningful one should not. A tool that folds them into one column cannot tell you which you are looking at.</small></p>
+  <nav>
+    <a href="https://illucrum.com/tools/bulk-checker/">Open the checker</a>
+    <a href="#what">What you get</a>
+  </nav>
+  <aside>
+    <small>At a glance</small>
+    <dl>
+      <dt>URLs per run</dt>
+      <dd>25</dd>
+      <dt>Alt states told apart</dt>
+      <dd>3</dd>
+      <dt>CSV exports</dt>
+      <dd>7</dd>
+    </dl>
+  </aside>
+</header>
+<main>
+<section id="what">
+  <header>
+    <small>What you get</small>
+    <h2>Three states, <em>not two</em></h2>
+    <p>Every image on every page, with enough detail to tell a defect from a decision.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>One row per image</h3>
+      <p>Every img element on the page, with its source, in document order. Nothing is deduplicated, so an icon used forty times appears forty times, which is usually the point.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>Missing, empty, or present</h3>
+      <p>No alt attribute at all is a defect. An empty one is a deliberate statement that the image carries no meaning. Present is present. Three columns, three different conversations.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>The alt text itself</h3>
+      <p>Not just whether it exists. You get the string, so IMG_4021.jpg and “image” show up for what they are rather than counting as a pass.</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>Twenty-five pages in one table</h3>
+      <p>Sort by the alt column and every gap across a whole section of the site lines up together, which is the only way this job is ever finished.</p>
+    </li>
+  </ul>
+</section>
+<section class="dark" id="checks">
+  <header>
+    <small>What to look for</small>
+    <h2>Five things <em>the column reveals</em></h2>
+    <p>Accessibility first, image search second. In that order, because that is the order the law and the user are in.</p>
+  </header>
+
+  <ul class="checklist">
+    <li>
+      <h3>No alt attribute at all</h3>
+      <p>A screen reader falls back to reading the filename, which is how a visitor ends up hearing “hero underscore v two final dot jpeg”.</p>
+    </li>
+    <li>
+      <h3>An empty alt on a meaningful image</h3>
+      <p>The most common false pass. The attribute is there, a checker ticks it off, and a chart carrying the whole argument of the page is announced as nothing.</p>
+    </li>
+    <li>
+      <h3>The filename as the alt text</h3>
+      <p>IMG_4021.jpg in the alt attribute is no alt text with extra steps. It is also the easiest thing on this list to find: sort the column.</p>
+    </li>
+    <li>
+      <h3>Alt text that repeats the caption</h3>
+      <p>A screen reader reads both, one after the other. Say it once, in whichever of the two the sighted reader also gets.</p>
+    </li>
+    <li>
+      <h3>Decorative images described in full</h3>
+      <p>Dividers, corner flourishes and spacer graphics with a sentence attached are noise. An empty alt attribute is the correct answer for those, and it is a real answer, not a shortcut.</p>
+    </li>
+  </ul>
+</section>
+<section id="limits">
+  <header>
+    <small>Be aware</small>
+    <h2>What it <em>will not</em> tell you</h2>
+    <p>Stated here rather than discovered later.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Whether the alt text is any good</h3>
+      <p>It can tell you the attribute is there and show you the sentence. Whether the sentence describes the image is a judgement, and no tool makes it honestly.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>CSS background images are invisible</h3>
+      <p>An img element is read. A background-image in a stylesheet is not an image as far as this tool is concerned, and not as far as a screen reader is either.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>Lazy-loaded images may not appear</h3>
+      <p>If the real source sits in a data attribute until a script swaps it in, the row may show an empty or placeholder src. Static HTML is all that arrives here.</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>Twenty-five URLs per run</h3>
+      <p>It runs in a browser tab. For an image-heavy site of any size you will want a desktop crawler.</p>
+    </li>
+  </ul>
+</section>
+<section id="faq">
+  <header>
+    <small>Questions</small>
+    <h2>Reasonable <em>questions</em></h2>
+  </header>
+
+  <details>
+    <summary>What is the difference between a missing alt and an empty one?</summary>
+    <p>A missing attribute means nobody decided. An empty one means somebody decided the image is decorative and assistive technology should skip it. The first is a bug; the second is correct markup, and a tool that reports them as the same thing is unhelpful in both directions.</p>
+  </details>
+  <details>
+    <summary>Does alt text affect SEO or only accessibility?</summary>
+    <p>Both, unevenly. It is a genuine accessibility requirement under WCAG, and it is the main text signal a search engine has for an image. Treat accessibility as the reason and image search as the side effect.</p>
+  </details>
+  <details>
+    <summary>Should every image have alt text?</summary>
+    <p>Every image needs an alt attribute. Not every image needs words inside it. A purely decorative graphic takes an empty one so assistive technology passes over it without comment.</p>
+  </details>
+  <details>
+    <summary>Why is an image missing from the table?</summary>
+    <p>Almost always lazy loading or a script that inserts the image after the page has loaded. This reads the HTML the server sent, and at that moment the image was not in it.</p>
+  </details>
+</section>
+<section id="audit">
+  <header>
+    <small>One tool, seven tables</small>
+    <h2>Images are <em>one tab of the checker</em></h2>
+    <p>The same run returns titles, meta descriptions, headings, word counts, links and structured data as well. It is one tool with seven tables and seven CSV exports, not seven separate tools you have to run one after another.</p>
+  </header>
+  <nav>
+    <a href="https://illucrum.com/tools/bulk-checker/">Open the bulk checker</a>
+    <a href="https://illucrum.com/audits/">See what is in an audit</a>
+  </nav>
+  <p>
+    <small>Other checks the same tool runs:
+      <a href="https://illucrum.com/tools/bulk-checker/">Bulk SEO checker</a>,
+      <a href="https://illucrum.com/tools\meta-tag-check">Meta tag checker</a>,
+      <a href="https://illucrum.com/tools\heading-check">Heading checker</a>,
+      <a href="https://illucrum.com/tools\word-count-check">Word count checker</a>,
+      <a href="https://illucrum.com/tools\canonical-check">Canonical checker</a>,
+      <a href="https://illucrum.com/tools\open-graph-check">Open Graph checker</a>,
+      <a href="https://illucrum.com/tools\schema-check">Schema checker</a>
+    </small>
+  </p>
+</section>
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+    <p>SEO audits that show you exactly what to fix next.</p>
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40" data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" /></a>
+      <a href="https://wa.me/15122035993" target="_blank" rel="nofollow"><img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg" alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Audits</h5>
+    <ul>
+      <li><a href="/audits/saas-seo-audit/">SaaS SEO audit</a></li>
+      <li><a href="/audits/ecommerce-seo-audit/">E-commerce SEO audit</a></li>
+      <li><a href="/audits/seo-audit/">Website SEO audit</a></li>
+      <li><a href="/audits/technical-seo-audit/">Technical SEO audit</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Compare</h5>
+    <ul>
+      <li><a href="/compare/saas-vs-generic-seo-audit/">SaaS vs Website</a></li>
+      <li><a href="/compare/ecommerce-vs-generic-seo-audit/">E-commerce vs Website</a></li>
+      <li><a href="/compare/seo-audit-vs-seo-tool/">Audit vs SEO tool</a></li>
+      <li><a href="/compare/seo-audit-vs-seo-retainer/">Audit vs retainer</a></li>
+      <li><a href="/compare/seo-audit-vs-diy/">Audit vs DIY</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Company</h5>
+    <ul>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/process/">Process</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/seo-facts/">SEO facts</a></li>
+      <li><a href="https://scraper.illucrum.com/">Scraper</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Contact &amp; Legal</h5>
+    <ul>
+      <li><a href="/legal/terms/">Terms</a></li>
+      <li><a href="/legal/privacy/">Privacy</a></li>
+      <li><a href="/legal/cookies/">Cookies</a></li>
+      <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+      <li><a href="/legal/accessibility/">Accessibility</a></li>
+      <li><a href="#" data-consent-open>Manage cookies</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +1 (512) 203-5993</span>
+    <span>
+      <a href="https://illucrum.com/" hreflang="en-us">US</a> &middot;
+      <a href="https://illucrum.com/pl/" hreflang="en-pl">PL</a> &middot;
+      <a href="https://illucrum.com/eu/" hreflang="en-001">EU</a> &middot;
+      <a href="https://illucrum.com/uk/" hreflang="en-gb">UK</a>
+    </span>
+  </small>
+</footer>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRLGLHC5" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="We use cookies" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">We use cookies</p>
+    <p class="ic-consent__body">We use cookies to make the site work, to understand how it is used, and (only if you agree) to show relevant ads on Google and Reddit. You can change your choice at any time from the footer. <a href="/legal/cookies/">Cookie policy</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferences</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Strictly necessary</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
+        <p class="ic-consent__pref-desc">Required for the site to function. Cannot be turned off.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analytics</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
+        <p class="ic-consent__pref-desc">Helps us understand how visitors use the site (Google Analytics 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Advertising</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
+        <p class="ic-consent__pref-desc">Lets us measure and personalise Google Ads and Reddit Ads campaigns.</p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

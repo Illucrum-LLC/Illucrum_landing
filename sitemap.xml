@@ -83,6 +83,96 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/seo-facts/"/>
   </url>
 
+  <!-- Tool pages -->
+  <url>
+    <loc>https://illucrum.com/tools/bulk-checker/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>montly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/tools/bulk-checker/"/>
+    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/gb/tools/bulk-checker/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/tools/bulk-checker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/tools/bulk-checker/"/>
+  </url>
+  <url>
+    <loc>https://illucrum.com/tools/bulk-checker/meta-tag-check/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>montly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/tools/bulk-checker/meta-tag-check/"/>
+    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/meta-tag-check/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/gb/tools/bulk-checker/meta-tag-check/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/tools/bulk-checker/meta-tagi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/tools/bulk-checker/meta-tag-check/"/>
+  </url>
+  <url>
+    <loc>https://illucrum.com/tools/bulk-checker/heading-check/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>montly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/tools/bulk-checker/heading-check/"/>
+    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/heading-check/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/gb/tools/bulk-checker/heading-check/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/tools/bulk-checker/tytuly/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/tools/bulk-checker/heading-check/"/>
+  </url>
+  <url>
+    <loc>https://illucrum.com/tools/bulk-checker/alt-text-check/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>montly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/tools/bulk-checker/alt-text-check/"/>
+    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/alt-text-check/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/gb/tools/bulk-checker/alt-text-check/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/tools/bulk-checker/alt-text/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/tools/bulk-checker/alt-text-check/"/>
+  </url>
+  <url>
+    <loc>https://illucrum.com/tools/bulk-checker/word-count-check/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>montly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/tools/bulk-checker/word-count-check/"/>
+    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/word-count-check/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/gb/tools/bulk-checker/word-count-check/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/tools/bulk-checker/liczba-slow/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/tools/bulk-checker/word-count-check/"/>
+  </url>
+  <url>
+    <loc>https://illucrum.com/tools/bulk-checker/canonical-check/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>montly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/tools/bulk-checker/canonical-check/"/>
+    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/canonical-check/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/gb/tools/bulk-checker/canonical-check/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/tools/bulk-checker/canonical-link/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/tools/bulk-checker/canonical-check/"/>
+  </url>
+  <url>
+    <loc>https://illucrum.com/tools/bulk-checker/open-graph-check/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>montly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/tools/bulk-checker/open-graph-check/"/>
+    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/open-graph-check/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/gb/tools/bulk-checker/open-graph-check/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/tools/bulk-checker/open-graph/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/tools/bulk-checker/open-graph-check/"/>
+  </url>
+  <url>
+    <loc>https://illucrum.com/tools/bulk-checker/schema-check/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>montly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/tools/bulk-checker/schema-check/"/>
+    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/schema-check/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/gb/tools/bulk-checker/schema-check/"/>
+    <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/tools/bulk-checker/schema/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/tools/bulk-checker/schema-check/"/>
+  </url>
+
   <!-- Audit service pages -->
   <url>
     <loc>https://illucrum.com/audits/seo-audit/</loc>

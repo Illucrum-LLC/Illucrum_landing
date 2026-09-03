@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MRLGLHC5');</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+<title>l.tools.bulk-checker.head.title</title>
+<meta name="description" content="l.tools.bulk-checker.head.description" />
+
+<link rel="canonical" href="https://illucrum.com/pl/tools\bulk-checker">
+<link rel="alternate" hreflang="en-US" href="https://illucrum.com/c.us.tools\bulk-checker">
+<link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/c.eu.tools\bulk-checker">
+<link rel="alternate" hreflang="en-GB" href="https://illucrum.com/uk/c.gb.tools\bulk-checker">
+<link rel="alternate" hreflang="pl-PL" href="https://illucrum.com/pl/c.pl.tools\bulk-checker">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com/c.us.c.us.tools\bulk-checker">
+
+<meta name="robots" content="index, follow" />
+<link rel="icon" href="/static/img/logo.png">
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="l.tools.bulk-checker.head.og_site_name" />
+<meta property="og:title" content="l.tools.bulk-checker.head.social_title" />
+<meta property="og:description" content="l.tools.bulk-checker.head.social_description" />
+<meta property="og:url" content="https://scraper.illucrum.com/" />
+<meta property="og:image" content="https://scraper.illucrum.com/static/img/og.png">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="l.tools.bulk-checker.head.social_title" />
+<meta name="twitter:description" content="l.tools.bulk-checker.head.social_description" />
+<meta name="twitter:image" content="https://scraper.illucrum.com/static/img/og.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css" />
+<link rel="stylesheet" href="/static/css/scraper.css" />
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "l.tools.bulk-checker.head.schema_name",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "l.tools.bulk-checker.head.schema_operating_system",
+    "url": "https://scraper.illucrum.com/",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "@id": "https://illucrum.com/#organization" }
+  }
+</script>
+</head>
+<body>
+<nav>
+  <a href="https://illucrum.com/pl/">
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+  </a>
+  <ul>
+    <li><a href="/pl/audyty/">Audyty</a></li>
+    <li><a href="/pl/cennik/">Cennik</a></li>
+    <li><a href="/pl/proces/">Proces</a></li>
+    <li><a href="/pl/faq/">FAQ</a></li>
+    <li><a href="/pl/o-nas/">O nas</a></li>
+    <li><a href="https://blog.illucrum.com">Blog</a></li>
+    <li><a data-lead-open data-lead-source="header" data-lead-title="Kontakt"
+      data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
+      Skontaktuj się z nami
+    </a></li>
+  </ul>
+</nav>
+<header>
+  <small>l.tools.bulk-checker.hero.eyebrow</small>
+  <h1>l.tools.bulk-checker.hero.title</h1>
+  <p>l.tools.bulk-checker.hero.body</p>
+  <aside>
+    <small>l.tools.bulk-checker.hero.stats_label</small>
+    <dl>
+      <dt>l.tools.bulk-checker.hero.stat1_label</dt>
+      <dd>25</dd>
+      <dt>l.tools.bulk-checker.hero.stat2_label</dt>
+      <dd>7</dd>
+      <dt>l.tools.bulk-checker.hero.stat3_label</dt>
+      <dd>51</dd>
+    </dl>
+  </aside>
+</header>
+<main>
+  <section id="tool">
+  <header>
+    <small>l.tools.bulk-checker.tool.eyebrow</small>
+    <h2>l.tools.bulk-checker.tool.title</h2>
+    <p>l.tools.bulk-checker.tool.subtitle</p>
+  </header>
+
+  <div class="tool">
+    <form id="crawl-form" novalidate>
+      <div>
+        <label for="urls">l.tools.bulk-checker.tool.label_urls</label>
+        <textarea id="urls" name="urls" spellcheck="false" autocapitalize="off" autocorrect="off"
+          placeholder="l.tools.bulk-checker.tool.placeholder_urls"></textarea>
+        <p class="tool-hint">l.tools.bulk-checker.tool.hint_urls</p>
+      </div>
+
+      <div class="tool-actions">
+        <button type="submit" id="run">l.tools.bulk-checker.tool.button_run</button>
+        <span class="tool-hint">l.tools.bulk-checker.tool.hint_polite</span>
+      </div>
+    </form>
+
+    <p class="tool-status" id="status" data-kind="info">l.tools.bulk-checker.tool.status_ready</p>
+
+    <ul class="tool-tabs" id="tabs" role="tablist" aria-label="l.tools.bulk-checker.tool.tabs_aria_label">
+      <li>
+        <button type="button" role="tab" id="tab-pages" data-table="pages" aria-controls="panel-pages"
+          aria-selected="true">l.tools.bulk-checker.tool.tab_pages</button>
+      </li>
+      <li>
+        <button type="button" role="tab" id="tab-headings" data-table="headings" aria-controls="panel-headings"
+          aria-selected="false" tabindex="-1">l.tools.bulk-checker.tool.tab_headings</button>
+      </li>
+      <li>
+        <button type="button" role="tab" id="tab-words" data-table="words" aria-controls="panel-words"
+          aria-selected="false" tabindex="-1">l.tools.bulk-checker.tool.tab_words</button>
+      </li>
+      <li>
+        <button type="button" role="tab" id="tab-links" data-table="links" aria-controls="panel-links"
+          aria-selected="false" tabindex="-1">l.tools.bulk-checker.tool.tab_links</button>
+      </li>
+      <li>
+        <button type="button" role="tab" id="tab-images" data-table="images" aria-controls="panel-images"
+          aria-selected="false" tabindex="-1">l.tools.bulk-checker.tool.tab_images</button>
+      </li>
+      <li>
+        <button type="button" role="tab" id="tab-schemas" data-table="schemas" aria-controls="panel-schemas"
+          aria-selected="false" tabindex="-1">l.tools.bulk-checker.tool.tab_schemas</button>
+      </li>
+      <li>
+        <button type="button" role="tab" id="tab-errors" data-table="errors" aria-controls="panel-errors"
+          aria-selected="false" tabindex="-1">l.tools.bulk-checker.tool.tab_errors</button>
+      </li>
+    </ul>
+
+    <div class="tool-panel" id="panel-pages" role="tabpanel" aria-labelledby="tab-pages">
+      <div class="tool-panelhead">
+        <p class="tool-blurb">l.tools.bulk-checker.tool.panel_pages_blurb</p>
+        <span class="tool-count">l.tools.bulk-checker.tool.count_zero</span>
+        <button type="button" disabled>l.tools.bulk-checker.tool.button_download</button>
+      </div>
+      <div class="tool-tablewrap"></div>
+      <p class="tool-rownote"></p>
+    </div>
+
+    <div class="tool-panel" id="panel-headings" role="tabpanel" aria-labelledby="tab-headings" hidden>
+      <div class="tool-panelhead">
+        <p class="tool-blurb">l.tools.bulk-checker.tool.panel_headings_blurb</p>
+        <span class="tool-count">l.tools.bulk-checker.tool.count_zero</span>
+        <button type="button" disabled>l.tools.bulk-checker.tool.button_download</button>
+      </div>
+      <div class="tool-tablewrap"></div>
+      <p class="tool-rownote"></p>
+    </div>
+
+    <div class="tool-panel" id="panel-words" role="tabpanel" aria-labelledby="tab-words" hidden>
+      <div class="tool-panelhead">
+        <p class="tool-blurb">l.tools.bulk-checker.tool.panel_words_blurb</p>
+        <span class="tool-count">l.tools.bulk-checker.tool.count_zero</span>
+        <button type="button" disabled>l.tools.bulk-checker.tool.button_download</button>
+      </div>
+      <div class="tool-tablewrap"></div>
+      <p class="tool-rownote"></p>
+    </div>
+
+    <div class="tool-panel" id="panel-links" role="tabpanel" aria-labelledby="tab-links" hidden>
+      <div class="tool-panelhead">
+        <p class="tool-blurb">l.tools.bulk-checker.tool.panel_links_blurb</p>
+        <span class="tool-count">l.tools.bulk-checker.tool.count_zero</span>
+        <button type="button" disabled>l.tools.bulk-checker.tool.button_download</button>
+      </div>
+      <div class="tool-tablewrap"></div>
+      <p class="tool-rownote"></p>
+    </div>
+
+    <div class="tool-panel" id="panel-images" role="tabpanel" aria-labelledby="tab-images" hidden>
+      <div class="tool-panelhead">
+        <p class="tool-blurb">l.tools.bulk-checker.tool.panel_images_blurb</p>
+        <span class="tool-count">l.tools.bulk-checker.tool.count_zero</span>
+        <button type="button" disabled>l.tools.bulk-checker.tool.button_download</button>
+      </div>
+      <div class="tool-tablewrap"></div>
+      <p class="tool-rownote"></p>
+    </div>
+
+    <div class="tool-panel" id="panel-schemas" role="tabpanel" aria-labelledby="tab-schemas" hidden>
+      <div class="tool-panelhead">
+        <p class="tool-blurb">l.tools.bulk-checker.tool.panel_schemas_blurb</p>
+        <span class="tool-count">l.tools.bulk-checker.tool.count_zero</span>
+        <button type="button" disabled>l.tools.bulk-checker.tool.button_download</button>
+      </div>
+      <div class="tool-tablewrap"></div>
+      <p class="tool-rownote"></p>
+    </div>
+
+    <div class="tool-panel" id="panel-errors" role="tabpanel" aria-labelledby="tab-errors" hidden>
+      <div class="tool-panelhead">
+        <p class="tool-blurb">l.tools.bulk-checker.tool.panel_errors_blurb</p>
+        <span class="tool-count">l.tools.bulk-checker.tool.count_zero</span>
+        <button type="button" disabled>l.tools.bulk-checker.tool.button_download</button>
+      </div>
+      <div class="tool-tablewrap"></div>
+      <p class="tool-rownote"></p>
+    </div>
+  </div>
+</section>
+<section id="how">
+  <header>
+    <small>l.tools.bulk-checker.how.eyebrow</small>
+    <h2>l.tools.bulk-checker.how.title</h2>
+    <p>l.tools.bulk-checker.how.subtitle</p>
+  </header>
+
+  <ol class="bento">
+    <li>
+      <div>
+        <h3>l.tools.bulk-checker.how.step1_title</h3>
+        <p>l.tools.bulk-checker.how.step1_body</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>l.tools.bulk-checker.how.step2_title</h3>
+        <p>l.tools.bulk-checker.how.step2_body</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>l.tools.bulk-checker.how.step3_title</h3>
+        <p>l.tools.bulk-checker.how.step3_body</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>l.tools.bulk-checker.how.step4_title</h3>
+        <p>l.tools.bulk-checker.how.step4_body</p>
+      </div>
+    </li>
+  </ol>
+</section>
+<section id="measures">
+  <header>
+    <small>l.tools.bulk-checker.measures.eyebrow</small>
+    <h2>l.tools.bulk-checker.measures.title</h2>
+    <p>l.tools.bulk-checker.measures.subtitle</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>l.tools.bulk-checker.measures.item1_title</h3>
+      <p>l.tools.bulk-checker.measures.item1_body</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>l.tools.bulk-checker.measures.item2_title</h3>
+      <p>l.tools.bulk-checker.measures.item2_body</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>l.tools.bulk-checker.measures.item3_title</h3>
+      <p>l.tools.bulk-checker.measures.item3_body</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>l.tools.bulk-checker.measures.item4_title</h3>
+      <p>l.tools.bulk-checker.measures.item4_body</p>
+    </li>
+    <li>
+      <span>05</span>
+      <h3>l.tools.bulk-checker.measures.item5_title</h3>
+      <p>l.tools.bulk-checker.measures.item5_body</p>
+    </li>
+    <li>
+      <span>06</span>
+      <h3>l.tools.bulk-checker.measures.item6_title</h3>
+      <p>l.tools.bulk-checker.measures.item6_body</p>
+    </li>
+    <li>
+      <span>07</span>
+      <h3>l.tools.bulk-checker.measures.item7_title</h3>
+      <p>l.tools.bulk-checker.measures.item7_body</p>
+    </li>
+  </ul>
+</section>
+<section class="dark" id="limits">
+  <header>
+    <small>l.tools.bulk-checker.limits.eyebrow</small>
+    <h2>l.tools.bulk-checker.limits.title</h2>
+    <p>l.tools.bulk-checker.limits.subtitle</p>
+  </header>
+
+  <ul class="checklist">
+    <li>
+      <h3>l.tools.bulk-checker.limits.item1_title</h3>
+      <p>l.tools.bulk-checker.limits.item1_body</p>
+    </li>
+    <li>
+      <h3>l.tools.bulk-checker.limits.item2_title</h3>
+      <p>l.tools.bulk-checker.limits.item2_body</p>
+    </li>
+    <li>
+      <h3>l.tools.bulk-checker.limits.item3_title</h3>
+      <p>l.tools.bulk-checker.limits.item3_body</p>
+    </li>
+    <li>
+      <h3>l.tools.bulk-checker.limits.item4_title</h3>
+      <p>l.tools.bulk-checker.limits.item4_body</p>
+    </li>
+    <li>
+      <h3>l.tools.bulk-checker.limits.item5_title</h3>
+      <p>l.tools.bulk-checker.limits.item5_body</p>
+    </li>
+    <li>
+      <h3>l.tools.bulk-checker.limits.item6_title</h3>
+      <p>l.tools.bulk-checker.limits.item6_body</p>
+    </li>
+  </ul>
+</section>
+<section id="privacy">
+  <header>
+    <small>l.tools.bulk-checker.privacy.eyebrow</small>
+    <h2>l.tools.bulk-checker.privacy.title</h2>
+  </header>
+
+  <details>
+    <summary>l.tools.bulk-checker.privacy.item1_summary</summary>
+    <p>l.tools.bulk-checker.privacy.item1_body</p>
+  </details>
+  <details>
+    <summary>l.tools.bulk-checker.privacy.item2_summary</summary>
+    <p>l.tools.bulk-checker.privacy.item2_body</p>
+  </details>
+  <details>
+    <summary>l.tools.bulk-checker.privacy.item3_summary</summary>
+    <p>l.tools.bulk-checker.privacy.item3_body</p>
+  </details>
+  <details>
+    <summary>l.tools.bulk-checker.privacy.item4_summary</summary>
+    <p>l.tools.bulk-checker.privacy.item4_body</p>
+  </details>
+  <details>
+    <summary>l.tools.bulk-checker.privacy.item5_summary</summary>
+    <p>l.tools.bulk-checker.privacy.item5_body</p>
+  </details>
+</section>
+<section id="faq">
+  <header>
+    <small>l.tools.bulk-checker.faq.eyebrow</small>
+    <h2>l.tools.bulk-checker.faq.title</h2>
+  </header>
+
+  <details>
+    <summary>l.tools.bulk-checker.faq.q1_question</summary>
+    <p>l.tools.bulk-checker.faq.q1_answer</p>
+  </details>
+  <details>
+    <summary>l.tools.bulk-checker.faq.q2_question</summary>
+    <p>l.tools.bulk-checker.faq.q2_answer</p>
+  </details>
+  <details>
+    <summary>l.tools.bulk-checker.faq.q3_question</summary>
+    <p>l.tools.bulk-checker.faq.q3_answer</p>
+  </details>
+  <details>
+    <summary>l.tools.bulk-checker.faq.q4_question</summary>
+    <p>l.tools.bulk-checker.faq.q4_answer</p>
+  </details>
+  <details>
+    <summary>l.tools.bulk-checker.faq.q5_question</summary>
+    <p>l.tools.bulk-checker.faq.q5_answer</p>
+  </details>
+</section>
+<section id="audit">
+  <header>
+    <small>l.tools.bulk-checker.cta.eyebrow</small>
+    <h2>l.tools.bulk-checker.cta.title</h2>
+    <p>l.tools.bulk-checker.cta.body</p>
+  </header>
+  <nav>
+    <button type="button" data-lead-open data-lead-source="bulk-checker" data-lead-title="Kontakt" data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
+    Skontaktuj się z nami
+  </button>
+    <a href="https://illucrum.com/audits/">l.tools.bulk-checker.cta.link_label</a>
+  </nav>
+</section>
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+    <p>Audyty SEO które pokażą Ci co dokładnie trzeba naprawić następnie.</p>
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40" data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" /></a>
+      <a href="https://wa.me/48515983261" target="_blank" rel="nofollow"><img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg" alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Audyty</h5>
+    <ul>
+      <li><a href="/pl/audyty/audyt-seo-dla-saas/">Audyty SEO dla SaaS</a></li>
+      <li><a href="/pl/audyty/audyt-seo-dla-sklepow-internetowych/">Audyt SEO dla sklepów internetowych</a></li>
+      <li><a href="/pl/audyty/audyt-seo/">Audyt SEO stron internetowych</a></li>
+      <li><a href="/pl/audyty/techniczny-audyt-seo/">Techniczny audyt SEO</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Porównaj</h5>
+    <ul>
+      <li><a href="/pl/porownanie/audyt-seo-saas-a-standardowy/">SaaS vs Website</a></li>
+      <li><a href="/pl/porownanie/audyt-seo-sklepu-internetowego-a-standardowy/">E-commerce vs Strona internetowa</a></li>
+      <li><a href="/pl/porownanie/audyt-seo-a-narzedzie/">Audyt vs narzędzie SEO</a></li>
+      <li><a href="/pl/porownanie/audyt-a-abonament/">Audyt vs abonament</a></li>
+      <li><a href="/pl/porownanie/audyt-seo-a-diy/">Audyt vs DIY</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Firma</h5>
+    <ul>
+      <li><a href="/pl/o-nas/">O nas</a></li>
+      <li><a href="/pl/proces/">Proces</a></li>
+      <li><a href="/pl/cennik/">Cennik</a></li>
+      <li><a href="/pl/faq/">FAQ</a></li>
+      <li><a href="/pl/fakty-seo/">Fakty SEO</a></li>
+      <li><a href="https://scraper.illucrum.com/">Scraper</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Kontakt i informacje prawne</h5>
+    <ul>
+      <li><a href="/pl/prawne/warunki/">Regulamin</a></li>
+      <li><a href="/pl/prawne/prywatnosc/">Prywatność</a></li>
+      <li><a href="/pl/prawne/ciasteczka/">Cookies</a></li>
+      <li><a href="/pl/prawne/zastrzezenie/">Zastrzeżenie prawne</a></li>
+      <li><a href="/pl/prawne/dostepnosc/">Dostępność</a></li>
+      <li><a href="#" data-consent-open>Zarządzaj plikami cookies.</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +48 515 983 261</span>
+    <span>
+      <a href="https://illucrum.com/" hreflang="en-us">US</a> &middot;
+      <a href="https://illucrum.com/pl/" hreflang="en-pl">PL</a> &middot;
+      <a href="https://illucrum.com/eu/" hreflang="en-001">EU</a> &middot;
+      <a href="https://illucrum.com/uk/" hreflang="en-gb">UK</a>
+    </span>
+  </small>
+</footer>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRLGLHC5" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Używamy plików cookies" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">Używamy plików cookies</p>
+    <p class="ic-consent__body">Używamy plików cookies żeby strona pracowała, zrozmieć jak jest używana,i (tylko jeśli się zgodzisz) żeby pokazywać odpowiednie reklamy na Google i Reddit. Zawsze możesz zmienić twój wybór na stópce strony. <a href="/pl/prawne/ciasteczka/">Polityka cookie</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Zaakceptuj wszystkie</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Akceptuj tylko niezbędne</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferencje</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Niezbędne</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Niezbędne">
+        <p class="ic-consent__pref-desc">Wymagane do funkjonowania strony. Nie można wyłączyć.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analityka</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analityka">
+        <p class="ic-consent__pref-desc">Pomaga nam zrozumieć jak użytkownicy użwają stronę (Analityka Google 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Reklama</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Reklama">
+        <p class="ic-consent__pref-desc">Pozwala nam mierzyć i personalizować Google Ads oraz Reddit Adds. </p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Zachowaj wybór</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

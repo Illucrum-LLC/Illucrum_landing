@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MRLGLHC5');</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+<title>Bulk checker stron — 25 URL-i do CSV | Illucrum</title>
+<meta name="description" content="Wklej do 25 adresów i pobierz tytuły, meta opisy, nagłówki, liczbę słów, linki, obrazy i dane strukturalne w formacie CSV. Za darmo, bez konta, bez instalacji." />
+
+<link rel="canonical" href="https://illucrum.com/pl/narzedzia/bulk-checker/">
+<link rel="alternate" hreflang="en-US" href="https://illucrum.com/c.us.tools\bulk-checker">
+<link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/">
+<link rel="alternate" hreflang="en-GB" href="https://illucrum.com/uk/c.gb.tools\bulk-checker">
+<link rel="alternate" hreflang="pl-PL" href="https://illucrum.com/pl/narzedzia/bulk-checker/">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com/c.us.tools\bulk-checker">
+
+<meta name="robots" content="index, follow" />
+<link rel="icon" href="/static/img/logo.png">
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Illucrum" />
+<meta property="og:title" content="Bulk checker stron — 25 URL-i do CSV, bez rejestracji" />
+<meta property="og:description" content="Wklej adresy. Tytuły, opisy, nagłówki, liczba słów, linki, obrazy i dane strukturalne w siedmiu tabelach, które możesz wyeksportować." />
+<meta property="og:url" content="https://illucrum.com/pl/narzedzia/bulk-checker/" />
+<meta property="og:image" content="https://illucrum.com/static/img/og.png">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Bulk checker stron — 25 URL-i do CSV, bez rejestracji" />
+<meta name="twitter:description" content="Wklej adresy. Tytuły, opisy, nagłówki, liczba słów, linki, obrazy i dane strukturalne w siedmiu tabelach, które możesz wyeksportować." />
+<meta name="twitter:image" content="https://illucrum.com/static/img/og.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css" />
+<link rel="stylesheet" href="/static/css/scraper.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://illucrum.com/pl/narzedzia/bulk-checker/#software",
+  "name": "Illucrum — bulk checker stron",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Dowolna nowoczesna przeglądarka",
+  "url": "https://illucrum.com/pl/narzedzia/bulk-checker/",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PLN" },
+  "publisher": { "@id": "https://illucrum.com/#organization" }
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="https://illucrum.com/pl/">
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+  </a>
+  <ul>
+    <li><a href="/pl/audyty/">Audyty</a></li>
+    <li><a href="/pl/cennik/">Cennik</a></li>
+    <li><a href="/pl/proces/">Proces</a></li>
+    <li><a href="/pl/faq/">FAQ</a></li>
+    <li><a href="/pl/o-nas/">O nas</a></li>
+    <li><a href="https://blog.illucrum.com">Blog</a></li>
+    <li><a data-lead-open data-lead-source="header" data-lead-title="Kontakt"
+      data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
+      Skontaktuj się z nami
+    </a></li>
+  </ul>
+</nav>
+<header>
+  <small>Za darmo · bez konta · bez instalacji</small>
+  <h1>Sprawdź 25 stron naraz. <em>Wyeksportuj wszystko do arkusza.</em></h1>
+  <p>Wklej adresy. Dostajesz każdy tytuł, meta opis, nagłówek, liczbę słów, link, obraz i blok danych strukturalnych w pliku CSV. Bez konta, bez instalacji, bez zapisywania czegokolwiek.</p>
+  <p><small>Dwie rzeczy warto wiedzieć od razu: narzędzie czyta HTML, który wysyła serwer, więc treść dorysowana JavaScriptem się nie pojawi — i nie ma tu żadnej oceny w skali stu punktów. Dostajesz surowe wiersze i sam decydujesz, co z nich wynika.</small></p>
+  <nav>
+    <a href="#tool">Wklej adresy</a>
+    <a href="#limits">Czego nie zrobi</a>
+  </nav>
+  <aside>
+    <small>W skrócie</small>
+    <dl>
+      <dt>Adresów na jedno uruchomienie</dt>
+      <dd>25</dd>
+      <dt>Tabel z danymi</dt>
+      <dd>7</dd>
+      <dt>Kolumn w eksporcie stron</dt>
+      <dd>51</dd>
+    </dl>
+  </aside>
+</header>
+<main>
+<section id="tool">
+  <header>
+    <small>Narzędzie</small>
+    <h2>Wklej <em>do 25 adresów</em></h2>
+    <p>Każdy adres jest pobierany raz, analizowany w Twojej przeglądarce i dopisywany do tabel poniżej, gdy tylko się skończy.</p>
+  </header>
+
+  <div class="tool">
+    <form id="crawl-form" novalidate>
+      <div>
+        <label for="urls">Adresy URL</label>
+        <textarea id="urls" name="urls" spellcheck="false" autocapitalize="off" autocorrect="off"
+          placeholder="example.com&#10;example.com/cennik&#10;example.com/o-nas"></textarea>
+        <p class="tool-hint">Jeden na linię albo po przecinku. Same domeny są w porządku, <code>https://</code> dopiszemy za Ciebie. Wszystko powyżej 25 adresów jest pomijane.</p>
+      </div>
+
+      <div class="tool-actions">
+        <button type="submit" id="run">Sprawdź strony</button>
+        <span class="tool-hint">Zapytania są rozłożone w czasie, żeby nie obciążać serwera po drugiej stronie.</span>
+      </div>
+    </form>
+
+    <p class="tool-status" id="status" data-kind="info">Gotowe do uruchomienia.</p>
+
+    <ul class="tool-tabs" id="tabs" role="tablist" aria-label="Tabele wyników">
+      <li>
+        <button type="button" role="tab" id="tab-pages" data-table="pages" aria-controls="panel-pages"
+          aria-selected="true">Strony</button>
+      </li>
+      <li>
+        <button type="button" role="tab" id="tab-headings" data-table="headings" aria-controls="panel-headings"
+          aria-selected="false" tabindex="-1">Nagłówki</button>
+      </li>
+      <li>
+        <button type="button" role="tab" id="tab-words" data-table="words" aria-controls="panel-words"
+          aria-selected="false" tabindex="-1">Słowa</button>
+      </li>
+      <li>
+        <button type="button" role="tab" id="tab-links" data-table="links" aria-controls="panel-links"
+          aria-selected="false" tabindex="-1">Linki</button>
+      </li>
+      <li>
+        <button type="button" role="tab" id="tab-images" data-table="images" aria-controls="panel-images"
+          aria-selected="false" tabindex="-1">Obrazy</button>
+      </li>
+      <li>
+        <button type="button" role="tab" id="tab-schemas" data-table="schemas" aria-controls="panel-schemas"
+          aria-selected="false" tabindex="-1">Dane strukturalne</button>
+      </li>
+      <li>
+        <button type="button" role="tab" id="tab-errors" data-table="errors" aria-controls="panel-errors"
+          aria-selected="false" tabindex="-1">Błędy</button>
+      </li>
+    </ul>
+
+    <div class="tool-panel" id="panel-pages" role="tabpanel" aria-labelledby="tab-pages">
+      <div class="tool-panelhead">
+        <p class="tool-blurb">Jeden wiersz na adres. CSV zawiera wszystkie kolumny, łącznie ze wszystkimi tagami Open Graph i Twitter.</p>
+        <span class="tool-count">0 wierszy</span>
+        <button type="button" disabled>Pobierz CSV</button>
+      </div>
+      <div class="tool-tablewrap"></div>
+      <p class="tool-rownote"></p>
+    </div>
+
+    <div class="tool-panel" id="panel-headings" role="tabpanel" aria-labelledby="tab-headings" hidden>
+      <div class="tool-panelhead">
+        <p class="tool-blurb">Wszystkie nagłówki h1–h6 w kolejności z kodu. Poziom i kolejność razem pokazują strukturę, którą widzi robot.</p>
+        <span class="tool-count">0 wierszy</span>
+        <button type="button" disabled>Pobierz CSV</button>
+      </div>
+      <div class="tool-tablewrap"></div>
+      <p class="tool-rownote"></p>
+    </div>
+
+    <div class="tool-panel" id="panel-words" role="tabpanel" aria-labelledby="tab-words" hidden>
+      <div class="tool-panelhead">
+        <p class="tool-blurb">20 najczęstszych słów na stronie po odrzuceniu słów pospolitych. Udział liczony względem całkowitej liczby słów na stronie.</p>
+        <span class="tool-count">0 wierszy</span>
+        <button type="button" disabled>Pobierz CSV</button>
+      </div>
+      <div class="tool-tablewrap"></div>
+      <p class="tool-rownote"></p>
+    </div>
+
+    <div class="tool-panel" id="panel-links" role="tabpanel" aria-labelledby="tab-links" hidden>
+      <div class="tool-panelhead">
+        <p class="tool-blurb">Każdy odnośnik z atrybutem href, oznaczony jako wewnętrzny albo zewnętrzny, razem z tekstem kotwicy.</p>
+        <span class="tool-count">0 wierszy</span>
+        <button type="button" disabled>Pobierz CSV</button>
+      </div>
+      <div class="tool-tablewrap"></div>
+      <p class="tool-rownote"></p>
+    </div>
+
+    <div class="tool-panel" id="panel-images" role="tabpanel" aria-labelledby="tab-images" hidden>
+      <div class="tool-panelhead">
+        <p class="tool-blurb">Jeden wiersz na obraz. Brak atrybutu alt i pusty atrybut alt to dwie różne rzeczy, więc mają osobne kolumny.</p>
+        <span class="tool-count">0 wierszy</span>
+        <button type="button" disabled>Pobierz CSV</button>
+      </div>
+      <div class="tool-tablewrap"></div>
+      <p class="tool-rownote"></p>
+    </div>
+
+    <div class="tool-panel" id="panel-schemas" role="tabpanel" aria-labelledby="tab-schemas" hidden>
+      <div class="tool-panelhead">
+        <p class="tool-blurb">Bloki danych strukturalnych: typy JSON-LD, mikrodanych i RDFa. Blok, którego nie da się sparsować, jest zgłaszany, a nie ukrywany.</p>
+        <span class="tool-count">0 wierszy</span>
+        <button type="button" disabled>Pobierz CSV</button>
+      </div>
+      <div class="tool-tablewrap"></div>
+      <p class="tool-rownote"></p>
+    </div>
+
+    <div class="tool-panel" id="panel-errors" role="tabpanel" aria-labelledby="tab-errors" hidden>
+      <div class="tool-panelhead">
+        <p class="tool-blurb">Wszystko, co poszło nie tak. Pusta tabela w tym miejscu to wynik, o który chodzi.</p>
+        <span class="tool-count">0 wierszy</span>
+        <button type="button" disabled>Pobierz CSV</button>
+      </div>
+      <div class="tool-tablewrap"></div>
+      <p class="tool-rownote"></p>
+    </div>
+  </div>
+</section>
+<section id="how">
+  <header>
+    <small>Jak to działa</small>
+    <h2>Cztery kroki, <em>jeden z nich po stronie serwera</em></h2>
+    <p>Wolimy wyjaśnić ten jeden krok po stronie serwera, niż udawać, że go nie ma.</p>
+  </header>
+
+  <ol class="bento">
+    <li>
+      <div>
+        <h3>Wpisujesz adresy</h3>
+        <p>Podczas pisania nic nigdzie nie jest wysyłane. Lista jest czyszczona, odfiltrowana z duplikatów i przycinana do 25 pozycji w Twojej przeglądarce.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Przekaźnik pobiera HTML</h3>
+        <p>Przeglądarki nie pozwalają pobierać stron z innych domen. Mały Cloudflare Worker w naszej domenie wysyła po jednym zapytaniu na stronę i zwraca HTML. Nic nie zapisuje i nic nie loguje.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Twoja przeglądarka wykonuje pracę</h3>
+        <p>Parsowanie, liczenie, klasyfikowanie — wszystko dzieje się na Twoim komputerze.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Eksportujesz, co potrzebne</h3>
+        <p>Każda tabela pobiera się jako osobny CSV, generowany w przeglądarce. Wszystkie mają wspólną kolumnę <code>url</code>, więc łączą się bez problemu w arkuszu.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+<section id="measures">
+  <header>
+    <small>Co dostajesz</small>
+    <h2>Siedem tabel. <em>Zero punktów na sto.</em></h2>
+    <p>Każde inne darmowe narzędzie podaje Ci liczbę, którą samo wymyśliło. Tutaj dostajesz wiersze, z których taka liczba by powstała, i sam decydujesz, co znaczą.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Strony</h3>
+      <p>Jeden wiersz na adres: status, tytuł i jego długość, meta opis, canonical, dyrektywa robots, język, viewport, liczba nagłówków, liczba słów, liczba linków i obrazów, wszystkie tagi Open Graph i Twitter oraz znalezione typy danych strukturalnych. 51 kolumn w eksporcie.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>Nagłówki</h3>
+      <p>Każdy nagłówek od h1 do h6 w kolejności z kodu, z poziomem, pozycją i długością w znakach. To tutaj widać zepsutą strukturę: cztery h1 albo h3 bez h2 nad nim.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>Słowa</h3>
+      <p>20 najczęściej powtarzanych słów na każdej stronie, z liczbą wystąpień i udziałem w całości. Przydatne do prostego pytania, które większość narzędzi omija: czy ta strona jest o tym, o czym myślisz, że jest?</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>Linki</h3>
+      <p>Każdy odnośnik na stronie, podzielony na wewnętrzne i zewnętrzne, z tekstem kotwicy, wartością <code>rel</code> i informacją, czy jest nofollow. Puste kotwice i linki „kliknij tutaj” wychodzą właśnie tutaj.</p>
+    </li>
+    <li>
+      <span>05</span>
+      <h3>Obrazy</h3>
+      <p>Każdy obraz ze źródłem, tekstem alternatywnym i informacją, czy atrybut alt jest całkiem nieobecny, czy celowo pusty. To dwa różne problemy i mają dwie różne kolumny.</p>
+    </li>
+    <li>
+      <span>06</span>
+      <h3>Dane strukturalne</h3>
+      <p>Typy JSON-LD, mikrodanych i RDFa, jeden wiersz na blok, z surowym JSON-em w eksporcie. Blok, który jest, ale jest wadliwy, zostaje oznaczony, a nie pominięty — zepsute dane strukturalne to też wynik.</p>
+    </li>
+    <li>
+      <span>07</span>
+      <h3>Błędy</h3>
+      <p>Każda awaria: timeouty, 404, przekierowania donikąd, strony zbyt duże, JSON-LD, którego nie da się sparsować. Nic nie znika po cichu.</p>
+    </li>
+  </ul>
+</section>
+<section class="dark" id="limits">
+  <header>
+    <small>Zanim zaczniesz</small>
+    <h2>Czego to narzędzie <em>nie robi</em></h2>
+    <p>Każde z tych ograniczeń jest prawdziwe. To nie jest zapowiedź wersji płatnej — płatnej wersji tego narzędzia nie ma.</p>
+  </header>
+
+  <ul class="checklist">
+    <li>
+      <h3>Nie wykonuje JavaScriptu</h3>
+      <p>Tylko statyczny HTML, dokładnie taki, jaki przychodzi z serwera. Jeśli Twoja strona rysuje treść po stronie klienta, tabele będą niepokojąco puste. To samo w sobie jest informacją, ale nie jest wyrokiem na Twoją stronę.</p>
+    </li>
+    <li>
+      <h3>Nie znajduje podstron</h3>
+      <p>Pobiera adresy, które wpiszesz, i nic poza nimi. Nie czyta sitemapy, nie chodzi po linkach, nie schodzi w głąb. Strony osierocone pozostaną niewidoczne.</p>
+    </li>
+    <li>
+      <h3>Nie wystawia ocen</h3>
+      <p>Żadnych punktów na sto, żadnych ocen literowych, żadnych zielonych i czerwonych światełek. Takie liczby są wymyślone, a wymyślenie jednej tutaj obniżyłoby wiarygodność surowych danych.</p>
+    </li>
+    <li>
+      <h3>Nie sprawdza pozycji, linków zwrotnych ani liczby wyszukiwań</h3>
+      <p>Te dane siedzą w zewnętrznych API, z którymi to narzędzie nie ma połączenia. Wszystko tutaj pochodzi z samej strony.</p>
+    </li>
+    <li>
+      <h3>Liczba słów jest przybliżona</h3>
+      <p>Nawigacja, nagłówek i stopka są usuwane tam, gdzie są tak oznaczone w kodzie. Na stronach, które nie używają tych elementów, wspólne elementy szablonu zawyżą wynik.</p>
+    </li>
+    <li>
+      <h3>Długość tytułu liczona w znakach, nie w pikselach</h3>
+      <p>Wyszukiwarki ucinają tytuły na podstawie szerokości renderowanej, nie liczby znaków. Ta liczba jest przydatnym przybliżeniem i niczym więcej.</p>
+    </li>
+  </ul>
+</section>
+<section id="privacy">
+  <header>
+    <small>Prywatność</small>
+    <h2>Co dzieje się z <em>adresami, które wpisujesz</em></h2>
+  </header>
+
+  <details>
+    <summary>Adres trafia do naszego przekaźnika i nigdzie indziej</summary>
+    <p>Żeby pobrać stronę, jej adres musi dotrzeć do jakiegoś serwera. Nasz go przyjmuje, wysyła jedno zapytanie i zwraca HTML. Nie zapisuje niczego do bazy, do logów ani do narzędzia analitycznego.</p>
+  </details>
+  <details>
+    <summary>Treść strony nie opuszcza Twojej przeglądarki</summary>
+    <p>HTML wraca na Twój komputer i tam jest analizowany. Tytuły, nagłówki, liczba słów, linki, obrazy i dane strukturalne powstają lokalnie. Nic z tego nigdzie nie jest wysyłane.</p>
+  </details>
+  <details>
+    <summary>Bez ciasteczek, bez analityki, bez konta</summary>
+    <p>Ta strona nie ustawia ciasteczek i nic nie zapisuje w Twojej przeglądarce. Nie ma na niej skryptu śledzącego ani rejestracji. Zamkniesz kartę i wyniki znikają — pobierz najpierw pliki CSV, jeśli chcesz je zachować.</p>
+  </details>
+  <details>
+    <summary>Pliki CSV powstają na Twoim komputerze</summary>
+    <p>Każdy eksport jest składany w przeglądarce i trafia prosto do folderu pobranych. Żaden plik nie jest generowany ani przechowywany na serwerze.</p>
+  </details>
+  <details>
+    <summary>Jeden wyjątek, powiedziany wprost</summary>
+    <p>Ta strona ładuje krój pisma z Google Fonts, więc Google widzi Twój adres IP — tak samo jak na każdej innej stronie, która robi to samo. Jeśli to dla Ciebie istotne, narzędzie działa bez zarzutu z zablokowanym fontem.</p>
+  </details>
+</section>
+<section id="faq">
+  <header>
+    <small>Pytania</small>
+    <h2>Rozsądne <em>pytania</em></h2>
+  </header>
+
+  <details>
+    <summary>Po co w ogóle potrzebny jest serwer?</summary>
+    <p>Zabezpieczenia przeglądarki nie pozwalają stronie z jednej domeny czytać strony z innej. Nazywa się to polityką tego samego pochodzenia i żadna witryna nie może jej wyłączyć ze swojej strony. Narzędzie, które twierdzi, że czyta dowolne strony wyłącznie w przeglądarce, albo korzysta z cudzego przekaźnika, albo nie robi tego, co deklaruje.</p>
+  </details>
+  <details>
+    <summary>Czy mogę sprawdzić stronę, której nie jestem właścicielem?</summary>
+    <p>Tak. Narzędzie czyta dokładnie to, co przeczytałaby przeglądarka każdego odwiedzającego, po jednej stronie naraz, z przerwą między zapytaniami. Zachowaj rozsądek — to narzędzie do obejrzenia kilkunastu stron, a nie do rozbierania czyjejś witryny na części.</p>
+  </details>
+  <details>
+    <summary>Dlaczego tylko 25 adresów?</summary>
+    <p>Bo działa w karcie przeglądarki. Powyżej tego robi się ciasno w pamięci, tabele zwalniają, a całość przestaje być uprzejma wobec serwera po drugiej stronie. Jeśli potrzebujesz setek stron, to inne zadanie i inne narzędzie.</p>
+  </details>
+  <details>
+    <summary>Czy zadziała na stronie zbudowanej w React, Vue albo Next.js?</summary>
+    <p>Tylko jeśli ta strona wysyła gotowy HTML. Strony renderowane po stronie serwera i generowane statycznie czytają się normalnie. Aplikacja jednostronicowa, która rysuje wszystko po załadowaniu, wróci tutaj prawie pusta — i ta pustka też jest warta zobaczenia, bo robot, który nie renderuje, zobaczy coś bardzo podobnego.</p>
+  </details>
+  <details>
+    <summary>Dlaczego liczba słów różni się od wyniku innego narzędzia?</summary>
+    <p>Każde narzędzie inaczej wyznacza granicę między treścią a elementami szablonu i żadne nie jest w błędzie. Nasze usuwa <code>nav</code>, <code>header</code>, <code>footer</code>, <code>script</code> i <code>style</code>, a gdy strona ma element <code>main</code>, liczy z jego wnętrza. Porównuj stronę z nią samą w czasie, a nie z liczbą z innego narzędzia.</p>
+  </details>
+  <details>
+    <summary>Jest za darmo i bez konta. Gdzie jest haczyk?</summary>
+    <p>Nie ma wersji wyższej, nie ma kredytów i nie zbieramy adresów e-mail, więc nie ma czym haczyć. Sprzedajemy audyty SEO po cenach podanych na stronie, a darmowe narzędzie to rozsądny sposób, żeby trafili na nas ludzie, którzy kiedyś takiego audytu mogą potrzebować. Większość osób, które z niego skorzystają, nigdy niczego nie kupi i to jest w porządku.</p>
+  </details>
+  <details>
+    <summary>Czy to zastępuje audyt SEO?</summary>
+    <p>Nie i nie ma zastępować. To narzędzie mówi, co jest na Twoich stronach. Audyt mówi, co z tego jest problemem, dlaczego i co z tym zrobić — a to wymaga oceny, nie ekstrakcji. Jeśli te tabele Ci wystarczą, korzystaj z nich i niczego nie kupuj.</p>
+  </details>
+</section>
+<section id="audit">
+  <header>
+    <small>Jeśli potrzebujesz czegoś więcej niż danych</small>
+    <h2>Audyt to <em>ta część z oceną</em></h2>
+    <p>To narzędzie wykonuje etap zbierania danych z audytu Illucrum. Sam audyt to przegląd 52 punktów: SEO techniczne, on-page, słowa kluczowe, linki zwrotne, konkurencja, SEO lokalne i widoczność w AI, spisany w raport, który możesz wdrożyć sam, przekazać swojemu programiście albo oddać komukolwiek zechcesz. Ceny są podane na stronie.</p>
+  </header>
+  <nav>
+    <button type="button" data-lead-open data-lead-source="bulk-checker" data-lead-title="Kontakt" data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
+      Skontaktuj się z nami
+    </button>
+    <a href="https://illucrum.com/pl/audits/">Zobacz, co zawiera audyt</a>
+  </nav>
+  <p>
+    <small>Inne rzeczy, które sprawdza to samo narzędzie:
+      <a href="https://illucrum.com/pl/tools\meta-tag-check">Meta tagi</a>,
+      <a href="https://illucrum.com/pl/tools\heading-check">Nagłówki</a>,
+      <a href="https://illucrum.com/pl/tools\alt-text-check">Tekst alternatywny</a>,
+      <a href="https://illucrum.com/pl/tools\word-count-check">Licznik słów</a>,
+      <a href="https://illucrum.com/pl/tools\canonical-check">Tagi canonical</a>,
+      <a href="https://illucrum.com/pl/tools\open-graph-check">Open Graph</a>,
+      <a href="https://illucrum.com/pl/tools\schema-check">Schema</a>
+    </small>
+  </p>
+</section>
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+    <p>Audyty SEO które pokażą Ci co dokładnie trzeba naprawić następnie.</p>
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40" data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" /></a>
+      <a href="https://wa.me/48515983261" target="_blank" rel="nofollow"><img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg" alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Audyty</h5>
+    <ul>
+      <li><a href="/pl/audyty/audyt-seo-dla-saas/">Audyty SEO dla SaaS</a></li>
+      <li><a href="/pl/audyty/audyt-seo-dla-sklepow-internetowych/">Audyt SEO dla sklepów internetowych</a></li>
+      <li><a href="/pl/audyty/audyt-seo/">Audyt SEO stron internetowych</a></li>
+      <li><a href="/pl/audyty/techniczny-audyt-seo/">Techniczny audyt SEO</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Porównaj</h5>
+    <ul>
+      <li><a href="/pl/porownanie/audyt-seo-saas-a-standardowy/">SaaS vs Website</a></li>
+      <li><a href="/pl/porownanie/audyt-seo-sklepu-internetowego-a-standardowy/">E-commerce vs Strona internetowa</a></li>
+      <li><a href="/pl/porownanie/audyt-seo-a-narzedzie/">Audyt vs narzędzie SEO</a></li>
+      <li><a href="/pl/porownanie/audyt-a-abonament/">Audyt vs abonament</a></li>
+      <li><a href="/pl/porownanie/audyt-seo-a-diy/">Audyt vs DIY</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Firma</h5>
+    <ul>
+      <li><a href="/pl/o-nas/">O nas</a></li>
+      <li><a href="/pl/proces/">Proces</a></li>
+      <li><a href="/pl/cennik/">Cennik</a></li>
+      <li><a href="/pl/faq/">FAQ</a></li>
+      <li><a href="/pl/fakty-seo/">Fakty SEO</a></li>
+      <li><a href="https://scraper.illucrum.com/">Scraper</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Kontakt i informacje prawne</h5>
+    <ul>
+      <li><a href="/pl/prawne/warunki/">Regulamin</a></li>
+      <li><a href="/pl/prawne/prywatnosc/">Prywatność</a></li>
+      <li><a href="/pl/prawne/ciasteczka/">Cookies</a></li>
+      <li><a href="/pl/prawne/zastrzezenie/">Zastrzeżenie prawne</a></li>
+      <li><a href="/pl/prawne/dostepnosc/">Dostępność</a></li>
+      <li><a href="#" data-consent-open>Zarządzaj plikami cookies.</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +48 515 983 261</span>
+    <span>
+      <a href="https://illucrum.com/" hreflang="en-us">US</a> &middot;
+      <a href="https://illucrum.com/pl/" hreflang="en-pl">PL</a> &middot;
+      <a href="https://illucrum.com/eu/" hreflang="en-001">EU</a> &middot;
+      <a href="https://illucrum.com/uk/" hreflang="en-gb">UK</a>
+    </span>
+  </small>
+</footer>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRLGLHC5" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Używamy plików cookies" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">Używamy plików cookies</p>
+    <p class="ic-consent__body">Używamy plików cookies żeby strona pracowała, zrozmieć jak jest używana,i (tylko jeśli się zgodzisz) żeby pokazywać odpowiednie reklamy na Google i Reddit. Zawsze możesz zmienić twój wybór na stópce strony. <a href="/pl/prawne/ciasteczka/">Polityka cookie</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Zaakceptuj wszystkie</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Akceptuj tylko niezbędne</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferencje</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Niezbędne</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Niezbędne">
+        <p class="ic-consent__pref-desc">Wymagane do funkjonowania strony. Nie można wyłączyć.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analityka</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analityka">
+        <p class="ic-consent__pref-desc">Pomaga nam zrozumieć jak użytkownicy użwają stronę (Analityka Google 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Reklama</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Reklama">
+        <p class="ic-consent__pref-desc">Pozwala nam mierzyć i personalizować Google Ads oraz Reddit Adds. </p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Zachowaj wybór</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

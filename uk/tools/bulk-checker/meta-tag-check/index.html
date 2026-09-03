@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MRLGLHC5');</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+<title>Bulk Meta Title and Description Checker | Illucrum</title>
+<meta name="description" content="Check the title tag and meta description of up to 25 pages at once, with character counts, canonical and robots directive. Export as CSV. Free, no signup." />
+
+<link rel="canonical" href="https://illucrum.com/uk/tools\meta-tag-check">
+<link rel="alternate" hreflang="en-US" href="https://illucrum.com/c.us.tools\meta-tag-check">
+<link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/c.eu.tools\meta-tag-check">
+<link rel="alternate" hreflang="en-GB" href="https://illucrum.com/uk/c.gb.tools\meta-tag-check">
+<link rel="alternate" hreflang="pl-PL" href="https://illucrum.com/pl/c.pl.tools\meta-tag-check">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com/c.us.tools\meta-tag-check">
+
+<meta name="robots" content="index, follow" />
+<link rel="icon" href="/static/img/logo.png">
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Illucrum" />
+<meta property="og:title" content="Bulk meta title and description checker — 25 URLs at once" />
+<meta property="og:description" content="Title, length, meta description, length, canonical and robots directive. One row per page, exported as CSV. Free, no account." />
+<meta property="og:url" content="https://illucrum.com/uk/tools\meta-tag-check" />
+<meta property="og:image" content="https://illucrum.com/static/img/og.png">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Bulk meta title and description checker — 25 URLs at once" />
+<meta name="twitter:description" content="Title, length, meta description, length, canonical and robots directive. One row per page, exported as CSV. Free, no account." />
+<meta name="twitter:image" content="https://illucrum.com/static/img/og.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://illucrum.com/uk/tools\meta-tag-check#webpage",
+      "url": "https://illucrum.com/uk/tools\meta-tag-check",
+      "name": "Bulk meta title and description checker",
+      "description": "Check the title tag and meta description of up to 25 pages at once, with character counts, canonical and robots directive. Export as CSV. Free, no signup.",
+      "isPartOf": { "@id": "https://illucrum.com/#website" },
+      "publisher": { "@id": "https://illucrum.com/#organization" },
+      "mainEntity": { "@id": "https://illucrum.com/uk/tools/bulk-checker/#software" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://illucrum.com/uk/tools\meta-tag-check#faq",
+      "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long should a title tag be?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Long enough to be specific, short enough to survive truncation. Around 50 to 60 characters is the usual working range, but the real constraint is pixel width, so treat the range as a guide rather than a rule." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the meta description affect rankings?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Not directly. Google has said for years that it is not a ranking factor. It affects whether a result gets clicked, which is a different thing and still worth your attention." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does Google show a different title than mine?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Google rewrites titles when it judges its own version more useful for the query, often pulling from the h1 or the site name. Checking the tag you actually ship is the first step in working out why it was overruled." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I check meta tags on a site I do not own?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. It reads exactly what any visitor's browser would read, one page at a time, with a pause between requests." }
+      }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="https://illucrum.com/uk/">
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+  </a>
+  <ul>
+    <li><a href="/uk/audits/">Audits</a></li>
+    <li><a href="/uk/pricing/">Pricing</a></li>
+    <li><a href="/uk/process/">Process</a></li>
+    <li><a href="/uk/faq/">FAQ</a></li>
+    <li><a href="/uk/about/">About</a></li>
+    <li><a href="https://blog.illucrum.com">Blog</a></li>
+    <li><a data-lead-open data-lead-source="header" data-lead-title="Contact form"
+      data-lead-subtitle="Drop your details and we'll contact you.">
+      Contact us
+    </a></li>
+  </ul>
+</nav>
+<header>
+  <small>Free meta tag checker</small>
+  <h1>Every <em>title and meta description</em>, 25 pages at a time</h1>
+  <p>Paste your URLs. Get the title tag and its length, the meta description and its length, the canonical, the robots directive and the declared language — one row per page, exported as CSV.</p>
+  <p><small>Lengths are character counts, not pixel widths. Search engines truncate on rendered width, so treat the number as a working proxy and nothing more.</small></p>
+  <nav>
+    <a href="https://illucrum.com/uk/tools/bulk-checker/">Open the checker</a>
+    <a href="#what">What you get</a>
+  </nav>
+  <aside>
+    <small>At a glance</small>
+    <dl>
+      <dt>URLs per run</dt>
+      <dd>25</dd>
+      <dt>Fields per page</dt>
+      <dd>51</dd>
+      <dt>CSV exports</dt>
+      <dd>7</dd>
+    </dl>
+  </aside>
+</header>
+<main>
+<section id="what">
+  <header>
+    <small>What you get</small>
+    <h2>One row per page, <em>every field in the head</em></h2>
+    <p>The four columns people actually open a spreadsheet for, plus forty-seven more they occasionally need.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Title and its length</h3>
+      <p>The title tag exactly as it ships, with a character count next to it. No rewriting, no suggestion, no green tick.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>Meta description and its length</h3>
+      <p>Same treatment. A blank cell means the page has no description, which is different from a short one, and the export keeps them apart.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>Canonical and robots in the same row</h3>
+      <p>The two directives most likely to be silently wrong. A canonical pointing at staging, or a stray noindex that survived a launch, shows up beside the title rather than in a separate audit.</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>Forty-seven other columns</h3>
+      <p>Declared language, viewport, heading counts, word counts, link and image counts, and every Open Graph and Twitter tag the page carries. All of it in the same CSV.</p>
+    </li>
+  </ul>
+</section>
+<section class="dark" id="checks">
+  <header>
+    <small>What to look for</small>
+    <h2>Five things <em>the sort function finds</em></h2>
+    <p>None of these need a tool to interpret them. They need the data in one column so you can see them.</p>
+  </header>
+
+  <ul class="checklist">
+    <li>
+      <h3>Duplicate titles across pages</h3>
+      <p>Sort the title column. Pages that share a title are asking a search engine to pick between them, and it will.</p>
+    </li>
+    <li>
+      <h3>Missing meta descriptions</h3>
+      <p>Google will write one for you. It will be a sentence lifted from the page by a machine, chosen for the query rather than for you.</p>
+    </li>
+    <li>
+      <h3>Titles that are mostly brand</h3>
+      <p>“Illucrum | Home” spends the whole tag on the one thing the searcher already knows. The brand goes at the end, if it goes in at all.</p>
+    </li>
+    <li>
+      <h3>A canonical pointing somewhere unexpected</h3>
+      <p>Staging domains, trailing-slash mismatches, and whole sections canonicalised to the homepage are the three you will actually find.</p>
+    </li>
+    <li>
+      <h3>A noindex nobody meant to ship</h3>
+      <p>It survives a launch more often than anyone admits. One column, one filter, thirty seconds.</p>
+    </li>
+  </ul>
+</section>
+<section id="limits">
+  <header>
+    <small>Be aware</small>
+    <h2>What it <em>will not</em> tell you</h2>
+    <p>Stated here rather than discovered later.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Characters, not pixels</h3>
+      <p>Truncation happens on rendered width. A title full of wide letters is cut earlier than one full of narrow ones, and no character count knows that.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>Static HTML only</h3>
+      <p>Tags written by JavaScript, or injected by a tag manager after load, are not in the HTML the server sent and will not be counted.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>It does not write your titles</h3>
+      <p>There is no suggestion column and no score. What the title should say is a decision about the page, not a calculation.</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>Twenty-five URLs per run</h3>
+      <p>It runs in a browser tab. For a whole site you want a desktop crawler, and that is a fair thing to want.</p>
+    </li>
+  </ul>
+</section>
+<section id="faq">
+  <header>
+    <small>Questions</small>
+    <h2>Reasonable <em>questions</em></h2>
+  </header>
+
+  <details>
+    <summary>How long should a title tag be?</summary>
+    <p>Long enough to be specific, short enough to survive truncation. Around 50 to 60 characters is the usual working range, but the real constraint is pixel width, so treat the range as a guide rather than a rule.</p>
+  </details>
+  <details>
+    <summary>Does the meta description affect rankings?</summary>
+    <p>Not directly. Google has said for years that it is not a ranking factor. It affects whether a result gets clicked, which is a different thing and still worth your attention.</p>
+  </details>
+  <details>
+    <summary>Why does Google show a different title than mine?</summary>
+    <p>Google rewrites titles when it judges its own version more useful for the query, often pulling from the h1 or the site name. Checking the tag you actually ship is the first step in working out why it was overruled.</p>
+  </details>
+  <details>
+    <summary>Can I check meta tags on a site I do not own?</summary>
+    <p>Yes. It reads exactly what any visitor's browser would read, one page at a time, with a pause between requests.</p>
+  </details>
+</section>
+<section id="audit">
+  <header>
+    <small>One tool, seven tables</small>
+    <h2>Meta tags are <em>one tab of the checker</em></h2>
+    <p>The same run returns headings, word counts, links, images and structured data as well. It is one tool with seven tables and seven CSV exports, not seven separate tools you have to run one after another.</p>
+  </header>
+  <nav>
+    <a href="https://illucrum.com/uk/tools/bulk-checker/">Open the bulk checker</a>
+    <a href="https://illucrum.com/uk/audits/">See what is in an audit</a>
+  </nav>
+  <p>
+    <small>Other checks the same tool runs:
+      <a href="https://illucrum.com/uk/tools/bulk-checker/">Bulk SEO checker</a>,
+      <a href="https://illucrum.com/uk/tools\heading-check">Heading checker</a>,
+      <a href="https://illucrum.com/uk/tools\alt-text-check">Alt text checker</a>,
+      <a href="https://illucrum.com/uk/tools\word-count-check">Word count checker</a>,
+      <a href="https://illucrum.com/uk/tools\canonical-check">Canonical checker</a>,
+      <a href="https://illucrum.com/uk/tools\open-graph-check">Open Graph checker</a>,
+      <a href="https://illucrum.com/uk/tools\schema-check">Schema checker</a>
+    </small>
+  </p>
+</section>
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+    <p>SEO audits that show you exactly what to fix next.</p>
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40" data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" /></a>
+      <a href="https://wa.me/48515983261" target="_blank" rel="nofollow"><img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg" alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Audits</h5>
+    <ul>
+      <li><a href="/uk/audits/saas-seo-audit/">SaaS SEO audit</a></li>
+      <li><a href="/uk/audits/ecommerce-seo-audit/">E-commerce SEO audit</a></li>
+      <li><a href="/uk/audits/seo-audit/">Website SEO audit</a></li>
+      <li><a href="/uk/audits/technical-seo-audit/">Technical SEO audit</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Compare</h5>
+    <ul>
+      <li><a href="/uk/compare/saas-vs-generic-seo-audit/">SaaS vs Website</a></li>
+      <li><a href="/uk/compare/ecommerce-vs-generic-seo-audit/">E-commerce vs Website</a></li>
+      <li><a href="/uk/compare/seo-audit-vs-seo-tool/">Audit vs SEO tool</a></li>
+      <li><a href="/uk/compare/seo-audit-vs-seo-retainer/">Audit vs retainer</a></li>
+      <li><a href="/uk/compare/seo-audit-vs-diy/">Audit vs DIY</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Company</h5>
+    <ul>
+      <li><a href="/uk/about/">About</a></li>
+      <li><a href="/uk/process/">Process</a></li>
+      <li><a href="/uk/pricing/">Pricing</a></li>
+      <li><a href="/uk/faq/">FAQ</a></li>
+      <li><a href="/uk/seo-facts/">SEO facts</a></li>
+      <li><a href="https://scraper.illucrum.com/">Scraper</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Contact &amp; Legal</h5>
+    <ul>
+      <li><a href="/uk/legal/terms/">Terms</a></li>
+      <li><a href="/uk/legal/privacy/">Privacy</a></li>
+      <li><a href="/uk/legal/cookies/">Cookies</a></li>
+      <li><a href="/uk/legal/disclaimer/">Disclaimer</a></li>
+      <li><a href="/uk/legal/accessibility/">Accessibility</a></li>
+      <li><a href="#" data-consent-open>Manage cookies</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +48 515 983 261</span>
+    <span>
+      <a href="https://illucrum.com/" hreflang="en-us">US</a> &middot;
+      <a href="https://illucrum.com/pl/" hreflang="en-pl">PL</a> &middot;
+      <a href="https://illucrum.com/eu/" hreflang="en-001">EU</a> &middot;
+      <a href="https://illucrum.com/uk/" hreflang="en-gb">UK</a>
+    </span>
+  </small>
+</footer>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRLGLHC5" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="We use cookies" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">We use cookies</p>
+    <p class="ic-consent__body">We use cookies to make the site work, to understand how it is used, and (only if you agree) to show relevant ads on Google and Reddit. You can change your choice at any time from the footer. <a href="/uk/legal/cookies/">Cookie policy</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferences</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Strictly necessary</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
+        <p class="ic-consent__pref-desc">Required for the site to function. Cannot be turned off.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analytics</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
+        <p class="ic-consent__pref-desc">Helps us understand how visitors use the site (Google Analytics 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Advertising</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
+        <p class="ic-consent__pref-desc">Lets us measure and personalise Google Ads and Reddit Ads campaigns.</p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

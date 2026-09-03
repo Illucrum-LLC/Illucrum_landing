@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MRLGLHC5');</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+<title>Bulk checker danych strukturalnych | Illucrum</title>
+<meta name="description" content="Wyciągnij dane strukturalne z 25 stron naraz: JSON-LD, mikrodane i RDFa, z surowym JSON-em i oznaczeniem bloków, których nie da się sparsować. Za darmo." />
+
+<link rel="canonical" href="https://illucrum.com/pl/tools\schema-check">
+<link rel="alternate" hreflang="en-US" href="https://illucrum.com/c.us.tools\schema-check">
+<link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/c.eu.tools\schema-check">
+<link rel="alternate" hreflang="en-GB" href="https://illucrum.com/uk/c.gb.tools\schema-check">
+<link rel="alternate" hreflang="pl-PL" href="https://illucrum.com/pl/c.pl.tools\schema-check">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com/c.us.tools\schema-check">
+
+<meta name="robots" content="index, follow" />
+<link rel="icon" href="/static/img/logo.png">
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Illucrum" />
+<meta property="og:title" content="Bulk checker danych strukturalnych — JSON-LD, mikrodane, RDFa" />
+<meta property="og:description" content="Każdy blok danych strukturalnych na każdej stronie, jeden wiersz na blok, z typem i surowym JSON-em w eksporcie. Za darmo, bez konta." />
+<meta property="og:url" content="https://illucrum.com/pl/tools\schema-check" />
+<meta property="og:image" content="https://illucrum.com/static/img/og.png">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Bulk checker danych strukturalnych — JSON-LD, mikrodane, RDFa" />
+<meta name="twitter:description" content="Każdy blok danych strukturalnych na każdej stronie, jeden wiersz na blok, z typem i surowym JSON-em w eksporcie. Za darmo, bez konta." />
+<meta name="twitter:image" content="https://illucrum.com/static/img/og.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://illucrum.com/pl/tools\schema-check#webpage",
+      "url": "https://illucrum.com/pl/tools\schema-check",
+      "name": "Bulk checker danych strukturalnych",
+      "description": "Wyciągnij dane strukturalne z 25 stron naraz: JSON-LD, mikrodane i RDFa, z surowym JSON-em i oznaczeniem bloków, których nie da się sparsować. Za darmo.",
+      "isPartOf": { "@id": "https://illucrum.com/#website" },
+      "publisher": { "@id": "https://illucrum.com/#organization" },
+      "mainEntity": { "@id": "https://illucrum.com/pl/narzedzia/bulk-checker/#software" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://illucrum.com/pl/tools\schema-check#faq",
+      "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Którego formatu używać: JSON-LD, mikrodanych czy RDFa?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Google zaleca JSON-LD i jest on najłatwiejszy w utrzymaniu, bo siedzi w jednym bloku, zamiast być wpleciony w znaczniki. Mikrodane i RDFa nadal działają i rzadko jest dziś powód, żeby zaczynać od nich." }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy dane strukturalne poprawiają pozycje?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Nie same z siebie. Google konsekwentnie powtarza, że nie są czynnikiem rankingowym. Umożliwiają za to wyświetlenie wyniku rozszerzonego, co zmienia wygląd wpisu i częstotliwość kliknięć." }
+      },
+      {
+        "@type": "Question",
+        "name": "Dlaczego to narzędzie pokazuje bloki, których nie pokazuje narzędzie Google?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Bo wyciąga wszystko, co jest na stronie, łącznie z formatami i typami, których Google nie używa do wyników rozszerzonych. Narzędzie Google raportuje to, na czym potrafi działać, a to celowo węższa lista." }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy mogę oznaczyć coś, czego nie widać na stronie?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Nie. Wytyczne Google wymagają, żeby dane strukturalne opisywały treść widoczną dla odwiedzającego. Oznaczanie cen, opinii albo dat, których na stronie nie ma, to najczęstsza przyczyna ręcznej kary za dane strukturalne." }
+      }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="https://illucrum.com/pl/">
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+  </a>
+  <ul>
+    <li><a href="/pl/audyty/">Audyty</a></li>
+    <li><a href="/pl/cennik/">Cennik</a></li>
+    <li><a href="/pl/proces/">Proces</a></li>
+    <li><a href="/pl/faq/">FAQ</a></li>
+    <li><a href="/pl/o-nas/">O nas</a></li>
+    <li><a href="https://blog.illucrum.com">Blog</a></li>
+    <li><a data-lead-open data-lead-source="header" data-lead-title="Kontakt"
+      data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
+      Skontaktuj się z nami
+    </a></li>
+  </ul>
+</nav>
+<header>
+  <small>Darmowe sprawdzanie danych strukturalnych</small>
+  <h1>Wyciągnij <em>dane strukturalne</em> z 25 stron naraz</h1>
+  <p>Wklej adresy. Dostajesz każdy blok danych strukturalnych deklarowany przez stronę — JSON-LD, mikrodane i RDFa — jeden wiersz na blok, z jego typem, a w eksporcie z surowym JSON-em.</p>
+  <p><small>Blok, który jest, ale nie daje się sparsować, jest zgłaszany, a nie pomijany. Zepsute dane strukturalne to znalezisko, a większość ekstraktorów ukrywa je po cichu, po prostu nic nie pokazując.</small></p>
+  <nav>
+    <a href="https://illucrum.com/pl/narzedzia/bulk-checker/">Otwórz narzędzie</a>
+    <a href="#what">Co dostajesz</a>
+  </nav>
+  <aside>
+    <small>W skrócie</small>
+    <dl>
+      <dt>Adresów na jedno uruchomienie</dt>
+      <dd>25</dd>
+      <dt>Odczytywanych formatów</dt>
+      <dd>3</dd>
+      <dt>Eksportów CSV</dt>
+      <dd>7</dd>
+    </dl>
+  </aside>
+</header>
+<main>
+<section id="what">
+  <header>
+    <small>Co dostajesz</small>
+    <h2>Trzy formaty <em>i surowy blok</em></h2>
+    <p>Ekstrakcja, nie walidacja. Ta różnica ma znaczenie i jest opisana niżej.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>JSON-LD, mikrodane i RDFa</h3>
+      <p>Trzy formaty, nie jeden. Większość darmowych ekstraktorów czyta JSON-LD i na tym kończy, przez co starsza witryna albo sklep na starszej platformie wyglądają, jakby w ogóle nie miały danych strukturalnych.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>Jeden wiersz na blok, z typem</h3>
+      <p>Strona z blokiem Organization, BreadcrumbList i dwoma wpisami FAQPage dostaje cztery wiersze, a nie jedną linijkę podsumowania.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>Surowy JSON w eksporcie</h3>
+      <p>Cały blok, a nie jego opis, więc możesz porównać to, co wyszło na produkcję, z tym, co miało wyjść.</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>Błędy parsowania oznaczone, nie usunięte</h3>
+      <p>Wadliwy blok jest zgłaszany jako wadliwy. Milczenie dałoby ten sam wynik co strona bez znaczników, a to bardzo różne sytuacje.</p>
+    </li>
+  </ul>
+</section>
+<section class="dark" id="checks">
+  <header>
+    <small>Na co patrzeć</small>
+    <h2>Pięć znalezisk <em>ukrytych w wierszach</em></h2>
+    <p>Dane strukturalne psują się po cichu. Nic się nie łamie, nic nie ostrzega, wynik rozszerzony po prostu nigdy się nie pojawia.</p>
+  </header>
+
+  <ul class="checklist">
+    <li>
+      <h3>Strona bez bloków tam, gdzie szablon miał je dodać</h3>
+      <p>Jedna strona produktu na dwadzieścia pięć z pustą kolumną to warunek w szablonie, który ktoś napisał i o nim zapomniał.</p>
+    </li>
+    <li>
+      <h3>Blok, którego nie da się sparsować</h3>
+      <p>Zwykle zbłąkany przecinek albo nieuciekniony cudzysłów z silnika szablonów. Znacznik jest na stronie, w kodzie wygląda dobrze i nie znaczy nic.</p>
+    </li>
+    <li>
+      <h3>Typy niepasujące do strony</h3>
+      <p>Blok Product na liście kategorii, blok Article na stronie kontaktowej. Szablony wstawiają ten sam blok wszędzie znacznie częściej, niż powinny.</p>
+    </li>
+    <li>
+      <h3>Dwa bloki opisujące to samo</h3>
+      <p>Wtyczka i motyw dodające po jednym bloku Organization to sytuacja częsta, a te dwa rzadko zgadzają się co do nazwy, logotypu i numeru telefonu.</p>
+    </li>
+    <li>
+      <h3>Znaczniki sprzeczne z widoczną stroną</h3>
+      <p>Zasada jest taka, że dane strukturalne opisują to, co jest na stronie. Cena, ocena albo data w JSON-ie, których odwiedzający nie widzi, to dokładnie ten rodzaj rzeczy, za które przychodzą ręczne kary.</p>
+    </li>
+  </ul>
+</section>
+<section id="limits">
+  <header>
+    <small>Zanim zaczniesz</small>
+    <h2>Czego <em>nie powie</em></h2>
+    <p>Powiedziane tutaj, a nie odkryte później.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Wyciąga, ale nie waliduje</h3>
+      <p>Dostajesz typy i surowy JSON. Czy blok spełnia wymagania Google dla konkretnego wyniku rozszerzonego, to osobne pytanie, a rozstrzyga je test wyników z elementami rozszerzonymi Google.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>Bez podglądu wyniku rozszerzonego</h3>
+      <p>Nie ma tu obrazka pokazującego, jak mógłby wyglądać wynik. To pytanie o renderowanie i należy do wyszukiwarki, nie do ekstraktora.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>Tylko statyczny HTML</h3>
+      <p>Danych strukturalnych wstrzykniętych przez menedżera tagów po załadowaniu nie ma w HTML-u wysłanym przez serwer. To, jak niezawodnie są podchwytywane w praktyce, to osobny, ciągnący się spór.</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>25 adresów na jedno uruchomienie</h3>
+      <p>Działa w karcie przeglądarki. Wystarczy do sprawdzenia szablonu w obrębie sekcji, nie do inwentaryzacji katalogu.</p>
+    </li>
+  </ul>
+</section>
+<section id="faq">
+  <header>
+    <small>Pytania</small>
+    <h2>Rozsądne <em>pytania</em></h2>
+  </header>
+
+  <details>
+    <summary>Którego formatu używać: JSON-LD, mikrodanych czy RDFa?</summary>
+    <p>Google zaleca JSON-LD i jest on najłatwiejszy w utrzymaniu, bo siedzi w jednym bloku, zamiast być wpleciony w znaczniki. Mikrodane i RDFa nadal działają i rzadko jest dziś powód, żeby zaczynać od nich.</p>
+  </details>
+  <details>
+    <summary>Czy dane strukturalne poprawiają pozycje?</summary>
+    <p>Nie same z siebie. Google konsekwentnie powtarza, że nie są czynnikiem rankingowym. Umożliwiają za to wyświetlenie wyniku rozszerzonego, co zmienia wygląd wpisu i częstotliwość kliknięć.</p>
+  </details>
+  <details>
+    <summary>Dlaczego to narzędzie pokazuje bloki, których nie pokazuje narzędzie Google?</summary>
+    <p>Bo wyciąga wszystko, co jest na stronie, łącznie z formatami i typami, których Google nie używa do wyników rozszerzonych. Narzędzie Google raportuje to, na czym potrafi działać, a to celowo węższa lista.</p>
+  </details>
+  <details>
+    <summary>Czy mogę oznaczyć coś, czego nie widać na stronie?</summary>
+    <p>Nie. Wytyczne Google wymagają, żeby dane strukturalne opisywały treść widoczną dla odwiedzającego. Oznaczanie cen, opinii albo dat, których na stronie nie ma, to najczęstsza przyczyna ręcznej kary za dane strukturalne.</p>
+  </details>
+</section>
+<section id="audit">
+  <header>
+    <small>Jedno narzędzie, siedem tabel</small>
+    <h2>Dane strukturalne to <em>jedna zakładka narzędzia</em></h2>
+    <p>To samo uruchomienie zwraca też tytuły, meta opisy, nagłówki, liczbę słów, linki i obrazy. To jedno narzędzie z siedmioma tabelami i siedmioma eksportami CSV, a nie siedem osobnych narzędzi uruchamianych po kolei.</p>
+  </header>
+  <nav>
+    <a href="https://illucrum.com/pl/narzedzia/bulk-checker/">Otwórz narzędzie</a>
+    <a href="https://illucrum.com/pl/audits/">Zobacz, co zawiera audyt</a>
+  </nav>
+  <p>
+    <small>Inne rzeczy, które sprawdza to samo narzędzie:
+      <a href="https://illucrum.com/pl/narzedzia/bulk-checker/">Bulk checker stron</a>,
+      <a href="https://illucrum.com/pl/tools\meta-tag-check">Meta tagi</a>,
+      <a href="https://illucrum.com/pl/tools\heading-check">Nagłówki</a>,
+      <a href="https://illucrum.com/pl/tools\alt-text-check">Tekst alternatywny</a>,
+      <a href="https://illucrum.com/pl/tools\word-count-check">Licznik słów</a>,
+      <a href="https://illucrum.com/pl/tools\canonical-check">Tagi canonical</a>,
+      <a href="https://illucrum.com/pl/tools\open-graph-check">Open Graph</a>
+    </small>
+  </p>
+</section>
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+    <p>Audyty SEO które pokażą Ci co dokładnie trzeba naprawić następnie.</p>
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40" data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" /></a>
+      <a href="https://wa.me/48515983261" target="_blank" rel="nofollow"><img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg" alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Audyty</h5>
+    <ul>
+      <li><a href="/pl/audyty/audyt-seo-dla-saas/">Audyty SEO dla SaaS</a></li>
+      <li><a href="/pl/audyty/audyt-seo-dla-sklepow-internetowych/">Audyt SEO dla sklepów internetowych</a></li>
+      <li><a href="/pl/audyty/audyt-seo/">Audyt SEO stron internetowych</a></li>
+      <li><a href="/pl/audyty/techniczny-audyt-seo/">Techniczny audyt SEO</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Porównaj</h5>
+    <ul>
+      <li><a href="/pl/porownanie/audyt-seo-saas-a-standardowy/">SaaS vs Website</a></li>
+      <li><a href="/pl/porownanie/audyt-seo-sklepu-internetowego-a-standardowy/">E-commerce vs Strona internetowa</a></li>
+      <li><a href="/pl/porownanie/audyt-seo-a-narzedzie/">Audyt vs narzędzie SEO</a></li>
+      <li><a href="/pl/porownanie/audyt-a-abonament/">Audyt vs abonament</a></li>
+      <li><a href="/pl/porownanie/audyt-seo-a-diy/">Audyt vs DIY</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Firma</h5>
+    <ul>
+      <li><a href="/pl/o-nas/">O nas</a></li>
+      <li><a href="/pl/proces/">Proces</a></li>
+      <li><a href="/pl/cennik/">Cennik</a></li>
+      <li><a href="/pl/faq/">FAQ</a></li>
+      <li><a href="/pl/fakty-seo/">Fakty SEO</a></li>
+      <li><a href="https://scraper.illucrum.com/">Scraper</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Kontakt i informacje prawne</h5>
+    <ul>
+      <li><a href="/pl/prawne/warunki/">Regulamin</a></li>
+      <li><a href="/pl/prawne/prywatnosc/">Prywatność</a></li>
+      <li><a href="/pl/prawne/ciasteczka/">Cookies</a></li>
+      <li><a href="/pl/prawne/zastrzezenie/">Zastrzeżenie prawne</a></li>
+      <li><a href="/pl/prawne/dostepnosc/">Dostępność</a></li>
+      <li><a href="#" data-consent-open>Zarządzaj plikami cookies.</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +48 515 983 261</span>
+    <span>
+      <a href="https://illucrum.com/" hreflang="en-us">US</a> &middot;
+      <a href="https://illucrum.com/pl/" hreflang="en-pl">PL</a> &middot;
+      <a href="https://illucrum.com/eu/" hreflang="en-001">EU</a> &middot;
+      <a href="https://illucrum.com/uk/" hreflang="en-gb">UK</a>
+    </span>
+  </small>
+</footer>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRLGLHC5" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Używamy plików cookies" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">Używamy plików cookies</p>
+    <p class="ic-consent__body">Używamy plików cookies żeby strona pracowała, zrozmieć jak jest używana,i (tylko jeśli się zgodzisz) żeby pokazywać odpowiednie reklamy na Google i Reddit. Zawsze możesz zmienić twój wybór na stópce strony. <a href="/pl/prawne/ciasteczka/">Polityka cookie</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Zaakceptuj wszystkie</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Akceptuj tylko niezbędne</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferencje</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Niezbędne</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Niezbędne">
+        <p class="ic-consent__pref-desc">Wymagane do funkjonowania strony. Nie można wyłączyć.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analityka</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analityka">
+        <p class="ic-consent__pref-desc">Pomaga nam zrozumieć jak użytkownicy użwają stronę (Analityka Google 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Reklama</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Reklama">
+        <p class="ic-consent__pref-desc">Pozwala nam mierzyć i personalizować Google Ads oraz Reddit Adds. </p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Zachowaj wybór</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

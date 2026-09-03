@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MRLGLHC5');</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+<title>Bulk checker tekstu alternatywnego (alt) | Illucrum</title>
+<meta name="description" content="Znajdź obrazy z brakującym lub pustym atrybutem alt na 25 stronach naraz. Każdy obraz, jego źródło i tekst alternatywny w CSV. Za darmo, bez rejestracji." />
+
+<link rel="canonical" href="https://illucrum.com/pl/tools\alt-text-check">
+<link rel="alternate" hreflang="en-US" href="https://illucrum.com/c.us.tools\alt-text-check">
+<link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/c.eu.tools\alt-text-check">
+<link rel="alternate" hreflang="en-GB" href="https://illucrum.com/uk/c.gb.tools\alt-text-check">
+<link rel="alternate" hreflang="pl-PL" href="https://illucrum.com/pl/c.pl.tools\alt-text-check">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com/c.us.tools\alt-text-check">
+
+<meta name="robots" content="index, follow" />
+<link rel="icon" href="/static/img/logo.png">
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Illucrum" />
+<meta property="og:title" content="Bulk checker atrybutów alt — 25 stron naraz" />
+<meta property="og:description" content="Jeden wiersz na obraz, ze źródłem i tekstem alternatywnym oraz informacją, czy atrybut jest nieobecny, czy celowo pusty. Za darmo, bez konta." />
+<meta property="og:url" content="https://illucrum.com/pl/tools\alt-text-check" />
+<meta property="og:image" content="https://illucrum.com/static/img/og.png">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Bulk checker atrybutów alt — 25 stron naraz" />
+<meta name="twitter:description" content="Jeden wiersz na obraz, ze źródłem i tekstem alternatywnym oraz informacją, czy atrybut jest nieobecny, czy celowo pusty. Za darmo, bez konta." />
+<meta name="twitter:image" content="https://illucrum.com/static/img/og.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://illucrum.com/pl/tools\alt-text-check#webpage",
+      "url": "https://illucrum.com/pl/tools\alt-text-check",
+      "name": "Bulk checker tekstu alternatywnego obrazów",
+      "description": "Znajdź obrazy z brakującym lub pustym atrybutem alt na 25 stronach naraz. Każdy obraz, jego źródło i tekst alternatywny w CSV. Za darmo, bez rejestracji.",
+      "isPartOf": { "@id": "https://illucrum.com/#website" },
+      "publisher": { "@id": "https://illucrum.com/#organization" },
+      "mainEntity": { "@id": "https://illucrum.com/pl/narzedzia/bulk-checker/#software" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://illucrum.com/pl/tools\alt-text-check#faq",
+      "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Czym różni się brak atrybutu alt od pustego?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Brak atrybutu znaczy, że nikt nie podjął decyzji. Pusty znaczy, że ktoś uznał obraz za dekoracyjny i technologie asystujące mają go pominąć. Pierwsze to błąd, drugie to poprawny kod, a narzędzie, które zgłasza jedno i drugie tak samo, jest bezużyteczne w obie strony." }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy tekst alternatywny wpływa na SEO, czy tylko na dostępność?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Na jedno i drugie, choć nierówno. To realny wymóg dostępności według WCAG i jednocześnie główny sygnał tekstowy, jaki wyszukiwarka ma o obrazie. Traktuj dostępność jako powód, a wyszukiwarkę grafiki jako efekt uboczny." }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy każdy obraz musi mieć tekst alternatywny?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Każdy obraz potrzebuje atrybutu alt. Nie każdy potrzebuje w nim słów. Grafika czysto dekoracyjna dostaje pusty atrybut, żeby technologie asystujące przeszły nad nią bez komentarza." }
+      },
+      {
+        "@type": "Question",
+        "name": "Dlaczego jakiegoś obrazu nie ma w tabeli?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Prawie zawsze przez leniwe ładowanie albo skrypt, który wstawia obraz po załadowaniu strony. To narzędzie czyta HTML wysłany przez serwer, a w tym momencie tego obrazu w nim nie było." }
+      }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="https://illucrum.com/pl/">
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+  </a>
+  <ul>
+    <li><a href="/pl/audyty/">Audyty</a></li>
+    <li><a href="/pl/cennik/">Cennik</a></li>
+    <li><a href="/pl/proces/">Proces</a></li>
+    <li><a href="/pl/faq/">FAQ</a></li>
+    <li><a href="/pl/o-nas/">O nas</a></li>
+    <li><a href="https://blog.illucrum.com">Blog</a></li>
+    <li><a data-lead-open data-lead-source="header" data-lead-title="Kontakt"
+      data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
+      Skontaktuj się z nami
+    </a></li>
+  </ul>
+</nav>
+<header>
+  <small>Darmowe sprawdzanie atrybutów alt</small>
+  <h1>Znajdź każdy obraz <em>bez tekstu alternatywnego</em></h1>
+  <p>Wklej do 25 adresów. Dostajesz jeden wiersz na obraz: źródło, tekst alternatywny i informację, czy atrybut alt jest całkiem nieobecny, czy celowo pusty. To dwa różne problemy, więc mają dwie różne kolumny.</p>
+  <p><small>Brak i pusty to nie to samo. Obraz dekoracyjny powinien mieć pusty atrybut alt, obraz niosący treść nie powinien. Narzędzie, które zwija to do jednej kolumny, nie powie Ci, na co właśnie patrzysz.</small></p>
+  <nav>
+    <a href="https://illucrum.com/pl/narzedzia/bulk-checker/">Otwórz narzędzie</a>
+    <a href="#what">Co dostajesz</a>
+  </nav>
+  <aside>
+    <small>W skrócie</small>
+    <dl>
+      <dt>Adresów na jedno uruchomienie</dt>
+      <dd>25</dd>
+      <dt>Rozróżniane stany alt</dt>
+      <dd>3</dd>
+      <dt>Eksportów CSV</dt>
+      <dd>7</dd>
+    </dl>
+  </aside>
+</header>
+<main>
+<section id="what">
+  <header>
+    <small>Co dostajesz</small>
+    <h2>Trzy stany, <em>nie dwa</em></h2>
+    <p>Każdy obraz na każdej stronie, z takim poziomem szczegółu, żeby odróżnić błąd od decyzji.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Jeden wiersz na obraz</h3>
+      <p>Każdy element img na stronie, ze źródłem, w kolejności z kodu. Nic nie jest scalane, więc ikona użyta czterdzieści razy pojawi się czterdzieści razy — i zwykle o to właśnie chodzi.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>Brak, pusty albo obecny</h3>
+      <p>Brak atrybutu alt to błąd. Pusty to świadoma deklaracja, że obraz nie niesie treści. Obecny to obecny. Trzy kolumny, trzy różne rozmowy.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>Sam tekst alternatywny</h3>
+      <p>Nie tylko to, czy istnieje. Dostajesz treść, więc IMG_4021.jpg i „obrazek” pokazują się takie, jakie są, zamiast liczyć się jako zaliczone.</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>Dwadzieścia pięć stron w jednej tabeli</h3>
+      <p>Posortuj po kolumnie alt, a wszystkie braki z całej sekcji witryny ustawią się obok siebie. To jedyny sposób, w jaki ta praca kiedykolwiek się kończy.</p>
+    </li>
+  </ul>
+</section>
+<section class="dark" id="checks">
+  <header>
+    <small>Na co patrzeć</small>
+    <h2>Pięć rzeczy, które <em>widać w tej kolumnie</em></h2>
+    <p>Najpierw dostępność, potem wyszukiwarka grafiki. W tej kolejności, bo w tej kolejności są przepisy i użytkownik.</p>
+  </header>
+
+  <ul class="checklist">
+    <li>
+      <h3>Brak atrybutu alt</h3>
+      <p>Czytnik ekranu wraca wtedy do czytania nazwy pliku i odwiedzający słyszy „hero podkreślnik v dwa final kropka jpeg”.</p>
+    </li>
+    <li>
+      <h3>Pusty alt na obrazie niosącym treść</h3>
+      <p>Najczęstsze fałszywe zaliczenie. Atrybut jest, walidator go odhacza, a wykres, na którym stoi cała argumentacja strony, zostaje ogłoszony jako nic.</p>
+    </li>
+    <li>
+      <h3>Nazwa pliku jako tekst alternatywny</h3>
+      <p>IMG_4021.jpg w atrybucie alt to brak tekstu alternatywnego, tylko okrężną drogą. To też najłatwiejsza pozycja z tej listy do znalezienia: posortuj kolumnę.</p>
+    </li>
+    <li>
+      <h3>Tekst alternatywny powtarzający podpis</h3>
+      <p>Czytnik ekranu przeczyta jedno i drugie, po kolei. Powiedz to raz, w tym z dwóch miejsc, które dostaje też czytelnik widzący.</p>
+    </li>
+    <li>
+      <h3>Obrazy dekoracyjne opisane zdaniem</h3>
+      <p>Separatory, ozdobniki i grafiki dystansowe z opisem to szum. Pusty atrybut alt jest dla nich poprawną odpowiedzią — prawdziwą odpowiedzią, nie pójściem na skróty.</p>
+    </li>
+  </ul>
+</section>
+<section id="limits">
+  <header>
+    <small>Zanim zaczniesz</small>
+    <h2>Czego <em>nie powie</em></h2>
+    <p>Powiedziane tutaj, a nie odkryte później.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Czy tekst alternatywny jest dobry</h3>
+      <p>Powie, że atrybut jest, i pokaże zdanie. Czy to zdanie opisuje obraz, jest oceną, której żadne narzędzie nie robi uczciwie.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>Tła CSS są niewidoczne</h3>
+      <p>Czytany jest element img. Obraz wstawiony jako background-image w arkuszu stylów nie jest obrazem ani dla tego narzędzia, ani dla czytnika ekranu.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>Obrazy ładowane leniwie mogą się nie pojawić</h3>
+      <p>Jeśli właściwe źródło siedzi w atrybucie data do momentu podmiany przez skrypt, wiersz może pokazać pusty albo zastępczy src. Tutaj dociera wyłącznie statyczny HTML.</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>25 adresów na jedno uruchomienie</h3>
+      <p>Działa w karcie przeglądarki. Do witryny naprawdę bogatej w grafikę przyda się crawler desktopowy.</p>
+    </li>
+  </ul>
+</section>
+<section id="faq">
+  <header>
+    <small>Pytania</small>
+    <h2>Rozsądne <em>pytania</em></h2>
+  </header>
+
+  <details>
+    <summary>Czym różni się brak atrybutu alt od pustego?</summary>
+    <p>Brak atrybutu znaczy, że nikt nie podjął decyzji. Pusty znaczy, że ktoś uznał obraz za dekoracyjny i technologie asystujące mają go pominąć. Pierwsze to błąd, drugie to poprawny kod, a narzędzie, które zgłasza jedno i drugie tak samo, jest bezużyteczne w obie strony.</p>
+  </details>
+  <details>
+    <summary>Czy tekst alternatywny wpływa na SEO, czy tylko na dostępność?</summary>
+    <p>Na jedno i drugie, choć nierówno. To realny wymóg dostępności według WCAG i jednocześnie główny sygnał tekstowy, jaki wyszukiwarka ma o obrazie. Traktuj dostępność jako powód, a wyszukiwarkę grafiki jako efekt uboczny.</p>
+  </details>
+  <details>
+    <summary>Czy każdy obraz musi mieć tekst alternatywny?</summary>
+    <p>Każdy obraz potrzebuje atrybutu alt. Nie każdy potrzebuje w nim słów. Grafika czysto dekoracyjna dostaje pusty atrybut, żeby technologie asystujące przeszły nad nią bez komentarza.</p>
+  </details>
+  <details>
+    <summary>Dlaczego jakiegoś obrazu nie ma w tabeli?</summary>
+    <p>Prawie zawsze przez leniwe ładowanie albo skrypt, który wstawia obraz po załadowaniu strony. To narzędzie czyta HTML wysłany przez serwer, a w tym momencie tego obrazu w nim nie było.</p>
+  </details>
+</section>
+<section id="audit">
+  <header>
+    <small>Jedno narzędzie, siedem tabel</small>
+    <h2>Obrazy to <em>jedna zakładka narzędzia</em></h2>
+    <p>To samo uruchomienie zwraca też tytuły, meta opisy, nagłówki, liczbę słów, linki i dane strukturalne. To jedno narzędzie z siedmioma tabelami i siedmioma eksportami CSV, a nie siedem osobnych narzędzi uruchamianych po kolei.</p>
+  </header>
+  <nav>
+    <a href="https://illucrum.com/pl/narzedzia/bulk-checker/">Otwórz narzędzie</a>
+    <a href="https://illucrum.com/pl/audits/">Zobacz, co zawiera audyt</a>
+  </nav>
+  <p>
+    <small>Inne rzeczy, które sprawdza to samo narzędzie:
+      <a href="https://illucrum.com/pl/narzedzia/bulk-checker/">Bulk checker stron</a>,
+      <a href="https://illucrum.com/pl/tools\meta-tag-check">Meta tagi</a>,
+      <a href="https://illucrum.com/pl/tools\heading-check">Nagłówki</a>,
+      <a href="https://illucrum.com/pl/tools\word-count-check">Licznik słów</a>,
+      <a href="https://illucrum.com/pl/tools\canonical-check">Tagi canonical</a>,
+      <a href="https://illucrum.com/pl/tools\open-graph-check">Open Graph</a>,
+      <a href="https://illucrum.com/pl/tools\schema-check">Schema</a>
+    </small>
+  </p>
+</section>
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+    <p>Audyty SEO które pokażą Ci co dokładnie trzeba naprawić następnie.</p>
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40" data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" /></a>
+      <a href="https://wa.me/48515983261" target="_blank" rel="nofollow"><img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg" alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Audyty</h5>
+    <ul>
+      <li><a href="/pl/audyty/audyt-seo-dla-saas/">Audyty SEO dla SaaS</a></li>
+      <li><a href="/pl/audyty/audyt-seo-dla-sklepow-internetowych/">Audyt SEO dla sklepów internetowych</a></li>
+      <li><a href="/pl/audyty/audyt-seo/">Audyt SEO stron internetowych</a></li>
+      <li><a href="/pl/audyty/techniczny-audyt-seo/">Techniczny audyt SEO</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Porównaj</h5>
+    <ul>
+      <li><a href="/pl/porownanie/audyt-seo-saas-a-standardowy/">SaaS vs Website</a></li>
+      <li><a href="/pl/porownanie/audyt-seo-sklepu-internetowego-a-standardowy/">E-commerce vs Strona internetowa</a></li>
+      <li><a href="/pl/porownanie/audyt-seo-a-narzedzie/">Audyt vs narzędzie SEO</a></li>
+      <li><a href="/pl/porownanie/audyt-a-abonament/">Audyt vs abonament</a></li>
+      <li><a href="/pl/porownanie/audyt-seo-a-diy/">Audyt vs DIY</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Firma</h5>
+    <ul>
+      <li><a href="/pl/o-nas/">O nas</a></li>
+      <li><a href="/pl/proces/">Proces</a></li>
+      <li><a href="/pl/cennik/">Cennik</a></li>
+      <li><a href="/pl/faq/">FAQ</a></li>
+      <li><a href="/pl/fakty-seo/">Fakty SEO</a></li>
+      <li><a href="https://scraper.illucrum.com/">Scraper</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Kontakt i informacje prawne</h5>
+    <ul>
+      <li><a href="/pl/prawne/warunki/">Regulamin</a></li>
+      <li><a href="/pl/prawne/prywatnosc/">Prywatność</a></li>
+      <li><a href="/pl/prawne/ciasteczka/">Cookies</a></li>
+      <li><a href="/pl/prawne/zastrzezenie/">Zastrzeżenie prawne</a></li>
+      <li><a href="/pl/prawne/dostepnosc/">Dostępność</a></li>
+      <li><a href="#" data-consent-open>Zarządzaj plikami cookies.</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +48 515 983 261</span>
+    <span>
+      <a href="https://illucrum.com/" hreflang="en-us">US</a> &middot;
+      <a href="https://illucrum.com/pl/" hreflang="en-pl">PL</a> &middot;
+      <a href="https://illucrum.com/eu/" hreflang="en-001">EU</a> &middot;
+      <a href="https://illucrum.com/uk/" hreflang="en-gb">UK</a>
+    </span>
+  </small>
+</footer>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRLGLHC5" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Używamy plików cookies" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">Używamy plików cookies</p>
+    <p class="ic-consent__body">Używamy plików cookies żeby strona pracowała, zrozmieć jak jest używana,i (tylko jeśli się zgodzisz) żeby pokazywać odpowiednie reklamy na Google i Reddit. Zawsze możesz zmienić twój wybór na stópce strony. <a href="/pl/prawne/ciasteczka/">Polityka cookie</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Zaakceptuj wszystkie</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Akceptuj tylko niezbędne</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferencje</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Niezbędne</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Niezbędne">
+        <p class="ic-consent__pref-desc">Wymagane do funkjonowania strony. Nie można wyłączyć.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analityka</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analityka">
+        <p class="ic-consent__pref-desc">Pomaga nam zrozumieć jak użytkownicy użwają stronę (Analityka Google 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Reklama</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Reklama">
+        <p class="ic-consent__pref-desc">Pozwala nam mierzyć i personalizować Google Ads oraz Reddit Adds. </p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Zachowaj wybór</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
