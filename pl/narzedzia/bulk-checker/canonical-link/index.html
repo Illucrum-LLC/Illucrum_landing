@@ -40,14 +40,15 @@
 
 <script defer src="/static/js/consent.js"></script>
 <script defer src="/static/js/lead-form.js"></script>
-<title>Bulk checker tagów canonical — 25 URL-i | Illucrum</title>
-<meta name="description" content="Sprawdź tag canonical i dyrektywę robots na 25 stronach naraz. Wychwyć brakujące, obce i prowadzące do strony głównej. Eksport CSV, za darmo." />
+<title>Masowe sprawdzanie tagów canonical – 25 adresów URL, za darmo | Illucrum</title>
+<meta name="description" content="Kontrola adresu canonical i dyrektywy robots do 25 stron naraz. Wykrywanie brakujących canonicali oraz tych wskazujących na inną domenę i na stronę główną, w eksporcie CSV. Za darmo, bez rejestracji." />
 
 <link rel="canonical" href="https://illucrum.com/pl/narzedzia/bulk-checker/canonical-link/">
 <link rel="alternate" hreflang="en-US" href="https://illucrum.com/c.us.tools\bulk-checker\canonical-check">
 <link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/canonical-check/">
 <link rel="alternate" hreflang="en-GB" href="https://illucrum.com/uk/c.gb.tools\bulk-checker\canonical-check">
 <link rel="alternate" hreflang="pl-PL" href="https://illucrum.com/pl/narzedzia/bulk-checker/canonical-link/">
+<link rel="alternate" hreflang="es-ES" href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-canonical/">
 <link rel="alternate" hreflang="x-default" href="https://illucrum.com/c.us.tools\bulk-checker\canonical-check">
 
 <meta name="robots" content="index, follow" />
@@ -55,13 +56,13 @@
 
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Illucrum" />
-<meta property="og:title" content="Bulk checker tagów canonical — 25 adresów naraz" />
-<meta property="og:description" content="Canonical deklarowany przez każdą stronę obok adresu, o który zapytałeś, z dyrektywą robots w tym samym wierszu. Za darmo, bez konta." />
+<meta property="og:title" content="Masowy checker tagów canonical – 25 adresów URL naraz" />
+<meta property="og:description" content="Canonical deklarowany przez każdą stronę, obok adresu, o który Państwo zapytali, z dyrektywą robots w tym samym wierszu. Za darmo, bez konta." />
 <meta property="og:url" content="https://illucrum.com/pl/narzedzia/bulk-checker/canonical-link/" />
 <meta property="og:image" content="https://illucrum.com/pl/static/img/og/bulk.png">
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Bulk checker tagów canonical — 25 adresów naraz" />
-<meta name="twitter:description" content="Canonical deklarowany przez każdą stronę obok adresu, o który zapytałeś, z dyrektywą robots w tym samym wierszu. Za darmo, bez konta." />
+<meta name="twitter:title" content="Masowy checker tagów canonical – 25 adresów URL naraz" />
+<meta name="twitter:description" content="Canonical deklarowany przez każdą stronę, obok adresu, o który Państwo zapytali, z dyrektywą robots w tym samym wierszu. Za darmo, bez konta." />
 <meta name="twitter:image" content="https://illucrum.com/pl/static/img/og/bulk.png">
 
 <link rel="stylesheet" href="/static/css/illucrum.css" />
@@ -74,8 +75,8 @@
       "@type": "WebPage",
       "@id": "https://illucrum.com/pl/narzedzia/bulk-checker/canonical-link/#webpage",
       "url": "https://illucrum.com/pl/narzedzia/bulk-checker/canonical-link/",
-      "name": "Bulk checker tagów canonical",
-      "description": "Sprawdź tag canonical i dyrektywę robots na 25 stronach naraz. Wychwyć brakujące, obce i prowadzące do strony głównej. Eksport CSV, za darmo.",
+      "name": "Masowe sprawdzanie tagów canonical",
+      "description": "Kontrola adresu canonical i dyrektywy robots do 25 stron naraz. Wykrywanie brakujących canonicali oraz tych wskazujących na inną domenę i na stronę główną, w eksporcie CSV. Za darmo, bez rejestracji.",
       "isPartOf": { "@id": "https://illucrum.com/pl/#website" },
       "publisher": { "@id": "https://illucrum.com/pl/#organization" },
       "mainEntity": { "@id": "https://illucrum.com/pl/narzedzia/bulk-checker/#software" }
@@ -86,23 +87,23 @@
       "mainEntity": [
       {
         "@type": "Question",
-        "name": "Czy każda strona powinna mieć canonical wskazujący na siebie?",
+        "name": "Czy każda strona powinna mieć canonical wskazujący na samą siebie?",
         "acceptedAnswer": { "@type": "Answer", "text": "To bezpieczne ustawienie domyślne i większość platform dodaje je automatycznie. Nic nie kosztuje, a usuwa niejednoznaczność na każdej stronie dostępnej pod więcej niż jednym adresem." }
       },
       {
         "@type": "Question",
-        "name": "Czy canonical to instrukcja, czy sugestia?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sugestia. Google traktuje go jako jeden z wielu sygnałów i potrafi go zignorować, jeśli się z nim nie zgadza. Właśnie dlatego łączenie go z noindex to zły pomysł: zgadujesz wtedy, który sygnał wygra." }
+        "name": "Czy canonical to instrukcja, czy wskazówka?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Wskazówka. Google traktuje go jako jeden z kilku sygnałów i nadpisze canonical, z którym się nie zgadza. Właśnie dlatego łączenie go z noindexem jest złym pomysłem: to zgadywanie, który sygnał wygra." }
       },
       {
         "@type": "Question",
-        "name": "Czym różni się canonical od przekierowania?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Przekierowanie wysyła odwiedzającego gdzie indziej. Canonical zostawia stronę na miejscu i mówi wyszukiwarkom, którą wersję indeksować. Przekierowania używa się, gdy strona nie powinna istnieć; canonicala, gdy powinna istnieć, ale nie powinna być indeksowana osobno." }
+        "name": "Czym canonical różni się od przekierowania?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Przekierowanie wysyła odwiedzającego gdzie indziej. Canonical zostawia stronę tam, gdzie jest, i mówi wyszukiwarkom, którą wersję indeksować. Przekierowania używa się, gdy strona nie powinna istnieć; canonicala – gdy powinna istnieć, ale nie powinna być indeksowana osobno." }
       },
       {
         "@type": "Question",
-        "name": "Dlaczego mojego canonicala nie ma w tabeli?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Albo jest ustawiany JavaScriptem po załadowaniu strony, albo jest wysyłany jako nagłówek HTTP Link zamiast być zapisanym w HTML-u." }
+        "name": "Dlaczego mój canonical nie pojawia się w tabeli?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Albo ustawia go JavaScript po załadowaniu strony, albo jest wysyłany jako nagłówek HTTP Link zamiast być zapisanym w HTML-u." }
       }
       ]
     }
@@ -117,8 +118,8 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://illucrum.com/pl/" },
     { "@type": "ListItem", "position": 2, "name": "Narzędzia", "item": "https://illucrum.com/pl/tools/" },
-    { "@type": "ListItem", "position": 3, "name": "Bulk Checker", "item": "https://illucrum.com/pl/narzedzia/bulk-checker/" },
-    { "@type": "ListItem", "position": 4, "name": "Tagi canonical", "item": "https://illucrum.com/pl/narzedzia/bulk-checker/canonical-link/" }
+    { "@type": "ListItem", "position": 3, "name": "Masowy checker", "item": "https://illucrum.com/pl/narzedzia/bulk-checker/" },
+    { "@type": "ListItem", "position": 4, "name": "Sprawdzanie canonicali", "item": "https://illucrum.com/pl/narzedzia/bulk-checker/canonical-link/" }
   ]
 }
 </script>
@@ -136,27 +137,27 @@
     <li><a href="/pl/faq/">FAQ</a></li>
     <li><a href="/pl/o-nas/">O nas</a></li>
     <li><a href="https://blog.illucrum.com">Blog</a></li>
-    <li><a data-lead-open data-lead-source="header" data-lead-title="Kontakt"
-      data-lead-subtitle="Zostaw swoje dane i skontaktujemy się z Toba.">
-      Skontaktuj się z nami
+    <li><a data-lead-open data-lead-source="header" data-lead-title="Formularz kontaktowy"
+      data-lead-subtitle="Prosimy zostawić dane kontaktowe – odezwiemy się.">
+      Kontakt
     </a></li>
   </ul>
 </nav>
 <header>
-  <small>Darmowe sprawdzanie tagów canonical</small>
-  <h1>Sprawdź <em>tag canonical</em> na 25 stronach naraz</h1>
-  <p>Wklej adresy. Dostajesz canonical, który deklaruje każda strona, obok dyrektywy robots, kodu odpowiedzi i adresu, o który zapytałeś — jeden wiersz na stronę, eksport do CSV.</p>
-  <p><small>Sensowne porównanie to zestawienie adresu, o który zapytałeś, z tagiem canonical, który strona oddaje. Kiedy te dwa się rozjeżdżają, a nie taki był zamiar, to właśnie jest znalezisko.</small></p>
+  <small>Darmowy checker canonicali</small>
+  <h1><em>Tag canonical</em> z 25 stron naraz</h1>
+  <p>Wystarczy wkleić adresy URL. W wyniku: canonical deklarowany przez każdą stronę, wraz z dyrektywą robots, kodem statusu i adresem, o który Państwo zapytali – jeden wiersz na stronę, z eksportem do CSV.</p>
+  <p><small>Użyteczne porównanie to zestawienie adresu, o który Państwo zapytali, z canonicalem, który zwraca strona. Gdy te dwa się rozjeżdżają, a nie było to zamierzone, właśnie ten rozjazd jest ustaleniem.</small></p>
   <nav>
-    <a href="https://illucrum.com/pl/narzedzia/bulk-checker/">Otwórz narzędzie</a>
-    <a href="#what">Co dostajesz</a>
+    <a href="https://illucrum.com/pl/narzedzia/bulk-checker/">Otwórz checker</a>
+    <a href="#what">Co Państwo dostają</a>
   </nav>
   <aside>
     <small>W skrócie</small>
     <dl>
-      <dt>Adresów na jedno uruchomienie</dt>
+      <dt>Adresów URL na jedno uruchomienie</dt>
       <dd>25</dd>
-      <dt>Pól z sekcji head</dt>
+      <dt>Pól na stronę</dt>
       <dd>51</dd>
       <dt>Eksportów CSV</dt>
       <dd>7</dd>
@@ -166,8 +167,8 @@
 <main>
 <section id="what">
   <header>
-    <small>Co dostajesz</small>
-    <h2>Tag <em>obok adresu, o który zapytałeś</em></h2>
+    <small>Co Państwo dostają</small>
+    <h2>Tag <em>obok adresu, o który Państwo zapytali</em></h2>
     <p>Sam canonical nie znaczy nic. Canonical obok adresu, który go zwrócił, znaczy wszystko.</p>
   </header>
 
@@ -175,127 +176,127 @@
     <li>
       <span>01</span>
       <h3>Canonical deklarowany przez każdą stronę</h3>
-      <p>Odczytany z HTML-u dokładnie tak, jak jest zapisany, bezwzględny albo względny, bez normalizowania i bez poprawiania po drodze do tabeli.</p>
+      <p>Odczytany z HTML-a dokładnie tak, jak zapisano – bezwzględny albo względny, bez normalizowania i bez porządkowania po drodze do tabeli.</p>
     </li>
     <li>
       <span>02</span>
-      <h3>Adres z zapytania i canonical obok siebie</h3>
-      <p>Obie kolumny w tym samym wierszu, więc rozjazd na dwudziestu pięciu stronach to sortowanie, a nie śledztwo.</p>
+      <h3>Żądany adres i canonical obok siebie</h3>
+      <p>Obie kolumny w tym samym wierszu, więc rozbieżność na dwudziestu pięciu stronach to kwestia posortowania, a nie śledztwa.</p>
     </li>
     <li>
       <span>03</span>
       <h3>Dyrektywa robots w tym samym wierszu</h3>
-      <p>Canonical i noindex to dwa osobne sygnały, które nieustannie się ze sobą myli. Zobaczenie ich razem zwykle wystarcza, żeby zakończyć dyskusję.</p>
+      <p>Canonical i noindex to osobne sygnały, które bez przerwy się ze sobą myli. Zobaczenie obu obok siebie zwykle wystarczy, żeby zakończyć spór.</p>
     </li>
     <li>
       <span>04</span>
-      <h3>Kody odpowiedzi i reszta sekcji head</h3>
-      <p>Canonical na stronie zwracającej 404 albo przekierowującej gdzie indziej to inny problem, a kolumna ze statusem mówi, który z nich masz.</p>
+      <h3>Kody statusu i reszta sekcji head</h3>
+      <p>Canonical na stronie zwracającej 404 albo przekierowującej gdzie indziej to zupełnie inny problem, a kolumna statusu mówi, z którym z nich mamy do czynienia.</p>
     </li>
   </ul>
 </section>
 <section class="dark" id="checks">
   <header>
     <small>Na co patrzeć</small>
-    <h2>Pięć sposobów, <em>na jakie psuje się canonical</em></h2>
+    <h2>Pięć sposobów, <em>żeby zepsuć canonical</em></h2>
     <p>Wszystkie pięć są częste, wszystkie ciche i wszystkie widoczne w jednej kolumnie.</p>
   </header>
 
   <ul class="checklist">
     <li>
-      <h3>Brak tagu canonical</h3>
-      <p>Nie jest to katastrofa, ale zostawia decyzję wyszukiwarce na każdej stronie dostępnej pod więcej niż jednym adresem, a takich jest większość.</p>
+      <h3>Brak canonicala w ogóle</h3>
+      <p>Nie jest to katastrofa, ale zostawia decyzję wyszukiwarce na każdej stronie dostępnej pod więcej niż jednym adresem – a takich jest większość.</p>
     </li>
     <li>
-      <h3>Cała sekcja skanonizowana do strony głównej</h3>
-      <p>Domyślne ustawienie wtyczki, które po cichu wyprowadza z indeksu wszystko poniżej. To najdroższa pozycja na tej liście.</p>
+      <h3>Cała sekcja skanonikalizowana do strony głównej</h3>
+      <p>Domyślne ustawienie wtyczki, które po cichu usuwa z indeksu wszystkie podstrony poniżej. To najdroższa pozycja na tej liście.</p>
     </li>
     <li>
-      <h3>Canonical wskazujący na środowisko testowe</h3>
-      <p>Zdarza się przy wdrożeniu, żyje miesiącami i kieruje publiczną stronę na domenę, do której nikt spoza zespołu nie ma dostępu.</p>
+      <h3>Canonical wskazujący na staging albo podgląd</h3>
+      <p>Zdarza się przy wdrożeniu, przeżywa miesiącami i kieruje publiczną stronę na domenę, do której nikt spoza zespołu nie ma dostępu.</p>
     </li>
     <li>
-      <h3>Rozjazd na ukośniku i protokole</h3>
-      <p>Strona i ta sama strona z ukośnikiem na końcu to dwa adresy. Canonical wskazujący ten drugi to problem drobny, częsty i prawdziwy.</p>
+      <h3>Rozbieżności ukośnika na końcu i protokołu</h3>
+      <p>Strona i ta sama strona z ukośnikiem na końcu to dwa adresy URL. Canonical wskazujący ten drugi to drobiazg – częsty i całkiem realny.</p>
     </li>
     <li>
       <h3>Canonical i noindex na tej samej stronie</h3>
-      <p>Dwie sprzeczne instrukcje. Google rozstrzygnie tę sprzeczność, jak zechce, co jest innym sposobem powiedzenia, że decyzja przestaje należeć do Ciebie.</p>
+      <p>Dwie sprzeczne instrukcje. Google rozstrzyga tę sprzeczność, jak mu wygodniej – czyli innymi słowy: to już nie Państwo decydują.</p>
     </li>
   </ul>
 </section>
 <section id="limits">
   <header>
-    <small>Zanim zaczniesz</small>
-    <h2>Czego <em>nie powie</em></h2>
-    <p>Powiedziane tutaj, a nie odkryte później.</p>
+    <small>Warto wiedzieć</small>
+    <h2>Czego narzędzie <em>nie powie</em></h2>
+    <p>Lepiej powiedzieć to tutaj, niż zostawić do odkrycia później.</p>
   </header>
 
   <ul>
     <li>
       <span>01</span>
-      <h3>Czyta tag, nie ocenia go</h3>
-      <p>Czy canonical, który deklarujesz, jest tym właściwym, to pytanie o strukturę Twojej witryny, a odpowiedzi nie ma na stronie.</p>
+      <h3>Czyta tag, ale go nie ocenia</h3>
+      <p>To, czy deklarowany canonical jest właściwy, jest pytaniem o strukturę serwisu, a odpowiedzi nie ma na samej stronie.</p>
     </li>
     <li>
       <span>02</span>
-      <h3>Nie czyta canonicali z nagłówka HTTP</h3>
-      <p>Canonical wysłany jako nagłówek Link, a nie zapisany w HTML-u, jest tutaj niewidoczny. Ta metoda jest rzadka poza plikami PDF i API, ale nie jest zerowa.</p>
+      <h3>Canonicale wysyłane w nagłówku HTTP nie są odczytywane</h3>
+      <p>Canonical przesyłany jako nagłówek Link, a nie zapisany w HTML-u, jest tu niewidoczny. Ta metoda rzadko wychodzi poza pliki PDF i API, ale nie jest niczym.</p>
     </li>
     <li>
       <span>03</span>
-      <h3>Tylko statyczny HTML</h3>
-      <p>Canonical zapisany JavaScriptem po załadowaniu nie znajduje się w HTML-u wysłanym przez serwer. To, jak niezawodnie wyszukiwarki go podchwytują, to osobny i starszy spór.</p>
+      <h3>Wyłącznie statyczny HTML</h3>
+      <p>Canonical zapisany JavaScriptem po załadowaniu nie znajduje się w HTML-u wysłanym przez serwer. Czy wyszukiwarki wychwytują takie przypadki niezawodnie, to osobny i starszy spór.</p>
     </li>
     <li>
       <span>04</span>
-      <h3>25 adresów na jedno uruchomienie</h3>
-      <p>Działa w karcie przeglądarki. Problemy z canonicalami są zwykle ogólnowitrynowe, więc użyj tego do potwierdzenia wzorca, a napraw go w szablonie.</p>
+      <h3>Dwadzieścia pięć adresów URL na uruchomienie</h3>
+      <p>Wszystko dzieje się w karcie przeglądarki. Problemy z canonicalami są zwykle ogólnoserwisowe, więc warto potwierdzić tu wzorzec, a naprawić go w szablonie.</p>
     </li>
   </ul>
 </section>
 <section id="faq">
   <header>
     <small>Pytania</small>
-    <h2>Rozsądne <em>pytania</em></h2>
+    <h2>Uzasadnione <em>pytania</em></h2>
   </header>
 
   <details>
-    <summary>Czy każda strona powinna mieć canonical wskazujący na siebie?</summary>
+    <summary>Czy każda strona powinna mieć canonical wskazujący na samą siebie?</summary>
     <p>To bezpieczne ustawienie domyślne i większość platform dodaje je automatycznie. Nic nie kosztuje, a usuwa niejednoznaczność na każdej stronie dostępnej pod więcej niż jednym adresem.</p>
   </details>
   <details>
-    <summary>Czy canonical to instrukcja, czy sugestia?</summary>
-    <p>Sugestia. Google traktuje go jako jeden z wielu sygnałów i potrafi go zignorować, jeśli się z nim nie zgadza. Właśnie dlatego łączenie go z noindex to zły pomysł: zgadujesz wtedy, który sygnał wygra.</p>
+    <summary>Czy canonical to instrukcja, czy wskazówka?</summary>
+    <p>Wskazówka. Google traktuje go jako jeden z kilku sygnałów i nadpisze canonical, z którym się nie zgadza. Właśnie dlatego łączenie go z noindexem jest złym pomysłem: to zgadywanie, który sygnał wygra.</p>
   </details>
   <details>
-    <summary>Czym różni się canonical od przekierowania?</summary>
-    <p>Przekierowanie wysyła odwiedzającego gdzie indziej. Canonical zostawia stronę na miejscu i mówi wyszukiwarkom, którą wersję indeksować. Przekierowania używa się, gdy strona nie powinna istnieć; canonicala, gdy powinna istnieć, ale nie powinna być indeksowana osobno.</p>
+    <summary>Czym canonical różni się od przekierowania?</summary>
+    <p>Przekierowanie wysyła odwiedzającego gdzie indziej. Canonical zostawia stronę tam, gdzie jest, i mówi wyszukiwarkom, którą wersję indeksować. Przekierowania używa się, gdy strona nie powinna istnieć; canonicala – gdy powinna istnieć, ale nie powinna być indeksowana osobno.</p>
   </details>
   <details>
-    <summary>Dlaczego mojego canonicala nie ma w tabeli?</summary>
-    <p>Albo jest ustawiany JavaScriptem po załadowaniu strony, albo jest wysyłany jako nagłówek HTTP Link zamiast być zapisanym w HTML-u.</p>
+    <summary>Dlaczego mój canonical nie pojawia się w tabeli?</summary>
+    <p>Albo ustawia go JavaScript po załadowaniu strony, albo jest wysyłany jako nagłówek HTTP Link zamiast być zapisanym w HTML-u.</p>
   </details>
 </section>
 <section id="audit">
   <header>
     <small>Jedno narzędzie, siedem tabel</small>
-    <h2>Canonical to <em>jedna kolumna narzędzia</em></h2>
-    <p>To samo uruchomienie zwraca też tytuły, meta opisy, nagłówki, liczbę słów, linki, obrazy i dane strukturalne. To jedno narzędzie z siedmioma tabelami i siedmioma eksportami CSV, a nie siedem osobnych narzędzi uruchamianych po kolei.</p>
+    <h2>Canonicale to <em>jedna kolumna checkera</em></h2>
+    <p>To samo uruchomienie zwraca również tytuły, meta description, nagłówki, liczbę słów, linki, obrazy i dane strukturalne. To jedno narzędzie z siedmioma tabelami i siedmioma eksportami CSV, a nie siedem osobnych narzędzi do uruchamiania po kolei.</p>
   </header>
   <nav>
-    <a href="https://illucrum.com/pl/narzedzia/bulk-checker/">Otwórz narzędzie</a>
-    <a href="https://illucrum.com/pl/audits/">Zobacz, co zawiera audyt</a>
+    <a href="https://illucrum.com/pl/narzedzia/bulk-checker/">Otwórz masowy checker</a>
+    <a href="https://illucrum.com/pl/audits/">Co zawiera audyt</a>
   </nav>
   <p>
-    <small>Inne rzeczy, które sprawdza to samo narzędzie:
-      <a href="https://illucrum.com/pl/narzedzia/bulk-checker/">Bulk checker stron</a>,
-      <a href="https://illucrum.com/pl/narzedzia/bulk-checker/meta-tagi/">Meta tagi</a>,
-      <a href="https://illucrum.com/pl/narzedzia/bulk-checker/tytuly/">Nagłówki</a>,
-      <a href="https://illucrum.com/pl/tools\alt-text-check">Alt text</a>,
-      <a href="https://illucrum.com/pl/narzedzia/bulk-checker/liczba-slow/">Licznik słów</a>,
-      <a href="https://illucrum.com/pl/narzedzia/bulk-checker/open-graph/">Open Graph</a>,
-      <a href="https://illucrum.com/pl/narzedzia/bulk-checker/schema/">Schema</a>
+    <small>Inne kontrole wykonywane przez to samo narzędzie:
+      <a href="https://illucrum.com/pl/narzedzia/bulk-checker/">Masowy checker SEO</a>,
+      <a href="https://illucrum.com/pl/narzedzia/bulk-checker/meta-tagi/">Sprawdzanie meta tagów</a>,
+      <a href="https://illucrum.com/pl/narzedzia/bulk-checker/tytuly/">Sprawdzanie nagłówków</a>,
+      <a href="https://illucrum.com/pl/tools\alt-text-check">Sprawdzanie tekstu alternatywnego</a>,
+      <a href="https://illucrum.com/pl/narzedzia/bulk-checker/liczba-slow/">Liczenie słów</a>,
+      <a href="https://illucrum.com/pl/narzedzia/bulk-checker/open-graph/">Sprawdzanie Open Graph</a>,
+      <a href="https://illucrum.com/pl/narzedzia/bulk-checker/schema/">Sprawdzanie Schema</a>
     </small>
   </p>
 </section>
@@ -304,7 +305,7 @@
   <section>
     <img src="/static/img/logo.png" alt="">
     <span>Illucrum</span>
-    <p>Audyty SEO które pokażą Ci co dokładnie trzeba naprawić następnie.</p>
+    <p>Audyty SEO, które pokazują dokładnie, co poprawić w pierwszej kolejności.</p>
     <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
     <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40" data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
     <div>
@@ -317,18 +318,18 @@
   <section>
     <h5>Audyty</h5>
     <ul>
-      <li><a href="/pl/audyty/audyt-seo-dla-saas/">Audyty SEO dla SaaS</a></li>
-      <li><a href="/pl/audyty/audyt-seo-dla-sklepow-internetowych/">Audyt SEO dla sklepów internetowych</a></li>
-      <li><a href="/pl/audyty/audyt-seo/">Audyt SEO stron internetowych</a></li>
+      <li><a href="/pl/audyty/audyt-seo-dla-saas/">Audyt SEO dla SaaS</a></li>
+      <li><a href="/pl/audyty/audyt-seo-dla-sklepow-internetowych/">Audyt SEO dla e-commerce</a></li>
+      <li><a href="/pl/audyty/audyt-seo/">Audyt SEO strony</a></li>
       <li><a href="/pl/audyty/techniczny-audyt-seo/">Techniczny audyt SEO</a></li>
     </ul>
   </section>
 
   <section>
-    <h5>Porównaj</h5>
+    <h5>Porównania</h5>
     <ul>
-      <li><a href="/pl/porownanie/audyt-seo-saas-a-standardowy/">SaaS vs Website</a></li>
-      <li><a href="/pl/porownanie/audyt-seo-sklepu-internetowego-a-standardowy/">E-commerce vs Strona internetowa</a></li>
+      <li><a href="/pl/porownanie/audyt-seo-saas-a-standardowy/">SaaS vs strona</a></li>
+      <li><a href="/pl/porownanie/audyt-seo-sklepu-internetowego-a-standardowy/">E-commerce vs strona</a></li>
       <li><a href="/pl/porownanie/audyt-seo-a-narzedzie/">Audyt vs narzędzie SEO</a></li>
       <li><a href="/pl/porownanie/audyt-a-abonament/">Audyt vs abonament</a></li>
       <li><a href="/pl/porownanie/audyt-seo-a-diy/">Audyt vs DIY</a></li>
@@ -342,20 +343,20 @@
       <li><a href="/pl/proces/">Proces</a></li>
       <li><a href="/pl/cennik/">Cennik</a></li>
       <li><a href="/pl/faq/">FAQ</a></li>
-      <li><a href="/pl/fakty-seo/">Fakty SEO</a></li>
-      <li><a href="/pl/narzedzia/bulk-checker/">Narzędzie Bulk checker</a></li>
+      <li><a href="/pl/fakty-seo/">Fakty o SEO</a></li>
+      <li><a href="/pl/narzedzia/bulk-checker/">Masowy checker</a></li>
     </ul>
   </section>
 
   <section>
-    <h5>Kontakt i informacje prawne</h5>
+    <h5>Kontakt &amp; informacje prawne</h5>
     <ul>
       <li><a href="/pl/prawne/warunki/">Regulamin</a></li>
       <li><a href="/pl/prawne/prywatnosc/">Prywatność</a></li>
       <li><a href="/pl/prawne/ciasteczka/">Cookies</a></li>
-      <li><a href="/pl/prawne/zastrzezenie/">Zastrzeżenie prawne</a></li>
+      <li><a href="/pl/prawne/zastrzezenie/">Zastrzeżenia</a></li>
       <li><a href="/pl/prawne/dostepnosc/">Dostępność</a></li>
-      <li><a href="#" data-consent-open>Zarządzaj plikami cookies.</a></li>
+      <li><a href="#" data-consent-open>Ustawienia cookies</a></li>
     </ul>
   </section>
 
@@ -375,34 +376,34 @@
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
-<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Używamy plików cookies" aria-modal="false" hidden>
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Używamy plików cookie" aria-modal="false" hidden>
   <div class="ic-consent__panel">
     <span class="ic-consent__eyebrow">Illucrum</span>
-    <p class="ic-consent__title">Używamy plików cookies</p>
-    <p class="ic-consent__body">Używamy plików cookies żeby strona pracowała, zrozmieć jak jest używana,i (tylko jeśli się zgodzisz) żeby pokazywać odpowiednie reklamy na Google i Reddit. Zawsze możesz zmienić twój wybór na stópce strony. <a href="/pl/prawne/ciasteczka/">Polityka cookie</a>.</p>
+    <p class="ic-consent__title">Używamy plików cookie</p>
+    <p class="ic-consent__body">Używamy plików cookie, aby strona działała poprawnie, aby rozumieć, jak jest wykorzystywana, oraz – wyłącznie za Państwa zgodą – aby wyświetlać trafne reklamy w Google i na Reddicie. Swój wybór mogą Państwo zmienić w dowolnym momencie w stopce strony. <a href="/pl/prawne/ciasteczka/">Polityka cookies</a>.</p>
     <div class="ic-consent__actions">
-      <button type="button" class="ic-consent__btn" data-consent-accept>Zaakceptuj wszystkie</button>
-      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Akceptuj tylko niezbędne</button-->
+      <button type="button" class="ic-consent__btn" data-consent-accept>Akceptuję wszystkie</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Odrzuć zbędne</button-->
       <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferencje</button>
     </div>
     <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
       <div class="ic-consent__pref">
         <span class="ic-consent__pref-label">Niezbędne</span>
         <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Niezbędne">
-        <p class="ic-consent__pref-desc">Wymagane do funkjonowania strony. Nie można wyłączyć.</p>
+        <p class="ic-consent__pref-desc">Wymagane do działania strony. Nie można ich wyłączyć.</p>
       </div>
       <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Analityka</span>
-        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analityka">
-        <p class="ic-consent__pref-desc">Pomaga nam zrozumieć jak użytkownicy użwają stronę (Analityka Google 4).</p>
+        <span class="ic-consent__pref-label">Analityczne</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analityczne">
+        <p class="ic-consent__pref-desc">Pomagają nam zrozumieć, jak odwiedzający korzystają ze strony (Google Analytics 4).</p>
       </div>
       <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Reklama</span>
-        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Reklama">
-        <p class="ic-consent__pref-desc">Pozwala nam mierzyć i personalizować Google Ads oraz Reddit Adds. </p>
+        <span class="ic-consent__pref-label">Reklamowe</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Reklamowe">
+        <p class="ic-consent__pref-desc">Pozwalają nam mierzyć i personalizować kampanie Google Ads oraz Reddit Ads.</p>
       </div>
       <div class="ic-consent__actions">
-        <button type="button" class="ic-consent__btn" data-consent-save>Zachowaj wybór</button>
+        <button type="button" class="ic-consent__btn" data-consent-save>Zapisz preferencje</button>
       </div>
     </div>
   </div>

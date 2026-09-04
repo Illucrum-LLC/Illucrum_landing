@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MRLGLHC5');</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+<title>Comprobador masivo de encabezados — H1 a H6 en 25 URL | Illucrum</title>
+<meta name="description" content="Comprueba la estructura de H1 a H6 de hasta 25 páginas a la vez. Todos los encabezados en el orden del documento, con nivel, posición y longitud, exportados a CSV. Gratis, sin registro." />
+
+<link rel="canonical" href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-encabezados/">
+<link rel="alternate" hreflang="en-US" href="https://illucrum.com/c.us.tools\bulk-checker\heading-check">
+<link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/heading-check/">
+<link rel="alternate" hreflang="en-GB" href="https://illucrum.com/uk/c.gb.tools\bulk-checker\heading-check">
+<link rel="alternate" hreflang="pl-PL" href="https://illucrum.com/pl/narzedzia/bulk-checker/tytuly/">
+<link rel="alternate" hreflang="es-ES" href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-encabezados/">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com/c.us.tools\bulk-checker\heading-check">
+
+<meta name="robots" content="index, follow" />
+<link rel="icon" href="/static/img/logo.png">
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Illucrum" />
+<meta property="og:title" content="Comprobador masivo de encabezados — todos los H1 a H6 de 25 páginas" />
+<meta property="og:description" content="Todos los encabezados en el orden del documento, con su nivel, su posición y su longitud en caracteres. Exportado a CSV. Gratis, sin cuenta." />
+<meta property="og:url" content="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-encabezados/" />
+<meta property="og:image" content="https://illucrum.com/es/static/img/og/bulk.png">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Comprobador masivo de encabezados — todos los H1 a H6 de 25 páginas" />
+<meta name="twitter:description" content="Todos los encabezados en el orden del documento, con su nivel, su posición y su longitud en caracteres. Exportado a CSV. Gratis, sin cuenta." />
+<meta name="twitter:image" content="https://illucrum.com/es/static/img/og/bulk.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-encabezados/#webpage",
+      "url": "https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-encabezados/",
+      "name": "Comprobación masiva de H1 y estructura de encabezados",
+      "description": "Comprueba la estructura de H1 a H6 de hasta 25 páginas a la vez. Todos los encabezados en el orden del documento, con nivel, posición y longitud, exportados a CSV. Gratis, sin registro.",
+      "isPartOf": { "@id": "https://illucrum.com/es/#website" },
+      "publisher": { "@id": "https://illucrum.com/es/#organization" },
+      "mainEntity": { "@id": "https://illucrum.com/es/herramientas/comprobador-masivo/#software" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-encabezados/#faq",
+      "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Una página necesita exactamente un h1?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Google lleva años diciendo que varios h1 no rompen una página, y es verdad. Aun así merece la pena saber cuántos tienes, porque más de uno suele significar que la etiqueta se eligió por su tamaño y no por su significado." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Saltarse niveles de encabezado perjudica al posicionamiento?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Rara vez por sí solo. Sí afecta a cómo navega la página quien usa un lector de pantalla, y suele ser síntoma de una plantilla que elige etiquetas por apariencia, algo que conviene arreglar en el origen y no página a página." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué falta un encabezado en la tabla?",
+        "acceptedAnswer": { "@type": "Answer", "text": "O lo añade JavaScript después de cargar la página, o no está marcado como encabezado en absoluto: texto estilizado que lo parece pero que en el HTML es un div o un párrafo." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo comprobar los encabezados de una web que no es mía?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí. Lee exactamente lo que leería el navegador de cualquier visitante, página a página y con una pausa entre peticiones." }
+      }
+      ]
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://illucrum.com/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://illucrum.com/es/herramientas/" },
+    { "@type": "ListItem", "position": 3, "name": "Comprobador masivo", "item": "https://illucrum.com/es/herramientas/comprobador-masivo/" },
+    { "@type": "ListItem", "position": 4, "name": "Comprobar encabezados", "item": "https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-encabezados/" }
+  ]
+}
+</script></head>
+<body>
+<nav>
+  <a href="https://illucrum.com/es/">
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+  </a>
+  <ul>
+    <li><a href="/es/auditorias/">Auditorías</a></li>
+    <li><a href="/es/precios/">Precios</a></li>
+    <li><a href="/es/proceso/">Proceso</a></li>
+    <li><a href="/es/faq/">FAQ</a></li>
+    <li><a href="/es/sobre-nosotros/">Sobre nosotros</a></li>
+    <li><a href="https://blog.illucrum.com">Blog</a></li>
+    <li><a data-lead-open data-lead-source="header" data-lead-title="Formulario de contacto"
+      data-lead-subtitle="Déjanos tus datos y te escribimos.">
+      Contacta con nosotros
+    </a></li>
+  </ul>
+</nav>
+<header>
+  <small>Comprobador de encabezados gratis</small>
+  <h1>Mira todos los <em>H1 a H6</em> de 25 páginas de una vez</h1>
+  <p>Pega una lista de URL. Recupera todos los encabezados de todas las páginas, en el orden del documento, con su nivel, su posición y su longitud. Expórtalo a CSV y lee el esquema tal y como lo lee un rastreador.</p>
+  <p><small>Sin puntuación y sin nota. Solo los encabezados, en orden, para que un h1 ausente o un nivel que se salta un paso sea evidente sin que nadie te lo interprete.</small></p>
+  <nav>
+    <a href="https://illucrum.com/es/herramientas/comprobador-masivo/">Abrir el comprobador</a>
+    <a href="#what">Qué te llevas</a>
+  </nav>
+  <aside>
+    <small>De un vistazo</small>
+    <dl>
+      <dt>URL por ejecución</dt>
+      <dd>25</dd>
+      <dt>Niveles de encabezado leídos</dt>
+      <dd>6</dd>
+      <dt>Exportaciones CSV</dt>
+      <dd>7</dd>
+    </dl>
+  </aside>
+</header>
+<main>
+<section id="what">
+  <header>
+    <small>Qué te llevas</small>
+    <h2>El esquema, <em>en el orden en que está escrito</em></h2>
+    <p>Una fila por encabezado. Sin agrupar, sin resumir y sin contarlo por ti.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Todos los encabezados, en el orden del documento</h3>
+      <p>De h1 a h6, en el orden en que aparecen en el HTML. Ese es el orden en que los lee un rastreador, y reordenarlos por prolijidad escondería justo lo que venías a ver.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>Nivel y posición juntos</h3>
+      <p>Cada fila lleva su nivel de etiqueta y su lugar en la secuencia. Baja por la columna de nivel y un salto de h2 directamente a h4 deja de ser una teoría.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>Longitud en caracteres</h3>
+      <p>La longitud del texto de cada encabezado. Suficiente para detectar el h2 de dos palabras que no dice nada y el h1 de sesenta palabras que quería ser un párrafo.</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>Veinticinco páginas en una tabla</h3>
+      <p>Todas las páginas de la ejecución comparten una columna url, así que una sección entera de una web se ordena, filtra y pivota en una hoja de cálculo.</p>
+    </li>
+  </ul>
+</section>
+<section class="dark" id="checks">
+  <header>
+    <small>Qué buscar</small>
+    <h2>Cinco patrones <em>que merecen un filtro</em></h2>
+    <p>La tabla de encabezados se gana el sueldo en unos cinco minutos si sabes por qué ordenar.</p>
+  </header>
+
+  <ul class="checklist">
+    <li>
+      <h3>Más de un h1</h3>
+      <p>Una página con cuatro h1 no tiene un encabezado principal: tiene cuatro compitiendo. Filtra la columna de nivel por h1 y cuenta las filas por URL.</p>
+    </li>
+    <li>
+      <h3>Ningún h1</h3>
+      <p>Suele ser una plantilla que estiliza un encabezado con CSS en lugar de marcarlo. La página parece terminada y se lee como si no tuviera cabeza.</p>
+    </li>
+    <li>
+      <h3>Niveles que se saltan un paso</h3>
+      <p>Un h4 justo debajo de un h2 es un esquema roto, y casi siempre significa que la etiqueta se eligió por su tamaño de fuente y no por su lugar en la estructura.</p>
+    </li>
+    <li>
+      <h3>Encabezados vacíos o de una palabra</h3>
+      <p>Ordena por longitud ascendente. Un encabezado sin texto es un elemento de maquetación disfrazado de encabezado, y los lectores de pantalla lo anuncian como una sección que no está.</p>
+    </li>
+    <li>
+      <h3>El mismo encabezado en todas las páginas</h3>
+      <p>Encabezados de plantilla repetidos por toda una sección le dicen a un rastreador que las páginas son intercambiables. A veces lo son. Normalmente no era esa la intención.</p>
+    </li>
+  </ul>
+</section>
+<section id="limits">
+  <header>
+    <small>Ten en cuenta</small>
+    <h2>Lo que <em>no</em> te va a decir</h2>
+    <p>Mejor dicho aquí que descubierto después.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Solo HTML estático</h3>
+      <p>Los encabezados añadidos por JavaScript después de cargar no están en el HTML que envió el servidor. Si la tabla vuelve vacía en una página que claramente tiene encabezados, es por eso, y merece saberse.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>Lee el marcado, no la página renderizada</h3>
+      <p>Un esquema perfectamente anidado puede verse mal en pantalla, y una página que se ve bien puede ser una pila de divs estilizados. Esta herramienta solo ve lo primero.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>No juzga la redacción</h3>
+      <p>Si un encabezado describe la sección que hay debajo es una tarea de lectura. La herramienta te da el texto y la estructura; la frase es tuya.</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>Veinticinco URL por ejecución</h3>
+      <p>Corre en una pestaña del navegador. Más allá de eso, las tablas se vuelven lentas y deja de ser educado con el servidor del otro lado.</p>
+    </li>
+  </ul>
+</section>
+<section id="faq">
+  <header>
+    <small>Preguntas</small>
+    <h2><em>Preguntas</em> razonables</h2>
+  </header>
+
+  <details>
+    <summary>¿Una página necesita exactamente un h1?</summary>
+    <p>Google lleva años diciendo que varios h1 no rompen una página, y es verdad. Aun así merece la pena saber cuántos tienes, porque más de uno suele significar que la etiqueta se eligió por su tamaño y no por su significado.</p>
+  </details>
+  <details>
+    <summary>¿Saltarse niveles de encabezado perjudica al posicionamiento?</summary>
+    <p>Rara vez por sí solo. Sí afecta a cómo navega la página quien usa un lector de pantalla, y suele ser síntoma de una plantilla que elige etiquetas por apariencia, algo que conviene arreglar en el origen y no página a página.</p>
+  </details>
+  <details>
+    <summary>¿Por qué falta un encabezado en la tabla?</summary>
+    <p>O lo añade JavaScript después de cargar la página, o no está marcado como encabezado en absoluto: texto estilizado que lo parece pero que en el HTML es un div o un párrafo.</p>
+  </details>
+  <details>
+    <summary>¿Puedo comprobar los encabezados de una web que no es mía?</summary>
+    <p>Sí. Lee exactamente lo que leería el navegador de cualquier visitante, página a página y con una pausa entre peticiones.</p>
+  </details>
+</section>
+<section id="audit">
+  <header>
+    <small>Una herramienta, siete tablas</small>
+    <h2>Los encabezados son <em>una pestaña del comprobador</em></h2>
+    <p>La misma ejecución devuelve además títulos, meta descriptions, recuentos de palabras, enlaces, imágenes y datos estructurados. Es una herramienta con siete tablas y siete exportaciones CSV, no siete herramientas distintas que tengas que pasar una detrás de otra.</p>
+  </header>
+  <nav>
+    <a href="https://illucrum.com/es/herramientas/comprobador-masivo/">Abrir el comprobador masivo</a>
+    <a href="https://illucrum.com/es/audits/">Ver qué incluye una auditoría</a>
+  </nav>
+  <p>
+    <small>Otras comprobaciones que hace la misma herramienta:
+      <a href="https://illucrum.com/es/herramientas/comprobador-masivo/">Comprobador SEO masivo</a>,
+      <a href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-meta-tags/">Comprobar meta etiquetas</a>,
+      <a href="https://illucrum.com/es/tools\alt-text-check">Comprobar texto alternativo</a>,
+      <a href="https://illucrum.com/es/herramientas/comprobador-masivo/contar-palabras/">Contar palabras</a>,
+      <a href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-canonical/">Comprobar canonical</a>,
+      <a href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-open-graph/">Comprobar Open Graph</a>,
+      <a href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-schema/">Comprobar schema</a>
+    </small>
+  </p>
+</section>
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+    <p>Auditorías SEO que te dicen exactamente qué corregir.</p>
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40" data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" /></a>
+      <a href="https://wa.me/48515983261" target="_blank" rel="nofollow"><img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg" alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Auditorías</h5>
+    <ul>
+      <li><a href="/es/auditorias/auditoria-seo-saas/">Auditoría SEO para SaaS</a></li>
+      <li><a href="/es/auditorias/auditoria-seo-ecommerce/">Auditoría SEO para e-commerce</a></li>
+      <li><a href="/es/auditorias/auditoria-seo/">Auditoría SEO de sitio web</a></li>
+      <li><a href="/es/auditorias/auditoria-seo-tecnica/">Auditoría SEO técnica</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Comparativas</h5>
+    <ul>
+      <li><a href="/es/comparativas/auditoria-saas-vs-generica/">SaaS vs Sitio web</a></li>
+      <li><a href="/es/comparativas/auditoria-ecommerce-vs-generica/">E-commerce vs Sitio web</a></li>
+      <li><a href="/es/comparativas/auditoria-seo-vs-herramienta-seo/">Auditoría vs herramienta SEO</a></li>
+      <li><a href="/es/comparativas/auditoria-seo-vs-iguala-seo/">Auditoría vs iguala</a></li>
+      <li><a href="/es/comparativas/auditoria-seo-vs-diy/">Auditoría vs DIY</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Empresa</h5>
+    <ul>
+      <li><a href="/es/sobre-nosotros/">Sobre nosotros</a></li>
+      <li><a href="/es/proceso/">Proceso</a></li>
+      <li><a href="/es/precios/">Precios</a></li>
+      <li><a href="/es/faq/">FAQ</a></li>
+      <li><a href="/es/datos-seo/">Datos SEO</a></li>
+      <li><a href="/es/herramientas/comprobador-masivo/">Comprobador masivo</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Contacto &amp; Legal</h5>
+    <ul>
+      <li><a href="/es/legal/terminos/">Términos</a></li>
+      <li><a href="/es/legal/privacidad/">Privacidad</a></li>
+      <li><a href="/es/legal/cookies/">Cookies</a></li>
+      <li><a href="/es/legal/aviso-legal/">Aviso legal</a></li>
+      <li><a href="/es/legal/accesibilidad/">Accesibilidad</a></li>
+      <li><a href="#" data-consent-open>Gestionar cookies</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +48 515 983 261</span>
+    <span>
+      <a href="https://illucrum.com/" hreflang="en-us">US</a> &middot;
+      <a href="https://illucrum.com/pl/" hreflang="en-pl">PL</a> &middot;
+      <a href="https://illucrum.com/eu/" hreflang="en-001">EU</a> &middot;
+      <a href="https://illucrum.com/uk/" hreflang="en-gb">UK</a>
+    </span>
+  </small>
+</footer>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRLGLHC5" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Usamos cookies" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">Usamos cookies</p>
+    <p class="ic-consent__body">Usamos cookies para que la web funcione, para entender cómo se usa y, solo si nos das tu permiso, para mostrar anuncios relevantes en Google y Reddit. Puedes cambiar tu elección cuando quieras desde el pie de página. <a href="/es/legal/cookies/">Política de cookies</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Aceptar todas</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Rechazar las no esenciales</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferencias</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Estrictamente necesarias</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Estrictamente necesarias">
+        <p class="ic-consent__pref-desc">Necesarias para que la web funcione. No se pueden desactivar.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analítica</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analítica">
+        <p class="ic-consent__pref-desc">Nos ayuda a entender cómo usan la web los visitantes (Google Analytics 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Publicidad</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Publicidad">
+        <p class="ic-consent__pref-desc">Nos permite medir y personalizar las campañas de Google Ads y Reddit Ads.</p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Guardar preferencias</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

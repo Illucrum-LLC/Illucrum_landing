@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MRLGLHC5');</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+<title>Comprobador masivo de Open Graph y Twitter Cards | Illucrum</title>
+<meta name="description" content="Comprueba las etiquetas de Open Graph y Twitter Card de hasta 25 páginas a la vez. Todas las etiquetas og y twitter, una fila por página, exportadas a CSV. Gratis, sin registro." />
+
+<link rel="canonical" href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-open-graph/">
+<link rel="alternate" hreflang="en-US" href="https://illucrum.com/c.us.tools\bulk-checker\open-graph-check">
+<link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/open-graph-check/">
+<link rel="alternate" hreflang="en-GB" href="https://illucrum.com/uk/c.gb.tools\bulk-checker\open-graph-check">
+<link rel="alternate" hreflang="pl-PL" href="https://illucrum.com/pl/narzedzia/bulk-checker/open-graph/">
+<link rel="alternate" hreflang="es-ES" href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-open-graph/">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com/c.us.tools\bulk-checker\open-graph-check">
+
+<meta name="robots" content="index, follow" />
+<link rel="icon" href="/static/img/logo.png">
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Illucrum" />
+<meta property="og:title" content="Comprobador masivo de Open Graph y Twitter Cards" />
+<meta property="og:description" content="Todas las etiquetas og y twitter que declara cada página, una fila por página, exportadas a CSV. Gratis, sin cuenta." />
+<meta property="og:url" content="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-open-graph/" />
+<meta property="og:image" content="https://illucrum.com/es/static/img/og/bulk.png">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Comprobador masivo de Open Graph y Twitter Cards" />
+<meta name="twitter:description" content="Todas las etiquetas og y twitter que declara cada página, una fila por página, exportadas a CSV. Gratis, sin cuenta." />
+<meta name="twitter:image" content="https://illucrum.com/es/static/img/og/bulk.png">
+
+<link rel="stylesheet" href="/static/css/illucrum.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-open-graph/#webpage",
+      "url": "https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-open-graph/",
+      "name": "Comprobación masiva de Open Graph y Twitter Card",
+      "description": "Comprueba las etiquetas de Open Graph y Twitter Card de hasta 25 páginas a la vez. Todas las etiquetas og y twitter, una fila por página, exportadas a CSV. Gratis, sin registro.",
+      "isPartOf": { "@id": "https://illucrum.com/es/#website" },
+      "publisher": { "@id": "https://illucrum.com/es/#organization" },
+      "mainEntity": { "@id": "https://illucrum.com/es/herramientas/comprobador-masivo/#software" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-open-graph/#faq",
+      "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Las etiquetas de Open Graph afectan al SEO?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No directamente. Afectan a cómo se ve un enlace compartido, lo que afecta a si recibe clic y se vuelve a compartir. Trátalas como presentación, no como posicionamiento." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Necesito etiquetas de Twitter Card si ya tengo Open Graph?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Normalmente no. X lee Open Graph como alternativa. La excepción es el tipo de tarjeta, que sí hay que declarar si quieres el formato de imagen grande en vez del pequeño." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué tamaño debería tener la og:image?",
+        "acceptedAnswer": { "@type": "Answer", "text": "1200 por 630 píxeles es la proporción más usada y sobrevive al recorte de casi todas las plataformas. Usar una URL absoluta importa más que clavar las dimensiones exactas." }
+      },
+      {
+        "@type": "Question",
+        "name": "He arreglado las etiquetas y la vista previa no ha cambiado.",
+        "acceptedAnswer": { "@type": "Answer", "text": "Las plataformas cachean las vistas previas, a veces durante mucho tiempo. Cada una tiene un depurador que fuerza una actualización. Lo que esta herramienta puede confirmar es la parte que controlas tú: que la etiqueta está correcta en la página." }
+      }
+      ]
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://illucrum.com/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://illucrum.com/es/herramientas/" },
+    { "@type": "ListItem", "position": 3, "name": "Comprobador masivo", "item": "https://illucrum.com/es/herramientas/comprobador-masivo/" },
+    { "@type": "ListItem", "position": 4, "name": "Comprobar Open Graph", "item": "https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-open-graph/" }
+  ]
+}
+</script></head>
+<body>
+<nav>
+  <a href="https://illucrum.com/es/">
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+  </a>
+  <ul>
+    <li><a href="/es/auditorias/">Auditorías</a></li>
+    <li><a href="/es/precios/">Precios</a></li>
+    <li><a href="/es/proceso/">Proceso</a></li>
+    <li><a href="/es/faq/">FAQ</a></li>
+    <li><a href="/es/sobre-nosotros/">Sobre nosotros</a></li>
+    <li><a href="https://blog.illucrum.com">Blog</a></li>
+    <li><a data-lead-open data-lead-source="header" data-lead-title="Formulario de contacto"
+      data-lead-subtitle="Déjanos tus datos y te escribimos.">
+      Contacta con nosotros
+    </a></li>
+  </ul>
+</nav>
+<header>
+  <small>Comprobador de Open Graph gratis</small>
+  <h1>Todas las <em>etiquetas de Open Graph y Twitter</em>, 25 páginas de una vez</h1>
+  <p>Pega tus URL. Obtén todas las etiquetas de Open Graph y Twitter Card que declara cada página — título, descripción, imagen, tipo, nombre del sitio, tipo de tarjeta — una fila por página, exportada a CSV.</p>
+  <p><small>Esto lee las etiquetas. No renderiza la vista previa. Lo que muestra cada plataforma depende de su propia caché y de sus propias reglas, y cada una tiene un depurador para esa parte.</small></p>
+  <nav>
+    <a href="https://illucrum.com/es/herramientas/comprobador-masivo/">Abrir el comprobador</a>
+    <a href="#what">Qué te llevas</a>
+  </nav>
+  <aside>
+    <small>De un vistazo</small>
+    <dl>
+      <dt>URL por ejecución</dt>
+      <dd>25</dd>
+      <dt>Campos por página</dt>
+      <dd>51</dd>
+      <dt>Exportaciones CSV</dt>
+      <dd>7</dd>
+    </dl>
+  </aside>
+</header>
+<main>
+<section id="what">
+  <header>
+    <small>Qué te llevas</small>
+    <h2>Las etiquetas, <em>todas ellas, en una fila</em></h2>
+    <p>Las etiquetas sociales son la parte del head que nadie mira hasta que se comparte un enlace en un canal de doscientas personas.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Todas las etiquetas og de la página</h3>
+      <p>Título, descripción, imagen, url, tipo, nombre del sitio, locale y cualquier otra cosa que la página declare en el espacio de nombres og. No una lista corta fija.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>Todas las etiquetas twitter de la página</h3>
+      <p>Tipo de tarjeta, título, descripción, imagen, sitio y creador. Las etiquetas ausentes vuelven vacías en lugar de rellenarse en silencio desde Open Graph.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>Junto al título y la descripción de la página</h3>
+      <p>En la misma fila, así que allí donde el título social se ha separado del título de la página puedes ver si fue una decisión o un accidente.</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>Veinticinco páginas, un CSV</h3>
+      <p>Ordena por og:image y todas las páginas que comparten un mismo gráfico genérico se alinean juntas, que suelen ser más de las esperadas.</p>
+    </li>
+  </ul>
+</section>
+<section class="dark" id="checks">
+  <header>
+    <small>Qué buscar</small>
+    <h2>Cinco cosas <em>que rompen una vista previa</em></h2>
+    <p>Ninguna afecta al posicionamiento. Todas afectan a si un enlace compartido parece algo que merezca un clic.</p>
+  </header>
+
+  <ul class="checklist">
+    <li>
+      <h3>Sin og:image</h3>
+      <p>La única etiqueta que decide si un enlace compartido se ve como una tarjeta o como un rectángulo gris con un nombre de dominio encima.</p>
+    </li>
+    <li>
+      <h3>Una URL de imagen relativa</h3>
+      <p>og:image necesita una URL absoluta. Una ruta relativa es una vista previa rota en todas las plataformas a la vez, y en el código fuente parece correcta.</p>
+    </li>
+    <li>
+      <h3>og:title idéntico al título de la página en todas partes</h3>
+      <p>Perfectamente válido como valor por defecto. Merece saber si es un valor por defecto o una decisión, porque un título escrito para un resultado de búsqueda y otro escrito para un feed rara vez son la misma frase.</p>
+    </li>
+    <li>
+      <h3>Una og:description ausente</h3>
+      <p>Algunas plataformas tiran de la meta description, otras no muestran nada. Ninguna de las dos es una elección tuya.</p>
+    </li>
+    <li>
+      <h3>Sin twitter:card</h3>
+      <p>X tira de Open Graph, así que muchas veces no pasa nada. Deja de no pasar nada en cuanto quieres el formato de imagen grande, que necesita que el tipo de tarjeta esté declarado explícitamente.</p>
+    </li>
+  </ul>
+</section>
+<section id="limits">
+  <header>
+    <small>Ten en cuenta</small>
+    <h2>Lo que <em>no</em> te va a decir</h2>
+    <p>Mejor dicho aquí que descubierto después.</p>
+  </header>
+
+  <ul>
+    <li>
+      <span>01</span>
+      <h3>Lee etiquetas, no renderiza vistas previas</h3>
+      <p>Aquí no hay miniatura. Para eso, usa el depurador de la propia plataforma, que además es lo único que puede vaciar su caché.</p>
+    </li>
+    <li>
+      <span>02</span>
+      <h3>No descarga la imagen</h3>
+      <p>Si la URL de og:image resuelve, qué tamaño tiene el archivo y si una plataforma concreta lo aceptará son cosas que no se comprueban.</p>
+    </li>
+    <li>
+      <span>03</span>
+      <h3>Solo HTML estático</h3>
+      <p>Las etiquetas inyectadas después de cargar no están en el HTML que envió el servidor, y la mayoría de rastreadores sociales tampoco ejecutan JavaScript, así que una fila vacía aquí suele ser una vista previa fiel del problema.</p>
+    </li>
+    <li>
+      <span>04</span>
+      <h3>Veinticinco URL por ejecución</h3>
+      <p>Corre en una pestaña del navegador. Suficiente para comprobar una plantilla en una sección, no para un catálogo entero.</p>
+    </li>
+  </ul>
+</section>
+<section id="faq">
+  <header>
+    <small>Preguntas</small>
+    <h2><em>Preguntas</em> razonables</h2>
+  </header>
+
+  <details>
+    <summary>¿Las etiquetas de Open Graph afectan al SEO?</summary>
+    <p>No directamente. Afectan a cómo se ve un enlace compartido, lo que afecta a si recibe clic y se vuelve a compartir. Trátalas como presentación, no como posicionamiento.</p>
+  </details>
+  <details>
+    <summary>¿Necesito etiquetas de Twitter Card si ya tengo Open Graph?</summary>
+    <p>Normalmente no. X lee Open Graph como alternativa. La excepción es el tipo de tarjeta, que sí hay que declarar si quieres el formato de imagen grande en vez del pequeño.</p>
+  </details>
+  <details>
+    <summary>¿Qué tamaño debería tener la og:image?</summary>
+    <p>1200 por 630 píxeles es la proporción más usada y sobrevive al recorte de casi todas las plataformas. Usar una URL absoluta importa más que clavar las dimensiones exactas.</p>
+  </details>
+  <details>
+    <summary>He arreglado las etiquetas y la vista previa no ha cambiado.</summary>
+    <p>Las plataformas cachean las vistas previas, a veces durante mucho tiempo. Cada una tiene un depurador que fuerza una actualización. Lo que esta herramienta puede confirmar es la parte que controlas tú: que la etiqueta está correcta en la página.</p>
+  </details>
+</section>
+<section id="audit">
+  <header>
+    <small>Una herramienta, siete tablas</small>
+    <h2>Las etiquetas sociales son <em>parte de la tabla de páginas</em></h2>
+    <p>La misma ejecución devuelve además títulos, meta descriptions, encabezados, recuentos de palabras, enlaces, imágenes y datos estructurados. Es una herramienta con siete tablas y siete exportaciones CSV, no siete herramientas distintas que tengas que pasar una detrás de otra.</p>
+  </header>
+  <nav>
+    <a href="https://illucrum.com/es/herramientas/comprobador-masivo/">Abrir el comprobador masivo</a>
+    <a href="https://illucrum.com/es/audits/">Ver qué incluye una auditoría</a>
+  </nav>
+  <p>
+    <small>Otras comprobaciones que hace la misma herramienta:
+      <a href="https://illucrum.com/es/herramientas/comprobador-masivo/">Comprobador SEO masivo</a>,
+      <a href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-meta-tags/">Comprobar meta etiquetas</a>,
+      <a href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-encabezados/">Comprobar encabezados</a>,
+      <a href="https://illucrum.com/es/tools\alt-text-check">Comprobar texto alternativo</a>,
+      <a href="https://illucrum.com/es/herramientas/comprobador-masivo/contar-palabras/">Contar palabras</a>,
+      <a href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-canonical/">Comprobar canonical</a>,
+      <a href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-schema/">Comprobar schema</a>
+    </small>
+  </p>
+</section>
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="">
+    <span>Illucrum</span>
+    <p>Auditorías SEO que te dicen exactamente qué corregir.</p>
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40" data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" /></a>
+      <a href="https://wa.me/48515983261" target="_blank" rel="nofollow"><img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg" alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Auditorías</h5>
+    <ul>
+      <li><a href="/es/auditorias/auditoria-seo-saas/">Auditoría SEO para SaaS</a></li>
+      <li><a href="/es/auditorias/auditoria-seo-ecommerce/">Auditoría SEO para e-commerce</a></li>
+      <li><a href="/es/auditorias/auditoria-seo/">Auditoría SEO de sitio web</a></li>
+      <li><a href="/es/auditorias/auditoria-seo-tecnica/">Auditoría SEO técnica</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Comparativas</h5>
+    <ul>
+      <li><a href="/es/comparativas/auditoria-saas-vs-generica/">SaaS vs Sitio web</a></li>
+      <li><a href="/es/comparativas/auditoria-ecommerce-vs-generica/">E-commerce vs Sitio web</a></li>
+      <li><a href="/es/comparativas/auditoria-seo-vs-herramienta-seo/">Auditoría vs herramienta SEO</a></li>
+      <li><a href="/es/comparativas/auditoria-seo-vs-iguala-seo/">Auditoría vs iguala</a></li>
+      <li><a href="/es/comparativas/auditoria-seo-vs-diy/">Auditoría vs DIY</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Empresa</h5>
+    <ul>
+      <li><a href="/es/sobre-nosotros/">Sobre nosotros</a></li>
+      <li><a href="/es/proceso/">Proceso</a></li>
+      <li><a href="/es/precios/">Precios</a></li>
+      <li><a href="/es/faq/">FAQ</a></li>
+      <li><a href="/es/datos-seo/">Datos SEO</a></li>
+      <li><a href="/es/herramientas/comprobador-masivo/">Comprobador masivo</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Contacto &amp; Legal</h5>
+    <ul>
+      <li><a href="/es/legal/terminos/">Términos</a></li>
+      <li><a href="/es/legal/privacidad/">Privacidad</a></li>
+      <li><a href="/es/legal/cookies/">Cookies</a></li>
+      <li><a href="/es/legal/aviso-legal/">Aviso legal</a></li>
+      <li><a href="/es/legal/accesibilidad/">Accesibilidad</a></li>
+      <li><a href="#" data-consent-open>Gestionar cookies</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +48 515 983 261</span>
+    <span>
+      <a href="https://illucrum.com/" hreflang="en-us">US</a> &middot;
+      <a href="https://illucrum.com/pl/" hreflang="en-pl">PL</a> &middot;
+      <a href="https://illucrum.com/eu/" hreflang="en-001">EU</a> &middot;
+      <a href="https://illucrum.com/uk/" hreflang="en-gb">UK</a>
+    </span>
+  </small>
+</footer>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRLGLHC5" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Usamos cookies" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">Usamos cookies</p>
+    <p class="ic-consent__body">Usamos cookies para que la web funcione, para entender cómo se usa y, solo si nos das tu permiso, para mostrar anuncios relevantes en Google y Reddit. Puedes cambiar tu elección cuando quieras desde el pie de página. <a href="/es/legal/cookies/">Política de cookies</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Aceptar todas</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Rechazar las no esenciales</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferencias</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Estrictamente necesarias</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Estrictamente necesarias">
+        <p class="ic-consent__pref-desc">Necesarias para que la web funcione. No se pueden desactivar.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analítica</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analítica">
+        <p class="ic-consent__pref-desc">Nos ayuda a entender cómo usan la web los visitantes (Google Analytics 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Publicidad</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Publicidad">
+        <p class="ic-consent__pref-desc">Nos permite medir y personalizar las campañas de Google Ads y Reddit Ads.</p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Guardar preferencias</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
