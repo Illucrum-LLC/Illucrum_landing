@@ -4,12 +4,6 @@
 **Prepared for:** Szymon Kokot / Illucrum
 **Applies to:** Any site. This is the deep technical layer, isolated from on-page, keyword, content and conversion work.
 
----
-
-**Tool preference order:** PageSpeed Insights → Google Search Console → SEOptimer → Google tools (Rich Results Test, Mobile-Friendly Test) → direct source/header inspection → other free tools
-
----
-
 ## Audit Section Map
 
 | # | Check | Tier | Section |

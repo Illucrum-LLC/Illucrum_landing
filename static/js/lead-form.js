@@ -80,6 +80,13 @@
     });
   }
 
+  function pushContactClickEvent() {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "contact_click"
+    });
+  }
+
   function submitLead(payload) {
     return fetch(ENDPOINT, {
       method: "POST",
@@ -110,6 +117,7 @@
   }
 
   function open(opts) {
+    pushContactClickEvent();
     if (overlayEl) close();
     opts = opts || {};
     lastFocused = document.activeElement;

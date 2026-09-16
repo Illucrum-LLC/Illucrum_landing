@@ -18,6 +18,19 @@ Markdown source files detailing every specific check and point evaluated in each
 - [General Website Audit Breakdown](https://illucrum.com/static/md/website_audit.txt): Complete point-by-point checklist for general SEO audits.
 - [Technical Audit Breakdown](https://illucrum.com/static/md/technical_audit.txt): Complete point-by-point checklist for Technical-only SEO audits.
 
+## Free tool
+
+There is one free tool, a bulk SEO checker. You enter up to 25 URLs, and it checks their meta tags, headings, alt texts, word count, canonical links, OG tags and schema.
+Fetches the HTML through a simple relay, and performs the checks in the browser. We don't collect any data about the usage of the tool, we don't store the results anywhere. But you can download the results in CSV format.
+ - [Bulk SEO Checker](https://illucrum.com/tools/bulk-checker/): the tool itself
+ - [About the meta tags check](https://illucrum.com/tools/bulk-checker/meta-tag-check/)
+ - [About the headings check](https://illucrum.com/tools/bulk-checker/heading-check/)
+ - [About the alt text check](https://illucrum.com/tools/bulk-checker/alt-text-check/)
+ - [About the word count check](https://illucrum.com/tools/bulk-checker/word-count-check/)
+ - [About the canonical links check](https://illucrum.com/tools/bulk-checker/canonical-check/)
+ - [About the OG tags check](https://illucrum.com/tools/bulk-checker/open-graph-check/)
+ - [About the schema check](https://illucrum.com/tools/bulk-checker/schema-check/)
+
 ## Company & Information
 
 - [Pricing](https://illucrum.com/pricing): Tier options, pricing breakdown, and deliverable comparisons.

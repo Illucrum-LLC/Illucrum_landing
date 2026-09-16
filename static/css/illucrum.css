@@ -429,11 +429,6 @@ tfoot td {
   padding-bottom: 1.25rem;
 }
 
-/* Check / dash marks inside table cells. */
-tbody td:not(:first-child) {
-  /* ✓ and — are placed directly as text in the HTML */
-}
-
 /* ─── 10. DETAILS / SUMMARY (FAQ accordion, no JS) ──────────── */
 details {
   max-width: var(--maxw-narrow);
@@ -1330,7 +1325,7 @@ body > footer > small {
 
 @media (min-width: 620px) {
   body > footer {
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
   }
   body > footer > section:first-of-type {
     grid-column: 1;
