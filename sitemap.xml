@@ -7,8 +7,6 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/uk/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/"/>
@@ -21,8 +19,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/about/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/about/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/uk/about/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/o-nas/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/sobre-nosotros/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/about/"/>
@@ -33,8 +29,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/audits/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/uk/audits/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/audyty/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/auditorias/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/"/>
@@ -45,8 +39,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/pricing/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/pricing/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/uk/pricing/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/cennik/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/precios/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/pricing/"/>
@@ -57,8 +49,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/process/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/process/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/uk/process/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/proces/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/proceso/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/process/"/>
@@ -69,8 +59,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/faq/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/faq/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/uk/faq/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/faq/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/faq/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/faq/"/>
@@ -81,8 +69,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/seo-facts/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/seo-facts/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/uk/seo-facts/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/fakty-seo/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/datos-seo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/seo-facts/"/>
@@ -95,8 +81,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/tools/bulk-checker/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/gb/tools/bulk-checker/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/tools/bulk-checker/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/herramientas/comprobador-masivo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/tools/bulk-checker/"/>
@@ -107,8 +91,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/tools/bulk-checker/meta-tag-check/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/meta-tag-check/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/gb/tools/bulk-checker/meta-tag-check/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/tools/bulk-checker/meta-tagi/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-meta-tags/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/tools/bulk-checker/meta-tag-check/"/>
@@ -119,8 +101,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/tools/bulk-checker/heading-check/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/heading-check/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/gb/tools/bulk-checker/heading-check/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/tools/bulk-checker/tytuly/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-encabezados/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/tools/bulk-checker/heading-check/"/>
@@ -131,8 +111,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/tools/bulk-checker/alt-text-check/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/alt-text-check/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/gb/tools/bulk-checker/alt-text-check/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/tools/bulk-checker/alt-text/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-texto-alternativo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/tools/bulk-checker/alt-text-check/"/>
@@ -143,8 +121,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/tools/bulk-checker/word-count-check/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/word-count-check/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/gb/tools/bulk-checker/word-count-check/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/tools/bulk-checker/liczba-slow/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/herramientas/comprobador-masivo/contar-palabras/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/tools/bulk-checker/word-count-check/"/>
@@ -155,8 +131,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/tools/bulk-checker/canonical-check/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/canonical-check/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/gb/tools/bulk-checker/canonical-check/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/tools/bulk-checker/canonical-link/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-canonical/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/tools/bulk-checker/canonical-check/"/>
@@ -167,8 +141,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/tools/bulk-checker/open-graph-check/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/open-graph-check/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/gb/tools/bulk-checker/open-graph-check/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/tools/bulk-checker/open-graph/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-open-graph/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/tools/bulk-checker/open-graph-check/"/>
@@ -179,8 +151,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/tools/bulk-checker/schema-check/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/tools/bulk-checker/schema-check/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/gb/tools/bulk-checker/schema-check/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/tools/bulk-checker/schema/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/herramientas/comprobador-masivo/comprobar-schema/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/tools/bulk-checker/schema-check/"/>
@@ -193,8 +163,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/seo-audit/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/audits/seo-audit/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/uk/audits/seo-audit/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/audyty/audyt-seo/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/auditorias/auditoria-seo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/seo-audit/"/>
@@ -205,8 +173,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/saas-seo-audit/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/audits/saas-seo-audit/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/uk/audits/saas-seo-audit/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/audyty/audyt-seo-dla-saas/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/auditorias/auditoria-seo-saas/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/saas-seo-audit/"/>
@@ -217,8 +183,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/ecommerce-seo-audit/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/audits/ecommerce-seo-audit/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/uk/audits/ecommerce-seo-audit/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/audyty/audyt-seo-dla-sklepow-internetowych/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/auditorias/auditoria-seo-ecommerce/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/ecommerce-seo-audit/"/>
@@ -229,8 +193,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/audits/technical-seo-audit/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/audits/technical-seo-audit/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/uk/audits/technical-seo-audit/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/audyty/techniczny-audyt-seo/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/auditorias/auditoria-seo-tecnica/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/audits/technical-seo-audit/"/>
@@ -243,8 +205,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/saas-vs-generic-seo-audit/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/compare/saas-vs-generic-seo-audit/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/uk/compare/saas-vs-generic-seo-audit/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/porownanie/audyt-seo-saas-a-standardowy/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/comparativas/auditoria-saas-vs-generica/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/compare/saas-vs-generic-seo-audit/"/>
@@ -255,8 +215,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/ecommerce-vs-generic-seo-audit/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/compare/ecommerce-vs-generic-seo-audit/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/uk/compare/ecommerce-vs-generic-seo-audit/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/porownanie/audyt-seo-sklepu-internetowego-a-standardowy/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/comparativas/auditoria-ecommerce-vs-generica/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/compare/ecommerce-vs-generic-seo-audit/"/>
@@ -267,8 +225,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/seo-audit-vs-diy/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/compare/seo-audit-vs-diy/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/uk/compare/seo-audit-vs-diy/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/porownanie/audyt-seo-a-diy/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/comparativas/auditoria-seo-vs-diy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/compare/seo-audit-vs-diy/"/>
@@ -279,8 +235,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/seo-audit-vs-seo-retainer/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/compare/seo-audit-vs-seo-retainer/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/uk/compare/seo-audit-vs-seo-retainer/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/porownanie/audyt-a-abonament/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/comparativas/auditoria-seo-vs-iguala-seo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/compare/seo-audit-vs-seo-retainer"/>
@@ -291,8 +245,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://illucrum.com/compare/seo-audit-vs-seo-tool/"/>
-    <xhtml:link rel="alternate" hreflang="en-001" href="https://illucrum.com/eu/compare/seo-audit-vs-seo-tool/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://illucrum.com/uk/compare/seo-audit-vs-seo-tool/"/>
     <xhtml:link rel="alternate" hreflang="pl-pl" href="https://illucrum.com/pl/porownanie/audyt-seo-a-narzedzie/"/>
     <xhtml:link rel="alternate" hreflang="es-es" href="https://illucrum.com/es/comparativas/auditoria-seo-vs-herramienta-seo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://illucrum.com/compare/seo-audit-vs-seo-tool"/>
