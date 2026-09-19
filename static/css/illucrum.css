@@ -57,8 +57,14 @@ h2 { font-size: var(--h2); line-height: 1.08; letter-spacing: -0.02em; }
 h3 { letter-spacing: -0.01em; }
 p { text-wrap: pretty; }
 
-a { color: var(--green-text); text-decoration: none; }
-a:hover { color: var(--ink); }
+a {
+    color: var(--green-text);
+    text-decoration: none;
+}
+a:hover {
+  color: var(--ink);
+  cursor: pointer;
+}
 :focus-visible { outline: 2px solid var(--green-text); outline-offset: 2px; }
 
 /* Eyebrow labels */
@@ -838,11 +844,11 @@ body > footer > small {
   border-top: 1px solid var(--card-line);
   font-size: 0.875rem;
 }
-
+  
 @media (min-width: 960px) {
   body > footer {
     display: grid;
-    grid-template-columns: 1.3fr 1fr 1fr 0.9fr 1.2fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
     column-gap: 32px;
     padding-block: 64px 40px;
   }
@@ -856,4 +862,13 @@ body > footer > small {
   body > footer nav > ul > li:first-child { grid-row: auto; }
   body > footer li ul { gap: 10px; margin-top: 14px; }
   body > footer > small { grid-column: 1 / -1; margin-top: 48px; padding-top: 24px; }
+}
+
+body > footer > section > div {
+    display: flex;
+}
+
+body > footer > section > div > a > img {
+    width: 3rem !important;
+    height: auto !important;
 }
