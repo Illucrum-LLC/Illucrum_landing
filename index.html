@@ -51,7 +51,7 @@
     // Fields rendered in order. `required` drives client-side validation.
     var FIELDS = [
       { name: "name", label: "Name", type: "text", required: true, autocomplete: "name" },
-      { name: "company", label: "l.structure.head.lead.company", type: "text", required: true, autocomplete: "organization" },
+      { name: "company", label: "Company", type: "text", required: true, autocomplete: "organization" },
       { name: "website", label: "Website", type: "text", required: true, autocomplete: "url", placeholder: "https://" },
       { name: "phone", label: "Phone", type: "tel", required: false, autocomplete: "tel" },
       { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }
@@ -111,12 +111,12 @@
   "@id": "https://illucrum.com/#service",
   "name": "Illucrum",
   "url": "https://illucrum.com/",
-  "description": "l.home.head.schema_service_description",
+  "description": "Get your one-off SEO audit taylored to your website. One price, one upsells, no surprises. A straightforward process with straightforward results.",
   "priceRange": "$P_TECHNICAL-$P_SAAS",
   "email": "szymon.kokot@illucrum.com",
   "telephone": "+1 (512) 203-5993",
   "parentOrganization": { "@id": "https://illucrum.com/#organization" },
-  "areaServed": "l.common.schema.area_served"
+  "areaServed": "[AREA SERVED]"
 }
 </script>
 
@@ -141,12 +141,12 @@
   <nav id="menu" aria-label="Main" popover>
     <ul>
       <li><a href="/audits/">Audits</a></li>
-      <li><a href="/pricing/"></a></li>
-      <li><a href="/process/"></a></li>
-      <li><a href="/faq/"></a></li>
-      <li><a href="/about/"></a></li>
-      <li><a href="/tools/bulk-checker/"></a></li>
-      <!-- li><a href="https://blog.illucrum.com"></a></li -->
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/process/">Process</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/tools/bulk-checker/">Checker</a></li>
+      <!-- li><a href="https://blog.illucrum.com">Blog</a></li -->
       <li>
 <a data-lead-open data-lead-source="#source">
   Get in touch
@@ -170,7 +170,7 @@
     </p>
     <ul>
       <li data-placeholder="Clutch badge"></li>
-      <li><img src="assets/szymon-kokot-avatar.webp" alt="" width="88" height="88"> Run by Szymon Kokot</li>
+      <li><img src="/css/img/szymon-small.png" alt="" width="88" height="88"> Run by Szymon Kokot</li>
     </ul>
   </div>
 
@@ -244,8 +244,7 @@
   <h2>Pick the audit that fits your site</h2>
   <article>
     <h3>SaaS SEO audit</h3>
-    <p>For software with a trial, demo or freemium model. Funnel pages, JavaScript rendering, integrations, AI
-      recommendations.</p>
+    <p>For software with a trial, demo or freemium model. Funnel pages, JavaScript rendering, integrations, AI recommendations.</p>
     <ul>
       <li>52 points</li>
       <li>5 to 8 days</li>
@@ -360,9 +359,7 @@
 <section id="about">
   <img src="assets/szymon-kokot.webp" alt="Szymon Kokot" width="660" height="780" loading="lazy" decoding="async">
   <h2>Who does the audit</h2>
-  <p>I'm Szymon Kokot. I was a software developer before I moved into SEO. I audit SaaS, e-commerce and service
-    business websites, mostly for startups and SMEs that have outgrown their own SEO knowledge. The person who
-    answers your email is the person who works on your audit.</p>
+  <p>I'm Szymon Kokot. I was a software developer before I moved into SEO. I audit SaaS, e-commerce and service business websites, mostly for startups and SMEs that have outgrown their own SEO knowledge. The person who answers your email is the person who works on your audit.</p>
   <ul>
     <li><a href="#">LinkedIn</a></li>
     <li><a href="#">Clutch</a></li>
@@ -374,8 +371,7 @@
   <div>
     <details>
       <summary>Do you implement the fixes?</summary>
-      <p>No. The audit is a standalone deliverable. Act on it yourself, hand it to your developer, or hire anyone
-        you like.</p>
+      <p>No. The audit is a standalone deliverable. Act on it yourself, hand it to your developer, or hire anyone you like.</p>
     </details>
     <details>
       <summary>How long does it take?</summary>
@@ -455,19 +451,19 @@
   <section>
     <h5>Tool</h5>
     <ul>
-      <li><a href="/l.common.prefixtools/bulk-checker/">Bulk Checker tool</a></li>
-      <li><a href="/tools/bulk-checker/meta-tag-check/">l.tools.common.name.meta-tag-check</a>
+      <li><a href="/tools/bulk-checker/">Bulk Checker tool</a></li>
+      <li><a href="/tools/bulk-checker/meta-tag-check/">Meta Tag Check</a>
       </li>
-      <li><a href="/tools/bulk-checker/heading-check/">l.tools.common.name.heading-check</a></li>
-      <li><a href="/tools/bulk-checker/alt-text-check/">l.tools.common.name.alt-text-check</a>
+      <li><a href="/tools/bulk-checker/heading-check/">Heading Check</a></li>
+      <li><a href="/tools/bulk-checker/alt-text-check/">Alt Text Check</a>
       </li>
-      <li><a href="/tools/bulk-checker/word-count-check/">l.tools.common.name.word-count-check</a>
+      <li><a href="/tools/bulk-checker/word-count-check/">Word Count Check</a>
       </li>
-      <li><a href="/tools/bulk-checker/canonical-check/">l.tools.common.name.canonical-check</a>
+      <li><a href="/tools/bulk-checker/canonical-check/">Canonical Check</a>
       </li>
-      <li><a href="/tools/bulk-checker/open-graph-check/">l.tools.common.name.open-graph-check</a>
+      <li><a href="/tools/bulk-checker/open-graph-check/">Open Graph Check</a>
       </li>
-      <li><a href="/tools/bulk-checker/schema-check/">l.tools.common.name.schema-check</a></li>
+      <li><a href="/tools/bulk-checker/schema-check/">Schema Check</a></li>
     </ul>
   </section>
 
