@@ -1081,3 +1081,11 @@ body > footer > section > div > a > img {
     width: 3rem !important;
     height: auto !important;
 }
+
+iframe {
+  margin: auto;
+}
+
+iframe + p {
+  margin: auto;
+}
