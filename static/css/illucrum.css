@@ -434,8 +434,8 @@ main > section { padding: var(--block) var(--inline); }
 main section p { font-size: var(--body); line-height: 1.6; color: var(--muted); }
 
 #report { border-top: 1px solid var(--line); }
-#audits, #reviews, #faq { background: var(--paper); }
-#pricing { background: var(--mint); }
+.paper { background: var(--paper); }
+.mint{ background: var(--mint); }
 
 /* Underlined "more" links closing a section */
 #report > p:last-child,
@@ -716,7 +716,8 @@ address a { min-height: 52px; padding: 0 32px; font-size: clamp(1.0625rem, 1.04r
     display: grid;
     grid-template-columns: minmax(0, 300px) minmax(0, 1fr) auto;
     align-items: center;
-    gap: 32px;
+    column-gap: 32px;
+    row-gap: 0;
     padding: 24px 32px;
   }
 
@@ -1084,6 +1085,7 @@ body > footer > section > div > a > img {
 
 iframe {
   margin: auto;
+  border: none;
 }
 
 iframe + p {
