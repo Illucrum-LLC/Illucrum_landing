@@ -25,21 +25,6 @@
 
   var ENDPOINT = "https://api.illucrum.com/lead";
 
-  var DEFAULTS = {
-    title: "Get in touch",
-    subtitle: "Tell us a little about you and we'll be in touch shortly.",
-    button: "Send message"
-  };
-
-  // Fields rendered in order. `required` drives client-side validation.
-  var FIELDS = [
-    { name: "name",    label: "Name",        type: "text",  required: true,  autocomplete: "name" },
-    { name: "company", label: "Company",     type: "text",  required: true, autocomplete: "organization" },
-    { name: "website", label: "Website",     type: "text",   required: true, autocomplete: "url", placeholder: "https://" },
-    { name: "phone",   label: "Phone",       type: "tel",   required: false, autocomplete: "tel" },
-    { name: "email",   label: "Email",       type: "email", required: true,  autocomplete: "email" }
-  ];
-
   var lastFocused = null; // restore focus on close
   var overlayEl = null;   // single live overlay at a time
 
