@@ -53,7 +53,12 @@ ul, ol { padding: 0; }
 img { display: block; max-width: 100%; height: auto; }
 
 h1, h2, h3 { font-weight: 700; text-wrap: balance; }
-h2 { font-size: var(--h2); line-height: 1.08; letter-spacing: -0.02em; }
+h2 {
+  font-size: var(--h2);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
 h3 { letter-spacing: -0.01em; }
 p { text-wrap: pretty; }
 
@@ -463,7 +468,6 @@ main section p { font-size: var(--body); line-height: 1.6; color: var(--muted); 
 
 /* Pick the audit that fits your site */
 #audits { display: grid; gap: 16px; }
-#audits h2 { margin-bottom: 12px; }
 
 article {
   display: flex;
@@ -517,8 +521,12 @@ article ul {
 .bento ul { padding-top: 0; border: 0; }
 .bento strong { font-size: 1rem; }
 
+.bento + h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
 /* One price. No surprises. */
-#pricing h2 { margin-bottom: 32px; }
 #pricing dl { display: grid; gap: 32px; }
 #pricing dt { margin-bottom: 6px; }
 #pricing div + div dt { color: var(--muted); }
@@ -576,7 +584,6 @@ article ul {
 
 /* What clients say */
 .reviews { display: grid; gap: 16px; }
-.reviews h2 { margin-bottom: 12px; }
 
 .reviews figure,
 .reviews aside {
@@ -628,13 +635,11 @@ article ul {
   object-position: 50% 18%;
 }
 
-#about h2 { margin: 28px 0 18px; }
 #about p { max-width: 620px; font-size: var(--body-lg); line-height: 1.62; }
 #about ul { gap: 14px; padding-top: 24px; font-size: 1rem; font-weight: 700; }
 #about li + li::before { margin-right: 14px; }
 
 /* Questions, answered */
-#faq h2 { margin-bottom: 20px; }
 #faq details { border-top: 1px solid #D8D8D2; }
 
 #faq summary {
@@ -703,7 +708,6 @@ address a { min-height: 52px; padding: 0 32px; font-size: clamp(1.0625rem, 1.04r
 
   #audits { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
   #audits > :not(article) { grid-column: 1 / -1; }
-  #audits h2 { margin-bottom: 24px; }
   article { padding: 32px; }
   #audits h3 { margin-bottom: 12px; }
   article > p:first-of-type { margin-bottom: 28px; }
@@ -730,7 +734,6 @@ address a { min-height: 52px; padding: 0 32px; font-size: clamp(1.0625rem, 1.04r
   .bento ul { flex-wrap: nowrap; white-space: nowrap; }
   .bento strong { font-size: 1.0625rem; }
 
-  #pricing h2 { margin-bottom: 56px; }
   #pricing dt { margin-bottom: 22px; }
   #pricing dd { gap: 16px; padding: 16px 0; }
   #pricing dd::before { width: 10px; height: 10px; margin-top: 9px; }
@@ -743,8 +746,7 @@ address a { min-height: 52px; padding: 0 32px; font-size: clamp(1.0625rem, 1.04r
   #process h3 { margin: 14px 0 10px; }
 
   .reviews { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 24px; }
-  .reviews h2, .reviews > [data-placeholder] { grid-column: 1 / -1; }
-  .reviews h2 { margin-bottom: 24px; }
+  .reviews > [data-placeholder] { grid-column: 1 / -1; }
   .reviews figure { padding: 44px; }
   .reviews blockquote { flex: 1; }
   .reviews blockquote p { line-height: 1.38; }
@@ -776,7 +778,6 @@ address a { min-height: 52px; padding: 0 32px; font-size: clamp(1.0625rem, 1.04r
     gap: 72px;
   }
 
-  #faq h2 { margin: 0; }
   #faq summary { align-items: center; gap: 24px; padding: 24px 0; }
   #faq summary::after { font-size: 1.375rem; }
   #faq details p { padding-bottom: 26px; }
