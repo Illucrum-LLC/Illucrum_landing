@@ -725,7 +725,7 @@ address a { min-height: 52px; padding: 0 32px; font-size: clamp(1.0625rem, 1.04r
     padding: 24px 32px;
   }
 
-  .bento article:nth-child(3) {
+  .bento article ul {
     margin-left: auto;
   }
 
