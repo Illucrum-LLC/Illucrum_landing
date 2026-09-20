@@ -465,7 +465,7 @@ main section p { font-size: var(--body); line-height: 1.6; color: var(--muted); 
 #audits { display: grid; gap: 16px; }
 #audits h2 { margin-bottom: 12px; }
 
-#audits article {
+article {
   display: flex;
   flex-direction: column;
   padding: 24px;
@@ -473,13 +473,16 @@ main section p { font-size: var(--body); line-height: 1.6; color: var(--muted); 
   border-radius: var(--radius);
   background: #FFFFFF;
 }
+div article { padding: 20px 24px; border: 0; border-radius: 0; background: none; }
+div article + article { border-top: 1px solid var(--row-line); }
+div article > p:first-of-type { margin-bottom: 12px; font-size: 0.9375rem; }
+article > p:first-of-type { flex: 1; margin-bottom: 20px; font-size: clamp(1rem, 0.97rem + 0.1vw, 1.0625rem); }
+article > p:last-child { margin-top: 18px; font-size: 1rem; font-weight: 700; }
 
 #audits h3 { margin-bottom: 10px; font-size: clamp(1.375rem, 1.26rem + 0.48vw, 1.6875rem); line-height: 1.15; }
-#audits article > p:first-of-type { flex: 1; margin-bottom: 20px; font-size: clamp(1rem, 0.97rem + 0.1vw, 1.0625rem); }
-#audits article > p:last-child { margin-top: 18px; font-size: 1rem; font-weight: 700; }
 
 /* Inline fact lists separated by middots */
-#audits article ul,
+article ul,
 #about ul {
   display: flex;
   flex-wrap: wrap;
@@ -488,14 +491,14 @@ main section p { font-size: var(--body); line-height: 1.6; color: var(--muted); 
   list-style: none;
 }
 
-#audits article li + li::before,
+article li + li::before,
 #about li + li::before {
   content: "·";
   margin-right: 8px;
   color: var(--faint);
 }
 
-#audits article ul {
+article ul {
   padding-top: 16px;
   border-top: 1px solid var(--line);
   font-size: 0.875rem;
@@ -510,10 +513,7 @@ main section p { font-size: var(--body); line-height: 1.6; color: var(--muted); 
   background: #FFFFFF;
 }
 
-#audits div article { padding: 20px 24px; border: 0; border-radius: 0; background: none; }
-#audits div article + article { border-top: 1px solid var(--row-line); }
 #audits div h3 { margin-bottom: 6px; font-size: 1.125rem; }
-#audits div article > p:first-of-type { margin-bottom: 12px; font-size: 0.9375rem; }
 #audits div ul { padding-top: 0; border: 0; }
 #audits div strong { font-size: 1rem; }
 
@@ -704,12 +704,12 @@ address a { min-height: 52px; padding: 0 32px; font-size: clamp(1.0625rem, 1.04r
   #audits { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
   #audits > :not(article) { grid-column: 1 / -1; }
   #audits h2 { margin-bottom: 24px; }
-  #audits article { padding: 32px; }
+  article { padding: 32px; }
   #audits h3 { margin-bottom: 12px; }
-  #audits article > p:first-of-type { margin-bottom: 28px; }
-  #audits article > p:last-child { margin-top: 22px; font-size: 1.0625rem; }
-  #audits article ul { gap: 10px; padding-top: 18px; font-size: 0.9375rem; }
-  #audits article li + li::before { margin-right: 10px; }
+  article > p:first-of-type { margin-bottom: 28px; }
+  article > p:last-child { margin-top: 22px; font-size: 1.0625rem; }
+  article ul { gap: 10px; padding-top: 18px; font-size: 0.9375rem; }
+  article li + li::before { margin-right: 10px; }
   #audits strong { font-size: 1.1875rem; }
 
   #audits div article {
@@ -722,7 +722,7 @@ address a { min-height: 52px; padding: 0 32px; font-size: clamp(1.0625rem, 1.04r
   }
 
   #audits div h3 { margin: 0; font-size: 1.25rem; }
-  #audits div article > p:first-of-type { margin: 0; font-size: 1rem; line-height: 1.5; }
+  div article > p:first-of-type { margin: 0; font-size: 1rem; line-height: 1.5; }
   #audits div ul { flex-wrap: nowrap; white-space: nowrap; }
   #audits div strong { font-size: 1.0625rem; }
 
@@ -800,6 +800,10 @@ body > footer {
   background: var(--paper);
   font-size: 0.9375rem;
   color: var(--muted);
+}
+
+body > footer > img {
+  max-width: 15rem;
 }
 
 body > footer > p { margin-bottom: 30px; line-height: 1.55; }
