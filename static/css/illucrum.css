@@ -513,9 +513,9 @@ article ul {
   background: #FFFFFF;
 }
 
-#audits div h3 { margin-bottom: 6px; font-size: 1.125rem; }
-#audits div ul { padding-top: 0; border: 0; }
-#audits div strong { font-size: 1rem; }
+.bento h3 { margin-bottom: 6px; font-size: 1.125rem; }
+.bento ul { padding-top: 0; border: 0; }
+.bento strong { font-size: 1rem; }
 
 /* One price. No surprises. */
 #pricing h2 { margin-bottom: 32px; }
@@ -712,7 +712,7 @@ address a { min-height: 52px; padding: 0 32px; font-size: clamp(1.0625rem, 1.04r
   article li + li::before { margin-right: 10px; }
   #audits strong { font-size: 1.1875rem; }
 
-  #audits div article {
+  .bento article {
     display: grid;
     grid-template-columns: minmax(0, 300px) minmax(0, 1fr) auto;
     align-items: center;
@@ -721,10 +721,10 @@ address a { min-height: 52px; padding: 0 32px; font-size: clamp(1.0625rem, 1.04r
     padding: 24px 32px;
   }
 
-  #audits div h3 { margin: 0; font-size: 1.25rem; }
+  .bento h3 { margin: 0; font-size: 1.25rem; }
   div article > p:first-of-type { margin: 0; font-size: 1rem; line-height: 1.5; }
-  #audits div ul { flex-wrap: nowrap; white-space: nowrap; }
-  #audits div strong { font-size: 1.0625rem; }
+  .bento ul { flex-wrap: nowrap; white-space: nowrap; }
+  .bento strong { font-size: 1.0625rem; }
 
   #pricing h2 { margin-bottom: 56px; }
   #pricing dt { margin-bottom: 22px; }
