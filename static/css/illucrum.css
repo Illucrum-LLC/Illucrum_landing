@@ -507,7 +507,7 @@ article ul {
 
 #audits strong { font-size: 1.125rem; color: var(--ink); }
 
-#audits > div {
+.bento {
   border: 1px solid var(--card-line);
   border-radius: var(--radius);
   background: #FFFFFF;
