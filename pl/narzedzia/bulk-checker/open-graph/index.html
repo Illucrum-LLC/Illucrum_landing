@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo-ico.png">
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.cdnfonts.com/css/dubai" rel="stylesheet">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', '');//GTM-MRLGLHC5</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+
+<script>
+    var DEFAULTS = {
+      title: "Kontakt",
+      subtitle: "Proszę nam podać informacje kontaktowe a wkrótce wyślemy zautomatyzowany raport.",
+      button: "Wysłać"
+    };
+
+    // Fields rendered in order. `required` drives client-side validation.
+    var FIELDS = [
+      { name: "name", label: "Imię", type: "text", required: true, autocomplete: "name" },
+      { name: "company", label: "Firma", type: "text", required: true, autocomplete: "organization" },
+      { name: "website", label: "Strona internetowa", type: "text", required: true, autocomplete: "url", placeholder: "https://" },
+      { name: "phone", label: "Telefon", type: "tel", required: false, autocomplete: "tel" },
+      { name: "email", label: "Mail", type: "email", required: true, autocomplete: "email" }
+    ];
+</script>
+<title>Masowe sprawdzanie Open Graph i Twitter Card | Illucrum</title>
+<meta name="description" content="Kontrola tagów Open Graph i Twitter Card do 25 stron naraz. Wszystkie tagi og i twitter, jeden wiersz na stronę, w eksporcie CSV. Za darmo, bez rejestracji." />
+
+
+<link rel="canonical" href="https://illucrum.com/pl/#slug">
+<link rel="alternate" hreflang="en-US" href="https://illucrum.com/c.us.#slug">
+<link rel="alternate" hreflang="pl-PL" href="https://illucrum.com/pl/c.pl.#slug">
+<link rel="alternate" hreflang="es-ES" href="https://illucrum.com/es/c.es.#slug">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com/c.us.#slug">
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:url" content="https://illucrum.com/pl/toolsbulk-checkeropen-graph-check">
+<meta property="og:site_name" content="Illucrum">
+<meta property="og:title" content="Masowe sprawdzanie Open Graph i Twitter Card | Illucrum">
+<meta property="og:description" content="Kontrola tagów Open Graph i Twitter Card do 25 stron naraz. Wszystkie tagi og i twitter, jeden wiersz na stronę, w eksporcie CSV. Za darmo, bez rejestracji.">
+<meta property="og:image" content="https://illucrum.com/pl/static/img/og/bulk.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Masowe sprawdzanie Open Graph i Twitter Card | Illucrum">
+<meta name="twitter:description" content="Kontrola tagów Open Graph i Twitter Card do 25 stron naraz. Wszystkie tagi og i twitter, jeden wiersz na stronę, w eksporcie CSV. Za darmo, bez rejestracji.">
+<meta name="twitter:image" content="https://illucrum.com/pl/static/img/og/bulk.png">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://illucrum.com/pl/narzedzia/bulk-checker/open-graph/#webpage",
+      "url": "https://illucrum.com/pl/narzedzia/bulk-checker/open-graph/",
+      "name": "Masowe sprawdzanie Open Graph i Twitter Card",
+      "description": "Kontrola tagów Open Graph i Twitter Card do 25 stron naraz. Wszystkie tagi og i twitter, jeden wiersz na stronę, w eksporcie CSV. Za darmo, bez rejestracji.",
+      "isPartOf": { "@id": "https://illucrum.com/pl/#website" },
+      "publisher": { "@id": "https://illucrum.com/pl/#organization" },
+      "mainEntity": { "@id": "https://illucrum.com/pl/narzedzia/bulk-checker/#software" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://illucrum.com/pl/narzedzia/bulk-checker/open-graph/#faq",
+      "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Czy tagi Open Graph wpływają na SEO?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Nie bezpośrednio. Wpływają na to, jak wygląda udostępniony link, a to przekłada się na kliknięcia i kolejne udostępnienia. Warto traktować je jako prezentację, a nie czynnik rankingowy." }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy potrzebuję tagów Twitter Card, skoro mam już Open Graph?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Zwykle nie. X czyta Open Graph jako rozwiązanie zapasowe. Wyjątkiem jest typ karty, który trzeba podać, jeśli zależy Państwu na układzie z dużym obrazem zamiast małego." }
+      },
+      {
+        "@type": "Question",
+        "name": "Jaki rozmiar powinien mieć og:image?",
+        "acceptedAnswer": { "@type": "Answer", "text": "1200 na 630 pikseli to powszechnie stosowane proporcje, które przetrwają kadrowanie na większości platform. Użycie adresu bezwzględnego ma większe znaczenie niż trafienie w dokładne wymiary." }
+      },
+      {
+        "@type": "Question",
+        "name": "Poprawiłem tagi, a podgląd się nie zmienił.",
+        "acceptedAnswer": { "@type": "Answer", "text": "Platformy buforują podglądy, czasem na długo. Każda ma debugger wymuszający odświeżenie. To narzędzie potwierdza tę część, na którą mają Państwo wpływ: że tag na stronie jest poprawny." }
+      }
+      ]
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "l.common.breadcrumb.home", "item": "https://illucrum.com/pl/" },
+    { "@type": "ListItem", "position": 2, "name": "Narzędzia", "item": "https://illucrum.com/pl/tools/" },
+    { "@type": "ListItem", "position": 3, "name": "Masowy checker", "item": "https://illucrum.com/pl/narzedzia/bulk-checker/" },
+    { "@type": "ListItem", "position": 4, "name": "Sprawdzanie Open Graph", "item": "https://illucrum.com/pl/narzedzia/bulk-checker/open-graph/" }
+  ]
+}
+</script></head>
+<body>
+<header>
+  <a href="/"><img src="/static/img/logo.png" alt="Illucrum" width="217" height="52"></a>
+  <button type="button" popovertarget="menu" aria-label="Menu"></button>
+  <nav id="menu" aria-label="Main" popover>
+    <ul>
+      <li><a href="/pl/audyty/">Audyty</a></li>
+      <li><a href="/pl/cennik/">Cennik</a></li>
+      <li><a href="/pl/proces/">Proces</a></li>
+      <li><a href="/pl/faq/">FAQ</a></li>
+      <li><a href="/pl/o-nas/">O nas</a></li>
+      <li><a href="/pl/narzedzia/bulk-checker/">Bulk SEO Checker</a></li>
+      <!-- li><a href="https://blog.illucrum.com">Blog</a></li -->
+      <li>
+<a data-lead-open data-lead-source="#source">
+  Kontakt
+</a></li>
+    </ul>
+  </nav>
+</header>
+<main><main>
+<header>
+  <div>
+    <hgroup>
+      <p>Darmowy checker Open Graph</p>
+      <h1>Wszystkie <em>tagi Open Graph i Twittera</em>, po 25 stron naraz</h1>
+    </hgroup>
+    <p>Wystarczy wkleić adresy URL. W wyniku: wszystkie tagi Open Graph i Twitter Card deklarowane przez każdą stronę – tytuł, opis, obraz, typ, nazwa witryny, typ karty – jeden wiersz na stronę, z eksportem do CSV.</p>
+    <p>
+      <a href="https://illucrum.com/pl/narzedzia/bulk-checker/">Otwórz checker</a>
+      <a href="#process">Co Państwo dostają</a>
+    </p>
+    <ul>
+      <li>Narzędzie czyta tagi. Nie renderuje podglądu. To, co pokaże konkretna platforma, zależy od jej własnego cache'u i własnych reguł – i każda ma do tego swój debugger.</li>
+    </ul>
+  </div>
+  <figure>
+    <figcaption>W skrócie</figcaption>
+    <p><strong>25</strong> Adresów URL na jedno uruchomienie</p>
+    <p><strong>51</strong> Pól na stronę</p>
+    <p><strong>7</strong> Eksportów CSV</p>
+  </figure>
+</header>
+<section id="process">
+  <hgroup>
+    <p>Co Państwo dostają</p>
+    <h2>Tagi, <em>wszystkie, w jednym wierszu</em></h2>
+  </hgroup>
+  <p>Tagi społecznościowe to ta część sekcji head, na którą nikt nie patrzy, dopóki link nie trafi na kanał z dwustoma osobami.</p>
+
+  <ol>
+    <li>
+      <h3>Każdy tag og na stronie</h3>
+      <p>Tytuł, opis, obraz, url, typ, nazwa witryny, locale i wszystko inne, co strona deklaruje w przestrzeni nazw og. Nie sztywna, krótka lista.</p>
+    </li>
+    <li>
+      <h3>Każdy tag twitter na stronie</h3>
+      <p>Typ karty, tytuł, opis, obraz, konto witryny i autora. Brakujące tagi wracają puste, zamiast być po cichu uzupełniane z Open Graph.</p>
+    </li>
+    <li>
+      <h3>Obok tytułu i opisu strony</h3>
+      <p>W tym samym wierszu, więc tam, gdzie tytuł społecznościowy rozjechał się z tytułem strony, widać, czy była to decyzja, czy przypadek.</p>
+    </li>
+    <li>
+      <h3>Dwadzieścia pięć stron, jeden CSV</h3>
+      <p>Po posortowaniu po og:image wszystkie podstrony korzystające z jednej ogólnej grafiki ustawiają się razem – a zwykle jest ich więcej, niż się zakłada.</p>
+    </li>
+  </ol>
+</section>
+<section id="report" class="mint">
+  <hgroup>
+    <p>Na co patrzeć</p>
+    <h2>Pięć rzeczy, <em>które psują podgląd</em></h2>
+  </hgroup>
+  <p>Żadna z nich nie wpływa na pozycje. Wszystkie wpływają na to, czy udostępniony link wygląda na wart kliknięcia.</p>
+
+  <ul>
+    <li>
+      <h3>Brak og:image</h3>
+      <p>Ten jeden tag decyduje o tym, czy udostępniony link wyświetli się jako karta, czy jako szary prostokąt z nazwą domeny.</p>
+    </li>
+    <li>
+      <h3>Względny adres obrazu</h3>
+      <p>og:image wymaga adresu bezwzględnego. Ścieżka względna to zepsuty podgląd na wszystkich platformach naraz – a w kodzie źródłowym wygląda poprawnie.</p>
+    </li>
+    <li>
+      <h3>og:title identyczny z tytułem strony na każdej podstronie</h3>
+      <p>Jako ustawienie domyślne jest zupełnie w porządku. Warto tylko wiedzieć, czy to ustawienie domyślne, czy decyzja – bo tytuł pisany pod wynik wyszukiwania i tytuł pisany pod kanał społecznościowy rzadko są tym samym zdaniem.</p>
+    </li>
+    <li>
+      <h3>Brakujący og:description</h3>
+      <p>Część platform sięga wtedy po meta description, część nie pokazuje nic. Żadna z tych opcji nie jest Państwa wyborem.</p>
+    </li>
+    <li>
+      <h3>Brak twitter:card</h3>
+      <p>X korzysta wtedy z Open Graph, więc często nie ma problemu. Problem pojawia się w momencie, gdy chcą Państwo układu z dużym obrazem – ten wymaga jawnego podania typu karty.</p>
+    </li>
+  </ul>
+</section>
+<section id="limits">
+  <hgroup>
+    <p>Warto wiedzieć</p>
+    <h2>Czego narzędzie <em>nie powie</em></h2>
+  </hgroup>
+  <p>Lepiej powiedzieć to tutaj, niż zostawić do odkrycia później.</p>
+
+  <ul>
+    <li>
+      <h3>Czyta tagi, nie renderuje podglądów</h3>
+      <p>Nie ma tu miniatury. Do tego służy debugger danej platformy – zresztą tylko on potrafi wyczyścić jej cache.</p>
+    </li>
+    <li>
+      <h3>Nie pobiera obrazu</h3>
+      <p>To, czy adres w og:image w ogóle działa, jaki rozmiar ma plik i czy dana platforma go przyjmie, pozostaje niesprawdzone.</p>
+    </li>
+    <li>
+      <h3>Wyłącznie statyczny HTML</h3>
+      <p>Tagów wstrzykiwanych po załadowaniu nie ma w HTML-u wysłanym przez serwer, a większość crawlerów społecznościowych też nie wykonuje JavaScriptu – więc pusty wiersz jest tu często wiernym podglądem problemu.</p>
+    </li>
+    <li>
+      <h3>Dwadzieścia pięć adresów URL na uruchomienie</h3>
+      <p>Wszystko dzieje się w karcie przeglądarki. Wystarczy do sprawdzenia szablonu w obrębie sekcji, ale nie do całego katalogu.</p>
+    </li>
+  </ul>
+</section>
+<section id="faq" class="paper">
+  <hgroup>
+    <p>Pytania</p>
+    <h2>Uzasadnione <em>pytania</em></h2>
+  </hgroup>
+
+  <div>
+    <details>
+      <summary>Czy tagi Open Graph wpływają na SEO?</summary>
+      <p>Nie bezpośrednio. Wpływają na to, jak wygląda udostępniony link, a to przekłada się na kliknięcia i kolejne udostępnienia. Warto traktować je jako prezentację, a nie czynnik rankingowy.</p>
+    </details>
+    <details>
+      <summary>Czy potrzebuję tagów Twitter Card, skoro mam już Open Graph?</summary>
+      <p>Zwykle nie. X czyta Open Graph jako rozwiązanie zapasowe. Wyjątkiem jest typ karty, który trzeba podać, jeśli zależy Państwu na układzie z dużym obrazem zamiast małego.</p>
+    </details>
+    <details>
+      <summary>Jaki rozmiar powinien mieć og:image?</summary>
+      <p>1200 na 630 pikseli to powszechnie stosowane proporcje, które przetrwają kadrowanie na większości platform. Użycie adresu bezwzględnego ma większe znaczenie niż trafienie w dokładne wymiary.</p>
+    </details>
+    <details>
+      <summary>Poprawiłem tagi, a podgląd się nie zmienił.</summary>
+      <p>Platformy buforują podglądy, czasem na długo. Każda ma debugger wymuszający odświeżenie. To narzędzie potwierdza tę część, na którą mają Państwo wpływ: że tag na stronie jest poprawny.</p>
+    </details>
+  </div>
+</section>
+<section id="contact">
+  <hgroup>
+    <p>Jedno narzędzie, siedem tabel</p>
+    <h2>Tagi społecznościowe to <em>część tabeli stron</em></h2>
+  </hgroup>
+  <p>To samo uruchomienie zwraca również tytuły, meta description, nagłówki, liczbę słów, linki, obrazy i dane strukturalne. To jedno narzędzie z siedmioma tabelami i siedmioma eksportami CSV, a nie siedem osobnych narzędzi do uruchamiania po kolei.</p>
+  <address>
+    <a href="/pl/narzedzia/bulk-checker/">Otwórz masowy checker</a>
+    <a href="/pl/audyty/">Co zawiera audyt</a>
+  </address>
+  <p>
+    <small>Inne kontrole wykonywane przez to samo narzędzie:
+      <a href="/pl/narzedzia/bulk-checker/">Masowy checker SEO</a>,
+      <a href="/pl/narzedzia/bulk-checker/meta-tagi/">Sprawdzanie meta tagów</a>,
+      <a href="/pl/narzedzia/bulk-checker/tytuly/">Sprawdzanie nagłówków</a>,
+      <a href="/pl/narzedzia/bulk-checker/alt-text/">Sprawdzanie tekstu alternatywnego</a>,
+      <a href="/pl/narzedzia/bulk-checker/liczba-slow/">Liczenie słów</a>,
+      <a href="/pl/narzedzia/bulk-checker/canonical-link/">Sprawdzanie canonicali</a>,
+      <a href="/pl/narzedzia/bulk-checker/schema/">Sprawdzanie Schema</a>
+    </small>
+  </p>
+</section>
+</main>
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="Illucrum" loading="lazy">
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40"
+      data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img
+          src="/static/img/social/linkedin.svg" alt="LinkedIn profile" /></a>
+      <a href="https://wa.me/15122035993" target="_blank" rel="noopener"><img src="/static/img/social/whatsapp.svg"
+          alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg"
+          alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Audyty</h5>
+    <ul>
+      <li><a href="/pl/audyty/audyt-seo-dla-saas/">Audyt SEO dla SaaS</a></li>
+      <li><a href="/pl/audyty/audyt-seo-dla-sklepow-internetowych/">Audyt SEO dla sklepów interetowy</a></li>
+      <li><a href="/pl/audyty/audyt-seo/">Audyt SEO</a></li>
+      <li><a href="/pl/audyty/techniczny-audyt-seo/">Audyt techniczny SEO</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>l.structure.footer.col_compare_heading</h5>
+    <ul>
+      <li><a
+          href="/pl/compare\saas-vs-generic-seo-audit">l.structure.footer.link_compare_saas_vs_website</a>
+      </li>
+      <li><a
+          href="/pl/compare\ecommerce-vs-generic-seo-audit">l.structure.footer.link_compare_ecommerce_vs_website</a>
+      </li>
+      <li><a
+          href="/pl/compare\seo-audit-vs-seo-tool">l.structure.footer.link_compare_audit_vs_tool</a>
+      </li>
+      <li><a
+          href="/pl/compare\seo-audit-vs-seo-retainer">l.structure.footer.link_compare_audit_vs_retainer</a>
+      </li>
+      <li><a href="/pl/compare\seo-audit-vs-diy">l.structure.footer.link_compare_audit_vs_diy</a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Firma</h5>
+    <ul>
+      <li><a href="/pl/o-nas/">O nas</a></li>
+      <li><a href="/pl/proces/">Proces</a></li>
+      <li><a href="/pl/cennik/">Cennik</a></li>
+      <li><a href="/pl/faq/">FAQ</a></li>
+      <li><a href="/pl/fakty-seo/">Fakty i statystyki</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Narzędzie</h5>
+    <ul>
+      <li><a href="/pl/narzedzia/bulk-checker/">Bulk SEO Checker</a></li>
+      <li><a href="/pl/narzedzia/bulk-checker/meta-tagi/">Meta Tag Check</a>
+      </li>
+      <li><a href="/pl/narzedzia/bulk-checker/tytuly/">Heading Check</a></li>
+      <li><a href="/pl/narzedzia/bulk-checker/alt-text/">Alt Text Check</a>
+      </li>
+      <li><a href="/pl/narzedzia/bulk-checker/liczba-slow/">Word Count Check</a>
+      </li>
+      <li><a href="/pl/narzedzia/bulk-checker/canonical-link/">Canonical Check</a>
+      </li>
+      <li><a href="/pl/narzedzia/bulk-checker/open-graph/">Open Graph Check</a>
+      </li>
+      <li><a href="/pl/narzedzia/bulk-checker/schema/">Schema Check</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Kontakt i prawne</h5>
+    <ul>
+      <li><a href="/pl/prawne/warunki/">Warunki użytkowania</a></li>
+      <li><a href="/pl/prawne/prywatnosc/">Polityka prywatności</a></li>
+      <li><a href="/pl/prawne/ciasteczka/">Ciasteczka</a></li>
+      <li><a href="/pl/prawne/zastrzezenie/">Zastrzeżenia</a></li>
+      <li><a href="/pl/prawne/dostepnosc/">Dostępność</a></li>
+      <li><a href="#" data-consent-open>Manage cookies</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +48 515 983 261</span>
+    <span>
+      <a href="https://illucrum.com/" hreflang="en-us">US</a> &middot;
+      <a href="https://illucrum.com/pl/" hreflang="pl-pl">PL</a> &middot;
+      <a href="https://illucrum.com/es/" hreflang="es-es">ES</a>
+    </span>
+  </small>
+</footer>
+
+<!-- Google Tag Manager GTM-MRLGLHC5 (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Używamy ciasteczek" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">Używamy ciasteczek</p>
+    <p class="ic-consent__body">Używamy ciasteczek (ale tylko tych smacznych) żeby móc ulepszać doświadczenie użytkowników, zrozumieć czego szukają i na jakie problemy się napotykają. <a href="/pl/prawne/ciasteczka/">Cookie policy</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferences</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Strictly necessary</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
+        <p class="ic-consent__pref-desc">Required for the site to function. Cannot be turned off.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analytics</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
+        <p class="ic-consent__pref-desc">Helps us understand how visitors use the site (Google Analytics 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Advertising</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
+        <p class="ic-consent__pref-desc">Lets us measure and personalise Google Ads and Reddit Ads campaigns.</p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
