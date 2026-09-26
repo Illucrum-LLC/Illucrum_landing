@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo-ico.png">
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.cdnfonts.com/css/dubai" rel="stylesheet">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', '');//GTM-MRLGLHC5</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+
+<script>
+    var DEFAULTS = {
+      title: "Get in touch",
+      subtitle: "Tell me a little about your site. I'll reply by email, usually within one working day.",
+      button: "Send"
+    };
+
+    // Fields rendered in order. `required` drives client-side validation.
+    var FIELDS = [
+      { name: "name", label: "Name", type: "text", required: true, autocomplete: "name" },
+      { name: "company", label: "Company", type: "text", required: true, autocomplete: "organization" },
+      { name: "website", label: "Website", type: "text", required: true, autocomplete: "url", placeholder: "https://" },
+      { name: "phone", label: "Phone", type: "tel", required: false, autocomplete: "tel" },
+      { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }
+    ];
+</script>
+
+<title>Local SEO Audit vs General SEO Audit | Illucrum</title>
+<meta name="description" content="Local SEO audit vs general SEO audit: how a local audit weighs the Business Profile, reviews and listings, and which one fits your business.">
+<meta name="author" content="Szymon Kokot">
+
+<link rel="canonical" href="https://illucrum.com/blog/local-seo-audit-vs-general-seo-audit/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://illucrum.com/blog/local-seo-audit-vs-general-seo-audit/">
+<meta property="og:site_name" content="Illucrum">
+<meta property="og:title" content="Local SEO Audit vs General SEO Audit">
+<meta property="og:description" content="Local SEO audit vs general SEO audit: how a local audit weighs the Business Profile, reviews and listings, and which one fits your business.">
+<meta property="og:image" content="https://illucrum.com/static/img/og/home.png">
+<meta property="article:published_time" content="2026-09-26">
+<meta property="article:modified_time" content="2026-09-26">
+<meta property="article:author" content="https://illucrum.com/about/">
+<meta property="article:section" content="Comparisons">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Local SEO Audit vs General SEO Audit">
+<meta name="twitter:description" content="Local SEO audit vs general SEO audit: how a local audit weighs the Business Profile, reviews and listings, and which one fits your business.">
+<meta name="twitter:image" content="https://illucrum.com/static/img/og/home.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://illucrum.com/blog/local-seo-audit-vs-general-seo-audit/#article",
+      "mainEntityOfPage": "https://illucrum.com/blog/local-seo-audit-vs-general-seo-audit/",
+      "url": "https://illucrum.com/blog/local-seo-audit-vs-general-seo-audit/",
+      "headline": "Local SEO Audit vs General SEO Audit: Which One Fits?",
+      "description": "Local SEO audit vs general SEO audit: how a local audit weighs the Business Profile, reviews and listings, and which one fits your business.",
+      "image": "https://illucrum.com/static/img/og/home.png",
+      "datePublished": "2026-09-26",
+      "dateModified": "2026-09-26",
+      "inLanguage": "en-US",
+      "articleSection": "Comparisons",
+      "author": { "@id": "https://illucrum.com/about/#person" },
+      "publisher": { "@id": "https://illucrum.com/#organization" },
+      "isPartOf": { "@id": "https://illucrum.com/blog/#blog" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://illucrum.com/about/#person",
+      "name": "Szymon Kokot",
+      "url": "https://illucrum.com/about/",
+      "jobTitle": "SEO consultant",
+      "image": "https://illucrum.com/static/img/szymon.png",
+      "worksFor": { "@id": "https://illucrum.com/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://illucrum.com/#organization",
+      "name": "Illucrum",
+      "url": "https://illucrum.com/",
+      "logo": "https://illucrum.com/static/img/logo.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://illucrum.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://illucrum.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Comparisons", "item": "https://illucrum.com/blog/comparisons/" },
+        { "@type": "ListItem", "position": 4, "name": "Local SEO Audit vs General SEO Audit: Which One Fits?", "item": "https://illucrum.com/blog/local-seo-audit-vs-general-seo-audit/" }
+      ]
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+<header>
+  <a href="/"><img src="/static/img/logo.png" alt="Illucrum" width="217" height="52"></a>
+  <button type="button" popovertarget="menu" aria-label="Menu"></button>
+  <nav id="menu" aria-label="Main" popover>
+    <ul>
+      <li><a href="/audits/">Audits</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/process/">Process</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li>
+<a href="#contact" data-lead-open data-lead-source="header">
+  Get in touch
+</a>
+</li>
+    </ul>
+  </nav>
+</header>
+<main>
+<div class="article">
+  
+<nav aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/blog/comparisons/">Comparisons</a></li>
+  </ol>
+</nav>
+<p>
+  <span>By <a href="#author">Szymon Kokot</a></span>
+  <span>Published <time datetime="2026-09-26">Sep 26, 2026</time></span>
+  <span>Updated <time datetime="2026-09-26">Sep 26, 2026</time></span>
+  <span>7 min read</span>
+</p>
+
+  <h1>Local SEO Audit vs General SEO Audit: Which One Fits?</h1>
+<p>A local SEO audit and a general SEO audit look at the same website, but they weigh it differently. A local audit treats the Google Business Profile, reviews and listings as being as important as the website, because for searches like &quot;dentist near me&quot; Google shows a map pack of three businesses above the regular results. A general audit treats the website as the main subject and checks the local layer only lightly. This article explains the difference and how to tell which one your business needs.</p>
+<p><strong>In short:</strong> A local SEO audit is built for businesses whose customers find them through local searches and Google Maps: trades, clinics, salons, restaurants, shops and local firms. It checks the Business Profile, reviews, listings and rankings across the service area in depth. A general SEO audit is built for businesses that win work beyond their area, and checks local presence in three points. Choose by where your customers come from.</p>
+<hr />
+<h2>What is a local SEO audit?</h2>
+<p>A local SEO audit is a review of how a business shows up when people nearby search for what it does, in the map pack, in Google Maps and in the regular results below. Google says local results are <a href="https://support.google.com/business/answer/7091">mainly based on relevance, distance and popularity</a>, and most of the signals behind them live outside the website: the Business Profile's category, hours and services, the reviews, and the business's listings on other platforms.</p>
+<p>The <a href="/audits/local-seo-audit/">Illucrum Local Business SEO Audit</a> covers 54 points in 9 sections: technical foundations (7), Google Business Profile (11), reviews and reputation (6), local on-page and schema (9), citations and listings (4), local rankings and visibility (6), local links (4), conversion and tracking (3), and AI and map answers (4).</p>
+<h2>What is a general SEO audit?</h2>
+<p>A general SEO audit is a review of a business website's visibility in regular search results, built for service businesses, consultancies, agencies and B2B firms. It covers technical health, on-page SEO, keywords, backlinks, competitors, trust, conversion and AI visibility, with the website as the main subject.</p>
+<p>The <a href="/audits/seo-audit/">Illucrum Website SEO Audit</a> covers 54 points in 9 sections. Its local presence section has three points (Business Profile, contact details and local markup, local visibility) and is scored only if the business has an office or service area where it wants to be found. Otherwise the audit covers 51 points.</p>
+<h2>How do the two audits compare?</h2>
+<p>The two audits share a technical foundation and an AI section, but put their weight in different places.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Local SEO audit</th>
+<th>General (website) SEO audit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Built for</strong></td>
+<td>Businesses serving customers in a defined area</td>
+<td>Businesses winning work beyond their area</td>
+</tr>
+<tr>
+<td><strong>Points</strong></td>
+<td>54 in 9 sections</td>
+<td>54 in 9 sections (51 without local)</td>
+</tr>
+<tr>
+<td><strong>The question it answers</strong></td>
+<td>When people nearby search, does the business show up and win the click?</td>
+<td>Can the site be found, trusted and chosen in search?</td>
+</tr>
+<tr>
+<td><strong>Google Business Profile</strong></td>
+<td>11 points: ownership, name, categories, address, hours, services, photos, activity, website link</td>
+<td>1 point</td>
+</tr>
+<tr>
+<td><strong>Reviews</strong></td>
+<td>6 points, compared with map pack competitors, including policy compliance</td>
+<td>Part of 2 points</td>
+</tr>
+<tr>
+<td><strong>Listings on other platforms</strong></td>
+<td>4 points: Apple Maps, Bing, Facebook, trade and local directories</td>
+<td>Not covered</td>
+</tr>
+<tr>
+<td><strong>Rankings</strong></td>
+<td>Map pack and organic rankings from several points across the service area</td>
+<td>Target query positions and striking distance</td>
+</tr>
+<tr>
+<td><strong>Website checks</strong></td>
+<td>Service and location pages, NAP, local markup, local proof</td>
+<td>Full on-page, content, keyword and trust review</td>
+</tr>
+<tr>
+<td><strong>Links</strong></td>
+<td>Local and trade link sources</td>
+<td>Referring domains, anchors and competitor gap</td>
+</tr>
+<tr>
+<td><strong>Conversion</strong></td>
+<td>Click-to-call, forms, booking, call and lead tracking</td>
+<td>Calls to action, navigation, engagement</td>
+</tr>
+<tr>
+<td><strong>AI checks</strong></td>
+<td>AI Overviews for local searches, assistant recommendations, AI answers about the business</td>
+<td>AI Overviews, assistant visibility, answer-ready content, entity markup</td>
+</tr>
+</tbody>
+</table>
+<h2>What does a local audit check that a general audit misses?</h2>
+<p>A local SEO audit checks the parts of local visibility that a website audit doesn't reach. The most important are:</p>
+<ul>
+<li><strong>Business Profile compliance.</strong> Keywords stuffed into the business name, a virtual office used as an address, or hours the business doesn't keep can all get a profile suspended under <a href="https://support.google.com/business/answer/3038177">Google's guidelines</a>.</li>
+<li><strong>Categories.</strong> The primary category was ranked the most important map pack factor by practitioners in <a href="https://whitespark.ca/local-search-ranking-factors/">Whitespark's 2026 Local Search Ranking Factors</a> survey.</li>
+<li><strong>Reviews against competitors.</strong> Rating, count, recency and owner replies compared with the three businesses in the map pack, plus whether the way reviews are requested follows Google's policies.</li>
+<li><strong>Listings.</strong> Whether Apple Maps, Bing Places, Facebook and the directories of the trade show the same, correct details.</li>
+<li><strong>Rankings across the service area.</strong> Local results change with the searcher's location, so rankings are sampled from several points, not just the business address.</li>
+<li><strong>Profile performance and tracking.</strong> Calls, direction requests and website clicks from the profile, and whether leads from search can be told apart.</li>
+<li><strong>AI answers about the business.</strong> Whether AI answers in Google Maps and assistants state the business's services, hours and area correctly.</li>
+</ul>
+<h2>What does a general audit check that a local audit doesn't?</h2>
+<p>A general SEO audit checks the website in more depth: content quality against competitor pages, keyword mapping and cannibalization, search intent, a full backlink review, trust signals such as authorship and proof of work, and answer-ready content for AI search. For a business whose customers come from well beyond its town, these decide visibility far more than a map pack does.</p>
+<h2>Which audit should you choose?</h2>
+<p>Choose by where your customers come from, not by whether you have an office.</p>
+<p>Choose the <strong>local SEO audit</strong> when:</p>
+<ol>
+<li>Most customers find you through searches like &quot;[service] near me&quot; or &quot;[service] [city]&quot;, or through Google Maps.</li>
+<li>Customers visit your premises, or you travel to theirs within a defined area.</li>
+<li>Reviews often decide whether a customer calls you or a competitor.</li>
+<li>You compete with other local businesses for the same three map pack spots.</li>
+</ol>
+<p>Choose the <strong>general website SEO audit</strong> when:</p>
+<ol>
+<li>You have an office but win most work regionally, nationally or internationally.</li>
+<li>Clients choose you on expertise and reputation rather than proximity.</li>
+<li>The website, not the map listing, is where most new clients first find you.</li>
+</ol>
+<p>A law firm is a good example of how this splits. A family law practice whose clients come from the same city fits the local audit. A firm advising companies across the country from one office fits the general audit, whose three local checks cover the basics.</p>
+<h2>Frequently asked questions</h2>
+<h3>My business has an office. Do I need a local SEO audit?</h3>
+<p>Only if most of your customers find you through local searches and Google Maps, as trades, clinics, salons, restaurants and shops do. If you have an office but win work well beyond your area, the general website audit fits, and its local section checks the Business Profile, contact details and local visibility in three points.</p>
+<h3>Is a Google Business Profile more important than a website for local SEO?</h3>
+<p>For appearing in the map pack, the Google Business Profile matters most. The website still supports it: it confirms the business's details, gives each service a page that can rank in the regular results, and is where most customers decide. The <a href="/blog/local-pack-and-seo/">local pack and SEO article</a> covers how the two work together.</p>
+<h3>Does a local SEO audit cover more than one location?</h3>
+<p>The Illucrum Local Business SEO Audit covers one location in depth. For a business with several locations, the main location is audited in full and the others are spot-checked, and the report says which. Because local rankings depend on the searcher's position, each location has its own map pack competitors.</p>
+<h3>Can I run a local SEO audit myself?</h3>
+<p>Yes. The <a href="/blog/local-seo-checklist/">local SEO checklist</a> lists all 54 checks with the free tools to run each one. A first pass takes five to eight hours for one location, most of it spent running searches from several points across the service area.</p>
+<hr />
+<p>The deciding question is simple: do customers find you because you are nearby, or because of what you know? If proximity drives the call, the local audit is the one to pick; if reputation and expertise do, the general audit covers what matters. Both are listed with their prices on the <a href="/pricing/">pricing page</a>.</p>
+
+  
+<aside id="author" aria-label="About the author">
+  <img src="/static/img/szymon-small.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+  <div>
+    <p>Written by</p>
+    <p><a href="/about/">Szymon Kokot</a></p>
+    <p>Szymon runs Illucrum, an independent SEO audit service for small and medium-sized businesses. He worked as a software developer before moving into SEO, built the free Bulk SEO Checker on this site, and carries out and writes every Illucrum audit himself.</p>
+    <p>
+      <a href="/about/">More about Szymon</a>
+      <a href="/audits/">The six audits</a>
+      <a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a>
+    </p>
+  </div>
+</aside>
+
+</div>
+<section id="related" class="posts paper">
+  <hgroup>
+    <p>Keep reading</p>
+    <h2>Related <em>articles</em></h2>
+  </hgroup>
+  
+<article>
+  <h3><a href="/blog/local-seo-checklist/">Local SEO Checklist (2026): 54 Checks for Local Businesses</a></h3>
+  <p>54 checks for local businesses: the Google Business Profile, reviews against the map pack, service pages, listings, rankings across the service area and AI answers.</p>
+  <ul>
+    <li>Updated <time datetime="2026-09-26">Sep 26, 2026</time></li>
+    <li>28 min read</li>
+  </ul>
+</article>
+
+  
+<article>
+  <h3><a href="/blog/local-pack-and-seo/">Local pack and SEO (2026)</a></h3>
+  <p>Why a local business can rank in the map pack while its website sits on page two, and the profile details that are easy to miss.</p>
+  <ul>
+    <li>Updated <time datetime="2026-08-18">Aug 18, 2026</time></li>
+    <li>4 min read</li>
+  </ul>
+</article>
+
+  
+<article>
+  <h3><a href="/blog/seo-checklist/">SEO Checklist (2026): 54 Checks You Can Run Yourself</a></h3>
+  <p>The 54 checks behind a full website SEO audit, from indexing and titles to backlinks, trust signals and AI search, with the free tool for each.</p>
+  <ul>
+    <li>Updated <time datetime="2026-09-26">Sep 26, 2026</time></li>
+    <li>33 min read</li>
+  </ul>
+</article>
+
+  <p><a href="/blog/comparisons/">All eight comparisons</a></p>
+</section>
+
+<section id="contact">
+  <h2>Questions about <em>your own site?</em></h2>
+  <p>Send the address and what you'd like to know. I'll reply myself.</p>
+  <address>
+    t.$templates/cta-button.html
+    <a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a>
+  </address>
+</section>
+
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="Illucrum" loading="lazy">
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40"
+      data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img
+          src="/static/img/social/linkedin.svg" alt="LinkedIn profile" /></a>
+      <a href="https://wa.me/15122035993" target="_blank" rel="noopener"><img src="/static/img/social/whatsapp.svg"
+          alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg"
+          alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Audits</h5>
+    <ul>
+      <li><a href="/audits/saas-seo-audit/">SaaS SEO audit</a></li>
+      <li><a href="/audits/ecommerce-seo-audit/">E-commerce SEO audit</a></li>
+      <li><a href="/audits/seo-audit/">Website SEO audit</a></li>
+      <li><a href="/audits/technical-seo-audit/">Technical SEO audit</a></li>
+      <li><a href="/audits/local-seo-audit/">Local business SEO audit</a></li>
+      <li><a href="/audits/geo-audit/">GEO audit</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Company</h5>
+    <ul>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/process/">Process</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/seo-facts/">SEO facts</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Free tool</h5>
+    <ul>
+      <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
+      <li><a href="/tools/bulk-checker/meta-tag-check/">Meta Tag Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/heading-check/">Heading Check</a></li>
+      <li><a href="/tools/bulk-checker/alt-text-check/">Alt Text Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/word-count-check/">Word Count Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/canonical-check/">Canonical Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/open-graph-check/">Open Graph Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/schema-check/">Schema Check</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Legal</h5>
+    <ul>
+      <li><a href="/legal/terms/">Terms</a></li>
+      <li><a href="/legal/privacy/">Privacy</a></li>
+      <li><a href="/legal/cookies/">Cookies</a></li>
+      <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+      <li><a href="/legal/accessibility/">Accessibility</a></li>
+      <li><a href="#" data-consent-open>Manage cookies</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +1 (512) 203-5993</span>
+  </small>
+</footer>
+
+<!-- Google Tag Manager GTM-MRLGLHC5 (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Cookies on this site" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">Cookies on this site</p>
+    <p class="ic-consent__body">Cookies keep the site working and show how it's used. With your permission, they also measure ads on Google and Reddit. You can change your choice any time from the footer. <a href="/legal/cookies/">Cookie policy</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferences</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Strictly necessary</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
+        <p class="ic-consent__pref-desc">Needed for the site to work, so they can't be turned off.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analytics</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
+        <p class="ic-consent__pref-desc">Shows how visitors use the site (Google Analytics 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Advertising</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
+        <p class="ic-consent__pref-desc">Measures and personalizes Google Ads and Reddit Ads campaigns.</p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

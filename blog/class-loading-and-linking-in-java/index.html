@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo-ico.png">
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.cdnfonts.com/css/dubai" rel="stylesheet">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', '');//GTM-MRLGLHC5</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+
+<script>
+    var DEFAULTS = {
+      title: "Get in touch",
+      subtitle: "Tell me a little about your site. I'll reply by email, usually within one working day.",
+      button: "Send"
+    };
+
+    // Fields rendered in order. `required` drives client-side validation.
+    var FIELDS = [
+      { name: "name", label: "Name", type: "text", required: true, autocomplete: "name" },
+      { name: "company", label: "Company", type: "text", required: true, autocomplete: "organization" },
+      { name: "website", label: "Website", type: "text", required: true, autocomplete: "url", placeholder: "https://" },
+      { name: "phone", label: "Phone", type: "tel", required: false, autocomplete: "tel" },
+      { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }
+    ];
+</script>
+
+<title>Class Loading and Linking in Java | Illucrum</title>
+<meta name="description" content="How Java class loaders and the JVM load and link classes: the loader hierarchy, delegation, initiating and defining loaders, and klasses.">
+<meta name="author" content="Szymon Kokot">
+
+<link rel="canonical" href="https://illucrum.com/blog/class-loading-and-linking-in-java/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://illucrum.com/blog/class-loading-and-linking-in-java/">
+<meta property="og:site_name" content="Illucrum">
+<meta property="og:title" content="Class Loading and Linking in Java">
+<meta property="og:description" content="How Java class loaders and the JVM load and link classes: the loader hierarchy, delegation, initiating and defining loaders, and klasses.">
+<meta property="og:image" content="https://illucrum.com/static/img/og/home.png">
+<meta property="article:published_time" content="2025-12-16">
+<meta property="article:modified_time" content="2025-12-16">
+<meta property="article:author" content="https://illucrum.com/about/">
+<meta property="article:section" content="Other articles">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Class Loading and Linking in Java">
+<meta name="twitter:description" content="How Java class loaders and the JVM load and link classes: the loader hierarchy, delegation, initiating and defining loaders, and klasses.">
+<meta name="twitter:image" content="https://illucrum.com/static/img/og/home.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://illucrum.com/blog/class-loading-and-linking-in-java/#article",
+      "mainEntityOfPage": "https://illucrum.com/blog/class-loading-and-linking-in-java/",
+      "url": "https://illucrum.com/blog/class-loading-and-linking-in-java/",
+      "headline": "Class loading and linking in Java",
+      "description": "How Java class loaders and the JVM load and link classes: the loader hierarchy, delegation, initiating and defining loaders, and klasses.",
+      "image": "https://illucrum.com/static/img/og/home.png",
+      "datePublished": "2025-12-16",
+      "dateModified": "2025-12-16",
+      "inLanguage": "en-US",
+      "articleSection": "Other articles",
+      "author": { "@id": "https://illucrum.com/about/#person" },
+      "publisher": { "@id": "https://illucrum.com/#organization" },
+      "isPartOf": { "@id": "https://illucrum.com/blog/#blog" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://illucrum.com/about/#person",
+      "name": "Szymon Kokot",
+      "url": "https://illucrum.com/about/",
+      "jobTitle": "SEO consultant",
+      "image": "https://illucrum.com/static/img/szymon.png",
+      "worksFor": { "@id": "https://illucrum.com/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://illucrum.com/#organization",
+      "name": "Illucrum",
+      "url": "https://illucrum.com/",
+      "logo": "https://illucrum.com/static/img/logo.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://illucrum.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://illucrum.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Other articles", "item": "https://illucrum.com/blog/other/" },
+        { "@type": "ListItem", "position": 4, "name": "Class loading and linking in Java", "item": "https://illucrum.com/blog/class-loading-and-linking-in-java/" }
+      ]
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+<header>
+  <a href="/"><img src="/static/img/logo.png" alt="Illucrum" width="217" height="52"></a>
+  <button type="button" popovertarget="menu" aria-label="Menu"></button>
+  <nav id="menu" aria-label="Main" popover>
+    <ul>
+      <li><a href="/audits/">Audits</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/process/">Process</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li>
+<a href="#contact" data-lead-open data-lead-source="header">
+  Get in touch
+</a>
+</li>
+    </ul>
+  </nav>
+</header>
+<main>
+<div class="article">
+  
+<nav aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/blog/other/">Other articles</a></li>
+  </ol>
+</nav>
+<p>
+  <span>By <a href="#author">Szymon Kokot</a></span>
+  <span>Published <time datetime="2025-12-16">Dec 16, 2025</time></span>
+  <span>Updated <time datetime="2025-12-16">Dec 16, 2025</time></span>
+  <span>7 min read</span>
+</p>
+
+  <h1>Class loading and linking in Java</h1>
+<p>As Java is an object oriented language, the topic of what classes actually are and how are they loaded by the JVM, is one that really goes to the heart of things. In this article, we will explore in more detail not only what is visible to every Java developer, but also what is hidden under the hood of the JVM.</p>
+<h2>Class loaders</h2>
+<p>Let’s keep it relatively simple for a while, and let’s start with something more “tangible“ for a regular developer like tha class loaders. Class loaders, most often are Java classes extending <code>java.lang.ClassLoader</code>, which are responsible for loading other classes. To be more precise, they load the bytecode of a class, then they leave it to the JVM to do the linking, basically reading and analyzing the bytecode to create a new class.</p>
+<h3><strong>Hierarchy</strong></h3>
+<p>By default, a Java application has three main class loaders:</p>
+<ol>
+<li>
+<p><strong>Bootstrap loader:</strong> The first class loader to run, it is used to get the absolute basic system loaded - essentially <code>java.base</code>. It is not a Java class, it’s written in native code and it doesn’t perform any checks on the classes it loads, so for security reasons it doesn’t have a representation in Java (as a class or class instance, for exmaple), and for this reason it’s refered as <code>null</code>.</p>
+</li>
+<li>
+<p><strong>System loader:</strong> When the bootstrap loader is done loading the core of the system, the systen loader loads the platform modules that the application depends on. This class loader is a Java, as we said earlier, extending <code>java.lang.ClassLoader</code>. Not only it’s accessible through a static function (<code>ClassLoader.getSystemClassLoader()</code>), it can also be set when starting the application. So if you want to run your app with a custom system class loader, you just need to add to your command the <code>-Djava.system.class.loader=my.custom.ClassLoader</code> flag.</p>
+</li>
+<li>
+<p><strong>Application loader:</strong> The last loader to run, is the most widely used. It’s basically the one that loads the application itself. It is also an instance of a Java class, just like the system class loader.</p>
+</li>
+</ol>
+<h3>Delegation</h3>
+<p>Generally speaking, a class in Java can’t be loaded twice by the same class loader, but it can be loaded multiple times by different class loaders. This is one reason why there is a hierarchy of class loaders. And the second reason, is delegation, which purpose is precisely to avoid the same class to be loaded twice. A properly implemented class loader always delegates that task to it’s parent (the class immediately above in the hierarchy) before attempting to load it by itself. So, let’s say we want the application class loader to load the class A.</p>
+<ol>
+<li>
+<p>The application loader delegates the task to the system class loader.</p>
+</li>
+<li>
+<p>The system loader delegates the task to the bootstrap class loader.</p>
+</li>
+<li>
+<p>The boostrap class loader has no parent, so it tries to load A and if it is able to do so, it returns it to the system loader.</p>
+</li>
+<li>
+<p>When the system loader receives A from its parent, it just passes it through to the application loader. If not, it tries to load A by itself and return it to the application loader.</p>
+</li>
+<li>
+<p>If the application loader receives class A from the system loader, there is nothing more to do. If it doesn’t, then the application loader is the last one to give it a try.</p>
+</li>
+</ol>
+<p>Of course, you may add your own, totally custom class loaders. And those, although it would be a good thing if they followed delegation placing themselves beneath the app loader, in some cases they are implemented to break that rule on purpose.</p>
+<h3>Initiating and defining loaders</h3>
+<p>A class loader is said to be the defining loader of a class A, if A was actually loaded by that class loader. So if the app loader was the one that started the loading process, but due to delegation it was the bootstrap loader that actually found and loaded A, then the bootstrap loader is the defining loader of A.</p>
+<p>A class loader is said to be the initiating loader a class A, if the class loader is either the one that started the process that loaded A or is also the defining loader of A. This means a class A can have two initiating class loadeds. In the previous example, the initiating class loaders would be both the app loader and the bootstrap loader.</p>
+<p>This is quite important, we will talk about it later on.</p>
+<h2>JVM</h2>
+<p>Now that we know what class loaders do, let’s focus on what the JVM does. This is where the fun really begins. This part is maybe a little bit more abstract as I will try to explain the concepts without getting into the details of specific implementations. The JVM is the responsible for making sure everything is secure and optimized so there is no errors and no unnecessary calls to the class loaders.</p>
+<h3>Linking</h3>
+<p>When a class loader finds the bytecode of the class to be loaded, the JVM takes over and starts creating it’s own representation of the class. This is refered to as linking and it is done in four steps:</p>
+<ol>
+<li>
+<p><strong>Verification:</strong> First, the JVM needs to make sure that the bytecode loaded is a valid representation of a class and that it’s code is well behaved.</p>
+</li>
+<li>
+<p><strong>Preparation:</strong> Once the bytecode is verified, the JVM starts allocating and getting the static variables of the class making them ready to initialize.</p>
+</li>
+<li>
+<p><strong>Resolution:</strong> Now, before initializing the class, the JVM tries to resolve the supertype and implemented interfaces if any of the class being linked. If the JVM is not able to resolve them, it first tries to load and link them before continuing.</p>
+</li>
+<li>
+<p><strong>Initialization:</strong> In this step, it’s the first time the bytecode of the class is actually being executed. In this step, all static fields are initialized as well as any static initialization blocks are run. When this is done, the class is ready to be instantiated.</p>
+</li>
+</ol>
+<h3>Klasses</h3>
+<p>The representation of a class used by the JVM is the “klass” and it is not a Java class, they are stored in the metaspace. Each klass is unique, and all instaces of the class it represents, are created based on of that klass. Some of the information it contains is accessible from Java through the <code>java.lang.Class</code>, which instances are Java representations of different classes. This is what makes reflection possible, but that is a topic for a different article.</p>
+<p>In the metaspace, klasses are not just stored in any way, they are organized. Each class loader has a dictionary assigned to it. Each klass is stored in the dictionary of it’s initiating loader. And it’s also important to point out, that each klass contains information about it’s defining loader.</p>
+<h3>Loading and linking process</h3>
+<p>Let’s consider a class A, which has been defined by the app class loader. And let’s also consider a class B that is being referenced from A.</p>
+<ol>
+<li>
+<p>When B is referenced while executing A, the JVM finds out from A’s klass which is it’s defining class loader, in our example it’s the app loader.</p>
+</li>
+<li>
+<p>The JVM now check in the app loader’s dictionary if contains B. Which we could also express as, the JVM checks if the class loader already is an initiating loader for B. If it is, the JVM grabs the B klass and continues executing A.</p>
+</li>
+<li>
+<p>But if the app loader is not an initiating loader of B, the JVM asks the app loader to load B.</p>
+</li>
+<li>
+<p>Now all delegation steps explained before follow.</p>
+</li>
+<li>
+<p>When B get’s loaded, it’s klass representation gets stored inside it’s initiating class loaders dictionaries for future reference.</p>
+</li>
+</ol>
+<h2>Conclusion</h2>
+<p>Klasses are the representation of Java classes in the JVM. They are not only identified by their name, but also by their defining class loader. This is the reason why a class can be loaded multipple times by different class loader and get treated as completely different classes. Which is the reason why delegation and class loaders hierarchy is needed. Klasses are stored in the metaspace in a dictionary assigned to it’s initiating loaders, which helps the JVM to improve performance in not having to call the class loader each time some class gets referenced.</p>
+
+  
+<aside id="author" aria-label="About the author">
+  <img src="/static/img/szymon-small.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+  <div>
+    <p>Written by</p>
+    <p><a href="/about/">Szymon Kokot</a></p>
+    <p>Szymon runs Illucrum, an independent SEO audit service for small and medium-sized businesses. He worked as a software developer before moving into SEO, built the free Bulk SEO Checker on this site, and carries out and writes every Illucrum audit himself.</p>
+    <p>
+      <a href="/about/">More about Szymon</a>
+      <a href="/audits/">The six audits</a>
+      <a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a>
+    </p>
+  </div>
+</aside>
+
+</div>
+<section id="related" class="posts paper">
+  <hgroup>
+    <p>Keep reading</p>
+    <h2>Related <em>articles</em></h2>
+  </hgroup>
+  
+<article>
+  <h3><a href="/blog/java-hot-code-reloader/">Java Hot Code Reloader</a></h3>
+  <p>Why Java needs a restart for every code change, how hot reloading tools work around it, and the approach behind the Java Hot Code Reloader.</p>
+  <ul>
+    <li>Updated <time datetime="2025-12-11">Dec 11, 2025</time></li>
+    <li>6 min read</li>
+  </ul>
+</article>
+
+  
+<article>
+  <h3><a href="/blog/a-perfect-data-structure/">A “perfect” data structure</a></h3>
+  <p>An experiment in designing a list with constant-time access, insertion and removal, and the trade-off that makes it possible.</p>
+  <ul>
+    <li>Updated <time datetime="2026-01-29">Jan 29, 2026</time></li>
+    <li>8 min read</li>
+  </ul>
+</article>
+
+  <p><a href="/blog/other/">All seven articles</a></p>
+</section>
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="Illucrum" loading="lazy">
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40"
+      data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img
+          src="/static/img/social/linkedin.svg" alt="LinkedIn profile" /></a>
+      <a href="https://wa.me/15122035993" target="_blank" rel="noopener"><img src="/static/img/social/whatsapp.svg"
+          alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg"
+          alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Audits</h5>
+    <ul>
+      <li><a href="/audits/saas-seo-audit/">SaaS SEO audit</a></li>
+      <li><a href="/audits/ecommerce-seo-audit/">E-commerce SEO audit</a></li>
+      <li><a href="/audits/seo-audit/">Website SEO audit</a></li>
+      <li><a href="/audits/technical-seo-audit/">Technical SEO audit</a></li>
+      <li><a href="/audits/local-seo-audit/">Local business SEO audit</a></li>
+      <li><a href="/audits/geo-audit/">GEO audit</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Company</h5>
+    <ul>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/process/">Process</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/seo-facts/">SEO facts</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Free tool</h5>
+    <ul>
+      <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
+      <li><a href="/tools/bulk-checker/meta-tag-check/">Meta Tag Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/heading-check/">Heading Check</a></li>
+      <li><a href="/tools/bulk-checker/alt-text-check/">Alt Text Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/word-count-check/">Word Count Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/canonical-check/">Canonical Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/open-graph-check/">Open Graph Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/schema-check/">Schema Check</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Legal</h5>
+    <ul>
+      <li><a href="/legal/terms/">Terms</a></li>
+      <li><a href="/legal/privacy/">Privacy</a></li>
+      <li><a href="/legal/cookies/">Cookies</a></li>
+      <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+      <li><a href="/legal/accessibility/">Accessibility</a></li>
+      <li><a href="#" data-consent-open>Manage cookies</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +1 (512) 203-5993</span>
+  </small>
+</footer>
+
+<!-- Google Tag Manager GTM-MRLGLHC5 (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Cookies on this site" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">Cookies on this site</p>
+    <p class="ic-consent__body">Cookies keep the site working and show how it's used. With your permission, they also measure ads on Google and Reddit. You can change your choice any time from the footer. <a href="/legal/cookies/">Cookie policy</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferences</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Strictly necessary</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
+        <p class="ic-consent__pref-desc">Needed for the site to work, so they can't be turned off.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analytics</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
+        <p class="ic-consent__pref-desc">Shows how visitors use the site (Google Analytics 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Advertising</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
+        <p class="ic-consent__pref-desc">Measures and personalizes Google Ads and Reddit Ads campaigns.</p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

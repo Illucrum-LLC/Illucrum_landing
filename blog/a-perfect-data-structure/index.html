@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo-ico.png">
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.cdnfonts.com/css/dubai" rel="stylesheet">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', '');//GTM-MRLGLHC5</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+
+<script>
+    var DEFAULTS = {
+      title: "Get in touch",
+      subtitle: "Tell me a little about your site. I'll reply by email, usually within one working day.",
+      button: "Send"
+    };
+
+    // Fields rendered in order. `required` drives client-side validation.
+    var FIELDS = [
+      { name: "name", label: "Name", type: "text", required: true, autocomplete: "name" },
+      { name: "company", label: "Company", type: "text", required: true, autocomplete: "organization" },
+      { name: "website", label: "Website", type: "text", required: true, autocomplete: "url", placeholder: "https://" },
+      { name: "phone", label: "Phone", type: "tel", required: false, autocomplete: "tel" },
+      { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }
+    ];
+</script>
+
+<title>A “Perfect” Data Structure | Illucrum</title>
+<meta name="description" content="Designing a list with O(1) access, insertion and removal using buckets and a state number, and why a fixed maximum size is the price.">
+<meta name="author" content="Szymon Kokot">
+
+<link rel="canonical" href="https://illucrum.com/blog/a-perfect-data-structure/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://illucrum.com/blog/a-perfect-data-structure/">
+<meta property="og:site_name" content="Illucrum">
+<meta property="og:title" content="A “Perfect” Data Structure">
+<meta property="og:description" content="Designing a list with O(1) access, insertion and removal using buckets and a state number, and why a fixed maximum size is the price.">
+<meta property="og:image" content="https://illucrum.com/static/img/og/home.png">
+<meta property="article:published_time" content="2026-01-29">
+<meta property="article:modified_time" content="2026-01-29">
+<meta property="article:author" content="https://illucrum.com/about/">
+<meta property="article:section" content="Other articles">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A “Perfect” Data Structure">
+<meta name="twitter:description" content="Designing a list with O(1) access, insertion and removal using buckets and a state number, and why a fixed maximum size is the price.">
+<meta name="twitter:image" content="https://illucrum.com/static/img/og/home.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://illucrum.com/blog/a-perfect-data-structure/#article",
+      "mainEntityOfPage": "https://illucrum.com/blog/a-perfect-data-structure/",
+      "url": "https://illucrum.com/blog/a-perfect-data-structure/",
+      "headline": "A “perfect” data structure",
+      "description": "Designing a list with O(1) access, insertion and removal using buckets and a state number, and why a fixed maximum size is the price.",
+      "image": "https://illucrum.com/static/img/og/home.png",
+      "datePublished": "2026-01-29",
+      "dateModified": "2026-01-29",
+      "inLanguage": "en-US",
+      "articleSection": "Other articles",
+      "author": { "@id": "https://illucrum.com/about/#person" },
+      "publisher": { "@id": "https://illucrum.com/#organization" },
+      "isPartOf": { "@id": "https://illucrum.com/blog/#blog" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://illucrum.com/about/#person",
+      "name": "Szymon Kokot",
+      "url": "https://illucrum.com/about/",
+      "jobTitle": "SEO consultant",
+      "image": "https://illucrum.com/static/img/szymon.png",
+      "worksFor": { "@id": "https://illucrum.com/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://illucrum.com/#organization",
+      "name": "Illucrum",
+      "url": "https://illucrum.com/",
+      "logo": "https://illucrum.com/static/img/logo.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://illucrum.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://illucrum.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Other articles", "item": "https://illucrum.com/blog/other/" },
+        { "@type": "ListItem", "position": 4, "name": "A “perfect” data structure", "item": "https://illucrum.com/blog/a-perfect-data-structure/" }
+      ]
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+<header>
+  <a href="/"><img src="/static/img/logo.png" alt="Illucrum" width="217" height="52"></a>
+  <button type="button" popovertarget="menu" aria-label="Menu"></button>
+  <nav id="menu" aria-label="Main" popover>
+    <ul>
+      <li><a href="/audits/">Audits</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/process/">Process</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li>
+<a href="#contact" data-lead-open data-lead-source="header">
+  Get in touch
+</a>
+</li>
+    </ul>
+  </nav>
+</header>
+<main>
+<div class="article">
+  
+<nav aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/blog/other/">Other articles</a></li>
+  </ol>
+</nav>
+<p>
+  <span>By <a href="#author">Szymon Kokot</a></span>
+  <span>Published <time datetime="2026-01-29">Jan 29, 2026</time></span>
+  <span>Updated <time datetime="2026-01-29">Jan 29, 2026</time></span>
+  <span>8 min read</span>
+</p>
+
+  <h1>A &quot;perfect&quot; data structure</h1>
+<p>Algorythms, data structures and maths. Those are the three legs of the tripod that holds programming. Today, let’s focus on data structures. You know how each one has it strengths and weakneses, each one has it’s own use cases. A “perfect” data structure should only have strengths and no weakneses, but it should also be useful in all situations. Which is of course ridiculous. There is just no way you can have a data structure that would be able to replace a regular list, just the same as it would be able to replace a tree. Although it’s worth mentioning that a binary tree can be implemented with an array. In this article, I’ll explore the posibilities of coming closer to the “perfect” data structure by trying to design one that would behave like a list while assuring a O(1) complexity for all relevant operations.</p>
+<h2>Algorythmic complexity</h2>
+<p>Although this article is not about complexity, let’s briefly explain what it is about. The complexity of an algorythm is used to predict how an algorythm will perform depending on the input size. This is very important for data structures that can hold millions of entries. So for example, if we assume a simple node list of which we only have direct access to the first node, if we want to add a new item to it at the beggining, no matter how long the list is, it will always cost the same ammount of resources, which is very good. But if we want to add a new item at the end, we would need to iterate through the whole thing. In this case the time needed to add this new item would be roughly directly proportional to the length of the list.</p>
+<p>In some other situations, things are not always that simple. Sometimes the resources needed don’t depend only on the size of the input. Which is very common for sorting algorythms, for example. In those situations, normally the worst case scenario is the most relevant. And this is where the big-o notation comes in, as a way to represent the complexity of an algorythm in it’s worst case scenario. From the previous example of the node list, adding an item at the beggining presents constant complexity, which is O(1). This basically means, it always needs the same amount of resources, no matter how long the list is. Adding an element at the end, presents linear complexity, which is O(n), where n represents the lenght of the list.</p>
+<h2>The “perfect” list</h2>
+<h3>Goals</h3>
+<p>First, let’s define the goals that the list I’m trying to describe should meet. The goal is to have a data structure on which we can perform these operations with O(1) complexity:</p>
+<ul>
+<li>
+<p>Retrieving any element given it’s index</p>
+</li>
+<li>
+<p>Adding a new element on any position</p>
+</li>
+<li>
+<p>Removing any element</p>
+</li>
+</ul>
+<p>As we can retrieve any element given it’s index, there should be of course no problem with iterating the list. So this goals should really cover it all.</p>
+<h3>Restrictions</h3>
+<p>This list will have one very important restriction. It will have a set maximum size. This is sadly necessary, I don’t see the possibility of avoiding this restriction.</p>
+<h3>Structure</h3>
+<p>It’s clear to me, that in a way, what I’m trying to achieve is to create something like an “indexed hash table”. This seems to be the most promising approach. To start with, let’s set the maximum size to 4 elements. This should give as a list big enough to see more clearly how it works, but also small enough to make it quite simple to simulate. The list will have the following components:</p>
+<ul>
+<li>
+<p>The buckets: there should be as many buckets as many elements the list can hold at the same time. In our case it will have 4 bucket. Each will have it’s own identification binary number assigned to it, so we will have buckets 00, 01, 10 and 11. The buckets will really behave like wrappers of the elements stored in the list, and they themselves will be stored in a hash map, using their identifiers as keys. This will assure that we can access any element given it’s bucket number with constant complexity.</p>
+</li>
+<li>
+<p>A size variable: there should be a variable to keep track of the current size of the list. Nothing special about it.</p>
+</li>
+<li>
+<p>The state number: the buckets hold the elements, but it’s important to have a way of keeping track of how the buckets are odered. As our list can hold at most 4 buckets, and each has a 2 bits long key, an 8 bit long number will be used , which will contain the four buckets identifiers concatenated, in the order in which the buckets are ordered. Let’s consider the least significant two digits represent the first bucket, the two most significant digits represent the last bucket on the list.</p>
+</li>
+</ul>
+<p>The size variable, is there mostly to make sure the inputs are valid. Most of the magic will happen with the state number, as by manipulating it the order of the buckets will be read and written.</p>
+<p>So for example, let’s say we start with a list like this:</p>
+<table>
+<thead>
+<tr>
+<th>State number</th>
+<th>Size</th>
+<th>Elements ordered from left to right</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00 01 10 11</td>
+<td>3</td>
+<td>1 - 2 - 4</td>
+</tr>
+</tbody>
+</table>
+<p>This would mean we would have a list with three elements, bucket 11 holding value “1“, bucket 10 holding value “2“ and bucket 01 holding the value “3“, while the bucket 00 remains empty. So now let’s say we want to add a “3“ between the “2” and the “4”. We would put the value “3” into the empty bucket 00, and place it between the buckets 01 and 10. This would give us:</p>
+<table>
+<thead>
+<tr>
+<th>State number</th>
+<th>Size</th>
+<th>Elements ordered from left to right</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01 00 10 11</td>
+<td>4</td>
+<td>1 - 2 - 3 - 4</td>
+</tr>
+</tbody>
+</table>
+<p>Now, every bucket has a value attached to it. If we wanted to remove the first value (index 0), we would empty the bucket 11, and move it to the “end”. So our list should look like this:</p>
+<table>
+<thead>
+<tr>
+<th>State number</th>
+<th>Size</th>
+<th>Elements ordered from left to right</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11 10 00 10</td>
+<td>3</td>
+<td>2 - 3 - 4</td>
+</tr>
+</tbody>
+</table>
+<h3>Retrieving any element given it’s index</h3>
+<p>This is fairly simple. It’s sufficient to first check if the given index is allowed. Obviously you can never get the third element from a list with only two elements in it. For that we have the size variable. Once the given input is checked, we need to check which bucket is located at the indicated index. We can do that using the following formula:</p>
+<p>$$b = {s \bmod 2^{2*(i+1)} \over 2^{2*i}}$$</p>
+<p>Where <em>b</em> is the bucket number, we of course ignore any decimals; <em>s</em> is the state number and <em>i</em> is the index.</p>
+<p>This way, no matter how long the the list is, we can retrieve any element by “just“ calculating the proper bucket. So it presents O(1) complexity.</p>
+<h3>Adding a new element anywhere</h3>
+<p>First things first, we of course need to validate the input. After that we should get the last bucket, which will be always empty if the list is not full. This can be done using the previous formula and giving the index the value of 3. Once we have the bucket we can set it’s value. The we need then to modify the state number accordingly. To do so, we can use the following formula:</p>
+<p>$$s\prime=s mod 2^{2i} + b * 2^{2i} + {{s/2^{2i}} * 2^{2(i+1)}}$$</p>
+<p>Where <em>s’</em> is the new state number, we only care about the binary eight least significant digits; <em>s</em> is the old state number, <em>i</em> is the index and <em>b</em> is the bucket we are using.</p>
+<p>And of course we need to update the index.</p>
+<p>This time it’s not as simple as before, as we have to perform two calculations, not just one. But still the algorythm is independent from the lenght of the list, giving it the desired complexity.</p>
+<h3>Removing any element</h3>
+<p>By now it should be more or less clear how this will look like. First we need the make sure that the index we are given is valid. Then, we will retrieve the bucket for that index in the same fashion that we did before, so we can empty it. And then we can use the following formula to put the bucket at the “end”:</p>
+<p>$$s\prime=(s-smod2^{2*(i+1)}/2^2)+(smod2^{2i})+b2^6$$</p>
+<p>Where <em>s’</em> is the new state number, <em>s</em> is the old state number, <em>i</em> is the index and <em>b</em> is the bucket.</p>
+<p>And last but not least, we of course need to update the index.</p>
+<p>And also in this case, it’s enough to perform two calculations to remove any element with complexity O(1).</p>
+<h2>Final thoughts</h2>
+<p>This list idea, surely could be optimized. For example, as the number of states is finite, no calculations are really needed. It would be enough to map the whole thing, basically making a finit state machine. Nevertheless, this solution has a big drawback. And that is the maximum length.</p>
+<p>Nowadays, we are using 64 bit processors. The biggest list could have at most 16 elements, each with a 4 bit id, which gives as a state number of 64 bits long. This would allow us to perform the calculations easily. Surely it’s possible to do maths with numbers longer than 64 bits on 64 bit processors, but something tells me that this wouldn’t really work fast enough. But maybe I’m mistaken.</p>
+<p>On the other hand, designing finite state machines should always work quite well, but that would be very memory heavy. And of course it would also take a lot of time to design and then implement. But maybe it is worth a try?</p>
+
+  
+<aside id="author" aria-label="About the author">
+  <img src="/static/img/szymon-small.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+  <div>
+    <p>Written by</p>
+    <p><a href="/about/">Szymon Kokot</a></p>
+    <p>Szymon runs Illucrum, an independent SEO audit service for small and medium-sized businesses. He worked as a software developer before moving into SEO, built the free Bulk SEO Checker on this site, and carries out and writes every Illucrum audit himself.</p>
+    <p>
+      <a href="/about/">More about Szymon</a>
+      <a href="/audits/">The six audits</a>
+      <a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a>
+    </p>
+  </div>
+</aside>
+
+</div>
+<section id="related" class="posts paper">
+  <hgroup>
+    <p>Keep reading</p>
+    <h2>Related <em>articles</em></h2>
+  </hgroup>
+  
+<article>
+  <h3><a href="/blog/class-loading-and-linking-in-java/">Class loading and linking in Java</a></h3>
+  <p>How the JVM loads and links classes: class loaders, delegation, initiating and defining loaders, and the klass representation.</p>
+  <ul>
+    <li>Updated <time datetime="2025-12-16">Dec 16, 2025</time></li>
+    <li>7 min read</li>
+  </ul>
+</article>
+
+  
+<article>
+  <h3><a href="/blog/java-hot-code-reloader/">Java Hot Code Reloader</a></h3>
+  <p>Why Java needs a restart for every code change, how hot reloading tools work around it, and the approach behind the Java Hot Code Reloader.</p>
+  <ul>
+    <li>Updated <time datetime="2025-12-11">Dec 11, 2025</time></li>
+    <li>6 min read</li>
+  </ul>
+</article>
+
+  <p><a href="/blog/other/">All seven articles</a></p>
+</section>
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="Illucrum" loading="lazy">
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40"
+      data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img
+          src="/static/img/social/linkedin.svg" alt="LinkedIn profile" /></a>
+      <a href="https://wa.me/15122035993" target="_blank" rel="noopener"><img src="/static/img/social/whatsapp.svg"
+          alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg"
+          alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Audits</h5>
+    <ul>
+      <li><a href="/audits/saas-seo-audit/">SaaS SEO audit</a></li>
+      <li><a href="/audits/ecommerce-seo-audit/">E-commerce SEO audit</a></li>
+      <li><a href="/audits/seo-audit/">Website SEO audit</a></li>
+      <li><a href="/audits/technical-seo-audit/">Technical SEO audit</a></li>
+      <li><a href="/audits/local-seo-audit/">Local business SEO audit</a></li>
+      <li><a href="/audits/geo-audit/">GEO audit</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Company</h5>
+    <ul>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/process/">Process</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/seo-facts/">SEO facts</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Free tool</h5>
+    <ul>
+      <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
+      <li><a href="/tools/bulk-checker/meta-tag-check/">Meta Tag Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/heading-check/">Heading Check</a></li>
+      <li><a href="/tools/bulk-checker/alt-text-check/">Alt Text Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/word-count-check/">Word Count Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/canonical-check/">Canonical Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/open-graph-check/">Open Graph Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/schema-check/">Schema Check</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Legal</h5>
+    <ul>
+      <li><a href="/legal/terms/">Terms</a></li>
+      <li><a href="/legal/privacy/">Privacy</a></li>
+      <li><a href="/legal/cookies/">Cookies</a></li>
+      <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+      <li><a href="/legal/accessibility/">Accessibility</a></li>
+      <li><a href="#" data-consent-open>Manage cookies</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +1 (512) 203-5993</span>
+  </small>
+</footer>
+
+<!-- Google Tag Manager GTM-MRLGLHC5 (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Cookies on this site" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">Cookies on this site</p>
+    <p class="ic-consent__body">Cookies keep the site working and show how it's used. With your permission, they also measure ads on Google and Reddit. You can change your choice any time from the footer. <a href="/legal/cookies/">Cookie policy</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferences</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Strictly necessary</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
+        <p class="ic-consent__pref-desc">Needed for the site to work, so they can't be turned off.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analytics</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
+        <p class="ic-consent__pref-desc">Shows how visitors use the site (Google Analytics 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Advertising</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
+        <p class="ic-consent__pref-desc">Measures and personalizes Google Ads and Reddit Ads campaigns.</p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

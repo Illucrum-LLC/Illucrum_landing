@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo-ico.png">
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.cdnfonts.com/css/dubai" rel="stylesheet">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', '');//GTM-MRLGLHC5</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+
+<script>
+    var DEFAULTS = {
+      title: "Get in touch",
+      subtitle: "Tell me a little about your site. I'll reply by email, usually within one working day.",
+      button: "Send"
+    };
+
+    // Fields rendered in order. `required` drives client-side validation.
+    var FIELDS = [
+      { name: "name", label: "Name", type: "text", required: true, autocomplete: "name" },
+      { name: "company", label: "Company", type: "text", required: true, autocomplete: "organization" },
+      { name: "website", label: "Website", type: "text", required: true, autocomplete: "url", placeholder: "https://" },
+      { name: "phone", label: "Phone", type: "tel", required: false, autocomplete: "tel" },
+      { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }
+    ];
+</script>
+
+<title>GEO Checklist (2026): 51 Checks for AI Search | Illucrum</title>
+<meta name="description" content="A 51-point GEO checklist for AI search: crawler access, passage structure, entity signals, schema, prompt testing and measurement, with free tools.">
+<meta name="author" content="Szymon Kokot">
+
+<link rel="canonical" href="https://illucrum.com/blog/geo-checklist/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://illucrum.com/blog/geo-checklist/">
+<meta property="og:site_name" content="Illucrum">
+<meta property="og:title" content="GEO Checklist (2026): 51 Checks for AI Search">
+<meta property="og:description" content="A 51-point GEO checklist for AI search: crawler access, passage structure, entity signals, schema, prompt testing and measurement, with free tools.">
+<meta property="og:image" content="https://illucrum.com/static/img/og/home.png">
+<meta property="article:published_time" content="2026-09-26">
+<meta property="article:modified_time" content="2026-09-26">
+<meta property="article:author" content="https://illucrum.com/about/">
+<meta property="article:section" content="Checklists">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GEO Checklist (2026): 51 Checks for AI Search">
+<meta name="twitter:description" content="A 51-point GEO checklist for AI search: crawler access, passage structure, entity signals, schema, prompt testing and measurement, with free tools.">
+<meta name="twitter:image" content="https://illucrum.com/static/img/og/home.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://illucrum.com/blog/geo-checklist/#article",
+      "mainEntityOfPage": "https://illucrum.com/blog/geo-checklist/",
+      "url": "https://illucrum.com/blog/geo-checklist/",
+      "headline": "GEO Checklist (2026): 51 Checks for AI Search Visibility",
+      "description": "A 51-point GEO checklist for AI search: crawler access, passage structure, entity signals, schema, prompt testing and measurement, with free tools.",
+      "image": "https://illucrum.com/static/img/og/home.png",
+      "datePublished": "2026-09-26",
+      "dateModified": "2026-09-26",
+      "inLanguage": "en-US",
+      "articleSection": "Checklists",
+      "author": { "@id": "https://illucrum.com/about/#person" },
+      "publisher": { "@id": "https://illucrum.com/#organization" },
+      "isPartOf": { "@id": "https://illucrum.com/blog/#blog" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://illucrum.com/about/#person",
+      "name": "Szymon Kokot",
+      "url": "https://illucrum.com/about/",
+      "jobTitle": "SEO consultant",
+      "image": "https://illucrum.com/static/img/szymon.png",
+      "worksFor": { "@id": "https://illucrum.com/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://illucrum.com/#organization",
+      "name": "Illucrum",
+      "url": "https://illucrum.com/",
+      "logo": "https://illucrum.com/static/img/logo.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://illucrum.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://illucrum.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Checklists", "item": "https://illucrum.com/blog/checklists/" },
+        { "@type": "ListItem", "position": 4, "name": "GEO Checklist (2026): 51 Checks for AI Search Visibility", "item": "https://illucrum.com/blog/geo-checklist/" }
+      ]
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+<header>
+  <a href="/"><img src="/static/img/logo.png" alt="Illucrum" width="217" height="52"></a>
+  <button type="button" popovertarget="menu" aria-label="Menu"></button>
+  <nav id="menu" aria-label="Main" popover>
+    <ul>
+      <li><a href="/audits/">Audits</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/process/">Process</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li>
+<a href="#contact" data-lead-open data-lead-source="header">
+  Get in touch
+</a>
+</li>
+    </ul>
+  </nav>
+</header>
+<main>
+<div class="article">
+  
+<nav aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/blog/checklists/">Checklists</a></li>
+  </ol>
+</nav>
+<p>
+  <span>By <a href="#author">Szymon Kokot</a></span>
+  <span>Published <time datetime="2026-09-26">Sep 26, 2026</time></span>
+  <span>Updated <time datetime="2026-09-26">Sep 26, 2026</time></span>
+  <span>28 min read</span>
+</p>
+
+  <h1>GEO Checklist (2026): 51 Checks for AI Search Visibility</h1>
+<p>A GEO checklist tests whether AI systems can reach, read, trust and cite a business. GEO stands for generative engine optimization: visibility in the answers of ChatGPT, Perplexity, Gemini, Claude, Copilot and Google's AI Overviews and AI Mode. This checklist covers 51 checks in seven areas: AI crawler access, the SEO foundations AI visibility depends on, how content is structured into quotable passages, entity and authority signals, structured data, direct testing of what assistants say, and measurement. It follows the same 51 points as the <a href="/audits/geo-audit/">Illucrum GEO Audit</a> and works for any site type.</p>
+<p><strong>In short:</strong> A GEO audit checks that AI crawlers aren't blocked by robots.txt or a firewall, that key pages are indexed and readable without JavaScript, that pages answer questions early in self-contained passages, that the business is defined consistently across the web, that structured data is valid, what AI assistants actually say about the business and its competitors, and whether AI visibility can be measured. All 51 checks run on free tools.</p>
+<hr />
+<h2>What does this GEO checklist cover?</h2>
+<p>This GEO checklist covers 51 checks in 7 sections. A classic SEO audit asks whether a page can rank; a GEO audit asks whether a page can be retrieved, quoted and attributed by an AI system. The two overlap less than most people expect: an <a href="https://ahrefs.com/blog/ai-search-overlap/">Ahrefs study</a> of 15,000 queries found that only about 8% of the URLs cited by ChatGPT, Gemini and Copilot ranked in Google's top 10 for the same query (28.6% for Perplexity).</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Section</th>
+<th>Checks</th>
+<th>The question it answers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>AI crawler and retrieval access</td>
+<td>1 to 9</td>
+<td>Can AI systems reach the site at all?</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Classic SEO foundations</td>
+<td>10 to 17</td>
+<td>Are the search basics that gate AI retrieval in place?</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Passage and chunk structure</td>
+<td>18 to 27</td>
+<td>Can each section of a page be quoted on its own?</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Entity and authority</td>
+<td>28 to 35</td>
+<td>Do AI systems know who the business is, and trust it?</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Structured data</td>
+<td>36 to 40</td>
+<td>Is the markup valid and does it remove ambiguity?</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Prompt visibility testing</td>
+<td>41 to 46</td>
+<td>What do AI assistants actually say when buyers ask?</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Measurement</td>
+<td>47 to 51</td>
+<td>Can the business see its own AI visibility over time?</td>
+</tr>
+</tbody>
+</table>
+<p>Three things make GEO different from SEO. AI companies run separate crawlers for search, live fetching and training, and blocking the wrong one removes a site from answers. Retrieval systems compete at the level of passages, not whole pages. And assistants build answers from sources they trust, so presence on review platforms, communities and publications counts as much as the site itself.</p>
+<hr />
+<h2>What do you need before you start?</h2>
+<p>You need Google Search Console and Google Analytics 4 access, ideally Bing Webmaster Tools and server or CDN logs, and free accounts on the main AI assistants.</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Used for</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChatGPT, Perplexity, Gemini, Claude, Copilot</td>
+<td>Prompt testing, brand knowledge, cited sources</td>
+<td>Free tiers</td>
+</tr>
+<tr>
+<td>Google Search (private window) and Google AI Mode</td>
+<td>AI Overview and AI Mode citations</td>
+<td>Free</td>
+</tr>
+<tr>
+<td><a href="https://search.google.com/search-console">Google Search Console</a></td>
+<td>Indexing, rankings, the generative AI report and the AI features setting</td>
+<td>Free, needs a verified site</td>
+</tr>
+<tr>
+<td><a href="https://www.bing.com/webmasters">Bing Webmaster Tools</a></td>
+<td>Bing indexing and the AI Performance report (Copilot citations)</td>
+<td>Free, needs a verified site</td>
+</tr>
+<tr>
+<td><a href="https://analytics.google.com/">Google Analytics 4</a></td>
+<td>AI referral traffic and lead attribution</td>
+<td>Free, needs property access</td>
+</tr>
+<tr>
+<td>Server logs or CDN bot analytics</td>
+<td>Which AI crawlers actually visit</td>
+<td>Depends on hosting</td>
+</tr>
+<tr>
+<td><a href="/tools/bulk-checker/">Illucrum Bulk SEO Checker</a></td>
+<td>What a non-rendering crawler sees: raw-HTML headings, text, links and schema for up to 25 URLs</td>
+<td>Free, no account</td>
+</tr>
+<tr>
+<td><code>curl</code>, <a href="https://search.google.com/test/rich-results">Rich Results Test</a>, <a href="https://validator.schema.org/">Schema Markup Validator</a></td>
+<td>Crawler access tests and structured data</td>
+<td>Free</td>
+</tr>
+</tbody>
+</table>
+<p>Paid AI visibility trackers exist, but none is needed for this checklist. Four decisions come before the first check:</p>
+<ol>
+<li><strong>Pick 5 to 8 priority pages</strong> chosen for commercial intent rather than traffic: service or product pages, pricing, comparisons, key guides.</li>
+<li><strong>Write a prompt set of 10 to 15 prompts</strong> your buyers would type into an assistant, in their language. Cover discovery (&quot;best [category] for [buyer]&quot;), problem (&quot;how do I fix [problem]&quot;), comparison (&quot;[brand] vs [competitor]&quot;), qualification (&quot;how much does [service] cost&quot;) and brand (&quot;what is [brand]&quot;). Keep the set fixed; it is your baseline for rerunning later.</li>
+<li><strong>Test logged out or in a temporary chat with memory off</strong>, run each prompt two or three times, and record the date. Answers vary between runs.</li>
+<li><strong>Open a spreadsheet</strong> with four columns: check number, finding, evidence and severity.</li>
+</ol>
+<hr />
+<h2>Section 1: How do you check AI crawler and retrieval access? (checks 1 to 9)</h2>
+<p>AI crawler access checks establish whether AI systems can reach the site. Everything else in this checklist depends on them, so work through this section first.</p>
+<table>
+<thead>
+<tr>
+<th>Crawler class</th>
+<th>What it does</th>
+<th>Examples</th>
+<th>Effect of blocking</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Retrieval</td>
+<td>Builds the index an assistant searches when it answers</td>
+<td><code>OAI-SearchBot</code>, <code>Claude-SearchBot</code>, <code>PerplexityBot</code>, <code>Bingbot</code>, <code>Amazonbot</code>, <code>DuckAssistBot</code></td>
+<td>The site drops out of the candidates for citation</td>
+</tr>
+<tr>
+<td>User-triggered</td>
+<td>Fetches a page because a person asked the assistant to read it</td>
+<td><code>ChatGPT-User</code>, <code>Claude-User</code>, <code>Perplexity-User</code>, <code>MistralAI-User</code></td>
+<td>The assistant tells a live prospect it can't read the site</td>
+</tr>
+<tr>
+<td>Training</td>
+<td>Collects content that may train future models</td>
+<td><code>GPTBot</code>, <code>ClaudeBot</code>, <code>Google-Extended</code>, <code>Applebot-Extended</code>, <code>CCBot</code>, <code>meta-externalagent</code></td>
+<td>Little effect on citations today; a consent choice</td>
+</tr>
+</tbody>
+</table>
+<h3>1. Retrieval crawler access</h3>
+<p>Open <code>/robots.txt</code>, confirm it returns 200, and read the rules that apply to each retrieval crawler in the table above. Then read the wildcard rule (<code>User-agent: *</code>) on its own: a broad disallow there applies to every crawler without a rule of its own, which is how retrieval crawlers get blocked without anyone intending it. OpenAI says sites that block <code>OAI-SearchBot</code> <a href="https://developers.openai.com/api/docs/bots">won't be shown in ChatGPT search answers</a>.</p>
+<p><strong>Good result:</strong> every retrieval crawler allowed, by name or through a permissive wildcard.</p>
+<p><strong>Record:</strong> the rule that applies to each retrieval crawler, and whether each block looks deliberate or inherited.</p>
+<h3>2. User-triggered fetcher access</h3>
+<p>User-triggered fetchers act because a real person, often a prospect, pasted your URL into an assistant or asked it to read your page. Check the rules for them and confirm they aren't caught by the wildcard. OpenAI and Perplexity both say robots.txt may not apply to these fetchers because a user initiated the request, so a block usually lives in a firewall rule rather than robots.txt.</p>
+<p><strong>Good result:</strong> user-triggered fetchers allowed in robots.txt and at the firewall.</p>
+<p><strong>Record:</strong> the rule for each fetcher and any firewall rule that affects them.</p>
+<h3>3. Training crawler policy</h3>
+<p>Check the rules for training crawlers and decide whether the current state is a decision or an accident. Blocking training crawlers has little effect on whether AI products cite the site today; it is a consent and licensing choice, and either position is defensible. <code>Google-Extended</code> controls use of content for Gemini training and grounding, and Google says it <a href="https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers">doesn't affect inclusion or ranking in Google Search</a>.</p>
+<p><strong>Good result:</strong> a deliberate policy on training crawlers that doesn't also catch retrieval crawlers.</p>
+<p><strong>Record:</strong> the rule for each training crawler and whether it was a decision.</p>
+<h3>4. Firewall, CDN and bot protection</h3>
+<p>Robots.txt states intent; the firewall, CDN or bot-protection layer enforces reality, and the two disagree more often than site owners expect. Find out what sits in front of the site (Cloudflare or another CDN, a hosting bot filter, a security plugin) and check its AI crawler settings. Request a key URL with a retrieval crawler's user agent, for example <code>curl -A &quot;OAI-SearchBot&quot; https://yourdomain.com/</code>, and compare it with a normal request. A 403, a challenge page or a CAPTCHA means the edge is blocking it.</p>
+<p><strong>Good result:</strong> the edge lets through every crawler robots.txt allows.</p>
+<p><strong>Record:</strong> the protection in place, its AI crawler setting and the result of each user-agent test.</p>
+<h3>5. Crawler activity in server logs</h3>
+<p>If you have no access to server logs or CDN bot analytics, mark this check N/A. Otherwise, pull at least 14 days of logs and filter for AI user agents, for example with the pattern <code>GPTBot|OAI-SearchBot|ChatGPT-User|ClaudeBot|Claude-User|Claude-SearchBot|PerplexityBot|Perplexity-User|Google-Extended|CCBot|Amazonbot|meta-externalagent|DuckAssistBot</code>. Record which agents appear, how often, which URLs they fetch and which status codes they get. Some providers verify crawlers by IP address, so logs are the only proof that the real crawler gets through.</p>
+<p><strong>Good result:</strong> regular visits from retrieval crawlers, served with status 200.</p>
+<p><strong>Record:</strong> each agent seen, its visit count, the URLs it fetched and the status codes it received.</p>
+<h3>6. Google AI features setting and snippet directives</h3>
+<p>In Search Console, open Settings and check the Search generative AI control, which removes a site's content from AI Overviews, AI Mode and Discover's AI features. Google <a href="https://www.searchenginejournal.com/google-search-console-ai-reports-rolled-out-worldwide/587836/">made it available worldwide in August 2026</a> and says it isn't used as a ranking signal elsewhere in Search. Then check key pages for <code>nosnippet</code>, a low <code>max-snippet</code> value, and <code>data-nosnippet</code> around meaningful content; these restrict AI features and regular snippets alike.</p>
+<p><strong>Good result:</strong> no opt-out, and snippet directives that allow full extraction of key pages.</p>
+<p><strong>Record:</strong> the state of the AI control and any snippet directive on priority pages.</p>
+<h3>7. Bing indexing and Copilot grounding</h3>
+<p>Microsoft Copilot grounds its answers in the Bing index, which makes Bing indexing matter more than Bing's own search share suggests. Compare the pages Bing has indexed (<code>site:yourdomain.com</code> on Bing, or Bing Webmaster Tools) with Google's count. Check Bing Webmaster Tools is set up with the sitemap submitted, and check robots.txt for <code>Bingbot</code> rules.</p>
+<p><strong>Good result:</strong> Bing indexing comparable to Google's, with Webmaster Tools set up.</p>
+<p><strong>Record:</strong> Bing and Google indexed counts, Webmaster Tools status and any <code>Bingbot</code> rule.</p>
+<h3>8. Raw HTML parity and JavaScript dependency</h3>
+<p>Google renders JavaScript; most AI retrieval and user-triggered fetchers largely don't. Paste each priority page into the Bulk SEO Checker, which reads the raw HTML as those fetchers do. If a page that looks complete in the browser comes back with no H1 or a word count near zero, its content depends on JavaScript. Check specifically for pricing tables, tabs, testimonials, FAQ answers and specifications that appear only after scripts run, and for key facts that exist only inside images.</p>
+<p><strong>Good result:</strong> headings, body copy and commercial facts all in the raw HTML.</p>
+<p><strong>Record:</strong> per priority page, what is missing from the raw HTML.</p>
+<h3>9. llms.txt and machine-readable surfaces</h3>
+<p><code>llms.txt</code> is a proposed file that lists a site's key content for AI systems. Check whether <code>/llms.txt</code> exists and, if it does, whether logs show any AI agent fetching it. Weight this check low: no major AI search product has confirmed using the file, and Google's John Mueller called it <a href="https://www.searchenginejournal.com/google-says-llms-txt-is-purely-speculative-for-now/577576/">&quot;purely speculative&quot;</a> in June 2026. Its practical use today is developer documentation read by coding assistants. Check that any implementation hasn't created indexable Markdown copies of your pages, which is duplicate content.</p>
+<p><strong>Good result:</strong> present and harmless, or absent. Absence isn't a fault.</p>
+<p><strong>Record:</strong> whether the file exists, whether anything fetches it and whether it created duplicate pages.</p>
+<hr />
+<h2>Section 2: How do you check the classic SEO foundations? (checks 10 to 17)</h2>
+<p>Classic SEO foundation checks cover the search basics that decide whether a page can be retrieved at all. Good SEO doesn't guarantee AI citations, but weak SEO reliably prevents them: an unindexed page isn't in any retrieval index, a page split across four URLs splits its signals, and a page that times out is skipped.</p>
+<h3>10. Indexation health</h3>
+<p>In Search Console, open Indexing, then Pages, and record the indexed and not indexed counts and the reasons. Run URL Inspection on each priority page. A page Google hasn't indexed can't appear in AI Overviews or AI Mode, and is a weaker candidate everywhere else.</p>
+<p><strong>Good result:</strong> every priority page indexed.</p>
+<p><strong>Record:</strong> indexed and not indexed counts, reasons, and each priority page's status.</p>
+<h3>11. Canonicalization and duplicate content</h3>
+<p>Check each priority page carries a self-referencing canonical tag (the Bulk SEO Checker lists them), and look for the same content at several URLs: parameters, trailing slashes, <code>http</code> and <code>https</code>, <code>www</code>, print versions. Where the same passage exists at several addresses, a retrieval system has no single source to cite.</p>
+<p><strong>Good result:</strong> each piece of content at one consistent URL.</p>
+<p><strong>Record:</strong> duplicate URL groups and missing or wrong canonicals.</p>
+<h3>12. XML sitemap and discovery</h3>
+<p>Confirm the sitemap is valid, lists only live canonical URLs, is declared in robots.txt (which is how several non-Google crawlers find it) and is submitted to both Google Search Console and Bing Webmaster Tools. Check the <code>lastmod</code> dates are real rather than all set to today.</p>
+<p><strong>Good result:</strong> a clean sitemap with accurate dates, submitted to Google and Bing.</p>
+<p><strong>Record:</strong> submission status in each tool, and the state of the <code>lastmod</code> dates.</p>
+<h3>13. Speed and fetch reliability</h3>
+<p>Run the priority pages through PageSpeed Insights and record the mobile Performance score and Core Web Vitals. Check server response time (time to first byte) in the DevTools Network tab, and whether rate limiting throttles repeated requests. User-triggered fetchers work while a person waits; a slow response means the assistant reports it couldn't read the page.</p>
+<p><strong>Good result:</strong> Core Web Vitals in Google's Good range and a fast, reliable server response.</p>
+<p><strong>Record:</strong> scores, Core Web Vitals and server response time per priority page.</p>
+<h3>14. HTTPS, status codes and redirects</h3>
+<p>Confirm HTTPS is enforced with a valid certificate and no mixed content, that priority URLs return 200, and that redirects resolve in one step with permanent (301 or 308) codes. AI crawlers visit less often than Googlebot and are slower to follow content that has moved, and a cited URL that later breaks becomes a broken citation.</p>
+<p><strong>Good result:</strong> HTTPS everywhere, clean status codes and single-step redirects.</p>
+<p><strong>Record:</strong> errors on linked or indexed URLs and any redirect chain.</p>
+<h3>15. Title, description and H1 consistency</h3>
+<p>Check each priority page has a unique title of about 60 characters or less, a unique meta description and an H1 that states the subject literally. Then check the title, the H1 and the <code>headline</code> in any Article markup describe the same thing. The Bulk SEO Checker lists all three for up to 25 pages at once.</p>
+<p><strong>Good result:</strong> unique, literal titles and H1s that agree with each other and with the markup.</p>
+<p><strong>Record:</strong> duplicates, vague H1s and mismatches between title, H1 and headline.</p>
+<h3>16. Internal linking and topic clusters</h3>
+<p>A topic cluster is a group of pages on one subject that link to each other and to a main page. Check priority pages are within three clicks of the homepage and not orphaned, that related content is grouped into clusters rather than a flat list of posts, and that anchor text describes the target. Clear clusters help assistants work out what the site is an authority on.</p>
+<p><strong>Good result:</strong> clear clusters, no orphan priority pages and descriptive anchors.</p>
+<p><strong>Record:</strong> each priority page's click depth and incoming links, and orphan pages.</p>
+<h3>17. Organic ranking baseline</h3>
+<p>In Search Console, record the average position, impressions and clicks for your priority non-branded queries, and which pages rank. Use this as context, not as a measure of AI visibility: ranking and citation overlap only partly, so a strong baseline doesn't prove AI visibility and a weak one doesn't rule it out.</p>
+<p><strong>Good result:</strong> established rankings for the priority non-branded queries.</p>
+<p><strong>Record:</strong> position, impressions and clicks per priority query, with the ranking page.</p>
+<hr />
+<h2>Section 3: How do you check passage and chunk structure? (checks 18 to 27)</h2>
+<p>Passage structure checks look at how quotable each priority page is. Retrieval systems don't read a page whole: they split it into passages, score each passage against the question and cite the best ones. A page's opening, each section, each FAQ answer and each table row compete separately. The working thresholds below come from how chunking behaves, not from any published rule: answer blocks of roughly 40 to 75 words, paragraphs under roughly 100 words, one idea per paragraph.</p>
+<h3>18. Answer-first opening</h3>
+<p>For each priority page, write down the question its H1 implies. Read the first 100 words: do they answer that question directly and completely? Flag pages that open with scene-setting, brand story or a promise of what the page will cover. Check each H2 section the same way: does it open with its answer?</p>
+<p><strong>Good result:</strong> every priority page answers its question in the first 100 words.</p>
+<p><strong>Record:</strong> per page, where the direct answer first appears.</p>
+<h3>19. Self-contained passages</h3>
+<p>Read each H2 section on its own, as if it arrived with no context. Does it still make sense, or does it depend on a subject or definition from earlier? Flag sections that start with &quot;This means...&quot;, &quot;As mentioned above...&quot; or &quot;The second reason is...&quot;. Each section should be quotable and attributable without becoming misleading.</p>
+<p><strong>Good result:</strong> sections that make sense read alone.</p>
+<p><strong>Record:</strong> sections that depend on earlier text, with the dependent phrase.</p>
+<h3>20. Paragraph length and one idea per paragraph</h3>
+<p>Flag paragraphs longer than about 100 words and paragraphs that carry more than one idea or fact. Check key commercial facts (price, process, eligibility, turnaround time) sit in their own short paragraph rather than in the middle of a long one. A paragraph with three separate claims matches no single question well.</p>
+<p><strong>Good result:</strong> short, single-idea paragraphs, with key facts standing alone.</p>
+<p><strong>Record:</strong> long or multi-idea paragraphs per page.</p>
+<h3>21. Literal, descriptive headings</h3>
+<p>Read the H2 and H3 headings of each priority page on their own, using the Headings table of the Bulk SEO Checker. Can you tell what the page covers from the headings alone? Flag clever, punning, teasing or metaphorical headings. Headings should name their subject and, where it fits, ask the question a user would ask.</p>
+<p><strong>Good result:</strong> an outline that explains the page on its own.</p>
+<p><strong>Record:</strong> headings that don't state their subject.</p>
+<h3>22. Explicit entity naming</h3>
+<p>A passage retrieved on its own has no surrounding context: &quot;It costs $500&quot; can't be attributed, while &quot;The [Brand] [service] costs $500&quot; can. Look for pronouns and stand-ins (&quot;it&quot;, &quot;they&quot;, &quot;this&quot;, &quot;the company&quot;, &quot;our service&quot;) carrying the main subject of a section, and check the brand, product and service names appear within each section, not only in the introduction.</p>
+<p><strong>Good result:</strong> the main entity named in every section.</p>
+<p><strong>Record:</strong> sections whose subject is only a pronoun or stand-in.</p>
+<h3>23. Comparison tables and structured lists</h3>
+<p>Check that pages comparing options (services, plans, alternatives) present the comparison as a table rather than prose, that processes are numbered lists, and that specifications (pricing, inclusions, timelines, eligibility) are tabulated. Confirm tables are real HTML <code>&lt;table&gt;</code> elements with headers, not images or styled blocks.</p>
+<p><strong>Good result:</strong> comparisons in real HTML tables and processes in numbered lists.</p>
+<p><strong>Record:</strong> comparisons still in prose, and tables that are images or styled blocks.</p>
+<h3>24. FAQ blocks in prompt language</h3>
+<p>Check priority pages have real FAQ blocks, not marketing copy formatted as questions. The questions should be phrased the way a buyer types them into an assistant (&quot;How much does [service] cost?&quot;), not the way marketing writes them (&quot;Why choose us?&quot;). The answers should be complete on the page, not teasers pointing to a contact form. Ask an assistant the same questions to see how it phrases them.</p>
+<p><strong>Good result:</strong> real questions in buyers' words, answered completely on the page.</p>
+<p><strong>Record:</strong> per page, whether an FAQ exists, how its questions are phrased and whether answers are complete.</p>
+<h3>25. Fact density and verifiable specifics</h3>
+<p>Compare the specific, checkable facts on each priority page (numbers, prices, dates, durations, named tools and standards, examples) with general assertions (&quot;industry-leading&quot;, &quot;tailored to your needs&quot;, &quot;proven results&quot;). The test: could a competitor put the same sentence on their site unchanged? If so, it identifies nothing and can't be cited. Check claims that could be sourced are sourced.</p>
+<p><strong>Good result:</strong> pages dense with specific, checkable facts.</p>
+<p><strong>Record:</strong> per page, the count of specific facts and the generic claims worth replacing.</p>
+<h3>26. Semantic HTML and hidden content</h3>
+<p>Check pages use semantic elements (<code>article</code>, <code>section</code>, <code>nav</code>, <code>h1</code> to <code>h6</code>, <code>table</code>, <code>ul</code>, <code>ol</code>) rather than only <code>div</code>s, with one H1 and no skipped heading levels. Check content in accordions, tabs and modals is in the initial HTML and not loaded on click, that <code>data-nosnippet</code> isn't wrapped around meaningful content, and that no key text exists only in an image.</p>
+<p><strong>Good result:</strong> semantic markup, a correct heading order and no key content hidden from fetchers.</p>
+<p><strong>Record:</strong> hierarchy errors, content loaded on interaction and text locked in images.</p>
+<h3>27. Freshness and date accuracy</h3>
+<p>Check each page shows a published or updated date, and that <code>datePublished</code> and <code>dateModified</code> in the markup are present and accurate. Flag two opposite failures: dates not updated after real changes, and dates refreshed with no change. Look for outdated facts on priority pages: old statistics, retired tools, past years written as current.</p>
+<p><strong>Good result:</strong> accurate visible and markup dates, and no outdated facts.</p>
+<p><strong>Record:</strong> pages without dates, inaccurate dates and outdated facts.</p>
+<hr />
+<h2>Section 4: How do you check entity and authority signals? (checks 28 to 35)</h2>
+<p>Entity and authority checks establish whether AI systems know who the business is, trust it and describe it accurately. Assistants cross-check facts across independent sources, so what a site says about itself establishes little on its own. This is also the section least fixable through site work: where the gap is recognition, the honest answer is months of presence-building on other sites.</p>
+<h3>28. Brand entity definition</h3>
+<p>Check the homepage for <code>Organization</code> markup, or a specific type, with <code>name</code>, <code>url</code>, <code>logo</code>, <code>description</code> and a <code>sameAs</code> list linking to the brand's real profiles (LinkedIn, Crunchbase, review platforms, directories). Check the About page states plainly what the business does, for whom and where, and that this matches the descriptions on external profiles.</p>
+<p><strong>Good result:</strong> complete organization markup with <code>sameAs</code>, and a plain definition of the business on the site.</p>
+<p><strong>Record:</strong> markup fields present, the <code>sameAs</code> list and any description that differs from external profiles.</p>
+<h3>29. Author entity resolution</h3>
+<p>Check authors have <code>Person</code> markup with <code>name</code>, <code>url</code>, <code>jobTitle</code> and <code>sameAs</code> links to their LinkedIn and other profiles, and that <code>Article</code> markup references that <code>Person</code> rather than a plain text name. Check the author's name is written identically in the byline, the markup, the author page and on LinkedIn.</p>
+<p><strong>Good result:</strong> <code>Person</code> markup with <code>sameAs</code>, and one consistent spelling of each author's name.</p>
+<p><strong>Record:</strong> author markup present, <code>sameAs</code> links and any name variants.</p>
+<h3>30. Named bylines and credentials</h3>
+<p>Check every article and guide has a named human byline, not &quot;Admin&quot; or &quot;[Brand] Team&quot;, and that the byline leads to an author page with specific, verifiable experience: roles, years, employers, qualifications, published work. A bio earns trust when a reader could check it.</p>
+<p><strong>Good result:</strong> named authors with specific, checkable bios.</p>
+<p><strong>Record:</strong> the share of content with a named author and the state of the bios.</p>
+<h3>31. Consistency across the web</h3>
+<p>List the brand's external presence: LinkedIn, Crunchbase, the Business Profile, review platforms, directories, partner pages. Compare name, description, services, address and contact details across them. Flag legal names in one place and trading names in another, services no longer offered, old addresses, and abandoned or duplicate profiles. When sources contradict each other, machines trust all of them less.</p>
+<p><strong>Good result:</strong> the same description and details on every profile.</p>
+<p><strong>Record:</strong> each profile with inconsistent or outdated details.</p>
+<h3>32. Knowledge panel and Wikidata</h3>
+<p>Search the brand name on Google and Bing and check whether a knowledge panel appears and is accurate. Search <a href="https://www.wikidata.org/">Wikidata</a> for the brand and its founders. Judge realistically whether the business meets notability thresholds; most small businesses don't, and for them this check is N/A rather than something to pursue directly.</p>
+<p><strong>Good result:</strong> an accurate knowledge panel or Wikidata entry, or N/A where notability isn't realistic yet.</p>
+<p><strong>Record:</strong> whether each exists and any wrong information in it.</p>
+<h3>33. Third-party citation footprint</h3>
+<p>Start from the list of sources assistants actually cite for your category, which you'll build in check 46. That list defines where presence matters; don't audit directories no assistant cites. For each source, check whether the business appears and how its presence compares with the competitors being recommended, in volume and recency.</p>
+<p><strong>Good result:</strong> a current presence on the sources assistants cite for your category.</p>
+<p><strong>Record:</strong> per cited source, your presence and the recommended competitors' presence.</p>
+<h3>34. Sentiment and accuracy of off-site mentions</h3>
+<p>Read what the sources from check 33 actually say about the business. Record the sentiment (positive, neutral, negative or mixed), check facts such as services, pricing and category, and flag outdated descriptions and confusion with similarly named businesses. Assistants repeat what these sources say, and most publishers will correct a factual detail on request.</p>
+<p><strong>Good result:</strong> accurate mentions that are positive or neutral. Mark N/A if there are too few to judge.</p>
+<p><strong>Record:</strong> each source, its sentiment and any factual error.</p>
+<h3>35. Original data and citable assets</h3>
+<p>Check whether the site publishes anything that exists nowhere else: its own data, research, benchmarks, a documented method, tools or worked examples. Restating an industry statistic gives an assistant no reason to cite you over the original. Note data the business holds but hasn't published, such as aggregated outcomes, price ranges or process timings.</p>
+<p><strong>Good result:</strong> some original material that others would cite.</p>
+<p><strong>Record:</strong> original assets published, and unpublished data worth publishing.</p>
+<hr />
+<h2>Section 5: How do you check structured data for AI search? (checks 36 to 40)</h2>
+<p>Structured data checks look at the markup that removes ambiguity about what a page is and who it comes from. Structured data supports citation but doesn't create it, which is worth remembering because schema is often oversold. Google stopped showing FAQ rich results on <a href="https://www.searchenginejournal.com/google-drops-faq-rich-results-from-search/574429/">May 7, 2026</a> and removed FAQ support from the Rich Results Test in June 2026, so validate FAQ markup with the Schema Markup Validator instead.</p>
+<h3>36. Article and author markup</h3>
+<p>Validate <code>Article</code> or <code>BlogPosting</code> markup on content pages. Check <code>headline</code> matches the H1 exactly, <code>author</code> references a <code>Person</code> and <code>publisher</code> references the <code>Organization</code>, and <code>datePublished</code> and <code>dateModified</code> are present and accurate.</p>
+<p><strong>Good result:</strong> valid Article markup with a matching headline, a linked author and accurate dates.</p>
+<p><strong>Record:</strong> errors, headline mismatches and stale dates.</p>
+<h3>37. FAQPage markup</h3>
+<p>If no priority page has real question-and-answer content, mark this check N/A. Otherwise, check pages with real FAQs carry <code>FAQPage</code> markup that validates and matches the visible questions and answers exactly, and flag FAQ markup on content that isn't questions and answers. The Google rich result is gone and the AI benefit is unproven, so treat this as low-cost housekeeping.</p>
+<p><strong>Good result:</strong> valid FAQ markup that matches the page, where real FAQs exist.</p>
+<p><strong>Record:</strong> pages with FAQs, whether they carry markup and any mismatch.</p>
+<h3>38. Organization, service and product markup</h3>
+<p>Check the most specific type is used where one applies (<code>LocalBusiness</code>, <code>ProfessionalService</code>, <code>LegalService</code>, <code>SoftwareApplication</code>), that service pages carry <code>Service</code> markup and product pages <code>Product</code> with <code>offers</code>, and that prices in the markup match the page. Check <code>areaServed</code>, <code>serviceType</code> and contact details where they apply.</p>
+<p><strong>Good result:</strong> specific types with complete fields and prices matching the page.</p>
+<p><strong>Record:</strong> types used per page type and missing or mismatched fields.</p>
+<h3>39. Breadcrumb markup</h3>
+<p>Check interior pages carry <code>BreadcrumbList</code> markup, that the trail matches the site's real hierarchy, and that the same trail is visible on the page. Breadcrumbs state where a page sits in the site's topics, which supports the clusters from check 16.</p>
+<p><strong>Good result:</strong> valid breadcrumb markup matching the real structure, on every interior page.</p>
+<p><strong>Record:</strong> templates without breadcrumbs and trails that don't match the structure.</p>
+<h3>40. Schema validity and content match</h3>
+<p>Run every priority page through both validators, or paste them into the Bulk SEO Checker to list every block and catch any that fail to parse. Check for structural failures (malformed JSON-LD, missing <code>@context</code>), claims in the markup that the page doesn't show (prices, ratings, dates, authors), and duplicate or conflicting blocks, often from a theme and a plugin both adding markup.</p>
+<p><strong>Good result:</strong> all markup valid and matching the visible content, from a single source.</p>
+<p><strong>Record:</strong> errors, mismatches and conflicting blocks per page.</p>
+<hr />
+<h2>Section 6: How do you test AI prompt visibility? (checks 41 to 46)</h2>
+<p>Prompt visibility tests measure whether citation is actually happening. Everything before this section checks the conditions for it. Use the fixed prompt set from your setup, run each prompt two or three times per platform, and record the date and the pattern rather than a single answer.</p>
+<h3>41. Brand knowledge and accuracy</h3>
+<p>Ask each assistant &quot;What is [brand] and what does it do?&quot;, then &quot;What services does [brand] offer and what do they cost?&quot; and &quot;Who runs [brand]?&quot;. Record whether the brand is recognized, whether the description is accurate, any invented details and the sources cited. Confident inaccuracy is worse than absence, because a prospect gets wrong information with no warning.</p>
+<p><strong>Good result:</strong> recognized and described accurately by every assistant tested.</p>
+<p><strong>Record:</strong> per assistant, the description, any errors and the cited sources.</p>
+<h3>42. Unprompted recommendations</h3>
+<p>Run the discovery and comparison prompts without naming the brand. Record whether it is recommended, in what position and how it is described, and which competitors appear consistently. This is the headline measure. A brand that is recognized when named (check 41) but not recommended when unnamed usually has thin third-party presence rather than a content problem.</p>
+<p><strong>Good result:</strong> recommended for category prompts by two or more assistants.</p>
+<p><strong>Record:</strong> per assistant and prompt, whether you appear, your position and the competitors named.</p>
+<h3>43. Google AI Overview citations</h3>
+<p>Run the prompts as Google searches in a private window. Record which trigger an AI Overview, whether your site is cited and which domains are. AI Overview citation and ranking are only partly linked: a page below the fold can be cited and the first result can be left out. <a href="https://www.seerinteractive.com/insights/aio-impact-on-google-ctr-september-2025-update">Seer Interactive</a> found brands cited in an AI Overview had 35% higher organic CTR than those that weren't.</p>
+<p><strong>Good result:</strong> cited in AI Overviews for several priority queries (or no Overviews appear).</p>
+<p><strong>Record:</strong> per query, whether an Overview appears, the cited domains and whether you are among them.</p>
+<h3>44. Google AI Mode presence</h3>
+<p>AI Mode is Google's conversational search mode, which handles multi-step questions differently from AI Overviews. If it isn't available in your market, mark this check N/A. Run the prompts in AI Mode and record citations, including on follow-up questions, which are usually more specific. Compare with check 43; differences between the two are common.</p>
+<p><strong>Good result:</strong> cited across priority questions and their follow-ups.</p>
+<p><strong>Record:</strong> per prompt, citations on the first answer and on follow-ups.</p>
+<h3>45. Competitor citation share</h3>
+<p>Across every prompt tested, count how often each competitor is cited or recommended, and calculate your share of all citations. Check whether the most-cited competitors are the same businesses you compete with in regular search; often they aren't, which is itself a finding. For the top two or three, note what sets them apart: review volume, community presence, press coverage, original data or structure.</p>
+<p><strong>Good result:</strong> a citation share comparable to the named competitors.</p>
+<p><strong>Record:</strong> citations per brand across the prompt set, and what distinguishes the leaders.</p>
+<h3>46. Cited source analysis</h3>
+<p>List every domain the assistants cited across all prompts, not only those mentioning you, and rank them by frequency. Group them: review platforms, communities, publications, competitor sites, directories, independent blogs. Cross-check with check 33 for where you appear. This turns &quot;build authority&quot; into a ranked list of the specific places where presence changes answers.</p>
+<p><strong>Good result:</strong> your brand present on the most frequently cited sources.</p>
+<p><strong>Record:</strong> the ranked source list, grouped, with your presence marked on each.</p>
+<hr />
+<h2>Section 7: How do you measure AI search visibility? (checks 47 to 51)</h2>
+<p>Measurement checks establish whether the business can see its own AI visibility after the audit. Every measurement source is partial: Google's report shows impressions only, analytics misses AI visits that arrive without a referrer, and nothing captures citations that never produce a click. The fixed prompt set from your setup remains the most complete signal.</p>
+<h3>47. Search Console generative AI report</h3>
+<p>Check whether the property has Search Console's <a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports">generative AI performance report</a>, which Google introduced in June 2026 and made available worldwide in August 2026. Record impressions in AI Overviews and AI Mode by page, country and date; the page breakdown shows which content Google's AI features draw on. Know its limits: impressions only, with no clicks, CTR or query data.</p>
+<p><strong>Good result:</strong> the report available, reviewed, with AI impressions recorded by page.</p>
+<p><strong>Record:</strong> AI impressions for the top pages and the date range.</p>
+<h3>48. Bing AI Performance report</h3>
+<p>Check Bing Webmaster Tools is set up and whether its <a href="https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview">AI Performance report</a>, launched in public preview in February 2026, shows data. Record citations, cited pages and the grounding queries that triggered them for Copilot and Bing's AI answers. Unlike Google's report, it shows which questions your content answers.</p>
+<p><strong>Good result:</strong> Webmaster Tools set up, with the AI Performance report reviewed.</p>
+<p><strong>Record:</strong> citation count, top cited pages and top grounding queries.</p>
+<h3>49. GA4 AI traffic segmentation</h3>
+<p>If you have no Analytics access, mark this check N/A. In GA4, check whether the AI Assistant channel, <a href="https://www.searchenginejournal.com/google-analytics-adds-ai-assistant-as-default-channel-group/574974/">added to the default channel group in May 2026</a>, shows sessions. Google named ChatGPT, Gemini and Claude but hasn't published its full source list, so check where Perplexity and Copilot sessions land and cover gaps with a custom channel group ordered above Referral. AI visits without a referrer, often from mobile apps, still land in Direct.</p>
+<p><strong>Good result:</strong> AI traffic fully segmented, with the gaps covered.</p>
+<p><strong>Record:</strong> sessions per AI source, where uncovered sources land, and the landing pages AI visits arrive on.</p>
+<h3>50. AI crawler monitoring</h3>
+<p>If you have no access to crawler activity data, mark this check N/A. Otherwise, check logs or CDN bot analytics are kept long enough to show trends and that someone looks at them. A drop in retrieval crawler visits shows up before any drop in citations; CDN configuration changes and security plugin updates are common causes.</p>
+<p><strong>Good result:</strong> crawler activity retained and reviewed regularly.</p>
+<p><strong>Record:</strong> retention period, review routine and any unexplained drop.</p>
+<h3>51. Lead source attribution</h3>
+<p>Where AI traffic is segmented (check 49), check whether a lead from an AI assistant stays identifiable when the visitor submits a form, for example through a hidden first-touch source field carried into your CRM. Compare AI-referred conversion with organic search conversion against your own baseline rather than a published benchmark, because published figures vary widely by site and method.</p>
+<p><strong>Good result:</strong> the AI source captured from first visit through to the CRM.</p>
+<p><strong>Record:</strong> where the source is kept and where it is lost.</p>
+<hr />
+<h2>Frequently asked questions</h2>
+<h3>What is the difference between GEO and SEO?</h3>
+<p>SEO makes pages rank in search results; GEO makes pages retrievable and quotable in AI answers. GEO depends on SEO foundations such as indexing and speed, but adds checks SEO doesn't have: AI crawler classes, passage structure, off-site entity signals and direct prompt testing. The <a href="/blog/geo-audit-vs-seo-audit/">GEO audit vs SEO audit comparison</a> covers when each one fits.</p>
+<h3>Does llms.txt help with AI search visibility?</h3>
+<p>There is no evidence that llms.txt helps with AI search visibility today. No major AI search product has confirmed using the file for retrieval or ranking, and Google's John Mueller called it &quot;purely speculative&quot; in June 2026. It has a practical use for developer documentation read by coding assistants, and it does no harm if it doesn't create duplicate pages.</p>
+<h3>How long does a GEO audit take to do yourself?</h3>
+<p>A first pass through this GEO checklist takes six to ten hours. The access checks in section 1 take under an hour. The prompt testing in section 6 takes the longest, because each prompt runs two or three times on several platforms, and the passage structure review takes an hour or two per handful of priority pages.</p>
+<h3>Should a small business work on GEO before SEO?</h3>
+<p>Usually not. AI citations mostly come from sites that are already indexed, reasonably authoritative and mentioned on trusted third-party sources. For a site with weak SEO basics, the foundations in section 2 and a checklist such as the <a href="/blog/seo-checklist/">website SEO checklist</a> come first. The exceptions are the quick wins in section 1: an AI crawler block is worth fixing today.</p>
+<h3>How often should you check AI visibility?</h3>
+<p>Rerun the fixed prompt set from this GEO checklist monthly or quarterly, on the same platforms, and compare with your first results. Check Search Console's generative AI report and Bing's AI Performance report monthly. A full GEO audit once a year, or after a site migration or CDN change, covers the rest.</p>
+<hr />
+<p>AI visibility starts with access and ends with reputation: crawlers that can get in, pages that answer early in passages that stand alone, and a business that other trusted sources describe accurately. If you'd rather have the whole picture gathered and prioritized for you, the <a href="/audits/geo-audit/">GEO Audit</a> covers the same 51 points at a fixed price listed on the <a href="/pricing/">pricing page</a>.</p>
+
+  
+<aside id="author" aria-label="About the author">
+  <img src="/static/img/szymon-small.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+  <div>
+    <p>Written by</p>
+    <p><a href="/about/">Szymon Kokot</a></p>
+    <p>Szymon runs Illucrum, an independent SEO audit service for small and medium-sized businesses. He worked as a software developer before moving into SEO, built the free Bulk SEO Checker on this site, and carries out and writes every Illucrum audit himself.</p>
+    <p>
+      <a href="/about/">More about Szymon</a>
+      <a href="/audits/">The six audits</a>
+      <a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a>
+    </p>
+  </div>
+</aside>
+
+</div>
+<section id="related" class="posts paper">
+  <hgroup>
+    <p>Keep reading</p>
+    <h2>Related <em>articles</em></h2>
+  </hgroup>
+  
+<article>
+  <h3><a href="/blog/geo-audit-vs-seo-audit/">GEO Audit vs SEO Audit: What's the Difference?</a></h3>
+  <p>An SEO audit asks whether a site can rank; a GEO audit asks whether AI assistants can cite it. What each covers and which to start with.</p>
+  <ul>
+    <li>Updated <time datetime="2026-09-26">Sep 26, 2026</time></li>
+    <li>7 min read</li>
+  </ul>
+</article>
+
+  
+<article>
+  <h3><a href="/blog/technical-seo-checklist/">Technical SEO Checklist (2026): 36 Checks for Any Website</a></h3>
+  <p>36 checks on crawling, indexing, rendering, speed, mobile, security, structured data, international setup and AI crawler access. No keywords, no content.</p>
+  <ul>
+    <li>Updated <time datetime="2026-09-26">Sep 26, 2026</time></li>
+    <li>23 min read</li>
+  </ul>
+</article>
+
+  
+<article>
+  <h3><a href="/blog/seo-checklist/">SEO Checklist (2026): 54 Checks You Can Run Yourself</a></h3>
+  <p>The 54 checks behind a full website SEO audit, from indexing and titles to backlinks, trust signals and AI search, with the free tool for each.</p>
+  <ul>
+    <li>Updated <time datetime="2026-09-26">Sep 26, 2026</time></li>
+    <li>33 min read</li>
+  </ul>
+</article>
+
+  <p><a href="/blog/checklists/">All six checklists</a></p>
+</section>
+
+<section id="contact">
+  <h2>Questions about <em>your own site?</em></h2>
+  <p>Send the address and what you'd like to know. I'll reply myself.</p>
+  <address>
+    t.$templates/cta-button.html
+    <a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a>
+  </address>
+</section>
+
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="Illucrum" loading="lazy">
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40"
+      data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img
+          src="/static/img/social/linkedin.svg" alt="LinkedIn profile" /></a>
+      <a href="https://wa.me/15122035993" target="_blank" rel="noopener"><img src="/static/img/social/whatsapp.svg"
+          alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg"
+          alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Audits</h5>
+    <ul>
+      <li><a href="/audits/saas-seo-audit/">SaaS SEO audit</a></li>
+      <li><a href="/audits/ecommerce-seo-audit/">E-commerce SEO audit</a></li>
+      <li><a href="/audits/seo-audit/">Website SEO audit</a></li>
+      <li><a href="/audits/technical-seo-audit/">Technical SEO audit</a></li>
+      <li><a href="/audits/local-seo-audit/">Local business SEO audit</a></li>
+      <li><a href="/audits/geo-audit/">GEO audit</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Company</h5>
+    <ul>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/process/">Process</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/seo-facts/">SEO facts</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Free tool</h5>
+    <ul>
+      <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
+      <li><a href="/tools/bulk-checker/meta-tag-check/">Meta Tag Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/heading-check/">Heading Check</a></li>
+      <li><a href="/tools/bulk-checker/alt-text-check/">Alt Text Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/word-count-check/">Word Count Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/canonical-check/">Canonical Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/open-graph-check/">Open Graph Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/schema-check/">Schema Check</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Legal</h5>
+    <ul>
+      <li><a href="/legal/terms/">Terms</a></li>
+      <li><a href="/legal/privacy/">Privacy</a></li>
+      <li><a href="/legal/cookies/">Cookies</a></li>
+      <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+      <li><a href="/legal/accessibility/">Accessibility</a></li>
+      <li><a href="#" data-consent-open>Manage cookies</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +1 (512) 203-5993</span>
+  </small>
+</footer>
+
+<!-- Google Tag Manager GTM-MRLGLHC5 (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Cookies on this site" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">Cookies on this site</p>
+    <p class="ic-consent__body">Cookies keep the site working and show how it's used. With your permission, they also measure ads on Google and Reddit. You can change your choice any time from the footer. <a href="/legal/cookies/">Cookie policy</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferences</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Strictly necessary</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
+        <p class="ic-consent__pref-desc">Needed for the site to work, so they can't be turned off.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analytics</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
+        <p class="ic-consent__pref-desc">Shows how visitors use the site (Google Analytics 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Advertising</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
+        <p class="ic-consent__pref-desc">Measures and personalizes Google Ads and Reddit Ads campaigns.</p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

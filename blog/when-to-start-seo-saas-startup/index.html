@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo-ico.png">
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.cdnfonts.com/css/dubai" rel="stylesheet">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', '');//GTM-MRLGLHC5</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+
+<script>
+    var DEFAULTS = {
+      title: "Get in touch",
+      subtitle: "Tell me a little about your site. I'll reply by email, usually within one working day.",
+      button: "Send"
+    };
+
+    // Fields rendered in order. `required` drives client-side validation.
+    var FIELDS = [
+      { name: "name", label: "Name", type: "text", required: true, autocomplete: "name" },
+      { name: "company", label: "Company", type: "text", required: true, autocomplete: "organization" },
+      { name: "website", label: "Website", type: "text", required: true, autocomplete: "url", placeholder: "https://" },
+      { name: "phone", label: "Phone", type: "tel", required: false, autocomplete: "tel" },
+      { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }
+    ];
+</script>
+
+<title>When Should a SaaS Startup Start Doing SEO? | Illucrum</title>
+<meta name="description" content="When should a SaaS startup start SEO? Why pre-PMF and post-PMF companies need different approaches, and how to tell which stage you are in.">
+<meta name="author" content="Szymon Kokot">
+
+<link rel="canonical" href="https://illucrum.com/blog/when-to-start-seo-saas-startup/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://illucrum.com/blog/when-to-start-seo-saas-startup/">
+<meta property="og:site_name" content="Illucrum">
+<meta property="og:title" content="When Should a SaaS Startup Start Doing SEO?">
+<meta property="og:description" content="When should a SaaS startup start SEO? Why pre-PMF and post-PMF companies need different approaches, and how to tell which stage you are in.">
+<meta property="og:image" content="https://illucrum.com/static/img/og/home.png">
+<meta property="article:published_time" content="2026-06-09">
+<meta property="article:modified_time" content="2026-06-09">
+<meta property="article:author" content="https://illucrum.com/about/">
+<meta property="article:section" content="Other articles">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="When Should a SaaS Startup Start Doing SEO?">
+<meta name="twitter:description" content="When should a SaaS startup start SEO? Why pre-PMF and post-PMF companies need different approaches, and how to tell which stage you are in.">
+<meta name="twitter:image" content="https://illucrum.com/static/img/og/home.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://illucrum.com/blog/when-to-start-seo-saas-startup/#article",
+      "mainEntityOfPage": "https://illucrum.com/blog/when-to-start-seo-saas-startup/",
+      "url": "https://illucrum.com/blog/when-to-start-seo-saas-startup/",
+      "headline": "When Should a SaaS Startup Actually Start Doing SEO?",
+      "description": "When should a SaaS startup start SEO? Why pre-PMF and post-PMF companies need different approaches, and how to tell which stage you are in.",
+      "image": "https://illucrum.com/static/img/og/home.png",
+      "datePublished": "2026-06-09",
+      "dateModified": "2026-06-09",
+      "inLanguage": "en-US",
+      "articleSection": "Other articles",
+      "author": { "@id": "https://illucrum.com/about/#person" },
+      "publisher": { "@id": "https://illucrum.com/#organization" },
+      "isPartOf": { "@id": "https://illucrum.com/blog/#blog" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://illucrum.com/about/#person",
+      "name": "Szymon Kokot",
+      "url": "https://illucrum.com/about/",
+      "jobTitle": "SEO consultant",
+      "image": "https://illucrum.com/static/img/szymon.png",
+      "worksFor": { "@id": "https://illucrum.com/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://illucrum.com/#organization",
+      "name": "Illucrum",
+      "url": "https://illucrum.com/",
+      "logo": "https://illucrum.com/static/img/logo.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://illucrum.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://illucrum.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Other articles", "item": "https://illucrum.com/blog/other/" },
+        { "@type": "ListItem", "position": 4, "name": "When Should a SaaS Startup Actually Start Doing SEO?", "item": "https://illucrum.com/blog/when-to-start-seo-saas-startup/" }
+      ]
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+<header>
+  <a href="/"><img src="/static/img/logo.png" alt="Illucrum" width="217" height="52"></a>
+  <button type="button" popovertarget="menu" aria-label="Menu"></button>
+  <nav id="menu" aria-label="Main" popover>
+    <ul>
+      <li><a href="/audits/">Audits</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/process/">Process</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li>
+<a href="#contact" data-lead-open data-lead-source="header">
+  Get in touch
+</a>
+</li>
+    </ul>
+  </nav>
+</header>
+<main>
+<div class="article">
+  
+<nav aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/blog/other/">Other articles</a></li>
+  </ol>
+</nav>
+<p>
+  <span>By <a href="#author">Szymon Kokot</a></span>
+  <span>Published <time datetime="2026-06-09">Jun 9, 2026</time></span>
+  <span>Updated <time datetime="2026-06-09">Jun 9, 2026</time></span>
+  <span>8 min read</span>
+</p>
+
+  <h1>When Should a SaaS Startup Actually Start Doing SEO?</h1>
+<p>A 6-month-old SaaS and a 3-year-old SaaS need completely different SEO strategies. The younger company is still figuring out who its customer is. The older one has proof; it just needs to scale what works. Treating these two situations the same is one of the most common ways founders waste time and money on content that goes nowhere. Here is how to figure out which stage you are actually in, and what SEO should look like for each one.</p>
+<p><strong>In short:</strong> The right time to start investing in SEO is immediately after you have validated product-market fit, defined your ICP tightly enough to know what they search for, and have enough runway to wait six to twelve months for organic results. Pre-PMF, focus on foundation-setting, not content production.</p>
+<hr />
+<h2>Why Timing Matters More Than Most Founders Realise</h2>
+<p>SEO is a compounding channel. Results from content you publish today accumulate over months, not days. That compounding is enormously valuable, but it also means that content published at the wrong stage, targeting the wrong audience, compounds in the wrong direction.</p>
+<p>If you have not yet validated product-market fit, you do not know which customer you are writing for. You might rank for a cluster of keywords and attract users who churn immediately, which signals poor quality to Google and damages your domain reputation before the right audience ever finds you.</p>
+<p>The cost of bad timing is not just wasted effort. It is a handicap you carry into the stages where SEO actually matters.</p>
+<hr />
+<h2>Stage 1: Pre-PMF (0 to 12 Months, Typically)</h2>
+<p>At this stage, your job is not to generate inbound traffic. Your job is to understand whether a product people actually want exists, and to talk to users directly to find out.</p>
+<p>SEO is a poor tool for this. The feedback loop is too slow. You need signals in days, not months.</p>
+<p>That said, there are two things worth doing now that will pay off later.</p>
+<p><strong>Set up your technical foundation.</strong> Make sure your site is indexable, loads quickly, and has clean URL structures. This takes a few hours and prevents problems that are expensive to fix later. A basic <a href="https://illucrum.com/audits/saas-seo-audit">SaaS SEO audit</a> at this stage can surface structural issues before they compound.</p>
+<p><strong>Claim and fill your Google Business Profile, if relevant.</strong> Even for SaaS businesses with no local footprint, having a verified presence matters for branded search trust.</p>
+<p>Do not write content yet. You do not know what to write. Wait until you know who you are writing for.</p>
+<hr />
+<h2>Stage 2: Post-PMF, Pre-Scale (Typically 12 to 36 Months)</h2>
+<p>This is the moment most SaaS founders miss. They either jump into aggressive content production before their ICP is defined, or they delay SEO entirely because they are chasing paid channels.</p>
+<p>The right move is to start deliberately, not frantically.</p>
+<p>After PMF validation, you should be able to answer these four questions with reasonable confidence:</p>
+<ol>
+<li>
+<p>Who is your ICP, specifically? Not &quot;small businesses&quot; — which type, which role, which problem.</p>
+</li>
+<li>
+<p>What words does your ICP use when they search for a solution like yours? Not what you call it; what they call it.</p>
+</li>
+<li>
+<p>What is your runway? Do you have 18 months to see organic traffic compound, or 9?</p>
+</li>
+<li>
+<p>Can you commit to consistent output? One piece of quality content per week is more valuable than ten pieces published in a sprint and then nothing.</p>
+</li>
+</ol>
+<p>If you can answer all four clearly, you are ready to start building your SEO programme. If you cannot answer question one or two, pause and do the ICP research first. Everything downstream depends on it.</p>
+<hr />
+<h2>The Pre-Scale SEO Checklist for SaaS Founders</h2>
+<p>Before you commission your first content brief or hire a content writer, work through this checklist:</p>
+<ul>
+<li>
+<p>[ ] PMF is validated: you have paying customers who came back, referred others, or renewed</p>
+</li>
+<li>
+<p>[ ] ICP is defined: you know the job title, company size, industry, and core pain of the buyer</p>
+</li>
+<li>
+<p>[ ] You have mapped at least one keyword cluster your ICP uses when searching for your category</p>
+</li>
+<li>
+<p>[ ] Technical SEO basics are in place: fast load times, no crawl errors, clean site structure</p>
+</li>
+<li>
+<p>[ ] You have a blog or resources section that is indexed and ready to receive content</p>
+</li>
+<li>
+<p>[ ] You have at least 6 months of runway beyond your current burn rate (SEO takes time)</p>
+</li>
+<li>
+<p>[ ] You have one person, internal or external, who owns the SEO workflow</p>
+</li>
+</ul>
+<p>If more than two of these are unchecked, focus there before producing content.</p>
+<hr />
+<h2>What a 6-Month-Old SaaS Should Actually Do</h2>
+<p>Assume you are six months in. You have paying customers, early signs of retention, and a clearer picture of your buyer. Here is where to spend your SEO time:</p>
+<p><strong>Keyword research focused on problem-aware terms.</strong> Your ICP at this stage is likely not searching for your product category by name. They are searching for their problem. &quot;How to reduce churn for B2B SaaS&quot; is a problem-aware query. &quot;Customer success software&quot; is a solution-aware query. Both matter, but problem-aware content builds pipeline earlier.</p>
+<p><strong>One cornerstone article per quarter, not one per week.</strong> A well-researched 2,000-word article that targets a real query your ICP has is worth more than six thin posts. Depth signals expertise; expertise builds trust; trust earns links.</p>
+<p><strong>Build the internal link structure from day one.</strong> Every article should link to at least one pillar page on your site. Pillar pages link to cluster articles. This architecture tells Google which pages matter most and accelerates ranking for your most commercial terms.</p>
+<p><strong>Do not pursue backlinks aggressively at this stage.</strong> Backlinks matter eventually, but at six months, your content is not yet strong enough to earn links at scale. Focus on creating content worth linking to; the links follow.</p>
+<hr />
+<h2>What a 3-Year-Old SaaS Should Do Differently</h2>
+<p>By year three, the game has shifted. You have content assets, some domain authority, and probably a better picture of what is already ranking. Now the work looks different:</p>
+<p><strong>Audit before adding.</strong> Before publishing anything new, understand what you already have. Which pages are getting impressions but not clicks? Which ones rank on page two and could be pushed to page one with a content refresh? Adding more content to a weak foundation is like pouring water into a leaky bucket.</p>
+<p><strong>Target commercial-intent terms more aggressively.</strong> Your ICP at this stage has likely heard of your category. They are searching &quot;[your category] best tools&quot; or &quot;[competitor] alternative.&quot; These terms convert at higher rates and should be prioritised over purely informational content.</p>
+<p><strong>Invest in conversion rate optimisation alongside SEO.</strong> Traffic that does not convert is a cost, not an asset. By year three, if organic traffic is growing but trial signups are flat, the problem is probably the page, not the keyword.</p>
+<p><strong>Build or commission competitor comparison pages.</strong> Searches like &quot;[Competitor] vs [Your Product]&quot; have high commercial intent and are often easier to rank for than generic category terms. These pages also serve your sales team as objection-handling assets.</p>
+<hr />
+<h2>DIY SEO or Hire Someone? The Honest Answer</h2>
+<p>At the pre-PMF and early post-PMF stages, DIY SEO is often the right call. You cannot brief an agency or freelancer to write for an ICP you have not yet defined. And the foundation-setting work, technical basics, keyword research, site structure, can be done without specialist help if you are willing to learn.</p>
+<p>The case for bringing in external expertise gets stronger once you have content producing results. At that point, you need someone who can interpret the data, identify gaps, and build on what works, rather than start from scratch.</p>
+<p>A productised audit at this stage gives you a clear picture of where you stand before you commit ongoing spend. That is a better use of budget than months of retainer work on a site that has unresolved structural problems.</p>
+<hr />
+<h2>FAQ</h2>
+<h3>How long does it take to see results from SEO for a SaaS?</h3>
+<p>For a new domain with no existing authority, expect six to twelve months before meaningful organic traffic arrives. In competitive categories, eighteen months is realistic. The timeline shortens significantly if you are targeting long-tail, low-competition keywords first and building domain authority steadily through quality content and genuine backlinks.</p>
+<h3>Should a SaaS startup use paid ads instead of SEO?</h3>
+<p>Paid and organic serve different roles. Paid delivers immediate traffic with immediate cost; organic delivers compounding traffic with delayed payoff. Early-stage companies often need paid for rapid validation and cash flow, but relying on paid only leaves you exposed to rising CPCs over time. The strongest SaaS companies build both channels, with SEO maturing as the business scales.</p>
+<h3>What is the biggest SEO mistake early-stage SaaS founders make?</h3>
+<p>Writing content before the ICP is defined. The second biggest is targeting high-volume keywords that are too competitive for a new domain. Both mistakes produce content that ranks for nothing or attracts the wrong traffic. Start narrow, go deep, and expand once you have traction.</p>
+<h3>Is SaaS SEO different from traditional SEO?</h3>
+<p>The core mechanics are the same, but the content strategy differs significantly. SaaS buyers move through longer consideration cycles, research more thoroughly, and rely on comparison content, integration guides, and ROI justification in ways that product or local businesses do not. The keyword clusters you target and the content formats that convert are different as a result.</p>
+<h3>What does a SaaS SEO audit actually cover?</h3>
+<p>A good audit covers technical site health, on-page optimisation, keyword mapping against your ICP, internal link structure, backlink profile, and competitor gap analysis. The goal is not a list of problems to fix; it is a prioritised action plan tied to business outcomes.</p>
+<hr />
+<p>The decision of when to start SEO for your SaaS is not really about timing. It is about readiness. Build the foundation early, wait for PMF confirmation before scaling content, and make sure your ICP is defined precisely enough that you know what to write and for whom. If you want an outside view of where your site stands before committing to an ongoing strategy, an <a href="https://illucrum.com/audits/saas-seo-audit">SEO audit for SaaS</a> is the logical starting point.</p>
+
+  
+<aside id="author" aria-label="About the author">
+  <img src="/static/img/szymon-small.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+  <div>
+    <p>Written by</p>
+    <p><a href="/about/">Szymon Kokot</a></p>
+    <p>Szymon runs Illucrum, an independent SEO audit service for small and medium-sized businesses. He worked as a software developer before moving into SEO, built the free Bulk SEO Checker on this site, and carries out and writes every Illucrum audit himself.</p>
+    <p>
+      <a href="/about/">More about Szymon</a>
+      <a href="/audits/">The six audits</a>
+      <a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a>
+    </p>
+  </div>
+</aside>
+
+</div>
+<section id="related" class="posts paper">
+  <hgroup>
+    <p>Keep reading</p>
+    <h2>Related <em>articles</em></h2>
+  </hgroup>
+  
+<article>
+  <h3><a href="/blog/saas-seo-checklist/">SaaS SEO Checklist (2026): 54 Checks for Software Websites</a></h3>
+  <p>54 checks for software marketing sites: rendering, the app subdomain, pricing and feature pages, funnel keywords, review platforms and AI recommendations.</p>
+  <ul>
+    <li>Updated <time datetime="2026-09-26">Sep 26, 2026</time></li>
+    <li>30 min read</li>
+  </ul>
+</article>
+
+  
+<article>
+  <h3><a href="/blog/saas-seo-audit-vs-general-seo-audit/">SaaS SEO Audit vs General SEO Audit: What's Different?</a></h3>
+  <p>What a SaaS audit adds: rendering, the app subdomain, pricing and feature pages, funnel keywords and review platforms, and when a general audit is enough.</p>
+  <ul>
+    <li>Updated <time datetime="2026-09-26">Sep 26, 2026</time></li>
+    <li>6 min read</li>
+  </ul>
+</article>
+
+  
+<article>
+  <h3><a href="/blog/seo-audit-vs-seo-retainer/">SEO Audit vs SEO Retainer: Which Should You Start With?</a></h3>
+  <p>A one-off diagnosis against ongoing monthly work: cost, output and commitment compared, with survey data on retainer prices and when each makes sense.</p>
+  <ul>
+    <li>Updated <time datetime="2026-09-26">Sep 26, 2026</time></li>
+    <li>6 min read</li>
+  </ul>
+</article>
+
+  <p><a href="/blog/other/">All seven articles</a></p>
+</section>
+
+<section id="contact">
+  <h2>Questions about <em>your own site?</em></h2>
+  <p>Send the address and what you'd like to know. I'll reply myself.</p>
+  <address>
+    t.$templates/cta-button.html
+    <a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a>
+  </address>
+</section>
+
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="Illucrum" loading="lazy">
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40"
+      data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img
+          src="/static/img/social/linkedin.svg" alt="LinkedIn profile" /></a>
+      <a href="https://wa.me/15122035993" target="_blank" rel="noopener"><img src="/static/img/social/whatsapp.svg"
+          alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg"
+          alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Audits</h5>
+    <ul>
+      <li><a href="/audits/saas-seo-audit/">SaaS SEO audit</a></li>
+      <li><a href="/audits/ecommerce-seo-audit/">E-commerce SEO audit</a></li>
+      <li><a href="/audits/seo-audit/">Website SEO audit</a></li>
+      <li><a href="/audits/technical-seo-audit/">Technical SEO audit</a></li>
+      <li><a href="/audits/local-seo-audit/">Local business SEO audit</a></li>
+      <li><a href="/audits/geo-audit/">GEO audit</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Company</h5>
+    <ul>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/process/">Process</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/seo-facts/">SEO facts</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Free tool</h5>
+    <ul>
+      <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
+      <li><a href="/tools/bulk-checker/meta-tag-check/">Meta Tag Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/heading-check/">Heading Check</a></li>
+      <li><a href="/tools/bulk-checker/alt-text-check/">Alt Text Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/word-count-check/">Word Count Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/canonical-check/">Canonical Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/open-graph-check/">Open Graph Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/schema-check/">Schema Check</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Legal</h5>
+    <ul>
+      <li><a href="/legal/terms/">Terms</a></li>
+      <li><a href="/legal/privacy/">Privacy</a></li>
+      <li><a href="/legal/cookies/">Cookies</a></li>
+      <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+      <li><a href="/legal/accessibility/">Accessibility</a></li>
+      <li><a href="#" data-consent-open>Manage cookies</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +1 (512) 203-5993</span>
+  </small>
+</footer>
+
+<!-- Google Tag Manager GTM-MRLGLHC5 (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Cookies on this site" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">Cookies on this site</p>
+    <p class="ic-consent__body">Cookies keep the site working and show how it's used. With your permission, they also measure ads on Google and Reddit. You can change your choice any time from the footer. <a href="/legal/cookies/">Cookie policy</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferences</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Strictly necessary</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
+        <p class="ic-consent__pref-desc">Needed for the site to work, so they can't be turned off.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analytics</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
+        <p class="ic-consent__pref-desc">Shows how visitors use the site (Google Analytics 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Advertising</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
+        <p class="ic-consent__pref-desc">Measures and personalizes Google Ads and Reddit Ads campaigns.</p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

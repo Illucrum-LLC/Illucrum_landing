@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/img/logo-ico.png">
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.cdnfonts.com/css/dubai" rel="stylesheet">
+
+<link rel="stylesheet" href="/static/css/illucrum.css">
+
+<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
+     Everything non-essential is denied until the user opts in via the
+     cookie banner (see /static/js/consent.js). -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', '');//GTM-MRLGLHC5</script>
+<!-- End Google Tag Manager -->
+
+<script defer src="/static/js/consent.js"></script>
+<script defer src="/static/js/lead-form.js"></script>
+
+<script>
+    var DEFAULTS = {
+      title: "Get in touch",
+      subtitle: "Tell me a little about your site. I'll reply by email, usually within one working day.",
+      button: "Send"
+    };
+
+    // Fields rendered in order. `required` drives client-side validation.
+    var FIELDS = [
+      { name: "name", label: "Name", type: "text", required: true, autocomplete: "name" },
+      { name: "company", label: "Company", type: "text", required: true, autocomplete: "organization" },
+      { name: "website", label: "Website", type: "text", required: true, autocomplete: "url", placeholder: "https://" },
+      { name: "phone", label: "Phone", type: "tel", required: false, autocomplete: "tel" },
+      { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }
+    ];
+</script>
+
+<title>Technical SEO Audit vs Full SEO Audit | Illucrum</title>
+<meta name="description" content="Technical SEO audit vs full SEO audit: what each covers, where they overlap and which one your site needs, with a side-by-side comparison.">
+<meta name="author" content="Szymon Kokot">
+
+<link rel="canonical" href="https://illucrum.com/blog/technical-seo-audit-vs-full-seo-audit/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://illucrum.com/blog/technical-seo-audit-vs-full-seo-audit/">
+<meta property="og:site_name" content="Illucrum">
+<meta property="og:title" content="Technical SEO Audit vs Full SEO Audit">
+<meta property="og:description" content="Technical SEO audit vs full SEO audit: what each covers, where they overlap and which one your site needs, with a side-by-side comparison.">
+<meta property="og:image" content="https://illucrum.com/static/img/og/home.png">
+<meta property="article:published_time" content="2026-06-16">
+<meta property="article:modified_time" content="2026-09-26">
+<meta property="article:author" content="https://illucrum.com/about/">
+<meta property="article:section" content="Comparisons">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Technical SEO Audit vs Full SEO Audit">
+<meta name="twitter:description" content="Technical SEO audit vs full SEO audit: what each covers, where they overlap and which one your site needs, with a side-by-side comparison.">
+<meta name="twitter:image" content="https://illucrum.com/static/img/og/home.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://illucrum.com/blog/technical-seo-audit-vs-full-seo-audit/#article",
+      "mainEntityOfPage": "https://illucrum.com/blog/technical-seo-audit-vs-full-seo-audit/",
+      "url": "https://illucrum.com/blog/technical-seo-audit-vs-full-seo-audit/",
+      "headline": "Technical SEO Audit vs Full SEO Audit: Which One Do You Need?",
+      "description": "Technical SEO audit vs full SEO audit: what each covers, where they overlap and which one your site needs, with a side-by-side comparison.",
+      "image": "https://illucrum.com/static/img/og/home.png",
+      "datePublished": "2026-06-16",
+      "dateModified": "2026-09-26",
+      "inLanguage": "en-US",
+      "articleSection": "Comparisons",
+      "author": { "@id": "https://illucrum.com/about/#person" },
+      "publisher": { "@id": "https://illucrum.com/#organization" },
+      "isPartOf": { "@id": "https://illucrum.com/blog/#blog" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://illucrum.com/about/#person",
+      "name": "Szymon Kokot",
+      "url": "https://illucrum.com/about/",
+      "jobTitle": "SEO consultant",
+      "image": "https://illucrum.com/static/img/szymon.png",
+      "worksFor": { "@id": "https://illucrum.com/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://illucrum.com/#organization",
+      "name": "Illucrum",
+      "url": "https://illucrum.com/",
+      "logo": "https://illucrum.com/static/img/logo.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://illucrum.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://illucrum.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Comparisons", "item": "https://illucrum.com/blog/comparisons/" },
+        { "@type": "ListItem", "position": 4, "name": "Technical SEO Audit vs Full SEO Audit: Which One Do You Need?", "item": "https://illucrum.com/blog/technical-seo-audit-vs-full-seo-audit/" }
+      ]
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+<header>
+  <a href="/"><img src="/static/img/logo.png" alt="Illucrum" width="217" height="52"></a>
+  <button type="button" popovertarget="menu" aria-label="Menu"></button>
+  <nav id="menu" aria-label="Main" popover>
+    <ul>
+      <li><a href="/audits/">Audits</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/process/">Process</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li>
+<a href="#contact" data-lead-open data-lead-source="header">
+  Get in touch
+</a>
+</li>
+    </ul>
+  </nav>
+</header>
+<main>
+<div class="article">
+  
+<nav aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/blog/comparisons/">Comparisons</a></li>
+  </ol>
+</nav>
+<p>
+  <span>By <a href="#author">Szymon Kokot</a></span>
+  <span>Published <time datetime="2026-06-16">Jun 16, 2026</time></span>
+  <span>Updated <time datetime="2026-09-26">Sep 26, 2026</time></span>
+  <span>8 min read</span>
+</p>
+
+  <h1>Technical SEO Audit vs Full SEO Audit: Which One Do You Need?</h1>
+<p>A technical SEO audit checks whether search engines can crawl, render and index a website. A full SEO audit checks that too, then asks why the site ranks where it does: content, keywords, backlinks, competitors, trust and conversion. The two sound like the same product in two sizes, but they answer different questions, and buying the wrong one leaves the real problem untouched. This article explains what each covers, where they overlap and how to tell which one your site needs.</p>
+<p><strong>In short:</strong> A technical SEO audit answers &quot;can search engines use my site?&quot; and goes deep on crawling, indexing, rendering, speed, security and AI crawler access. A full SEO audit answers &quot;why does my site rank where it does?&quot; and covers the technical layer more briefly, plus content, keywords, links, competitors, trust and conversion. Choose technical for migrations and unexplained drops; choose full for stalled growth.</p>
+<hr />
+<h2>What is a technical SEO audit?</h2>
+<p>A technical SEO audit is a review of the machinery underneath a website: whether search engines and AI crawlers can reach its pages, read them and store them in their index. It doesn't judge whether the content is good or the keywords are right. It judges whether anything technical stands between the content and the search engine.</p>
+<p>The <a href="/audits/technical-seo-audit/">Illucrum Technical SEO Audit</a> checks 36 points in nine areas:</p>
+<ol>
+<li><strong>Crawlability and indexation:</strong> robots.txt, sitemaps, index coverage, status codes, redirects, crawl budget and orphan pages.</li>
+<li><strong>Site architecture and URLs:</strong> URL structure, canonical tags, internal linking, click depth and pagination.</li>
+<li><strong>Rendering and JavaScript:</strong> whether content exists before scripts run, render-blocking files and lazy loading.</li>
+<li><strong>Speed and Core Web Vitals:</strong> page speed, loading, responsiveness, images, caching and third-party scripts.</li>
+<li><strong>Mobile and page experience:</strong> mobile rendering, tap targets and intrusive pop-ups.</li>
+<li><strong>Security and HTTPS:</strong> certificates, mixed content, security headers and exposed files.</li>
+<li><strong>Structured data and directives:</strong> schema validity, robots directives and social metadata.</li>
+<li><strong>International and parameter handling:</strong> hreflang, domain variants and parameter URLs.</li>
+<li><strong>Machine and AI access:</strong> AI crawler rules, machine-readable content and entity markup.</li>
+</ol>
+<p>The goal is narrow and important. If this layer is broken, nothing built on top of it can rank, because the page never reaches the index in a usable state.</p>
+<h2>What is a full SEO audit?</h2>
+<p>A full SEO audit is a review of everything that decides whether a site is found and chosen in search. It treats technical health as the foundation rather than the whole building, and adds the factors that decide whether a technically sound site actually ranks and turns visits into inquiries.</p>
+<p>At Illucrum, a full audit is one of the site-type audits, each 54 points long: the <a href="/audits/seo-audit/">Website SEO Audit</a> for service businesses and B2B firms, the <a href="/audits/saas-seo-audit/">SaaS SEO Audit</a>, the <a href="/audits/ecommerce-seo-audit/">E-commerce SEO Audit</a> and the <a href="/audits/local-seo-audit/">Local Business SEO Audit</a>. Each includes a technical section of 7 to 12 points, then adds:</p>
+<ul>
+<li><strong>On-page SEO:</strong> titles, descriptions, headings, content quality and internal links.</li>
+<li><strong>Keywords:</strong> what the site ranks for, the nearest opportunities and pages competing with each other.</li>
+<li><strong>Backlinks:</strong> which sites link to yours, how healthy those links look and the gap to competitors.</li>
+<li><strong>Competitors:</strong> the page types and content depth of the sites that outrank you.</li>
+<li><strong>Trust and conversion:</strong> whether visitors can see who is behind the business, contact it and take the next step.</li>
+<li><strong>AI search visibility:</strong> whether AI Overviews and assistants such as ChatGPT cite or recommend the business.</li>
+</ul>
+<p>A site-type audit also adds the checks specific to its kind of site: pricing and feature pages for software, catalog and product pages for stores, the Business Profile and reviews for local businesses.</p>
+<h2>What is the difference between a technical and a full SEO audit?</h2>
+<p>The difference between a technical SEO audit and a full SEO audit is depth against breadth. The technical audit goes deeper on one layer; the full audit covers every layer, the technical one included, in less depth.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Technical SEO audit</th>
+<th>Full SEO audit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Main question</strong></td>
+<td>Can search engines use my site?</td>
+<td>Why does my site rank where it does?</td>
+</tr>
+<tr>
+<td><strong>Illucrum points</strong></td>
+<td>36</td>
+<td>54 (51 for a website with no local presence)</td>
+</tr>
+<tr>
+<td><strong>Technical depth</strong></td>
+<td>36 technical points</td>
+<td>7 to 12 technical points</td>
+</tr>
+<tr>
+<td><strong>Content and keywords</strong></td>
+<td>Not covered</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td><strong>Backlinks and competitors</strong></td>
+<td>Not covered</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td><strong>Trust and conversion</strong></td>
+<td>Not covered</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td><strong>AI search</strong></td>
+<td>Crawler access and machine-readable content</td>
+<td>Crawler access plus whether assistants cite and recommend you</td>
+</tr>
+<tr>
+<td><strong>Best for</strong></td>
+<td>Migrations, redesigns, unexplained drops, developer briefs</td>
+<td>Stalled growth, new SEO efforts, competitive markets</td>
+</tr>
+</tbody>
+</table>
+<p>The checks a full audit leaves to the technical audit are the specialist ones: crawl budget and index bloat, orphan pages, click depth, render-blocking files, lazy loading, caching and CDN setup, third-party script weight, security headers, exposed files, host and protocol consistency and parameter handling. For most small sites these are rarely the reason a site doesn't rank. For large sites, and after a migration, they often are.</p>
+<h2>When do you need a technical SEO audit?</h2>
+<p>You need a technical SEO audit when the likely cause of the problem is mechanical. Sudden changes usually break something technical: a sitemap, a redirect map, a <code>noindex</code> tag copied from the staging site to the live one, a new JavaScript framework that hides content from crawlers.</p>
+<p>A technical SEO audit is the right choice when:</p>
+<ul>
+<li><strong>You are about to migrate or have just migrated</strong> to a new domain, platform or CMS.</li>
+<li><strong>You launched a redesign</strong> and traffic fell in the following weeks.</li>
+<li><strong>Traffic dropped suddenly</strong> with no content change and no obvious algorithm update to blame.</li>
+<li><strong>Your developer needs a precise list</strong> of technical fixes, in order, without keyword or content recommendations.</li>
+<li><strong>The site is large</strong>, with thousands of URLs, filters or parameters, where crawl budget and index bloat matter.</li>
+</ul>
+<h2>When do you need a full SEO audit?</h2>
+<p>You need a full SEO audit when the site works but doesn't grow. Stalled rankings rarely come from the plumbing alone. They come from content that isn't competitive, pages aimed at searches nobody makes, a link gap that no technical fix can close, or pages that rank but don't convince anyone to get in touch.</p>
+<p>A full SEO audit is the right choice when:</p>
+<ul>
+<li><strong>Traffic has plateaued</strong> and you don't know why.</li>
+<li><strong>You are starting SEO</strong> and want to know where the site stands across every area.</li>
+<li><strong>Competitors outrank you</strong> and you want to know what they have that you don't.</li>
+<li><strong>You haven't had any SEO review</strong> in the last year or more.</li>
+<li><strong>You want AI visibility checked</strong> as part of the whole picture, not in isolation.</li>
+</ul>
+<p>There is an honest limit worth stating. A technical audit can give a site a clean result and the site can still rank nowhere. Technical SEO gets a site into the index; it doesn't get it chosen. If you aren't sure which situation you are in, the full audit covers the technical basics and the content, authority and conversion gaps in one pass.</p>
+<h2>Why does prioritization matter more than the checklist?</h2>
+<p>An audit is only as useful as its order of fixes. The cheapest kind of technical audit is a tool export: a crawler runs over the site and produces hundreds of &quot;errors&quot; with no sense of which ones matter. A redirect chain on a forgotten old URL and a <code>noindex</code> tag on the main service page appear side by side, with the same weight.</p>
+<p>The value of either audit is the judgment applied to the findings. Before you pay for any audit, check whether it comes with a prioritized fix list or only findings. Every Illucrum report orders its fixes the same way: anything that blocks crawling, indexing or AI access first, then other critical findings, then quick fixes, then the rest. If you'd rather work through the technical layer yourself first, the <a href="/blog/technical-seo-checklist/">technical SEO checklist</a> gives all 36 checks with the free tools to run them.</p>
+<h2>Frequently asked questions</h2>
+<h3>Is a technical SEO audit enough on its own?</h3>
+<p>A technical SEO audit is enough when a mechanical fault is holding back an otherwise strong site, for example after a migration. It isn't enough when the site is technically sound and still doesn't rank, because the causes then lie in content, keywords, links or trust, which a technical audit doesn't examine.</p>
+<h3>Does a full SEO audit include a technical audit?</h3>
+<p>A full SEO audit includes the technical basics, but not a complete technical audit. Illucrum's site-type audits have 7 to 12 technical points out of 54; the Technical SEO Audit has 36. The full audit covers what most sites need; the technical audit adds the specialist checks large or recently migrated sites need.</p>
+<h3>Which audit should I get after a website migration?</h3>
+<p>Get a technical SEO audit after a website migration. Migrations are the most common cause of self-inflicted SEO damage: redirects get missed, URLs change, templates lose tags and staging settings reach the live site. A technical audit shortly after launch catches these before they erode rankings built over years.</p>
+<h3>Is a technical SEO audit cheaper than a full SEO audit?</h3>
+<p>At Illucrum the Technical SEO Audit costs less than the site-type audits, because it covers 36 points rather than 54 and leaves out keyword, content and competitor research. Each audit has one fixed price, listed on the <a href="/pricing/">pricing page</a>.</p>
+<hr />
+<p>The two audits answer different questions: a technical SEO audit asks whether search engines can use the site, a full SEO audit asks why it ranks where it does. Start with the symptom. A sudden drop or a migration points to technical; a slow plateau points to full. The <a href="/audits/">audits page</a> lists all six Illucrum audits side by side if you want to compare them.</p>
+
+  
+<aside id="author" aria-label="About the author">
+  <img src="/static/img/szymon-small.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+  <div>
+    <p>Written by</p>
+    <p><a href="/about/">Szymon Kokot</a></p>
+    <p>Szymon runs Illucrum, an independent SEO audit service for small and medium-sized businesses. He worked as a software developer before moving into SEO, built the free Bulk SEO Checker on this site, and carries out and writes every Illucrum audit himself.</p>
+    <p>
+      <a href="/about/">More about Szymon</a>
+      <a href="/audits/">The six audits</a>
+      <a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a>
+    </p>
+  </div>
+</aside>
+
+</div>
+<section id="related" class="posts paper">
+  <hgroup>
+    <p>Keep reading</p>
+    <h2>Related <em>articles</em></h2>
+  </hgroup>
+  
+<article>
+  <h3><a href="/blog/technical-seo-checklist/">Technical SEO Checklist (2026): 36 Checks for Any Website</a></h3>
+  <p>36 checks on crawling, indexing, rendering, speed, mobile, security, structured data, international setup and AI crawler access. No keywords, no content.</p>
+  <ul>
+    <li>Updated <time datetime="2026-09-26">Sep 26, 2026</time></li>
+    <li>23 min read</li>
+  </ul>
+</article>
+
+  
+<article>
+  <h3><a href="/blog/seo-checklist/">SEO Checklist (2026): 54 Checks You Can Run Yourself</a></h3>
+  <p>The 54 checks behind a full website SEO audit, from indexing and titles to backlinks, trust signals and AI search, with the free tool for each.</p>
+  <ul>
+    <li>Updated <time datetime="2026-09-26">Sep 26, 2026</time></li>
+    <li>33 min read</li>
+  </ul>
+</article>
+
+  
+<article>
+  <h3><a href="/blog/seo-audit-vs-diy/">SEO Audit vs DIY: Should You Audit Your Own Site?</a></h3>
+  <p>You can audit your own site with free tools and a checklist. What it takes, how long it takes, and where a do-it-yourself audit tends to break down.</p>
+  <ul>
+    <li>Updated <time datetime="2026-09-26">Sep 26, 2026</time></li>
+    <li>6 min read</li>
+  </ul>
+</article>
+
+  <p><a href="/blog/comparisons/">All eight comparisons</a></p>
+</section>
+
+<section id="contact">
+  <h2>Questions about <em>your own site?</em></h2>
+  <p>Send the address and what you'd like to know. I'll reply myself.</p>
+  <address>
+    t.$templates/cta-button.html
+    <a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a>
+  </address>
+</section>
+
+</main>
+<footer>
+  <section>
+    <img src="/static/img/logo.png" alt="Illucrum" loading="lazy">
+    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40"
+      data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
+    <div>
+      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow"><img
+          src="/static/img/social/linkedin.svg" alt="LinkedIn profile" /></a>
+      <a href="https://wa.me/15122035993" target="_blank" rel="noopener"><img src="/static/img/social/whatsapp.svg"
+          alt="Message on Whatsapp" /></a>
+      <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener"><img src="/static/img/social/telegram.svg"
+          alt="Message on Telegram" /></a>
+    </div>
+  </section>
+
+  <section>
+    <h5>Audits</h5>
+    <ul>
+      <li><a href="/audits/saas-seo-audit/">SaaS SEO audit</a></li>
+      <li><a href="/audits/ecommerce-seo-audit/">E-commerce SEO audit</a></li>
+      <li><a href="/audits/seo-audit/">Website SEO audit</a></li>
+      <li><a href="/audits/technical-seo-audit/">Technical SEO audit</a></li>
+      <li><a href="/audits/local-seo-audit/">Local business SEO audit</a></li>
+      <li><a href="/audits/geo-audit/">GEO audit</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Company</h5>
+    <ul>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/process/">Process</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/seo-facts/">SEO facts</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Free tool</h5>
+    <ul>
+      <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
+      <li><a href="/tools/bulk-checker/meta-tag-check/">Meta Tag Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/heading-check/">Heading Check</a></li>
+      <li><a href="/tools/bulk-checker/alt-text-check/">Alt Text Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/word-count-check/">Word Count Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/canonical-check/">Canonical Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/open-graph-check/">Open Graph Check</a>
+      </li>
+      <li><a href="/tools/bulk-checker/schema-check/">Schema Check</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h5>Legal</h5>
+    <ul>
+      <li><a href="/legal/terms/">Terms</a></li>
+      <li><a href="/legal/privacy/">Privacy</a></li>
+      <li><a href="/legal/cookies/">Cookies</a></li>
+      <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+      <li><a href="/legal/accessibility/">Accessibility</a></li>
+      <li><a href="#" data-consent-open>Manage cookies</a></li>
+    </ul>
+  </section>
+
+  <small>
+    <span>&copy; Illucrum 2026 &middot; +1 (512) 203-5993</span>
+  </small>
+</footer>
+
+<!-- Google Tag Manager GTM-MRLGLHC5 (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=" height="0" width="0"
+    style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Cookies on this site" aria-modal="false" hidden>
+  <div class="ic-consent__panel">
+    <span class="ic-consent__eyebrow">Illucrum</span>
+    <p class="ic-consent__title">Cookies on this site</p>
+    <p class="ic-consent__body">Cookies keep the site working and show how it's used. With your permission, they also measure ads on Google and Reddit. You can change your choice any time from the footer. <a href="/legal/cookies/">Cookie policy</a>.</p>
+    <div class="ic-consent__actions">
+      <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
+      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button-->
+      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Preferences</button>
+    </div>
+    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Strictly necessary</span>
+        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
+        <p class="ic-consent__pref-desc">Needed for the site to work, so they can't be turned off.</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Analytics</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
+        <p class="ic-consent__pref-desc">Shows how visitors use the site (Google Analytics 4).</p>
+      </div>
+      <div class="ic-consent__pref">
+        <span class="ic-consent__pref-label">Advertising</span>
+        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
+        <p class="ic-consent__pref-desc">Measures and personalizes Google Ads and Reddit Ads campaigns.</p>
+      </div>
+      <div class="ic-consent__actions">
+        <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
