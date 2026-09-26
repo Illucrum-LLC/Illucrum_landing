@@ -46,7 +46,7 @@
 <script>
     var DEFAULTS = {
       title: "Get in touch",
-      subtitle: "Tell us about you and we'll be in touch shortly.",
+      subtitle: "Tell me a little about your site. I'll reply by email, usually within one working day.",
       button: "Send"
     };
 
@@ -59,27 +59,27 @@
       { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }
     ];
 </script>
-<title>Bulk SEO Checker — 25 URLs to CSV, No Signup | Illucrum</title>
+<title>Bulk SEO Checker: 25 URLs to CSV, No Signup | Illucrum</title>
 <meta name="description" content="Paste up to 25 URLs and get every title, meta description, heading, word count, link, image and schema block back as CSV. Free, no account, nothing to install." />
 
 
 <link rel="canonical" href="https://illucrum.com/#slug">
-<link rel="alternate" hreflang="en-US" href="https://illucrum.com/c.us.#slug">
-<link rel="alternate" hreflang="pl-PL" href="https://illucrum.com/pl/c.pl.#slug">
-<link rel="alternate" hreflang="es-ES" href="https://illucrum.com/es/c.es.#slug">
-<link rel="alternate" hreflang="x-default" href="https://illucrum.com/c.us.#slug">
+<link rel="alternate" hreflang="en-US" href="https://illucrum.com/us.#slug">
+<link rel="alternate" hreflang="pl-PL" href="https://illucrum.com/pl/pl.#slug">
+<link rel="alternate" hreflang="es-ES" href="https://illucrum.com/es/es.#slug">
+<link rel="alternate" hreflang="x-default" href="https://illucrum.com/us.#slug">
 
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://illucrum.com/toolsbulk-checker">
 <meta property="og:site_name" content="Illucrum">
-<meta property="og:title" content="Bulk SEO Checker — 25 URLs to CSV, No Signup | Illucrum">
+<meta property="og:title" content="Bulk SEO Checker: 25 URLs to CSV, No Signup | Illucrum">
 <meta property="og:description" content="Paste up to 25 URLs and get every title, meta description, heading, word count, link, image and schema block back as CSV. Free, no account, nothing to install.">
 <meta property="og:image" content="https://illucrum.com/static/img/og/bulk.png">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bulk SEO Checker — 25 URLs to CSV, No Signup | Illucrum">
+<meta name="twitter:title" content="Bulk SEO Checker: 25 URLs to CSV, No Signup | Illucrum">
 <meta name="twitter:description" content="Paste up to 25 URLs and get every title, meta description, heading, word count, link, image and schema block back as CSV. Free, no account, nothing to install.">
 <meta name="twitter:image" content="https://illucrum.com/static/img/og/bulk.png">
 
@@ -95,7 +95,7 @@
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any modern web browser",
   "url": "https://illucrum.com/tools/bulk-checker/",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CURRENCY_CODE" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "publisher": { "@id": "https://illucrum.com/#organization" }
 }
 </script>
@@ -138,14 +138,13 @@
       <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
       <!-- li><a href="https://blog.illucrum.com">Blog</a></li -->
       <li>
-<a data-lead-open data-lead-source="#source">
+<a href="#contact" data-lead-open data-lead-source="#source">
   Get in touch
 </a></li>
     </ul>
   </nav>
 </header>
-<main><main>
-<header>
+<main><header>
   <div>
     <hgroup>
       <p>Free · no account · nothing to install</p>
@@ -157,7 +156,7 @@
       <a href="#limits">What it will not do</a>
     </p>
     <ul>
-      <li>Two things worth knowing before you start: it reads the HTML your server sends, so content drawn by JavaScript will not appear — and there is no score out of a hundred here. You get the raw rows and decide what they mean.</li>
+      <li>Worth knowing: it reads the HTML your server sends, so content added by JavaScript won't appear. There's no overall score either; you get the raw data and decide what it means.</li>
     </ul>
   </div>
   <figure>
@@ -296,7 +295,7 @@
   <hgroup>
     <h2>Four steps, <em>one of them on a server</em></h2>
   </hgroup>
-  <p>We would rather explain the one server-side step than pretend it is not there.</p>
+  <p>Only one step runs on a server. Here's what happens at each.</p>
 
   <ol>
     <li>
@@ -305,7 +304,7 @@
     </li>
     <li>
       <h3>A relay fetches the HTML</h3>
-      <p>Browsers refuse to fetch pages from other domains. A small Cloudflare Worker on our domain requests each page and passes the HTML back. It stores nothing and logs nothing.</p>
+      <p>Browsers refuse to fetch pages from other domains. A small Cloudflare Worker on this site's domain requests each page and passes the HTML back. It stores nothing and logs nothing.</p>
     </li>
     <li>
       <h3>Your browser does the work</h3>
@@ -319,9 +318,9 @@
 </section>
 <section id="report">
   <hgroup>
-    <h2>Seven tables. <em>No score out of a hundred.</em></h2>
+    <h2>Seven tables, <em>each one exportable</em></h2>
   </hgroup>
-  <p>Every other free checker hands you a number it invented. You get the rows the number would have been made from, and you decide what they mean.</p>
+  <p>Each table covers one part of the page and downloads as its own CSV. There's no overall score, just the data.</p>
 
   <ul>
     <li>
@@ -330,11 +329,11 @@
     </li>
     <li>
       <h3>Headings</h3>
-      <p>Every h1 through h6 in document order, with its level, position and character length. This is where a broken outline becomes obvious, four h1s, or an h3 with no h2 above it.</p>
+      <p>Every h1 through h6 in document order, with its level, position and character length. A broken outline stands out here: four h1s, or an h3 with no h2 above it.</p>
     </li>
     <li>
       <h3>Words</h3>
-      <p>The 20 most repeated words on each page with counts and share of total. Useful for the plain question most tools dance around: is this page about what you think it is about?</p>
+      <p>The 20 most repeated words on each page, with counts and share of total. A quick way to check that a page is about what you think it's about.</p>
     </li>
     <li>
       <h3>Links</h3>
@@ -358,12 +357,12 @@
   <hgroup>
     <h2>What this tool <em>does not do</em></h2>
   </hgroup>
-  <p>Every one of these is a real limitation, not a teaser for a paid version. There is no paid version of this tool.</p>
+  <p>Worth knowing before you rely on the results.</p>
 
   <ul>
     <li>
       <h3>It does not run JavaScript</h3>
-      <p>Static HTML only, exactly as it arrives from the server. If your site draws its content client-side, the tables will look alarmingly empty. That is worth knowing in itself, but it is not a verdict on your site.</p>
+      <p>Static HTML only, exactly as it arrives from the server. If your site builds its content in the browser, the tables will come back mostly empty. That's useful to know, but it isn't a verdict on your site.</p>
     </li>
     <li>
       <h3>It does not discover pages</h3>
@@ -371,7 +370,7 @@
     </li>
     <li>
       <h3>It does not score anything</h3>
-      <p>No number out of 100, no letter grade, no colour-coded verdict. Those numbers are invented, and inventing one here would make the raw data less trustworthy.</p>
+      <p>No score out of 100, no grade and no traffic lights. You get the data as it is.</p>
     </li>
     <li>
       <h3>It does not check rankings, backlinks or search volume</h3>
@@ -394,8 +393,8 @@
 
   <div>
     <details>
-      <summary>The URL goes to our relay, and nowhere else</summary>
-      <p>To fetch a page, its address has to reach a server. Ours receives it, makes one request, and returns the HTML. It writes nothing to a database, a log file or an analytics tool.</p>
+      <summary>The URL goes to the relay, and nowhere else</summary>
+      <p>To fetch a page, its address has to reach a server. The relay receives it, makes one request, and returns the HTML. It writes nothing to a database, a log file or an analytics tool.</p>
     </details>
     <details>
       <summary>The page content never leaves your browser</summary>
@@ -403,35 +402,35 @@
     </details>
     <details>
       <summary>No cookies, no analytics, no account</summary>
-      <p>This page sets no cookies and stores nothing in your browser. There is no tracking script on it, and no sign-up. Close the tab and the results are gone, download the CSVs first if you want to keep them.</p>
+      <p>This page sets no cookies and stores nothing in your browser. There is no tracking script on it, and no sign-up. Close the tab and the results are gone, so download the CSVs first if you want to keep them.</p>
     </details>
     <details>
       <summary>The CSVs are made on your machine</summary>
       <p>Each export is assembled in the browser and handed straight to your downloads folder. No file is generated or stored on a server.</p>
     </details>
     <details>
-      <summary>One exception, stated plainly</summary>
+      <summary>One exception</summary>
       <p>This page loads its typeface from Google Fonts, so Google sees your IP address, as it does on any site that does the same. If that matters to you, the tool works fine with the font blocked.</p>
     </details>
   </div>
 </section>
 <section id="faq" class="paper">
   <hgroup>
-    <h2>Reasonable <em>questions</em></h2>
+    <h2>Common <em>questions</em></h2>
   </hgroup>
 
   <div>
     <details>
       <summary>Why does it need a server at all?</summary>
-      <p>Browser security forbids a page on one domain from reading a page on another. It is called the same-origin policy, and it is not something a website can switch off from its own side. Any tool that claims to read arbitrary sites purely in the browser is either using someone else's relay or is not doing what it says.</p>
+      <p>Browsers don't let a page on one domain read a page on another. It's called the same-origin policy, and a website can't switch it off from its own side, so a small relay does the fetching.</p>
     </details>
     <details>
-      <summary>Can I use it on a site I do not own?</summary>
-      <p>Yes. It reads exactly what any visitor's browser would read, one page at a time, with a pause between requests. Be reasonable about it, this is a tool for looking at a handful of pages, not for pulling someone's whole site apart.</p>
+      <summary>Can I use it on a site I don't own?</summary>
+      <p>Yes. It reads exactly what any visitor's browser would read, one page at a time, with a pause between requests. It's meant for a handful of pages, not a whole site.</p>
     </details>
     <details>
       <summary>Why only 25 URLs?</summary>
-      <p>Because it runs in a browser tab. Beyond that, memory gets tight, the tables get slow, and it stops being polite to the server on the other end. If you need hundreds of pages, that is a different job and a different tool.</p>
+      <p>Because it runs in a browser tab. Beyond that, memory gets tight, the tables slow down, and it stops being polite to the server on the other end. For hundreds of pages, a desktop crawler is the better fit.</p>
     </details>
     <details>
       <summary>Does it work on a site built with React, Vue or Next.js?</summary>
@@ -439,29 +438,29 @@
     </details>
     <details>
       <summary>Why is the word count different from another tool?</summary>
-      <p>Every tool draws the line between content and boilerplate somewhere different, and none of them are wrong. Ours strips <code>nav</code>, <code>header</code>, <code>footer</code>, <code>script</code> and <code>style</code>, and prefers <code>main</code> when a page has one. Compare a page against itself over time rather than against another tool's number.</p>
+      <p>Every tool draws the line between content and boilerplate somewhere different, and none of them are wrong. This one strips <code>nav</code>, <code>header</code>, <code>footer</code>, <code>script</code> and <code>style</code>, and prefers <code>main</code> when a page has one. Compare a page against itself over time rather than against another tool's number.</p>
     </details>
     <details>
-      <summary>It is free with no account. What is the catch?</summary>
-      <p>There is no upgrade, no credit system and no email capture, so there is nothing to catch you with. We sell SEO audits at published prices, and a free tool is a reasonable way to be found by people who might one day want one. Most people who use this will never buy anything, and that is fine.</p>
+      <summary>Why is it free?</summary>
+      <p>It's the same data collection I use at the start of an audit, and it's useful on its own. There's no account, no upgrade and no email sign-up.</p>
     </details>
     <details>
       <summary>Does this replace an SEO audit?</summary>
-      <p>No, and it is not meant to. This tool tells you what is on your pages. An audit tells you which of it is a problem, why, and what to do about it, which takes judgement, not extraction. If the tables here are enough for you, use them and do not buy anything.</p>
+      <p>No. The tool shows what's on your pages. An audit works out which of it matters, why, and what to fix first. If the tables are all you need, that's fine.</p>
     </details>
   </div>
 </section>
 <section id="contact">
   <hgroup>
-    <h2>The audit is <em>the judgement part</em></h2>
+    <h2>When you want <em>the full picture</em></h2>
   </hgroup>
-  <p>This tool does the data-collection step of an Illucrum audit. The audit itself is a 54-point review of technical SEO, on-page, keywords, backlinks, competitors, local SEO and AI visibility, written up as a report you can act on yourself, hand to your developer, or give to anyone you like. The prices are published.</p>
+  <p>The checker covers the data-collection step of an audit. A full audit reviews technical SEO, content, keywords, links, competitors and AI visibility point by point, and ends in a written report with every fix in order.</p>
   <address>
     
-<a data-lead-open data-lead-source="#source">
+<a href="#contact" data-lead-open data-lead-source="#source">
   Get in touch
 </a>
-    <a href="/audits/">See what is in the audit</a>
+    <a href="/audits/">See the audits</a>
   </address>
   <p>
     <small>Other checks the same tool runs:
@@ -475,7 +474,6 @@
     </small>
   </p>
 </section>
-</main>
 <script src="/static/js/scraper.js"></script>
 </main>
 <footer>
@@ -501,26 +499,8 @@
       <li><a href="/audits/ecommerce-seo-audit/">E-commerce SEO audit</a></li>
       <li><a href="/audits/seo-audit/">Website SEO audit</a></li>
       <li><a href="/audits/technical-seo-audit/">Technical SEO audit</a></li>
-    </ul>
-  </section>
-
-  <section>
-    <h5>Compare</h5>
-    <ul>
-      <li><a
-          href="/compare\saas-vs-generic-seo-audit">SaaS vs Website</a>
-      </li>
-      <li><a
-          href="/compare\ecommerce-vs-generic-seo-audit">E-commerce vs Website</a>
-      </li>
-      <li><a
-          href="/compare\seo-audit-vs-seo-tool">Audit vs SEO tool</a>
-      </li>
-      <li><a
-          href="/compare\seo-audit-vs-seo-retainer">Audit vs retainer</a>
-      </li>
-      <li><a href="/compare\seo-audit-vs-diy">Audit vs DIY</a>
-      </li>
+      <li><a href="/audits/local-seo-audit/">Local business SEO audit</a></li>
+      <li><a href="/audits/geo-audit/">GEO audit</a></li>
     </ul>
   </section>
 
@@ -536,9 +516,9 @@
   </section>
 
   <section>
-    <h5>Tool</h5>
+    <h5>Free tool</h5>
     <ul>
-      <li><a href="/tools/bulk-checker/">Bulk Checker tool</a></li>
+      <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
       <li><a href="/tools/bulk-checker/meta-tag-check/">Meta Tag Check</a>
       </li>
       <li><a href="/tools/bulk-checker/heading-check/">Heading Check</a></li>
@@ -555,7 +535,7 @@
   </section>
 
   <section>
-    <h5>Contact &amp; Legal</h5>
+    <h5>Legal</h5>
     <ul>
       <li><a href="/legal/terms/">Terms</a></li>
       <li><a href="/legal/privacy/">Privacy</a></li>
@@ -582,11 +562,11 @@
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
-<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="We use cookies" aria-modal="false" hidden>
+<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Cookies on this site" aria-modal="false" hidden>
   <div class="ic-consent__panel">
     <span class="ic-consent__eyebrow">Illucrum</span>
-    <p class="ic-consent__title">We use cookies</p>
-    <p class="ic-consent__body">We use cookies to make the site work, to understand how it is used, and (only if you agree) to show relevant ads on Google and Reddit. You can change your choice at any time from the footer. <a href="/legal/cookies/">Cookie policy</a>.</p>
+    <p class="ic-consent__title">Cookies on this site</p>
+    <p class="ic-consent__body">Cookies keep the site working and show how it's used. With your permission, they also measure ads on Google and Reddit. You can change your choice any time from the footer. <a href="/legal/cookies/">Cookie policy</a>.</p>
     <div class="ic-consent__actions">
       <button type="button" class="ic-consent__btn" data-consent-accept>Accept all</button>
       <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject non-essential</button-->
@@ -596,17 +576,17 @@
       <div class="ic-consent__pref">
         <span class="ic-consent__pref-label">Strictly necessary</span>
         <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
-        <p class="ic-consent__pref-desc">Required for the site to function. Cannot be turned off.</p>
+        <p class="ic-consent__pref-desc">Needed for the site to work, so they can't be turned off.</p>
       </div>
       <div class="ic-consent__pref">
         <span class="ic-consent__pref-label">Analytics</span>
         <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
-        <p class="ic-consent__pref-desc">Helps us understand how visitors use the site (Google Analytics 4).</p>
+        <p class="ic-consent__pref-desc">Shows how visitors use the site (Google Analytics 4).</p>
       </div>
       <div class="ic-consent__pref">
         <span class="ic-consent__pref-label">Advertising</span>
         <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="ads" aria-label="Advertising">
-        <p class="ic-consent__pref-desc">Lets us measure and personalise Google Ads and Reddit Ads campaigns.</p>
+        <p class="ic-consent__pref-desc">Measures and personalizes Google Ads and Reddit Ads campaigns.</p>
       </div>
       <div class="ic-consent__actions">
         <button type="button" class="ic-consent__btn" data-consent-save>Save preferences</button>

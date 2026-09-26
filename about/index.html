@@ -59,9 +59,8 @@
       { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }
     ];
 </script>
-<title>l.legal.accessibility.head.title</title>
-<meta name="description" content="l.legal.accessibility.head.description">
-<meta name="robots" content="noindex,follow">
+<title>About Szymon Kokot | Illucrum</title>
+<meta name="description" content="Illucrum is run by Szymon Kokot, a software developer turned SEO consultant. He does every audit himself, from the first email to the final report." />
 
 
 <link rel="canonical" href="https://illucrum.com/#slug">
@@ -71,21 +70,59 @@
 <link rel="alternate" hreflang="x-default" href="https://illucrum.com/us.#slug">
 
 
-<meta name="robots" content="noindex, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://illucrum.com/about/">
+<meta property="og:site_name" content="Illucrum">
+<meta property="og:title" content="About Szymon Kokot | Illucrum">
+<meta property="og:description" content="Illucrum is run by Szymon Kokot, a software developer turned SEO consultant. He does every audit himself, from the first email to the final report.">
+<meta property="og:image" content="https://illucrum.com/static/img/og/about.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Szymon Kokot | Illucrum">
+<meta name="twitter:description" content="Illucrum is run by Szymon Kokot, a software developer turned SEO consultant. He does every audit himself, from the first email to the final report.">
+<meta name="twitter:image" content="https://illucrum.com/static/img/og/about.png">
+
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": "https://illucrum.com/legal\#page#webpage",
-  "url": "https://illucrum.com/legal\#page",
-  "name": "l.legal.#page.hero.title",
-  "inLanguage": "en-US",
-  "dateModified": "legal.updated",
-  "isPartOf": { "@id": "https://illucrum.com/#website" },
-  "publisher": { "@id": "https://illucrum.com/#organization" }
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://illucrum.com/about/#webpage",
+      "url": "https://illucrum.com/about/",
+      "name": "About Szymon Kokot | Illucrum",
+      "description": "Illucrum is run by Szymon Kokot, a software developer turned SEO consultant. He does every audit himself, from the first email to the final report.",
+      "inLanguage": "en-US",
+      "isPartOf": { "@id": "https://illucrum.com/#website" },
+      "publisher": { "@id": "https://illucrum.com/#organization" },
+      "mainEntity": { "@id": "https://illucrum.com/about/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://illucrum.com/about/#person",
+      "name": "Szymon Kokot",
+      "jobTitle": "SEO consultant",
+      "image": "https://illucrum.com/static/img/szymon.png",
+      "email": "szymon.kokot@illucrum.com",
+      "worksFor": { "@id": "https://illucrum.com/#organization" },
+      "knowsAbout": ["SEO audits", "Technical SEO", "Local SEO", "E-commerce SEO", "SaaS SEO", "Generative engine optimization"]
+    }
+  ]
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://illucrum.com/" },
+    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://illucrum.com/about/" }
+  ]
+}
+</script>
 </head>
 <body>
 <header>
@@ -110,93 +147,91 @@
 <main><header>
   <div>
     <hgroup>
-      <h1>l.legal.accessibility.hero.title</h1>
+      <p>About</p>
+      <h1>Illucrum is run by <em>Szymon Kokot</em></h1>
     </hgroup>
-    <p>l.legal.accessibility.hero.body</p>
+    <p>I'm a software developer turned SEO consultant. I audit SaaS, e-commerce and service business websites, mostly for startups and small businesses that have outgrown their own SEO knowledge.</p>
+    <p>
+      
+<a href="#contact" data-lead-open data-lead-source="#source">
+  Get in touch
+</a>
+      <a href="/audits/">See the audits</a>
+    </p>
   </div>
-  
-<figure>
-  <figcaption>l.legal.common.card</figcaption>
-  <dl>
-    <div>
-      <dt>l.legal.common.updated</dt>
-      <dd><time datetime="legal.updated">legal.updated</time></dd>
-    </div>
-    <div>
-      <dt>l.legal.common.operator</dt>
-      <dd>Illucrum LLC</dd>
-    </div>
-    <div>
-      <dt>l.legal.common.contact</dt>
-      <dd><a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a></dd>
-    </div>
-  </dl>
-</figure>
-
+  <figure>
+    <figcaption>Illucrum in short</figcaption>
+    <p><strong>6</strong> audits, one for each kind of site</p>
+    <p><strong>1</strong> person, from first email to final report</p>
+    <p><strong>36&ndash;54</strong> points checked in every audit</p>
+  </figure>
 </header>
-<section id="standard" class="split">
-  <hgroup>
-    <p>01</p>
-    <h2>l.legal.accessibility.goal.title</h2>
-  </hgroup>
-  <div class="prose">
-    <p>l.legal.accessibility.goal.body</p>
-  </div>
+<section id="about" class="paper">
+  <img src="/static/img/szymon.png" alt="Szymon Kokot" width="660" height="780" loading="lazy" decoding="async">
+  <h2>From code <em>to search</em></h2>
+  <p>Before SEO, I worked as a software developer, and it still shapes how I audit. I look at how a site is built as closely as at how it ranks, and I write each finding so a founder can follow it and a developer can act on it. I'm based in Poland, and I do every audit myself, from the first email to the final report.</p>
+  <ul>
+    <li><a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    <li><a href="https://clutch.co/profile/illucrum" target="_blank" rel="noopener noreferrer">Clutch</a></li>
+    <li><a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a></li>
+  </ul>
 </section>
-<section id="done" class="split">
+<section id="report">
   <hgroup>
-    <p>02</p>
-    <h2>l.legal.accessibility.done.title</h2>
+    <h2>How I <em>work</em></h2>
   </hgroup>
-  <div class="prose">
-    <ul>
-      <li>l.legal.accessibility.done.html</li>
-      <li>l.legal.accessibility.done.keyboard</li>
-      <li>l.legal.accessibility.done.contrast</li>
-      <li>l.legal.accessibility.done.motion</li>
-      <li>l.legal.accessibility.done.nojs</li>
-    </ul>
-  </div>
+  <p>A few principles behind every report.</p>
+
+  <ul>
+    <li>
+      <h3>Built for your kind of site</h3>
+      <p>A store, a software company and a local clinic have different problems. Each audit has its own checklist, so the points fit what you actually run.</p>
+    </li>
+    <li>
+      <h3>Read, not just crawled</h3>
+      <p>Tools collect the data. Deciding what matters, and what can wait, comes from reading your site and understanding your business.</p>
+    </li>
+    <li>
+      <h3>Written to be used</h3>
+      <p>Plain English, every finding tied to a page and a figure, and the fixes in order of priority. The report is clear on its own.</p>
+    </li>
+    <li>
+      <h3>Nothing guessed</h3>
+      <p>When a point can't be checked, for example without access to your data, it's marked N/A rather than filled in.</p>
+    </li>
+  </ul>
+  <p><a href="/process/">See how an audit works</a></p>
 </section>
-<section id="known-issues" class="split">
+<section class="paper">
   <hgroup>
-    <h2>l.legal.accessibility.known.title</h2>
+    <h2>What clients say</h2>
   </hgroup>
-  <div class="prose">
-    <ul>
-      <li>l.legal.accessibility.known.clutch</li>
-      <li>l.legal.accessibility.known.pdf</li>
-      <li>l.legal.accessibility.known.tables</li>
-      <li>l.legal.accessibility.known.form</li>
-    </ul>
-  </div>
-</section>
-<section id="method" class="split">
-  <hgroup>
-    <h2>l.legal.accessibility.checked.title</h2>
-  </hgroup>
-  <div class="prose">
-    <p>l.legal.accessibility.checked.body</p>
-  </div>
-</section>
-<section id="feedback" class="split">
-  <hgroup>
-    <p>05</p>
-    <h2>l.legal.accessibility.feedback.title</h2>
-  </hgroup>
-  <div class="prose">
-    <p>l.legal.accessibility.feedback.body</p>
-  </div>
+  
+<div class="reviews">
+  <figure>
+    <blockquote>
+      <p>The process was organized, straightforward, and very easy to manage from our side.</p>
+    </blockquote>
+    <figcaption><strong>Gustavo Centeio</strong> GCNS</figcaption>
+  </figure>
+  <aside>
+    <iframe width="139" height="150"
+      src="https://clutch.co/share/badges/2624662/102741?utm_source=clutch_top_company_badge&utm_medium=image_embed"
+      title="Top Clutch International Seo Austin 2026"></iframe>
+    <p><a href="https://clutch.co/profile/illucrum#reviews">Read reviews on Clutch</a></p>
+  </aside>
+</div>
+
 </section>
 
-<section id="contact" class="panel">
-  <h2>l.legal.common.panel.title</h2>
-  <p>l.legal.common.panel.body</p>
+<section id="contact">
+  <h2>Say <em>hello</em></h2>
+  <p>A short message with your website and what you'd like to know is the best place to start. I'll reply myself.</p>
   <address>
+    t.$templates/cta-button.html
     <a href="mailto:szymon.kokot@illucrum.com">szymon.kokot@illucrum.com</a>
   </address>
 </section>
-
 </main>
 <footer>
   <section>
