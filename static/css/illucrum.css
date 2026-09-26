@@ -1661,10 +1661,12 @@ main > header figure strong { white-space: nowrap; }
   .article thead th { font-size: 0.6875rem; letter-spacing: 0.06em; }
 }
 /* Blog ---------------------------------------------------------------------- */
-/* /blog/, the three collection pages (/blog/checklists/, /blog/comparisons/,
-   /blog/other/) and every article. Articles reuse .article; listings reuse
-   the hero (main > header, with the collections list in the figure) and the
-   article card. Templates live in $templates/blog. */
+/* /blog/, the four collection pages (/blog/seo/, /blog/checklists/,
+   /blog/comparisons/, /blog/other/) and every article. Articles reuse .article;
+   listings reuse the hero (main > header, with the collections list in the
+   figure) and the article card. .posts is also used for the article sections
+   on the homepage, the audit pages, the audits hub and the about page.
+   Templates live in $templates/blog. */
 
 /* Article top: breadcrumb and byline, above the Markdown H1 */
 .article > nav:first-child ol {
