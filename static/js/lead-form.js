@@ -25,8 +25,8 @@
 
   var ENDPOINT = "https://api.illucrum.com/lead";
 
-  var lastFocused = null; // restore focus on close
-  var overlayEl = null;   // single live overlay at a time
+  var lastFocused = null; / restore focus on close
+  var overlayEl = null;   / single live overlay at a time
 
   /* ---- small style helpers (everything stays inline) ---------- */
 
@@ -51,7 +51,7 @@
   function normalizeWebsite(value) {
     var v = (value || "").trim();
     if (!v) return "";
-    if (!/^https?:\/\//i.test(v)) v = "https://" + v;
+    if (!/^https?:///i.test(v)) v = "https://" + v;
     return v;
   }
 
@@ -241,7 +241,7 @@
       if (field.required) input.required = true;
       if (field.placeholder) input.placeholder = field.placeholder;
 
-      // Inline focus ring (no stylesheet needed).
+      / Inline focus ring (no stylesheet needed).
       input.addEventListener("focus", function () {
         css(input, {
           "border-color": "var(--green, #00c96b)",
@@ -321,7 +321,7 @@
     form.addEventListener("submit", function (event) {
       event.preventDefault();
 
-      // Basic validation.
+      / Basic validation.
       var firstInvalid = null;
       FIELDS.forEach(function (field) {
         var input = inputs[field.name];
@@ -422,7 +422,7 @@
     }
   }
 
-  // Public API for programmatic opening, e.g. window.ic_lead.open().
+  / Public API for programmatic opening, e.g. window.ic_lead.open().
   window.ic_lead = { open: open, close: close };
 
   if (document.readyState === "loading") {

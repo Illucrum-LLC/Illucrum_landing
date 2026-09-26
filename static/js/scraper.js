@@ -23,7 +23,7 @@ function collapseWhitespace(value)
   if (value === null || value === undefined)
     return null;
 
-  const text = String(value).replace(/\s+/g, " ").trim();
+  const text = String(value).replace(/s+/g, " ").trim();
   return text;
 }
 
@@ -59,7 +59,7 @@ function isSameHost(urlA, urlB)
 {
   try
   {
-    const strip = (host) => host.replace(/^www\./i, "").toLowerCase();
+    const strip = (host) => host.replace(/^www/./i, "").toLowerCase();
     return strip(new URL(urlA).hostname) === strip(new URL(urlB).hostname);
   }
   catch
@@ -81,7 +81,7 @@ function sleep()
 
 function parseUrlInput(rawInput)
 {
-  const candidates = String(rawInput || "").split(/[\s,]+/)
+  const candidates = String(rawInput || "").split(/[/s,]+/)
     .map((part) => part.trim())
     .filter(Boolean);
 
@@ -91,7 +91,7 @@ function parseUrlInput(rawInput)
 
   for (const candidate of candidates)
     {
-    const withScheme = /^https?:\/\//i.test(candidate) ?
+    const withScheme = /^https?:///i.test(candidate) ?
       candidate :
       "https://" + candidate;
 
@@ -271,9 +271,9 @@ function extractMeta(doc, baseUrl)
 function normaliseForCompare(url) {
   try {
     const parsed = new URL(url);
-    const path = parsed.pathname.replace(/\/+$/, "");
+    const path = parsed.pathname.replace(//+$/, "");
     return (
-      parsed.hostname.replace(/^www\./i, "").toLowerCase() +
+      parsed.hostname.replace(/^www/./i, "").toLowerCase() +
       path +
       parsed.search
     );
@@ -340,7 +340,7 @@ function extractText(doc) {
 function tokenise(text) {
   const matches = String(text)
     .toLowerCase()
-    .match(/[\p{L}\p{N}][\p{L}\p{N}'’-]*/gu);
+    .match(/[/p{L}/p{N}][/p{L}/p{N}'’-]*/gu);
   return matches || [];
 }
 
@@ -460,7 +460,7 @@ function extractLinks(doc, baseUrl) {
         "internal" : "external",
       anchorText: collapseWhitespace(anchor.textContent) || "",
       rel,
-      nofollow: /\bnofollow\b/i.test(rel),
+      nofollow: /bnofollow/b/i.test(rel),
       target: anchor.getAttribute("target") || "",
     });
   }
@@ -915,7 +915,7 @@ const TABLES = [{
     key: "headings",
     label: "Headings",
     file: "headings",
-    blurb: "Every h1–h6 in document order. Level and order together show the outline a crawler sees.",
+    blurb: "Every h1-h6 in document order. Level and order together show the outline a crawler sees.",
     columns: [{
         key: "url",
         label: "URL",
@@ -1239,7 +1239,7 @@ function csvCell(value) {
   if (value === null || value === undefined) return "";
   const text =
     typeof value === "boolean" ? (value ? "true" : "false") : String(value);
-  return /[",\r\n]/.test(text) ? '"' + text.replace(/"/g, '""') + '"' : text;
+  return /[",/r/n]/.test(text) ? '"' + text.replace(/"/g, '""') + '"' : text;
 }
 
 function buildCsv(table, rows) {
@@ -1247,7 +1247,7 @@ function buildCsv(table, rows) {
   const lines = rows.map((row) =>
     table.columns.map((column) => csvCell(row[column.key])).join(","),
   );
-  return [header, ...lines].join("\r\n") + "\r\n";
+  return [header, ...lines].join("/r/n") + "/r/n";
 }
 
 function downloadCsv(table) {
