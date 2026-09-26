@@ -59,7 +59,7 @@ function isSameHost(urlA, urlB)
 {
   try
   {
-    const strip = (host) => host.replace(/^www/./i, "").toLowerCase();
+    const strip = (host) => host.replace(/^www\./i, "").toLowerCase();
     return strip(new URL(urlA).hostname) === strip(new URL(urlB).hostname);
   }
   catch
@@ -271,9 +271,9 @@ function extractMeta(doc, baseUrl)
 function normaliseForCompare(url) {
   try {
     const parsed = new URL(url);
-    const path = parsed.pathname.replace(//+$/, "");
+    const path = parsed.pathname.replace(/\/+$/, "");
     return (
-      parsed.hostname.replace(/^www/./i, "").toLowerCase() +
+      parsed.hostname.replace(/^www\./i, "").toLowerCase() +
       path +
       parsed.search
     );

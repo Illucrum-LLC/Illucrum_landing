@@ -3,7 +3,7 @@
 
   var STORAGE_KEY = "ic_consent_v1";
   var STORAGE_VERSION = 1;
-  / Re-prompt after this many days, even if the user previously chose.
+  // Re-prompt after this many days, even if the user previously chose.
   var REVALIDATE_DAYS = 365;
 
   function gtag() {
