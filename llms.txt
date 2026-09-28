@@ -1,39 +1,86 @@
 # Illucrum
 
-> Illucrum provides specialized SEO audits for SaaS, E-commerce, and general websites, as well as standalone Technical SEO Audits.
+> Illucrum sells fixed-price SEO audits to small and medium-sized businesses. There are six audits, each built for one kind of website, and each ends in a written report in which every point is scored from 1 to 10 and every fix is put in order of priority. Every audit is carried out by Szymon Kokot, who runs Illucrum.
 
-## Core Services & Products
+Key facts:
 
-- [SaaS SEO Audit](https://illucrum.com/audits/saas-seo-audit): SEO audit tailored specifically for B2B and B2C SaaS platforms.
-- [E-commerce SEO Audit](https://illucrum.com/audits/ecommerce-seo-audit/): Comprehensive SEO audit designed for online stores and catalog architecture.
-- [General SEO Audit](https://illucrum.com/audits/seo-audit): All-around SEO audit for general websites and businesses.
-- [Technical SEO Audit](https://illucrum.com/audits/technical-seo-audit): Specialized single-tier audit focused strictly on technical performance, crawlability, and indexing.
+- Six audits: SaaS, E-commerce, Local business, Website (service firms, agencies, B2B), Technical, and GEO (AI search visibility).
+- Prices are published at https://illucrum.com/pricing/ and are the same for every client. At the time of writing: USD 2,000 for the SaaS, E-commerce, Local business, Website and GEO audits, and USD 1,000 for the Technical audit. The price does not depend on the size of the site.
+- Delivery: 5 to 8 days for the SaaS, E-commerce, Local business, Website and GEO audits; 3 to 5 days for the Technical audit.
+- Process: the client gets in touch and picks an audit, receives the invoice, the audit is carried out, and the report is sent as soon as the invoice is paid.
+- Included: every point checked and scored with a status (good, needs attention or critical), a prioritized fix list, and findings tied to the client's real pages and figures, each dated. The report is a PDF.
+- Not included: implementing the fixes, ongoing monitoring or reporting, traffic or revenue forecasts, and ranking guarantees. There are no retainers, subscriptions or add-ons, and nothing is sold after the report.
+- Access needed: read-only access to Google Search Console and Google Analytics 4. Nothing on the client's site or accounts is changed.
+- One audit covers one website.
+- Operated by Illucrum LLC (Texas, United States). Contact: szymon.kokot@illucrum.com
 
-## Audit Documentation & Breakdown
+## Audits
 
-Markdown source files detailing every specific check and point evaluated in each audit type:
+- [SaaS SEO audit](https://illucrum.com/audits/saas-seo-audit/): 54 points in 10 sections for software sold through a trial, demo or freemium plan. Funnel keywords, pricing and feature pages, JavaScript rendering, review platforms and AI answers.
+- [E-commerce SEO audit](https://illucrum.com/audits/ecommerce-seo-audit/): 54 points in 8 sections for online stores on any platform. Platform duplicates, filter pages, product data, shopping results and AI answers.
+- [Local business SEO audit](https://illucrum.com/audits/local-seo-audit/): 54 points in 9 sections for businesses that serve a local area. Google Business Profile, reviews, listings, local pages and map rankings.
+- [Website SEO audit](https://illucrum.com/audits/seo-audit/): 54 points in 9 sections for service firms, consultancies, agencies and B2B companies (51 points if the business has no office or service area).
+- [Technical SEO audit](https://illucrum.com/audits/technical-seo-audit/): 36 points in 9 sections for any site. Crawling, indexing, rendering, speed, mobile, security and AI crawler access, without keyword or content work.
+- [GEO audit](https://illucrum.com/audits/geo-audit/): 51 points in 7 sections on visibility in ChatGPT, Perplexity, Gemini, Claude, Copilot and Google's AI answers.
+- [All audits compared](https://illucrum.com/audits/): which audit fits which kind of site.
 
-- [E-commerce Audit Breakdown](https://illucrum.com/static/md/ecommerce_audit.txt): Complete point-by-point checklist for E-commerce SEO audits.
-- [SaaS Audit Breakdown](https://illucrum.com/static/md/saas_audit.txt): Complete point-by-point checklist for SaaS SEO audits.
-- [General Website Audit Breakdown](https://illucrum.com/static/md/website_audit.txt): Complete point-by-point checklist for general SEO audits.
-- [Technical Audit Breakdown](https://illucrum.com/static/md/technical_audit.txt): Complete point-by-point checklist for Technical-only SEO audits.
+## Audit details in Markdown
+
+Each file describes one audit in full: who it is for, every section and point, what the report contains, and what is not included.
+
+- [SaaS SEO audit](https://illucrum.com/static/md/saas-seo-audit.md)
+- [E-commerce SEO audit](https://illucrum.com/static/md/ecommerce-seo-audit.md)
+- [Local business SEO audit](https://illucrum.com/static/md/local-business-seo-audit.md)
+- [Website SEO audit](https://illucrum.com/static/md/website-seo-audit.md)
+- [Technical SEO audit](https://illucrum.com/static/md/technical-seo-audit.md)
+- [GEO audit](https://illucrum.com/static/md/geo-audit.md)
+
+## Pricing, process and company
+
+- [Pricing](https://illucrum.com/pricing/): the price of each audit, what it covers and how long it takes.
+- [Process](https://illucrum.com/process/): the four steps from first message to finished report, and how the audit itself is done.
+- [FAQ](https://illucrum.com/faq/): scope, cost, payment, timing and what happens after the report.
+- [About](https://illucrum.com/about/): Szymon Kokot, a software developer turned SEO consultant, who does every audit himself.
+
+## Checklists
+
+Free versions of each audit's method, check by check, with the free tool to run each check.
+
+- [SEO checklist (54 checks)](https://illucrum.com/blog/seo-checklist/)
+- [SaaS SEO checklist (54 checks)](https://illucrum.com/blog/saas-seo-checklist/)
+- [E-commerce SEO checklist (54 checks)](https://illucrum.com/blog/ecommerce-seo-checklist/)
+- [Local SEO checklist (54 checks)](https://illucrum.com/blog/local-seo-checklist/)
+- [Technical SEO checklist (36 checks)](https://illucrum.com/blog/technical-seo-checklist/)
+- [GEO checklist (51 checks)](https://illucrum.com/blog/geo-checklist/)
+
+## Comparisons
+
+- [Technical SEO audit vs full SEO audit](https://illucrum.com/blog/technical-seo-audit-vs-full-seo-audit/)
+- [SaaS SEO audit vs general SEO audit](https://illucrum.com/blog/saas-seo-audit-vs-general-seo-audit/)
+- [E-commerce SEO audit vs general SEO audit](https://illucrum.com/blog/ecommerce-seo-audit-vs-general-seo-audit/)
+- [Local SEO audit vs general SEO audit](https://illucrum.com/blog/local-seo-audit-vs-general-seo-audit/)
+- [GEO audit vs SEO audit](https://illucrum.com/blog/geo-audit-vs-seo-audit/)
+- [SEO audit vs SEO retainer](https://illucrum.com/blog/seo-audit-vs-seo-retainer/)
+- [SEO audit vs SEO tool](https://illucrum.com/blog/seo-audit-vs-seo-tool/)
+- [SEO audit vs DIY](https://illucrum.com/blog/seo-audit-vs-diy/)
 
 ## Free tool
 
-There is one free tool, a bulk SEO checker. You enter up to 25 URLs, and it checks their meta tags, headings, alt texts, word count, canonical links, OG tags and schema.
-Fetches the HTML through a simple relay, and performs the checks in the browser. We don't collect any data about the usage of the tool, we don't store the results anywhere. But you can download the results in CSV format.
- - [Bulk SEO Checker](https://illucrum.com/tools/bulk-checker/): the tool itself
- - [About the meta tags check](https://illucrum.com/tools/bulk-checker/meta-tag-check/)
- - [About the headings check](https://illucrum.com/tools/bulk-checker/heading-check/)
- - [About the alt text check](https://illucrum.com/tools/bulk-checker/alt-text-check/)
- - [About the word count check](https://illucrum.com/tools/bulk-checker/word-count-check/)
- - [About the canonical links check](https://illucrum.com/tools/bulk-checker/canonical-check/)
- - [About the OG tags check](https://illucrum.com/tools/bulk-checker/open-graph-check/)
- - [About the schema check](https://illucrum.com/tools/bulk-checker/schema-check/)
+A free bulk SEO checker. It fetches up to 25 URLs per run through a relay that stores nothing, reads the HTML each server returns (it does not run JavaScript) and builds the results in the browser, with CSV export. No account needed.
 
-## Company & Information
+- [Bulk SEO checker](https://illucrum.com/tools/bulk-checker/)
+- [Meta title and description check](https://illucrum.com/tools/bulk-checker/meta-tag-check/)
+- [Heading check (H1 to H6)](https://illucrum.com/tools/bulk-checker/heading-check/)
+- [Image alt text check](https://illucrum.com/tools/bulk-checker/alt-text-check/)
+- [Word count check](https://illucrum.com/tools/bulk-checker/word-count-check/)
+- [Canonical tag check](https://illucrum.com/tools/bulk-checker/canonical-check/)
+- [Open Graph and Twitter Card check](https://illucrum.com/tools/bulk-checker/open-graph-check/)
+- [Schema markup check](https://illucrum.com/tools/bulk-checker/schema-check/)
 
-- [Pricing](https://illucrum.com/pricing): Tier options, pricing breakdown, and deliverable comparisons.
-- [Audit Process](https://illucrum.com/process): Step-by-step methodology behind how audits are performed and delivered.
-- [Frequently Asked Questions](https://illucrum.com/faq): Answers to common questions regarding deliverables, timelines, and implementation.
-- [About Us](https://illucrum.com/about): Information about Illucrum and our background in search engine optimization.
+## Optional
+
+- [SEO facts](https://illucrum.com/seo-facts/): SEO statistics from published studies and from Google, each with its source and date.
+- [SEO articles](https://illucrum.com/blog/seo/): articles for small business owners on local search, online stores, SaaS and SEO next to ads.
+- [Blog](https://illucrum.com/blog/): all articles, checklists and comparisons.
+- [Terms of service](https://illucrum.com/legal/terms/)
+- [Privacy policy](https://illucrum.com/legal/privacy/)

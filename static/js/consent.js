@@ -33,8 +33,7 @@
         JSON.stringify({
           v: STORAGE_VERSION,
           ts: Date.now(),
-          analytics: !!prefs.analytics,
-          ads: !!prefs.ads
+          analytics: !!prefs.analytics
         })
       );
     } catch (e) {
@@ -44,24 +43,14 @@
 
   function applyConsent(prefs) {
     gtag("consent", "update", {
-      analytics_storage: prefs.analytics ? "granted" : "denied",
-      ad_storage: prefs.ads ? "granted" : "denied",
-      ad_user_data: prefs.ads ? "granted" : "denied",
-      ad_personalization: prefs.ads ? "granted" : "denied"
+      analytics_storage: prefs.analytics ? "granted" : "denied"
     });
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "consent_updated",
-      consent_analytics: prefs.analytics ? "granted" : "denied",
-      consent_ads: prefs.ads ? "granted" : "denied"
+      consent_analytics: prefs.analytics ? "granted" : "denied"
     });
-
-    if (typeof window.rdt === "function") {
-      if (prefs.ads) {
-        window.rdt("track", "PageVisit");
-      }
-    }
   }
 
   function showBanner(el) {
@@ -89,18 +78,14 @@
 
   function readToggles(panel) {
     var analytics = panel.querySelector("[data-consent-toggle='analytics']");
-    var ads = panel.querySelector("[data-consent-toggle='ads']");
     return {
-      analytics: analytics ? analytics.checked : false,
-      ads: ads ? ads.checked : false
+      analytics: analytics ? analytics.checked : false
     };
   }
 
   function setToggles(panel, prefs) {
     var analytics = panel.querySelector("[data-consent-toggle='analytics']");
-    var ads = panel.querySelector("[data-consent-toggle='ads']");
     if (analytics) analytics.checked = !!prefs.analytics;
-    if (ads) ads.checked = !!prefs.ads;
   }
 
   function bind(el) {
@@ -116,7 +101,7 @@
 
     if (btnAccept) {
       btnAccept.addEventListener("click", function () {
-        var prefs = { analytics: true, ads: true };
+        var prefs = { analytics: true };
         writeStored(prefs);
         applyConsent(prefs);
         hideBanner(el);
@@ -125,7 +110,7 @@
 
     if (btnReject) {
       btnReject.addEventListener("click", function () {
-        var prefs = { analytics: false, ads: false };
+        var prefs = { analytics: false };
         writeStored(prefs);
         applyConsent(prefs);
         hideBanner(el);
@@ -184,13 +169,13 @@
   window.ic_consent = {
     open: open,
     acceptAll: function () {
-      var prefs = { analytics: true, ads: true };
+      var prefs = { analytics: true };
       writeStored(prefs);
       applyConsent(prefs);
       hideBanner(document.querySelector("[data-consent-banner]"));
     },
     rejectAll: function () {
-      var prefs = { analytics: false, ads: false };
+      var prefs = { analytics: false };
       writeStored(prefs);
       applyConsent(prefs);
       hideBanner(document.querySelector("[data-consent-banner]"));
