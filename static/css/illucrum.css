@@ -213,6 +213,10 @@ body > header div {
   gap: 1rem;
 }
 
+body > header div a {
+  padding: 14px 22px;
+}
+
 body > header div button {
   width: 44px;
   height: 44px;
@@ -298,8 +302,7 @@ body > header div a {
     border: 0;
     font-size: 1rem;
   }
-  body > header li:last-child a,
-  body > header div a {
+  body > header li:last-child a {
     min-height: 44px;
     margin: 0;
     font-size: 1rem;
