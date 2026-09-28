@@ -151,7 +151,8 @@ dt {
 body > header li:last-child a,
 main > header p > :is(a, button),
 address a,
-#tool [type="submit"] {
+#tool [type="submit"],
+body > header div a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,7 +171,8 @@ address a,
 body > header li:last-child a:hover,
 main > header p > :is(a, button):hover,
 address a:hover,
-#tool [type="submit"]:hover {
+#tool [type="submit"]:hover,
+body > header div a:hover {
   background: var(--green-hover);
   color: var(--ink);
 }
@@ -205,7 +207,13 @@ body > header img {
   height: 22px;
 }
 
-body > header button {
+body > header div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+body > header div button {
   width: 44px;
   height: 44px;
   margin-right: -10px;
@@ -252,7 +260,8 @@ body > header div a {
 body > header li a:hover {
   color: var(--green-text);
 }
-body > header li:last-child a {
+body > header li:last-child a,
+body > header div a {
   margin-top: 18px;
   padding: 0 22px;
   border: 0;
@@ -265,7 +274,7 @@ body > header li:last-child a {
   body > header img {
     height: 26px;
   }
-  body > header button {
+  body > header div {
     display: none;
   }
 
@@ -289,7 +298,8 @@ body > header li:last-child a {
     border: 0;
     font-size: 1rem;
   }
-  body > header li:last-child a {
+  body > header li:last-child a,
+  body > header div a {
     min-height: 44px;
     margin: 0;
     font-size: 1rem;
