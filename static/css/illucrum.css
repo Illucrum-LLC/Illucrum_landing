@@ -303,6 +303,7 @@ body > header li:last-child a {
     min-height: 44px;
     margin: 0;
     font-size: 1rem;
+    display: inline-flex;
   }
 }
 
