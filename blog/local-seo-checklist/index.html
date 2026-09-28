@@ -50,7 +50,7 @@
 <script>
     var DEFAULTS = {
       title: "Get in touch",
-      subtitle: "Tell me a little about your site. I'll reply by email, usually within one working day.",
+      subtitle: "I'll reply by email, usually within one working day.",
       button: "Send"
     };
 
@@ -140,7 +140,14 @@
 <body>
 <header>
   <a href="/"><img src="/static/img/logo.png" alt="Illucrum" width="217" height="52"></a>
-  <button type="button" popovertarget="menu" aria-label="Menu"></button>
+  <div>
+    <button type="button" popovertarget="menu" aria-label="Menu"></button>
+    
+<a href="mailto:szymon.kokot@illucrum.com" data-lead-open data-lead-source="header">
+  Get in touch
+</a>
+
+  </div>
   <nav id="menu" aria-label="Main" popover>
     <ul>
       <li><a href="/audits/">Audits</a></li>
@@ -150,7 +157,7 @@
       <li><a href="/about/">About</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li>
-<a href="#contact" data-lead-open data-lead-source="header">
+<a href="mailto:szymon.kokot@illucrum.com" data-lead-open data-lead-source="header">
   Get in touch
 </a>
 </li>
@@ -578,7 +585,7 @@
       <a href="/about/">More about Szymon</a>
       <a href="/audits/">The audits</a>
       
-<a href="#contact" data-lead-open data-lead-source="blog-author">
+<a href="mailto:szymon.kokot@illucrum.com" data-lead-open data-lead-source="blog-author">
   Get in touch
 </a>
 
@@ -624,19 +631,6 @@
 
   <p><a href="/blog/checklists/">All checklists</a></p>
 </section>
-
-<section id="contact">
-  <h2>Questions about <em>your own site?</em></h2>
-  <p>Send your website and what you'd like to know. I'll reply myself.</p>
-  <address>
-    
-<a href="#contact" data-lead-open data-lead-source="cta">
-  Get in touch
-</a>
-
-  </address>
-</section>
-
 </main>
 <footer>
   <section>

@@ -239,7 +239,8 @@ body > header ul {
   list-style: none;
 }
 
-body > header li a {
+body > header li a,
+body > header div a {
   display: block;
   padding: 14px 0;
   border-bottom: 1px solid #f1f1ec;

@@ -50,7 +50,7 @@
 <script>
     var DEFAULTS = {
       title: "Get in touch",
-      subtitle: "Tell me a little about your site. I'll reply by email, usually within one working day.",
+      subtitle: "I'll reply by email, usually within one working day.",
       button: "Send"
     };
 
@@ -147,7 +147,14 @@
 <body>
 <header>
   <a href="/"><img src="/static/img/logo.png" alt="Illucrum" width="217" height="52"></a>
-  <button type="button" popovertarget="menu" aria-label="Menu"></button>
+  <div>
+    <button type="button" popovertarget="menu" aria-label="Menu"></button>
+    
+<a href="mailto:szymon.kokot@illucrum.com" data-lead-open data-lead-source="header">
+  Get in touch
+</a>
+
+  </div>
   <nav id="menu" aria-label="Main" popover>
     <ul>
       <li><a href="/audits/">Audits</a></li>
@@ -157,7 +164,7 @@
       <li><a href="/about/">About</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li>
-<a href="#contact" data-lead-open data-lead-source="header">
+<a href="mailto:szymon.kokot@illucrum.com" data-lead-open data-lead-source="header">
   Get in touch
 </a>
 </li>
@@ -174,7 +181,7 @@
     <p>Four steps from your first message to the finished report. Most of the work is mine; yours is a short brief and read access to your data.</p>
     <p>
       
-<a href="#contact" data-lead-open data-lead-source="process-hero">
+<a href="mailto:szymon.kokot@illucrum.com" data-lead-open data-lead-source="process-hero">
   Get in touch
 </a>
 
@@ -298,20 +305,6 @@
       <p>One audit covers one website. Each additional site needs its own audit.</p>
     </details>
   </div>
-</section>
-<section id="contact">
-  <hgroup>
-    <h2>Tell me about <em>your site</em></h2>
-  </hgroup>
-  <p>Send your website and the audit you have in mind. If you're not sure which one fits, ask.</p>
-  <address>
-    
-<a href="#contact" data-lead-open data-lead-source="cta">
-  Get in touch
-</a>
-
-    <a href="/audits/">Compare the audits</a>
-  </address>
 </section>
 </main>
 <footer>

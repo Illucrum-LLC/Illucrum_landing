@@ -50,7 +50,7 @@
 <script>
     var DEFAULTS = {
       title: "Get in touch",
-      subtitle: "Tell me a little about your site. I'll reply by email, usually within one working day.",
+      subtitle: "I'll reply by email, usually within one working day.",
       button: "Send"
     };
 
@@ -127,7 +127,14 @@
 <body>
 <header>
   <a href="/"><img src="/static/img/logo.png" alt="Illucrum" width="217" height="52"></a>
-  <button type="button" popovertarget="menu" aria-label="Menu"></button>
+  <div>
+    <button type="button" popovertarget="menu" aria-label="Menu"></button>
+    
+<a href="mailto:szymon.kokot@illucrum.com" data-lead-open data-lead-source="header">
+  Get in touch
+</a>
+
+  </div>
   <nav id="menu" aria-label="Main" popover>
     <ul>
       <li><a href="/audits/">Audits</a></li>
@@ -137,7 +144,7 @@
       <li><a href="/about/">About</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li>
-<a href="#contact" data-lead-open data-lead-source="header">
+<a href="mailto:szymon.kokot@illucrum.com" data-lead-open data-lead-source="header">
   Get in touch
 </a>
 </li>
@@ -154,7 +161,7 @@
     <p>I'm a software developer turned SEO consultant. I audit SaaS, e-commerce, local and service business websites, mostly for startups and small businesses that have outgrown their own SEO knowledge.</p>
     <p>
       
-<a href="#contact" data-lead-open data-lead-source="about-hero">
+<a href="mailto:szymon.kokot@illucrum.com" data-lead-open data-lead-source="about-hero">
   Get in touch
 </a>
 
@@ -250,21 +257,18 @@
   </ul>
 </article>
 
+  
+<article>
+  <h3><a href="/blog/when-to-start-seo-saas-startup/">When Should a SaaS Startup Actually Start Doing SEO?</a></h3>
+  <p>Why a six-month-old SaaS and a three-year-old SaaS need different SEO, and how to tell when a startup is ready to invest in it.</p>
+  <ul>
+    <li>Updated <time datetime="2026-09-28">Sep 28, 2026</time></li>
+    <li>8 min read</li>
+  </ul>
+</article>
+
   <p><a href="/blog/">All articles on the blog</a></p>
 </section>
-
-<section id="contact">
-  <h2>Say <em>hello</em></h2>
-  <p>A short message with your website and what you'd like to know is the best place to start. I'll reply myself.</p>
-  <address>
-    
-<a href="#contact" data-lead-open data-lead-source="cta">
-  Get in touch
-</a>
-
-  </address>
-</section>
-
 </main>
 <footer>
   <section>
