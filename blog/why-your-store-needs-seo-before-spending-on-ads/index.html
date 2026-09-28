@@ -6,27 +6,31 @@
 
 <link rel="icon" href="/static/img/logo-ico.png">
 <meta name="robots" content="noindex,nofollow">
-<link href="https://fonts.cdnfonts.com/css/dubai" rel="stylesheet">
+<link rel="preload" href="/static/fonts/Dubai-Regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/static/fonts/Dubai-Bold.woff" as="font" type="font/woff" crossorigin>
 
 <link rel="stylesheet" href="/static/css/illucrum.css">
 
-<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
-     Everything non-essential is denied until the user opts in via the
-     cookie banner (see /static/js/consent.js). -->
+<!-- Google Consent Mode v2. There are no ads on this site, so ad storage is
+     always denied. Analytics is on for everyone from the start; it is off only
+     if the visitor turned it off (saved by /static/js/consent.js).
+     Runs before Tag Manager loads. -->
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'granted',
-    'functionality_storage': 'granted',
-    'security_storage': 'granted',
-    'wait_for_update': 500
-  });
-  gtag('set', 'ads_data_redaction', true);
-  gtag('set', 'url_passthrough', true);
+  function gtag() { dataLayer.push(arguments); }
+  (function () {
+    var analytics = 'granted';
+    try {
+      var saved = JSON.parse(localStorage.getItem('ic_consent_v1'));
+      if (saved && saved.analytics === false) analytics = 'denied';
+    } catch (e) {}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: analytics
+    });
+  })();
 </script>
 
 <!-- Google Tag Manager -->
@@ -74,7 +78,7 @@
 <meta property="og:description" content="Why an online store should fix its SEO before spending on ads: what an audit finds that an ad dashboard can't, and when ads should come first.">
 <meta property="og:image" content="https://illucrum.com/static/img/og/home.png">
 <meta property="article:published_time" content="2026-04-20">
-<meta property="article:modified_time" content="2026-04-20">
+<meta property="article:modified_time" content="2026-09-28">
 <meta property="article:author" content="https://illucrum.com/about/">
 <meta property="article:section" content="SEO articles">
 
@@ -96,7 +100,7 @@
       "description": "Why an online store should fix its SEO before spending on ads: what an audit finds that an ad dashboard can't, and when ads should come first.",
       "image": "https://illucrum.com/static/img/og/home.png",
       "datePublished": "2026-04-20",
-      "dateModified": "2026-04-20",
+      "dateModified": "2026-09-28",
       "inLanguage": "en-US",
       "articleSection": "SEO articles",
       "author": { "@id": "https://illucrum.com/about/#person" },
@@ -165,18 +169,18 @@
 <p>
   <span>By <a href="#author">Szymon Kokot</a></span>
   <span>Published <time datetime="2026-04-20">Apr 20, 2026</time></span>
-  <span>Updated <time datetime="2026-04-20">Apr 20, 2026</time></span>
+  <span>Updated <time datetime="2026-09-28">Sep 28, 2026</time></span>
   <span>6 min read</span>
 </p>
 
   <h1>Why Your Store Needs SEO Before Spending on Ads</h1>
 <p>Most online stores start spending on ads before their SEO is in order. That's the expensive way round.</p>
 <p>The logic seems reasonable: buy traffic, get sales. But if your product pages are slow, your descriptions are thin, and your site has no structured data, paid visitors bounce at roughly the same rate as organic ones. You are paying for a bad result, not avoiding it.</p>
-<p><strong>In short:</strong> Organic search drives around 43% of e-commerce traffic, making it the single largest channel. Running ads on a site that isn't ready to convert means paying per click to confirm the problem. The better sequence: run an seo audit, fix the foundation, then amplify with ad spend.</p>
+<p><strong>In short:</strong> Organic search is one of the three biggest traffic sources online, and unlike paid search, you don't pay for it per click. Running ads on a site that isn't ready to convert means paying per click to confirm the problem. The better sequence: run an SEO audit, fix the foundation, then amplify with ad spend.</p>
 <hr />
 <h2>Where Does E-Commerce Traffic Actually Come From?</h2>
-<p>Organic search is the dominant traffic source for online stores, accounting for roughly 43% of all e-commerce traffic. Social media, direct visits, email, and paid search each contribute, but none individually comes close.</p>
-<p>This matters for budget allocation. If nearly half your potential visitors arrive through search and your site ranks poorly for the terms your customers actually use, that is not a paid advertising problem. It is an SEO problem. Ads can fill the gap temporarily; they cannot solve it structurally.</p>
+<p>Organic search is one of the three biggest traffic sources for websites, alongside direct visits and paid search, according to <a href="https://contentsquare.com/guides/digital-experience-benchmark/traffic/">Contentsquare's 2026 benchmark</a> of 99 billion sessions. Social media and email contribute too.</p>
+<p>This matters for budget allocation. If a large share of your potential visitors arrive through search and your site ranks poorly for the terms your customers actually use, that is not a paid advertising problem. It is an SEO problem. Ads can fill the gap temporarily; they cannot solve it structurally.</p>
 <p>Most store owners treat organic traffic as a bonus. In practice, it is the baseline that everything else builds on.</p>
 <hr />
 <h2>What Happens When You Run Ads on a Broken Site</h2>
@@ -187,13 +191,13 @@
 <h2>The ROI Gap: SEO vs Paid Over 12 Months</h2>
 <p>The honest comparison here is not &quot;SEO is free and ads cost money.&quot; SEO takes time and investment to do properly. But the compounding effect is real and the maths eventually favours it.</p>
 <p>Ad spend produces results in direct proportion to budget. When the budget stops, the traffic stops. SEO rankings accumulate over time; a category page that ranks well in month nine continues generating traffic in month eighteen without an additional cost per click.</p>
-<p>E-commerce SEO delivers around <a href="https://firstpagesage.com/reports/seo-roi-statistics-fc/">317% ROI</a> with a break-even point at roughly nine months, based on available industry benchmarks. Over the same period, paid search CPCs rose approximately 13% year-over-year in 2025. The cost of buying traffic is rising; the cost of ranking well is not.</p>
+<p>E-commerce SEO delivers around <a href="https://firstpagesage.com/reports/seo-roi-statistics-fc/">317% ROI</a> with a break-even point at roughly nine months, based on available industry benchmarks. Meanwhile, the average Google Ads cost per click rose 12.88% in <a href="https://www.wordstream.com/blog/2025-google-ads-benchmarks">WordStream's 2025 benchmarks</a> (data from April 2024 to March 2025). The cost of buying traffic is rising; the cost of ranking well is not.</p>
 <p>Neither channel is the right answer in isolation. The argument is about sequence, not which one to choose permanently.</p>
 <hr />
 <h2>What an SEO Audit Finds That an Ad Dashboard Doesn't</h2>
 <p>An ad dashboard tells you what is happening: click-through rate, cost per acquisition, ROAS, conversion rate. It does not tell you why.</p>
 <p>An SEO audit examines the underlying site. Crawlability problems that prevent pages from being indexed. Content gaps where competitors rank and you do not. Technical debt slowing down page loads. Keyword coverage mismatches between what you target and what people search for. Backlink patterns that hold the domain back.</p>
-<p>Fix the underlying site and every channel benefits. This is what most people actually mean when they talk about an <a href="https://blog.illucrum.com/ecommerce-seo">e-commerce SEO audit</a> and why we frame ours across 46 points covering technical health, content, keywords, backlinks, and competitor positioning, not just rankings.</p>
+<p>Fix the underlying site and every channel benefits. This is what most people actually mean when they talk about an <a href="/audits/ecommerce-seo-audit/">e-commerce SEO audit</a> and why we frame ours across 54 points covering technical health, content, keywords, backlinks, and competitor positioning, not just rankings.</p>
 <p>An ad dashboard cannot surface any of this. It measures the outcome; the audit identifies the cause.</p>
 <hr />
 <h2>The Right Order: Audit, Fix, Then Amplify</h2>
@@ -218,7 +222,7 @@
 <h3>Is organic traffic really free?</h3>
 <p>Not exactly. Organic traffic has no cost per click, but generating it requires investment in content, technical work, and time. The difference from paid is that the investment is largely upfront, and the traffic it produces does not stop when the spend stops. Over a 12-to-24 month horizon, the unit economics tend to look significantly different.</p>
 <hr />
-<p>If you are currently spending on ads and have not looked closely at how the site is performing on search, an <a href="https://blog.illucrum.com/ecommerce-seo">e-commerce SEO audit</a> is a useful starting point. The audit takes a few days; the issues it identifies, fixed once, continue paying off long after the work is done. If you want a sense of what we typically find in stores at different stages, the <a href="https://blog.illucrum.com/ecommerce-seo-checklist">e-commerce SEO checklist</a> is a useful read first.</p>
+<p>If you are currently spending on ads and have not looked closely at how the site is performing on search, an <a href="/audits/ecommerce-seo-audit/">e-commerce SEO audit</a> is a useful starting point. The audit takes about a week; the issues it identifies, fixed once, continue paying off long after the work is done. If you want a sense of what we typically find in stores at different stages, the <a href="/blog/ecommerce-seo-checklist/">e-commerce SEO checklist</a> is a useful read first.</p>
 
   
 <aside id="author" aria-label="About the author">
@@ -260,7 +264,7 @@
   <h3><a href="/blog/shopify-seo/">Shopify SEO: 7 Issues the Platform Creates</a></h3>
   <p>Seven SEO problems Shopify creates by default, from duplicate product URLs and tag pages to thin collections and missing structured data.</p>
   <ul>
-    <li>Updated <time datetime="2026-04-06">Apr 6, 2026</time></li>
+    <li>Updated <time datetime="2026-09-28">Sep 28, 2026</time></li>
     <li>9 min read</li>
   </ul>
 </article>
@@ -299,13 +303,13 @@
       data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
     <div>
       <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow">
-        <img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" loading="lazy" width="48" height="48" />
+        <img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" loading="lazy" width="48" height="48">
       </a>
       <a href="https://wa.me/15122035993" target="_blank" rel="noopener">
-        <img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" loading="lazy" width="48" height="48" />
+        <img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" loading="lazy" width="48" height="48">
       </a>
       <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener">
-        <img src="/static/img/social/telegram.svg" alt="Message on Telegram" loading="lazy" width="48" height="48" />
+        <img src="/static/img/social/telegram.svg" alt="Message on Telegram" loading="lazy" width="48" height="48">
       </a>
     </div>
   </section>
@@ -361,7 +365,7 @@
       <li><a href="/legal/cookies/">Cookies</a></li>
       <li><a href="/legal/disclaimer/">Disclaimer</a></li>
       <li><a href="/legal/accessibility/">Accessibility</a></li>
-      <li><a href="#" data-consent-open>Manage cookies</a></li>
+      <li><a href="#" data-consent-open>Cookie settings</a></li>
     </ul>
   </section>
 
@@ -375,31 +379,17 @@
     style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
-<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Your choice on analytics" aria-modal="false" hidden>
+<!-- Analytics banner. Shown on every visit until the visitor chooses, and
+     again from "Cookie settings" (any [data-consent-open]);
+     see /static/js/consent.js -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-labelledby="ic-consent-title" hidden>
   <div class="ic-consent__panel">
     <span class="ic-consent__eyebrow">Illucrum</span>
-    <p class="ic-consent__title">Your choice on analytics</p>
-    <p class="ic-consent__body">We'd like to use Google Analytics to see which pages are useful. It runs only if you accept. The site works the same either way, and there is no advertising here. <a href="/legal/cookies/">Cookie policy</a>.</p>
+    <p class="ic-consent__title" id="ic-consent-title">Analytics on this site</p>
+    <p class="ic-consent__body">This site uses Google Analytics to see which pages are useful. It sets a few cookies and is never used for advertising. You can turn it off now or later from Cookie settings, and the site works the same either way. <a href="/legal/cookies/">Cookie policy</a>.</p>
     <div class="ic-consent__actions">
-      <button type="button" class="ic-consent__btn" data-consent-accept>Accept</button>
-      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject</button-->
-      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Settings</button>
-    </div>
-    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
-      <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Strictly necessary</span>
-        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
-        <p class="ic-consent__pref-desc">Remembers your choice on this banner. Always on.</p>
-      </div>
-      <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Analytics</span>
-        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
-        <p class="ic-consent__pref-desc">Google Analytics: which pages are visited and how people arrive. Off until you turn it on.</p>
-      </div>
-      <div class="ic-consent__actions">
-        <button type="button" class="ic-consent__btn" data-consent-save>Save settings</button>
-      </div>
+      <button type="button" class="ic-consent__btn" data-consent-accept>Allow analytics</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-reject>Turn off analytics</button>
     </div>
   </div>
 </div>

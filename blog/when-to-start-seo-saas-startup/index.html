@@ -6,27 +6,31 @@
 
 <link rel="icon" href="/static/img/logo-ico.png">
 <meta name="robots" content="noindex,nofollow">
-<link href="https://fonts.cdnfonts.com/css/dubai" rel="stylesheet">
+<link rel="preload" href="/static/fonts/Dubai-Regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/static/fonts/Dubai-Bold.woff" as="font" type="font/woff" crossorigin>
 
 <link rel="stylesheet" href="/static/css/illucrum.css">
 
-<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
-     Everything non-essential is denied until the user opts in via the
-     cookie banner (see /static/js/consent.js). -->
+<!-- Google Consent Mode v2. There are no ads on this site, so ad storage is
+     always denied. Analytics is on for everyone from the start; it is off only
+     if the visitor turned it off (saved by /static/js/consent.js).
+     Runs before Tag Manager loads. -->
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'granted',
-    'functionality_storage': 'granted',
-    'security_storage': 'granted',
-    'wait_for_update': 500
-  });
-  gtag('set', 'ads_data_redaction', true);
-  gtag('set', 'url_passthrough', true);
+  function gtag() { dataLayer.push(arguments); }
+  (function () {
+    var analytics = 'granted';
+    try {
+      var saved = JSON.parse(localStorage.getItem('ic_consent_v1'));
+      if (saved && saved.analytics === false) analytics = 'denied';
+    } catch (e) {}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: analytics
+    });
+  })();
 </script>
 
 <!-- Google Tag Manager -->
@@ -74,7 +78,7 @@
 <meta property="og:description" content="When should a SaaS startup start SEO? Why pre-PMF and post-PMF companies need different approaches, and how to tell which stage you are in.">
 <meta property="og:image" content="https://illucrum.com/static/img/og/home.png">
 <meta property="article:published_time" content="2026-06-09">
-<meta property="article:modified_time" content="2026-06-09">
+<meta property="article:modified_time" content="2026-09-28">
 <meta property="article:author" content="https://illucrum.com/about/">
 <meta property="article:section" content="SEO articles">
 
@@ -96,7 +100,7 @@
       "description": "When should a SaaS startup start SEO? Why pre-PMF and post-PMF companies need different approaches, and how to tell which stage you are in.",
       "image": "https://illucrum.com/static/img/og/home.png",
       "datePublished": "2026-06-09",
-      "dateModified": "2026-06-09",
+      "dateModified": "2026-09-28",
       "inLanguage": "en-US",
       "articleSection": "SEO articles",
       "author": { "@id": "https://illucrum.com/about/#person" },
@@ -165,7 +169,7 @@
 <p>
   <span>By <a href="#author">Szymon Kokot</a></span>
   <span>Published <time datetime="2026-06-09">Jun 9, 2026</time></span>
-  <span>Updated <time datetime="2026-06-09">Jun 9, 2026</time></span>
+  <span>Updated <time datetime="2026-09-28">Sep 28, 2026</time></span>
   <span>8 min read</span>
 </p>
 
@@ -175,15 +179,15 @@
 <hr />
 <h2>Why Timing Matters More Than Most Founders Realise</h2>
 <p>SEO is a compounding channel. Results from content you publish today accumulate over months, not days. That compounding is enormously valuable, but it also means that content published at the wrong stage, targeting the wrong audience, compounds in the wrong direction.</p>
-<p>If you have not yet validated product-market fit, you do not know which customer you are writing for. You might rank for a cluster of keywords and attract users who churn immediately, which signals poor quality to Google and damages your domain reputation before the right audience ever finds you.</p>
+<p>If you have not yet validated product-market fit, you do not know which customer you are writing for. You might rank for a cluster of keywords and attract users who churn immediately, which means months of content aimed at the wrong audience before the right one ever finds you.</p>
 <p>The cost of bad timing is not just wasted effort. It is a handicap you carry into the stages where SEO actually matters.</p>
 <hr />
 <h2>Stage 1: Pre-PMF (0 to 12 Months, Typically)</h2>
 <p>At this stage, your job is not to generate inbound traffic. Your job is to understand whether a product people actually want exists, and to talk to users directly to find out.</p>
 <p>SEO is a poor tool for this. The feedback loop is too slow. You need signals in days, not months.</p>
 <p>That said, there are two things worth doing now that will pay off later.</p>
-<p><strong>Set up your technical foundation.</strong> Make sure your site is indexable, loads quickly, and has clean URL structures. This takes a few hours and prevents problems that are expensive to fix later. A basic <a href="https://illucrum.com/audits/saas-seo-audit">SaaS SEO audit</a> at this stage can surface structural issues before they compound.</p>
-<p><strong>Claim and fill your Google Business Profile, if relevant.</strong> Even for SaaS businesses with no local footprint, having a verified presence matters for branded search trust.</p>
+<p><strong>Set up your technical foundation.</strong> Make sure your site is indexable, loads quickly, and has clean URL structures. This takes a few hours and prevents problems that are expensive to fix later. A <a href="/audits/saas-seo-audit/">SaaS SEO audit</a> at this stage can surface structural issues before they compound.</p>
+<p><strong>Verify your site in Google Search Console.</strong> It is free, takes a few minutes, and starts recording which searches show your pages. By the time you are ready to write, you will have months of data to work from.</p>
 <p>Do not write content yet. You do not know what to write. Wait until you know who you are writing for.</p>
 <hr />
 <h2>Stage 2: Post-PMF, Pre-Scale (Typically 12 to 36 Months)</h2>
@@ -192,7 +196,7 @@
 <p>After PMF validation, you should be able to answer these four questions with reasonable confidence:</p>
 <ol>
 <li>
-<p>Who is your ICP, specifically? Not &quot;small businesses&quot; — which type, which role, which problem.</p>
+<p>Who is your ICP, specifically? Not &quot;small businesses&quot;: which type, which role, which problem.</p>
 </li>
 <li>
 <p>What words does your ICP use when they search for a solution like yours? Not what you call it; what they call it.</p>
@@ -264,7 +268,7 @@
 <h3>What does a SaaS SEO audit actually cover?</h3>
 <p>A good audit covers technical site health, on-page optimisation, keyword mapping against your ICP, internal link structure, backlink profile, and competitor gap analysis. The goal is not a list of problems to fix; it is a prioritised action plan tied to business outcomes.</p>
 <hr />
-<p>The decision of when to start SEO for your SaaS is not really about timing. It is about readiness. Build the foundation early, wait for PMF confirmation before scaling content, and make sure your ICP is defined precisely enough that you know what to write and for whom. If you want an outside view of where your site stands before committing to an ongoing strategy, an <a href="https://illucrum.com/audits/saas-seo-audit">SEO audit for SaaS</a> is the logical starting point.</p>
+<p>The decision of when to start SEO for your SaaS is not really about timing. It is about readiness. Build the foundation early, wait for PMF confirmation before scaling content, and make sure your ICP is defined precisely enough that you know what to write and for whom. If you want an outside view of where your site stands before committing to an ongoing strategy, an <a href="/audits/saas-seo-audit/">SEO audit for SaaS</a> is the logical starting point.</p>
 
   
 <aside id="author" aria-label="About the author">
@@ -345,13 +349,13 @@
       data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
     <div>
       <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow">
-        <img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" loading="lazy" width="48" height="48" />
+        <img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" loading="lazy" width="48" height="48">
       </a>
       <a href="https://wa.me/15122035993" target="_blank" rel="noopener">
-        <img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" loading="lazy" width="48" height="48" />
+        <img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" loading="lazy" width="48" height="48">
       </a>
       <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener">
-        <img src="/static/img/social/telegram.svg" alt="Message on Telegram" loading="lazy" width="48" height="48" />
+        <img src="/static/img/social/telegram.svg" alt="Message on Telegram" loading="lazy" width="48" height="48">
       </a>
     </div>
   </section>
@@ -407,7 +411,7 @@
       <li><a href="/legal/cookies/">Cookies</a></li>
       <li><a href="/legal/disclaimer/">Disclaimer</a></li>
       <li><a href="/legal/accessibility/">Accessibility</a></li>
-      <li><a href="#" data-consent-open>Manage cookies</a></li>
+      <li><a href="#" data-consent-open>Cookie settings</a></li>
     </ul>
   </section>
 
@@ -421,31 +425,17 @@
     style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
-<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Your choice on analytics" aria-modal="false" hidden>
+<!-- Analytics banner. Shown on every visit until the visitor chooses, and
+     again from "Cookie settings" (any [data-consent-open]);
+     see /static/js/consent.js -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-labelledby="ic-consent-title" hidden>
   <div class="ic-consent__panel">
     <span class="ic-consent__eyebrow">Illucrum</span>
-    <p class="ic-consent__title">Your choice on analytics</p>
-    <p class="ic-consent__body">We'd like to use Google Analytics to see which pages are useful. It runs only if you accept. The site works the same either way, and there is no advertising here. <a href="/legal/cookies/">Cookie policy</a>.</p>
+    <p class="ic-consent__title" id="ic-consent-title">Analytics on this site</p>
+    <p class="ic-consent__body">This site uses Google Analytics to see which pages are useful. It sets a few cookies and is never used for advertising. You can turn it off now or later from Cookie settings, and the site works the same either way. <a href="/legal/cookies/">Cookie policy</a>.</p>
     <div class="ic-consent__actions">
-      <button type="button" class="ic-consent__btn" data-consent-accept>Accept</button>
-      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject</button-->
-      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Settings</button>
-    </div>
-    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
-      <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Strictly necessary</span>
-        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
-        <p class="ic-consent__pref-desc">Remembers your choice on this banner. Always on.</p>
-      </div>
-      <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Analytics</span>
-        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
-        <p class="ic-consent__pref-desc">Google Analytics: which pages are visited and how people arrive. Off until you turn it on.</p>
-      </div>
-      <div class="ic-consent__actions">
-        <button type="button" class="ic-consent__btn" data-consent-save>Save settings</button>
-      </div>
+      <button type="button" class="ic-consent__btn" data-consent-accept>Allow analytics</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-reject>Turn off analytics</button>
     </div>
   </div>
 </div>

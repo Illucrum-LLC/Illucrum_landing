@@ -6,27 +6,31 @@
 
 <link rel="icon" href="/static/img/logo-ico.png">
 <meta name="robots" content="noindex,nofollow">
-<link href="https://fonts.cdnfonts.com/css/dubai" rel="stylesheet">
+<link rel="preload" href="/static/fonts/Dubai-Regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/static/fonts/Dubai-Bold.woff" as="font" type="font/woff" crossorigin>
 
 <link rel="stylesheet" href="/static/css/illucrum.css">
 
-<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
-     Everything non-essential is denied until the user opts in via the
-     cookie banner (see /static/js/consent.js). -->
+<!-- Google Consent Mode v2. There are no ads on this site, so ad storage is
+     always denied. Analytics is on for everyone from the start; it is off only
+     if the visitor turned it off (saved by /static/js/consent.js).
+     Runs before Tag Manager loads. -->
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'granted',
-    'functionality_storage': 'granted',
-    'security_storage': 'granted',
-    'wait_for_update': 500
-  });
-  gtag('set', 'ads_data_redaction', true);
-  gtag('set', 'url_passthrough', true);
+  function gtag() { dataLayer.push(arguments); }
+  (function () {
+    var analytics = 'granted';
+    try {
+      var saved = JSON.parse(localStorage.getItem('ic_consent_v1'));
+      if (saved && saved.analytics === false) analytics = 'denied';
+    } catch (e) {}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: analytics
+    });
+  })();
 </script>
 
 <!-- Google Tag Manager -->
@@ -74,7 +78,7 @@
 <meta property="og:description" content="Local SEO is fought on two fronts: the map pack and the regular results. What a Google Business Profile needs to rank, and details that are easy to miss.">
 <meta property="og:image" content="https://illucrum.com/static/img/og/home.png">
 <meta property="article:published_time" content="2026-08-18">
-<meta property="article:modified_time" content="2026-08-18">
+<meta property="article:modified_time" content="2026-09-28">
 <meta property="article:author" content="https://illucrum.com/about/">
 <meta property="article:section" content="SEO articles">
 
@@ -96,7 +100,7 @@
       "description": "Local SEO is fought on two fronts: the map pack and the regular results. What a Google Business Profile needs to rank, and details that are easy to miss.",
       "image": "https://illucrum.com/static/img/og/home.png",
       "datePublished": "2026-08-18",
-      "dateModified": "2026-08-18",
+      "dateModified": "2026-09-28",
       "inLanguage": "en-US",
       "articleSection": "SEO articles",
       "author": { "@id": "https://illucrum.com/about/#person" },
@@ -165,7 +169,7 @@
 <p>
   <span>By <a href="#author">Szymon Kokot</a></span>
   <span>Published <time datetime="2026-08-18">Aug 18, 2026</time></span>
-  <span>Updated <time datetime="2026-08-18">Aug 18, 2026</time></span>
+  <span>Updated <time datetime="2026-09-28">Sep 28, 2026</time></span>
   <span>4 min read</span>
 </p>
 
@@ -176,7 +180,7 @@
 <h2>What details need special attention?</h2>
 <p>Even though setting up a decent profile is easy and intuitive, there are definitely few thing that are easy to miss. And those things are the opening hours, review recency, review count, review responses and website content.</p>
 <h3>Opening hours</h3>
-<p>Some businesses, like local shops, don't have much of a choice. They should just write the actual opening hours. There are businesses that can't really afford being found by a user only to frustrate him by being closed while Google states they are open. But there are companies, especially in the legal sector, that close most clients on the phone, for instance. When answering the phone is a priority, some companies even opt to be open 24/7, just to make sure that when they are found, the potential client know he can call right away. Of course this kind of commitment is not for everyone. Still, B2C companies should keep in mind, that if they are closed in the afternoon and on weekends too, they most likely won't receive many phone calls.</p>
+<p>Some businesses, like local shops, don't have much of a choice. They should just write the actual opening hours. There are businesses that can't really afford being found by a user only to frustrate him by being closed while Google states they are open. But there are companies, especially in the legal sector, that close most clients on the phone, for instance. When answering the phone is a priority, some companies staff the phone around the clock and list themselves as open 24 hours, so that when they are found, the potential client knows he can call right away. That only works if someone really answers at 3 a.m. Google's guidelines ask for your real customer-facing hours, and listing hours you don't keep can get the profile suspended. Of course this kind of commitment is not for everyone. Still, B2C companies should keep in mind, that if they are closed in the afternoon and on weekends too, they most likely won't receive many phone calls.</p>
 <h3>Review recency</h3>
 <p>Reviews are probably one of the most important factors. And review recency is especially important to close customers. According to <a href="https://www.brightlocal.com/research/local-consumer-review-survey/">BrightLocal</a>, 18% are only convinced by reviews from within the last seven days. 32% look for reviews two weeks old or less and 74% seek reviews written in the last three months. Getting reviews on Google is not a one time thing. It's not just getting a decent number of reviews with a good overall score. Collecting reviews on Google has to be a constant process, that should never stop.</p>
 <h3>Review count</h3>
@@ -187,7 +191,7 @@
 <p>Another thing to have in mind, is that although local pack is different from normal results, the two are still connected. It's not only about making sure the your online presence remains consistent and congruent. It's also that quite few users actually visits the website of businesses they find. And so it's important that the website supports the GBP, and makes sure the user doesn't go back and choose a competitor.</p>
 <hr />
 <h2>Conclusion</h2>
-<p>A decent GBP is easy to get. Refining it requires a little research, mostly to make sure you are not missing anything. But overall it's a pretty easy and straightforward way of making sure people will get to know about your business. Ranking outside the local pack is still important, and somewhat more difficult to achieve. And so if you need help with SEO or your GBP, check out our <a href="https://illucrum.com/audits/seo-audit/">SEO audit</a> offer.</p>
+<p>A decent GBP is easy to get. Refining it requires a little research, mostly to make sure you are not missing anything. But overall it's a pretty easy and straightforward way of making sure people will get to know about your business. Ranking outside the local pack is still important, and somewhat more difficult to achieve. And so if you need help with SEO or your GBP, check out our <a href="/audits/local-seo-audit/">local business SEO audit</a> offer.</p>
 
   
 <aside id="author" aria-label="About the author">
@@ -268,13 +272,13 @@
       data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
     <div>
       <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow">
-        <img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" loading="lazy" width="48" height="48" />
+        <img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" loading="lazy" width="48" height="48">
       </a>
       <a href="https://wa.me/15122035993" target="_blank" rel="noopener">
-        <img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" loading="lazy" width="48" height="48" />
+        <img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" loading="lazy" width="48" height="48">
       </a>
       <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener">
-        <img src="/static/img/social/telegram.svg" alt="Message on Telegram" loading="lazy" width="48" height="48" />
+        <img src="/static/img/social/telegram.svg" alt="Message on Telegram" loading="lazy" width="48" height="48">
       </a>
     </div>
   </section>
@@ -330,7 +334,7 @@
       <li><a href="/legal/cookies/">Cookies</a></li>
       <li><a href="/legal/disclaimer/">Disclaimer</a></li>
       <li><a href="/legal/accessibility/">Accessibility</a></li>
-      <li><a href="#" data-consent-open>Manage cookies</a></li>
+      <li><a href="#" data-consent-open>Cookie settings</a></li>
     </ul>
   </section>
 
@@ -344,31 +348,17 @@
     style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
-<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Your choice on analytics" aria-modal="false" hidden>
+<!-- Analytics banner. Shown on every visit until the visitor chooses, and
+     again from "Cookie settings" (any [data-consent-open]);
+     see /static/js/consent.js -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-labelledby="ic-consent-title" hidden>
   <div class="ic-consent__panel">
     <span class="ic-consent__eyebrow">Illucrum</span>
-    <p class="ic-consent__title">Your choice on analytics</p>
-    <p class="ic-consent__body">We'd like to use Google Analytics to see which pages are useful. It runs only if you accept. The site works the same either way, and there is no advertising here. <a href="/legal/cookies/">Cookie policy</a>.</p>
+    <p class="ic-consent__title" id="ic-consent-title">Analytics on this site</p>
+    <p class="ic-consent__body">This site uses Google Analytics to see which pages are useful. It sets a few cookies and is never used for advertising. You can turn it off now or later from Cookie settings, and the site works the same either way. <a href="/legal/cookies/">Cookie policy</a>.</p>
     <div class="ic-consent__actions">
-      <button type="button" class="ic-consent__btn" data-consent-accept>Accept</button>
-      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject</button-->
-      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Settings</button>
-    </div>
-    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
-      <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Strictly necessary</span>
-        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
-        <p class="ic-consent__pref-desc">Remembers your choice on this banner. Always on.</p>
-      </div>
-      <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Analytics</span>
-        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
-        <p class="ic-consent__pref-desc">Google Analytics: which pages are visited and how people arrive. Off until you turn it on.</p>
-      </div>
-      <div class="ic-consent__actions">
-        <button type="button" class="ic-consent__btn" data-consent-save>Save settings</button>
-      </div>
+      <button type="button" class="ic-consent__btn" data-consent-accept>Allow analytics</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-reject>Turn off analytics</button>
     </div>
   </div>
 </div>

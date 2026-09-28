@@ -1,8 +1,32 @@
-/* Fonts ------------------------------------------------------------------ */
+/* Step numbers for #process (list-style: step) ------------------------- */
 
 @counter-style step {
   system: extends decimal-leading-zero;
   suffix: "";
+}
+
+/* Font: Dubai, served from /static/fonts ---------------------------------- */
+
+@font-face {
+  font-family: Dubai;
+  src: url("/static/fonts/Dubai-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Dubai;
+  src: url("/static/fonts/Dubai-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Dubai;
+  src: url("/static/fonts/Dubai-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Tokens ----------------------------------------------------------------- */
@@ -122,60 +146,43 @@ dt {
   color: var(--green-text);
 }
 
-/* Button links */
+/* Buttons: the header CTA, the first action in a hero or closing panel,
+   and the checker's Run button. Every action after the first is outlined. */
 body > header li:last-child a,
-main > header p > a,
-address a {
+main > header p > :is(a, button),
+address a,
+#tool [type="submit"] {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 50px;
   padding: 0 26px;
+  border: 0;
   border-radius: 6px;
   background: var(--green);
   color: var(--ink);
+  font: inherit;
   font-size: 1.0625rem;
   font-weight: 700;
+  cursor: pointer;
 }
 
 body > header li:last-child a:hover,
-main > header p > a:hover,
-address a:hover {
+main > header p > :is(a, button):hover,
+address a:hover,
+#tool [type="submit"]:hover {
   background: var(--green-hover);
   color: var(--ink);
 }
 
-main > header p > a + a {
+main > header p > :is(a, button) + a,
+address > * + a {
   background: #ffffff;
   border: 1px solid var(--ink);
 }
-main > header p > a + a:hover {
+main > header p > :is(a, button) + a:hover,
+address > * + a:hover {
   background: var(--paper);
-}
-
-/* Placeholder slots: the label comes from CSS so it is never indexed */
-[data-placeholder] {
-  display: grid;
-  place-items: center;
-  padding: 10px 14px;
-  border: 1px dashed var(--faint);
-  border-radius: 8px;
-  background: repeating-linear-gradient(
-    135deg,
-    var(--paper) 0 6px,
-    var(--row-line) 6px 12px
-  );
-  font:
-    500 11px/1.4 ui-monospace,
-    SFMono-Regular,
-    Menlo,
-    monospace;
-  color: var(--muted);
-  text-align: center;
-}
-
-[data-placeholder]::before {
-  content: "[" attr(data-placeholder) "]";
 }
 
 /* Site header ------------------------------------------------------------ */
@@ -388,6 +395,7 @@ main > header figure strong {
   line-height: 0.9;
   letter-spacing: -0.03em;
   color: var(--ink);
+  white-space: nowrap;
 }
 
 main > header table,
@@ -649,19 +657,20 @@ main section p {
   font-weight: 700;
 }
 
-/* One report. Everything ranked. */
-#report ul {
+/* Ruled lists: the homepage report list, the tools' limits, the SEO facts
+   and the privacy summary share one look. */
+:is(#report, #limits, .facts, .ruled) ul {
   display: grid;
   gap: 28px;
   margin-top: 32px;
   list-style: none;
 }
 
-#report li {
+:is(#report, #limits, .facts, .ruled) li {
   padding-top: 16px;
   border-top: 1px solid var(--ink);
 }
-#report h3 {
+:is(#report, #limits, .facts, .ruled) h3 {
   margin-bottom: 8px;
   font-size: clamp(1.25rem, 1.18rem + 0.3vw, 1.4375rem);
 }
@@ -891,23 +900,9 @@ article ul {
   padding: 20px;
 }
 
-.reviews aside [data-placeholder] {
-  padding: 16px 14px;
-}
 .reviews aside p {
   font-size: 1rem;
   font-weight: 700;
-}
-
-.reviews > [data-placeholder] {
-  padding: 32px 20px;
-  border-radius: var(--radius);
-  background: repeating-linear-gradient(
-    135deg,
-    #ffffff 0 8px,
-    var(--paper) 8px 16px
-  );
-  line-height: 1.6;
 }
 
 #about img {
@@ -934,12 +929,12 @@ article ul {
   margin-right: 14px;
 }
 
-/* Questions, answered */
-#faq details {
+/* Question lists: the FAQ and the checker's privacy answers */
+:is(#faq, #privacy) details {
   border-top: 1px solid #d8d8d2;
 }
 
-#faq summary {
+:is(#faq, #privacy) summary {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -952,11 +947,11 @@ article ul {
   letter-spacing: -0.01em;
 }
 
-#faq summary::-webkit-details-marker {
+:is(#faq, #privacy) summary::-webkit-details-marker {
   display: none;
 }
 
-#faq summary::after {
+:is(#faq, #privacy) summary::after {
   content: "+";
   content: "+" / "";
   flex: none;
@@ -967,12 +962,15 @@ article ul {
   transition: transform 0.18s ease;
 }
 
-#faq details[open] summary::after {
+:is(#faq, #privacy) details[open] summary::after {
   transform: rotate(45deg);
 }
-#faq details p {
+:is(#faq, #privacy) details p {
   max-width: 720px;
   padding-bottom: 22px;
+}
+#privacy h2 {
+  margin-bottom: 20px;
 }
 
 /* Tell me about your site */
@@ -1008,7 +1006,7 @@ address a {
 }
 
 @media (min-width: 720px) {
-  #report ul {
+  :is(#report, #limits, .facts, .ruled) ul {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   #pricing dl {
@@ -1022,14 +1020,14 @@ address a {
 }
 
 @media (min-width: 960px) {
-  #report ul {
+  :is(#report, #limits, .facts, .ruled) ul {
     gap: 44px 72px;
     margin-top: 56px;
   }
-  #report li {
+  :is(#report, #limits, .facts) li {
     padding-top: 20px;
   }
-  #report h3 {
+  :is(#report, #limits) h3 {
     margin-bottom: 10px;
   }
   #report > p:last-child {
@@ -1140,9 +1138,6 @@ address a {
     grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
     gap: 24px;
   }
-  .reviews > [data-placeholder] {
-    grid-column: 1 / -1;
-  }
   .reviews figure {
     padding: 44px;
   }
@@ -1165,16 +1160,8 @@ address a {
     gap: 24px;
     padding: 32px;
   }
-  .reviews aside [data-placeholder] {
-    padding: 34px 18px;
-    border-radius: 10px;
-  }
   .reviews aside p {
     font-size: 1.0625rem;
-  }
-  .reviews > [data-placeholder] {
-    padding: 44px;
-    font-size: 12px;
   }
 
   /* Portrait left, text vertically centred on the right */
@@ -1210,23 +1197,26 @@ address a {
     margin-right: 18px;
   }
 
-  #faq {
+  :is(#faq, #privacy) {
     display: grid;
     grid-template-columns: 360px minmax(0, 1fr);
     align-items: start;
     gap: 72px;
   }
 
-  #faq summary {
+  :is(#faq, #privacy) summary {
     align-items: center;
     gap: 24px;
     padding: 24px 0;
   }
-  #faq summary::after {
+  :is(#faq, #privacy) summary::after {
     font-size: 1.375rem;
   }
-  #faq details p {
+  :is(#faq, #privacy) details p {
     padding-bottom: 26px;
+  }
+  #privacy h2 {
+    margin: 0;
   }
 
   #contact {
@@ -1258,6 +1248,8 @@ address a {
 }
 
 /* Site footer ------------------------------------------------------------ */
+/* Brand column (logo, Clutch widget, social links), four link columns, then
+   the copyright line across the bottom. */
 
 body > footer {
   padding: 44px var(--inline) 32px;
@@ -1271,28 +1263,23 @@ body > footer > section > img {
   max-width: 15rem;
 }
 
-body > footer > p {
-  margin-bottom: 30px;
-  line-height: 1.55;
-}
-body > footer > p img {
-  width: auto;
-  height: 20px;
-  margin-bottom: 14px;
+body > footer > section + section {
+  margin-top: 28px;
 }
 
-body > footer ul {
-  list-style: none;
+/* Social links */
+body > footer > section > div {
+  display: flex;
+  gap: 6px;
+  margin-top: 16px;
+}
+body > footer > section > div > a > img {
+  width: 3rem !important;
+  height: auto !important;
 }
 
-body > footer nav > ul {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-}
-
-/* Group labels are the text of the outer list items */
-body > footer nav > ul > li {
+body > footer h5 {
+  margin: 0 0 12px;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -1300,25 +1287,16 @@ body > footer nav > ul > li {
   color: var(--ink);
 }
 
-body > footer nav > ul > li:first-child {
-  grid-row: span 3;
-}
-
-body > footer li ul {
+body > footer ul {
   display: flex;
   flex-direction: column;
   gap: 9px;
-  margin-top: 9px;
-  font-size: 0.9375rem;
-  font-weight: 400;
-  letter-spacing: 0;
-  text-transform: none;
+  list-style: none;
 }
-
-body > footer li li a {
+body > footer ul a {
   color: var(--muted);
 }
-body > footer li li a:hover {
+body > footer ul a:hover {
   color: var(--ink);
 }
 
@@ -1337,34 +1315,15 @@ body > footer > small {
     column-gap: 32px;
     padding-block: 64px 40px;
   }
-
-  body > footer > p {
-    max-width: 220px;
-    margin: 0;
+  body > footer > section + section {
+    margin-top: 0;
   }
-  body > footer > p img {
-    height: 22px;
-    margin-bottom: 18px;
-  }
-  body > footer nav,
-  body > footer nav > ul {
-    display: grid;
-    grid-column: 2 / -1;
-    grid-template-columns: subgrid;
-  }
-  body > footer nav > ul {
-    grid-column: 1 / -1;
-    gap: normal;
-  }
-  body > footer nav > ul > li {
+  body > footer h5 {
+    margin-bottom: 14px;
     font-size: 0.8125rem;
   }
-  body > footer nav > ul > li:first-child {
-    grid-row: auto;
-  }
-  body > footer li ul {
+  body > footer ul {
     gap: 10px;
-    margin-top: 14px;
   }
   body > footer > small {
     grid-column: 1 / -1;
@@ -1440,7 +1399,7 @@ body > footer > small {
   color: var(--ink);
 }
 
-/* Buttons: same shape as the site's green and outlined buttons */
+/* Settings dialog buttons: same shape as the site's green and outlined buttons */
 .ic-consent__actions {
   display: flex;
   flex-wrap: wrap;
@@ -1482,94 +1441,6 @@ body > footer > small {
   background: var(--paper);
 }
 
-/* Preferences */
-.ic-consent__prefs {
-  display: grid;
-  margin-top: 20px;
-  padding-top: 4px;
-  border-top: 1px solid var(--line);
-}
-
-.ic-consent__prefs[hidden] {
-  display: none;
-}
-
-.ic-consent__prefs > .ic-consent__actions {
-  padding-top: 16px;
-}
-
-.ic-consent__pref {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 4px 16px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--row-line);
-}
-
-.ic-consent__pref:last-of-type {
-  border-bottom: 0;
-}
-
-.ic-consent__pref-label {
-  font-size: 0.9375rem;
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.ic-consent__pref-desc {
-  grid-column: 1 / -1;
-  margin: 0;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--muted);
-}
-
-/* Switch */
-.ic-consent__toggle {
-  position: relative;
-  flex-shrink: 0;
-  width: 40px;
-  height: 24px;
-  margin: 0;
-  border: 1px solid var(--faint);
-  border-radius: 999px;
-  background: var(--line);
-  -webkit-appearance: none;
-  appearance: none;
-  cursor: pointer;
-  transition:
-    background 0.18s ease,
-    border-color 0.18s ease;
-}
-
-.ic-consent__toggle::after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 0 1px 2px rgb(10 10 10 / 0.2);
-  transition: transform 0.18s ease;
-}
-
-.ic-consent__toggle:checked {
-  border-color: var(--green);
-  background: var(--green);
-}
-
-.ic-consent__toggle:checked::after {
-  transform: translateX(16px);
-}
-
-.ic-consent__toggle:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
 @media (max-width: 540px) {
   .ic-consent {
     padding: 12px;
@@ -1584,15 +1455,6 @@ body > footer > small {
   .ic-consent__btn-ghost {
     width: 100%;
   }
-}
-
-body > footer > section > div {
-  display: flex;
-}
-
-body > footer > section > div > a > img {
-  width: 3rem !important;
-  height: auto !important;
 }
 
 iframe {
@@ -1612,54 +1474,16 @@ iframe + p {
 
 /* Section eyebrows. hgroup p is the eyebrow style, but main section p
    out-ranks it inside sections, so restate size and colour there. */
-main > section hgroup p,
-#contact hgroup p {
+main > section hgroup p {
   margin-bottom: 10px;
   font-size: clamp(0.75rem, 0.72rem + 0.1vw, 0.8125rem);
   line-height: 1.45;
   color: var(--green-text);
 }
 
-/* <button> twins of the button links: the checker's Run button and the
-   lead-form trigger in the closing panel */
-#tool [type="submit"],
-address button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50px;
-  padding: 0 26px;
-  border: 0;
-  border-radius: 6px;
-  background: var(--green);
-  color: var(--ink);
-  font: inherit;
-  font-size: 1.0625rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-#tool [type="submit"]:hover,
-address button:hover {
-  background: var(--green-hover);
-}
 #tool [type="submit"]:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-}
-address button {
-  min-height: 52px;
-  padding: 0 32px;
-  font-size: clamp(1.0625rem, 1.04rem + 0.1vw, 1.125rem);
-}
-
-/* Second action in the closing panel: outlined, like the hero's */
-address > * + a {
-  background: #ffffff;
-  border: 1px solid var(--ink);
-}
-address > * + a:hover {
-  background: var(--paper);
 }
 
 /* Links to the other tools, under the closing panel's buttons */
@@ -1669,67 +1493,6 @@ address > * + a:hover {
   margin: 28px 0 0;
   padding-top: 20px;
   border-top: 1px solid var(--mint-line);
-}
-
-/* What it doesn't do: a second ruled list, same as #report */
-#limits ul {
-  display: grid;
-  gap: 28px;
-  margin-top: 32px;
-  list-style: none;
-}
-
-#limits li {
-  padding-top: 16px;
-  border-top: 1px solid var(--ink);
-}
-#limits h3 {
-  margin-bottom: 8px;
-  font-size: clamp(1.25rem, 1.18rem + 0.3vw, 1.4375rem);
-}
-
-/* Privacy: a second question list, same as #faq */
-#privacy h2 {
-  margin-bottom: 20px;
-}
-#privacy details {
-  border-top: 1px solid #d8d8d2;
-}
-
-#privacy summary {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 20px 0;
-  list-style: none;
-  cursor: pointer;
-  font-size: clamp(1.125rem, 1.07rem + 0.29vw, 1.3125rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-#privacy summary::-webkit-details-marker {
-  display: none;
-}
-
-#privacy summary::after {
-  content: "+";
-  content: "+" / "";
-  flex: none;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.3;
-  color: var(--green-text);
-  transition: transform 0.18s ease;
-}
-
-#privacy details[open] summary::after {
-  transform: rotate(45deg);
-}
-#privacy details p {
-  max-width: 720px;
-  padding-bottom: 22px;
 }
 
 /* The checker. Class names and ids stay as they are: scraper.js uses them. */
@@ -1989,51 +1752,9 @@ address > * + a:hover {
   }
 }
 
-@media (min-width: 720px) {
-  #limits ul {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 @media (min-width: 960px) {
-  address button {
-    min-height: 54px;
-  }
   #contact address:has(> * + a) {
     align-items: stretch;
-  }
-
-  #limits ul {
-    gap: 44px 72px;
-    margin-top: 56px;
-  }
-  #limits li {
-    padding-top: 20px;
-  }
-  #limits h3 {
-    margin-bottom: 10px;
-  }
-
-  #privacy {
-    display: grid;
-    grid-template-columns: 360px minmax(0, 1fr);
-    align-items: start;
-    gap: 72px;
-  }
-
-  #privacy h2 {
-    margin: 0;
-  }
-  #privacy summary {
-    align-items: center;
-    gap: 24px;
-    padding: 24px 0;
-  }
-  #privacy summary::after {
-    font-size: 1.375rem;
-  }
-  #privacy details p {
-    padding-bottom: 26px;
   }
 }
 
@@ -2071,25 +1792,10 @@ main > header figure p > a:hover {
   background: none;
   color: var(--ink);
 }
-main > header figure strong {
-  white-space: nowrap;
-}
 
 /* SEO facts page ------------------------------------------------------------ */
-/* One ruled list per topic, same rhythm as #report. The figure leads each item,
-   the source sits underneath in small type. */
-
-.facts ul {
-  display: grid;
-  gap: 28px;
-  margin-top: 32px;
-  list-style: none;
-}
-
-.facts li {
-  padding-top: 16px;
-  border-top: 1px solid var(--ink);
-}
+/* One ruled list per topic (see the ruled lists under Sections). The figure
+   leads each item, the source sits underneath in small type. */
 
 .facts li > strong {
   display: block;
@@ -2099,11 +1805,6 @@ main > header figure strong {
   line-height: 1;
   letter-spacing: -0.03em;
   color: var(--ink);
-}
-
-.facts h3 {
-  margin-bottom: 8px;
-  font-size: clamp(1.25rem, 1.18rem + 0.3vw, 1.4375rem);
 }
 .facts li p + p {
   margin-top: 10px;
@@ -2116,22 +1817,6 @@ main > header figure strong {
 }
 .facts small a:hover {
   border-color: var(--ink);
-}
-
-@media (min-width: 720px) {
-  .facts ul {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 960px) {
-  .facts ul {
-    gap: 44px 72px;
-    margin-top: 56px;
-  }
-  .facts li {
-    padding-top: 20px;
-  }
 }
 
 /* Articles ------------------------------------------------------------------ */
@@ -2377,6 +2062,7 @@ main > header figure strong {
     letter-spacing: 0.06em;
   }
 }
+
 /* Blog ---------------------------------------------------------------------- */
 /* /blog/, the four collection pages (/blog/seo/, /blog/checklists/,
    /blog/comparisons/, /blog/other/) and every article. Articles reuse .article;
@@ -2583,33 +2269,32 @@ main > header figure strong {
 }
 
 /* Legal pages ------------------------------------------------------------ */
-main > header p > button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50px;
-  padding: 0 26px;
-  border: 0;
-  border-radius: 6px;
-  background: var(--green);
-  color: var(--ink);
-  font: inherit;
-  font-size: 1.0625rem;
-  font-weight: 700;
-  cursor: pointer;
+/* Clauses (.split), long text (.prose) and scrolling tables (.table). The
+   privacy summary uses the ruled list, the hero buttons the shared buttons. */
+
+main > section.split {
+  padding-block: calc(var(--block) * 0.6);
 }
-main > header p > button:hover { background: var(--green-hover); }
-main > header p > button + a { background: #FFFFFF; border: 1px solid var(--ink); }
-main > header p > button + a:hover { background: var(--paper); }
+main > section.split + section.split {
+  border-top: 1px solid var(--line);
+}
+.split hgroup h2 {
+  margin-bottom: 20px;
+}
 
-main > section.split { padding-block: calc(var(--block) * 0.6); }
-main > section.split + section.split { border-top: 1px solid var(--line); }
-.split hgroup h2 { margin-bottom: 20px; }
-
-.prose { max-width: 760px; }
-.prose > * + * { margin-top: 16px; }
-.prose > h3 { margin-top: 32px; font-size: 1.1875rem; }
-.prose > h3 + p { margin-top: 8px; }
+.prose {
+  max-width: 760px;
+}
+.prose > * + * {
+  margin-top: 16px;
+}
+.prose > h3 {
+  margin-top: 32px;
+  font-size: 1.1875rem;
+}
+.prose > h3 + p {
+  margin-top: 8px;
+}
 .prose ul,
 .prose ol {
   display: grid;
@@ -2619,18 +2304,31 @@ main > section.split + section.split { border-top: 1px solid var(--line); }
   line-height: 1.6;
   color: var(--muted);
 }
-.prose li::marker { color: var(--green-text); }
-.prose strong { color: var(--ink); }
+.prose li::marker {
+  color: var(--green-text);
+}
+.prose strong {
+  color: var(--ink);
+}
 .prose p a,
-.prose li a { text-decoration: underline; text-underline-offset: 3px; }
-.prose dl { display: grid; gap: 14px; }
-.prose dd { margin: 2px 0 0; color: var(--ink); }
+.prose li a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose dl {
+  display: grid;
+  gap: 14px;
+}
+.prose dd {
+  margin: 2px 0 0;
+  color: var(--ink);
+}
 
 .table {
   overflow-x: auto;
   border: 1px solid var(--card-line);
   border-radius: var(--radius);
-  background: #FFFFFF;
+  background: #ffffff;
 }
 .table table {
   width: 100%;
@@ -2646,17 +2344,20 @@ main > section.split + section.split { border-top: 1px solid var(--line); }
   text-align: left;
   vertical-align: top;
 }
-.table thead th { background: var(--paper); color: var(--ink); font-weight: 700; white-space: nowrap; }
-.table td { color: var(--muted); }
-.table td:first-child { color: var(--ink); }
-.table tbody tr:last-child td { border-bottom: 0; }
-
-.ruled ul { display: grid; gap: 28px; margin-top: 32px; list-style: none; }
-.ruled li { padding-top: 16px; border-top: 1px solid var(--ink); }
-.ruled h3 { margin-bottom: 8px; font-size: clamp(1.25rem, 1.18rem + 0.3vw, 1.4375rem); }
-
-@media (min-width: 720px) {
-  .ruled ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.table thead th {
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.table td {
+  color: var(--muted);
+}
+.table td:first-child {
+  color: var(--ink);
+}
+.table tbody tr:last-child td {
+  border-bottom: 0;
 }
 
 @media (min-width: 960px) {
@@ -2666,27 +2367,8 @@ main > section.split + section.split { border-top: 1px solid var(--line); }
     gap: 72px;
     align-items: start;
   }
-  .split hgroup h2 { margin-bottom: 0; font-size: clamp(1.75rem, 1.5rem + 1vw, 2.25rem); }
-  .ruled ul { gap: 44px 72px; margin-top: 56px; }
-}
-
-/* Footer ----------------------------------------------------------------- */
-body > footer h5 {
-  margin: 0 0 12px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-body > footer > section > ul { display: flex; flex-direction: column; gap: 9px; }
-body > footer > section > ul a { color: var(--muted); }
-body > footer > section > ul a:hover { color: var(--ink); }
-body > footer > section + section { margin-top: 28px; }
-body > footer > section > div { gap: 6px; margin-top: 16px; }
-
-@media (min-width: 960px) {
-  body > footer > section + section { margin-top: 0; }
-  body > footer h5 { margin-bottom: 14px; font-size: 0.8125rem; }
-  body > footer > section > ul { gap: 10px; }
+  .split hgroup h2 {
+    margin-bottom: 0;
+    font-size: clamp(1.75rem, 1.5rem + 1vw, 2.25rem);
+  }
 }

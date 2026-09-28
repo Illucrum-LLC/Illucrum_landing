@@ -6,27 +6,31 @@
 
 <link rel="icon" href="/static/img/logo-ico.png">
 <meta name="robots" content="noindex,nofollow">
-<link href="https://fonts.cdnfonts.com/css/dubai" rel="stylesheet">
+<link rel="preload" href="/static/fonts/Dubai-Regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/static/fonts/Dubai-Bold.woff" as="font" type="font/woff" crossorigin>
 
 <link rel="stylesheet" href="/static/css/illucrum.css">
 
-<!-- Google Consent Mode v2: defaults BEFORE GTM loads.
-     Everything non-essential is denied until the user opts in via the
-     cookie banner (see /static/js/consent.js). -->
+<!-- Google Consent Mode v2. There are no ads on this site, so ad storage is
+     always denied. Analytics is on for everyone from the start; it is off only
+     if the visitor turned it off (saved by /static/js/consent.js).
+     Runs before Tag Manager loads. -->
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'granted',
-    'functionality_storage': 'granted',
-    'security_storage': 'granted',
-    'wait_for_update': 500
-  });
-  gtag('set', 'ads_data_redaction', true);
-  gtag('set', 'url_passthrough', true);
+  function gtag() { dataLayer.push(arguments); }
+  (function () {
+    var analytics = 'granted';
+    try {
+      var saved = JSON.parse(localStorage.getItem('ic_consent_v1'));
+      if (saved && saved.analytics === false) analytics = 'denied';
+    } catch (e) {}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: analytics
+    });
+  })();
 </script>
 
 <!-- Google Tag Manager -->
@@ -74,7 +78,7 @@
 <meta property="og:description" content="Shopify handles the basics, but its defaults create duplicate URLs, tag pages and thin content. Seven platform issues and how to fix them.">
 <meta property="og:image" content="https://illucrum.com/static/img/og/home.png">
 <meta property="article:published_time" content="2026-04-06">
-<meta property="article:modified_time" content="2026-04-06">
+<meta property="article:modified_time" content="2026-09-28">
 <meta property="article:author" content="https://illucrum.com/about/">
 <meta property="article:section" content="SEO articles">
 
@@ -96,7 +100,7 @@
       "description": "Shopify handles the basics, but its defaults create duplicate URLs, tag pages and thin content. Seven platform issues and how to fix them.",
       "image": "https://illucrum.com/static/img/og/home.png",
       "datePublished": "2026-04-06",
-      "dateModified": "2026-04-06",
+      "dateModified": "2026-09-28",
       "inLanguage": "en-US",
       "articleSection": "SEO articles",
       "author": { "@id": "https://illucrum.com/about/#person" },
@@ -165,7 +169,7 @@
 <p>
   <span>By <a href="#author">Szymon Kokot</a></span>
   <span>Published <time datetime="2026-04-06">Apr 6, 2026</time></span>
-  <span>Updated <time datetime="2026-04-06">Apr 6, 2026</time></span>
+  <span>Updated <time datetime="2026-09-28">Sep 28, 2026</time></span>
   <span>9 min read</span>
 </p>
 
@@ -179,9 +183,9 @@
 <p>Shopify adds canonical tags that point to the <code>/products/</code> version, which helps. But the internal links on your site, particularly from collection pages, often point to the collection-based URL rather than the canonical one. This sends mixed signals to search engines about which version matters and splits your link equity across multiple pages.</p>
 <p>The fix has two parts. First, audit your internal links to ensure they point to the canonical <code>/products/</code> URL, not the collection path. This usually requires editing your theme's Liquid templates. Second, use Google Search Console to verify that the correct URLs are being indexed and that duplicate versions are not appearing in search results.</p>
 <h2>2. Tag Pages and Index Bloat</h2>
-<p>Shopify generates a new page every time you use tags to filter products within a collection. If you sell clothing and use tags like &quot;cotton,&quot; &quot;long-sleeve,&quot; &quot;red,&quot; and &quot;summer,&quot; each combination creates a unique, indexable URL.</p>
+<p>Shopify generates a new page every time you use a tag to filter products within a collection, such as <code>/collections/shirts/cotton</code>. Its default robots.txt already blocks combinations of tags (URLs with a <code>+</code>) and of several filters, but a page for each single tag stays crawlable and indexable. If you sell clothing and use tags like &quot;cotton,&quot; &quot;long-sleeve,&quot; &quot;red,&quot; and &quot;summer,&quot; each of them adds a page to every collection that uses it.</p>
 <p>These tag pages carry the same products as your main collection page, with no way to add unique titles, descriptions, or introductory content through Shopify's standard admin. From Google's perspective, they are thin, duplicate pages. A store with 20 collections and 10 tags per collection can accidentally generate 200 near-identical pages competing with your actual category pages.</p>
-<p>The most reliable fix is adding a noindex directive to tag pages. This keeps them functional for shoppers (they can still filter products) while preventing search engines from treating them as separate pages. You can do this by adding conditional logic to your theme's <code>&lt;head&gt;</code> section that inserts a noindex meta tag when the URL contains a <code>/tagged/</code> path.</p>
+<p>The most reliable fix is adding a noindex directive to tag pages. This keeps them functional for shoppers (they can still filter products) while preventing search engines from treating them as separate pages. You can do this by adding conditional logic to your theme's <code>&lt;head&gt;</code> section that inserts a noindex meta tag when a collection is filtered by a tag (when <code>current_tags</code> is set). Don't key it on <code>/tagged/</code>: that path is only used by blog tag pages. And don't also block these pages in robots.txt, because Google never sees a noindex on a page it isn't allowed to crawl.</p>
 <p>If specific tag pages genuinely target unique keywords (for example, a &quot;vegan leather&quot; tag page in a handbag store), you can selectively allow indexing for those pages while noindexing the rest. But this is the exception, not the rule.</p>
 <h2>3. Thin Product and Collection Content</h2>
 <p>Shopify's content editing tools are functional but basic. The product description field is a simple rich text editor, and collection pages default to displaying a product grid with minimal or no descriptive text. Many store owners leave these fields empty or paste in the manufacturer's default description.</p>
@@ -196,17 +200,17 @@
 <h2>5. Page Speed and Theme Bloat</h2>
 <p>Shopify's hosted infrastructure is fast by default. The problems come from what store owners add on top of it: heavy themes, too many apps, unoptimised images, and third-party scripts.</p>
 <p>Every Shopify app you install adds JavaScript and CSS to your pages. A store with 15 apps can easily add two to three seconds of load time. Many of these apps continue loading their scripts on every page even when their functionality is only needed on one.</p>
-<p>Themes are another factor. A theme that looks impressive in the Shopify Theme Store might have render-blocking JavaScript, unoptimised image delivery, and poor Core Web Vitals scores. According to industry data, a large majority of Shopify stores load slower than Google's recommended thresholds.</p>
+<p>Themes are another factor. A theme that looks impressive in the Shopify Theme Store might have render-blocking JavaScript, unoptimised image delivery, and poor Core Web Vitals scores. The platform itself is not the problem: in the <a href="https://almanac.httparchive.org/en/2025/ecommerce">2025 Web Almanac</a>, 76% of Shopify stores passed Core Web Vitals on mobile, against 35% for WooCommerce and Magento. The stores that fail usually fail because of what was added on top.</p>
 <p>The fixes here are straightforward but require discipline. Audit your installed apps and remove anything you are not actively using. Compress all product images before uploading (tools like TinyPNG or Squoosh work well). Choose a lightweight theme, or have your current theme audited for performance issues. Use lazy loading for images below the fold.</p>
 <h2>6. Missing or Generic Structured Data</h2>
-<p>Shopify does not include rich schema markup by default. Some themes add basic Product schema, but many do not include critical fields like review ratings, availability, price currency, or brand information.</p>
-<p>Without proper structured data, your products cannot appear in Google's rich results (the listings that show star ratings, prices, and stock status directly in search results). They also cannot appear in Google Shopping's free product listings. In 2026, with AI-generated search overviews pulling structured data to answer product queries, missing schema means your store is invisible in an increasing share of search results.</p>
+<p>Shopify's own free themes, such as Dawn and Horizon, output basic Product markup through the <code>structured_data</code> filter. Many third-party themes don't, and the default markup doesn't carry your review ratings, which come from your review app.</p>
+<p>Without proper structured data, your product pages are unlikely to show rich results (the listings that show star ratings, prices, and stock status directly in search results). Free listings in Google Shopping run on your Merchant Center product data, which Shopify's Google &amp; YouTube app sends, and markup on the page lets Google check and update price and availability. Google's AI shopping answers draw on the same product data, so a store with thin markup and no feed is easy to leave out.</p>
 <p>The implementation path depends on your technical comfort level. You can add Product schema directly to your theme's Liquid templates, use a Shopify app like Smart SEO or JSON-LD for SEO, or have a developer implement it. Whichever method you choose, validate the markup afterwards using Google's Rich Results Test. Broken schema can actually prevent your pages from displaying correctly, so validation is not optional.</p>
-<p>At minimum, every product page should include: product name, description, brand, SKU or GTIN, price, currency, availability status, and aggregate review rating (if you have reviews). Collection pages benefit from FAQ schema if you add descriptive content that answers common questions about the product category.</p>
+<p>At minimum, every product page should include: product name, description, brand, SKU or GTIN, price, currency, availability status, and aggregate review rating (if you have reviews).</p>
 <h2>7. Limited Blog Functionality</h2>
-<p>Shopify includes a built-in blog, but it is basic compared to WordPress or dedicated content platforms. You get a title, a rich text body, tags, and a featured image. There is no table of contents generation, no advanced layout options, no native support for FAQ schema, and limited control over URL structure.</p>
+<p>Shopify includes a built-in blog, but it is basic compared to WordPress or dedicated content platforms. You get a title, a rich text body, tags, and a featured image. There is no table of contents generation, no advanced layout options, and limited control over URL structure.</p>
 <p>This matters because content marketing is how online stores capture informational and long-tail keywords that product pages cannot target. &quot;How to choose running shoes for flat feet&quot; or &quot;best materials for kitchen knives&quot; are searches that a blog post can rank for and that a product page never will.</p>
-<p>The blog limitation is a genuine constraint, but it is not a reason to skip content entirely. You can work around most of the formatting issues by editing HTML within blog posts, and FAQ schema can be added to your theme's blog template. Some stores opt for a separate blog on a subdomain (using WordPress or a platform like Hashnode) to get more flexibility, though this introduces additional complexity around domain authority and link equity.</p>
+<p>The blog limitation is a genuine constraint, but it is not a reason to skip content entirely. You can work around most of the formatting issues by editing HTML within blog posts. Some stores opt for a separate blog on a subdomain (using WordPress or a platform like Hashnode) to get more flexibility, though this introduces additional complexity around domain authority and link equity.</p>
 <p>What matters more than the platform is consistency. A Shopify blog with one well-written, keyword-targeted post per month will outperform no blog at all. Start with topics your customers actually search for: buying guides, size guides, material comparisons, care instructions. Each post should link to relevant product and collection pages, creating the internal linking network that both users and search engines rely on.</p>
 <h2>Frequently Asked Questions</h2>
 <h3>Is Shopify good for SEO?</h3>
@@ -214,14 +218,14 @@
 <h3>Does changing my Shopify theme affect SEO?</h3>
 <p>It can. A new theme may change your page load speed, heading structure, schema markup, and mobile layout. Before switching themes, benchmark your current Core Web Vitals scores and review the new theme's code quality. After switching, re-validate your structured data and check Google Search Console for any new crawl errors.</p>
 <h3>How do I fix duplicate content on Shopify?</h3>
-<p>Shopify's duplicate content comes primarily from two sources: products appearing in multiple collections (creating multiple URLs) and tag pages. For collection-based duplicates, ensure internal links point to the canonical <code>/products/</code> URL. For tag pages, add a noindex directive to your theme's <code>&lt;head&gt;</code> section for any URL containing <code>/tagged/</code>.</p>
+<p>Shopify's duplicate content comes primarily from two sources: products appearing in multiple collections (creating multiple URLs) and tag pages. For collection-based duplicates, ensure internal links point to the canonical <code>/products/</code> URL. For tag pages, add a noindex directive to your theme's <code>&lt;head&gt;</code> section for collections filtered by a tag (when <code>current_tags</code> is set).</p>
 <h3>Do I need a Shopify SEO app?</h3>
 <p>An SEO app can help with bulk editing meta tags, generating structured data, and automating image alt text. If you have hundreds of products, the time savings are significant. Smart SEO and JSON-LD for SEO are well-regarded options. Avoid installing multiple SEO apps, as they often conflict with each other and add unnecessary load time.</p>
 <h3>How often should I audit my Shopify store's SEO?</h3>
 <p>A full audit once or twice per year is a reasonable starting point. Between audits, monitor Google Search Console monthly for crawl errors, indexing issues, and keyword performance changes. Any time you add a significant number of products, change themes, or install new apps, check your technical SEO metrics to catch regressions early.</p>
 <h2>What to Do Next</h2>
 <p>Shopify's SEO challenges are real, but they are also well-understood and fixable. Most stores underperform in search not because the platform is fundamentally limited, but because these platform-specific issues go unaddressed.</p>
-<p>If your store's organic traffic is flat or declining, the issues above are the first place to look. An <a href="https://illucrum.com/audits/ecommerce-seo-audit">e-commerce SEO audit</a> built specifically for Shopify will identify exactly which of these problems exist on your store and prioritise fixes by impact. If you already know what needs fixing, the optimisation work can be handled for you.</p>
+<p>If your store's organic traffic is flat or declining, the issues above are the first place to look. An <a href="/audits/ecommerce-seo-audit/">e-commerce SEO audit</a> checks each of these on your store and puts the fixes in order of impact.</p>
 
   
 <aside id="author" aria-label="About the author">
@@ -263,7 +267,7 @@
   <h3><a href="/blog/why-your-store-needs-seo-before-spending-on-ads/">Why Your Store Needs SEO Before Spending on Ads</a></h3>
   <p>Why an online store should get its SEO in order before spending on ads, and when paid search still makes sense first.</p>
   <ul>
-    <li>Updated <time datetime="2026-04-20">Apr 20, 2026</time></li>
+    <li>Updated <time datetime="2026-09-28">Sep 28, 2026</time></li>
     <li>6 min read</li>
   </ul>
 </article>
@@ -302,13 +306,13 @@
       data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
     <div>
       <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow">
-        <img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" loading="lazy" width="48" height="48" />
+        <img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" loading="lazy" width="48" height="48">
       </a>
       <a href="https://wa.me/15122035993" target="_blank" rel="noopener">
-        <img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" loading="lazy" width="48" height="48" />
+        <img src="/static/img/social/whatsapp.svg" alt="Message on Whatsapp" loading="lazy" width="48" height="48">
       </a>
       <a href="https://t.me/m/w209xo-FZGJk" target="_blank" rel="noopener">
-        <img src="/static/img/social/telegram.svg" alt="Message on Telegram" loading="lazy" width="48" height="48" />
+        <img src="/static/img/social/telegram.svg" alt="Message on Telegram" loading="lazy" width="48" height="48">
       </a>
     </div>
   </section>
@@ -364,7 +368,7 @@
       <li><a href="/legal/cookies/">Cookies</a></li>
       <li><a href="/legal/disclaimer/">Disclaimer</a></li>
       <li><a href="/legal/accessibility/">Accessibility</a></li>
-      <li><a href="#" data-consent-open>Manage cookies</a></li>
+      <li><a href="#" data-consent-open>Cookie settings</a></li>
     </ul>
   </section>
 
@@ -378,31 +382,17 @@
     style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- Cookie consent banner (hidden until shown by /static/js/consent.js) -->
-<div class="ic-consent" data-consent-banner role="dialog" aria-live="polite" aria-label="Your choice on analytics" aria-modal="false" hidden>
+<!-- Analytics banner. Shown on every visit until the visitor chooses, and
+     again from "Cookie settings" (any [data-consent-open]);
+     see /static/js/consent.js -->
+<div class="ic-consent" data-consent-banner role="dialog" aria-labelledby="ic-consent-title" hidden>
   <div class="ic-consent__panel">
     <span class="ic-consent__eyebrow">Illucrum</span>
-    <p class="ic-consent__title">Your choice on analytics</p>
-    <p class="ic-consent__body">We'd like to use Google Analytics to see which pages are useful. It runs only if you accept. The site works the same either way, and there is no advertising here. <a href="/legal/cookies/">Cookie policy</a>.</p>
+    <p class="ic-consent__title" id="ic-consent-title">Analytics on this site</p>
+    <p class="ic-consent__body">This site uses Google Analytics to see which pages are useful. It sets a few cookies and is never used for advertising. You can turn it off now or later from Cookie settings, and the site works the same either way. <a href="/legal/cookies/">Cookie policy</a>.</p>
     <div class="ic-consent__actions">
-      <button type="button" class="ic-consent__btn" data-consent-accept>Accept</button>
-      <!--button type="button" class="ic-consent__btn-ghost" data-consent-reject>Reject</button-->
-      <button type="button" class="ic-consent__btn-ghost" data-consent-prefs-toggle aria-expanded="false" aria-controls="ic-consent-prefs">Settings</button>
-    </div>
-    <div class="ic-consent__prefs" id="ic-consent-prefs" data-consent-prefs hidden>
-      <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Strictly necessary</span>
-        <input class="ic-consent__toggle" type="checkbox" checked disabled aria-label="Strictly necessary">
-        <p class="ic-consent__pref-desc">Remembers your choice on this banner. Always on.</p>
-      </div>
-      <div class="ic-consent__pref">
-        <span class="ic-consent__pref-label">Analytics</span>
-        <input class="ic-consent__toggle" type="checkbox" data-consent-toggle="analytics" aria-label="Analytics">
-        <p class="ic-consent__pref-desc">Google Analytics: which pages are visited and how people arrive. Off until you turn it on.</p>
-      </div>
-      <div class="ic-consent__actions">
-        <button type="button" class="ic-consent__btn" data-consent-save>Save settings</button>
-      </div>
+      <button type="button" class="ic-consent__btn" data-consent-accept>Allow analytics</button>
+      <button type="button" class="ic-consent__btn-ghost" data-consent-reject>Turn off analytics</button>
     </div>
   </div>
 </div>
