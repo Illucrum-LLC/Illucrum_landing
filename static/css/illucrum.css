@@ -188,6 +188,10 @@ address > * + a:hover {
 /* Site header ------------------------------------------------------------ */
 
 body > header {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;

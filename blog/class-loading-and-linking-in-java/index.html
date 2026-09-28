@@ -174,24 +174,24 @@
 </p>
 
   <h1>Class loading and linking in Java</h1>
-<p>As Java is an object oriented language, the topic of what classes actually are and how are they loaded by the JVM, is one that really goes to the heart of things. In this article, we will explore in more detail not only what is visible to every Java developer, but also what is hidden under the hood of the JVM.</p>
+<p>As Java is an object oriented language, the topic of what classes actually are and how they are loaded by the JVM is one that really goes to the heart of things. In this article, we will explore in more detail not only what is visible to every Java developer, but also what is hidden under the hood of the JVM.</p>
 <h2>Class loaders</h2>
-<p>Let’s keep it relatively simple for a while, and let’s start with something more “tangible“ for a regular developer like tha class loaders. Class loaders, most often are Java classes extending <code>java.lang.ClassLoader</code>, which are responsible for loading other classes. To be more precise, they load the bytecode of a class, then they leave it to the JVM to do the linking, basically reading and analyzing the bytecode to create a new class.</p>
+<p>Let’s keep it relatively simple for a while, and let’s start with something more “tangible” for a regular developer like the class loaders. Class loaders, most often, are Java classes extending <code>java.lang.ClassLoader</code>, which are responsible for loading other classes. To be more precise, they load the bytecode of a class, then they leave it to the JVM to do the linking, basically reading and analyzing the bytecode to create a new class.</p>
 <h3><strong>Hierarchy</strong></h3>
 <p>By default, a Java application has three main class loaders:</p>
 <ol>
 <li>
-<p><strong>Bootstrap loader:</strong> The first class loader to run, it is used to get the absolute basic system loaded - essentially <code>java.base</code>. It is not a Java class, it’s written in native code and it doesn’t perform any checks on the classes it loads, so for security reasons it doesn’t have a representation in Java (as a class or class instance, for exmaple), and for this reason it’s refered as <code>null</code>.</p>
+<p><strong>Bootstrap loader:</strong> The first class loader to run, it is used to get the absolute basic system loaded - essentially <code>java.base</code>. It is not a Java class, it’s written in native code and it doesn’t perform any checks on the classes it loads, so for security reasons it doesn’t have a representation in Java (as a class or class instance, for example), and for this reason it’s referred to as <code>null</code>.</p>
 </li>
 <li>
 <p><strong>Platform loader:</strong> When the bootstrap loader is done loading the core of the system, the platform loader loads the other platform modules that the application depends on. This class loader is a Java class, as we said earlier, extending <code>java.lang.ClassLoader</code>, and it’s accessible through a static function (<code>ClassLoader.getPlatformClassLoader()</code>).</p>
 </li>
 <li>
-<p><strong>Application loader:</strong> The last loader to run, is the most widely used. It’s basically the one that loads the application itself. It is also an instance of a Java class, just like the platform loader, and it’s the one Java calls the system class loader: <code>ClassLoader.getSystemClassLoader()</code> returns it. It can also be replaced when starting the application. So if you want to run your app with a custom system class loader, you just need to add to your command the <code>-Djava.system.class.loader=my.custom.ClassLoader</code> flag.</p>
+<p><strong>Application loader:</strong> The last loader to run is the most widely used. It’s basically the one that loads the application itself. It is also an instance of a Java class, just like the platform loader, and it’s the one Java calls the system class loader: <code>ClassLoader.getSystemClassLoader()</code> returns it. It can also be replaced when starting the application. So if you want to run your app with a custom system class loader, you just need to add to your command the <code>-Djava.system.class.loader=my.custom.ClassLoader</code> flag.</p>
 </li>
 </ol>
 <h3>Delegation</h3>
-<p>Generally speaking, a class in Java can’t be loaded twice by the same class loader, but it can be loaded multiple times by different class loaders. This is one reason why there is a hierarchy of class loaders. And the second reason, is delegation, which purpose is precisely to avoid the same class to be loaded twice. A properly implemented class loader always delegates that task to it’s parent (the class immediately above in the hierarchy) before attempting to load it by itself. So, let’s say we want the application class loader to load the class A.</p>
+<p>Generally speaking, a class in Java can’t be loaded twice by the same class loader, but it can be loaded multiple times by different class loaders. This is one reason why there is a hierarchy of class loaders. And the second reason is delegation, whose purpose is precisely to avoid the same class being loaded twice. A properly implemented class loader always delegates that task to its parent (the class immediately above in the hierarchy) before attempting to load it by itself. So, let’s say we want the application class loader to load the class A.</p>
 <ol>
 <li>
 <p>The application loader delegates the task to the platform class loader.</p>
@@ -200,49 +200,49 @@
 <p>The platform loader delegates the task to the bootstrap class loader.</p>
 </li>
 <li>
-<p>The boostrap class loader has no parent, so it tries to load A and if it is able to do so, it returns it to the platform loader.</p>
+<p>The bootstrap class loader has no parent, so it tries to load A and if it is able to do so, it returns it to the platform loader.</p>
 </li>
 <li>
-<p>When the platform loader receives A from its parent, it just passes it through to the application loader. If not, it tries to load A by itself and return it to the application loader.</p>
+<p>When the platform loader receives A from its parent, it just passes it through to the application loader. If not, it tries to load A by itself and returns it to the application loader.</p>
 </li>
 <li>
 <p>If the application loader receives class A from the platform loader, there is nothing more to do. If it doesn’t, then the application loader is the last one to give it a try.</p>
 </li>
 </ol>
-<p>Of course, you may add your own, totally custom class loaders. And those, although it would be a good thing if they followed delegation placing themselves beneath the app loader, in some cases they are implemented to break that rule on purpose.</p>
+<p>Of course, you may add your own, totally custom class loaders. And although it would be a good thing if those followed delegation, placing themselves beneath the app loader, in some cases they are implemented to break that rule on purpose.</p>
 <h3>Initiating and defining loaders</h3>
 <p>A class loader is said to be the defining loader of a class A, if A was actually loaded by that class loader. So if the app loader was the one that started the loading process, but due to delegation it was the bootstrap loader that actually found and loaded A, then the bootstrap loader is the defining loader of A.</p>
-<p>A class loader is said to be the initiating loader a class A, if the class loader is either the one that started the process that loaded A or is also the defining loader of A. This means a class A can have two initiating class loadeds. In the previous example, the initiating class loaders would be both the app loader and the bootstrap loader.</p>
+<p>A class loader is said to be the initiating loader of a class A, if the class loader is either the one that started the process that loaded A or is also the defining loader of A. This means a class A can have two initiating class loaders. In the previous example, the initiating class loaders would be both the app loader and the bootstrap loader.</p>
 <p>This is quite important, we will talk about it later on.</p>
 <h2>JVM</h2>
-<p>Now that we know what class loaders do, let’s focus on what the JVM does. This is where the fun really begins. This part is maybe a little bit more abstract as I will try to explain the concepts without getting into the details of specific implementations. The JVM is the responsible for making sure everything is secure and optimized so there is no errors and no unnecessary calls to the class loaders.</p>
+<p>Now that we know what class loaders do, let’s focus on what the JVM does. This is where the fun really begins. This part is maybe a little bit more abstract as I will try to explain the concepts without getting into the details of specific implementations. The JVM is responsible for making sure everything is secure and optimized so there are no errors and no unnecessary calls to the class loaders.</p>
 <h3>Linking</h3>
-<p>When a class loader finds the bytecode of the class to be loaded, the JVM takes over and starts creating it’s own representation of the class. This is refered to as linking and it is done in four steps:</p>
+<p>When a class loader finds the bytecode of the class to be loaded, the JVM takes over and starts creating its own representation of the class. This is referred to as linking and it is done in four steps:</p>
 <ol>
 <li>
-<p><strong>Verification:</strong> First, the JVM needs to make sure that the bytecode loaded is a valid representation of a class and that it’s code is well behaved.</p>
+<p><strong>Verification:</strong> First, the JVM needs to make sure that the bytecode loaded is a valid representation of a class and that its code is well behaved.</p>
 </li>
 <li>
 <p><strong>Preparation:</strong> Once the bytecode is verified, the JVM starts allocating and getting the static variables of the class making them ready to initialize.</p>
 </li>
 <li>
-<p><strong>Resolution:</strong> Now, before initializing the class, the JVM tries to resolve the supertype and implemented interfaces if any of the class being linked. If the JVM is not able to resolve them, it first tries to load and link them before continuing.</p>
+<p><strong>Resolution:</strong> Now, before initializing the class, the JVM tries to resolve the supertype and implemented interfaces, if any, of the class being linked. If the JVM is not able to resolve them, it first tries to load and link them before continuing.</p>
 </li>
 <li>
 <p><strong>Initialization:</strong> In this step, it’s the first time the bytecode of the class is actually being executed. In this step, all static fields are initialized as well as any static initialization blocks are run. When this is done, the class is ready to be instantiated.</p>
 </li>
 </ol>
 <h3>Klasses</h3>
-<p>The representation of a class used by the JVM is the “klass” and it is not a Java class, they are stored in the metaspace. Each klass is unique, and all instaces of the class it represents, are created based on of that klass. Some of the information it contains is accessible from Java through the <code>java.lang.Class</code>, which instances are Java representations of different classes. This is what makes reflection possible, but that is a topic for a different article.</p>
-<p>In the metaspace, klasses are not just stored in any way, they are organized. Each class loader has a dictionary assigned to it. Each klass is stored in the dictionary of it’s initiating loader. And it’s also important to point out, that each klass contains information about it’s defining loader.</p>
+<p>The representation of a class used by the JVM is the “klass” and it is not a Java class, they are stored in the metaspace. Each klass is unique, and all instances of the class it represents are created based on that klass. Some of the information it contains is accessible from Java through the <code>java.lang.Class</code>, whose instances are Java representations of different classes. This is what makes reflection possible, but that is a topic for a different article.</p>
+<p>In the metaspace, klasses are not just stored in any way, they are organized. Each class loader has a dictionary assigned to it. Each klass is stored in the dictionary of its initiating loader. And it’s also important to point out that each klass contains information about its defining loader.</p>
 <h3>Loading and linking process</h3>
 <p>Let’s consider a class A, which has been defined by the app class loader. And let’s also consider a class B that is being referenced from A.</p>
 <ol>
 <li>
-<p>When B is referenced while executing A, the JVM finds out from A’s klass which is it’s defining class loader, in our example it’s the app loader.</p>
+<p>When B is referenced while executing A, the JVM finds out from A’s klass which is its defining class loader, in our example it’s the app loader.</p>
 </li>
 <li>
-<p>The JVM now check in the app loader’s dictionary if contains B. Which we could also express as, the JVM checks if the class loader already is an initiating loader for B. If it is, the JVM grabs the B klass and continues executing A.</p>
+<p>The JVM now checks in the app loader’s dictionary if it contains B. Which we could also express as, the JVM checks if the class loader already is an initiating loader for B. If it is, the JVM grabs the B klass and continues executing A.</p>
 </li>
 <li>
 <p>But if the app loader is not an initiating loader of B, the JVM asks the app loader to load B.</p>
@@ -251,11 +251,11 @@
 <p>Now all delegation steps explained before follow.</p>
 </li>
 <li>
-<p>When B get’s loaded, it’s klass representation gets stored inside it’s initiating class loaders dictionaries for future reference.</p>
+<p>When B gets loaded, its klass representation gets stored inside its initiating class loaders’ dictionaries for future reference.</p>
 </li>
 </ol>
 <h2>Conclusion</h2>
-<p>Klasses are the representation of Java classes in the JVM. They are not only identified by their name, but also by their defining class loader. This is the reason why a class can be loaded multipple times by different class loader and get treated as completely different classes. Which is the reason why delegation and class loaders hierarchy is needed. Klasses are stored in the metaspace in a dictionary assigned to it’s initiating loaders, which helps the JVM to improve performance in not having to call the class loader each time some class gets referenced.</p>
+<p>Klasses are the representation of Java classes in the JVM. They are not only identified by their name, but also by their defining class loader. This is the reason why a class can be loaded multiple times by different class loaders and get treated as completely different classes. Which is the reason why delegation and the class loader hierarchy are needed. Klasses are stored in the metaspace in a dictionary assigned to their initiating loaders, which helps the JVM to improve performance by not having to call the class loader each time some class gets referenced.</p>
 
   
 <aside id="author" aria-label="About the author">
@@ -297,7 +297,7 @@
   <h3><a href="/blog/a-perfect-data-structure/">A “perfect” data structure</a></h3>
   <p>An experiment in designing a list with constant-time access, insertion and removal, and the trade-off that makes it possible.</p>
   <ul>
-    <li>Updated <time datetime="2026-01-29">Jan 29, 2026</time></li>
+    <li>Updated <time datetime="2026-09-28">Sep 28, 2026</time></li>
     <li>8 min read</li>
   </ul>
 </article>
@@ -312,7 +312,7 @@
     <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40"
       data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
     <div>
-      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow">
+      <a href="https://www.linkedin.com/in/szymon-kokot/" target="_blank" rel="nofollow">
         <img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" loading="lazy" width="48" height="48">
       </a>
       <a href="https://wa.me/15122035993" target="_blank" rel="noopener">
@@ -352,18 +352,18 @@
     <h5>Free tool</h5>
     <ul>
       <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
-      <li><a href="/tools/bulk-checker/meta-tag-check/">Meta Tag Check</a>
+      <li><a href="/tools/bulk-checker/meta-tag-check/">Meta tag check</a>
       </li>
-      <li><a href="/tools/bulk-checker/heading-check/">Heading Check</a></li>
-      <li><a href="/tools/bulk-checker/alt-text-check/">Alt Text Check</a>
+      <li><a href="/tools/bulk-checker/heading-check/">Heading check</a></li>
+      <li><a href="/tools/bulk-checker/alt-text-check/">Alt text check</a>
       </li>
-      <li><a href="/tools/bulk-checker/word-count-check/">Word Count Check</a>
+      <li><a href="/tools/bulk-checker/word-count-check/">Word count check</a>
       </li>
-      <li><a href="/tools/bulk-checker/canonical-check/">Canonical Check</a>
+      <li><a href="/tools/bulk-checker/canonical-check/">Canonical check</a>
       </li>
-      <li><a href="/tools/bulk-checker/open-graph-check/">Open Graph Check</a>
+      <li><a href="/tools/bulk-checker/open-graph-check/">Open Graph check</a>
       </li>
-      <li><a href="/tools/bulk-checker/schema-check/">Schema Check</a></li>
+      <li><a href="/tools/bulk-checker/schema-check/">Schema check</a></li>
     </ul>
   </section>
 

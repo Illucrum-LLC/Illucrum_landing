@@ -174,13 +174,13 @@
 </p>
 
   <h1>Java Hot Code Reloader</h1>
-<p>Without a doubt, Java is a wonderful language. It's fast, strongly typed, has C-like syntax, basically everything I like in a programming language. And also it has some other useful features like being safe or platform independent. But it has one drawback. And it is that every small change in code needs a application restart to take effect. This can be quite frustrating.</p>
+<p>Without a doubt, Java is a wonderful language. It's fast, strongly typed, has C-like syntax, basically everything I like in a programming language. And also it has some other useful features like being safe or platform independent. But it has one drawback. And it is that every small change in code needs an application restart to take effect. This can be quite frustrating.</p>
 <p>Of course, it isn't true for all projects, because this issue can be solved using different tools. But all of them have one thing in common, they use some kind of trick. The aim of this article is to explore the problem of hot code reloading in Java, and explain some possible solutions, including the one I used in my own project: the <a href="https://github.com/Illucrum-LLC/JHCR/releases"><strong>Java Hot Code Reloader</strong></a>.</p>
 <hr />
 <h2><strong>Class loading</strong></h2>
-<p>How are classes normally loaded by the JVM? This is quite simple, class loaders are used. The class loaders in the JVM are a separate very interesting subject, worth of exploring on its own. Here we will only rapidly go through the basics we need.</p>
+<p>How are classes normally loaded by the JVM? This is quite simple, class loaders are used. The class loaders in the JVM are a separate very interesting subject, worth exploring on its own. Here we will only rapidly go through the basics we need.</p>
 <h3><strong>Can classes get loaded twice?</strong></h3>
-<p>First, it's good to know that each class, can't be loaded twice by the same class loader, but it can be loaded twice by two different class loaders. Loaded classes are not identified internally only by their names, but also by the class loader that defined them.</p>
+<p>First, it's good to know that each class can't be loaded twice by the same class loader, but it can be loaded twice by two different class loaders. Loaded classes are not identified internally only by their names, but also by the class loader that defined them.</p>
 <h3><strong>Class loader hierarchy</strong></h3>
 <p>In a normal Java application, there are three class loaders:</p>
 <ol>
@@ -188,53 +188,53 @@
 <p><strong>Bootstrap loader:</strong> first class loader; represented by <code>null</code>, it is not accessible in any way from Java. It is used to get the absolute basic system loaded - essentially <code>java.base</code>.</p>
 </li>
 <li>
-<p><strong>Platform loader:</strong> second class loader in the hierarchy, it can be accessed calling <code>ClassLoader.getPlatformClassLoader()</code>. This loader loads the rest of the platform modules that the application depends upon.</p>
+<p><strong>Platform loader:</strong> second class loader in the hierarchy, it can be accessed by calling <code>ClassLoader.getPlatformClassLoader()</code>. This loader loads the rest of the platform modules that the application depends upon.</p>
 </li>
 <li>
-<p><strong>Application loader:</strong> the last class loader in the standard hierarchy, it's the most widely used in the application. It's also called the system class loader: it can be accessed calling <code>ClassLoader.getSystemClassLoader()</code>, and we can set a custom one by running the java application with the <code>-Djava.system.class.loader=com.custom.CustomClassLoader</code> flag.</p>
+<p><strong>Application loader:</strong> the last class loader in the standard hierarchy, it's the most widely used in the application. It's also called the system class loader: it can be accessed by calling <code>ClassLoader.getSystemClassLoader()</code>, and we can set a custom one by running the Java application with the <code>-Djava.system.class.loader=com.custom.CustomClassLoader</code> flag.</p>
 </li>
 </ol>
 <h3><strong>Loading a class</strong></h3>
-<p>When a class is to be loaded the loadClass method of a class loader is called. A correctly implemented loadClass method follow these steps:</p>
+<p>When a class is to be loaded, the loadClass method of a class loader is called. A correctly implemented loadClass method follows these steps:</p>
 <ol>
 <li>
-<p>Calls findLoadedClass method. In the end, it's a native method, that searches if the target class has been loaded before. If it wasn't, we continue.</p>
+<p>Calls findLoadedClass method. In the end, it's a native method that searches if the target class has been loaded before. If it wasn't, we continue.</p>
 </li>
 <li>
-<p>It calls the loadClass method of it's parent (the class loader immediately above in the hierarchy), to avoid loading the same class twice from different class loaders.</p>
+<p>It calls the loadClass method of its parent (the class loader immediately above in the hierarchy), to avoid loading the same class twice from different class loaders.</p>
 </li>
 <li>
 <p>If the parent was unable to load the target class, the class loader calls its own findClass method, which attempts to find the target class. If it fails, the loader throws a ClassNotFoundException.</p>
 </li>
 </ol>
-<h3><strong>How the loadClass method is called?</strong></h3>
+<h3><strong>How is the loadClass method called?</strong></h3>
 <p>The loadClass method can be called in two ways:</p>
 <ol>
 <li>
-<p>It can be called manually, explicitely.</p>
+<p>It can be called manually, explicitly.</p>
 </li>
 <li>
-<p>It can be called automatically by the JVM. But there's a catch. Remember the findLoadedClass method? Each class loader has it's own &quot;cache&quot;, where all classes loaded by that class loader are saved. To save time. The JVM only calls the loadClass method only if it is unable to find the class in the class loaders cache.</p>
+<p>It can be called automatically by the JVM. But there's a catch. Remember the findLoadedClass method? Each class loader has its own &quot;cache&quot;, where all classes loaded by that class loader are saved. To save time. The JVM only calls the loadClass method if it is unable to find the class in the class loader's cache.</p>
 </li>
 </ol>
 <hr />
 <h2><strong>Instrumentation</strong></h2>
-<p>So, where is the problem? Well, the problem is that Java doesn't really allow overriding classes, unloading them so they can be loaded again, or loading the same class twice. An attentive reader may now say something like <em>&quot;wait, didn't you say a class can be loaded twice by differnet class loaders?&quot;</em>. And to you, dear reader, I answer: yes. Absolutely yes. I will explain this matter later on, in the &quot;Some possible solutions&quot; section.</p>
-<p>Even though you can't reload classes, there is something Java gives you: Instrumentation. An what does Instrumentation give us?</p>
+<p>So, where is the problem? Well, the problem is that Java doesn't really allow overriding classes, unloading them so they can be loaded again, or loading the same class twice. An attentive reader may now say something like <em>&quot;wait, didn't you say a class can be loaded twice by different class loaders?&quot;</em>. And to you, dear reader, I answer: yes. Absolutely yes. I will explain this matter later on, in the &quot;Some possible solutions&quot; section.</p>
+<p>Even though you can't reload classes, there is something Java gives you: Instrumentation. And what does Instrumentation give us?</p>
 <h3><strong>Redefinition</strong></h3>
-<p>Instrumentation gives us redefinition. You can redefine classes, although there are limitations. The class structure needs to remain the same. No new methods, no removing methods, no renaming methods, non of the same to fields. It's a nice tool, but quite limited in a development environment.</p>
+<p>Instrumentation gives us redefinition. You can redefine classes, although there are limitations. The class structure needs to remain the same. No new methods, no removing methods, no renaming methods, none of the same to fields. It's a nice tool, but quite limited in a development environment.</p>
 <h3><strong>Transformers</strong></h3>
-<p>Transformers can be very useful too. They allow you to intercept the bytecode of a class before it is loaded or redefined. Having the bytecode, the content of a compiled class, you have full control over the class that is being loaded. You can change it's behavior, add custom methods, or even create a completely new class from scratch.</p>
+<p>Transformers can be very useful too. They allow you to intercept the bytecode of a class before it is loaded or redefined. Having the bytecode, the content of a compiled class, you have full control over the class that is being loaded. You can change its behavior, add custom methods, or even create a completely new class from scratch.</p>
 <hr />
 <h2><strong>Some possible solutions</strong></h2>
 <p>So it's quite clear now, that Java offers a very well designed environment, that works very well with a normal setup. But it doesn't really allow reloading classes. It allows redefinition, but that is not enough. So, what tricks can be used to solve this?</p>
 <h3><strong>Custom JVM</strong></h3>
-<p>First let's mention the obvious one. Which basically is, you don't like how Java works? Just create you own version tailored specially for you! Easy, right? You don't have to create a whole new language from scratch, just replace a small part of its environment, one of the parts that makes Java so safe. After all, if it is to be used only in development, not in production, that's a perfectly valid solution. And it is used for example by <a href="https://dcevm.github.io/"><strong>DCEVM</strong></a>, which stopped at Java 11. Today the same approach ships in the <a href="https://github.com/JetBrains/JetBrainsRuntime"><strong>JetBrains Runtime</strong></a>, switched on with the <code>-XX:+AllowEnhancedClassRedefinition</code> flag.</p>
+<p>First let's mention the obvious one. Which basically is, you don't like how Java works? Just create your own version tailored specially for you! Easy, right? You don't have to create a whole new language from scratch, just replace a small part of its environment, one of the parts that makes Java so safe. After all, if it is to be used only in development, not in production, that's a perfectly valid solution. And it is used for example by <a href="https://dcevm.github.io/"><strong>DCEVM</strong></a>, which stopped at Java 11. Today the same approach ships in the <a href="https://github.com/JetBrains/JetBrainsRuntime"><strong>JetBrains Runtime</strong></a>, switched on with the <code>-XX:+AllowEnhancedClassRedefinition</code> flag.</p>
 <h3><strong>Replacing away class loaders</strong></h3>
-<p>As promised, the complete answer to the attentive reader. Yes, you can load the same class (or different versions of the same class) by two differnt class loaders with no problems. But that would mean getting rid off your original class loader, and creating a new one which would have to load all classes all over again. After all, if you have a class A, that references another class B, you modify B and load it with another class loader, class A keeps referencing the class B loaded by the first class loader. So you have to load A again too, so it references the new version of B.</p>
+<p>As promised, the complete answer to the attentive reader. Yes, you can load the same class (or different versions of the same class) by two different class loaders with no problems. But that would mean getting rid of your original class loader, and creating a new one which would have to load all classes all over again. After all, if you have a class A, that references another class B, you modify B and load it with another class loader, class A keeps referencing the class B loaded by the first class loader. So you have to load A again too, so it references the new version of B.</p>
 <p>It is still a solution and it is actually used by some tools, like <a href="https://docs.spring.io/spring-boot/reference/using/devtools.html"><strong>Spring Boot DevTools</strong></a>.</p>
-<h3><strong>JHCRs solution</strong></h3>
-<p>And what solution did I find? JHCR uses a double approach. At first, it tries using redefinition. When that is not possible, things get a little more interesting. First, lets see what elements are involved:</p>
+<h3><strong>JHCR's solution</strong></h3>
+<p>And what solution did I find? JHCR uses a double approach. At first, it tries using redefinition. When that is not possible, things get a little more interesting. First, let's see what elements are involved:</p>
 <ol>
 <li>
 <p>Custom class loader</p>
@@ -246,13 +246,13 @@
 <p>A transformer</p>
 </li>
 </ol>
-<p>Now, lets say there is a Class A:</p>
+<p>Now, let's say there is a Class A:</p>
 <ol>
 <li>
-<p>Before loading any class, a transformer intercepts its bytecode, modifying it in a way, each call to a constructor of any class, explicitely calls the loadClass method of the custom class loader.</p>
+<p>Before loading any class, a transformer intercepts its bytecode, modifying it in a way that each call to a constructor of any class explicitly calls the loadClass method of the custom class loader.</p>
 </li>
 <li>
-<p>A hasn't been loaded before, so the loadClass method of my custom class loaders gets called normally.</p>
+<p>A hasn't been loaded before, so the loadClass method of my custom class loader gets called normally.</p>
 </li>
 <li>
 <p>It finds the class and saves it in a custom cache of the class loader (although there is no way of not saving the class in the default cache).</p>
@@ -269,7 +269,7 @@
 </ol>
 <p>Of course, this way, changes to A do not apply for already existing instances of A, but it works like a charm for any new instances. And that is how the second version of the JHCR works.</p>
 <h2><strong>Conclusion</strong></h2>
-<p>Hot code reloading is not a trivial issue in Java. But it can be done using different tricks, and everyone comes with its own problems. This is what makes the this matter so interesting and complex. All the things that were briefly mentioned here, are definitely worth of investigating on their own: class loaders and delagation, the Instrumentation API, JVM internals, bytecode manipulation. And there are things that were not mentioned for the sake of simplicity, like reflection, which also plays an important part in making JHCR work.</p>
+<p>Hot code reloading is not a trivial issue in Java. But it can be done using different tricks, and each one comes with its own problems. This is what makes this matter so interesting and complex. All the things that were briefly mentioned here are definitely worth investigating on their own: class loaders and delegation, the Instrumentation API, JVM internals, bytecode manipulation. And there are things that were not mentioned for the sake of simplicity, like reflection, which also plays an important part in making JHCR work.</p>
 
   
 <aside id="author" aria-label="About the author">
@@ -311,7 +311,7 @@
   <h3><a href="/blog/a-perfect-data-structure/">A “perfect” data structure</a></h3>
   <p>An experiment in designing a list with constant-time access, insertion and removal, and the trade-off that makes it possible.</p>
   <ul>
-    <li>Updated <time datetime="2026-01-29">Jan 29, 2026</time></li>
+    <li>Updated <time datetime="2026-09-28">Sep 28, 2026</time></li>
     <li>8 min read</li>
   </ul>
 </article>
@@ -326,7 +326,7 @@
     <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40"
       data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
     <div>
-      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow">
+      <a href="https://www.linkedin.com/in/szymon-kokot/" target="_blank" rel="nofollow">
         <img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" loading="lazy" width="48" height="48">
       </a>
       <a href="https://wa.me/15122035993" target="_blank" rel="noopener">
@@ -366,18 +366,18 @@
     <h5>Free tool</h5>
     <ul>
       <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
-      <li><a href="/tools/bulk-checker/meta-tag-check/">Meta Tag Check</a>
+      <li><a href="/tools/bulk-checker/meta-tag-check/">Meta tag check</a>
       </li>
-      <li><a href="/tools/bulk-checker/heading-check/">Heading Check</a></li>
-      <li><a href="/tools/bulk-checker/alt-text-check/">Alt Text Check</a>
+      <li><a href="/tools/bulk-checker/heading-check/">Heading check</a></li>
+      <li><a href="/tools/bulk-checker/alt-text-check/">Alt text check</a>
       </li>
-      <li><a href="/tools/bulk-checker/word-count-check/">Word Count Check</a>
+      <li><a href="/tools/bulk-checker/word-count-check/">Word count check</a>
       </li>
-      <li><a href="/tools/bulk-checker/canonical-check/">Canonical Check</a>
+      <li><a href="/tools/bulk-checker/canonical-check/">Canonical check</a>
       </li>
-      <li><a href="/tools/bulk-checker/open-graph-check/">Open Graph Check</a>
+      <li><a href="/tools/bulk-checker/open-graph-check/">Open Graph check</a>
       </li>
-      <li><a href="/tools/bulk-checker/schema-check/">Schema Check</a></li>
+      <li><a href="/tools/bulk-checker/schema-check/">Schema check</a></li>
     </ul>
   </section>
 

@@ -78,7 +78,7 @@
 <meta property="og:description" content="Designing a list with O(1) access, insertion and removal using buckets and a state number, and why a fixed maximum size is the price.">
 <meta property="og:image" content="https://illucrum.com/static/img/og/home.png">
 <meta property="article:published_time" content="2026-01-29">
-<meta property="article:modified_time" content="2026-01-29">
+<meta property="article:modified_time" content="2026-09-28">
 <meta property="article:author" content="https://illucrum.com/about/">
 <meta property="article:section" content="Other articles">
 
@@ -100,7 +100,7 @@
       "description": "Designing a list with O(1) access, insertion and removal using buckets and a state number, and why a fixed maximum size is the price.",
       "image": "https://illucrum.com/static/img/og/home.png",
       "datePublished": "2026-01-29",
-      "dateModified": "2026-01-29",
+      "dateModified": "2026-09-28",
       "inLanguage": "en-US",
       "articleSection": "Other articles",
       "author": { "@id": "https://illucrum.com/about/#person" },
@@ -169,21 +169,21 @@
 <p>
   <span>By <a href="#author">Szymon Kokot</a></span>
   <span>Published <time datetime="2026-01-29">Jan 29, 2026</time></span>
-  <span>Updated <time datetime="2026-01-29">Jan 29, 2026</time></span>
+  <span>Updated <time datetime="2026-09-28">Sep 28, 2026</time></span>
   <span>8 min read</span>
 </p>
 
-  <h1>A &quot;perfect&quot; data structure</h1>
-<p>Algorythms, data structures and maths. Those are the three legs of the tripod that holds programming. Today, let’s focus on data structures. You know how each one has it strengths and weakneses, each one has it’s own use cases. A “perfect” data structure should only have strengths and no weakneses, but it should also be useful in all situations. Which is of course ridiculous. There is just no way you can have a data structure that would be able to replace a regular list, just the same as it would be able to replace a tree. Although it’s worth mentioning that a binary tree can be implemented with an array. In this article, I’ll explore the posibilities of coming closer to the “perfect” data structure by trying to design one that would behave like a list while assuring a O(1) complexity for all relevant operations.</p>
-<h2>Algorythmic complexity</h2>
-<p>Although this article is not about complexity, let’s briefly explain what it is about. The complexity of an algorythm is used to predict how an algorythm will perform depending on the input size. This is very important for data structures that can hold millions of entries. So for example, if we assume a simple node list of which we only have direct access to the first node, if we want to add a new item to it at the beggining, no matter how long the list is, it will always cost the same ammount of resources, which is very good. But if we want to add a new item at the end, we would need to iterate through the whole thing. In this case the time needed to add this new item would be roughly directly proportional to the length of the list.</p>
-<p>In some other situations, things are not always that simple. Sometimes the resources needed don’t depend only on the size of the input. Which is very common for sorting algorythms, for example. In those situations, normally the worst case scenario is the most relevant. And this is where the big-o notation comes in, as a way to represent the complexity of an algorythm in it’s worst case scenario. From the previous example of the node list, adding an item at the beggining presents constant complexity, which is O(1). This basically means, it always needs the same amount of resources, no matter how long the list is. Adding an element at the end, presents linear complexity, which is O(n), where n represents the lenght of the list.</p>
+  <h1>A “perfect” data structure</h1>
+<p>Algorithms, data structures and math. Those are the three legs of the tripod that holds programming. Today, let’s focus on data structures. You know how each one has its strengths and weaknesses, each one has its own use cases. A “perfect” data structure should only have strengths and no weaknesses, but it should also be useful in all situations. Which is of course ridiculous. There is just no way you can have a data structure that would be able to replace a regular list, just the same as it would be able to replace a tree. Although it’s worth mentioning that a binary tree can be implemented with an array. In this article, I’ll explore the possibilities of coming closer to the “perfect” data structure by trying to design one that would behave like a list while assuring an O(1) complexity for all relevant operations.</p>
+<h2>Algorithmic complexity</h2>
+<p>Although this article is not about complexity, let’s briefly explain what it is about. The complexity of an algorithm is used to predict how an algorithm will perform depending on the input size. This is very important for data structures that can hold millions of entries. So for example, if we assume a simple node list of which we only have direct access to the first node, if we want to add a new item to it at the beginning, no matter how long the list is, it will always cost the same amount of resources, which is very good. But if we want to add a new item at the end, we would need to iterate through the whole thing. In this case the time needed to add this new item would be roughly directly proportional to the length of the list.</p>
+<p>In some other situations, things are not always that simple. Sometimes the resources needed don’t depend only on the size of the input. Which is very common for sorting algorithms, for example. In those situations, normally the worst case scenario is the most relevant. And this is where the big-o notation comes in, as a way to represent the complexity of an algorithm in its worst case scenario. From the previous example of the node list, adding an item at the beginning presents constant complexity, which is O(1). This basically means, it always needs the same amount of resources, no matter how long the list is. Adding an element at the end, presents linear complexity, which is O(n), where n represents the length of the list.</p>
 <h2>The “perfect” list</h2>
 <h3>Goals</h3>
 <p>First, let’s define the goals that the list I’m trying to describe should meet. The goal is to have a data structure on which we can perform these operations with O(1) complexity:</p>
 <ul>
 <li>
-<p>Retrieving any element given it’s index</p>
+<p>Retrieving any element given its index</p>
 </li>
 <li>
 <p>Adding a new element on any position</p>
@@ -192,20 +192,20 @@
 <p>Removing any element</p>
 </li>
 </ul>
-<p>As we can retrieve any element given it’s index, there should be of course no problem with iterating the list. So this goals should really cover it all.</p>
+<p>As we can retrieve any element given its index, there should be of course no problem with iterating the list. So these goals should really cover it all.</p>
 <h3>Restrictions</h3>
 <p>This list will have one very important restriction. It will have a set maximum size. This is sadly necessary, I don’t see the possibility of avoiding this restriction.</p>
 <h3>Structure</h3>
-<p>It’s clear to me, that in a way, what I’m trying to achieve is to create something like an “indexed hash table”. This seems to be the most promising approach. To start with, let’s set the maximum size to 4 elements. This should give as a list big enough to see more clearly how it works, but also small enough to make it quite simple to simulate. The list will have the following components:</p>
+<p>It’s clear to me, that in a way, what I’m trying to achieve is to create something like an “indexed hash table”. This seems to be the most promising approach. To start with, let’s set the maximum size to 4 elements. This should give us a list big enough to see more clearly how it works, but also small enough to make it quite simple to simulate. The list will have the following components:</p>
 <ul>
 <li>
-<p>The buckets: there should be as many buckets as many elements the list can hold at the same time. In our case it will have 4 bucket. Each will have it’s own identification binary number assigned to it, so we will have buckets 00, 01, 10 and 11. The buckets will really behave like wrappers of the elements stored in the list, and they themselves will be stored in a hash map, using their identifiers as keys. This will assure that we can access any element given it’s bucket number with constant complexity.</p>
+<p>The buckets: there should be as many buckets as elements the list can hold at the same time. In our case it will have 4 buckets. Each will have its own identification binary number assigned to it, so we will have buckets 00, 01, 10 and 11. The buckets will really behave like wrappers of the elements stored in the list, and they themselves will be stored in a hash map, using their identifiers as keys. This will assure that we can access any element given it’s bucket number with constant complexity.</p>
 </li>
 <li>
 <p>A size variable: there should be a variable to keep track of the current size of the list. Nothing special about it.</p>
 </li>
 <li>
-<p>The state number: the buckets hold the elements, but it’s important to have a way of keeping track of how the buckets are odered. As our list can hold at most 4 buckets, and each has a 2 bits long key, an 8 bit long number will be used , which will contain the four buckets identifiers concatenated, in the order in which the buckets are ordered. Let’s consider the least significant two digits represent the first bucket, the two most significant digits represent the last bucket on the list.</p>
+<p>The state number: the buckets hold the elements, but it’s important to have a way of keeping track of how the buckets are ordered. As our list can hold at most 4 buckets, and each has a 2 bits long key, an 8 bit long number will be used, which will contain the four buckets identifiers concatenated, in the order in which the buckets are ordered. Let’s consider the least significant two digits represent the first bucket, the two most significant digits represent the last bucket on the list.</p>
 </li>
 </ul>
 <p>The size variable, is there mostly to make sure the inputs are valid. Most of the magic will happen with the state number, as by manipulating it the order of the buckets will be read and written.</p>
@@ -226,7 +226,7 @@
 </tr>
 </tbody>
 </table>
-<p>This would mean we would have a list with three elements, bucket 11 holding value “1“, bucket 10 holding value “2“ and bucket 01 holding the value “3“, while the bucket 00 remains empty. So now let’s say we want to add a “3“ between the “2” and the “4”. We would put the value “3” into the empty bucket 00, and place it between the buckets 01 and 10. This would give us:</p>
+<p>This would mean we would have a list with three elements, bucket 11 holding value “1”, bucket 10 holding value “2” and bucket 01 holding the value “4”, while the bucket 00 remains empty. So now let’s say we want to add a “3” between the “2” and the “4”. We would put the value “3” into the empty bucket 00, and place it between the buckets 01 and 10. This would give us:</p>
 <table>
 <thead>
 <tr>
@@ -260,29 +260,29 @@
 </tr>
 </tbody>
 </table>
-<h3>Retrieving any element given it’s index</h3>
+<h3>Retrieving any element given its index</h3>
 <p>This is fairly simple. It’s sufficient to first check if the given index is allowed. Obviously you can never get the third element from a list with only two elements in it. For that we have the size variable. Once the given input is checked, we need to check which bucket is located at the indicated index. We can do that using the following formula:</p>
 <pre><code>b  = floor( (s mod 2^(2(i+1))) / 2^(2i) )
 </code></pre>
 <p>Where <em>b</em> is the bucket number, we of course ignore any decimals; <em>s</em> is the state number and <em>i</em> is the index.</p>
-<p>This way, no matter how long the the list is, we can retrieve any element by “just“ calculating the proper bucket. So it presents O(1) complexity.</p>
+<p>This way, no matter how long the list is, we can retrieve any element by “just” calculating the proper bucket. So it presents O(1) complexity.</p>
 <h3>Adding a new element anywhere</h3>
-<p>First things first, we of course need to validate the input. After that we should get the last bucket, which will be always empty if the list is not full. This can be done using the previous formula and giving the index the value of 3. Once we have the bucket we can set it’s value. The we need then to modify the state number accordingly. To do so, we can use the following formula:</p>
+<p>First things first, we of course need to validate the input. After that we should get the last bucket, which will be always empty if the list is not full. This can be done using the previous formula and giving the index the value of 3. Once we have the bucket we can set its value. Then we need to modify the state number accordingly. To do so, we can use the following formula:</p>
 <pre><code>s' = (s mod 2^(2i)) + b × 2^(2i) + floor(s / 2^(2i)) × 2^(2(i+1))
 </code></pre>
 <p>Where <em>s’</em> is the new state number, we only care about the binary eight least significant digits; <em>s</em> is the old state number, <em>i</em> is the index and <em>b</em> is the bucket we are using.</p>
 <p>And of course we need to update the size.</p>
-<p>This time it’s not as simple as before, as we have to perform two calculations, not just one. But still the algorythm is independent from the lenght of the list, giving it the desired complexity.</p>
+<p>This time it’s not as simple as before, as we have to perform two calculations, not just one. But still the algorithm is independent from the length of the list, giving it the desired complexity.</p>
 <h3>Removing any element</h3>
-<p>By now it should be more or less clear how this will look like. First we need the make sure that the index we are given is valid. Then, we will retrieve the bucket for that index in the same fashion that we did before, so we can empty it. And then we can use the following formula to put the bucket at the “end”:</p>
+<p>By now it should be more or less clear what this will look like. First we need to make sure that the index we are given is valid. Then, we will retrieve the bucket for that index in the same fashion that we did before, so we can empty it. And then we can use the following formula to put the bucket at the “end”:</p>
 <pre><code>s' = floor(s / 2^(2(i+1))) × 2^(2i) + (s mod 2^(2i)) + b × 2^6
 </code></pre>
 <p>Where <em>s’</em> is the new state number, <em>s</em> is the old state number, <em>i</em> is the index and <em>b</em> is the bucket.</p>
 <p>And last but not least, we of course need to update the size.</p>
 <p>And also in this case, it’s enough to perform two calculations to remove any element with complexity O(1).</p>
 <h2>Final thoughts</h2>
-<p>This list idea, surely could be optimized. For example, as the number of states is finite, no calculations are really needed. It would be enough to map the whole thing, basically making a finit state machine. Nevertheless, this solution has a big drawback. And that is the maximum length.</p>
-<p>Nowadays, we are using 64 bit processors. The biggest list could have at most 16 elements, each with a 4 bit id, which gives as a state number of 64 bits long. This would allow us to perform the calculations easily. Surely it’s possible to do maths with numbers longer than 64 bits on 64 bit processors, but something tells me that this wouldn’t really work fast enough. But maybe I’m mistaken.</p>
+<p>This list idea surely could be optimized. For example, as the number of states is finite, no calculations are really needed. It would be enough to map the whole thing, basically making a finite state machine. Nevertheless, this solution has a big drawback. And that is the maximum length.</p>
+<p>Nowadays, we are using 64 bit processors. The biggest list could have at most 16 elements, each with a 4 bit id, which gives us a state number 64 bits long. This would allow us to perform the calculations easily. Surely it’s possible to do math with numbers longer than 64 bits on 64 bit processors, but something tells me that this wouldn’t really work fast enough. But maybe I’m mistaken.</p>
 <p>On the other hand, designing finite state machines should always work quite well, but that would be very memory heavy. And of course it would also take a lot of time to design and then implement. But maybe it is worth a try?</p>
 
   
@@ -340,7 +340,7 @@
     <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40"
       data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2624662"></div>
     <div>
-      <a href="https://www.linkedin.com/company/illucrum" target="_blank" rel="nofollow">
+      <a href="https://www.linkedin.com/in/szymon-kokot/" target="_blank" rel="nofollow">
         <img src="/static/img/social/linkedin.svg" alt="LinkedIn profile" loading="lazy" width="48" height="48">
       </a>
       <a href="https://wa.me/15122035993" target="_blank" rel="noopener">
@@ -380,18 +380,18 @@
     <h5>Free tool</h5>
     <ul>
       <li><a href="/tools/bulk-checker/">Bulk SEO Checker</a></li>
-      <li><a href="/tools/bulk-checker/meta-tag-check/">Meta Tag Check</a>
+      <li><a href="/tools/bulk-checker/meta-tag-check/">Meta tag check</a>
       </li>
-      <li><a href="/tools/bulk-checker/heading-check/">Heading Check</a></li>
-      <li><a href="/tools/bulk-checker/alt-text-check/">Alt Text Check</a>
+      <li><a href="/tools/bulk-checker/heading-check/">Heading check</a></li>
+      <li><a href="/tools/bulk-checker/alt-text-check/">Alt text check</a>
       </li>
-      <li><a href="/tools/bulk-checker/word-count-check/">Word Count Check</a>
+      <li><a href="/tools/bulk-checker/word-count-check/">Word count check</a>
       </li>
-      <li><a href="/tools/bulk-checker/canonical-check/">Canonical Check</a>
+      <li><a href="/tools/bulk-checker/canonical-check/">Canonical check</a>
       </li>
-      <li><a href="/tools/bulk-checker/open-graph-check/">Open Graph Check</a>
+      <li><a href="/tools/bulk-checker/open-graph-check/">Open Graph check</a>
       </li>
-      <li><a href="/tools/bulk-checker/schema-check/">Schema Check</a></li>
+      <li><a href="/tools/bulk-checker/schema-check/">Schema check</a></li>
     </ul>
   </section>
 
