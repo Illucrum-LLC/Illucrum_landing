@@ -215,6 +215,7 @@ body > header div {
 
 body > header div a {
   padding: 14px 22px;
+  border: 0;
 }
 
 body > header div button {
@@ -251,8 +252,7 @@ body > header ul {
   list-style: none;
 }
 
-body > header li a,
-body > header div a {
+body > header li a {
   display: block;
   padding: 14px 0;
   border-bottom: 1px solid #f1f1ec;
@@ -264,11 +264,8 @@ body > header div a {
 body > header li a:hover {
   color: var(--green-text);
 }
-body > header li:last-child a,
-body > header div a {
-  margin-top: 18px;
-  padding: 0 22px;
-  border: 0;
+body > header li:last-child a {
+  display: none;
 }
 
 @media (min-width: 800px) {
