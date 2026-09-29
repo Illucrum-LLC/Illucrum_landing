@@ -4,6 +4,8 @@ const CONFIG = {
   politeDelayMs: 1000,
   topWords: 20,
   maxRenderedRows: 500,
+  maxStatusChecks: 400,
+  statusConcurrency: 6,
 };
 
 const STOP_WORDS = new Set(["a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any", "are", "aren't", "as", "at", "be",
@@ -23,7 +25,7 @@ function collapseWhitespace(value)
   if (value === null || value === undefined)
     return null;
 
-  const text = String(value).replace(/s+/g, " ").trim();
+  const text = String(value).replace(/\s+/g, " ").trim();
   return text;
 }
 
@@ -81,7 +83,7 @@ function sleep()
 
 function parseUrlInput(rawInput)
 {
-  const candidates = String(rawInput || "").split(/[/s,]+/)
+  const candidates = String(rawInput || "").split(/[\s,]+/)
     .map((part) => part.trim())
     .filter(Boolean);
 
@@ -91,7 +93,7 @@ function parseUrlInput(rawInput)
 
   for (const candidate of candidates)
     {
-    const withScheme = /^https?:///i.test(candidate) ?
+    const withScheme = /^https?:\/\//i.test(candidate) ?
       candidate :
       "https://" + candidate;
 
@@ -340,7 +342,7 @@ function extractText(doc) {
 function tokenise(text) {
   const matches = String(text)
     .toLowerCase()
-    .match(/[/p{L}/p{N}][/p{L}/p{N}'’-]*/gu);
+    .match(/[\p{L}\p{N}][\p{L}\p{N}'’-]*/gu);
   return matches || [];
 }
 
@@ -460,8 +462,9 @@ function extractLinks(doc, baseUrl) {
         "internal" : "external",
       anchorText: collapseWhitespace(anchor.textContent) || "",
       rel,
-      nofollow: /bnofollow/b/i.test(rel),
+      nofollow: /\bnofollow\b/i.test(rel),
       target: anchor.getAttribute("target") || "",
+      http_status: "",
     });
   }
 
@@ -484,6 +487,7 @@ function extractImages(doc, baseUrl) {
       loading: image.getAttribute("loading") || "",
       width: image.getAttribute("width") || "",
       height: image.getAttribute("height") || "",
+      http_status: "",
     });
   }
 
@@ -585,6 +589,7 @@ function buildRecord(fetchResult) {
     og_type: social.openGraph["og:type"] ?? null,
     og_url: social.openGraph["og:url"] ?? null,
     og_image: social.openGraph["og:image"] ?? null,
+    og_image_http_status: "",
     og_site_name: social.openGraph["og:site_name"] ?? null,
     og_locale: social.openGraph["og:locale"] ?? null,
     og_tag_count: Object.keys(social.openGraph).length,
@@ -845,6 +850,11 @@ const TABLES = [{
         screen: false
       },
       {
+        key: "og_image_http_status",
+        label: "og:image status",
+        screen: false
+      },
+      {
         key: "og_site_name",
         label: "og:site_name",
         screen: false
@@ -1012,6 +1022,11 @@ const TABLES = [{
         label: "target",
         screen: false
       },
+      {
+        key: "http_status",
+        label: "Link status",
+        screen: false
+      },
     ],
   },
   {
@@ -1054,6 +1069,11 @@ const TABLES = [{
       {
         key: "height",
         label: "Height",
+        screen: false
+      },
+      {
+        key: "http_status",
+        label: "Image status",
         screen: false
       },
     ],
@@ -1154,6 +1174,96 @@ function addRecord(record) {
   results.errors.push(...record.errors);
 }
 
+/** Schemes there is no HTTP status to fetch for. */
+const NON_HTTP_SCHEME = /^(mailto:|tel:|javascript:|data:)/i;
+
+/**
+ * Every URL whose status we want, paired with the row and column it belongs in.
+ * og:image is resolved against the page it was found on, because the tag is
+ * allowed to hold a relative path and is stored in the row exactly as written.
+ */
+function collectStatusTargets() {
+  const targets = [];
+
+  const add = (row, key, rawUrl, baseUrl) => {
+    if (!rawUrl || NON_HTTP_SCHEME.test(rawUrl)) return;
+    const url = baseUrl ? toAbsoluteUrl(rawUrl, baseUrl) : rawUrl;
+    if (!url || !/^https?:/i.test(url)) return;
+    targets.push({ row, key, url });
+  };
+
+  for (const link of results.links) add(link, "http_status", link.href, null);
+  for (const image of results.images) add(image, "http_status", image.src, null);
+  for (const page of results.pages) {
+    add(page, "og_image_http_status", page.og_image, page.final_url || page.url);
+  }
+
+  return targets;
+}
+
+/**
+ * Asks the relay for one URL and keeps only the origin's status. The relay
+ * refuses a non-HTML body with a 415 of its own, but still reports the status
+ * the origin gave, so an image that loads comes back as 200.
+ */
+async function fetchStatus(url, relayEndpoint) {
+  let response;
+  try {
+    response = await fetch(relayEndpoint + "?url=" + encodeURIComponent(url), {
+      method: "GET",
+      cache: "no-store",
+    });
+  } catch {
+    return "unreachable";
+  }
+
+  if (response.body) {
+    try {
+      await response.body.cancel();
+    } catch {
+      /* the body was already consumed or never arrived */
+    }
+  }
+
+  const originStatus = Number(response.headers.get("X-Crawl-Status"));
+  if (originStatus) return originStatus;
+
+  return response.headers.get("X-Crawl-Error") || "unknown";
+}
+
+/**
+ * Checks every distinct URL once and writes the result back into each row that
+ * pointed at it. Returns how many were left unchecked by the cap.
+ */
+async function fillStatuses(relayEndpoint, onProgress) {
+  const targets = collectStatusTargets();
+  const distinct = Array.from(new Set(targets.map((target) => target.url)));
+  const queued = distinct.slice(0, CONFIG.maxStatusChecks);
+  const statuses = new Map();
+
+  let done = 0;
+  const queue = queued.slice();
+
+  const worker = async () => {
+    for (let next = queue.shift(); next; next = queue.shift()) {
+      statuses.set(next, await fetchStatus(next, relayEndpoint));
+      done += 1;
+      onProgress(done, queued.length);
+    }
+  };
+
+  const width = Math.max(1, Math.min(CONFIG.statusConcurrency, queued.length));
+  await Promise.all(Array.from({ length: width }, worker));
+
+  for (const target of targets) {
+    target.row[target.key] = statuses.has(target.url) ?
+      statuses.get(target.url) :
+      "not checked";
+  }
+
+  return distinct.length - queued.length;
+}
+
 function displayValue(value, column) {
   if (value === null || value === undefined || value === "") return "";
   if (typeof value === "boolean") return value ? "yes" : "no";
@@ -1239,7 +1349,7 @@ function csvCell(value) {
   if (value === null || value === undefined) return "";
   const text =
     typeof value === "boolean" ? (value ? "true" : "false") : String(value);
-  return /[",/r/n]/.test(text) ? '"' + text.replace(/"/g, '""') + '"' : text;
+  return /[",\r\n]/.test(text) ? '"' + text.replace(/"/g, '""') + '"' : text;
 }
 
 function buildCsv(table, rows) {
@@ -1247,7 +1357,7 @@ function buildCsv(table, rows) {
   const lines = rows.map((row) =>
     table.columns.map((column) => csvCell(row[column.key])).join(","),
   );
-  return [header, ...lines].join("/r/n") + "/r/n";
+  return [header, ...lines].join("\r\n") + "\r\n";
 }
 
 function downloadCsv(table) {
@@ -1386,6 +1496,27 @@ async function runCrawl(event) {
 
     if (position < urls.length) await sleep();
   }
+
+  const skipped = await fillStatuses(relayEndpoint, (done, total) => {
+    setStatus(`Checking link ${done} of ${total}`, "busy");
+  });
+
+  if (skipped > 0) {
+    notes.push(
+      `${skipped} further address${skipped === 1 ? " was" : "es were"} left unchecked; the cap is ${CONFIG.maxStatusChecks}.`,
+    );
+  }
+
+  const broken = results.links.filter(
+    (link) => typeof link.http_status === "number" && link.http_status >= 400,
+  ).length;
+  if (broken) {
+    notes.push(
+      `${broken} link${broken === 1 ? "" : "s"} answered 400 or worse; see the status column in the links CSV.`,
+    );
+  }
+
+  renderAllTables();
 
   const failures = results.pages.filter((page) => page.outcome !== "OK").length;
   const summary =
