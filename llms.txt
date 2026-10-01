@@ -1,6 +1,6 @@
 # Illucrum
 
-> Illucrum sells fixed-price SEO audits to small and medium-sized businesses. There are six audits, each built for one kind of website, and each ends in a written report in which every point is scored from 1 to 10 and every fix is put in order of priority. Every audit is carried out by Szymon Kokot, who runs Illucrum.
+> Illucrum sells fixed-price SEO audits to small and medium-sized businesses, covering Google rankings and AI answers. There are six audits: four built for one kind of website, each with an AI search section, plus a Technical audit and a GEO audit that each cover one layer in depth. Every audit ends in a written report in which every point is scored from 1 to 10 and every fix is put in order of priority.
 
 Key facts:
 
